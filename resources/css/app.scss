@@ -1,0 +1,35 @@
+@import './reset';
+@import './nav';
+@import './footer';
+
+
+main {
+    .img-block {
+        width: 70vw;
+        margin: 0 auto;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            li {
+                margin-top: 30px;
+                text-align: center;
+
+                img {
+                    width: 25vw;
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+
+                img:hover {
+                    border: 1px solid slategrey;
+                    opacity: .5;
+                }
+            }
+        }
+    }
+}

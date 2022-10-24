@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 50px;
+
+    .nav-right {
+        ul {
+            display: flex;
+
+            li {
+                margin-left: 10px;
+            }
+        }
+    }
+
+}

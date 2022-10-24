@@ -1,0 +1,108 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+nav .nav-right ul {
+  display: flex;
+}
+nav .nav-right ul li {
+  margin-left: 10px;
+}
+
+footer {
+  margin-top: 50px;
+  border-top: 1px solid slategrey;
+}
+footer .social_block {
+  text-align: center;
+  margin-top: 30px;
+}
+footer .social_block ul {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  margin-bottom: 50px;
+}
+footer .social_block p {
+  margin-bottom: 30px;
+}
+
+main .img-block {
+  width: 70vw;
+  margin: 0 auto;
+}
+main .img-block ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+main .img-block ul li {
+  margin-top: 30px;
+  text-align: center;
+}
+main .img-block ul li img {
+  width: 25vw;
+}
+main .img-block ul li p {
+  margin-top: 10px;
+}
+main .img-block ul li img:hover {
+  border: 1px solid slategrey;
+  opacity: 0.5;
+}

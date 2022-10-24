@@ -1,0 +1,39 @@
+@import './reset';
+@import './nav';
+@import './footer';
+
+main {
+    margin-top: 50px;
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .chooseItem {
+        width: 90vw;
+        // height: 55vh;
+        min-height: 55vh;
+        margin: 0 auto;
+        text-align: center;
+
+
+        ul {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+
+            li {
+                margin: 20px;
+
+                img {
+                    width: 20vw;
+                    cursor: pointer;
+
+                }
+            }
+        }
+    }
+}
