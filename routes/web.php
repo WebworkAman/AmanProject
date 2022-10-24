@@ -63,3 +63,14 @@ Route::get('/seamless', function () {
 Route::get('/spreading', function () {
     return view('spreading');
 });
+
+//會員登入／註冊
+
+Route::get('/register', function () {
+    return view('/layouts/register');
+});
+
+Route::get('/OC40N02', function () {
+    return view('OC40N02');
+});
+
