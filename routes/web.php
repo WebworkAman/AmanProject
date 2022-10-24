@@ -13,13 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
+
+
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/pb', function () {
-    return view('pb');
-});
+Route::get('/pb', [PageController::class,'pb']);
+Route::get(
+    '/product/{id}',
+     [ProductController::class,'show']
+    )->where('id','[0-9]+'); //0~999999
+
 
 Route::get('/cutting', function () {
     return view('cutting');
@@ -65,6 +72,10 @@ Route::get('/spreading', function () {
 });
 
 //會員登入／註冊
+
+Route::get('/log', function () {
+    return view('/layouts/log');
+});
 
 Route::get('/register', function () {
     return view('/layouts/register');
