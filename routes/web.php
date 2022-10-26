@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\OrderController;
 
 Route::get('/', function () {
     return view('home');
@@ -26,6 +26,8 @@ Route::get(
     '/product/{id}',
      [ProductController::class,'show']
     )->where('id','[0-9]+'); //0~999999
+
+Route::resource('orders',OrderController::class); 
 
 
 Route::get('/cutting', function () {

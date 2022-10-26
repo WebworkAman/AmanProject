@@ -9,8 +9,8 @@ class ProductController extends Controller
     function show($id, Request $request){
 
         // $id = $request -> input('id');
-        var_dump($id);
-        $index = $id - 1;   
+        // var_dump($id);
+          
         
         $products = [
             [
@@ -21,11 +21,23 @@ class ProductController extends Controller
             ]
 
         ];
-        
-        $product = $products[$id];
 
-        return view('product.show',[
-            "product" => $product 
+        $index = $id - 1; 
+        
+        if($index >= 0 && $index < count($products)){
+            //show page
+
+            $product = $products[$index];
+
+            return view('product.show',[
+              "product" => $product 
         ]);
+        }else{
+            //404 not found
+            
+            abort(404);
+        }
+
+        
     } 
 }
