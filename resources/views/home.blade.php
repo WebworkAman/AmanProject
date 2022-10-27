@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<main>
+home
+<!-- <main>
         <div class="img-block">
             <ul>
                 <li><a href="Inspection.html"><img src="../imgs/1596784113.png"></img></a>
@@ -73,5 +74,5 @@
                 </li>
             </ul>
         </div>
-    </main>    
+    </main>     -->
 @endsection     
