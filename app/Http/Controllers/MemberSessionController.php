@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member; 
 
 class MemberSessionController extends Controller
 {
@@ -13,7 +14,13 @@ class MemberSessionController extends Controller
 
     public function store(Request $request)
     {
-        return redirect('/');
+        $member = Member::where([
+            'email' => $request->email,
+            'password'=>$request->password
+        ])->first();
+
+        var_dump( $member );
+        // return redirect('/');
     }
     public function delete(Request $request)
     {

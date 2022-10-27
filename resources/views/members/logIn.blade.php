@@ -19,7 +19,7 @@
         PASSWORD
         <p><input type="password" name="password"></p>
     </label>
-</div>
+</div> 
 <div>
     <button type="submit">
          Submit
