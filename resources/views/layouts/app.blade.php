@@ -7,13 +7,23 @@
    </head>
    <body>
    @include('layouts.nav')
-   <div class=""><a href="{{route('members.session.create')}}">Log in</a></div>
-   <div class=""><a href="{{route('members.create')}}">Register</a></div>
-   <form action="{{route('members.session.delete')}}" method="post">
+
+   @if($member)
+   <p>Hi,{{$member->email}}</p>
+   <form method="POST" action="{{route('members.session.delete')}}">
         @csrf
         @method('DELETE')
         <button type="submit">Log out</button>
    </form>
+   @else
+   <div class=""><a href="{{route('members.session.create')}}">Log in</a></div>
+   <div class=""><a href="{{route('members.create')}}">Register</a></div>
+   @endif
+
+   <!-- <form action="{{route('members.session.delete')}}" method="post">
+        
+        <button type="submit">Log out</button>
+   </form> -->
    <hr />
 
 

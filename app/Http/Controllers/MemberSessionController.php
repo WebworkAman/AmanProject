@@ -8,8 +8,14 @@ use App\Models\Member;
 class MemberSessionController extends Controller
 {
     public function create()
-    {
-        return view('members.login');
+    {    
+        $member = null;
+        if(session()->exists('memberId')){
+            $member = Member::find(session('memberId'));
+        }
+        return view('members.login',[
+            'member' => $member
+        ]);
     }
 
     public function store(Request $request)
@@ -19,12 +25,17 @@ class MemberSessionController extends Controller
             'password'=>$request->password
         ])->first();
 
-        var_dump( $member );
-        // return redirect('/');
+        if(!empty($member)){
+            session(['memberId' => $member->id]);
+        }
+
+        // var_dump( $member );
+        return redirect()->route('members.session.create');
     }
     public function delete(Request $request)
     {
-        return redirect('/');
+        session()->forget('memberId');
+        return redirect()->route('members.session.create');
     }
     
 }
