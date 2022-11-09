@@ -4,11 +4,12 @@ namespace App\Libraries;
 use App\Models\Member;
 
 class MemberAuth{
-
+    
+    public const HOME = '/';
     private static $member = null;
 
     public static function member(){
-        if(empty(self::$member)&&session()->exists('memberId')){
+        if(  empty(self::$member) && session()->exists('memberId')){
             self::$member = Member::find(session('memberId'));
         }
         return self::$member;
@@ -22,16 +23,23 @@ class MemberAuth{
     }
 
     public static function logIn($email,$password){
+         
         self::$member = Member::where([
             'email'=> $email,
             'password'=> $password
-
         ])->first();
 
         if(!empty(self::$member)){
-            session(['memberId'=>self::$member->id]);
-        }
+            
+            session(['memberId' => self::$member->id]);
+        } 
+
+        return redirect('/');
+       
     }
 
-
+    public static function logOut(){
+        session()->forget('memberId');
+        self::$member = null;
+    }
 }

@@ -1,11 +1,11 @@
-@extends('layouts.content')
+@extends('layouts.app')
 
 @section('content')
 home
 <main>
         <div class="img-block">
             <ul>
-                <li><a href=""><img src="../imgs/1596784113.png"></img></a>
+                <li><a href="Inspection.html"><img src="../imgs/1596784113.png"></img></a>
                     <p>驗 布</p>
                 </li>
                 <li><a href="./relaxing.html"><img src="../imgs/1597907651.png"></a>
