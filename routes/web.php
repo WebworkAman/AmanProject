@@ -22,9 +22,8 @@ use App\Http\Controllers\Controls\PageController as ControlsPageController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MemberSessionController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [PageController::class,'home']);
+
 
 Route::prefix('members')->name('members.')->group(function () {
     Route::resource('/',MemberController::class)->only(['create','store']);
@@ -36,7 +35,7 @@ Route::prefix('members')->name('members.')->group(function () {
 
 }); 
  
-Route::get('/pb', [PageController::class,'pb']);
+// Route::get('/pb', [PageController::class,'pb']);
 Route::get(
     '/product/{id}',
      [ProductController::class,'show']
