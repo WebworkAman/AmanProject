@@ -122,6 +122,9 @@ Route::get('/OC40N02', function () {
 //controls/categories
 //controls/users
 //controls/carts
+Route::prefix('controls')->name('controls.')->middleware(['member.auth'])->group(function(){
+    Route::get('/',[ControlsPageController::class,'home'])->name('home');
+});
 
 //層級下一種寫法
 // Route::prefix('controls')->name('controls.')->group(function () {
@@ -129,9 +132,9 @@ Route::get('/OC40N02', function () {
 // }); 
 
 //第二種
-Route::prefix('controls')->name('controls.')->group(function () {
-    Route::get('/',[ControlsPageController::class,'home'])->name('home');
-}); 
+// Route::prefix('controls')->name('controls.')->group(function () {
+//     Route::get('/',[ControlsPageController::class,'home'])->name('home');
+// }); 
 
 
 // require _DIR_.'/auth.php';

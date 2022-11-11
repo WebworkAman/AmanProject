@@ -8,7 +8,7 @@
 </head>
 
 <body>
-@extends('layouts.app')
+
     <main>
     <h1 class="topText">Oshima QA</h1>
         <div class="log">

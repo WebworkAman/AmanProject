@@ -1,7 +1,9 @@
-<?php
+<?php 
 
 namespace App\Libraries;
 use App\Models\Member;
+use Illuminate\Support\Facades\Hash;
+use \Illuminate\Database\QueryException; 
 
 class MemberAuth{
     
@@ -20,6 +22,27 @@ class MemberAuth{
  
         // return !empty(self::$member);
         // 如果這樣寫會有問題
+    }
+
+    public static function signUp(
+        $email,
+        $password,
+        $password_confirmation
+    ){
+        if($password === $password_confirmation){
+            try{
+                Member::create([
+                    'email' => $email,
+                    'password' => Hash::make($password),
+                ]);
+            }catch(QueryException $e){
+                
+                return "Email or password invalid";
+            }
+            return null;
+        }
+
+        return "Password and password confirmation are not compared.";
     }
 
     public static function logIn($email,$password){

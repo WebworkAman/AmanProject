@@ -23,7 +23,7 @@ class MemberSessionController extends Controller
             return redirect(MemberAuth::HOME);
         }
 
-        return view('members.login');
+        return view('members.logIn');
     }
 
     public function store(Request $request)
