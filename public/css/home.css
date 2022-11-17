@@ -87,20 +87,8 @@ main {
   margin-top: 50px;
 }
 main h1 {
-  font-size: 1rem;
+  font-size: 2rem;
   text-align: center;
-}
-main .img-block ul {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
-  margin: 0 auto;
-}
-main .img-block ul li img {
-  width: 10vw;
-  margin-right: 3vw;
-  margin-top: 15px;
-  margin-bottom: 20px;
 }
 main .chooseItem {
   width: 90vw;
@@ -118,6 +106,6 @@ main .chooseItem ul li {
   margin: 20px;
 }
 main .chooseItem ul li img {
-  width: 10vw;
+  width: 20vw;
   cursor: pointer;
 }

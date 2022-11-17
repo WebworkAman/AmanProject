@@ -47,7 +47,7 @@ class MemberAuth{
 
     public static function logIn($email,$password){
          
-        self::$member = Member::where([
+        self::$member = Member::where([ 
             'email'=> $email,
             'password'=> $password
         ])->first();

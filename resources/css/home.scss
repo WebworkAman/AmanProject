@@ -2,30 +2,13 @@
 @import './nav';
 @import './footer';
 
+
 main {
     margin-top: 50px;
 
     h1 {
-        font-size: 1rem;
+        font-size: 2rem;
         text-align: center;
-    }
-    .img-block{
-        ul{
-            display: flex;
-            flex-wrap: wrap;
-            width: 80vw;
-            margin: 0 auto;
-            li{
-                img{
-
-                    width: 10vw;
-                    margin-right: 3vw;
-                    margin-top: 15px;
-                    margin-bottom: 20px;
-                    
-                }
-            }
-        }
     }
 
     .chooseItem {
@@ -47,7 +30,7 @@ main {
                 margin: 20px;
 
                 img {
-                    width: 10vw;
+                    width: 20vw;
                     cursor: pointer;
 
                 }

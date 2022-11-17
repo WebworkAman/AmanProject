@@ -13,3 +13,18 @@ require('./bootstrap');
  */
 
 require('./components/Example');
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+const HelloWord=() =>{
+    return(
+        <p>Hello Wordld</p>
+    )
+}
+
+ReactDOM.render(
+    <HelloWord />,
+    document.getElementById('main')
+)
