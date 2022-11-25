@@ -1,15 +1,47 @@
 nav {
     display: flex;
-    justify-content: space-around;
+    margin: 0 auto;
+    width: 90%;
+    justify-content: space-between;
 
-    margin-top: 50px;
+    margin-top: 30px;
+    .nav-left{
+        img{
+            width: 6rem;
 
+
+        }
+    }
     .nav-right {
+        button{
+            
+            cursor: pointer;
+            border: 0;
+            background-color: brown;
+            color: white;
+            width: 65px;
+            height: 30px;
+            border-radius: 10px;
+            font-weight: 500;
+
+        }
         ul {
             display: flex;
-
+            justify-items: baseline;
             li {
-                margin-left: 10px;
+                margin-left: 20px;
+                
+               p{
+                margin-top: 8px;
+               }
+                a{
+                    text-decoration: none;
+                    color: cornflowerblue;
+                    font-size: 1.2rem;
+                }
+                a:hover{
+                    color: rgb(248, 165, 20);
+                }
             }
         }
     }

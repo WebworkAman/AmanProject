@@ -1,6 +1,6 @@
 @extends('layouts.content')
 @section('content')
-<div id="main"></div>
+
 <main>
         <div class="img-block">
             <ul>
