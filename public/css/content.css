@@ -123,17 +123,47 @@ main .chooseItem ul li img {
 }
 
 .QA_content {
+  margin-top: 40px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+}
+.QA_content .left-content img {
+  width: 30rem;
+  border-radius: 999em;
+}
+.QA_content .left-content h2 {
+  font-weight: 200;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.QA_content .left-content h3 {
+  font-weight: 200;
+  margin-top: 20px;
+  text-align: center;
+}
+.QA_content .right-content {
+  margin-right: 50px;
+}
+.QA_content .right-content .message_border {
+  height: 300px;
+  overflow: scroll;
+}
+.QA_content .right-content .message_border .message {
+  border-bottom: 1px silver solid;
+}
+.QA_content .right-content h3 {
+  color: rgb(47, 143, 135);
+  text-align: end;
+  margin-top: 5px;
 }
 .QA_content .right-content p {
   margin: 10px;
 }
 .QA_content .right-content textarea {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 15px;
   width: 550px;
   height: 100px;
+  border: 1px rgb(47, 143, 135) solid;
   padding: 10px;
 }
 .QA_content .right-content input {
@@ -141,4 +171,9 @@ main .chooseItem ul li img {
   border: 1px rgb(47, 143, 135) solid;
   cursor: pointer;
   border-radius: 5px;
+}
+.QA_content .right-content .submit {
+  float: right;
+  background-color: rgb(47, 143, 135);
+  color: aliceblue;
 }
