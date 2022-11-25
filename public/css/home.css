@@ -136,3 +136,9 @@ main .chooseItem ul li img {
   width: 20vw;
   cursor: pointer;
 }
+main .chooseItem ul li ol {
+  display: flex;
+}
+main .chooseItem ul li ol li img {
+  width: 10px;
+}

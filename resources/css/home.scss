@@ -24,7 +24,7 @@ main {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-
+            
 
             li {
                 margin: 20px;
@@ -34,7 +34,10 @@ main {
                     cursor: pointer;
 
                 }
+               
             }
+
+            
         }
     }
 }
