@@ -22,6 +22,9 @@ use App\Http\Controllers\Controls\PageController as ControlsPageController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MemberSessionController;
 
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ViewController;
+
 Route::get('/', [PageController::class,'home']);
 
 
@@ -32,9 +35,22 @@ Route::prefix('members')->name('members.')->group(function () {
         'create',
         'store',
     ]);
+});
 
-}); 
- 
+// Route::get('/OC40N02', function () {
+//     return view('OC40N02');
+// });
+
+Route::post('/OC40N02',MessageController::class)->name('post');
+Route::get('/OC40N02',ViewController::class)->name('view');
+// Forgot password
+
+// Route::get('/forgot',function index(){
+    
+//     return view('./members/forgotPW');
+// });
+
+
 // Route::get('/pb', [PageController::class,'pb']);
 Route::get(
     '/product/{id}',
@@ -97,9 +113,6 @@ Route::get('/register', function () {
     return view('/layouts/register');
 });
 
-Route::get('/OC40N02', function () {
-    return view('OC40N02');
-});
 
 // == not logged in ==
 //page

@@ -1,33 +1,44 @@
 @extends('layouts.content')
 
 @section('content')
-<main>
-        <h1>請選擇機器</h1>
+     
 
-        <div class="chooseItem">
-            <ul>
-                <li><a href="OC40N02.html"><img
-                            src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSZ-50-600-2.png"></a>
-                    <p>半動摺蓋封箱機 OSZ-50</p>
-                </li>
-                <li><a href="#"><img
-                            src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSZ-K02-600-2.png"></a>
-                    <p>自動中速開箱機 OSZ-K02</p>
-                </li>
-                <li><a href="#"><img
-                            src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSZ-50X-600-2.png"></a>
-                    <p>半自動角邊封箱機 OSZ-50X</p>
-                </li>
-                <li><a href="#"><img
-                            src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSZ-50N-600-2.png"></a>
-                    <p>全自動摺蓋封箱機 OSZ-50N</p>
-                </li>
-                <li><a href="#"><img
-                            src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSZ-50XN-600-2.png"></a>
-                    <p>全自動角邊封箱機 OSZ-50XN
-                    </p>
-                </li>
-            </ul>
+
+     <main>
+
+        <h1>Customer Question & Answer</h1>
+        <div class="QA_content">
+        <div class="left-content">
+            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1646990118.png">
         </div>
+        <div class="right-content">
+              
+            @foreach($messages as $message)
+             <div class="message">
+            
+              <p>標題：{{ $message->title }}</p>
+              <p>內容：{{ $message->content }}</p>
+              <p>日期：{{ $message->created_at }}</p>
+             </div>
+             @endforeach
+              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
+                    @csrf
+                    <p><label for="title">標題：</label></p>
+                    <input type="title" name="title">
+                    <p><label for="content">內文：</label></p>
+                    <textarea id="content" name="content"  cols="30" rows="10"></textarea>
+                    <p>
+                        <input type="submit" name="submit" value="Send">
+                    </p>
+              </form>
+             
+        </div>
+
+       
+        </div>
+        
+
+             
+        
     </main>
 @endsection 

@@ -6,7 +6,7 @@ main {
     margin-top: 50px;
 
     h1 {
-        font-size: 1rem;
+        font-size: 2.5rem;
         text-align: center;
     }
     .img-block{
@@ -53,5 +53,38 @@ main {
                 }
             }
         }
+    }
+}
+
+
+
+// ＱＡ 機器分類提問區
+
+.QA_content{
+    display: flex;
+    justify-content:space-around;
+
+    .right-content{
+        // border: 1px solid saddlebrown;
+        p{
+            margin: 10px;
+        }
+        textarea{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:15px;
+            width:550px;
+            height:100px;
+
+            padding: 10px;
+        }
+        input{
+            padding: 5px 15px;
+            border: 1px rgb(47, 143, 135) solid;
+
+            cursor: pointer;
+            border-radius: 5px;
+            
+        }
+    
     }
 }

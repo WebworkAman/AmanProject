@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>log</title>
+    <title>Oshima</title>
     <link rel="stylesheet" href="../../css/log.css">
 </head>
 
@@ -14,10 +14,11 @@
         <div class="log">
 
             <div class="left">
-                <h1>Sign in</h1>
-                <div class="txt">
+                
+                <div class="txtt">
 
-                    <p>New user ? </p><a href="{{route('members.create')}}">Create an account</a>
+                    <p>Forgot your password?</p>
+                    <p>No problem.Just let us know your email address and we will email you a password reset link that will allow you to choose a new one</p>
                 </div>
                                
                 <form method="post" action="{{route('members.session.store')}}">
@@ -27,18 +28,10 @@
                           <p><input type="email" name="email" placeholder="Email"></p>
                       </label>
                 </div>
-                <div>
-                    <label class="input">
-                        <p><input type="password" name="password" placeholder="Password"></p>
-                    </label>
-                </div> 
-                <div class="check">
-                       <input type="checkbox"> Remember Me </br>
-                       <a href="/forgot">Forgot your password?</a>
-                </div>
+                
                 <div>
                 <button type="submit">
-                       Submit
+                       Email Password Reset 
                 </button>
                 </div>
                </form>

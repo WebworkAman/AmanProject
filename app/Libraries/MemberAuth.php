@@ -29,15 +29,15 @@ class MemberAuth{
         $password,
         $password_confirmation
     ){
+                
         if($password === $password_confirmation){
             try{
                 Member::create([
                     'email' => $email,
                     'password' => Hash::make($password),
                 ]);
-            }catch(QueryException $e){
-                
-                return "Email or password invalid";
+            }catch(QueryException $e){                
+                return "Email or password invalid";                
             }
             return null;
         }
@@ -47,17 +47,32 @@ class MemberAuth{
 
     public static function logIn($email,$password){
          
-        self::$member = Member::where([ 
-            'email'=> $email,
-            'password'=> $password
+        // self::$member = Member::where([ 
+        //     'email'=> $email,
+        //     'password'=> $password
+        // ])->first();
+
+        // if(!empty(self::$member)){
+            
+        //     session(['memberId' => self::$member->id]);
+        // } 
+
+        // return redirect('/');
+
+        $_member = Member::where([ 
+            'email' => $email,
         ])->first();
 
-        if(!empty(self::$member)){
-            
+        if(!empty($_member)&&
+           Hash::check($password,$_member->password)
+        ){
+            self::$member = $_member;  
             session(['memberId' => self::$member->id]);
+            if( Hash::needsRehash($_member->password)){
+                self::$member->password = Hash::make($password);
+                self::$member->save();
+            }
         } 
-
-        return redirect('/');
        
     }
 

@@ -87,7 +87,7 @@ main {
   margin-top: 50px;
 }
 main h1 {
-  font-size: 1rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 main .img-block ul {
@@ -120,4 +120,25 @@ main .chooseItem ul li {
 main .chooseItem ul li img {
   width: 10vw;
   cursor: pointer;
+}
+
+.QA_content {
+  display: flex;
+  justify-content: space-around;
+}
+.QA_content .right-content p {
+  margin: 10px;
+}
+.QA_content .right-content textarea {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 15px;
+  width: 550px;
+  height: 100px;
+  padding: 10px;
+}
+.QA_content .right-content input {
+  padding: 5px 15px;
+  border: 1px rgb(47, 143, 135) solid;
+  cursor: pointer;
+  border-radius: 5px;
 }
