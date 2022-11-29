@@ -1,4 +1,3 @@
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +6,23 @@
     <link rel="stylesheet" href="../../css/log.css">
 </head>
 
-<body>
+<body class="admin">
 
-    <main>
+    <main >
     <h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
     
         <div class="log">
 
             <div class="left">
-                <h1>Sign in</h1>
+                <img src="../../imgs/Group5.png">
+                
+            </div>
+
+            <div class="right">
+            <h1>Admin Sign In</h1>
                 <div class="txt">
 
-                    <p>New user ? </p><a href="{{route('members.create')}}">Create an account</a>
+                    <p>Member user ? </p><a href="{{route('members.session.create')}}">Click here to login</a>
                 </div>
                                
                 <form method="post" action="{{route('members.session.store')}}">
@@ -41,15 +45,8 @@
                 <button type="submit">
                        Submit
                 </button>
-                <div class="baseline"></div>
-
-                <div class="admin-text">Are you a admin ? <a href="/admin">Click here to login</a></div>
                 </div>
                </form>
-            </div>
-
-            <div class="right">
-                <img src="../../imgs/Illustration.png">
             </div>
             
         </div>
@@ -57,6 +54,3 @@
    </main>
     
 </body>    
-
-
-

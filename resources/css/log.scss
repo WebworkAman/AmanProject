@@ -139,4 +139,104 @@ body {
 
         }
     }
+
+      
+}
+//admin UI  
+.admin{
+    background-color:#273252;
+
+    main{
+        .log{
+          background-color:#273252;
+          justify-content: center;
+
+          .right {
+            // border: 1px solid slategrey;
+           
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .txt {
+                display: flex;
+
+                a {
+                    margin-left: 10px;
+                    text-decoration: none;
+
+                    color: #bbc5e2;
+
+                }
+                a:hover{
+                    color: cornsilk;
+                }
+            }
+
+            .input {
+                margin-top: 30px;
+                margin-bottom: 15px;
+               
+                input {
+                    border: 0;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                    width: 13vw;
+                    height: 30px;
+                    padding-left: 15px;
+                    color: #273252;
+                    
+                   
+                }
+            }
+
+            .check{
+                text-align: right;
+                
+                margin-right: 20px;
+                input{
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+                a{
+                    text-decoration: none;
+                    color: cornsilk;
+                    font-size: .8rem;
+                }
+                a:hover{
+                    color: #bbc5e2;
+
+                }
+            }
+
+            button {
+               
+                margin-top: 20px;
+                width: 250px;
+                height: 45px;
+                font-size: 1rem;
+                border-radius: 2px;
+
+                color: cornsilk;
+                background-color: rgb(17, 36, 91);
+                border-radius: 20px;
+                border: none;
+                cursor: pointer;
+
+                a{
+                    text-decoration: none;
+                    color: aliceblue;
+                    letter-spacing: 1px;
+                    font-size: 1.2rem;
+                }
+            }
+           
+
+
+        }
+
+        }
+    }
 }

@@ -27,7 +27,7 @@ use App\Http\Controllers\ViewController;
 
 Route::get('/', [PageController::class,'home']);
 
-
+//會員登入
 Route::prefix('members')->name('members.')->group(function () {
     Route::resource('/',MemberController::class)->only(['create','store']);
     Route::delete('/session',[MemberSessionController::class,'delete'])->name('session.delete');
@@ -35,6 +35,11 @@ Route::prefix('members')->name('members.')->group(function () {
         'create',
         'store',
     ]);
+});
+
+//管理者登入
+Route::get('/admin',function(){
+     return view('admin/login');
 });
 
 // Route::get('/OC40N02', function () {
