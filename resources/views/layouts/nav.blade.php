@@ -1,7 +1,8 @@
 <html>
 <nav>
         <div class="nav-left">
-            <img src="https://www.oshima.com.tw/archive/image/weblogo/1644210634.jpg" alt="">
+            <a href="/"><img src="https://www.oshima.com.tw/archive/image/weblogo/1644210634.jpg"></a>
+            
         </div>
         <div class="nav-right">
         @if (MemberAuth::isLoggedIn())

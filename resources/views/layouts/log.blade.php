@@ -12,6 +12,7 @@
 <body>
     <main>
         <h1 class="topText">Oshima QA</h1>
+        <img src="https://www.oshima.com.tw/archive/image/weblogo/1644210634.jpg">
         <div class="log">
 
             <div class="left">

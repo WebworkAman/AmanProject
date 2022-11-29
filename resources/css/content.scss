@@ -36,6 +36,10 @@ main {
                     justify-content: space-evenly;
                     align-items:center;
                     li{
+                        p{
+                            margin: 15px;
+                            font-weight: 500;
+                        }
                         img{
                             width: 1.2rem;
                             margin: 0;
@@ -48,7 +52,6 @@ main {
 
     .chooseItem {
         width: 90vw;
-        // height: 55vh;
         min-height: 55vh;
         margin: 0 auto;
         text-align: center;
@@ -65,11 +68,15 @@ main {
                 margin: 20px;
                 
                 img {
-                    width: 10vw;
+                    width: 20vw;
                     cursor: pointer;
                     
 
 
+                }
+                p{
+                    margin: 15px;
+                    font-weight: 500;
                 }
             }
         }

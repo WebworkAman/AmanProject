@@ -137,6 +137,10 @@ main .img-block ul li ol {
   justify-content: space-evenly;
   align-items: center;
 }
+main .img-block ul li ol li p {
+  margin: 15px;
+  font-weight: 500;
+}
 main .img-block ul li ol li img {
   width: 1.2rem;
   margin: 0;
@@ -157,8 +161,12 @@ main .chooseItem ul li {
   margin: 20px;
 }
 main .chooseItem ul li img {
-  width: 10vw;
+  width: 20vw;
   cursor: pointer;
+}
+main .chooseItem ul li p {
+  margin: 15px;
+  font-weight: 500;
 }
 
 .QA_content {

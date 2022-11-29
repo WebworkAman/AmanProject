@@ -10,7 +10,8 @@
 <body>
 
     <main>
-    <h1 class="topText">Oshima QA</h1>
+    <h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
+    
         <div class="log">
 
             <div class="left">
@@ -40,6 +41,9 @@
                 <button type="submit">
                        Submit
                 </button>
+                <div class="baseline"></div>
+
+                <div class="admin-text">Are you a admin ? <a href="">Click here to login</a></div>
                 </div>
                </form>
             </div>
