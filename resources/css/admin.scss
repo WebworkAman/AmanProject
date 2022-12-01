@@ -1,0 +1,131 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    .left{
+        img{
+            width: 9rem;
+        }
+    }
+}
+
+main{
+    margin-top: 100px;
+    .admin_block{
+        display: flex;
+        justify-content: space-evenly;
+        .control_{
+            
+            .control_list{
+                border: 1px solid silver;
+                width: 10vw;
+                height: 500px;
+
+                border-radius: 20px;
+
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: 200;
+
+            }
+
+        }
+
+        .Show_{
+            width: 66vw;
+            border: 1px solid silver;
+            border-radius: 20px;
+
+            .Show_form{
+                margin: 60px 100px;
+
+                ul{
+                    margin-left: 100px;
+                    list-style: none;
+                    display: flex;
+                    li{
+                        margin: 30px;
+                        ol{
+                            list-style: none;
+                            li{
+                                a{
+                                    color: blue;
+                                    text-decoration: none;
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                
+            }
+
+        }
+
+        .Show_.select_{
+            .Show_form{
+                    ul{
+                        margin-left: 0;
+                        li{
+                            width: 7vw;
+                            font-size: .5rem;
+                            
+                           
+                        }
+                        .message_{
+                            p{
+                                margin-top: 20px;
+                                margin-bottom: 28px;
+                            }
+                        }
+                    }
+                
+        
+            }}
+    }
+}
+
+// adminEdit
+
+.Show_.edit{
+    .Show_form{
+        .question_edit{
+            button{
+                width: 5vw;
+                border: 1px solid rgb(110, 134, 201);
+                color: rgb(110, 134, 201);
+                border-radius: 10px;
+                background-color: transparent;
+                
+
+            }
+            .nav{
+                display: flex;
+                justify-content: space-between;
+            }
+            .text{
+                ul{
+                    margin-left: 0;
+                    font-size: small;
+                }
+            }
+            .ans{
+                margin-left: 120px;
+                textarea{
+                    list-style: none;
+                    width: 40vw;
+                    border-radius: 20px;
+                    padding: 20px;
+                }
+                ul{
+                    float: right;
+                }
+
+            }
+        }
+    }
+}
+
+//select
+

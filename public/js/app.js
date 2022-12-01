@@ -27928,6 +27928,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/admin.scss":
+/*!**********************************!*\
+  !*** ./resources/css/admin.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/object-assign/index.js":
 /*!*********************************************!*\
   !*** ./node_modules/object-assign/index.js ***!
@@ -59325,6 +59338,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/admin": 0,
 /******/ 			"css/log": 0,
 /******/ 			"css/content": 0,
 /******/ 			"css/home": 0
@@ -59377,11 +59391,12 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/log","css/content","css/home"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/log","css/content","css/home"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/home.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/content.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/log.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/log","css/content","css/home"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/log","css/content","css/home"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/home.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/content.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/admin","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/log.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/admin","css/log","css/content","css/home"], () => (__webpack_require__("./resources/css/admin.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

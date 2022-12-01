@@ -41,6 +41,15 @@ Route::prefix('members')->name('members.')->group(function () {
 Route::get('/admin',function(){
      return view('admin/login');
 });
+Route::get('/admin/index',function(){
+    return view('admin/index');
+});
+Route::get('/admin/question_edit',function(){
+    return view('admin/question_edit');
+});
+Route::get('/admin/question_select',function(){
+    return view('admin/question_select');
+});
 
 // Route::get('/OC40N02', function () {
 //     return view('OC40N02');

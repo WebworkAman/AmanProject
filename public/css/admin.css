@@ -1,0 +1,87 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+nav .left img {
+  width: 9rem;
+}
+
+main {
+  margin-top: 100px;
+}
+main .admin_block {
+  display: flex;
+  justify-content: space-evenly;
+}
+main .admin_block .control_ .control_list {
+  border: 1px solid silver;
+  width: 10vw;
+  height: 500px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+main .admin_block .Show_ {
+  width: 66vw;
+  border: 1px solid silver;
+  border-radius: 20px;
+}
+main .admin_block .Show_ .Show_form {
+  margin: 60px 100px;
+}
+main .admin_block .Show_ .Show_form ul {
+  margin-left: 100px;
+  list-style: none;
+  display: flex;
+}
+main .admin_block .Show_ .Show_form ul li {
+  margin: 30px;
+}
+main .admin_block .Show_ .Show_form ul li ol {
+  list-style: none;
+}
+main .admin_block .Show_ .Show_form ul li ol li a {
+  color: blue;
+  text-decoration: none;
+}
+main .admin_block .Show_.select_ .Show_form ul {
+  margin-left: 0;
+}
+main .admin_block .Show_.select_ .Show_form ul li {
+  width: 7vw;
+  font-size: 0.5rem;
+}
+main .admin_block .Show_.select_ .Show_form ul .message_ p {
+  margin-top: 20px;
+  margin-bottom: 28px;
+}
+
+.Show_.edit .Show_form .question_edit button {
+  width: 5vw;
+  border: 1px solid rgb(110, 134, 201);
+  color: rgb(110, 134, 201);
+  border-radius: 10px;
+  background-color: transparent;
+}
+.Show_.edit .Show_form .question_edit .nav {
+  display: flex;
+  justify-content: space-between;
+}
+.Show_.edit .Show_form .question_edit .text ul {
+  margin-left: 0;
+  font-size: small;
+}
+.Show_.edit .Show_form .question_edit .ans {
+  margin-left: 120px;
+}
+.Show_.edit .Show_form .question_edit .ans textarea {
+  list-style: none;
+  width: 40vw;
+  border-radius: 20px;
+  padding: 20px;
+}
+.Show_.edit .Show_form .question_edit .ans ul {
+  float: right;
+}
