@@ -24,6 +24,7 @@ use App\Http\Controllers\MemberSessionController;
 
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\FAQController;
 
 Route::get('/', [PageController::class,'home']);
 
@@ -127,6 +128,13 @@ Route::get('/register', function () {
     return view('/layouts/register');
 });
 
+
+//常見問題
+Route::post('/FAQ',MessageController::class)->name('post');
+Route::get('/FAQ',FAQController::class)->name('view');
+// Route::get('/FAQ', function () {
+//     return view('FAQ');
+// });
 
 // == not logged in ==
 //page
