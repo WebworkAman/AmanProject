@@ -24,20 +24,34 @@
     >
        @csrf
     <div>
+        <label class="input">
+        <input type="text" placeholder="Enter Full Name" name=name value="{{old('name')}}">
+        <p class="text-danger">@error('name') {{$message}} @enderror</p>
+        </label>
+
+    </div>
+    <div>
        <label class="input">
-          <p><input type="email" name="email" placeholder="Email"></p>
+          <input type="email" name="email" placeholder="Email" value="{{old('email')}}">
+          
+          <p class="text-danger">@error('email') {{$message}} @enderror</p>
        </label>
     </div>
     <div>
        <label class="input">       
-          <p><input type="password" name="password" placeholder="Password"></p>
+          <input type="password" name="password" placeholder="Password" value="{{old('password')}}">
+          <br/>
+          <p class="text-danger">@error('password') {{$message}} @enderror</p>
        </label>
     </div>
-<div>
-    <label class="input">       
-        <p><input type="password" name="password_confirmation" placeholder="Repeat-Password"></p>
-    </label>
-</div>
+    <div>
+       <label class="input">       
+           <input type="password" name="password_confirmation" placeholder="Repeat-Password">
+           <br/>
+          <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>
+
+       </label>
+    </div>
 <div class="check">
         <input type="checkbox"> Keep me signed in
     </div>
@@ -46,6 +60,13 @@
          Submit
     </button>
 </div>
+
+@if(Session::has('success'))
+<div class="alert alert-success">{{Session::get('success')}}</div>
+@endif
+@if(Session::has('fail'))
+<div class="alert alert-danger">{{Session::get('fail')}}</div>
+@endif
 </form>
 </div>
 

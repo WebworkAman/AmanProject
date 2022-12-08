@@ -25,9 +25,20 @@ class MemberController extends Controller
         // }
 
         $errorMessage = MemberAuth::signUp(
-               $request->email,
-               $request->password,
-               $request->password_confirmation
+               
+            //    $request->email,
+            //    $request->password,
+            //    $request->password_confirmation
+
+            //   驗證輸入格式有無錯誤。
+
+            $request->validate([
+                'name'=>'required',
+                'email'=>'required|email|unique:users',
+                'password'=>'required|min:5|max:18',
+                'password_confirmation'=>'required|min:5|max:18'
+
+            ])
 
         );
 

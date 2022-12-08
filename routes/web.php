@@ -28,7 +28,7 @@ use App\Http\Controllers\FAQController;
 
 Route::get('/', [PageController::class,'home']);
 
-//會員登入
+//會員登入 Members login -> group 
 Route::prefix('members')->name('members.')->group(function () {
     Route::resource('/',MemberController::class)->only(['create','store']);
     Route::delete('/session',[MemberSessionController::class,'delete'])->name('session.delete');
@@ -38,18 +38,21 @@ Route::prefix('members')->name('members.')->group(function () {
     ]);
 });
 
-//管理者登入
-Route::get('/admin',function(){
-     return view('admin/login');
-});
-Route::get('/admin/index',function(){
-    return view('admin/index');
-});
-Route::get('/admin/question_edit',function(){
-    return view('admin/question_edit');
-});
-Route::get('/admin/question_select',function(){
-    return view('admin/question_select');
+//管理者登入 Admin login -> group
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/',function(){  
+        return view('admin/login');
+   });
+   Route::get('index',function(){
+       return view('admin/index');
+   });
+   Route::get('question_edit',function(){
+       return view('admin/question_edit');
+   });
+   Route::get('question_select',function(){
+       return view('admin/question_select');
+   });
 });
 
 // Route::get('/OC40N02', function () {
