@@ -25,17 +25,23 @@ class MemberAuth{
     }
 
     public static function signUp(
+        $name,
         $email,
         $password,
         $password_confirmation
+        // Request $request
+
     ){
+
                 
         if($password === $password_confirmation){
             try{
                 Member::create([
+                    'name'=> $name,
                     'email' => $email,
                     'password' => Hash::make($password),
                 ]);
+
             }catch(QueryException $e){                
                 return "Email or password invalid";                
             }

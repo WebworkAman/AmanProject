@@ -46,7 +46,7 @@
     </div>
     <div>
        <label class="input">       
-           <input type="password" name="password_confirmation" placeholder="Repeat-Password">
+           <input type="password" name="password_confirmation" placeholder="Repeat-Password" value="{{old('password_confirmation')}}">
            <br/>
           <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>
 

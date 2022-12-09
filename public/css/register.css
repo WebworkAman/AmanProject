@@ -88,7 +88,7 @@ body main .log .left .txt {
 body main .log .left .txt a {
   margin-left: 10px;
   text-decoration: none;
-  color: #3366FF;
+  color: #f3f4fa;
 }
 body main .log .left .input {
   margin-top: 30px;
@@ -123,4 +123,16 @@ body main .log .left button {
   background-color: black;
   border: none;
   cursor: pointer;
+}
+body main .log .alert {
+  color: white;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 2;
+}
+body main .log .alert.alert-success {
+  background-color: #343660;
+}
+body main .log .alert.alert-success {
+  background-color: #c80101;
 }

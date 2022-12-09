@@ -23,6 +23,8 @@ body {
             margin: 50px auto;
             background-color: rgb(85, 141, 122);
 
+
+
             .left {
                 // border: 1px solid slategrey;
                 height: 394px;
@@ -45,7 +47,7 @@ body {
                         margin-left: 10px;
                         text-decoration: none;
 
-                        color: #3366FF;
+                        color: #f3f4fa;
 
                     }
                 }
@@ -101,6 +103,19 @@ body {
                     border: none;
                     cursor: pointer;
                 }
+            }
+
+            .alert{
+                color: white;
+                margin-top: 15px;
+                text-align: center;
+                line-height: 2;
+            }
+            .alert.alert-success{
+                background-color: #343660;
+            }
+            .alert.alert-success{
+                background-color: #c80101;
             }
 
 
