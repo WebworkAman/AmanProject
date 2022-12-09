@@ -12,6 +12,6 @@ class VerifyMember extends Model
     protected $fillable = ['user_id','token'];
 
     public function user(){
-        return $this->belongTo(User::class);
+        return $this->belongsTo(Member::class);
     }
 }

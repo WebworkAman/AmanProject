@@ -126,6 +126,13 @@ body main .log .left .check a {
 body main .log .left .check a:hover {
   color: #273252;
 }
+body main .log .left .alert.alert-info {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 2;
+  background-color: rgb(197, 24, 80);
+  border-radius: 10px;
+}
 body main .log .left button {
   margin-top: 20px;
   width: 250px;

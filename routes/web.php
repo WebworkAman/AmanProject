@@ -37,6 +37,8 @@ Route::prefix('members')->name('members.')->group(function () {
         'store',
     ]);
 });
+//驗證
+Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 
 //管理者登入 Admin login -> group
 

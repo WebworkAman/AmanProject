@@ -25,12 +25,16 @@
                    @csrf
                 <div>
                       <label class="input">
-                          <p><input type="email" name="email" placeholder="Email"></p>
+                          <p><input type="email" name="email" placeholder="Enter Email"
+                          value="{{Session::get('verifiedEmail')?Session::get('verifiedEmail'):old('email')}}"
+                          ></p>
+                          <span class="text-danger">@error('email') {{$message}} @enderror</span>
                       </label>
                 </div>
                 <div>
                     <label class="input">
-                        <p><input type="password" name="password" placeholder="Password"></p>
+                        <p><input type="password" name="password" placeholder="Enter Password" value="{{old('password')}}"></p>
+                        <span class="text-danger">@error('password') {{$message}} @enderror</span>
                     </label>
                 </div> 
                 <div class="check">
@@ -41,10 +45,17 @@
                 <button type="submit">
                        Submit
                 </button>
+               
                 <div class="baseline"></div>
+                @if(Session::get('info'))
+                    <div class="alert alert-info">{{Session::get('info')}}</div>
+                    @else
+                    <div class="admin-text">Are you a admin ? <a href="/admin">Click here to login</a></div>
 
-                <div class="admin-text">Are you a admin ? <a href="/admin">Click here to login</a></div>
+                    @endif
                 </div>
+
+                    
                </form>
             </div>
 
