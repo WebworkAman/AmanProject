@@ -133,6 +133,6 @@ body main .log .alert {
 body main .log .alert.alert-success {
   background-color: #343660;
 }
-body main .log .alert.alert-success {
+body main .log .alert.alert-fail {
   background-color: #c80101;
 }
