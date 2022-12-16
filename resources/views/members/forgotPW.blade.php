@@ -10,30 +10,37 @@
 <body>
 
     <main>
-    <h1 class="topText">Oshima QA</h1>
-        <div class="log">
+    <h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
+        <div class="log forgot">
 
             <div class="left">
-                
-                <div class="txtt">
-
-                    <p>Forgot your password?</p>
-                    <p>No problem.Just let us know your email address and we will email you a password reset link that will allow you to choose a new one</p>
-                </div>
+            <h1>Forgot your password?</h1>
+            <div class="baseline"></div>
+            <p>No problem.Just let us know your email address and we will email you a password reset link that will allow you to reset</p>
                                
-                <form method="post" action="{{route('members.session.store')}}">
+                <form method="post" action="{{route('forgot-password')}}">
                    @csrf
                 <div>
                       <label class="input">
-                          <p><input type="email" name="email" placeholder="Email"></p>
+                          <p><input type="email" name="email" placeholder="Enter Email"
+                              value="{{old('email')}}"
+                          ></p>
+                          <br/>
+                          <span class="text-danger" style="color:#f5c8c8;">@error('email') {{$message}} @enderror</span>
                       </label>
                 </div>
                 
                 <div>
                 <button type="submit">
-                       Email Password Reset 
+                       Send Reset Password Link
                 </button>
                 </div>
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('fail'))
+                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                    @endif
                </form>
             </div>
 

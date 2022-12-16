@@ -7,7 +7,7 @@
         <div class="nav-right">
         @if (MemberAuth::isLoggedIn())
             <ul>
-                <li><p>Hi,{{ MemberAuth::member()->email }}</p></li>
+                <li><p>Hi,{{ MemberAuth::member()->name }}</p></li>
                 <li>
                 <form method="POST" action="{{ route('members.session.delete') }}">
                     @csrf

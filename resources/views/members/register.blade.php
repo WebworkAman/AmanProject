@@ -8,10 +8,12 @@
 </head>
 <body>
 <main>
-<h1 class="topText">Member Register</h1>
+<h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
 
 <div class="log">
-
+<div class="right">
+    <img src="../imgs/Illustration1.png">
+</div>
 <div class="left">
     <h1>Create An Account</h1>
     <div class="txt">
@@ -23,12 +25,11 @@
      action="{{ route('members.store') }}"
     >
        @csrf
-    <div>
+    <div class="first-block">
         <label class="input">
         <input type="text" placeholder="Enter Full Name" name=name value="{{old('name')}}">
         <p class="text-danger">@error('name') {{$message}} @enderror</p>
         </label>
-
     </div>
     <div>
        <label class="input">
@@ -70,9 +71,7 @@
 </form>
 </div>
 
-<div class="right">
-    <img src="../imgs/Illustration.png">
-</div>
+
 
 
 

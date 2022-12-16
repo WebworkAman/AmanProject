@@ -53,7 +53,7 @@ table {
 }
 
 body {
-  background-color: rgb(85, 141, 122);
+  background-color: rgb(104, 159, 198);
 }
 body .topText {
   text-align: center;
@@ -61,20 +61,25 @@ body .topText {
   margin-top: 100px;
   font-size: 2rem;
 }
+body .topText img {
+  width: 12rem;
+}
 body main .log {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 895px;
   height: 500px;
-  border: 2px solid whitesmoke;
+  border: 2px solid cornsilk;
   border-radius: 10px;
   margin: 50px auto;
-  background-color: rgb(85, 141, 122);
+  background-color: rgb(104, 159, 198);
 }
 body main .log .left {
   height: 394px;
   width: 300px;
+  color: rgb(255, 246, 122);
+  letter-spacing: 1.1;
   padding-left: 10px;
   padding-top: 10px;
 }
@@ -88,7 +93,13 @@ body main .log .left .txt {
 body main .log .left .txt a {
   margin-left: 10px;
   text-decoration: none;
-  color: #f3f4fa;
+  color: cornsilk;
+}
+body main .log .left .txt a:hover {
+  color: #273252;
+}
+body main .log .left .first-block {
+  margin-top: 15px;
 }
 body main .log .left .input {
   margin-top: 30px;
@@ -98,6 +109,7 @@ body main .log .left .input .nameInput {
   display: flex;
 }
 body main .log .left .input .nameInput input {
+  border: 0;
   margin-right: 10px;
 }
 body main .log .left .input .text-danger {
@@ -107,25 +119,32 @@ body main .log .left .input .text-danger {
   background-color: rgb(85, 141, 122);
 }
 body main .log .left .input input {
-  margin-top: 10px;
+  border: 0;
+  border-radius: 10px;
   width: 13vw;
-  height: 24px;
-  padding-left: 5px;
-  border-radius: 20px;
-  border-radius: 2;
+  height: 30px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  color: #273252;
 }
 body main .log .left button {
   margin-top: 20px;
-  width: 280px;
+  width: 250px;
   height: 45px;
-  border-radius: 2px;
+  font-size: 1rem;
+  letter-spacing: 1.3;
+  border-radius: 20px;
   color: white;
-  background-color: black;
+  background-color: rgb(17, 36, 91);
   border: none;
   cursor: pointer;
 }
+body main .log .left button:hover {
+  color: #273252;
+  background-color: rgb(255, 246, 122);
+}
 body main .log .alert {
-  color: white;
+  color: cornsilk;
   margin-top: 15px;
   text-align: center;
   line-height: 2;
@@ -135,4 +154,47 @@ body main .log .alert.alert-success {
 }
 body main .log .alert.alert-fail {
   background-color: #c80101;
+}
+
+.container {
+  display: flex;
+  border: 2px solid cornsilk;
+  margin-top: 50px;
+  width: 895px;
+  height: 500px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container .left h1 {
+  color: cornsilk;
+  font-size: 24px;
+}
+.container .left .form-group {
+  color: cornsilk;
+  margin: 15px;
+}
+.container .left .form-group label {
+  margin-bottom: 15px;
+}
+.container .left .form-group input {
+  width: 20vw;
+}
+.container .left .form-group .btn {
+  background-color: #343660;
+  border: 0;
+}
+.container .left .form-group .btn:hover {
+  background-color: cornsilk;
+  color: #273252;
+}
+.container .left .form-group .text-danger {
+  margin-top: 10px;
+  color: #dee2e6 !important;
+}
+.container .left a {
+  color: cornsilk;
+  text-decoration: none;
+}
+.container .left a:hover {
+  color: #343660;
 }

@@ -64,6 +64,10 @@ body .topText {
 body .topText img {
   width: 12rem;
 }
+body main .log.forgot p {
+  margin-top: 15px;
+  line-height: 1.2;
+}
 body main .log {
   color: cornsilk;
   display: flex;
@@ -81,6 +85,9 @@ body main .log .left {
   width: 300px;
   padding-left: 10px;
   padding-top: 10px;
+}
+body main .log .left p {
+  letter-spacing: 1.5;
 }
 body main .log .left h1 {
   font-size: 24px;

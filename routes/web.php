@@ -37,6 +37,12 @@ Route::prefix('members')->name('members.')->group(function () {
         'store',
     ]);
 });
+//忘記密碼
+Route::get('/forgot',[MemberSessionController::class,'showForgotForm'])->name('forgot');
+Route::post('/forgot-password',[MemberSessionController::class,'sendResetLink'])->name('forgot-password');
+//重設密碼
+Route::get('/reset{token}',[MemberSessionController::class,'showResetForm'])->name('reset');
+Route::post('/reset-password',[MemberSessionController::class,'resetPassword'])->name('reset-password');
 //驗證
 Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 
