@@ -30,25 +30,50 @@ class MemberSessionController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+
         //沒有寫 MemberAuth.php 的寫法
 
-        // $member = Member::where([
-        //     'email' => $request->email,
-        //     'password'=>$request->password
-        // ])->first();
+        $member = Member::where([
+            'email' => $request->email,
+            // 'password'=>$request->password
+        ])->first();
 
-        // if(!empty($member)){
-        //     session(['memberId' => $member->id]);
-        // }
+        if(!empty($member)){
+
+            if(Hash::check($request->password,$member->password)){
+
+                if($member->email_verified){
+                    session(['memberId' => $member->id]);
+
+                    return redirect(MemberAuth::HOME);
+                }
+                return back()->with('fail','You need to confirm your account. We have sent you
+                        activation link, please check your email');
+                
+            }
+                return back()->with('fail','Password not matches.');
+            
+            
+        }
+
+            return back()->with('fail','This email is not registered.');
+        
+
+        
 
         // 有寫 MemberAuth.php 的寫法
         
-        MemberAuth::logIn(
-            $request->email,
-            $request->password
-        );
+        // MemberAuth::logIn(
+        //     $request->email,
+        //     $request->password
+        // );
         
-        return redirect(MemberAuth::HOME);
+        // return redirect(MemberAuth::HOME);
+        // return redirect()->route('members.session.create');
     }
     public function delete(Request $request)
     {

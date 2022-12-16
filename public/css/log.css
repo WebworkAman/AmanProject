@@ -117,6 +117,10 @@ body main .log .left .input input {
   padding-left: 15px;
   color: #273252;
 }
+body main .log .left .input .text-danger {
+  margin-top: 10px;
+  color: #820d0d;
+}
 body main .log .left .check {
   text-align: right;
   margin-right: 50px;
@@ -210,6 +214,9 @@ body main .log .left .admin-text a:hover {
   padding-left: 15px;
   color: #273252;
 }
+.admin main .log .right .input .text-danger {
+  margin-top: 30px;
+}
 .admin main .log .right .check {
   text-align: right;
   margin-right: 20px;
@@ -233,7 +240,7 @@ body main .log .left .admin-text a:hover {
   font-size: 1rem;
   border-radius: 2px;
   color: cornsilk;
-  background-color: rgb(17, 36, 91);
+  background-color: rgb(32, 40, 207);
   border-radius: 20px;
   border: none;
   cursor: pointer;
@@ -243,4 +250,8 @@ body main .log .left .admin-text a:hover {
   color: aliceblue;
   letter-spacing: 1px;
   font-size: 1.2rem;
+}
+.admin main .log .right button:hover {
+  background-color: #bbc5e2;
+  color: #273252;
 }

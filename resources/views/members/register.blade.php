@@ -25,32 +25,30 @@
      action="{{ route('members.store') }}"
     >
        @csrf
-    <div class="first-block">
+    <div class="formgroup first-block ">
         <label class="input">
         <input type="text" placeholder="Enter Full Name" name=name value="{{old('name')}}">
+        <br/>
         <p class="text-danger">@error('name') {{$message}} @enderror</p>
         </label>
     </div>
-    <div>
+    <div class="formgroup">
        <label class="input">
           <input type="email" name="email" placeholder="Email" value="{{old('email')}}">
-          
           <p class="text-danger">@error('email') {{$message}} @enderror</p>
        </label>
     </div>
-    <div>
+    <div class="formgroup">
        <label class="input">       
           <input type="password" name="password" placeholder="Password" value="{{old('password')}}">
-          <br/>
+          
           <p class="text-danger">@error('password') {{$message}} @enderror</p>
        </label>
     </div>
-    <div>
+    <div class="formgroup">
        <label class="input">       
            <input type="password" name="password_confirmation" placeholder="Repeat-Password" value="{{old('password_confirmation')}}">
-           <br/>
           <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>
-
        </label>
     </div>
 <div class="check">

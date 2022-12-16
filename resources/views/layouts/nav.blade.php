@@ -6,6 +6,7 @@
         </div>
         <div class="nav-right">
         @if (MemberAuth::isLoggedIn())
+         
             <ul>
                 <li><p>Hi,{{ MemberAuth::member()->name }}</p></li>
                 <li>
@@ -15,17 +16,7 @@
                 <button type="submit">Log out</button>
                 </form>
                 </li>
-            </ul>
-           
-          
-        @else
-               <ul>
-                <li><a href="{{ route('members.session.create') }}">Log in</a></li>
-                <li>|</li>
-                <li><a href="{{ route('members.create') }}">Register</a></li>
-               </ul>
-               
-               
+            </ul>     
          @endif
 
         </div>

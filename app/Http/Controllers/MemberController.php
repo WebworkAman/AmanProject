@@ -19,17 +19,20 @@ class MemberController extends Controller
     public function store(Request $request){
          $request->validate([
                 'name'=>'required',
-                'email'=>'required|email|unique:users',
+                'email'=>'required|email|unique:members',
                 'password'=>'required|min:5|max:18',
                 'password_confirmation'=>'required|min:5|max:18'
 
          ]);
         
         if($request->password === $request ->password_confirmation){
+
+            
+            $password=\Hash::make($request->password);
             $member = Member::create([
                 'name'=> $request->name,
                 'email' => $request->email,
-                'password' => $request->password,
+                'password' => $password,
             ]);
 
             $last_id = $member->id;
@@ -111,7 +114,7 @@ class MemberController extends Controller
                 $verifyUser->user->email_verified_at=Carbon::now('ROC');
                 $verifyUser->user->save();
                 return redirect()->route('members.session.create')
-                       ->with('info','已成功登入信箱，請登入會員！')
+                       ->with('info','已完成驗證，請登入會員！')
                        ->with('verifiedEmail',$user->email);
 
             }

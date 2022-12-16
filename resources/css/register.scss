@@ -20,7 +20,7 @@ body {
             justify-content: space-evenly;
             align-items: center;
             width: 895px;
-            height: 500px;
+            height: 600px;
             border: 2px solid cornsilk;
             border-radius: 10px;
             margin: 50px auto;
@@ -63,47 +63,31 @@ body {
                     margin-top: 15px;
                 }
 
-                .input {
-                    .nameInput {
-                        display: flex;
+                .formgroup{
+                    margin-bottom: 20px;
+                    .text-danger{     
+                        margin-top: 10px;
+                        color: #820d0d;
 
-                        input {
-                            border: 0;
-                            
-                            margin-right: 10px;
-
-                            
-                        }
-
-
-                    }
-                    .text-danger{
-                        margin-top: 5px;
-                        margin-bottom: 5px;
-
-                        color: seashell;
-
-                        background-color: rgb(85, 141, 122);
-                        
-                        
                         
                     }
 
-                    margin-top: 30px;
-                    margin-bottom: 15px;
+                    
 
                     input {
                         border:0;
                         border-radius: 10px;
-                            width: 13vw;
-                            height: 30px;
+                        width: 13vw;
+                        height: 30px;
 
-                        margin-bottom: 15px;
+                        // margin-bottom: 15px;
                         
                         padding-left: 15px;
                         color: #273252;
                 
                     }
+
+                    
 
                     
                 }

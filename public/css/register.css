@@ -69,7 +69,7 @@ body main .log {
   justify-content: space-evenly;
   align-items: center;
   width: 895px;
-  height: 500px;
+  height: 600px;
   border: 2px solid cornsilk;
   border-radius: 10px;
   margin: 50px auto;
@@ -101,29 +101,18 @@ body main .log .left .txt a:hover {
 body main .log .left .first-block {
   margin-top: 15px;
 }
-body main .log .left .input {
-  margin-top: 30px;
-  margin-bottom: 15px;
+body main .log .left .formgroup {
+  margin-bottom: 20px;
 }
-body main .log .left .input .nameInput {
-  display: flex;
+body main .log .left .formgroup .text-danger {
+  margin-top: 10px;
+  color: #820d0d;
 }
-body main .log .left .input .nameInput input {
-  border: 0;
-  margin-right: 10px;
-}
-body main .log .left .input .text-danger {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  color: seashell;
-  background-color: rgb(85, 141, 122);
-}
-body main .log .left .input input {
+body main .log .left .formgroup input {
   border: 0;
   border-radius: 10px;
   width: 13vw;
   height: 30px;
-  margin-bottom: 15px;
   padding-left: 15px;
   color: #273252;
 }

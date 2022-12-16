@@ -17,7 +17,7 @@ class MemberAuth{
         return self::$member;
     }
 
-    public static function isLoggedin(){
+    public static function isLoggedIn(){
         return !empty(self::member());
  
         // return !empty(self::$member);
@@ -63,21 +63,32 @@ class MemberAuth{
         //     session(['memberId' => self::$member->id]);
         // } 
 
-        // return redirect('/');
+        // return redirect()->route('members.session.create');
 
         $_member = Member::where([ 
-            'email' => $email,
+            'email'=> $email
         ])->first();
 
         if(!empty($_member)&&
            Hash::check($password,$_member->password)
         ){
-            self::$member = $_member;  
-            session(['memberId' => self::$member->id]);
-            if( Hash::needsRehash($_member->password)){
-                self::$member->password = Hash::make($password);
-                self::$member->save();
+            if($_member->email_verified)
+            {
+                self::$member = $_member; 
+                session(['memberId' => self::$member->id]);
+                // return redirect(MemberAuth::HOME);
+
+            }else{
+                return back()->with('fail','You need to confirm your account. We have sent you
+                activation link, please check your email');
             }
+             
+            // if( Hash::needsRehash($_member->password)){
+            //     self::$member->password = Hash::make($password);
+            //     self::$member->save();
+            // }
+        }else{
+            return back()->with('fail','This email is not registered.');
         } 
        
     }

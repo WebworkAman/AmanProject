@@ -30,11 +30,13 @@
                 <div>
                       <label class="input">
                           <p><input type="email" name="email" placeholder="Email"></p>
+                          <span class="text-danger">@error('email') {{$message}} @enderror</span>
                       </label>
                 </div>
                 <div>
                     <label class="input">
                         <p><input type="password" name="password" placeholder="Password"></p>
+                        <span class="text-danger">@error('email') {{$message}} @enderror</span>
                     </label>
                 </div> 
                 <div class="check">
@@ -46,6 +48,9 @@
                        Submit
                 </button>
                 </div>
+                @if(Session::has('fail'))
+                 <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                @endif
                </form>
             </div>
             
