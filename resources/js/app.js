@@ -17,14 +17,40 @@ require('./components/Example');
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Home from './home'
+import Page1 from './page1'
 
-const HelloWord=() =>{
-    return(
-        <p>Hello Wordld</p>
-    )
+// 寫法一
+
+// const renderHome = () => {
+//     ReactDOM.render(
+//         <Home />,
+//         document.getElementById('main') 
+//     )
+// }
+// window.renderHome = renderHome
+
+// const renderPage1 = () => {
+//     ReactDOM.render(
+//         <Page1 />,
+//         document.getElementById('main') 
+//     )
+// }
+// window.renderPage1 = renderPage1
+
+//優化寫法
+
+window.render = {
+    home : (containerTag,title) =>{
+        ReactDOM.render(
+            <Home title={title}/>,
+            containerTag
+        )
+    },
+      page1 : () =>{
+        ReactDOM.render(
+            <Page1 />,
+            document.getElementById('main')
+        )
+    },
 }
-
-ReactDOM.render(
-    <HelloWord />,
-    document.getElementById('main')
-)

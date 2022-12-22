@@ -25,7 +25,7 @@
                     <p>Member user ? </p><a href="{{route('members.session.create')}}">Click here to login</a>
                 </div>
                                
-                <form method="post" action="{{route('members.session.store')}}">
+                <form method="post" action="{{route('login')}}">
                    @csrf
                 <div>
                       <label class="input">

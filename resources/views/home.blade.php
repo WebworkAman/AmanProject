@@ -2,6 +2,7 @@
 @section('content')
 
 <main>
+    <div id="main" data-title="Title Home"></div>
         <div class="img-block">
             <ul>
                 <li><a href="/inspection"><img src="../imgs/1596784113.png"></img></a>
@@ -142,3 +143,17 @@
         </div>
     </main>    
 @endsection     
+
+@section('inline_js')
+   @parent
+   <script>
+        var containerTag = document.getElementById('main')
+        var title = containerTag.getAttribute('data-title')
+        // renderPage1()
+        render.home(
+            document.getElementById('main'),
+            title
+        // ,"Title Home" 參數引入寫法
+        )
+   </script>
+@endsection

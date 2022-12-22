@@ -13,7 +13,12 @@
              <img src="../../imgs/1596784261.jpeg">
         </div>
         <div class="right">
-              <a href="">Log out</a>
+
+              <form method="POST" action="{{route('session.delete')}}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Log out</button>
+              </form>
         </div>
      </nav>
 

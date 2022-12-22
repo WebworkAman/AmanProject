@@ -18,13 +18,14 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController; 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Controls\PageController as ControlsPageController;
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MemberSessionController;
 
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\FAQController;
+
 
 Route::get('/', [PageController::class,'home']);
 
@@ -49,12 +50,13 @@ Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 //管理者登入 Admin login -> group
 
 Route::group(['prefix'=>'admin'],function(){
-    Route::get('/',function(){  
-        return view('admin/login');
-   });
+   Route::get('/',[AdminController::class,'create'])->name('create');
+   Route::post('/',[AdminController::class,'login'])->name('login');
+
    Route::get('index',function(){
        return view('admin/index');
    });
+   Route::delete('/session',[AdminController::class,'delete'])->name('session.delete');
    Route::get('question_edit',function(){
        return view('admin/question_edit');
    });
@@ -168,9 +170,9 @@ Route::get('/FAQ',FAQController::class)->name('view');
 //controls/categories
 //controls/users
 //controls/carts
-Route::prefix('controls')->name('controls.')->middleware(['member.auth'])->group(function(){
-    Route::get('/',[ControlsPageController::class,'home'])->name('home');
-});
+// Route::prefix('controls')->name('controls.')->middleware(['member.auth'])->group(function(){
+//     Route::get('/',[ControlsPageController::class,'home'])->name('home');
+// });
 
 //層級下一種寫法
 // Route::prefix('controls')->name('controls.')->group(function () {

@@ -6,3 +6,8 @@
 
 @endsection
 
+@include('layouts.js')
+
+@section('inline_js')
+
+@show
