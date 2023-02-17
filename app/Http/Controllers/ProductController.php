@@ -6,21 +6,27 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    function index(){
+
+          $products = $this->getProducts();
+
+          return view('/',[
+            "products" => $products
+          ]
+
+          );
+            
+    }
     function show($id, Request $request){
+
+        
 
         // $id = $request -> input('id');
         // var_dump($id);
           
         
-        $products = [
-            [
-                "imageUrl" => asset('imgs/1596784113.png')
-            ],
-            [
-                "imageUrl" => asset('imgs/1596784246.png')               
-            ]
-
-        ];
+        $products = $this -> getProducts();
+        
 
         $index = $id - 1; 
         
@@ -40,4 +46,18 @@ class ProductController extends Controller
 
         
     } 
+
+    private function getProducts(){
+        return[
+            
+                [
+                    "imageUrl" => asset('imgs/1596784113.png')
+                ],
+                [
+                    "imageUrl" => asset('imgs/1596784246.png')               
+                ]
+    
+            
+                ];
+    }
 }

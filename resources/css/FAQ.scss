@@ -1,0 +1,57 @@
+@import './reset';
+@import './nav';
+@import './footer';
+
+
+main{
+    .title{
+        margin-top: 50px;
+        text-align: center;
+        h1{
+            font-size: 2rem;
+            
+    
+        }
+        h2{
+            font-size: 1.5rem;
+        }
+    }
+    .center{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        .img_block{
+            
+            img{
+                width: 15vw;
+            }
+        }
+        .question_block{
+            .list-top{
+                margin-top: 50px;
+                margin-right: 100px;
+                ul{
+                    display: flex;
+                    // border: 2px solid sandybrown;
+
+                    li{
+                        font-size: 1.2rem;
+                        margin-left: 20px;
+                        ol{
+                            margin-top: 10px;
+                            li{
+                                font-size: .8rem;
+                                margin-top: 30px;
+
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    
+
+}

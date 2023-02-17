@@ -7,8 +7,8 @@ use App\Models\Message;
 
 class FAQController extends Controller
 {
-    public function __invoke(){
-        return view('FAQ')
-        -> with('messages',Message::all());
+    public function create(){
+        return view('product.FAQ.cutting');
+
     }
 }

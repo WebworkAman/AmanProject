@@ -6,7 +6,7 @@
 
         <div class="chooseItem">
             <ul>
-                <li><a href="OC40N02.html"><img
+                <li><a href="/"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-10A5-600-3.png"></a>
                     <p>自動轉印機 OP-10A5</p>
                 </li>
