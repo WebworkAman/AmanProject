@@ -22,7 +22,7 @@ class MemberSessionController extends Controller
         // ]);
 
         if(MemberAuth::isLoggedIn()){
-            return redirect(MemberAuth::HOME);
+            return redirect(MemberAuth::HOME_URL);
         }
 
         return view('members.logIn');
@@ -49,7 +49,7 @@ class MemberSessionController extends Controller
                 if($member->email_verified){
                     session(['memberId' => $member->id]);
 
-                    return redirect(MemberAuth::HOME);
+                    return redirect(MemberAuth::HOME_URL);
                 }
                 return back()->with('fail','You need to confirm your account. We have sent you
                         activation link, please check your email');

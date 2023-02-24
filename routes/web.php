@@ -72,11 +72,15 @@ Route::group(['prefix'=>'admin'],function(){
 //     '/{id}', 
 //     [PageController::class,'home']
 // )->where('id','[0-9]+');
-Route::get('/',[PageController::class,'home']);
-
 // Route::get('/OC40N02', function () {
 //     return view('OC40N02');
 // });
+
+//改寫 middleware group 寫法
+
+Route::get('/',[PageController::class,'home'])->middleware('MemberAuthRedirect');
+
+Route::middleware('MemberAuthRedirect')->group(function(){
 
 Route::post('/OC40N02',MessageController::class)->name('post');
 Route::get('/OC40N02',ViewController::class)->name('view');
@@ -104,6 +108,9 @@ Route::get('/OSP-2000II',[ViewController::class,'OSP2000II']);
 
 Route::post('/OSP-2008',MessageController::class);
 Route::get('/OSP-2008',[ViewController::class,'OSP2008']);
+
+
+
 
 //<*--------  拉布 -----------*>
 
@@ -214,7 +221,7 @@ Route::get('/LU933',[ViewController::class,'Lu933']);
 
 Route::post('/OB700A',MessageController::class);
 Route::get('/OB700A',[ViewController::class,'OB700A']);
-
+});
 
 // Forgot password
 

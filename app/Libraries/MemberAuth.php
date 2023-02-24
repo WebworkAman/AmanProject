@@ -7,11 +7,14 @@ use \Illuminate\Database\QueryException;
 
 class MemberAuth{
     
-    public const HOME = '/';
+    public const HOME_URL= '/';
     private static $member = null;
 
     public static function member(){
-        if(  empty(self::$member) && session()->exists('memberId')){
+
+        // `self::$member`可能為 null，因此 `empty` 應該改成 `is_null`，這樣會更加清晰。
+
+        if(is_null(self::$member) && session()->exists('memberId')){
             self::$member = Member::find(session('memberId'));
         }
         return self::$member;
