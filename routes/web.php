@@ -109,9 +109,6 @@ Route::get('/OSP-2000II',[ViewController::class,'OSP2000II']);
 Route::post('/OSP-2008',MessageController::class);
 Route::get('/OSP-2008',[ViewController::class,'OSP2008']);
 
-
-
-
 //<*--------  拉布 -----------*>
 
 Route::post('/M190G',MessageController::class);
@@ -297,7 +294,15 @@ Route::get('/register', function () {
 
 //常見問題
 // Route::post('/FAQ',MessageController::class)->name('post');
-Route::get('/FAQ/cutting',[FAQController::class,'create'])->name('faqview');
+Route::get('/FAQ/cutting',[FAQController::class,'create1'])->name('faqview');
+
+Route::get('/FAQ/inspection',[FAQController::class,'create'])->name('faqview');
+
+Route::get('/FAQ/relaxing',[FAQController::class,'create0'])->name('faqview');
+
+Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
+
+Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
 // Route::get('/FAQ', function () {
 //     return view('FAQ');
 // });

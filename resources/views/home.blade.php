@@ -12,7 +12,7 @@
                  
                  <ol>
                  <li><p>{{$page['sort']}}</p></li>
-                 <li><a href="{{$page['FAQ-link']}}"><img src="../imgs/—Pngtree—round question mark symbol_4438523.png"></a></li>
+                 <li><a href="{{$page['FAQ-link']}}" onclick="{{$page['message']}}"><img src="../imgs/—Pngtree—round question mark symbol_4438523.png"></a></li>
                  </ol>
                  </li>
                  @endforeach           
@@ -24,6 +24,7 @@
 @section('inline_js')
    @parent
    <script>
+
         var containerTag = document.getElementById('main')
         var title = containerTag.getAttribute('data-title')
         // renderPage1()
@@ -32,5 +33,7 @@
             title
         // ,"Title Home" 參數引入寫法
         )
+
+
    </script>
 @endsection
