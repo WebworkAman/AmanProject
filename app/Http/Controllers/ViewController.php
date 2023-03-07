@@ -185,8 +185,87 @@ class ViewController extends Controller
         return view('OP5851') 
         -> with('messages',Message::all());
     }
+    // <*--------  包裝 -----------*>
 
-    
+    function OFC1(){
+        return view('product/category/packaging/OFC1') 
+        -> with('messages',Message::all());
+    }
+
+    function OFC450(){
+        return view('product/category/packaging/OFC450') 
+        -> with('messages',Message::all());
+    }
+
+    function OSZ50(){
+        return view('product/category/packaging/OSZ50') 
+        -> with('messages',Message::all());
+    }
+
+    function OSZK02(){
+        return view('product/category/packaging/OSZK02') 
+        -> with('messages',Message::all());
+    }
+
+    function OSZ50X(){
+        return view('product/category/packaging/OSZ50X') 
+        -> with('messages',Message::all());
+    }
+
+    function OSZ50N(){
+        return view('product/category/packaging/OSZ50N') 
+        -> with('messages',Message::all());
+    }
+
+    function OSZ50XN(){
+        return view('product/category/packaging/OSZ50XN') 
+        -> with('messages',Message::all());
+    }
+
+    // <*--------  其他機械 -----------*>
+
+    function ON5(){
+        return view('product/category/others/ON5') 
+        -> with('messages',Message::all());
+    }
+    function ONCM(){
+        return view('product/category/others/ONCM') 
+        -> with('messages',Message::all());
+    }
+
+    function WLS301(){
+        return view('product/category/others/WLS301') 
+        -> with('messages',Message::all());
+    }
+    function OM78(){
+        return view('product/category/others/OM78') 
+        -> with('messages',Message::all());
+    }
+    function OB201L(){
+        return view('product/category/others/OB201L') 
+        -> with('messages',Message::all());
+    }
+    function OP408S(){
+        return view('product/category/others/OP408S') 
+        -> with('messages',Message::all());
+    }
+    function OP747(){
+        return view('product/category/others/OP747') 
+        -> with('messages',Message::all());
+    }
+    function OW40(){
+        return view('product/category/others/OW40') 
+        -> with('messages',Message::all());
+    }
+    function DSFS(){
+        return view('product/category/others/DSFS') 
+        -> with('messages',Message::all());
+    }
+    function OP102A(){
+        return view('product/category/others/OP102A') 
+        -> with('messages',Message::all());
+    }
+   
 
     
 }

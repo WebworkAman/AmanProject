@@ -142,19 +142,19 @@ class PageController extends Controller
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/needle",
+                    "link" => "/others",
                     "imageUrl" => asset('imgs/1596784420.png'),
                     "sort" => "其 它 機 械",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
-                [
-                    "link" => "/needle",
-                    "imageUrl" => asset('imgs/主題-5.png'),
-                    "sort" => "主 題 系 列",
-                    "FAQ-link"=>"#",
-                    "message"=>"alert('此產品暫無常見問題')"
-                ],
+                // [
+                //     "link" => "/needle",
+                //     "imageUrl" => asset('imgs/主題-5.png'),
+                //     "sort" => "主 題 系 列",
+                //     "FAQ-link"=>"#",
+                //     "message"=>"alert('此產品暫無常見問題')"
+                // ],
                 ];
     }
 }

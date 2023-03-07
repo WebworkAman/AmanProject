@@ -9,9 +9,9 @@
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
         <div class="left-content">
-            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1646990118.png">
-            <h2>人工智慧驗布機 OSHIMA EagleAi/Plus/Pro</h2>
-            <h3>縮短AI訓練 與眾不同</h3>
+            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OFC-450-600.png">
+            <h2>智能服裝摺疊包裝機 OFC-450</h2>
+            <h3>生產力的助推器 物超所值</h3>
         </div>
         <div class="right-content">
               
@@ -22,7 +22,6 @@
               <p>標題：{{ $message->title }}</p>
               <p>內容：{{ $message->content }}</p>
               <p>日期：{{ $message->created_at }}</p>
-              <p>姓名：{{ $message->name}}</p>
              </div>
              @endforeach
              </div>

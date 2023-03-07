@@ -10,4 +10,9 @@ class Member extends Model
     protected $fillable = ['name','email','password']; 
 
     use HasFactory;
+
+//     public static function getUser()
+//    {
+//     return Auth::user();
+//     }
 }

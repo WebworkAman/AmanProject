@@ -111,6 +111,10 @@ Route::get('/OSP-2008',[ViewController::class,'OSP2008']);
 
 //<*--------  拉布 -----------*>
 
+Route::get('/inspection', function () { 
+    return view('product/category/inspection/inspection');
+});
+
 Route::post('/M190G',MessageController::class);
 Route::get('/M190G',[ViewController::class,'M190G']);
 
@@ -218,7 +222,71 @@ Route::get('/LU933',[ViewController::class,'Lu933']);
 
 Route::post('/OB700A',MessageController::class);
 Route::get('/OB700A',[ViewController::class,'OB700A']);
+
+// <*--------  包裝 -----------*>
+Route::get('/packaging', function () {
+    return view('product/category/packaging');
 });
+
+Route::post('/OFC-1',MessageController::class);
+Route::get('/OFC-1',[ViewController::class,'OFC1']);
+
+Route::post('/OFC-450',MessageController::class);
+Route::get('/OFC-450',[ViewController::class,'OFC450']);
+
+Route::post('/OSZ-50',MessageController::class);
+Route::get('/OSZ-50',[ViewController::class,'OSZ50']);
+
+Route::post('/OSZ-K02',MessageController::class);
+Route::get('/OSZ-K02',[ViewController::class,'OSZK02']);
+
+Route::post('/OSZ-50X',MessageController::class);
+Route::get('/OSZ-50X',[ViewController::class,'OSZ50X']);
+
+Route::post('/OSZ-50N',MessageController::class);
+Route::get('/OSZ-50N',[ViewController::class,'OSZ50N']);
+
+Route::post('/OSZ-50XN',MessageController::class);
+Route::get('/OSZ-50XN',[ViewController::class,'OSZ50XN']);
+
+
+// <*--------  其他 -----------*>
+Route::get('/others', function () {
+    return view('product/category/others');
+});
+
+Route::post('/ON-5',MessageController::class);
+Route::get('/ON-5',[ViewController::class,'ON5']);
+
+Route::post('/ON-CM',MessageController::class);
+Route::get('/ON-CM',[ViewController::class,'ONCM']);
+
+Route::post('/WLS-301',MessageController::class);
+Route::get('/WLS-301',[ViewController::class,'WLS301']);
+
+Route::post('/OM-78',MessageController::class);
+Route::get('/OM-78',[ViewController::class,'OM78']);
+
+Route::post('/OB-201L',MessageController::class);
+Route::get('/OB-201L',[ViewController::class,'OB201L']);
+
+Route::post('/OP-408S',MessageController::class);
+Route::get('/OP-408S',[ViewController::class,'OP408S']);
+
+Route::post('/OP-747',MessageController::class);
+Route::get('/OP-747',[ViewController::class,'OP747']);
+
+Route::post('/OW-40',MessageController::class);
+Route::get('/OW-40',[ViewController::class,'OW40']);
+
+Route::post('/DS-FS',MessageController::class);
+Route::get('/DS-FS',[ViewController::class,'DSFS']);
+
+Route::post('/OP-102A',MessageController::class);
+Route::get('/OP-102A',[ViewController::class,'OP102A']);
+});
+
+
 
 // Forgot password
 
@@ -236,9 +304,11 @@ Route::get(
 
 // Route::resource('orders',OrderController::class); 
 
-Route::get('/inspection', function () { 
-    return view('product/category/inspection/inspection');
-});
+
+
+
+
+
 
 Route::get('/cutting', function () {
     return view('cutting');
@@ -265,9 +335,7 @@ Route::get('/needle', function () {
     return view('needle');
 });
 
-Route::get('/packaging', function () {
-    return view('packaging');
-});
+
 
 Route::get('/relaxing', function () {
     return view('relaxing');
