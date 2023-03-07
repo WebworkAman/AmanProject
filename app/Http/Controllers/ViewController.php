@@ -185,7 +185,70 @@ class ViewController extends Controller
         return view('OP5851') 
         -> with('messages',Message::all());
     }
-    // <*--------  摺衣 -----------*>
+    // <*--------  黏合 -----------*>
+
+    function OP450GS(){
+        return view('product/category/fusingPress/OP450GS') 
+        -> with('messages',Message::all());
+    }
+    
+    function OP1200NL(){
+        return view('product/category/fusingPress/OP1200NL') 
+        -> with('messages',Message::all());
+    }
+
+    function OP1400(){
+        return view('product/category/fusingPress/OP1400') 
+        -> with('messages',Message::all());
+    }
+
+    function OP1000NE(){
+        return view('product/category/fusingPress/OP1000NE') 
+        -> with('messages',Message::all());
+    }
+
+    function OP600N(){
+        return view('product/category/fusingPress/OP600N') 
+        -> with('messages',Message::all());
+    }
+
+    function OP60LN(){
+        return view('product/category/fusingPress/OP60LN') 
+        -> with('messages',Message::all());
+    }
+
+    function OP600SP(){
+        return view('product/category/fusingPress/OP600SP') 
+        -> with('messages',Message::all());
+    }
+
+    function OP100LE(){
+        return view('product/category/fusingPress/OP100LE') 
+        -> with('messages',Message::all());
+    }
+
+    function OP600SPII(){
+        return view('product/category/fusingPress/OP600SPII') 
+        -> with('messages',Message::all());
+    }
+
+    function OP900A(){
+        return view('product/category/fusingPress/OP900A') 
+        -> with('messages',Message::all());
+    }
+
+    function OP600FA(){
+        return view('product/category/fusingPress/OP600FA') 
+        -> with('messages',Message::all());
+    }
+
+    function Feeder(){
+        return view('product/category/fusingPress/Feeder') 
+        -> with('messages',Message::all());
+    }
+
+    // <*--------  無縫黏合 -----------*>
+
     function MB9018B(){
         return view('product/category/seamless/MB9018B') 
         -> with('messages',Message::all());

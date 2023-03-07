@@ -223,6 +223,49 @@ Route::get('/LU933',[ViewController::class,'Lu933']);
 Route::post('/OB700A',MessageController::class);
 Route::get('/OB700A',[ViewController::class,'OB700A']);
 
+// <*--------  黏合 -----------*>
+
+Route::get('/fusingPress', function () { 
+    return view('product/category/fusingPress');
+});
+
+Route::post('/OP-450GS',MessageController::class);
+Route::get('/OP-450GS',[ViewController::class,'OP450GS']);
+
+Route::post('/OP-1200NL',MessageController::class);
+Route::get('/OP-1200NL',[ViewController::class,'OP1200NL']);
+
+Route::post('/OP-1400',MessageController::class);
+Route::get('/OP-1400',[ViewController::class,'OP1400']);
+
+Route::post('/OP-1000NE',MessageController::class);
+Route::get('/OP-1000NE',[ViewController::class,'OP1000NE']);
+
+Route::post('/OP-600N',MessageController::class);
+Route::get('/OP-600N',[ViewController::class,'OP600N']);
+
+Route::post('/OP-60LN',MessageController::class);
+Route::get('/OP-60LN',[ViewController::class,'OP60LN']);
+
+Route::post('/OP-600SP',MessageController::class);
+Route::get('/OP-600SP',[ViewController::class,'OP600SP']);
+
+Route::post('/OP-100LE',MessageController::class);
+Route::get('/OP-100LE',[ViewController::class,'OP100LE']);
+
+Route::post('/OP-600SPII',MessageController::class);
+Route::get('/OP-600SPII',[ViewController::class,'OP600SPII']);
+
+Route::post('/OP-900A',MessageController::class);
+Route::get('/OP-900A',[ViewController::class,'OP900A']);
+
+Route::post('/OP-600FA',MessageController::class);
+Route::get('/OP-600FA',[ViewController::class,'OP600FA']);
+
+Route::post('/Feeder',MessageController::class);
+Route::get('/Feeder',[ViewController::class,'Feeder']);
+
+
 // <*--------  無縫黏合 -----------*>
 Route::get('/seamless', function () {
     return view('product/category/seamless');
@@ -356,10 +399,6 @@ Route::get('/cutting', function () {
     return view('cutting');
 });
 
-
-Route::get('/fusingPress', function () {
-    return view('fusingPress');
-});
 
 Route::get('/heatTransfer', function () {
     return view('heatTransfer');
