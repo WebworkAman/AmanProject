@@ -223,7 +223,49 @@ Route::get('/LU933',[ViewController::class,'Lu933']);
 Route::post('/OB700A',MessageController::class);
 Route::get('/OB700A',[ViewController::class,'OB700A']);
 
+// <*--------  無縫黏合 -----------*>
+Route::get('/seamless', function () {
+    return view('product/category/seamless');
+});
+
+Route::post('/MB9018B',MessageController::class);
+Route::get('/MB9018B',[ViewController::class,'MB9018B']);
+
+Route::post('/OP-114',MessageController::class);
+Route::get('/OP-114',[ViewController::class,'OP114']);
+
+Route::post('/OP-114S',MessageController::class);
+Route::get('/OP-114S',[ViewController::class,'OP114S']);
+
+Route::post('/OP-701HAS',MessageController::class);
+Route::get('/OP-701HAS',[ViewController::class,'OP701HAS']);
+
+Route::post('/OP-114-03',MessageController::class);
+Route::get('/OP-114-03',[ViewController::class,'OP11403']);
+
+Route::post('/OP-114-06',MessageController::class);
+Route::get('/OP-114-06',[ViewController::class,'OP11406']);
+
+Route::post('/OP-114-16',MessageController::class);
+Route::get('OP-114-16',[ViewController::class,'OP11416']);
+
+Route::post('/OP-115',MessageController::class);
+Route::get('/OP-115',[ViewController::class,'OP115']);
+
+Route::post('/OP-114-02',MessageController::class);
+Route::get('/OP-114-02',[ViewController::class,'OP11402']);
+
+Route::post('/OP-115CSN',MessageController::class);
+Route::get('/OP-115CSN',[ViewController::class,'OP115CSN']);
+
+Route::post('/OP-115-12T',MessageController::class);
+Route::get('/OP-115-12T',[ViewController::class,'OP11512T']);
+
+Route::post('/OP-806A',MessageController::class);
+Route::get('/OP-806A',[ViewController::class,'OP806A']);
+
 // <*--------  包裝 -----------*>
+
 Route::get('/packaging', function () {
     return view('product/category/packaging');
 });
@@ -313,9 +355,7 @@ Route::get(
 Route::get('/cutting', function () {
     return view('cutting');
 });
-Route::get('/folding', function () {
-    return view('folding');
-});
+
 
 Route::get('/fusingPress', function () {
     return view('fusingPress');
@@ -341,9 +381,7 @@ Route::get('/relaxing', function () {
     return view('relaxing');
 });
 
-Route::get('/seamless', function () {
-    return view('seamless');
-});
+
 
 Route::get('/spreading', function () {
     return view('spreading');

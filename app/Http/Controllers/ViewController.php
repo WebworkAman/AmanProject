@@ -186,6 +186,66 @@ class ViewController extends Controller
         -> with('messages',Message::all());
     }
     // <*--------  摺衣 -----------*>
+    function MB9018B(){
+        return view('product/category/seamless/MB9018B') 
+        -> with('messages',Message::all());
+    }
+
+    function OP114(){
+        return view('product/category/seamless/OP114') 
+        -> with('messages',Message::all());
+    }
+
+    function OP114S(){
+        return view('product/category/seamless/OP114S') 
+        -> with('messages',Message::all());
+    }
+
+    function OP701HAS(){
+        return view('product/category/seamless/OP701HAS') 
+        -> with('messages',Message::all());
+    }
+
+    function OP11403(){
+        return view('product/category/seamless/OP11403') 
+        -> with('messages',Message::all());
+    }
+
+    function OP11406(){
+        return view('product/category/seamless/OP11406') 
+        -> with('messages',Message::all());
+    }
+
+    function OP11416(){
+        return view('product/category/seamless/OP11416') 
+        -> with('messages',Message::all());
+    }
+
+    function OP115(){
+        return view('product/category/seamless/OP115') 
+        -> with('messages',Message::all());
+    }
+
+    function OP11402(){
+        return view('product/category/seamless/OP11402') 
+        -> with('messages',Message::all());
+    }
+
+    function OP115CSN(){
+        return view('product/category/seamless/OP115CSN') 
+        -> with('messages',Message::all());
+    }
+
+    function OP11512T(){
+        return view('product/category/seamless/OP11512T') 
+        -> with('messages',Message::all());
+    }
+
+    function OP806A(){
+        return view('product/category/seamless/OP806A') 
+        -> with('messages',Message::all());
+    }
+
     
 
     // <*--------  包裝 -----------*>
