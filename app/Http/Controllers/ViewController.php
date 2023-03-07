@@ -185,6 +185,63 @@ class ViewController extends Controller
         return view('OP5851') 
         -> with('messages',Message::all());
     }
+    // <*--------  轉印 -----------*>
+
+    function OP10A5(){
+        return view('product/category/heatTransfer/OP10A5') 
+        -> with('messages',Message::all());
+    }
+    
+    function OP380A(){
+        return view('product/category/heatTransfer/OP380A') 
+        -> with('messages',Message::all());
+    }
+
+    function OP15A(){
+        return view('product/category/heatTransfer/OP15A') 
+        -> with('messages',Message::all());
+    }
+
+    function OP305S(){
+        return view('product/category/heatTransfer/OP305S') 
+        -> with('messages',Message::all());
+    }
+
+    function OP15A4(){
+        return view('product/category/heatTransfer/OP15A4') 
+        -> with('messages',Message::all());
+    }
+
+    function OS5R(){
+        return view('product/category/heatTransfer/OS5R') 
+        -> with('messages',Message::all());
+    }
+
+    function OP54A(){
+        return view('product/category/heatTransfer/OP54A') 
+        -> with('messages',Message::all());
+    }
+
+    function OP251(){
+        return view('product/category/heatTransfer/OP251') 
+        -> with('messages',Message::all());
+    }
+
+    function OP105A(){
+        return view('product/category/heatTransfer/OP105A') 
+        -> with('messages',Message::all());
+    }
+
+    function OP38AII(){
+        return view('product/category/heatTransfer/OP38AII') 
+        -> with('messages',Message::all());
+    }
+
+    function OP5288(){
+        return view('product/category/heatTransfer/OP5288') 
+        -> with('messages',Message::all());
+    }
+
     // <*--------  黏合 -----------*>
 
     function OP450GS(){

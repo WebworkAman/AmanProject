@@ -198,30 +198,43 @@ Route::post('/OP5851',MessageController::class);
 Route::get('/OP5851',[ViewController::class,'OP5851']);
 
 // <*--------  轉印 -----------*>
+Route::get('/heatTransfer', function () {
+    return view('product/category/heatTransfer');
+});
 
-Route::post('/OneCut',MessageController::class);
-Route::get('/OneCut',[ViewController::class,'OneCut']);
+Route::post('/OP-10A5',MessageController::class);
+Route::get('/OP-10A5',[ViewController::class,'OP10A5']);
 
-Route::post('/M6S',MessageController::class);
-Route::get('/M6S',[ViewController::class,'M6S']);
+Route::post('/OP-380A',MessageController::class);
+Route::get('/OP-380A',[ViewController::class,'OP380A']);
 
-Route::post('/TAC',MessageController::class);
-Route::get('/TAC',[ViewController::class,'TAC']);
+Route::post('/OP-15A',MessageController::class);
+Route::get('/OP-15A',[ViewController::class,'OP15A']);
 
-Route::post('/OC510',MessageController::class);
-Route::get('/OC510',[ViewController::class,'OC510']);
+Route::post('/OP-305S',MessageController::class);
+Route::get('/OP-305S',[ViewController::class,'OP305S']);
 
-Route::post('/OB90',MessageController::class);
-Route::get('/OB90',[ViewController::class,'OB90']);
+Route::post('/OP-15A4',MessageController::class);
+Route::get('/OP-15A4',[ViewController::class,'OP15A4']);
 
-Route::post('/A100U',MessageController::class);
-Route::get('/A100U',[ViewController::class,'A100U']);
+Route::post('/OS-5R',MessageController::class);
+Route::get('/OS-5R',[ViewController::class,'OS5R']);
 
-Route::post('/LU933',MessageController::class);
-Route::get('/LU933',[ViewController::class,'Lu933']);
+Route::post('/OP-54A',MessageController::class);
+Route::get('/OP-54A',[ViewController::class,'OP54A']);
 
-Route::post('/OB700A',MessageController::class);
-Route::get('/OB700A',[ViewController::class,'OB700A']);
+Route::post('/OP-251',MessageController::class);
+Route::get('/OP-251',[ViewController::class,'OP251']);
+
+Route::post('/OP-105A',MessageController::class);
+Route::get('/OP-105A',[ViewController::class,'OP105A']);
+
+Route::post('/OP-38AII',MessageController::class);
+Route::get('/OP-38AII',[ViewController::class,'OP38AII']);
+
+Route::post('/OP-5288',MessageController::class);
+Route::get('/OP-5288',[ViewController::class,'OP5288']);
+
 
 // <*--------  黏合 -----------*>
 
@@ -400,9 +413,7 @@ Route::get('/cutting', function () {
 });
 
 
-Route::get('/heatTransfer', function () {
-    return view('heatTransfer');
-});
+
 
 
 
