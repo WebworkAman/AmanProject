@@ -125,64 +125,64 @@ class ViewController extends Controller
 
     // <*--------  整燙定型 -----------*>
 
-    function OP800(){
-        return view('OP800') 
+    function OP800SDS(){
+        return view('product/category/ironing/OP800SDS') 
         -> with('messages',Message::all());
     }
 
     function OP87(){
-        return view('OP87') 
+        return view('product/category/ironing/OP87') 
         -> with('messages',Message::all());
     }
 
     function OP302(){
-        return view('OP302') 
+        return view('product/category/ironing/OP302') 
         -> with('messages',Message::all());
     }
 
     function OP301(){
-        return view('OP301') 
+        return view('product/category/ironing/OP301') 
         -> with('messages',Message::all());
     }
 
     function OP122A(){
-        return view('OP122A') 
+        return view('product/category/ironing/OP122A') 
         -> with('messages',Message::all());
     }
 
     function OP500(){
-        return view('OP500') 
+        return view('product/category/ironing/OP500') 
         -> with('messages',Message::all());
     }
 
     function OP606(){
-        return view('OP606') 
+        return view('product/category/ironing/OP606') 
         -> with('messages',Message::all());
     }
 
     function OP120T(){
-        return view('OP120T') 
+        return view('product/category/ironing/OP120T') 
         -> with('messages',Message::all());
 
     }
 
     function OP535(){
-        return view('OP535') 
+        return view('product/category/ironing/OP535') 
         -> with('messages',Message::all());
     }
 
     function OP565(){
-        return view('OP565') 
+        return view('product/category/ironing/OP565') 
         -> with('messages',Message::all());
     }
 
     function OP5881(){
-        return view('OP5881') 
+        return view('product/category/ironing/OP5881') 
         -> with('messages',Message::all());
     }
 
     function OP5851(){
-        return view('OP5851') 
+        return view('product/category/ironing/OP5851') 
         -> with('messages',Message::all());
     }
     // <*--------  轉印 -----------*>
