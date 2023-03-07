@@ -114,13 +114,6 @@ class PageController extends Controller
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/folding",
-                    "imageUrl" => asset('imgs/1597908117.png'),
-                    "sort" => "摺 衣",
-                    "FAQ-link"=>"#",
-                    "message"=>"alert('此產品暫無常見問題')"
-                ],
-                [
                     "link" => "/packaging",
                     "imageUrl" => asset('imgs/1596784354.png'),
                     "sort" => "包 裝",

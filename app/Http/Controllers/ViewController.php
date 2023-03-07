@@ -185,6 +185,9 @@ class ViewController extends Controller
         return view('OP5851') 
         -> with('messages',Message::all());
     }
+    // <*--------  摺衣 -----------*>
+    
+
     // <*--------  包裝 -----------*>
 
     function OFC1(){
