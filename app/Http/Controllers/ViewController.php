@@ -84,42 +84,42 @@ class ViewController extends Controller
     //裁剪
 
     function OneCut(){
-        return view('OneCut') 
+        return view('product/category/cutting/OneCut') 
         -> with('messages',Message::all());
     }
 
     function M6S(){
-        return view('M6S') 
+        return view('product/category/cutting/M6S') 
         -> with('messages',Message::all());
     }
 
     function TAC(){
-        return view('TAC') 
+        return view('product/category/cutting/TAC') 
         -> with('messages',Message::all());
     }
 
     function OC510(){
-        return view('OC510') 
+        return view('product/category/cutting/OC510') 
         -> with('messages',Message::all());
     }
 
     function OB90(){
-        return view('OB90') 
+        return view('product/category/cutting/OB90') 
         -> with('messages',Message::all());
     }
 
     function A100U(){
-        return view('A100U') 
+        return view('product/category/cutting/A100U') 
         -> with('messages',Message::all());
     }
 
     function LU933(){
-        return view('LU933') 
+        return view('product/category/cutting/LU933') 
         -> with('messages',Message::all());
     }
 
     function OB700A(){
-        return view('OB700A') 
+        return view('product/category/cutting/OB700A') 
         -> with('messages',Message::all());
     }
 

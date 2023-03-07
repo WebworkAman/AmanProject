@@ -135,6 +135,10 @@ Route::get('/T5',[ViewController::class,'T5']);
 
 // <*--------  裁剪 -----------*>
 
+Route::get('/cutting', function () {
+    return view('product/category/cutting');
+});
+
 Route::post('/OneCut',MessageController::class);
 Route::get('/OneCut',[ViewController::class,'OneCut']);
 
@@ -144,20 +148,20 @@ Route::get('/M6S',[ViewController::class,'M6S']);
 Route::post('/TAC',MessageController::class);
 Route::get('/TAC',[ViewController::class,'TAC']);
 
-Route::post('/OC510',MessageController::class);
-Route::get('/OC510',[ViewController::class,'OC510']);
+Route::post('/OC-510',MessageController::class);
+Route::get('/OC-510',[ViewController::class,'OC510']);
 
-Route::post('/OB90',MessageController::class);
-Route::get('/OB90',[ViewController::class,'OB90']);
+Route::post('/OB-90',MessageController::class);
+Route::get('/OB-90',[ViewController::class,'OB90']);
 
-Route::post('/A100U',MessageController::class);
-Route::get('/A100U',[ViewController::class,'A100U']);
+Route::post('/A-100U',MessageController::class);
+Route::get('/A-100U',[ViewController::class,'A100U']);
 
-Route::post('/LU933',MessageController::class);
-Route::get('/LU933',[ViewController::class,'Lu933']);
+Route::post('/LU-933',MessageController::class);
+Route::get('/LU-933',[ViewController::class,'Lu933']);
 
-Route::post('/OB700A',MessageController::class);
-Route::get('/OB700A',[ViewController::class,'OB700A']);
+Route::post('/OB-700A',MessageController::class);
+Route::get('/OB-700A',[ViewController::class,'OB700A']);
 
 // <*--------  整燙定型 -----------*>
 Route::get('/ironing', function () {
@@ -404,19 +408,6 @@ Route::get(
     )->where('id','[0-9]+'); //0~999999
 
 // Route::resource('orders',OrderController::class); 
-
-
-
-
-
-
-
-Route::get('/cutting', function () {
-    return view('cutting');
-});
-
-
-
 
 
 Route::get('/needle', function () {
