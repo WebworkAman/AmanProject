@@ -128,7 +128,7 @@ class PageController extends Controller
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/needle",
+                    "link" => "/Boiler",
                     "imageUrl" => asset('imgs/1608539845.png'),
                     "sort" => "鍋 爐",
                     "FAQ-link"=>"#",

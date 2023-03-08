@@ -410,6 +410,99 @@ Route::get('/needleWeighing/General', function () {
 Route::post('/needleWeighing/General/ON-003',MessageController::class);
 Route::get('/needleWeighing/General/ON-003',[ViewController::class,'ON003']);
 
+// <*--------  鍋爐 -----------*>
+Route::get('/Boiler', function () {
+    return view('product/category/Boiler');
+});
+
+//電蒸氣
+
+Route::get('/Boiler/ElectricSteam', function () {
+    return view('product/category/Boiler/ElectricSteam');
+});
+
+Route::post('/Boiler/ElectricSteam/WDR',MessageController::class);
+Route::get('/Boiler/ElectricSteam/WDR',[ViewController::class,'WDR']);
+
+Route::post('/Boiler/ElectricSteam/LDR',MessageController::class);
+Route::get('/Boiler/ElectricSteam/LDR',[ViewController::class,'LDR']);
+
+//燃氣
+
+Route::get('/Boiler/GasFired', function () {
+    return view('product/category/Boiler/GasFired');
+});
+
+Route::post('/Boiler/GasFired/WNS',MessageController::class);
+Route::get('/Boiler/GasFired/WNS',[ViewController::class,'WNS']);
+
+Route::post('/Boiler/GasFired/WNS-Internal',MessageController::class);
+Route::get('/Boiler/GasFired/WNS-Internal',[ViewController::class,'WNSInternal']);
+
+Route::post('/Boiler/GasFired/LSS',MessageController::class);
+Route::get('/Boiler/GasFired/LSS',[ViewController::class,'LSS']);
+
+Route::post('/Boiler/GasFired/CWNS',MessageController::class);
+Route::get('/Boiler/GasFired/CWNS',[ViewController::class,'CWNS']);
+
+Route::post('/Boiler/GasFired/CWNSJ',MessageController::class);
+Route::get('/Boiler/GasFired/CWNSJ',[ViewController::class,'CWNSJ']);
+
+//燃油
+
+Route::get('/Boiler/OilFired', function () {
+    return view('product/category/Boiler/OilFired');
+});
+
+Route::post('/Boiler/OilFired/WNS-Internal',MessageController::class);
+Route::get('/Boiler/OilFired/WNS-Internal',[ViewController::class,'Oil_WNSInternal']);
+
+Route::post('/Boiler/OilFired/LSS',MessageController::class);
+Route::get('/Boiler/OilFired/LSS',[ViewController::class,'Oil_LSS']);
+
+Route::post('/Boiler/OilFired/CWNS',MessageController::class);
+Route::get('/Boiler/OilFired/CWNS',[ViewController::class,'Oil_CWNS']);
+
+Route::post('/Boiler/OilFired/CWNSJ',MessageController::class);
+Route::get('/Boiler/OilFired/CWNSJ',[ViewController::class,'Oil_CWNSJ']);
+
+//生物質
+
+Route::get('/Boiler/Biomass', function () {
+    return view('product/category/Boiler/Biomass');
+});
+
+Route::post('/Boiler/Biomass/WNS',MessageController::class);
+Route::get('/Boiler/Biomass/WNS',[ViewController::class,'Bio_WNS']);
+
+Route::post('/Boiler/Biomass/LSS',MessageController::class);
+Route::get('/Boiler/Biomass/LSS',[ViewController::class,'Bio_LSS']);
+
+Route::post('/Boiler/Biomass/LSG',MessageController::class);
+Route::get('/Boiler/Biomass/LSG',[ViewController::class,'Bio_LSG']);
+
+Route::post('/Boiler/Biomass/DZL',MessageController::class);
+Route::get('/Boiler/Biomass/DZL',[ViewController::class,'Bio_DZL']);
+
+Route::post('/Boiler/Biomass/SZL',MessageController::class);
+Route::get('/Boiler/Biomass/SZL',[ViewController::class,'Bio_SZL']);
+
+Route::post('/Boiler/Biomass/BMF',MessageController::class);
+Route::get('/Boiler/Biomass/BMF',[ViewController::class,'Bio_BMF']);
+
+//燃煤
+
+Route::get('/Boiler/CoalFired', function () {
+    return view('product/category/Boiler/CoalFired');
+});
+
+Route::post('/Boiler/CoalFired/DZL',MessageController::class);
+Route::get('/Boiler/CoalFired/DZL',[ViewController::class,'Coal_DZL']);
+
+Route::post('/Boiler/CoalFired/SZL',MessageController::class);
+Route::get('/Boiler/CoalFired/SZL',[ViewController::class,'Coal_SZL']);
+
+
 
 
 // <*--------  其他 -----------*>

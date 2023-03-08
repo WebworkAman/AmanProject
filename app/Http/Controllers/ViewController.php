@@ -443,11 +443,103 @@ class ViewController extends Controller
         return view('product/category/needleWeighing/FoodBeverage/CW150') 
         -> with('messages',Message::all());
     }
-    
+
     //一般大眾
 
     function ON003(){
         return view('product/category/needleWeighing/General/ON003') 
+        -> with('messages',Message::all());
+    }
+
+    // <*--------  鍋爐 -----------*>
+
+    // 電蒸氣
+    function WDR(){
+        return view('product/category/Boiler/ElectricSteam/WDR') 
+        -> with('messages',Message::all());
+    }
+    function LDR(){
+        return view('product/category/Boiler/ElectricSteam/LDR') 
+        -> with('messages',Message::all());
+    }
+
+    //燃氣
+
+    function WNS(){
+        return view('product/category/Boiler/GasFired/WNS') 
+        -> with('messages',Message::all());
+    }
+    function WNSInternal(){
+        return view('product/category/Boiler/GasFired/WNSInternal') 
+        -> with('messages',Message::all());
+    }
+    function LSS(){
+        return view('product/category/Boiler/GasFired/LSS') 
+        -> with('messages',Message::all());
+    }
+    function CWNS(){
+        return view('product/category/Boiler/GasFired/CWNS') 
+        -> with('messages',Message::all());
+    }
+    function CWNSJ(){
+        return view('product/category/Boiler/GasFired/CWNSJ') 
+        -> with('messages',Message::all());
+    }
+    
+    //燃油
+
+    function Oil_WNSInternal(){
+        return view('product/category/Boiler/OilFired/WNSInternal') 
+        -> with('messages',Message::all());
+    }
+    function Oil_LSS(){
+        return view('product/category/Boiler/OilFired/LSS') 
+        -> with('messages',Message::all());
+    }
+    function Oil_CWNS(){
+        return view('product/category/Boiler/OilFired/CWNS') 
+        -> with('messages',Message::all());
+    }
+    function Oil_CWNSJ(){
+        return view('product/category/Boiler/OilFired/CWNSJ') 
+        -> with('messages',Message::all());
+    }
+
+    //生物質
+
+    function Bio_WNS(){
+        return view('product/category/Boiler/Biomass/WNS') 
+        -> with('messages',Message::all());
+    }
+    function Bio_LSS(){
+        return view('product/category/Boiler/Biomass/LSS') 
+        -> with('messages',Message::all());
+    }
+    function Bio_LSG(){
+        return view('product/category/Boiler/Biomass/LSG') 
+        -> with('messages',Message::all());
+    }
+    function Bio_DZL(){
+        return view('product/category/Boiler/Biomass/DZL') 
+        -> with('messages',Message::all());
+    }
+    function Bio_SZL(){
+        return view('product/category/Boiler/Biomass/SZL') 
+        -> with('messages',Message::all());
+    }
+    function Bio_BMF(){
+        return view('product/category/Boiler/Biomass/BMF') 
+        -> with('messages',Message::all());
+    }
+
+    //燃煤
+
+    function Coal_DZL(){
+        return view('product/category/Boiler/CoalFired/DZL') 
+        -> with('messages',Message::all());
+    }
+    function Coal_SZL(){
+        return view('product/category/Boiler/CoalFired/SZL') 
         -> with('messages',Message::all());
     }
 
