@@ -82,6 +82,11 @@ Route::get('/',[PageController::class,'home'])->middleware('MemberAuthRedirect')
 
 Route::middleware('MemberAuthRedirect')->group(function(){
 
+//<*--------  驗布 -----------*>
+
+Route::get('/inspection', function () { 
+return view('product/category/inspection');});
+
 Route::post('/OC40N02',MessageController::class)->name('post');
 Route::get('/OC40N02',ViewController::class)->name('view');
 
@@ -93,6 +98,12 @@ Route::get('/OC-5B',[ViewController::class,'OC5B']);
 
 Route::post('/OC-83',MessageController::class);
 Route::get('/OC-83',[ViewController::class,'OC83']);
+
+//<*--------  鬆布 -----------*>
+
+Route::get('/relaxing', function () {
+    return view('product/category/relaxing');
+});
 
 Route::post('/UW-2',MessageController::class);
 Route::get('/UW-2',[ViewController::class,'UW2']);
@@ -111,8 +122,8 @@ Route::get('/OSP-2008',[ViewController::class,'OSP2008']);
 
 //<*--------  拉布 -----------*>
 
-Route::get('/inspection', function () { 
-    return view('product/category/inspection/inspection');
+Route::get('/spreading', function () {
+    return view('product/category/spreading');
 });
 
 Route::post('/M190G',MessageController::class);
@@ -414,17 +425,6 @@ Route::get('/needle', function () {
     return view('needle');
 });
 
-
-
-Route::get('/relaxing', function () {
-    return view('relaxing');
-});
-
-
-
-Route::get('/spreading', function () {
-    return view('spreading');
-});
 
 //會員登入／註冊
 

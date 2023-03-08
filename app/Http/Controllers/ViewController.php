@@ -7,81 +7,86 @@ use App\Models\Message;
 
 class ViewController extends Controller
 {
+
+    // <*--------  驗布 -----------*>
+
     public function __invoke(){
-        return view('OC40N02') 
+        return view('product/category/inspection/OC40N02') 
         -> with('messages',Message::all());
     }
 
     function OC1(){
-        return view('OC1') 
+        return view('product/category/inspection/OC1') 
         -> with('messages',Message::all());
     }
     function OC5B(){
-        return view('OC5B') 
+        return view('product/category/inspection/OC5B') 
         -> with('messages',Message::all());
     }
 
     function OC83(){
-        return view('OC83') 
+        return view('product/category/inspection/OC83') 
         -> with('messages',Message::all());
     }
 
+    // <*--------  鬆布 -----------*>
+
     function UW2(){
-        return view('UW2') 
+        return view('product/category/relaxing/UW2') 
         -> with('messages',Message::all());
     }
 
     function UW2S(){
-        return view('UW2S') 
+        return view('product/category/relaxing/UW2S') 
         -> with('messages',Message::all());
     }
 
     function OC100(){
-        return view('OC100') 
+        return view('product/category/relaxing/OC100') 
         -> with('messages',Message::all());
     }
 
     function OSP2000II(){
-        return view('OSP2000II') 
+        return view('product/category/relaxing/OSP2000II') 
         -> with('messages',Message::all());
     }
 
     function OSP2008(){
-        return view('OSP2008') 
+        return view('product/category/relaxing/OSP2008') 
         -> with('messages',Message::all());
     }
-    //拉布
+    // <*--------  拉布 -----------*>
 
     function M190G(){
-        return view('M190G') 
+        return view('product/category/spreading/M190G') 
         -> with('messages',Message::all());
     }
     function J3(){
-            return view('J3') 
+            return view('product/category/spreading/J3') 
             -> with('messages',Message::all());
         }
 
     function KPro(){
-            return view('KPro') 
+            return view('product/category/spreading/KPro') 
             -> with('messages',Message::all());
     }
 
     function KProLite(){
-        return view('KProLite') 
+        return view('product/category/spreading/KProLite') 
         -> with('messages',Message::all());
     }
 
     function F8(){
-        return view('F8') 
+        return view('product/category/spreading/F8') 
         -> with('messages',Message::all());
     }
 
     function T5(){
-        return view('T5') 
+        return view('product/category/spreading/T5') 
         -> with('messages',Message::all());
     }
     
-    //裁剪
+     // <*--------  裁剪 -----------*>
 
     function OneCut(){
         return view('product/category/cutting/OneCut') 
