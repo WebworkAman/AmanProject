@@ -3,7 +3,6 @@
         <title>Oshima CRM</title>
         @include('layouts.meta')
         @include('layouts.css')
-        <link rel="stylesheet" href="css/content.css">
    </head>
    <body>
    @include('layouts.nav')

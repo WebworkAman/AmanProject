@@ -121,7 +121,7 @@ class PageController extends Controller
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/needle",
+                    "link" => "/needleWeighing",
                     "imageUrl" => asset('imgs/1621919665.png'),
                     "sort" => "金 屬、重 量 檢 測",
                     "FAQ-link"=>"#",

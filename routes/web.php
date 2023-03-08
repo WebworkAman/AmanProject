@@ -365,6 +365,52 @@ Route::get('/OSZ-50N',[ViewController::class,'OSZ50N']);
 Route::post('/OSZ-50XN',MessageController::class);
 Route::get('/OSZ-50XN',[ViewController::class,'OSZ50XN']);
 
+// <*--------  金屬、重量檢測 -----------*>
+
+Route::get('/needleWeighing', function () {
+    return view('product/category/needleWeighing');
+});
+// 成衣
+Route::get('/needleWeighing/clothing', function () {
+    return view('product/category/needleWeighing/clothing');
+});
+Route::post('/needleWeighing/clothing/ON-688CD6',MessageController::class);
+Route::get('/needleWeighing/clothing/ON-688CD6',[ViewController::class,'ON688CD6']);
+
+Route::post('/needleWeighing/clothing/OMW-600',MessageController::class);
+Route::get('/needleWeighing/clothing/OMW-600',[ViewController::class,'OMW600']);
+
+Route::post('/needleWeighing/clothing/ON-30',MessageController::class);
+Route::get('/needleWeighing/clothing/ON-30',[ViewController::class,'ON30']);
+
+Route::post('/needleWeighing/clothing/ON-688P',MessageController::class);
+Route::get('/needleWeighing/clothing/ON-688P',[ViewController::class,'ON688P']);
+
+// 食品
+
+Route::get('/needleWeighing/FoodBeverage', function () {
+    return view('product/category/needleWeighing/FoodBeverage');
+});
+
+Route::post('/needleWeighing/FoodBeverage/CWL-300',MessageController::class);
+Route::get('/needleWeighing/FoodBeverage/CWL-300',[ViewController::class,'CWL300']);
+
+Route::post('/needleWeighing/FoodBeverage/MD-400',MessageController::class);
+Route::get('/needleWeighing/FoodBeverage/MD-400',[ViewController::class,'MD400']);
+
+Route::post('/needleWeighing/FoodBeverage/CW-150',MessageController::class);
+Route::get('/needleWeighing/FoodBeverage/CW-150',[ViewController::class,'CW150']);
+
+// 一般大眾
+
+Route::get('/needleWeighing/General', function () {
+    return view('product/category/needleWeighing/General');
+});
+
+Route::post('/needleWeighing/General/ON-003',MessageController::class);
+Route::get('/needleWeighing/General/ON-003',[ViewController::class,'ON003']);
+
+
 
 // <*--------  其他 -----------*>
 Route::get('/others', function () {
@@ -420,10 +466,6 @@ Route::get(
 
 // Route::resource('orders',OrderController::class); 
 
-
-Route::get('/needle', function () {
-    return view('needle');
-});
 
 
 //會員登入／註冊

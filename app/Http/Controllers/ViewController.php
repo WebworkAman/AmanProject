@@ -409,6 +409,48 @@ class ViewController extends Controller
         return view('product/category/packaging/OSZ50XN') 
         -> with('messages',Message::all());
     }
+    // <*--------  金屬、重量檢測 -----------*>
+    
+    // 成衣
+    function ON688CD6(){
+        return view('product/category/needleWeighing/clothing/ON688CD6') 
+        -> with('messages',Message::all());
+    }
+    function OMW600(){
+        return view('product/category/needleWeighing/clothing/OMW600') 
+        -> with('messages',Message::all());
+    }
+
+    function ON30(){
+        return view('product/category/needleWeighing/clothing/ON30') 
+        -> with('messages',Message::all());
+    }
+
+    function ON688P(){
+        return view('product/category/needleWeighing/clothing/ON688P') 
+        -> with('messages',Message::all());
+    }
+    //食品
+    function CWL300(){
+        return view('product/category/needleWeighing/FoodBeverage/CWL300') 
+        -> with('messages',Message::all());
+    }
+    function MD400(){
+        return view('product/category/needleWeighing/FoodBeverage/MD400') 
+        -> with('messages',Message::all());
+    }
+    function CW150(){
+        return view('product/category/needleWeighing/FoodBeverage/CW150') 
+        -> with('messages',Message::all());
+    }
+    
+    //一般大眾
+
+    function ON003(){
+        return view('product/category/needleWeighing/General/ON003') 
+        -> with('messages',Message::all());
+    }
+
 
     // <*--------  其他機械 -----------*>
 
