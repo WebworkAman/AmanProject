@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js/app.js').react()
    .js('resources/js/home.jsx', 'public/js/home.js').react()
    .js('resources/js/page1.jsx', 'public/js/page1.js').react()
+   .js('resources/js/search.jsx','public/js/search.js').react()
    .sass('resources/sass/app.scss', 'public/css')
    .sass('resources/css/home.scss', 'public/css')
    .sass('resources/css/content.scss', 'public/css')

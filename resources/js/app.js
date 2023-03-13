@@ -54,3 +54,17 @@ window.render = {
         )
     },
 }
+
+function App(){
+    return <h1>Hello,Laravel&React</h1>;
+}
+
+
+
+function Greeting(props){
+    return <h1>Hello,{props.name}!</h1>
+}
+// ReactDOM.render(<Greeting name="React" />, document.getElementById('app'));
+export default Greeting;
+
+

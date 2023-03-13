@@ -5310,6 +5310,9 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./home */ "./resources/js/home.jsx");
@@ -5355,6 +5358,7 @@ __webpack_require__(/*! ./components/Example */ "./resources/js/components/Examp
 
 //優化寫法
 
+
 window.render = {
   home: function home(containerTag, title) {
     react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_home__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -5365,6 +5369,18 @@ window.render = {
     react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_page1__WEBPACK_IMPORTED_MODULE_3__["default"], {}), document.getElementById('main'));
   }
 };
+function App() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+    children: "Hello,Laravel&React"
+  });
+}
+function Greeting(props) {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h1", {
+    children: ["Hello,", props.name, "!"]
+  });
+}
+// ReactDOM.render(<Greeting name="React" />, document.getElementById('app'));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Greeting);
 
 /***/ }),
 

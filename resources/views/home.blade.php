@@ -3,7 +3,9 @@
 
 <main>
     <!-- <div id="main" data-title="Title Home"></div> -->
+
        
+
         <div class="img-block">
             <ul>
                  @foreach($pages as $page)
@@ -23,7 +25,7 @@
 
 @section('inline_js')
    @parent
-   <script>
+   <!-- <script>
 
         var containerTag = document.getElementById('main')
         var title = containerTag.getAttribute('data-title')
@@ -33,7 +35,6 @@
             title
         // ,"Title Home" 參數引入寫法
         )
-
-
-   </script>
+   </script> -->
+   
 @endsection
