@@ -1,7 +1,7 @@
 <html>
 <nav>
         <div class="nav-left">
-            <a href="/"><img src="https://www.oshima.com.tw/archive/image/weblogo/1644210634.jpg"></a>
+            <a href="{{asset('')}}"><img src="https://www.oshima.com.tw/archive/image/weblogo/1644210634.jpg"></a>
             
         </div>
         <div class="nav-right">

@@ -10,7 +10,7 @@
 <body>
 
     <main>
-    <h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
+    <h1 class="topText"><img src="{{asset('imgs/logo-01.png')}}"></h1>
     
         <div class="log">
 
@@ -39,7 +39,7 @@
                 </div> 
                 <div class="check">
                        <input type="checkbox"> Remember Me </br>
-                       <a href="/forgot">Forgot your password?</a>
+                       <a href="{{asset('forgot')}}">Forgot your password?</a>
                 </div>
                 <div>
                 <button type="submit">
@@ -52,7 +52,7 @@
                 @if(Session::get('info'))
                     <div class="alert alert-info">{{Session::get('info')}}</div>
                     @else
-                    <div class="admin-text">Are you a admin ? <a href="/admin">Click here to login</a></div>
+                    <div class="admin-text">Are you a admin ? <a href="{{asset('admin')}}">Click here to login</a></div>
 
                     @endif
                 </div>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="right">
-                <img src="../../imgs/Illustration.png">
+                <img src="{{asset('imgs/Illustration.png')}}">
             </div>
             
         </div>

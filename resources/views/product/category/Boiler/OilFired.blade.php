@@ -6,19 +6,19 @@
 
         <div class="chooseItem">
             <ul>
-                <li><a href="/Boiler/OilFired/WNS-Internal"><img
+                <li><a href="{{asset('/Boiler/OilFired/WNS-Internal')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1608539905.png"></a>
                     <p>WNS內燃式燃油鍋爐</p>
                 </li>
-                <li><a href="/Boiler/OilFired/LSS"><img
+                <li><a href="{{asset('/Boiler/OilFired/LSS')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1669616570.png"></a>
                     <p>LSS內燃式燃油鍋爐</p>
                 </li>
-                <li><a href="/Boiler/OilFired/CWNS"><img
+                <li><a href="{{asset('/Boiler/OilFired/CWNS')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1599442955.png"></a>
                     <p>CWNS直接熱水鍋爐</p>
                 </li>
-                <li><a href="/Boiler/OilFired/CWNSJ"><img
+                <li><a href="{{asset('/Boiler/OilFired/CWNSJ')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1599442955.png"></a>
                     <p>CWNSJ間接熱水鍋爐</p>
                 </li>

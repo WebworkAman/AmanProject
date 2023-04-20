@@ -6,7 +6,7 @@
 
         <div class="chooseItem">
             <ul>
-                <li><a href="/needleWeighing/General/ON-003"><img
+                <li><a href="{{asset('needleWeighing/General/ON-003')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/ON-003-600.png"></a>
                     <p>金屬探測器 ON-003/007</p>
                 </li>

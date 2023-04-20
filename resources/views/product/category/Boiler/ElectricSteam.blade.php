@@ -6,11 +6,11 @@
 
         <div class="chooseItem">
             <ul>
-                <li><a href="/Boiler/ElectricSteam/WDR"><img
+                <li><a href="{{asset('/Boiler/ElectricSteam/WDR')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1614302303.png"></a>
                     <p>WDR 電蒸氣鍋爐</p>
                 </li>
-                <li><a href="/Boiler/ElectricSteam/LDR"><img
+                <li><a href="{{asset('/Boiler/ElectricSteam/LDR')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1656322129.png"></a>
                     <p>LDR 電蒸氣鍋爐</p>
                 </li>

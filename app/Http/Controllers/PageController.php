@@ -56,14 +56,14 @@ class PageController extends Controller
         return[
             
                 [   
-                    "link" => "/inspection",
+                    "link" => asset('inspection'),
                     "imageUrl" => asset('imgs/1596784113.png'),
                     "sort" => "驗 布",
-                    "FAQ-link"=>"/FAQ/inspection",
+                    "FAQ-link"=>asset('/FAQ/inspection'),
                     "message"=>""
                 ],
                 [
-                    "link" => "/relaxing",
+                    "link" => asset('relaxing'),
                     "imageUrl" => asset('https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1597907651.png'),
                     "sort" => "鬆 布",
                     "FAQ-link"=>"#",
@@ -71,7 +71,7 @@ class PageController extends Controller
 
                 ],
                 [
-                    "link" => "/spreading",
+                    "link" => asset('spreading'),
                     "imageUrl" => asset('imgs/1596784246.png'),
                     "sort" => "拉 布",
                     "FAQ-link"=>"#",
@@ -79,63 +79,63 @@ class PageController extends Controller
 
                 ],
                 [
-                    "link" => "/cutting",
+                    "link" => asset('cutting'),
                     "imageUrl" => asset('imgs/1596784261.png'),
                     "sort" => "裁 剪",
-                    "FAQ-link"=>"/FAQ/cutting",
+                    "FAQ-link"=>asset('/FAQ/cutting'),
                     "message"=>""
                 ],
                 [
-                    "link" => "/ironing",
+                    "link" => asset('ironing'),
                     "imageUrl" => asset('imgs/1597889061.png'),
                     "sort" => "整 燙 定 型",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/heatTransfer",
+                    "link" => asset('heatTransfer'),
                     "imageUrl" => asset('imgs/1596784303.png'),
                     "sort" => "轉 印",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/fusingPress",
+                    "link" => asset('fusingPress'),
                     "imageUrl" => asset('imgs/1598492647.png'),
                     "sort" => "黏 合",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/seamless",
+                    "link" => asset('seamless'),
                     "imageUrl" => asset('imgs/1598492619.png'),
                     "sort" => "無 縫 黏 合",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/packaging",
+                    "link" => asset('packaging'),
                     "imageUrl" => asset('imgs/1596784354.png'),
                     "sort" => "包 裝",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/needleWeighing",
+                    "link" => asset('needleWeighing'),
                     "imageUrl" => asset('imgs/1621919665.png'),
                     "sort" => "金 屬、重 量 檢 測",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/Boiler",
+                    "link" => asset('Boiler'),
                     "imageUrl" => asset('imgs/1608539845.png'),
                     "sort" => "鍋 爐",
                     "FAQ-link"=>"#",
                     "message"=>"alert('此產品暫無常見問題')"
                 ],
                 [
-                    "link" => "/others",
+                    "link" => asset('others'),
                     "imageUrl" => asset('imgs/1596784420.png'),
                     "sort" => "其 它 機 械",
                     "FAQ-link"=>"#",

@@ -8,7 +8,7 @@
 </head>
 <body>
 <main>
-<h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
+<h1 class="topText"><img src="{{asset('imgs/logo-01.png')}}"></h1>
 
 <div class="log">
 <div class="right">

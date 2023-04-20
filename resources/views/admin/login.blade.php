@@ -3,18 +3,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>log</title>
-    <link rel="stylesheet" href="../../css/log.css">
+    <link rel="stylesheet" href="{{asset('css/log.css')}}">
 </head>
 
 <body class="admin">
 
     <main >
-    <h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
+    <h1 class="topText"><img src="{{asset('imgs/logo-01.png')}}"></h1>
     
         <div class="log">
 
             <div class="left">
-                <img src="../../imgs/Group5.png">
+                <img src="{{asset('imgs/Group5.png')}}">
                 
             </div>
 
@@ -41,7 +41,7 @@
                 </div> 
                 <div class="check">
                        <input type="checkbox"> Remember Me </br>
-                       <a href="/forgot">Forgot your password?</a>
+                       <a href="{{asset('forgot')}}">Forgot your password?</a>
                 </div>
                 <div>
                 <button type="submit">

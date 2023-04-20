@@ -4,13 +4,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OshimaAdmin</title>
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
 </head>
 
 <body>
     <nav>
         <div class="left">
-             <img src="../../imgs/1596784261.jpeg">
+             <img src="{{asset('imgs/1596784261.jpeg')}}">
         </div>
         <div class="right">
 
