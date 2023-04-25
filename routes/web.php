@@ -25,6 +25,7 @@ use App\Http\Controllers\MemberSessionController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\QuestionController;
 
 
 
@@ -87,16 +88,22 @@ Route::middleware('MemberAuthRedirect')->group(function(){
 Route::get('/inspection', function () { 
 return view('product/category/inspection');});
 
-Route::post('/OC40N02',MessageController::class)->name('post');
-Route::get('/OC40N02',ViewController::class)->name('view');
+// Route::get('/OC40N02',ViewController::class)->name('view');
 
-Route::post('/OC-1',MessageController::class);
+Route::get('/OC40N02',ProductController::class)->name('view');
+Route::post('/OC40N02',[QuestionController::class,'store'])->name('post');
+// Route::get('/{product_title}', [ProductController::class, 'showProduct'])->name('products.show');
+// Route::get('/{product_title}',[ProductController::class,'showProduct'])->where('product_name','[a-zA-Z0-9]+');
+// Route::post('/OC40N02',MessageController::class)->name('post');
+// Route::get('/OC40N02',ViewController::class)->name('view');
+
+Route::post('/OC-1',[QuestionController::class,'store'])->name('post');
 Route::get('/OC-1',[ViewController::class,'OC1']);
 
-Route::post('/OC-5B',MessageController::class);
+Route::post('/OC-5B',[QuestionController::class,'store'])->name('post');
 Route::get('/OC-5B',[ViewController::class,'OC5B']);
 
-Route::post('/OC-83',MessageController::class);
+Route::post('/OC-83',[QuestionController::class,'store'])->name('post');
 Route::get('/OC-83',[ViewController::class,'OC83']);
 
 //<*--------  鬆布 -----------*>

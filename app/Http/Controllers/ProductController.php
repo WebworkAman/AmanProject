@@ -3,9 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Question;
 
 class ProductController extends Controller
 {
+
+
+    //產生視圖
+    public function __invoke(){
+
+        $questions = Question::where('product_id', 1)->get(); //假設產品ID為1
+        return view('product/category/inspection/OC40N02', compact('questions'));
+
+        // return view('product/category/inspection/OC40N02')
+        // -> with('questions',Question::all());
+    }
+    
     function index(){
 
           $products = $this->getProducts();
@@ -18,8 +32,6 @@ class ProductController extends Controller
             
     }
     function show($id, Request $request){
-
-        
 
         // $id = $request -> input('id');
         // var_dump($id);
@@ -42,9 +54,23 @@ class ProductController extends Controller
             //404 not found
             
             abort(404);
+        }        
+    }
+    public function showProduct($product_title)
+    {
+        //從產品名稱查詢
+        $product = Product::where('title',$product_title)->first();
+
+        //如果產品不存在，則顯示 404 錯誤訊息
+        if(!$product){
+            abort(404);
         }
 
+        //取得當前產品的提問資料
+        // $questions = $product->questions;
         
+        return view('products.show',['product' => $product]);
+       
     } 
 
     private function getProducts(){

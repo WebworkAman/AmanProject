@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Question;
 
 class ViewController extends Controller
 {
@@ -11,22 +12,23 @@ class ViewController extends Controller
     // <*--------  驗布 -----------*>
 
     public function __invoke(){
-        return view('product/category/inspection/OC40N02') 
-        -> with('messages',Message::all());
+        return view('product/category/inspection/OC40N02');
+        // -> with('questions',Question::all());
     }
+    
 
     function OC1(){
-        return view('product/category/inspection/OC1') 
-        -> with('messages',Message::all());
+        $questions = Question::where('product_id', 2)->get();
+        return view('product/category/inspection/OC1', compact('questions')) ;
     }
     function OC5B(){
-        return view('product/category/inspection/OC5B') 
-        -> with('messages',Message::all());
+        $questions = Question::where('product_id', 3)->get();
+        return view('product/category/inspection/OC5B', compact('questions')) ;
     }
 
     function OC83(){
-        return view('product/category/inspection/OC83') 
-        -> with('messages',Message::all());
+        $questions = Question::where('product_id', 4)->get();
+        return view('product/category/inspection/OC83', compact('questions')) ;
     }
 
     // <*--------  鬆布 -----------*>
