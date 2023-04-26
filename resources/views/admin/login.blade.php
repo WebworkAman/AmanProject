@@ -19,33 +19,33 @@
             </div>
 
             <div class="right">
-            <h1>Admin Sign In</h1>
+            <h1> 管 理 者 登 入 </h1>
                 <div class="txt">
 
-                    <p>Member user ? </p><a href="{{route('members.session.create')}}">Click here to login</a>
+                    <p> 不 是 管 理 者 ? </p><a href="{{route('members.session.create')}}"> 回 到 會 員 登 入 </a>
                 </div>
                                
                 <form method="post" action="{{route('login')}}">
                    @csrf
                 <div>
                       <label class="input">
-                          <p><input type="email" name="email" placeholder="Email"></p>
+                          <p><input type="email" name="email" placeholder="請 輸 入 管 理 者 帳 號"></p>
                           <span class="text-danger">@error('email') {{$message}} @enderror</span>
                       </label>
                 </div>
                 <div>
                     <label class="input">
-                        <p><input type="password" name="password" placeholder="Password"></p>
+                        <p><input type="password" name="password" placeholder="請 輸 入 管 理 者 密 碼"></p>
                         <span class="text-danger">@error('email') {{$message}} @enderror</span>
                     </label>
                 </div> 
                 <div class="check">
-                       <input type="checkbox"> Remember Me </br>
-                       <a href="{{asset('forgot')}}">Forgot your password?</a>
+                       <input type="checkbox"> 記 住 我 </br>
+                       <a href="{{asset('forgot')}}">忘 記 密 碼？</a>
                 </div>
                 <div>
                 <button type="submit">
-                       Submit
+                       登 入
                 </button>
                 </div>
                 @if(Session::has('fail'))

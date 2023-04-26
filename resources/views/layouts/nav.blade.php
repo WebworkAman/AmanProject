@@ -13,7 +13,7 @@
                 <form method="POST" action="{{ route('members.session.delete') }}">
                     @csrf
                    @method('DELETE')
-                <button type="submit">Log out</button>
+                <button type="submit"> 登 出 </button>
                 </form>
                 </li>
             </ul>     
