@@ -6,7 +6,7 @@
 
         <div class="chooseItem">
             <ul>
-                <li><a href="{{asset('OC40N02')}}"><img src="./imgs/photo/1646990118.png"></a>
+                <li><a href="{{asset('/FAQ/inspection/OC40N02')}}"><img src="./imgs/photo/1646990118.png"></a>
                     <p>人工智慧AI驗布機 OC-40-N-02</p>
                 </li>
                 <li><a href="{{asset('OC-1')}}"><img src="./imgs/photo/OC-1-600-4.png"></a>

@@ -6,17 +6,16 @@
 
      <main>
 
-        <h1> 產 品 問 題 </h1>
+        <h1>Customer Question & Answer</h1>
         <div class="QA_content">
         <div class="left-content">
-            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1646990118.png">
-            <h2>人工智慧驗布機 OSHIMA EagleAi/Plus/Pro</h2>
-            <h3>縮短AI訓練 與眾不同</h3>
+            <img src="./imgs/photo/OC-5KB-600-2.png">
+            <h2>自動對邊驗布機 OC-5B/5K/5KB</h2>
+            <h3>低配版</h3>
         </div>
         <div class="right-content">
               
              <div class="message_border">
-             
              @foreach($questions as $question)
              <div class="message">
               
@@ -28,10 +27,10 @@
              @endforeach
              </div>
              <div class="baseline"></div>
-             
-              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
+             <h3>機器相關問題提交</h3>
+             <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="product_id" value="1">
+                    <input type="hidden" name="product_id" value="3">
                     <p><label for="title">標題：</label></p>
                     <input type="text" name="title">
                     <p><label for="content">問題詳情：</label></p>
