@@ -15,25 +15,18 @@
         </div>
         <div class="right-content">
               
-             <div class="message_border">
-             @foreach($messages as $message)
-             <div class="message">
+             @include('layouts.questionShow')
              
-              <p>標題：{{ $message->title }}</p>
-              <p>內容：{{ $message->content }}</p>
-              <p>日期：{{ $message->created_at }}</p>
-             </div>
-             @endforeach
-             </div>
              <div class="baseline"></div>
              <h3>機器相關問題提交</h3>
               <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
                     @csrf
-                    
+                    <input type="hidden" name="product_id" value="5">
                     <p><label for="title">標題：</label></p>
-                    <input type="title" name="title">
-                    <p><label for="content">內文：</label></p>
+                    <input type="text" name="title">
+                    <p><label for="content">問題詳情：</label></p>
                     <textarea id="content" name="content"  cols="30" rows="10"></textarea>
+                    <input type="file" name="photo">
                     <p>
                         <input class='submit' type="submit" name="submit" value="Send">
                     </p>
