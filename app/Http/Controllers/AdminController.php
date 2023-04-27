@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    private static $admin = null;
+
+    public static function admin(){
+
+        // `self::$member`可能為 null，因此 `empty` 應該改成 `is_null`，這樣會更加清晰。
+
+        if(is_null(self::$admin) && session()->exists('adminId')){
+            self::$admin = Admin::find(session('adminId'));
+        }
+        return self::$admin;
+    }
     public function create(){
         return view('admin.login');
     }
@@ -25,13 +36,17 @@ class AdminController extends Controller
         }
         return back()->with('fail','帳號/密碼輸入錯誤');
     }
-    public function delete(Request $request)
+    public static function isLoggedIn(){
+        return !empty(self::admin());
+ 
+        // return !empty(self::$member);
+        // 如果這樣寫會有問題
+    }
+    public function delete()
     {
-        // session()->forget('memberId');
+        session()->forget('adminId');
         
-        // return redirect()->route('members.session.create');
-
-        // MemberAuth::logOut();
+        // self::$admin = null;
         return redirect()->route('login');
     }
 }

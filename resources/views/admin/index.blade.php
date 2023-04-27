@@ -1,37 +1,17 @@
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OshimaAdmin</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-</head>
+@extends('layouts.admin.content')
 
-<body>
-    <nav>
-        <div class="left">
-             <img src="{{asset('imgs/1596784261.jpeg')}}">
-        </div>
-        <div class="right">
-
-              <form method="POST" action="{{route('session.delete')}}">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">Log out</button>
-              </form>
-        </div>
-     </nav>
-
+@section('content')
     <main>
     
     
         <div class="admin_block">
 
             <div class="control_">
-                <h3>控制台</h3>
+                <h3>功能列表</h3>
                 <div class="control_list">
 
-                    <p>FAQ</p>
+                    <a href="#">常見問題區</a>
                 </div>
         
             </div>
@@ -41,7 +21,7 @@
                     <h3>常見問題區管理</h3>
                     <a href="{{route('faqs.create')}}">新增常見問題</a>
 
-                    <table>
+    <table>
     <thead>
         <tr>
             <th>問題詳情</th>
@@ -151,8 +131,7 @@
         </div>
 
    </main>
-    
-</body>    
-
+       
+@endsection 
 
 

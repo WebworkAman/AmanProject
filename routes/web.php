@@ -29,6 +29,31 @@ use App\Http\Controllers\QuestionController;
 
 
 
+//管理者登入 Admin login -> group
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/',[AdminController::class,'create'])->name('create');
+    Route::post('/',[AdminController::class,'login'])->name('login');
+ 
+    Route::get('index',function(){
+        return view('admin/index');
+    });
+    // 常見問題區管理
+    Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
+    Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
+    Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');
+    Route::delete('/index/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
+    Route::delete('/index/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
+
+    Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
+
+    Route::get('question_edit',function(){
+        return view('admin/question_edit');
+    });
+    Route::get('question_select',function(){
+        return view('admin/question_select');
+    });
+ });
 
 //會員登入 Members login -> group 
 Route::prefix('members')->name('members.')->group(function () {
@@ -48,29 +73,7 @@ Route::post('/reset-password',[MemberSessionController::class,'resetPassword'])-
 //驗證
 Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 
-//管理者登入 Admin login -> group
 
-Route::group(['prefix'=>'admin'],function(){
-   Route::get('/',[AdminController::class,'create'])->name('create');
-   Route::post('/',[AdminController::class,'login'])->name('login');
-
-   Route::get('index',function(){
-       return view('admin/index');
-   });
-   // 常見問題區管理
-   Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
-   Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
-   Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');
-   Route::delete('/index/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
-   Route::delete('/index/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
-   Route::delete('/session',[AdminController::class,'delete'])->name('session.delete');
-   Route::get('question_edit',function(){
-       return view('admin/question_edit');
-   });
-   Route::get('question_select',function(){
-       return view('admin/question_select');
-   });
-});
 
 //登入首頁
 // Route::get('/', [PageController::class,'home']);

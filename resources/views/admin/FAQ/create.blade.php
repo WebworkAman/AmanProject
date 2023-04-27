@@ -1,21 +1,7 @@
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OshimaAdmin</title>
-    <link rel="stylesheet" href="../../css/admin.css">
-</head>
+@extends('layouts.admin.content')
 
-<body>
-    <nav>
-        <div class="left">
-             <img src="../../imgs/1596784261.jpeg">
-        </div>
-        <div class="right">
-              <a href="">Log out</a>
-        </div>
-     </nav>
+@section('content')
 
     <main>
     
@@ -36,13 +22,15 @@
                     <div class="question_edit">
                     <div class="nav">
                           <h3>新增常見問題</h3>
+
+                          <a href="{{ asset('admin/index') }}">返回列表</a>
                     </div>
                     
                 <div class="ans">
                     <form method="POST" action="{{ route('faqs.store') }}">
                          @csrf
                          <div class="form-group">
-                             <label for="product_id">請選族產品ID</label>
+                             <label for="product_id">請選擇產品ID</label>
                              <select name="product_id" id="product_id" class="form-control">
                                   @for ($i = 1; $i <= 10; $i++)
                              <option value="{{ $i }}">{{ $i }}</option>
@@ -50,17 +38,20 @@
                              </select>
                         </div>
                         <div class="form-group">
-                            <label for="question">問題</label>
+                            <label for="question">問題 :</label>
                             <input type="text" name="question" id="question" class="form-control" value="{{ old('question') }}" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="answer">回覆</label>
+                            <label for="answer">回答 :</label>
                             <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea>
                         </div>
 
                         <div class="form-group">
+                            <div class="text-right">
                             <button type="submit" class="btn btn-primary">新增</button>
+
+                            </div>
                         </div>
                     </form>
                     </div>
@@ -78,7 +69,7 @@
 
    </main>
     
-</body>    
+   @endsection 
 
 
 
