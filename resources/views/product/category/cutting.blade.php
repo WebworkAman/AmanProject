@@ -14,7 +14,7 @@
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/M8S-600-2.png"></a>
                     <p>智能自動裁剪機 M6S/M8S</p>
                 </li>
-                <li><a href="{{asset('TAC')}}"><img
+                <li><a href="{{asset('/FAQ/cutting/TAC')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/TAC-175-600-2.png"></a>
                     <p>自動裁剪機 TAC</p>
                 </li>

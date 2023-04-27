@@ -583,13 +583,17 @@ Route::get('/register', function () {
 // Route::post('/FAQ',MessageController::class)->name('post');
 Route::get('/FAQ/inspection/OC40N02',[FAQController::class,'OC40N02']);
 
-Route::get('/FAQ/inspection',[FAQController::class,'create'])->name('faqview');
+
 
 Route::get('/FAQ/relaxing',[FAQController::class,'create0'])->name('faqview');
 
 Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
 
 Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
+
+//裁剪
+Route::get('/FAQ/cutting/TAC',[FAQController::class,'TAC']);
+
 // Route::get('/FAQ', function () {
 //     return view('FAQ');
 // });

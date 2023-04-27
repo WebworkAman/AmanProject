@@ -38,7 +38,7 @@ class QuestionController extends Controller
     {
         $question = new Question;
         $question -> product_id = $request->input('product_id');
-        $question -> member_id = 1;
+        $question -> member_id =  MemberAuth::member()->id;
         $question -> title = $request -> input('title');
         $question -> content = $request -> input('content');
 

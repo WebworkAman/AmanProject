@@ -110,6 +110,10 @@ footer .social_block p {
   margin-bottom: 30px;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 main {
   margin-top: 50px;
 }
@@ -189,9 +193,11 @@ main .chooseItem ul li p {
   text-align: center;
 }
 .QA_content .right-content {
+  width: 40vw;
   margin-right: 50px;
 }
 .QA_content .right-content .message_border {
+  width: 40vw;
   height: 300px;
   overflow: scroll;
 }
@@ -199,8 +205,29 @@ main .chooseItem ul li p {
   border-bottom: 1px silver solid;
 }
 .QA_content .right-content .faq {
-  width: 550px;
+  width: 880px;
   height: 100%;
+  overflow: auto;
+}
+.QA_content .right-content .faq .listblock {
+  margin-top: 50px;
+}
+.QA_content .right-content .faq .listblock .topline {
+  border: 1px solid black;
+  width: 1000px;
+  margin-bottom: 20px;
+}
+.QA_content .right-content .faq .listblock ul li {
+  margin-bottom: 30px;
+  letter-spacing: 2;
+  line-height: 1.4;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title {
+  color: rgb(15, 59, 101);
+  border-bottom: 1px solid rgb(15, 59, 101);
+}
+.QA_content .right-content .faq .listblock ul li .faq-content {
+  color: rgb(138, 166, 166);
 }
 .QA_content .right-content .faq button {
   text-decoration: none;
@@ -229,28 +256,33 @@ main .chooseItem ul li p {
   font-style: italic;
 }
 .QA_content .right-content h3 {
-  color: rgb(47, 143, 135);
+  color: rgb(15, 59, 101);
   text-align: end;
   margin-top: 5px;
 }
 .QA_content .right-content p {
   margin: 10px;
+  color: rgb(15, 59, 101);
 }
 .QA_content .right-content textarea {
   font-size: 15px;
   width: 550px;
   height: 100px;
-  border: 1px rgb(47, 143, 135) solid;
+  border: 1px rgb(138, 166, 166) solid;
   padding: 10px;
 }
 .QA_content .right-content input {
   padding: 5px 15px;
-  border: 1px rgb(47, 143, 135) solid;
+  border: 1px rgb(138, 166, 166) solid;
   cursor: pointer;
   border-radius: 5px;
 }
 .QA_content .right-content .submit {
   float: right;
-  background-color: rgb(47, 143, 135);
+  background-color: rgb(15, 59, 101);
+  color: aliceblue;
+}
+.QA_content .right-content .submit:hover {
+  background-color: rgb(138, 166, 166);
   color: aliceblue;
 }

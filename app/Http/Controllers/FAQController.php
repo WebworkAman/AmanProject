@@ -10,10 +10,7 @@ class FAQController extends Controller
     public function OC40N02(){
         return view('product.FAQ.inspection.OC40N02');
     }
-    public function create(){
-        return view('product.FAQ.inspection');
-
-    }
+    
     public function create1(){
         return view('product.FAQ.cutting');
     }
@@ -23,5 +20,11 @@ class FAQController extends Controller
     }
     public function create5(){
         return view('product.FAQ.spreading');
+    }
+
+
+    public function TAC(){
+        return view('product.FAQ.cutting.TAC');
+
     }
 }
