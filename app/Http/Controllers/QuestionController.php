@@ -13,10 +13,13 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
+    //顯示問題列表
+    // public function index()
+    // {
+    //     $questions = Question::all();
+
+    //     return view('admin.index', compact('questions'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -98,6 +101,10 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+
+        return redirect()->route('questions.index')
+            ->with('success', 'Question deleted successfully.');
+    
     }
 }
