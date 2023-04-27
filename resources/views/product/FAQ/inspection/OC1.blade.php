@@ -15,32 +15,21 @@
         </div>
         <div class="right-content">
               
-             <div class="message_border">
-             @foreach($questions as $question)
-             <div class="message">
              
-              <p>標題：{{ $question->title }}</p>
-              <p>內容：{{ $question->content }}</p>
-              <p>日期：{{ $question->created_at }}</p>
-              <p>姓名：{{ $question->photo}}</p>
-             </div>
-             @endforeach
-             </div>
-             <div class="baseline"></div>
-             <h3>機器相關問題提交</h3>
-             <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" name="product_id" value="2">
-                    <p><label for="title">標題：</label></p>
-                    <input type="text" name="title">
-                    <p><label for="content">問題詳情：</label></p>
-                    <textarea id="content" name="content"  cols="30" rows="10"></textarea>
-                    <input type="file" name="photo">
-                    <p>
-                        <input class='submit' type="submit" name="submit" value="Send">
-                    </p>
-              </form>
-             
+             @foreach($faqs as $faq)
+             <div class="faq">
+                  <button><a href="{{asset('OC-1')}}">我 要 提 問</a></button>
+                  
+                  <div class="listblock">
+                  <div class="topline"></div>
+                  <ul>
+                    <li>
+                       <p class="faq-title"><span>Q.</span>{{"$faq->question"}}</p>
+                       <p class="faq-content"><span>A.</span>{{"$faq->answer"}}</p>
+                    </li>
+                  </ul>
+              </div>
+              @endforeach
         </div>
 
        

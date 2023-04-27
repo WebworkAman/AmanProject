@@ -205,7 +205,9 @@ main .chooseItem ul li p {
   border-bottom: 1px silver solid;
 }
 .QA_content .right-content .faq {
-  width: 880px;
+  width: 40vw;
+  max-width: 880px;
+  min-width: 500px;
   height: 100%;
   overflow: auto;
 }

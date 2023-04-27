@@ -18,8 +18,9 @@ class FAQController extends Controller
         return view('product.FAQ.inspection.OC40N02');
     }
     
-    public function create1(){
-        return view('product.FAQ.cutting');
+    public function OC1(){
+        $faqs = FAQ::where('product_id', 2)->get();
+        return view('product.FAQ.inspection.OC1', compact('faqs')) ;
     }
     
     public function create3(){

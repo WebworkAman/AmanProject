@@ -589,6 +589,7 @@ Route::get('/register', function () {
 // Route::post('/FAQ',MessageController::class)->name('post');
 Route::get('/FAQ/inspection/OC40N02',[FAQController::class,'OC40N02']);
 
+Route::get('/FAQ/inspection/OC1',[FAQController::class,'OC1']);
 
 
 Route::get('/FAQ/relaxing',[FAQController::class,'create0'])->name('faqview');
