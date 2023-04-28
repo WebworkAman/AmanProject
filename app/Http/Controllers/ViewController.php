@@ -110,8 +110,11 @@ class ViewController extends Controller
     }
 
     function TAC(){
-        return view('product/category/cutting/TAC') 
-        -> with('messages',Message::all());
+
+        $questions = Question::where('product_id', 18)->get();
+        return view('product/category/cutting/TAC', compact('questions')) ;
+
+        
     }
 
     function OC510(){

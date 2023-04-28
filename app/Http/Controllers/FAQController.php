@@ -25,7 +25,17 @@ class FAQController extends Controller
         $faqs = FAQ::where('product_id', 2)->get();
         return view('product.FAQ.inspection.OC1', compact('faqs')) ;
     }
+
+    public function OC5B(){
+        $faqs = FAQ::where('product_id', 3)->get();
+        return view('product.FAQ.inspection.OC5B', compact('faqs')) ;
+    }
     
+    public function OC83(){
+        $faqs = FAQ::where('product_id', 4)->get();
+        return view('product.FAQ.inspection.OC83', compact('faqs')) ;
+    }
+
     public function create3(){
         return view('product.FAQ.spreading');
     }
@@ -35,7 +45,8 @@ class FAQController extends Controller
 
 
     public function TAC(){
-        return view('product.FAQ.cutting.TAC');
+        $faqs = FAQ::where('product_id', 18)->get();
+        return view('product.FAQ.cutting.TAC', compact('faqs')) ;
 
     }
     // 管理者
