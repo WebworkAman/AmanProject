@@ -15,10 +15,10 @@
         </div>
         <div class="right-content">
               
-             
+        <button><a href="{{asset('OC-1')}}">我 要 提 問</a></button>
              @foreach($faqs as $faq)
              <div class="faq">
-                  <button><a href="{{asset('OC-1')}}">我 要 提 問</a></button>
+                  
                   
                   <div class="listblock">
                   <div class="topline"></div>

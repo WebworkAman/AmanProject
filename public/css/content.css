@@ -204,6 +204,25 @@ main .chooseItem ul li p {
 .QA_content .right-content .message_border .message {
   border-bottom: 1px silver solid;
 }
+.QA_content .right-content button {
+  text-decoration: none;
+  float: right;
+  cursor: pointer;
+  border: 0;
+  background-color: rgb(118, 114, 109);
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+.QA_content .right-content button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+}
+.QA_content .right-content button:hover {
+  background-color: rgb(236, 133, 8);
+}
 .QA_content .right-content .faq {
   width: 40vw;
   max-width: 880px;
@@ -230,25 +249,6 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .faq .listblock ul li .faq-content {
   color: rgb(138, 166, 166);
-}
-.QA_content .right-content .faq button {
-  text-decoration: none;
-  float: right;
-  cursor: pointer;
-  border: 0;
-  background-color: rgb(118, 114, 109);
-  color: white;
-  width: 100px;
-  height: 30px;
-  border-radius: 10px;
-}
-.QA_content .right-content .faq button a {
-  text-decoration: none;
-  color: white;
-  font-weight: 300;
-}
-.QA_content .right-content .faq button:hover {
-  background-color: rgb(236, 133, 8);
 }
 .QA_content .right-content .faq h2 {
   position: relative;

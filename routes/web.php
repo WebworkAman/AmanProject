@@ -173,7 +173,7 @@ Route::get('/OneCut',[ViewController::class,'OneCut']);
 Route::post('/M6S',MessageController::class);
 Route::get('/M6S',[ViewController::class,'M6S']);
 
-Route::post('/TAC',MessageController::class);
+Route::post('/TAC',[QuestionController::class,'store'])->name('post');
 Route::get('/TAC',[ViewController::class,'TAC']);
 
 Route::post('/OC-510',MessageController::class);
@@ -594,6 +594,10 @@ Route::get('/register', function () {
 Route::get('/FAQ/inspection/OC40N02',[FAQController::class,'OC40N02']);
 
 Route::get('/FAQ/inspection/OC1',[FAQController::class,'OC1']);
+
+Route::get('/FAQ/inspection/OC-5B',[FAQController::class,'OC5B']);
+
+Route::get('/FAQ/inspection/OC-83',[FAQController::class,'OC83']);
 
 
 Route::get('/FAQ/relaxing',[FAQController::class,'create0'])->name('faqview');
