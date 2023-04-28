@@ -36,6 +36,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/',[AdminController::class,'login'])->name('login');
  
     Route::get('index',function(){
+
         return view('admin/index');
     });
     // 常見問題區管理

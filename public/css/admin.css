@@ -269,7 +269,7 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   -moz-appearance: none;
   appearance: none;
   /* 選擇框寬度 */
-  width: 50px;
+  width: 200px;
   /* 選擇框高度 */
   height: 20px;
   /* 自訂選擇框背景 */

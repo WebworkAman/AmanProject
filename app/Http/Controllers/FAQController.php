@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\FAQ;
+use App\Models\Product;
 
 class FAQController extends Controller
 {
 
     public function create()
     {
-        return view('admin.FAQ.create');
+        $products = Product::all();
+        return view('admin.FAQ.create', compact('products'));
+    
     }
 
     public function OC40N02(){

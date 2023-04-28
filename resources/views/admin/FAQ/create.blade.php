@@ -30,11 +30,11 @@
                     <form method="POST" action="{{ route('faqs.store') }}">
                          @csrf
                          <div class="form-group">
-                             <label for="product_id">請選擇產品ID</label>
+                             <label for="product_id">請選擇產品</label>
                              <select name="product_id" id="product_id" class="form-control">
-                                  @for ($i = 1; $i <= 10; $i++)
-                             <option value="{{ $i }}">{{ $i }}</option>
-                                  @endfor
+                                  @foreach ($products as $product)
+                             <option value="{{ $product -> id }}">{{ $product ->title }}</option>
+                                  @endforeach
                              </select>
                         </div>
                         <div class="form-group">

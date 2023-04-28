@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -18,7 +19,13 @@ class AdminController extends Controller
         }
         return self::$admin;
     }
+    public function index(){
+        $products = Product::all();
+        return view('admin.index', compact('products'));
+    }
     public function create(){
+       
+
         return view('admin.login');
     }
     public function login(Request $request){
