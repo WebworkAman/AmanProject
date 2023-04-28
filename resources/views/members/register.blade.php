@@ -15,10 +15,10 @@
     <img src="../imgs/Illustration1.png">
 </div>
 <div class="left">
-    <h1>Create An Account</h1>
+    <h1>創 建 售 後 會 員</h1>
     <div class="txt">
 
-        <p>Already an user?</p><a href="{{route('members.session.create')}}">Login an account</a>
+        <p>已經是會員?</p><a href="{{route('members.session.create')}}">  點 此 登 入 吧</a>
     </div>   
     <form
      method="post"
@@ -27,36 +27,33 @@
        @csrf
     <div class="formgroup first-block ">
         <label class="input">
-        <input type="text" placeholder="Enter Full Name" name=name value="{{old('name')}}">
+        <input type="text" placeholder="請 輸 入 名 稱" name=name value="{{old('name')}}">
         <br/>
         <p class="text-danger">@error('name') {{$message}} @enderror</p>
         </label>
     </div>
     <div class="formgroup">
        <label class="input">
-          <input type="email" name="email" placeholder="Email" value="{{old('email')}}">
+          <input type="email" name="email" placeholder="請 輸 入 電 子 郵 件" value="{{old('email')}}">
           <p class="text-danger">@error('email') {{$message}} @enderror</p>
        </label>
     </div>
     <div class="formgroup">
        <label class="input">       
-          <input type="password" name="password" placeholder="Password" value="{{old('password')}}">
+          <input type="password" name="password" placeholder="請 輸 入 密 碼" value="{{old('password')}}">
           
           <p class="text-danger">@error('password') {{$message}} @enderror</p>
        </label>
     </div>
     <div class="formgroup">
        <label class="input">       
-           <input type="password" name="password_confirmation" placeholder="Repeat-Password" value="{{old('password_confirmation')}}">
+           <input type="password" name="password_confirmation" placeholder="再 次 輸 入 密 碼" value="{{old('password_confirmation')}}">
           <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>
        </label>
     </div>
-<div class="check">
-        <input type="checkbox"> Keep me signed in
-    </div>
 <div>
     <button type="submit">
-         Submit
+         註 冊 提 交
     </button>
 </div>
 

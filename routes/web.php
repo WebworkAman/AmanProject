@@ -25,9 +25,36 @@ use App\Http\Controllers\MemberSessionController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\QuestionController;
 
 
 
+//管理者登入 Admin login -> group
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/',[AdminController::class,'create'])->name('create');
+    Route::post('/',[AdminController::class,'login'])->name('login');
+ 
+    Route::get('index',function(){
+
+        return view('admin/index');
+    });
+    // 常見問題區管理
+    Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
+    Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
+    Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');
+    Route::delete('/index/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
+    Route::delete('/index/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
+
+    Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
+
+    Route::get('question_edit',function(){
+        return view('admin/question_edit');
+    });
+    Route::get('question_select',function(){
+        return view('admin/question_select');
+    });
+ });
 
 //會員登入 Members login -> group 
 Route::prefix('members')->name('members.')->group(function () {
@@ -47,23 +74,7 @@ Route::post('/reset-password',[MemberSessionController::class,'resetPassword'])-
 //驗證
 Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 
-//管理者登入 Admin login -> group
 
-Route::group(['prefix'=>'admin'],function(){
-   Route::get('/',[AdminController::class,'create'])->name('create');
-   Route::post('/',[AdminController::class,'login'])->name('login');
-
-   Route::get('index',function(){
-       return view('admin/index');
-   });
-   Route::delete('/session',[AdminController::class,'delete'])->name('session.delete');
-   Route::get('question_edit',function(){
-       return view('admin/question_edit');
-   });
-   Route::get('question_select',function(){
-       return view('admin/question_select');
-   });
-});
 
 //登入首頁
 // Route::get('/', [PageController::class,'home']);
@@ -87,16 +98,22 @@ Route::middleware('MemberAuthRedirect')->group(function(){
 Route::get('/inspection', function () { 
 return view('product/category/inspection');});
 
-Route::post('/OC40N02',MessageController::class)->name('post');
-Route::get('/OC40N02',ViewController::class)->name('view');
+// Route::get('/OC40N02',ViewController::class)->name('view');
 
-Route::post('/OC-1',MessageController::class);
+Route::get('/OC40N02',ProductController::class)->name('view');
+Route::post('/OC40N02',[QuestionController::class,'store'])->name('post');
+// Route::get('/{product_title}', [ProductController::class, 'showProduct'])->name('products.show');
+// Route::get('/{product_title}',[ProductController::class,'showProduct'])->where('product_name','[a-zA-Z0-9]+');
+// Route::post('/OC40N02',MessageController::class)->name('post');
+// Route::get('/OC40N02',ViewController::class)->name('view');
+
+Route::post('/OC-1',[QuestionController::class,'store'])->name('post');
 Route::get('/OC-1',[ViewController::class,'OC1']);
 
-Route::post('/OC-5B',MessageController::class);
+Route::post('/OC-5B',[QuestionController::class,'store'])->name('post');
 Route::get('/OC-5B',[ViewController::class,'OC5B']);
 
-Route::post('/OC-83',MessageController::class);
+Route::post('/OC-83',[QuestionController::class,'store'])->name('post');
 Route::get('/OC-83',[ViewController::class,'OC83']);
 
 //<*--------  鬆布 -----------*>
@@ -574,15 +591,20 @@ Route::get('/register', function () {
 
 //常見問題
 // Route::post('/FAQ',MessageController::class)->name('post');
-Route::get('/FAQ/cutting',[FAQController::class,'create1'])->name('faqview');
+Route::get('/FAQ/inspection/OC40N02',[FAQController::class,'OC40N02']);
 
-Route::get('/FAQ/inspection',[FAQController::class,'create'])->name('faqview');
+Route::get('/FAQ/inspection/OC1',[FAQController::class,'OC1']);
+
 
 Route::get('/FAQ/relaxing',[FAQController::class,'create0'])->name('faqview');
 
 Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
 
 Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
+
+//裁剪
+Route::get('/FAQ/cutting/TAC',[FAQController::class,'TAC']);
+
 // Route::get('/FAQ', function () {
 //     return view('FAQ');
 // });

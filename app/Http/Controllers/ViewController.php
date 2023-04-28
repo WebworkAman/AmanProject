@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\Question;
 
 class ViewController extends Controller
 {
@@ -11,50 +12,60 @@ class ViewController extends Controller
     // <*--------  驗布 -----------*>
 
     public function __invoke(){
-        return view('product/category/inspection/OC40N02') 
-        -> with('messages',Message::all());
+        return view('product/category/inspection/OC40N02');
+        // -> with('questions',Question::all());
     }
+    
 
     function OC1(){
-        return view('product/category/inspection/OC1') 
-        -> with('messages',Message::all());
+        $questions = Question::where('product_id', 2)->get();
+        return view('product/category/inspection/OC1', compact('questions')) ;
     }
     function OC5B(){
-        return view('product/category/inspection/OC5B') 
-        -> with('messages',Message::all());
+        $questions = Question::where('product_id', 3)->get();
+        return view('product/category/inspection/OC5B', compact('questions')) ;
     }
 
     function OC83(){
-        return view('product/category/inspection/OC83') 
-        -> with('messages',Message::all());
+        $questions = Question::where('product_id', 4)->get();
+        return view('product/category/inspection/OC83', compact('questions')) ;
     }
 
     // <*--------  鬆布 -----------*>
 
     function UW2(){
-        return view('product/category/relaxing/UW2') 
-        -> with('messages',Message::all());
+
+        $questions = Question::where('product_id', 5)->get();
+        return view('product/category/relaxing/UW2', compact('questions')) ;
     }
 
     function UW2S(){
-        return view('product/category/relaxing/UW2S') 
-        -> with('messages',Message::all());
+
+        $questions = Question::where('product_id', 6)->get();
+        return view('product/category/relaxing/UW2S', compact('questions')) ;
     }
 
     function OC100(){
-        return view('product/category/relaxing/OC100') 
-        -> with('messages',Message::all());
+
+        $questions = Question::where('product_id', 7)->get();
+        return view('product/category/relaxing/OC100', compact('questions')) ;
+       
     }
 
     function OSP2000II(){
-        return view('product/category/relaxing/OSP2000II') 
-        -> with('messages',Message::all());
+
+        $questions = Question::where('product_id', 8)->get();
+        return view('product/category/relaxing/OSP2000II', compact('questions')) ;
+    
     }
 
     function OSP2008(){
-        return view('product/category/relaxing/OSP2008') 
-        -> with('messages',Message::all());
+
+        $questions = Question::where('product_id', 9)->get();
+        return view('product/category/relaxing/OSP2008', compact('questions')) ;
+       
     }
+    
     // <*--------  拉布 -----------*>
 
     function M190G(){

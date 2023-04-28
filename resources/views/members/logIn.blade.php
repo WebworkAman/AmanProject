@@ -15,17 +15,17 @@
         <div class="log">
 
             <div class="left">
-                <h1>Sign in</h1>
+                <h1>登入首頁</h1>
                 <div class="txt">
 
-                    <p>New user ? </p><a href="{{route('members.create')}}">Create an account</a>
+                    <p>新用戶? </p><a href="{{route('members.create')}}">點此創建帳號吧！</a>
                 </div>
                                
                 <form method="post" action="{{route('members.session.store')}}">
                    @csrf
                 <div class='formgroup'>
                       <label class="input">
-                          <p><input type="email" name="email" placeholder="Enter Email"
+                          <p><input type="email" name="email" placeholder="請輸入郵件地址"
                           value="{{Session::get('verifiedEmail')?Session::get('verifiedEmail'):old('email')}}"
                           ></p>
                           <p class="text-danger">@error('email') {{$message}} @enderror</p>
@@ -33,17 +33,17 @@
                 </div>
                 <div class='formgroup'>
                     <label class="input">
-                        <p><input type="password" name="password" placeholder="Enter Password" value="{{old('password')}}"></p>
+                        <p><input type="password" name="password" placeholder="請輸入密碼" value="{{old('password')}}"></p>
                         <p class="text-danger">@error('password') {{$message}} @enderror</p>
                     </label>
                 </div> 
                 <div class="check">
-                       <input type="checkbox"> Remember Me </br>
-                       <a href="{{asset('forgot')}}">Forgot your password?</a>
+                       <input type="checkbox"> 記 住 我 </br>
+                       <a href="{{asset('forgot')}}"> 忘 記 密 碼 ?</a>
                 </div>
                 <div>
                 <button type="submit">
-                       Submit
+                       登 入
                 </button>
                 @if(Session::has('fail'))
                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
@@ -52,7 +52,7 @@
                 @if(Session::get('info'))
                     <div class="alert alert-info">{{Session::get('info')}}</div>
                     @else
-                    <div class="admin-text">Are you a admin ? <a href="{{asset('admin')}}">Click here to login</a></div>
+                    <div class="admin-text"> 管 理 者 ? <a href="{{asset('admin')}}"> 請 點 此 進 入</a></div>
 
                     @endif
                 </div>

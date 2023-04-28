@@ -1,3 +1,6 @@
+@import './reset';
+@import './nav';
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -7,6 +10,18 @@ nav{
             width: 9rem;
         }
     }
+    button{
+            
+        cursor: pointer;
+        border: 0;
+        background-color: brown;
+        color: white;
+        width: 65px;
+        height: 30px;
+        border-radius: 10px;
+        font-weight: 500;
+
+    }
 }
 
 main{
@@ -15,7 +30,13 @@ main{
         display: flex;
         justify-content: space-evenly;
         .control_{
-            
+
+            h3{
+                font-size:1.2rem;
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
             .control_list{
                 border: 1px solid silver;
                 width: 10vw;
@@ -27,6 +48,18 @@ main{
                 font-size: 1.2rem;
                 font-weight: 200;
 
+                a{
+                    display: block;
+                    margin-top:20px;
+                    text-decoration: none;
+                    color: rgb(10, 30, 208);
+                    font-weight: 300;
+                    
+                }
+                a:hover{
+                    color: orange;
+                }
+
             }
 
         }
@@ -35,29 +68,47 @@ main{
             width: 66vw;
             border: 1px solid silver;
             border-radius: 20px;
-
+            
             .Show_form{
                 margin: 60px 100px;
-
-                ul{
-                    margin-left: 100px;
-                    list-style: none;
-                    display: flex;
-                    li{
-                        margin: 30px;
-                        ol{
-                            list-style: none;
-                            li{
-                                a{
-                                    color: blue;
-                                    text-decoration: none;
-
-                                }
-                            }
-                        }
-                    }
+                overflow: auto;
+                a{
+                    float: right;
+                    display: block;
+                    text-decoration: none;
+                    color: rgb(10, 30, 208);
+                    font-weight: 300;
+                    border: 1px solid rgb(10, 30, 208);
+                    border-radius: 10px;
+                    width: 150px;
+                    text-align: center;
+                    margin: 20px;
+                    padding: 5px;
+                }
+                a:hover{
+                    color: whitesmoke;
+                    background-color: orange;
+                    border: 1px solid orange;
                 }
 
+                table {
+                    
+                    font-size: 14px;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                th, td {
+                    
+                    text-align: left;
+                    padding: 8px;
+                    border-bottom: 1px solid #ddd;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+                tbody tr:hover {
+                    background-color: #f5f5f5;
+                }
                 
             }
 
@@ -90,13 +141,34 @@ main{
 
 .Show_.edit{
     .Show_form{
+        .nav{
+            margin-bottom: 50px;
+            h3{
+                font-size: 1.5rem;
+                color: #555;
+            }
+        }
         .question_edit{
+            .text-right{
+                text-align: right;
+            }
             button{
+
                 width: 5vw;
                 border: 1px solid rgb(110, 134, 201);
                 color: rgb(110, 134, 201);
                 border-radius: 10px;
                 background-color: transparent;
+                cursor: pointer;
+                
+                
+
+            }
+            button:hover{
+                background-color: rgb(225, 173, 68);
+                border: 1px solid rgb(225, 173, 68);
+                color: white;
+               
                 
 
             }
@@ -112,15 +184,80 @@ main{
             }
             .ans{
                 margin-left: 120px;
-                textarea{
-                    list-style: none;
-                    width: 40vw;
-                    border-radius: 20px;
-                    padding: 20px;
+                .form-group{
+                    margin: 20px;
+
+                    label{
+                        color: #555;
+                        letter-spacing: 1.2;
+                    }
+                    input{
+                        width: 100%;
+                        padding: 12px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        margin-top: 6px;
+                        margin-bottom: 16px;
+                        resize: vertical;
+                        font-size: 16px;
+                    }
+                    textarea {
+                        width: 100%;
+                        padding: 12px;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        margin-top: 6px;
+                        margin-bottom: 16px;
+                        resize: vertical;
+                        font-size: 16px;
+                      }
                 }
-                ul{
-                    float: right;
-                }
+                /* 隱藏原本的下拉箭頭 */
+                select {
+                         -webkit-appearance: none;
+                         -moz-appearance: none;
+                         appearance: none;
+                         /* 選擇框寬度 */
+                         width: 200px;
+                         /* 選擇框高度 */
+                         height: 20px;
+                         /* 自訂選擇框背景 */
+                         background-color: #fff;
+                         /* 自訂邊框 */
+                         border: 1px solid #ccc;
+                         /* 自訂邊框圓角 */
+                         border-radius: 4px;
+                         /* 自訂字型 */
+                         font-family: inherit;
+                         /* 自訂字體大小 */
+                         font-size: .8rem;
+                         /* 自訂文字位置 */
+                         text-align-last: center;
+                         text-align: center;
+                       }
+  
+                        /* 自訂下拉箭頭 */
+                        select::after {
+                          content: "\25BC";
+                          position: absolute;
+                          top: 15px;
+                          right: 10px;
+                          font-size: 25px;
+                          color: #555;
+                          pointer-events: none;
+                        }
+  
+                        /* 自訂下拉選單樣式 */
+                        select option {
+                        /* 自訂背景顏色 */
+                        background-color: #fff;
+                        /* 自訂字體大小 */
+                        font-size: 16px;
+                        /* 自訂文字位置 */
+                        text-align: center;
+                        }
 
             }
         }
