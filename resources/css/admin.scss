@@ -90,7 +90,7 @@ main{
             .Show_form{
                 margin: 60px 100px;
                 overflow: auto;
-                a{
+                .btn{
                     float: right;
                     display: block;
                     text-decoration: none;
@@ -103,10 +103,22 @@ main{
                     margin: 20px;
                     padding: 5px;
                 }
-                a:hover{
+                .btn:hover{
                     color: whitesmoke;
                     background-color: orange;
                     border: 1px solid orange;
+                }
+                .question-reply{
+                    color:rgb(10, 30 ,208);
+                    font-weight: 300;
+                    text-decoration: none;
+
+                    
+                }
+                .question-reply:hover{
+                    color: orange;
+                    text-shadow: #555 0.1em;
+                   
                 }
 
                 table {
@@ -120,6 +132,17 @@ main{
                     text-align: left;
                     padding: 8px;
                     border-bottom: 1px solid #ddd;
+                    width: 10vw;
+                    p{
+                        width: 8vw;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                      
+                    }
+                   
+                 
+                    
                 }
                 th {
                     background-color: #f2f2f2;
@@ -155,9 +178,9 @@ main{
     }
 }
 
-// adminEdit
+// adminreply
 
-.Show_.edit{
+.Show_.reply{
     
     .Show_form{
         .nav{
@@ -167,7 +190,10 @@ main{
                 color: #555;
             }
         }
-        .question_edit{
+
+        .question_reply{
+
+
             .text-right{
                 text-align: right;
             }
@@ -184,8 +210,8 @@ main{
 
             }
             button:hover{
-                background-color: rgb(225, 173, 68);
-                border: 1px solid rgb(225, 173, 68);
+                background-color: orange;
+                border: 1px solid orange;
                 color: white;
                
                 
@@ -233,6 +259,7 @@ main{
                         font-size: 16px;
                       }
                 }
+              
                 /* 隱藏原本的下拉箭頭 */
                 select {
                          -webkit-appearance: none;
@@ -278,9 +305,36 @@ main{
                         text-align: center;
                         }
 
+
+            }
+            
+
+            .question-block{
+                ul{
+                    display: block;
+                    margin: 0 auto;
+                    width: fit-content;
+                    li{
+                        margin: 10px;
+                        line-height: 1.25;
+                        .user-content{
+                            color: #555;
+                            font-weight: 300;
+                            letter-spacing: 1;
+                        }
+                       
+
+                    }
+                }
+            }
+            .baseline{
+                border-bottom: 1px solid #555;
+                margin: 8px auto;
             }
         }
     }
+
+    
 }
 
 //select

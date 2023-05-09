@@ -10,13 +10,13 @@
 
         @include('layouts.admin.control')
 
-            <div class="Show_ edit">
+            <div class="Show_ reply">
                 <div class="Show_form">
-                    <div class="question_edit">
+                    <div class="question_reply">
                     <div class="nav">
                           <h3>新增常見問題</h3>
 
-                          <a href="{{ asset('admin/index') }}">返回列表</a>
+                          <a class="btn" href="{{ asset('admin/index') }}">返回列表</a>
                     </div>
                     
                 <div class="ans">

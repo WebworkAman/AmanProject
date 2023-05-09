@@ -9,14 +9,16 @@
                                       <th>標題</th>
                                       <th>內容</th>
                                       <th></th>
+                                      <th></th>
                                   </tr>
                               </thead>
                                <tbody>
                                     @foreach ($questions as $question)
                                         <tr>
-                                            <td>{{ $question->member->name }}</td>
-                                            <td>{{ $question->title }}</td>
-                                            <td>{{ $question->content }}</td>
+                                            <td><p>{{ $question->member->name }}</p></td>
+                                            <td><p>{{ $question->title }}</p></td>
+                                            <td><p id='truncated-text'>{{ $question->content }}</p></td>
+                                            <td ><a class='question-reply' href="{{route('question.answer',$question->id)}}">回覆</a></td>
                                             <td>
                                                 <form method="POST" action="{{ route('questions.destroy', $question) }}">
                                                     @csrf
@@ -27,5 +29,7 @@
                                         </tr>
                                     @endforeach
                                </tbody>
-                       </table>                  
+                       </table>   
+                       @stack('scripts')               
 </div>
+

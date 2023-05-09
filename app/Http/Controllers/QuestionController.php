@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Libraries\MemberAuth;
 
@@ -28,8 +29,19 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+        return view('admin.Question.question_answer', compact('products'));
     }
+    public function reply(Question $question)
+    {
+        return view('admin.Question.question-reply', compact('question'));
+    }
+    public function storeReply(Request $request, Question $question)
+{
+    // 處理回覆表單的提交
+
+    return redirect()->route('admin.question-list');
+}
 
     /**
      * Store a newly created resource in storage.

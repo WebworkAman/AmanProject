@@ -1,6 +1,6 @@
 <div class="Show_form">
                     <h3>常見問題區管理</h3>
-                    <a href="{{route('faqs.create')}}">新增常見問題</a>
+                    <a class="btn" href="{{route('faqs.create')}}">新增常見問題</a>
 
                       <table>
                               <thead>

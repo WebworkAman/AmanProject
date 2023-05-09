@@ -42,6 +42,8 @@ Route::group(['prefix'=>'admin'],function(){
     // 常見問題區管理
     Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
     Route::get('/index/question-list', [AdminController::class, 'QuestionList'])->name('questions.index');
+    Route::get('/index/question-list/{question}/reply', [QuestionController::class, 'reply'])->name('question.answer');
+    Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
     Route::get('/index/faq-list', [AdminController::class, 'faqList']);
     Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
     Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');
@@ -51,9 +53,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
     
     
-    Route::get('question_edit',function(){
-        return view('admin/question_edit');
-    });
+    
     Route::get('question_select',function(){
         return view('admin/question_select');
     });

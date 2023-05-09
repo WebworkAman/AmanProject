@@ -92,5 +92,19 @@
            
         });
     </script>
+    @push('scripts')
+    <script>
+        function truncatedText(elementId,maxLength){
+            var element = document.getElementById(elementId);
+            var text = element.innerHTML;
+            if(text.length > maxLength){
+                element.innerHTML = text.substring(0, maxLength) + "<span style='color: red;'>...</span>";
+            }
+        }
+
+        truncatedText("truncated-text",10);
+    </script>
+    @endpush
+
 </body>
 </html> 
