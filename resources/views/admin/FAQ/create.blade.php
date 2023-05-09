@@ -8,14 +8,7 @@
     
         <div class="admin_block">
 
-            <div class="control_">
-                <h3>控制台</h3>
-                <div class="control_list">
-
-                    <a href="#">常見問題區管理</a>
-                </div>
-        
-            </div>
+        @include('layouts.admin.control')
 
             <div class="Show_ edit">
                 <div class="Show_form">

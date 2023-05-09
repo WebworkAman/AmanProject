@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Product;
+use App\Models\FAQ;
+use App\Models\Question;
 use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -55,5 +58,16 @@ class AdminController extends Controller
         
         // self::$admin = null;
         return redirect()->route('login');
+    }
+    
+    public function faqList(){
+
+        $faqs = FAQ::all();
+        return view('admin.FAQ.faq-list', compact('faqs'));
+    }
+    public function QuestionList(){
+
+        $questions = Question::all();
+        return view('admin.Question.question-list', compact('questions')) ;
     }
 }

@@ -9,6 +9,12 @@ class Question extends Model
 {
     use HasFactory;
 
+    protected $table = 'questions';
+    protected $fillable = [
+        'title',
+        'content'
+    ]; 
+
     public function member()
 {
     return $this->belongsTo(Member::class);

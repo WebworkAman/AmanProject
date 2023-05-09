@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use App\Models\Message;
 use App\Models\FAQ;
 use App\Models\Product;
+
 
 class FAQController extends Controller
 {
@@ -72,6 +74,21 @@ class FAQController extends Controller
         return redirect()->route('faqs.index', $faq->id)
             ->with('success', 'Question created successfully.');
     }
+    public function delete(Request $request, $id)
+    {    
+        // 獲取表單數據
+        $data = $request->all();
+    
+        // 將表單數據存儲在cookie中
+        $cookie = cookie('form_data', json_encode($data), 30);
+
+        // 執行刪除操作
+        $faq = Faq::find($id);
+        $faq->delete();
+
+        // 返回上一頁，並附帶cookie
+        return redirect()->back()->withCookie($cookie);
+    }
 
     
 
@@ -79,8 +96,17 @@ class FAQController extends Controller
     {
         $faq->delete();
 
-        return redirect()->route('faqs.index')
-            ->with('success', 'Question deleted successfully.');
+  
+           
+         // 檢查是否有先前操控的子頁面表單傳遞回來
+         $referer = request()->headers->get('referer');
+         if(strpos($referer, 'faq-list') !== false){
+            //重定向回 FAQ 列表頁面並帶回原先搜尋表單
+            return redirect()->route('faqs.index')->withInput();
+        }
     
+        return redirect()->route('faqs.index')
+            ->with('success', 'FAQ deleted successfully.');
+         
     }
 }
