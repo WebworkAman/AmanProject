@@ -43,7 +43,8 @@
                         </div>
                      </div>
                      <div class="baseline"></div>
-                    <form method="POST" action="{{ route('faqs.store') }}">
+                    <!-- <form method="POST" action="{{ route('question.storeReply',$question->id) }}"> -->
+                    <form method="POST" action="{{ route('question.storeReply', $question->id) }}">
                          @csrf
                          
                         <div class="form-group">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Question;
 use App\Models\Product;
+use App\Models\Answer;
 use Illuminate\Http\Request;
 use App\Libraries\MemberAuth;
 
@@ -39,8 +40,15 @@ class QuestionController extends Controller
     public function storeReply(Request $request, Question $question)
 {
     // 處理回覆表單的提交
+    $ans = new Answer;
+    $ans -> question_id = $question-> id;
+    $ans -> member_id = $question-> member_id;
+    $ans -> answer = $request -> answer;
 
-    return redirect()->route('admin.question-list');
+    $ans->save();
+
+    return redirect()->route('faqs.index')
+    ->with('success', 'Question created successfully.');
 }
 
     /**

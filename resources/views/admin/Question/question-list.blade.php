@@ -20,7 +20,7 @@
                                             <td><p id='truncated-text'>{{ $question->content }}</p></td>
                                             <td ><a class='question-reply' href="{{route('question.answer',$question->id)}}">回覆</a></td>
                                             <td>
-                                                <form method="POST" action="{{ route('questions.destroy', $question) }}">
+                                                <form method="POST" action="{{ route('questions.destroy', $question->id) }}">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit">刪除</button>
