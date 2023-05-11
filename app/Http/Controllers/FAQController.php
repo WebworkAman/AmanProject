@@ -20,7 +20,8 @@ class FAQController extends Controller
     }
 
     public function OC40N02(){
-        return view('product.FAQ.inspection.OC40N02');
+        $faqs = FAQ::where('product_id', 1)->get();
+        return view('product.FAQ.inspection.OC40N02', compact('faqs')) ;
     }
     
     public function OC1(){
@@ -67,7 +68,6 @@ class FAQController extends Controller
             'answer' => 'required',
             
         ]);
-        // 將 product_id 設為 1
         
         $faq = FAQ::create($validatedData);
 

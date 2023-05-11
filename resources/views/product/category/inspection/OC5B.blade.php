@@ -15,17 +15,8 @@
         </div>
         <div class="right-content">
               
-             <div class="message_border">
-             @foreach($questions as $question)
-             <div class="message">
-              <p>姓名：{{ $question->member->name}}</p>
-              <p>標題：{{ $question->title }}</p>
-              <p>內容：{{ $question->content }}</p>
-              <p>日期：{{ $question->created_at }}</p>
-              
-             </div>
-             @endforeach
-             </div>
+           @include('layouts.question-message')
+           
              <div class="baseline"></div>
              <h3>機器相關問題提交</h3>
              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">

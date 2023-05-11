@@ -13,7 +13,7 @@ class ProductController extends Controller
     //產生視圖
     public function __invoke(){
 
-        $questions = Question::where('product_id', 1)->get(); //假設產品ID為1
+        $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
         return view('product/category/inspection/OC40N02', compact('questions'));
 
         // return view('product/category/inspection/OC40N02')
