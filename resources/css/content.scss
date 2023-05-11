@@ -5,6 +5,7 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
 main {
     margin-top: 50px;
 
@@ -87,15 +88,32 @@ main {
 }
 
 
-
+// .blur {
+//     filter: blur(5px); /* 设置模糊度，可以根据需要调整 */
+//   }
 // ＱＡ 機器分類提問區
 
 .QA_content{
     margin-top: 40px;
     display: flex;
     justify-content:space-evenly;
-
+    .popup{
+        position: fixed;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        background-color: #fff;
+        padding: 20px;
+        width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
     
+   
+      
     .left-content{
         img{
             width: 30rem;
@@ -127,6 +145,15 @@ main {
             
             .message{
                 border-bottom: 1px silver solid;
+
+                .reply-button{
+                    float: none;
+                    margin-left: 150px;
+                    background-color: rgb(15, 59, 101);
+                }
+                .reply-button:hover{
+                    background-color: rgb(138, 166, 166);
+                }
                  
             }
         }

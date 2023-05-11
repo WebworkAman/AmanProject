@@ -178,6 +178,21 @@ main .chooseItem ul li p {
   display: flex;
   justify-content: space-evenly;
 }
+.QA_content .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
 .QA_content .left-content img {
   width: 30rem;
   border-radius: 999em;
@@ -203,6 +218,14 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .message_border .message {
   border-bottom: 1px silver solid;
+}
+.QA_content .right-content .message_border .message .reply-button {
+  float: none;
+  margin-left: 150px;
+  background-color: rgb(15, 59, 101);
+}
+.QA_content .right-content .message_border .message .reply-button:hover {
+  background-color: rgb(138, 166, 166);
 }
 .QA_content .right-content button {
   text-decoration: none;

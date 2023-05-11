@@ -7,13 +7,16 @@
         
    </head>
    <body>
-   
+
    @include('layouts.nav')
        <div id="app"></div>
        <div class="container">
           @yield('content')
        </div>
     @include('layouts.footer')
+    
+   
+   
     
 
     @section('inline_js')

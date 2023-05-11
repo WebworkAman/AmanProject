@@ -18,8 +18,9 @@ class ViewController extends Controller
     
 
     function OC1(){
-        $questions = Question::where('product_id', 2)->get();
+        $questions = Question::with('answers')->where('product_id', 2)->get();
         return view('product/category/inspection/OC1', compact('questions')) ;
+
     }
     function OC5B(){
         $questions = Question::where('product_id', 3)->get();
