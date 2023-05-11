@@ -56,6 +56,31 @@ class FAQController extends Controller
         $faqs = FAQ::where('product_id', 9)->get();
         return view('product.FAQ.relaxing.OSP2008', compact('faqs')) ;
     }
+    //----------------------------- 拉布系列
+    public function M190G(){
+        $faqs = FAQ::where('product_id', 10)->get();
+        return view('product.FAQ.spreading.M190G', compact('faqs')) ;
+    }
+    public function J3(){
+        $faqs = FAQ::where('product_id', 11)->get();
+        return view('product.FAQ.spreading.J3', compact('faqs')) ;
+    }
+    public function KPro(){
+        $faqs = FAQ::where('product_id', 12)->get();
+        return view('product.FAQ.spreading.KPro', compact('faqs')) ;
+    }
+    public function KProLite(){
+        $faqs = FAQ::where('product_id', 13)->get();
+        return view('product.FAQ.spreading.KProLite', compact('faqs')) ;
+    }
+    public function F8(){
+        $faqs = FAQ::where('product_id', 14)->get();
+        return view('product.FAQ.spreading.F8', compact('faqs')) ;
+    }
+    public function T5(){
+        $faqs = FAQ::where('product_id', 15)->get();
+        return view('product.FAQ.spreading.T5', compact('faqs')) ;
+    }
 
     public function TAC(){
         $faqs = FAQ::where('product_id', 18)->get();

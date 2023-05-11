@@ -29,3 +29,5 @@
               @endforeach
         @endif
 </div>
+<div class="baseline"></div>
+<h3>機器相關問題提交</h3>

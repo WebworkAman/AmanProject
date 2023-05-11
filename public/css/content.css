@@ -227,6 +227,10 @@ main .chooseItem ul li p {
 .QA_content .right-content .message_border .message .reply-button:hover {
   background-color: rgb(138, 166, 166);
 }
+.QA_content .right-content .baseline {
+  width: 20vw;
+  border: 1px double silver;
+}
 .QA_content .right-content button {
   text-decoration: none;
   float: right;

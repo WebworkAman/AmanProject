@@ -17,12 +17,9 @@
               
              @include('layouts.question-message')
 
-             <div class="baseline"></div>
-             <h3>機器相關問題提交</h3>
              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="2">
-                    @csrf
-                 @include('layouts.question-post')
+                    @include('layouts.question-post')
              </form>
              
         </div>

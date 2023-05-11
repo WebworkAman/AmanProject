@@ -17,9 +17,7 @@
               
              @include('layouts.question-message')
 
-             <div class="baseline"></div>
-             <h3>機器相關問題提交</h3>
-             <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
+             <form method="post" action="{{ route('UW-2S')}}" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="6">
                     @include('layouts.question-post')
               </form>
