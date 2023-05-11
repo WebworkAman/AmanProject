@@ -16,19 +16,10 @@
         <div class="right-content">
               
         <div class="faq">
-                  <button><a href="{{asset('OC-83')}}">我 要 提 問</a></button>
+
+             <button><a href="{{asset('OC-83')}}">我 要 提 問</a></button>
                   
-                  <div class="listblock">
-                  <div class="topline"></div>
-                  @foreach($faqs as $faq)
-                  <ul>
-                    <li>
-                       <p class="faq-title"><span>Q.</span>{{"$faq->question"}}</p>
-                       <p class="faq-content"><span>A.</span>{{"$faq->answer"}}</p>
-                    </li>
-                  </ul>
-                  @endforeach
-              </div>
+            @include('components.faq-message')
              
         </div>
 
