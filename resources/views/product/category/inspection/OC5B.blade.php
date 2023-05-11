@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1>Customer Question & Answer</h1>
+        <h1> 產 品 問 題 </h1>
         <div class="QA_content">
         <div class="left-content">
             <img src="./imgs/photo/OC-5KB-600-2.png">

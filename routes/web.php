@@ -106,19 +106,19 @@ return view('product/category/inspection');});
 // Route::get('/OC40N02',ViewController::class)->name('view');
 
 Route::get('/OC40N02',ProductController::class)->name('view');
-Route::post('/OC40N02',[QuestionController::class,'store'])->name('post');
+Route::post('/OC40N02',[QuestionController::class,'store'])->name('OC40N02');
 // Route::get('/{product_title}', [ProductController::class, 'showProduct'])->name('products.show');
 // Route::get('/{product_title}',[ProductController::class,'showProduct'])->where('product_name','[a-zA-Z0-9]+');
 // Route::post('/OC40N02',MessageController::class)->name('post');
 // Route::get('/OC40N02',ViewController::class)->name('view');
 
-Route::post('/OC-1',[QuestionController::class,'store'])->name('post');
+Route::post('/OC-1',[QuestionController::class,'store'])->name('OC-1');
 Route::get('/OC-1',[ViewController::class,'OC1']);
 
-Route::post('/OC-5B',[QuestionController::class,'store'])->name('post');
+Route::post('/OC-5B',[QuestionController::class,'store'])->name('OC-5B');
 Route::get('/OC-5B',[ViewController::class,'OC5B']);
 
-Route::post('/OC-83',[QuestionController::class,'store'])->name('post');
+Route::post('/OC-83',[QuestionController::class,'store'])->name('OC-83');
 Route::get('/OC-83',[ViewController::class,'OC83']);
 
 //<*--------  鬆布 -----------*>
@@ -127,19 +127,19 @@ Route::get('/relaxing', function () {
     return view('product/category/relaxing');
 });
 
-Route::post('/UW-2',MessageController::class);
+Route::post('/UW-2',[QuestionController::class,'store'])->name('UW-2');
 Route::get('/UW-2',[ViewController::class,'UW2']);
 
-Route::post('/UW-2S',MessageController::class);
+Route::post('/UW-2S',[QuestionController::class,'store'])->name('UW-2S');
 Route::get('/UW-2S',[ViewController::class,'UW2S']);
 
-Route::post('/OC-100',MessageController::class);
+Route::post('/OC-100',[QuestionController::class,'store'])->name('OC-100');
 Route::get('/OC-100',[ViewController::class,'OC100']);
 
-Route::post('/OSP-2000II',MessageController::class);
+Route::post('/OSP-2000II',[QuestionController::class,'store'])->name('OSP-2000II');
 Route::get('/OSP-2000II',[ViewController::class,'OSP2000II']);
 
-Route::post('/OSP-2008',MessageController::class);
+Route::post('/OSP-2008',[QuestionController::class,'store'])->name('OSP-2008');
 Route::get('/OSP-2008',[ViewController::class,'OSP2008']);
 
 //<*--------  拉布 -----------*>
@@ -561,6 +561,30 @@ Route::get('/DS-FS',[ViewController::class,'DSFS']);
 
 Route::post('/OP-102A',MessageController::class);
 Route::get('/OP-102A',[ViewController::class,'OP102A']);
+
+
+//         -------------常見問題-----------------
+Route::group(['prefix'=>'FAQ'],function(){
+// Route::post('/FAQ',MessageController::class)->name('post');
+ //驗布
+   Route::get('/inspection/OC40N02',[FAQController::class,'OC40N02']); 
+   Route::get('/inspection/OC1',[FAQController::class,'OC1']);
+   Route::get('/inspection/OC-5B',[FAQController::class,'OC5B']);
+   Route::get('/inspection/OC-83',[FAQController::class,'OC83']);
+ //鬆布
+   Route::get('/relaxing/UW-2',[FAQController::class,'UW2']);
+   Route::get('/relaxing/UW-2S',[FAQController::class,'UW2S']);
+   Route::get('/relaxing/OC-100',[FAQController::class,'OC100']);
+   Route::get('/relaxing/OSP-2000II',[FAQController::class,'OSP2000II']);
+   Route::get('/relaxing/OSP-2008',[FAQController::class,'OSP2008']);
+
+Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
+
+Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
+
+//裁剪
+Route::get('/FAQ/cutting/TAC',[FAQController::class,'TAC']);
+});
 });
 
 
@@ -594,25 +618,7 @@ Route::get('/register', function () {
 });
 
 
-//常見問題
-// Route::post('/FAQ',MessageController::class)->name('post');
-Route::get('/FAQ/inspection/OC40N02',[FAQController::class,'OC40N02']);
 
-Route::get('/FAQ/inspection/OC1',[FAQController::class,'OC1']);
-
-Route::get('/FAQ/inspection/OC-5B',[FAQController::class,'OC5B']);
-
-Route::get('/FAQ/inspection/OC-83',[FAQController::class,'OC83']);
-
-
-Route::get('/FAQ/relaxing',[FAQController::class,'create0'])->name('faqview');
-
-Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
-
-Route::get('/FAQ/spreading',[FAQController::class,'create3'])->name('faqview');
-
-//裁剪
-Route::get('/FAQ/cutting/TAC',[FAQController::class,'TAC']);
 
 // Route::get('/FAQ', function () {
 //     return view('FAQ');

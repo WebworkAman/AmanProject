@@ -18,34 +18,44 @@ class FAQController extends Controller
         return view('admin.FAQ.create', compact('products'));
     
     }
-
+    //----------------------------- 驗布系列
     public function OC40N02(){
         $faqs = FAQ::where('product_id', 1)->get();
         return view('product.FAQ.inspection.OC40N02', compact('faqs')) ;
     }
-    
     public function OC1(){
         $faqs = FAQ::where('product_id', 2)->get();
         return view('product.FAQ.inspection.OC1', compact('faqs')) ;
     }
-
     public function OC5B(){
         $faqs = FAQ::where('product_id', 3)->get();
         return view('product.FAQ.inspection.OC5B', compact('faqs')) ;
     }
-    
     public function OC83(){
         $faqs = FAQ::where('product_id', 4)->get();
         return view('product.FAQ.inspection.OC83', compact('faqs')) ;
     }
-
-    public function create3(){
-        return view('product.FAQ.spreading');
+    //----------------------------- 鬆布系列
+    public function UW2(){
+        $faqs = FAQ::where('product_id', 5)->get();
+        return view('product.FAQ.relaxing.UW2', compact('faqs')) ;
     }
-    public function create5(){
-        return view('product.FAQ.spreading');
+    public function UW2S(){
+        $faqs = FAQ::where('product_id', 6)->get();
+        return view('product.FAQ.relaxing.UW2S', compact('faqs')) ;
     }
-
+    public function OC100(){
+        $faqs = FAQ::where('product_id', 7)->get();
+        return view('product.FAQ.relaxing.OC100', compact('faqs')) ;
+    }
+    public function OSP2000II(){
+        $faqs = FAQ::where('product_id', 8)->get();
+        return view('product.FAQ.relaxing.OSP2000II', compact('faqs')) ;
+    }
+    public function OSP2008(){
+        $faqs = FAQ::where('product_id', 9)->get();
+        return view('product.FAQ.relaxing.OSP2008', compact('faqs')) ;
+    }
 
     public function TAC(){
         $faqs = FAQ::where('product_id', 18)->get();

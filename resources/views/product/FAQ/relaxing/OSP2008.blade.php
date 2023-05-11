@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1> 產 品 問 題 </h1>
+        <h1> 常 見 問 題 </h1>
         <div class="QA_content">
         <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSP-2008-600-3.png">
@@ -14,16 +14,11 @@
             <h3>中小型工廠 最愛</h3>
         </div>
         <div class="right-content">
+             <div class="faq">
+             <button><a href="{{route('OSP-2008')}}">我 要 提 問</a></button>
+                 @include('components.faq-message')
               
-             @include('layouts.question-message')
-
-             <div class="baseline"></div>
-             <h3>機器相關問題提交</h3>
-
-              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
-                    <input type="hidden" name="product_id" value="9">
-                    @include('layouts.question-post')
-              </form>
+             </div> 
              
         </div>
 

@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1>Customer Question & Answer</h1>
+        <h1> 產 品 常 見 問 題 </h1>
         <div class="QA_content">
         <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OC-1-600-4.png">

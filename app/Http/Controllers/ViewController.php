@@ -15,18 +15,14 @@ class ViewController extends Controller
         return view('product/category/inspection/OC40N02');
         // -> with('questions',Question::all());
     }
-    
-
     function OC1(){
         $questions = Question::with('answers')->where('product_id', 2)->get();
         return view('product/category/inspection/OC1', compact('questions')) ;
-
     }
     function OC5B(){
         $questions = Question::where('product_id', 3)->get();
         return view('product/category/inspection/OC5B', compact('questions')) ;
     }
-
     function OC83(){
         $questions = Question::where('product_id', 4)->get();
         return view('product/category/inspection/OC83', compact('questions')) ;
@@ -35,7 +31,6 @@ class ViewController extends Controller
     // <*--------  鬆布 -----------*>
 
     function UW2(){
-
         $questions = Question::where('product_id', 5)->get();
         return view('product/category/relaxing/UW2', compact('questions')) ;
     }
