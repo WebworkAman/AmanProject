@@ -2,9 +2,9 @@
 
 @section('content')
 <main>
-        <h1>請選擇機器</h1>
-
-        <div class="chooseItem">
+        <!-- <h1>請選擇機器</h1> -->
+        @include('components.null-content')
+        <!-- <div class="chooseItem">
             <ul>
                 <li><a href="{{asset('/needleWeighing/clothing/ON-688CD6')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/ON-688CD6-600-2.png"></a>
@@ -24,6 +24,6 @@
                 </li>
 
             </ul>
-        </div>
+        </div> -->
     </main>
 @endsection 

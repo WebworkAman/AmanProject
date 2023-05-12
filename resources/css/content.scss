@@ -9,6 +9,23 @@
 main {
     margin-top: 50px;
 
+    .null-icon{
+        width: 15vw;
+        margin-top: 150px;
+
+    }
+    .null-link{
+        
+        text-decoration: none;
+        color: rgb(15, 59, 101);
+         
+    }
+    .null-link:hover{
+        color: orange;
+         
+    }
+
+
     h1 {
         font-size: 2.5rem;
         text-align: center;

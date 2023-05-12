@@ -2,7 +2,8 @@
 
 @section('content')
 <main>
-        <h1>請選擇機器</h1>
+       @include('components.null-content')
+        <!-- <h1>請選擇機器</h1>
 
         <div class="chooseItem">
             <ul>
@@ -29,6 +30,6 @@
                
 
             </ul>
-        </div>
+        </div> -->
     </main>
 @endsection 

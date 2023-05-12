@@ -2,8 +2,8 @@
 
 @section('content')
 <main>
-        <h1>請選擇機器</h1>
-
+        <!-- <h1>請選擇機器</h1> -->
+        @include('components.null-content')
         <div class="chooseItem" style="display:none;">
             <ul>
                 <li><a href="{{asset('OFC-1')}}"><img
