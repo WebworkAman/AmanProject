@@ -324,41 +324,41 @@ Route::get('/seamless', function () {
     return view('product/category/seamless');
 });
 
-Route::post('/MB9018B',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/MB9018B',[QuestionController::class,'store'])->name('MB9018B');
 Route::get('/MB9018B',[ViewController::class,'MB9018B']);
 
-Route::post('/OP-114',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-114',[QuestionController::class,'store'])->name('OP-114');
 Route::get('/OP-114',[ViewController::class,'OP114']);
 
-Route::post('/OP-114S',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-114S',[QuestionController::class,'store'])->name('OP-114S');
 Route::get('/OP-114S',[ViewController::class,'OP114S']);
 
-Route::post('/OP-701HAS',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-701HAS',[ViewController::class,'OP701HAS']);
+// Route::post('/OP-701HAS',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-701HAS',[ViewController::class,'OP701HAS']);
 
-Route::post('/OP-114-03',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-114-03',[ViewController::class,'OP11403']);
+// Route::post('/OP-114-03',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-114-03',[ViewController::class,'OP11403']);
 
-Route::post('/OP-114-06',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-114-06',[ViewController::class,'OP11406']);
+// Route::post('/OP-114-06',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-114-06',[ViewController::class,'OP11406']);
 
-Route::post('/OP-114-16',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('OP-114-16',[ViewController::class,'OP11416']);
+// Route::post('/OP-114-16',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('OP-114-16',[ViewController::class,'OP11416']);
 
-Route::post('/OP-115',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-115',[ViewController::class,'OP115']);
+// Route::post('/OP-115',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-115',[ViewController::class,'OP115']);
 
-Route::post('/OP-114-02',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-114-02',[ViewController::class,'OP11402']);
+// Route::post('/OP-114-02',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-114-02',[ViewController::class,'OP11402']);
 
-Route::post('/OP-115CSN',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-115CSN',[ViewController::class,'OP115CSN']);
+// Route::post('/OP-115CSN',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-115CSN',[ViewController::class,'OP115CSN']);
 
-Route::post('/OP-115-12T',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-115-12T',[ViewController::class,'OP11512T']);
+// Route::post('/OP-115-12T',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-115-12T',[ViewController::class,'OP11512T']);
 
-Route::post('/OP-806A',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-806A',[ViewController::class,'OP806A']);
+// Route::post('/OP-806A',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-806A',[ViewController::class,'OP806A']);
 
 // <*--------  包裝 -----------*>
 
@@ -605,6 +605,10 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/fusingPress/OP-450GS',[FAQController::class,'OP450GS']);
    Route::get('/fusingPress/OP-1200NL',[FAQController::class,'OP1200NL']);
    Route::get('/fusingPress/OP-1400',[FAQController::class,'OP1400']);
+ //無縫黏合
+   Route::get('/seamless/MB9018B',[FAQController::class,'MB9018B']);
+   Route::get('/seamless/OP-114',[FAQController::class,'OP114']);
+   Route::get('/seamless/OP-114S',[FAQController::class,'OP114S']);
 });
 });
 

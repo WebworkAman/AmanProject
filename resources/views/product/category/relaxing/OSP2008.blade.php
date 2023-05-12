@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1> 產 品 問 題 </h1>
+        @include('components.question-title')
         <div class="QA_content">
         <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OSP-2008-600-3.png">

@@ -174,6 +174,24 @@ class FAQController extends Controller
     
         }
 
+        //----------------------------- 黏合系列
+
+         public function MB9018B(){
+            $faqs = FAQ::where('product_id', 33)->get();
+            return view('product.FAQ.seamless.MB9018B', compact('faqs')) ;
+    
+        }
+        public function OP114(){
+            $faqs = FAQ::where('product_id', 34)->get();
+            return view('product.FAQ.seamless.OP114', compact('faqs')) ;
+    
+        }
+        public function OP114S(){
+            $faqs = FAQ::where('product_id', 35)->get();
+            return view('product.FAQ.seamless.OP114S', compact('faqs')) ;
+    
+        }
+
     // 管理者
     public function index()
     {

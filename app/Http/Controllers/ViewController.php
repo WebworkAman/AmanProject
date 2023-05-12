@@ -318,18 +318,18 @@ class ViewController extends Controller
     // <*--------  無縫黏合 -----------*>
 
     function MB9018B(){
-        return view('product/category/seamless/MB9018B') 
-        ;
+        $questions = Question::where('product_id', 33)->get();
+        return view('product/category/seamless/MB9018B', compact('questions'));
     }
 
     function OP114(){
-        return view('product/category/seamless/OP114') 
-        ;
+        $questions = Question::where('product_id', 34)->get();
+        return view('product/category/seamless/OP114', compact('questions'));
     }
 
     function OP114S(){
-        return view('product/category/seamless/OP114S') 
-        ;
+        $questions = Question::where('product_id', 35)->get();
+        return view('product/category/seamless/OP114S', compact('questions'));
     }
 
     function OP701HAS(){

@@ -4,7 +4,7 @@
 <main>
         <h1>請選擇機器</h1>
 
-        <div class="chooseItem">
+        <div class="chooseItem" style="display:none;">
             <ul>
                 <li><a href="{{asset('OFC-1')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OFC-1-600.png"></a>
