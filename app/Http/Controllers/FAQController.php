@@ -139,6 +139,24 @@ class FAQController extends Controller
 
     }
 
+     //----------------------------- 轉印系列
+
+     public function OP10A5(){
+        $faqs = FAQ::where('product_id', 27)->get();
+        return view('product.FAQ.heatTransfer.OP10A5', compact('faqs')) ;
+
+    }
+    public function OP380A(){
+        $faqs = FAQ::where('product_id', 28)->get();
+        return view('product.FAQ.heatTransfer.OP380A', compact('faqs')) ;
+
+    }
+    public function OP15A(){
+        $faqs = FAQ::where('product_id', 29)->get();
+        return view('product.FAQ.heatTransfer.OP15A', compact('faqs')) ;
+
+    }
+
     // 管理者
     public function index()
     {

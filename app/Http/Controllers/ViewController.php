@@ -199,18 +199,18 @@ class ViewController extends Controller
     // <*--------  轉印 -----------*>
 
     function OP10A5(){
-        return view('product/category/heatTransfer/OP10A5') 
-        ;
+        $questions = Question::where('product_id', 27)->get();
+        return view('product/category/heatTransfer/OP10A5', compact('questions'));
     }
     
     function OP380A(){
-        return view('product/category/heatTransfer/OP380A') 
-        ;
+        $questions = Question::where('product_id', 28)->get();
+        return view('product/category/heatTransfer/OP380A', compact('questions'));
     }
 
     function OP15A(){
-        return view('product/category/heatTransfer/OP15A') 
-        ;
+        $questions = Question::where('product_id', 29)->get();
+        return view('product/category/heatTransfer/OP15A', compact('questions'));
     }
 
     function OP305S(){
