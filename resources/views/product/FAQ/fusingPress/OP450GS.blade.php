@@ -6,7 +6,7 @@
 
      <main>
 
-        @include('components.question-title')
+        @include('components.faq-title')
         <div class="QA_content">
         <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-450GS-600-4.png">
@@ -15,12 +15,12 @@
         </div>
         <div class="right-content">
               
-           @include('layouts.question-message')
-           
-           <form method="post" action="{{ route('OP-450GS')}}" enctype="multipart/form-data">
-                  <input type="hidden" name="product_id" value="30">
-                  @include('layouts.question-post')
-            </form>
+             <div class="faq">
+                  <button><a href="{{asset('OP-450GS')}}">我 要 提 問</a></button>
+                  @include('components.faq-message')
+      
+                  
+            </div>
              
         </div>
 

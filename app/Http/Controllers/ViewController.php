@@ -256,20 +256,20 @@ class ViewController extends Controller
     // <*--------  黏合 -----------*>
 
     function OP450GS(){
-        return view('product/category/fusingPress/OP450GS') 
-        ;
+        $questions = Question::where('product_id', 30)->get();
+        return view('product/category/fusingPress/OP450GS', compact('questions'));
     }
     
     function OP1200NL(){
-        return view('product/category/fusingPress/OP1200NL') 
-        ;
+        $questions = Question::where('product_id', 31)->get();
+        return view('product/category/fusingPress/OP1200NL', compact('questions'));
     }
 
     function OP1400(){
-        return view('product/category/fusingPress/OP1400') 
-        ;
+        $questions = Question::where('product_id', 32)->get();
+        return view('product/category/fusingPress/OP1400', compact('questions'));
     }
-
+    
     function OP1000NE(){
         return view('product/category/fusingPress/OP1000NE') 
         ;

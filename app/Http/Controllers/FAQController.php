@@ -156,6 +156,23 @@ class FAQController extends Controller
         return view('product.FAQ.heatTransfer.OP15A', compact('faqs')) ;
 
     }
+         //----------------------------- 黏合系列
+
+         public function OP450GS(){
+            $faqs = FAQ::where('product_id', 30)->get();
+            return view('product.FAQ.fusingPress.OP450GS', compact('faqs')) ;
+    
+        }
+        public function OP1200NL(){
+            $faqs = FAQ::where('product_id', 31)->get();
+            return view('product.FAQ.fusingPress.OP1200NL', compact('faqs')) ;
+    
+        }
+        public function OP1400(){
+            $faqs = FAQ::where('product_id', 32)->get();
+            return view('product.FAQ.fusingPress.OP1400', compact('faqs')) ;
+    
+        }
 
     // 管理者
     public function index()

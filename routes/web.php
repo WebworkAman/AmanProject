@@ -282,41 +282,41 @@ Route::get('/fusingPress', function () {
     return view('product/category/fusingPress');
 });
 
-Route::post('/OP-450GS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-450GS',[QuestionController::class,'store'])->name('OP-450GS');
 Route::get('/OP-450GS',[ViewController::class,'OP450GS']);
 
-Route::post('/OP-1200NL',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-1200NL',[QuestionController::class,'store'])->name('OP-1200NL');
 Route::get('/OP-1200NL',[ViewController::class,'OP1200NL']);
 
-Route::post('/OP-1400',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-1400',[QuestionController::class,'store'])->name('OP-1400');
 Route::get('/OP-1400',[ViewController::class,'OP1400']);
 
-Route::post('/OP-1000NE',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-1000NE',[ViewController::class,'OP1000NE']);
+// Route::post('/OP-1000NE',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-1000NE',[ViewController::class,'OP1000NE']);
 
-Route::post('/OP-600N',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-600N',[ViewController::class,'OP600N']);
+// Route::post('/OP-600N',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-600N',[ViewController::class,'OP600N']);
 
-Route::post('/OP-60LN',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-60LN',[ViewController::class,'OP60LN']);
+// Route::post('/OP-60LN',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-60LN',[ViewController::class,'OP60LN']);
 
-Route::post('/OP-600SP',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-600SP',[ViewController::class,'OP600SP']);
+// Route::post('/OP-600SP',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-600SP',[ViewController::class,'OP600SP']);
 
-Route::post('/OP-100LE',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-100LE',[ViewController::class,'OP100LE']);
+// Route::post('/OP-100LE',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-100LE',[ViewController::class,'OP100LE']);
 
-Route::post('/OP-600SPII',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-600SPII',[ViewController::class,'OP600SPII']);
+// Route::post('/OP-600SPII',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-600SPII',[ViewController::class,'OP600SPII']);
 
-Route::post('/OP-900A',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-900A',[ViewController::class,'OP900A']);
+// Route::post('/OP-900A',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-900A',[ViewController::class,'OP900A']);
 
-Route::post('/OP-600FA',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/OP-600FA',[ViewController::class,'OP600FA']);
+// Route::post('/OP-600FA',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/OP-600FA',[ViewController::class,'OP600FA']);
 
-Route::post('/Feeder',[QuestionController::class,'store'])->name('UW-2S');
-Route::get('/Feeder',[ViewController::class,'Feeder']);
+// Route::post('/Feeder',[QuestionController::class,'store'])->name('UW-2S');
+// Route::get('/Feeder',[ViewController::class,'Feeder']);
 
 
 // <*--------  無縫黏合 -----------*>
@@ -601,6 +601,10 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/heatTransfer/OP-10A5',[FAQController::class,'OP10A5']);
    Route::get('/heatTransfer/OP-380A',[FAQController::class,'OP380A']);
    Route::get('/heatTransfer/OP-15A',[FAQController::class,'OP15A']);
+ //黏合
+   Route::get('/fusingPress/OP-450GS',[FAQController::class,'OP450GS']);
+   Route::get('/fusingPress/OP-1200NL',[FAQController::class,'OP1200NL']);
+   Route::get('/fusingPress/OP-1400',[FAQController::class,'OP1400']);
 });
 });
 
