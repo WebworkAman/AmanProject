@@ -139,28 +139,26 @@ class ViewController extends Controller
     // <*--------  整燙定型 -----------*>
 
     function OP800SDS(){
-        return view('product/category/ironing/OP800SDS') 
-        ;
+        $questions = Question::where('product_id', 24)->get();
+        return view('product/category/ironing/OP800SDS', compact('questions'));
     }
 
     function OP87(){
-        return view('product/category/ironing/OP87') 
-        ;
+        $questions = Question::where('product_id', 25)->get();
+        return view('product/category/ironing/OP87', compact('questions'));
     }
 
     function OP302(){
-        return view('product/category/ironing/OP302') 
-        ;
+        $questions = Question::where('product_id', 26)->get();
+        return view('product/category/ironing/OP302', compact('questions'));
     }
 
     function OP301(){
-        return view('product/category/ironing/OP301') 
-        ;
+        return view('product/category/ironing/OP301');
     }
 
     function OP122A(){
-        return view('product/category/ironing/OP122A') 
-        ;
+        return view('product/category/ironing/OP122A');
     }
 
     function OP500(){

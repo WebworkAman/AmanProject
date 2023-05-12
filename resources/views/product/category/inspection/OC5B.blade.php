@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1> 產 品 問 題 </h1>
+        @include('components.question-title')
         <div class="QA_content">
         <div class="left-content">
             <img src="./imgs/photo/OC-5KB-600-2.png">
@@ -17,7 +17,7 @@
               
            @include('layouts.question-message')
            
-             <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
+             <form method="post" action="{{ route('OC-5B')}}" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="3">
                     @include('layouts.question-post')
               </form>

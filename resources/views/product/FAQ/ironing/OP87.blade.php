@@ -9,17 +9,18 @@
         @include('components.faq-title')
         <div class="QA_content">
         <div class="left-content">
-            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OC-83-600-6.png">
-            <h2>自動對邊驗布機 OC-83</h2>
-            <h3>新一代的選擇</h3>
+            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-87-600.png">
+            <h2>全蒸氣式燙斗 OP-87/88S/89</h2>
         </div>
         <div class="right-content">
               
         <div class="faq">
 
-             <button><a href="{{asset('OC-83')}}">我 要 提 問</a></button>
+             <button><a href="{{asset('OP-87')}}">我 要 提 問</a></button>
                   
             @include('components.faq-message')
+             
+        </div>
              
         </div>
 

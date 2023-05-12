@@ -122,6 +122,23 @@ class FAQController extends Controller
         return view('product.FAQ.cutting.OB700A', compact('faqs')) ;
 
     }
+     //----------------------------- 整燙系列
+     public function OP800SDS(){
+        $faqs = FAQ::where('product_id', 24)->get();
+        return view('product.FAQ.ironing.OP800SDS', compact('faqs')) ;
+
+    }
+    public function OP87(){
+        $faqs = FAQ::where('product_id', 25)->get();
+        return view('product.FAQ.ironing.OP87', compact('faqs')) ;
+
+    }
+    public function OP302(){
+        $faqs = FAQ::where('product_id', 26)->get();
+        return view('product.FAQ.ironing.OP302', compact('faqs')) ;
+
+    }
+
     // 管理者
     public function index()
     {

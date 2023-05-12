@@ -201,40 +201,40 @@ Route::get('/ironing', function () {
     return view('product/category/ironing');
 });
 
-Route::post('/OP-800SDS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-800SDS',[QuestionController::class,'store'])->name('OP-800SDS');
 Route::get('/OP-800SDS',[ViewController::class,'OP800SDS']);
 
-Route::post('/OP-87',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-87',[QuestionController::class,'store'])->name('OP-87');
 Route::get('/OP-87',[ViewController::class,'OP87']);
 
-Route::post('/OP-302',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-302',[QuestionController::class,'store'])->name('OP-302');
 Route::get('/OP-302',[ViewController::class,'OP302']);
 
-Route::post('/OP-301',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-301',[QuestionController::class,'store'])->name('OP-301');
 Route::get('/OP-301',[ViewController::class,'OP301']);
 
-Route::post('/OP-122A',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-122A',[QuestionController::class,'store'])->name('OP-122A');
 Route::get('/OP-122A',[ViewController::class,'OP122A']);
 
-Route::post('/OP-500',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-500',[QuestionController::class,'store'])->name('OP-500');
 Route::get('/OP-500',[ViewController::class,'OP500']);
 
-Route::post('/OP-606',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-606',[QuestionController::class,'store'])->name('OP-606');
 Route::get('/OP-606',[ViewController::class,'OP606']);
 
-Route::post('/OP-120T',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-120T',[QuestionController::class,'store'])->name('OP-120T');
 Route::get('/OP-120T',[ViewController::class,'OP120T']);
 
-Route::post('/OP-535',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-535',[QuestionController::class,'store'])->name('OP-535');
 Route::get('/OP-535',[ViewController::class,'OP535']);
 
-Route::post('/OP-565III',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-565III',[QuestionController::class,'store'])->name('OP-565III');
 Route::get('/OP-565III',[ViewController::class,'OP565']);
 
-Route::post('/OP-5881',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-5881',[QuestionController::class,'store'])->name('OP-5881');
 Route::get('/OP-5881',[ViewController::class,'OP5881']);
 
-Route::post('/OP-5851',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-5851',[QuestionController::class,'store'])->name('OP-5851');
 Route::get('/OP-5851',[ViewController::class,'OP5851']);
 
 // <*--------  轉印 -----------*>
@@ -593,6 +593,10 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/cutting/A-100U',[FAQController::class,'A100U']);
    Route::get('/cutting/LU-933',[FAQController::class,'LU933']);
    Route::get('/cutting/OB-700A',[FAQController::class,'OB700A']);
+ //整燙定型 
+   Route::get('/ironing/OP-800SDS',[FAQController::class,'OP800SDS']);
+   Route::get('/ironing/OP-87',[FAQController::class,'OP87']);
+   Route::get('/ironing/OP-302',[FAQController::class,'OP302']);
 });
 });
 
