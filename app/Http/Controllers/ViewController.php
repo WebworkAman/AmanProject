@@ -96,46 +96,44 @@ class ViewController extends Controller
      // <*--------  裁剪 -----------*>
 
     function OneCut(){
-        return view('product/category/cutting/OneCut') 
-        ;
+        $questions = Question::where('product_id', 16)->get();
+        return view('product/category/cutting/OneCut', compact('questions'));
     }
 
     function M6S(){
-        return view('product/category/cutting/M6S') 
-        ;
+        $questions = Question::where('product_id', 17)->get();
+        return view('product/category/cutting/M6S', compact('questions'));
     }
 
     function TAC(){
 
         $questions = Question::where('product_id', 18)->get();
-        return view('product/category/cutting/TAC', compact('questions')) ;
-
-        
+        return view('product/category/cutting/TAC', compact('questions'));  
     }
 
     function OC510(){
-        return view('product/category/cutting/OC510') 
-        ;
+        $questions = Question::where('product_id', 19)->get();
+        return view('product/category/cutting/OC510', compact('questions'));
     }
 
     function OB90(){
-        return view('product/category/cutting/OB90') 
-        ;
+        $questions = Question::where('product_id', 20)->get();
+        return view('product/category/cutting/OB90', compact('questions'));
     }
 
     function A100U(){
-        return view('product/category/cutting/A100U') 
-        ;
+        $questions = Question::where('product_id', 21)->get();
+        return view('product/category/cutting/A100U', compact('questions'));
     }
 
     function LU933(){
-        return view('product/category/cutting/LU933') 
-        ;
+        $questions = Question::where('product_id', 22)->get();
+        return view('product/category/cutting/LU933', compact('questions'));
     }
 
     function OB700A(){
-        return view('product/category/cutting/OB700A') 
-        ;
+        $questions = Question::where('product_id', 23)->get();
+        return view('product/category/cutting/OB700A', compact('questions'));
     }
 
     // <*--------  整燙定型 -----------*>

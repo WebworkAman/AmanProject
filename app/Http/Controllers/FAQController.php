@@ -81,10 +81,45 @@ class FAQController extends Controller
         $faqs = FAQ::where('product_id', 15)->get();
         return view('product.FAQ.spreading.T5', compact('faqs')) ;
     }
+     //----------------------------- 裁剪系列
+     public function OneCut(){
+        $faqs = FAQ::where('product_id', 16)->get();
+        return view('product.FAQ.cutting.OneCut', compact('faqs')) ;
 
+    }
+    public function M6S(){
+        $faqs = FAQ::where('product_id', 17)->get();
+        return view('product.FAQ.cutting.M6S', compact('faqs')) ;
+
+    }
     public function TAC(){
         $faqs = FAQ::where('product_id', 18)->get();
         return view('product.FAQ.cutting.TAC', compact('faqs')) ;
+
+    }
+    public function OC510(){
+        $faqs = FAQ::where('product_id', 19)->get();
+        return view('product.FAQ.cutting.OC510', compact('faqs')) ;
+
+    }
+    public function OB90(){
+        $faqs = FAQ::where('product_id', 20)->get();
+        return view('product.FAQ.cutting.OB90', compact('faqs')) ;
+
+    }
+    public function A100U(){
+        $faqs = FAQ::where('product_id', 21)->get();
+        return view('product.FAQ.cutting.A100U', compact('faqs')) ;
+
+    }
+    public function LU933(){
+        $faqs = FAQ::where('product_id', 22)->get();
+        return view('product.FAQ.cutting.LU933', compact('faqs')) ;
+
+    }
+    public function OB700A(){
+        $faqs = FAQ::where('product_id', 23)->get();
+        return view('product.FAQ.cutting.OB700A', compact('faqs')) ;
 
     }
     // 管理者

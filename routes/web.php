@@ -172,28 +172,28 @@ Route::get('/cutting', function () {
     return view('product/category/cutting');
 });
 
-Route::post('/OneCut',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OneCut',[QuestionController::class,'store'])->name('OneCut');
 Route::get('/OneCut',[ViewController::class,'OneCut']);
 
-Route::post('/M6S',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/M6S',[QuestionController::class,'store'])->name('M6S');
 Route::get('/M6S',[ViewController::class,'M6S']);
 
-Route::post('/TAC',[QuestionController::class,'store'])->name('post');
+Route::post('/TAC',[QuestionController::class,'store'])->name('TAC');
 Route::get('/TAC',[ViewController::class,'TAC']);
 
-Route::post('/OC-510',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OC-510',[QuestionController::class,'store'])->name('OC-510');
 Route::get('/OC-510',[ViewController::class,'OC510']);
 
-Route::post('/OB-90',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OB-90',[QuestionController::class,'store'])->name('OB-90');
 Route::get('/OB-90',[ViewController::class,'OB90']);
 
-Route::post('/A-100U',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/A-100U',[QuestionController::class,'store'])->name('A-100U');
 Route::get('/A-100U',[ViewController::class,'A100U']);
 
-Route::post('/LU-933',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/LU-933',[QuestionController::class,'store'])->name('LU-933');
 Route::get('/LU-933',[ViewController::class,'Lu933']);
 
-Route::post('/OB-700A',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OB-700A',[QuestionController::class,'store'])->name('OB-700A');
 Route::get('/OB-700A',[ViewController::class,'OB700A']);
 
 // <*--------  整燙定型 -----------*>
@@ -584,11 +584,15 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/spreading/KProLite',[FAQController::class,'KProLite']);
    Route::get('/spreading/F8',[FAQController::class,'F8']);
    Route::get('/spreading/T5',[FAQController::class,'T5']);
-
-
-
-//裁剪
-Route::get('/FAQ/cutting/TAC',[FAQController::class,'TAC']);
+ //裁剪
+   Route::get('/cutting/OneCut',[FAQController::class,'OneCut']);
+   Route::get('/cutting/M6S',[FAQController::class,'M6S']);
+   Route::get('/cutting/TAC',[FAQController::class,'TAC']);
+   Route::get('/cutting/OC-510',[FAQController::class,'OC510']);
+   Route::get('/cutting/OB-90',[FAQController::class,'OB90']);
+   Route::get('/cutting/A-100U',[FAQController::class,'A100U']);
+   Route::get('/cutting/LU-933',[FAQController::class,'LU933']);
+   Route::get('/cutting/OB-700A',[FAQController::class,'OB700A']);
 });
 });
 

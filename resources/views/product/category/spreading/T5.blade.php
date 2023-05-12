@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1> 產 品 問 題 </h1>
+        @include('components.faq-title')
         <div class="QA_content">
         <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/T5-600-2.png">
@@ -16,7 +16,7 @@
         <div class="right-content">
               
               @include('layouts.question-message')
-              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
+              <form method="post" action="{{ route('T5')}}" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="15">
                     
                     @include('layouts.question-post')

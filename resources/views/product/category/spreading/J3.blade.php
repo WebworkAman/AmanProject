@@ -16,7 +16,7 @@
         <div class="right-content">
               
               @include('layouts.question-message')
-              <form method="post" action="{{ route('post')}}" enctype="multipart/form-data">
+              <form method="post" action="{{ route('J3')}}" enctype="multipart/form-data">
                     <input type="hidden" name="product_id" value="11">
                     @include('layouts.question-post')
               </form>
