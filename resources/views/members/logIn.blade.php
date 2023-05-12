@@ -18,7 +18,7 @@
                 <h1>登入首頁</h1>
                 <div class="txt">
 
-                    <p>新用戶? </p><a href="{{route('members.create')}}">點此創建帳號吧！</a>
+                    <p>新用戶? </p><a href="{{route('members.create')}}"> 註 冊 </a>
                 </div>
                                
                 <form method="post" action="{{route('members.session.store')}}">
@@ -39,7 +39,7 @@
                 </div> 
                 <div class="check">
                        <input type="checkbox"> 記 住 我 </br>
-                       <a href="{{asset('forgot')}}"> 忘 記 密 碼 ?</a>
+                       <a href="{{asset('forgot')}}"> 忘 記 密 碼</a>
                 </div>
                 <div>
                 <button type="submit">
@@ -48,11 +48,11 @@
                 @if(Session::has('fail'))
                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
                 @endif
-                <div class="baseline"></div>
+                <!-- <div class="baseline"></div> -->
                 @if(Session::get('info'))
                     <div class="alert alert-info">{{Session::get('info')}}</div>
                     @else
-                    <div class="admin-text"> 管 理 者 ? <a href="{{asset('admin')}}"> 請 點 此 進 入</a></div>
+                    <!-- <div class="admin-text"> 管 理 者 ? <a href="{{asset('admin')}}"> 請 點 此 進 入</a></div> -->
 
                     @endif
                 </div>

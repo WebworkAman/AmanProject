@@ -15,10 +15,10 @@
     <img src="../imgs/Illustration1.png">
 </div>
 <div class="left">
-    <h1>創 建 售 後 會 員</h1>
+    <h1>新 會 員 註 冊</h1>
     <div class="txt">
 
-        <p>已經是會員?</p><a href="{{route('members.session.create')}}">  點 此 登 入 吧</a>
+        <!-- <p>已經是會員?</p><a href="{{route('members.session.create')}}">  點 此 登 入 吧</a> -->
     </div>   
     <form
      method="post"
