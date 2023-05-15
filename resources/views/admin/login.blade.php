@@ -20,10 +20,10 @@
 
             <div class="right">
             <h1> 管 理 者 登 入 </h1>
-                <div class="txt">
+                <!-- <div class="txt">
 
                     <p> 不 是 管 理 者 ? </p><a href="{{route('members.session.create')}}"> 回 到 會 員 登 入 </a>
-                </div>
+                </div> -->
                                
                 <form method="post" action="{{route('login')}}">
                    @csrf
