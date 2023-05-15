@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Product;
 use App\Models\FAQ;
 use App\Models\Question;
+use App\Models\Member;
 use Illuminate\Http\Request;
 
 
@@ -69,5 +70,23 @@ class AdminController extends Controller
 
         $questions = Question::all();
         return view('admin.Question.question-list', compact('questions')) ;
+    }
+     public function memberList(){
+
+        $members = Member::all();
+        return view('admin.Member.member-list', compact('members')) ;
+    }
+    public function memberCreate(){
+
+        $members = Member::all();
+        return view('admin.Member.member-create', compact('members')) ;
+    }
+    public function destroy(Member $member)
+    {
+         $member->delete();
+    
+        return redirect()->route('faqs.index')
+            ->with('success', 'member deleted successfully.');
+         
     }
 }

@@ -16,6 +16,24 @@ class MemberController extends Controller
         return view('members.register');
     }
 
+    public function AdminStore(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:members',
+            'password'=>'required|min:5|max:18',
+            ]);
+
+            $password=\Hash::make($request->password);
+            $member = Member::create([
+                'name'=> $request->name,
+                'email' => $request->email,
+                'password' => $password,
+            ]);
+
+            return redirect()->route('faqs.index');
+
+    }
+
     public function store(Request $request){
          $request->validate([
                 'name'=>'required',

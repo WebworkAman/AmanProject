@@ -237,10 +237,10 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   font-size: 1.5rem;
   color: #555;
 }
-.Show_.reply .Show_form .question_reply .text-right {
+.Show_.reply .Show_form .question_reply .text-right, .Show_.reply .Show_form .member-create .text-right {
   text-align: right;
 }
-.Show_.reply .Show_form .question_reply button {
+.Show_.reply .Show_form .question_reply button, .Show_.reply .Show_form .member-create button {
   width: 5vw;
   border: 1px solid rgb(110, 134, 201);
   color: rgb(110, 134, 201);
@@ -248,33 +248,33 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   background-color: transparent;
   cursor: pointer;
 }
-.Show_.reply .Show_form .question_reply button:hover {
+.Show_.reply .Show_form .question_reply button:hover, .Show_.reply .Show_form .member-create button:hover {
   background-color: orange;
   border: 1px solid orange;
   color: white;
 }
-.Show_.reply .Show_form .question_reply .nav {
+.Show_.reply .Show_form .question_reply .nav, .Show_.reply .Show_form .member-create .nav {
   display: flex;
   justify-content: space-between;
 }
-.Show_.reply .Show_form .question_reply .text ul {
+.Show_.reply .Show_form .question_reply .text ul, .Show_.reply .Show_form .member-create .text ul {
   margin-left: 0;
   font-size: small;
 }
-.Show_.reply .Show_form .question_reply .ans {
+.Show_.reply .Show_form .question_reply .ans, .Show_.reply .Show_form .question_reply .create-ins, .Show_.reply .Show_form .member-create .ans, .Show_.reply .Show_form .member-create .create-ins {
   margin-left: 120px;
   /* 隱藏原本的下拉箭頭 */
   /* 自訂下拉箭頭 */
   /* 自訂下拉選單樣式 */
 }
-.Show_.reply .Show_form .question_reply .ans .form-group {
+.Show_.reply .Show_form .question_reply .ans .form-group, .Show_.reply .Show_form .question_reply .create-ins .form-group, .Show_.reply .Show_form .member-create .ans .form-group, .Show_.reply .Show_form .member-create .create-ins .form-group {
   margin: 20px;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group label {
+.Show_.reply .Show_form .question_reply .ans .form-group label, .Show_.reply .Show_form .question_reply .create-ins .form-group label, .Show_.reply .Show_form .member-create .ans .form-group label, .Show_.reply .Show_form .member-create .create-ins .form-group label {
   color: #555;
   letter-spacing: 1.2;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group input {
+.Show_.reply .Show_form .question_reply .ans .form-group input, .Show_.reply .Show_form .question_reply .create-ins .form-group input, .Show_.reply .Show_form .member-create .ans .form-group input, .Show_.reply .Show_form .member-create .create-ins .form-group input {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -285,7 +285,7 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   resize: vertical;
   font-size: 16px;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group textarea {
+.Show_.reply .Show_form .question_reply .ans .form-group textarea, .Show_.reply .Show_form .question_reply .create-ins .form-group textarea, .Show_.reply .Show_form .member-create .ans .form-group textarea, .Show_.reply .Show_form .member-create .create-ins .form-group textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -296,7 +296,7 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   resize: vertical;
   font-size: 16px;
 }
-.Show_.reply .Show_form .question_reply .ans select {
+.Show_.reply .Show_form .question_reply .ans select, .Show_.reply .Show_form .question_reply .create-ins select, .Show_.reply .Show_form .member-create .ans select, .Show_.reply .Show_form .member-create .create-ins select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -319,7 +319,7 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
        text-align-last: center;
   text-align: center;
 }
-.Show_.reply .Show_form .question_reply .ans select::after {
+.Show_.reply .Show_form .question_reply .ans select::after, .Show_.reply .Show_form .question_reply .create-ins select::after, .Show_.reply .Show_form .member-create .ans select::after, .Show_.reply .Show_form .member-create .create-ins select::after {
   content: "▼";
   position: absolute;
   top: 15px;
@@ -328,7 +328,7 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   color: #555;
   pointer-events: none;
 }
-.Show_.reply .Show_form .question_reply .ans select option {
+.Show_.reply .Show_form .question_reply .ans select option, .Show_.reply .Show_form .question_reply .create-ins select option, .Show_.reply .Show_form .member-create .ans select option, .Show_.reply .Show_form .member-create .create-ins select option {
   /* 自訂背景顏色 */
   background-color: #fff;
   /* 自訂字體大小 */
@@ -336,22 +336,22 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   /* 自訂文字位置 */
   text-align: center;
 }
-.Show_.reply .Show_form .question_reply .question-block ul {
+.Show_.reply .Show_form .question_reply .question-block ul, .Show_.reply .Show_form .member-create .question-block ul {
   display: block;
   margin: 0 auto;
   width: -moz-fit-content;
   width: fit-content;
 }
-.Show_.reply .Show_form .question_reply .question-block ul li {
+.Show_.reply .Show_form .question_reply .question-block ul li, .Show_.reply .Show_form .member-create .question-block ul li {
   margin: 10px;
   line-height: 1.25;
 }
-.Show_.reply .Show_form .question_reply .question-block ul li .user-content {
+.Show_.reply .Show_form .question_reply .question-block ul li .user-content, .Show_.reply .Show_form .member-create .question-block ul li .user-content {
   color: #555;
   font-weight: 300;
   letter-spacing: 1;
 }
-.Show_.reply .Show_form .question_reply .baseline {
+.Show_.reply .Show_form .question_reply .baseline, .Show_.reply .Show_form .member-create .baseline {
   border-bottom: 1px solid #555;
   margin: 8px auto;
 }

@@ -190,8 +190,53 @@ main{
                 color: #555;
             }
         }
+        // .member-create{
+                    
+        //     .formgroup{
+        //         margin: 20px;
 
-        .question_reply{
+        //         input{
+        //             color: #555;
+        //             letter-spacing: 1.2;
+        //         }
+        //         input{
+        //             width: 50%;
+        //             padding: 12px;
+        //             border: 1px solid #ccc;
+        //             border-radius: 4px;
+        //             box-sizing: border-box;
+        //             margin-top: 6px;
+        //             margin-bottom: 16px;
+        //             resize: vertical;
+        //             font-size: 16px;
+        //         }
+
+        //         button{
+
+        //             width: 15vw;
+        //             border: 1px solid rgb(110, 134, 201);
+        //             color: rgb(110, 134, 201);
+        //             border-radius: 10px;
+        //             background-color: transparent;
+        //             cursor: pointer;
+                    
+                    
+    
+        //         }
+        //         button:hover{
+        //             background-color: orange;
+        //             border: 1px solid orange;
+        //             color: white;
+        //         }
+
+       
+        //     }
+        //     .text-right{
+        //         text-align: right;
+        //     }
+        // }
+
+        .question_reply,.member-create{
 
 
             .text-right{
@@ -227,7 +272,9 @@ main{
                     font-size: small;
                 }
             }
-            .ans{
+
+            
+            .ans,.create-ins{
                 margin-left: 120px;
                 .form-group{
                     margin: 20px;
@@ -259,6 +306,7 @@ main{
                         font-size: 16px;
                       }
                 }
+
               
                 /* 隱藏原本的下拉箭頭 */
                 select {
@@ -333,6 +381,8 @@ main{
             }
         }
     }
+
+
 
     
 }

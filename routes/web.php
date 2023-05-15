@@ -45,12 +45,15 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/index/question-list/{question}/reply', [QuestionController::class, 'reply'])->name('question.answer');
     // Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
     Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
-
+    Route::get('/index/member-list', [AdminController::class, 'memberList']);
+    Route::get('/index/member-create', [AdminController::class, 'memberCreate'])->name('members.adminCreate');
+    Route::post('/index/member-create', [MemberController::class, 'AdminStore'])->name('members.adminStore');
     Route::get('/index/faq-list', [AdminController::class, 'faqList']);
     Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
     Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');
     Route::delete('/index/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
     Route::delete('/index/question-list/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
+    Route::delete('/index/member-list/{member}', [AdminController::class, 'destroy'])->name('members.destroy');
 
     Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
     
