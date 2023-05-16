@@ -18,6 +18,15 @@ class FAQController extends Controller
         return view('admin.FAQ.create', compact('products'));
     
     }
+    public function search(Request $request)
+    {
+    $keyword = $request->input('keyword');
+
+    // 根據關鍵字搜尋產品名稱列表
+    $faqs = FAQ::where('question', 'like', '%'.$keyword.'%')->get();
+
+    return view('layouts.search-show', ['faqs' => $faqs]);
+    }
     //----------------------------- 驗布系列
     public function OC40N02(){
         $faqs = FAQ::where('product_id', 1)->get();

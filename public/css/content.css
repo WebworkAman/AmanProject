@@ -209,6 +209,50 @@ main .chooseItem ul li p {
   font-weight: 500;
 }
 
+.faq-search-show {
+  min-height: 30vw;
+}
+.faq-search-show h1 {
+  text-align: center;
+  font-size: 2vw;
+  border-bottom: 1px solid silver;
+  width: 10vw;
+  margin: 50px auto;
+  padding: 10px;
+}
+.faq-search-show p {
+  color: #706e6e;
+  text-align: center;
+  font-size: large;
+}
+.faq-search-show table {
+  font-size: 14px;
+  border-collapse: collapse;
+  width: 50vw;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.faq-search-show th, .faq-search-show td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 10vw;
+  letter-spacing: 1px;
+}
+.faq-search-show th p, .faq-search-show td p {
+  width: 8vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.faq-search-show th {
+  background-color: #f2f2f2;
+}
+.faq-search-show tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
 .QA_content {
   margin-top: 40px;
   display: flex;

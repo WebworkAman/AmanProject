@@ -26,9 +26,7 @@ class ProductController extends Controller
 
           return view('/',[
             "products" => $products
-          ]
-
-          );
+          ]);
             
     }
     function show($id, Request $request){
@@ -83,7 +81,17 @@ class ProductController extends Controller
                     "imageUrl" => asset('imgs/1596784246.png')               
                 ]
     
-            
                 ];
     }
+
+    public function search(Request $request)
+    {
+    $keyword = $request->input('keyword');
+
+    // 根據關鍵字搜尋產品名稱列表
+    $products = Product::where('title', 'like', '%'.$keyword.'%')->get();
+
+    return view('layouts.search-show', ['products' => $products]);
+    }
+
 }

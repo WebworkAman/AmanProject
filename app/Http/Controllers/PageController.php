@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 // use App\Models\Member;
 // use App\Libraries\MemberAuth;
 
@@ -23,12 +24,10 @@ class PageController extends Controller
         // $id = $request->input('id');
          
         $pages = $this -> getPages();
-         
+        $products = Product::all ();
                       
        
-        return view('home',[
-            "pages" => $pages
-        ]);
+        return view('home',["pages" => $pages],compact("products"));
             
        
     }
