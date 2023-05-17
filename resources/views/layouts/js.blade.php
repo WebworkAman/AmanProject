@@ -59,7 +59,9 @@
                 event.preventDefault(); // 阻止預設行為
                 
 
-                var url = $(this).attr('href'); //取得按鈕網址
+                // var url = $(this).attr('href'); //取得按鈕網址
+
+                var url = $(this).data('url'); // 获取按钮的 data-url 属性值
                  
                 localStorage.setItem('url', url);
                 $('#loading').show();
