@@ -52,6 +52,12 @@
             //在此處添加 jQuery
 
             var url = localStorage.getItem('url');
+           
+
+
+
+
+
             loadSubPage(url);
         
 
@@ -59,9 +65,13 @@
                 event.preventDefault(); // 阻止預設行為
                 
 
-                // var url = $(this).attr('href'); //取得按鈕網址
-
-                var url = $(this).data('url'); // 获取按钮的 data-url 属性值
+                var currentUrl = $(this).attr('href'); //取得按鈕網址
+                var baseUrl = window.location.origin;
+                // 提取相对路径
+                var url = currentUrl.replace(baseUrl, '');
+                console.log(url); 
+                
+                // var url = $(this).data('url'); // 获取按钮的 data-url 属性值
                  
                 localStorage.setItem('url', url);
                 $('#loading').show();
