@@ -100,6 +100,8 @@ Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 Route::get('/',[PageController::class,'home'])->middleware('MemberAuthRedirect');
 
 Route::middleware('MemberAuthRedirect')->group(function(){
+
+Route::get('/search', [FAQController::class, 'createSearch'])->name('faqs.create-search');
 Route::get('/search', [FAQController::class, 'search'])->name('faqs.search');
 
 

@@ -1,7 +1,21 @@
 
 
 <form  class="search" action="{{ route('faqs.search') }}" method="GET">
-    <input type="text" name="keyword" placeholder="輸入想搜尋問題">
-    <button type="submit">搜尋</button>
+                         <div class="form-group">
+                        
+                             <select name="product_id" id="product_id" class="form-control">
+                             <option value="" selected disabled>可選填查詢產品</option>
+                                  @foreach ($products as $product)
+                             <option value="{{ $product -> id }}">{{ $product ->title }}</option>
+                                  @endforeach
+                             </select>
+
+                             
+                        </div>
+        
+                             <input type="text" name="keyword" placeholder="輸入想搜尋問題">
+                             <button type="submit">搜尋</button>
+        
+    
 </form>
 

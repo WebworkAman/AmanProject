@@ -11,7 +11,7 @@
    @include('layouts.nav')
        <div id="app"></div>
        <div class="container">
-          @include('layouts.search')
+          
           @yield('content')
           
        </div>

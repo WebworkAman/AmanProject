@@ -19,14 +19,38 @@ class FAQController extends Controller
         return view('admin.FAQ.create', compact('products'));
     
     }
+    public function createSearch(Request $request)
+    {
+
+    $products = Product::all();
+
+    
+    return view('layouts.search-show', ['products'=> $products]);
+    // return view('layouts.search-show', ['results'=> $results]);
+    }
     public function search(Request $request)
     {
+    $product = $request->input('product_id');
     $keyword = $request->input('keyword');
-
     // 根據關鍵字搜尋產品名稱列表
-    $faqs = FAQ::where('question', 'like', '%'.$keyword.'%')->get();
-    $products = Product::all();
-    return view('layouts.search-show', ['faqs' => $faqs,'products'=> $products]);
+    // $faqs = FAQ::where('question', 'like', '%'.$keyword.'%')->get();
+    // $products = Product::all();
+
+    $faqs = FAQ::query();
+
+    if($product){
+        $faqs->where('product_id',$product);
+    }
+
+    if($keyword){
+        $faqs->where('question', 'like', '%'.$keyword.'%');
+    }
+    
+    $results = $faqs->get();
+    $products = Product::all(); // 获取所有产品
+    
+    // return view('layouts.search-show', ['faqs' => $faqs,'products'=> $products]);
+    return view('layouts.search-show', ['results'=> $results,'products' => $products]);
     }
     //----------------------------- 驗布系列
     public function OC40N02(){

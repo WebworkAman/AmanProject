@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -117,13 +118,17 @@ footer .social_block p {
 .search {
   text-align: center;
   margin: 30px;
+  /* 隱藏原本的下拉箭頭 */
+  /* 自訂下拉箭頭 */
+  /* 自訂下拉選單樣式 */
 }
 .search input {
   width: 20vw;
   padding: 5px 15px;
-  border: 1px rgb(138, 166, 166) solid;
+  border: 1px #ccc solid;
   cursor: pointer;
   border-radius: 5px;
+  color: #555;
 }
 .search button {
   text-decoration: none;
@@ -137,6 +142,75 @@ footer .social_block p {
 }
 .search button:hover {
   background-color: orange;
+}
+.search .form-group {
+  margin: 20px;
+}
+.search .form-group label {
+  color: #555;
+  letter-spacing: 1.2;
+}
+.search .form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 16px;
+}
+.search .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 16px;
+}
+.search select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* 選擇框寬度 */
+  width: 200px;
+  /* 選擇框高度 */
+  height: 20px;
+  /* 自訂選擇框背景 */
+  background-color: #fff;
+  /* 自訂邊框 */
+  border: 1px solid #ccc;
+  /* 自訂邊框圓角 */
+  border-radius: 4px;
+  /* 自訂字型 */
+  font-family: inherit;
+  /* 自訂字體大小 */
+  font-size: 0.8rem;
+  /* 自訂文字位置 */
+  -moz-text-align-last: center;
+       text-align-last: center;
+  text-align: center;
+}
+.search select::after {
+  content: "▼";
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 25px;
+  color: #555;
+  pointer-events: none;
+}
+.search select option {
+  /* 自訂背景顏色 */
+  background-color: #fff;
+  /* 自訂字體大小 */
+  font-size: 16px;
+  /* 自訂文字位置 */
+  text-align: center;
 }
 
 main {
