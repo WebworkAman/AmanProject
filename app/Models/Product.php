@@ -14,4 +14,7 @@ class Product extends Model
     public function question(){
         return $this->hasMany(Question::class);
     }
+    public function faq(){
+        return $this->hasMany(FAQ::class);
+    }
 }

@@ -5,6 +5,7 @@
                       <table>
                               <thead>
                                   <tr>
+                                      <th>產品型號</th>
                                       <th>問題詳情</th>
                                       <th>問題回復</th>
                                       <th></th>
@@ -13,6 +14,11 @@
                                <tbody>
                                     @foreach ($faqs as $faq)
                                         <tr>
+                                            @if($faq->product_id)
+                                              <td>{{ $products->find($faq->product_id)->title }}</td>
+                                            @else
+                                            <td>沒查詢到對應產品</td>
+                                            @endif
                                             <td>{{ $faq->question }}</td>
                                             <td>{{ $faq->answer }}</td>
                                             <td>
