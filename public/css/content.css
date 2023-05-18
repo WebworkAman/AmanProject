@@ -122,6 +122,13 @@ footer .social_block p {
   /* 自訂下拉箭頭 */
   /* 自訂下拉選單樣式 */
 }
+.search .alert-danger {
+  margin: 10px auto;
+}
+.search .alert-danger p {
+  color: #706e6e;
+  letter-spacing: 1px;
+}
 .search input {
   width: 20vw;
   padding: 5px 15px;

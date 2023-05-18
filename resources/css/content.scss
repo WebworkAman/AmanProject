@@ -6,8 +6,20 @@
     display: none;
 }
 .search{
+
     text-align: center;
     margin: 30px;
+
+    .alert-danger{
+         margin:10px auto;
+       
+         
+          p{
+            color: #706e6e;
+            letter-spacing: 1px;
+          }
+         
+    }
 
     input{
         width: 20vw;

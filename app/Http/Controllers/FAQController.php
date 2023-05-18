@@ -35,7 +35,9 @@ class FAQController extends Controller
     // 根據關鍵字搜尋產品名稱列表
     // $faqs = FAQ::where('question', 'like', '%'.$keyword.'%')->get();
     // $products = Product::all();
-
+    if (empty($product) && empty($keyword)) {
+        return redirect()->back()->with('error', '請至少輸入一個選項 ✎ ');
+    }
     $faqs = FAQ::query();
 
     if($product){
