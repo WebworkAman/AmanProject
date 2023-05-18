@@ -15,6 +15,7 @@ class FAQController extends Controller
     public function create()
     {
         $products = Product::all();
+        
         return view('admin.FAQ.create', compact('products'));
     
     }
@@ -24,8 +25,8 @@ class FAQController extends Controller
 
     // 根據關鍵字搜尋產品名稱列表
     $faqs = FAQ::where('question', 'like', '%'.$keyword.'%')->get();
-
-    return view('layouts.search-show', ['faqs' => $faqs]);
+    $products = Product::all();
+    return view('layouts.search-show', ['faqs' => $faqs,'products'=> $products]);
     }
     //----------------------------- 驗布系列
     public function OC40N02(){

@@ -11,6 +11,7 @@
         <table>
                               <thead>
                                   <tr>
+                                      <th>產品型號</th>
                                       <th>常見問題</th>
                                       <th>我們的回復</th>
                                       
@@ -19,6 +20,7 @@
                                <tbody>
                                     @foreach ($faqs as $faq)
                                         <tr>
+                                            <td>{{ $products->find($faq->product_id)->title }}</td>
                                             <td>{{ $faq->question }}</td>
                                             <td>{{ $faq->answer }}</td>
                                             
