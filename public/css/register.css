@@ -68,7 +68,8 @@ body main .log {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 895px;
+  width: 45vw;
+  min-width: 700px;
   height: 600px;
   border: 2px solid cornsilk;
   border-radius: 10px;
@@ -113,6 +114,7 @@ body main .log .left .formgroup input {
   border-radius: 10px;
   width: 13vw;
   height: 30px;
+  min-width: 250px;
   padding-left: 15px;
   color: #273252;
 }
@@ -144,6 +146,52 @@ body main .log .alert.alert-success {
 }
 body main .log .alert.alert-fail {
   background-color: #c80101;
+}
+@media (max-width: 699px) {
+  body main .log {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    border: 0;
+    min-width: auto;
+  }
+  body main .log .left {
+    margin: 0 auto;
+  }
+  body main .log .left h1 {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  body main .log .left .txt {
+    justify-content: center;
+    padding: 10px;
+  }
+  body main .log .left p {
+    font-size: 1.3rem;
+  }
+  body main .log .left a {
+    font-size: 1.3rem;
+  }
+  body main .log .left form {
+    margin: 0 auto;
+  }
+  body main .log .left form .formgroup {
+    text-align: center;
+  }
+  body main .log .left form .formgroup input {
+    width: 300px;
+  }
+  body main .log .left .input input {
+    font-size: 1rem;
+  }
+  body main .log .left button {
+    margin: 20px;
+  }
+  body main .right {
+    display: none;
+  }
 }
 
 .container {
