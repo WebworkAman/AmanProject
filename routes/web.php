@@ -373,25 +373,25 @@ Route::get('/packaging', function () {
     return view('product/category/packaging');
 });
 
-Route::post('/OFC-1',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OFC-1',[QuestionController::class,'store']);
 Route::get('/OFC-1',[ViewController::class,'OFC1']);
 
-Route::post('/OFC-450',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OFC-450',[QuestionController::class,'store']);
 Route::get('/OFC-450',[ViewController::class,'OFC450']);
 
-Route::post('/OSZ-50',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OSZ-50',[QuestionController::class,'store']);
 Route::get('/OSZ-50',[ViewController::class,'OSZ50']);
 
-Route::post('/OSZ-K02',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OSZ-K02',[QuestionController::class,'store']);
 Route::get('/OSZ-K02',[ViewController::class,'OSZK02']);
 
-Route::post('/OSZ-50X',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OSZ-50X',[QuestionController::class,'store']);
 Route::get('/OSZ-50X',[ViewController::class,'OSZ50X']);
 
-Route::post('/OSZ-50N',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OSZ-50N',[QuestionController::class,'store']);
 Route::get('/OSZ-50N',[ViewController::class,'OSZ50N']);
 
-Route::post('/OSZ-50XN',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OSZ-50XN',[QuestionController::class,'store']);
 Route::get('/OSZ-50XN',[ViewController::class,'OSZ50XN']);
 
 // <*--------  金屬、重量檢測 -----------*>
@@ -403,16 +403,16 @@ Route::get('/needleWeighing', function () {
 Route::get('/needleWeighing/clothing', function () {
     return view('product/category/needleWeighing/clothing');
 });
-Route::post('/needleWeighing/clothing/ON-688CD6',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/clothing/ON-688CD6',[QuestionController::class,'store']);
 Route::get('/needleWeighing/clothing/ON-688CD6',[ViewController::class,'ON688CD6']);
 
-Route::post('/needleWeighing/clothing/OMW-600',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/clothing/OMW-600',[QuestionController::class,'store']);
 Route::get('/needleWeighing/clothing/OMW-600',[ViewController::class,'OMW600']);
 
-Route::post('/needleWeighing/clothing/ON-30',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/clothing/ON-30',[QuestionController::class,'store']);
 Route::get('/needleWeighing/clothing/ON-30',[ViewController::class,'ON30']);
 
-Route::post('/needleWeighing/clothing/ON-688P',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/clothing/ON-688P',[QuestionController::class,'store']);
 Route::get('/needleWeighing/clothing/ON-688P',[ViewController::class,'ON688P']);
 
 // 食品
@@ -421,13 +421,13 @@ Route::get('/needleWeighing/FoodBeverage', function () {
     return view('product/category/needleWeighing/FoodBeverage');
 });
 
-Route::post('/needleWeighing/FoodBeverage/CWL-300',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/FoodBeverage/CWL-300',[QuestionController::class,'store']);
 Route::get('/needleWeighing/FoodBeverage/CWL-300',[ViewController::class,'CWL300']);
 
-Route::post('/needleWeighing/FoodBeverage/MD-400',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/FoodBeverage/MD-400',[QuestionController::class,'store']);
 Route::get('/needleWeighing/FoodBeverage/MD-400',[ViewController::class,'MD400']);
 
-Route::post('/needleWeighing/FoodBeverage/CW-150',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/FoodBeverage/CW-150',[QuestionController::class,'store']);
 Route::get('/needleWeighing/FoodBeverage/CW-150',[ViewController::class,'CW150']);
 
 // 一般大眾
@@ -436,7 +436,7 @@ Route::get('/needleWeighing/General', function () {
     return view('product/category/needleWeighing/General');
 });
 
-Route::post('/needleWeighing/General/ON-003',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/needleWeighing/General/ON-003',[QuestionController::class,'store']);
 Route::get('/needleWeighing/General/ON-003',[ViewController::class,'ON003']);
 
 // <*--------  鍋爐 -----------*>
@@ -450,10 +450,10 @@ Route::get('/Boiler/ElectricSteam', function () {
     return view('product/category/Boiler/ElectricSteam');
 });
 
-Route::post('/Boiler/ElectricSteam/WDR',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/ElectricSteam/WDR',[QuestionController::class,'store']);
 Route::get('/Boiler/ElectricSteam/WDR',[ViewController::class,'WDR']);
 
-Route::post('/Boiler/ElectricSteam/LDR',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/ElectricSteam/LDR',[QuestionController::class,'store']);
 Route::get('/Boiler/ElectricSteam/LDR',[ViewController::class,'LDR']);
 
 //燃氣
@@ -462,19 +462,19 @@ Route::get('/Boiler/GasFired', function () {
     return view('product/category/Boiler/GasFired');
 });
 
-Route::post('/Boiler/GasFired/WNS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/GasFired/WNS',[QuestionController::class,'store']);
 Route::get('/Boiler/GasFired/WNS',[ViewController::class,'WNS']);
 
-Route::post('/Boiler/GasFired/WNS-Internal',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/GasFired/WNS-Internal',[QuestionController::class,'store']);
 Route::get('/Boiler/GasFired/WNS-Internal',[ViewController::class,'WNSInternal']);
 
-Route::post('/Boiler/GasFired/LSS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/GasFired/LSS',[QuestionController::class,'store']);
 Route::get('/Boiler/GasFired/LSS',[ViewController::class,'LSS']);
 
-Route::post('/Boiler/GasFired/CWNS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/GasFired/CWNS',[QuestionController::class,'store']);
 Route::get('/Boiler/GasFired/CWNS',[ViewController::class,'CWNS']);
 
-Route::post('/Boiler/GasFired/CWNSJ',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/GasFired/CWNSJ',[QuestionController::class,'store']);
 Route::get('/Boiler/GasFired/CWNSJ',[ViewController::class,'CWNSJ']);
 
 //燃油
@@ -483,16 +483,16 @@ Route::get('/Boiler/OilFired', function () {
     return view('product/category/Boiler/OilFired');
 });
 
-Route::post('/Boiler/OilFired/WNS-Internal',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/OilFired/WNS-Internal',[QuestionController::class,'store']);
 Route::get('/Boiler/OilFired/WNS-Internal',[ViewController::class,'Oil_WNSInternal']);
 
-Route::post('/Boiler/OilFired/LSS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/OilFired/LSS',[QuestionController::class,'store']);
 Route::get('/Boiler/OilFired/LSS',[ViewController::class,'Oil_LSS']);
 
-Route::post('/Boiler/OilFired/CWNS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/OilFired/CWNS',[QuestionController::class,'store']);
 Route::get('/Boiler/OilFired/CWNS',[ViewController::class,'Oil_CWNS']);
 
-Route::post('/Boiler/OilFired/CWNSJ',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/OilFired/CWNSJ',[QuestionController::class,'store']);
 Route::get('/Boiler/OilFired/CWNSJ',[ViewController::class,'Oil_CWNSJ']);
 
 //生物質
@@ -501,22 +501,22 @@ Route::get('/Boiler/Biomass', function () {
     return view('product/category/Boiler/Biomass');
 });
 
-Route::post('/Boiler/Biomass/WNS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/Biomass/WNS',[QuestionController::class,'store']);
 Route::get('/Boiler/Biomass/WNS',[ViewController::class,'Bio_WNS']);
 
-Route::post('/Boiler/Biomass/LSS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/Biomass/LSS',[QuestionController::class,'store']);
 Route::get('/Boiler/Biomass/LSS',[ViewController::class,'Bio_LSS']);
 
-Route::post('/Boiler/Biomass/LSG',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/Biomass/LSG',[QuestionController::class,'store']);
 Route::get('/Boiler/Biomass/LSG',[ViewController::class,'Bio_LSG']);
 
-Route::post('/Boiler/Biomass/DZL',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/Biomass/DZL',[QuestionController::class,'store']);
 Route::get('/Boiler/Biomass/DZL',[ViewController::class,'Bio_DZL']);
 
-Route::post('/Boiler/Biomass/SZL',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/Biomass/SZL',[QuestionController::class,'store']);
 Route::get('/Boiler/Biomass/SZL',[ViewController::class,'Bio_SZL']);
 
-Route::post('/Boiler/Biomass/BMF',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/Biomass/BMF',[QuestionController::class,'store']);
 Route::get('/Boiler/Biomass/BMF',[ViewController::class,'Bio_BMF']);
 
 //燃煤
@@ -525,10 +525,10 @@ Route::get('/Boiler/CoalFired', function () {
     return view('product/category/Boiler/CoalFired');
 });
 
-Route::post('/Boiler/CoalFired/DZL',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/CoalFired/DZL',[QuestionController::class,'store']);
 Route::get('/Boiler/CoalFired/DZL',[ViewController::class,'Coal_DZL']);
 
-Route::post('/Boiler/CoalFired/SZL',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/Boiler/CoalFired/SZL',[QuestionController::class,'store']);
 Route::get('/Boiler/CoalFired/SZL',[ViewController::class,'Coal_SZL']);
 
 
@@ -539,34 +539,34 @@ Route::get('/others', function () {
     return view('product/category/others');
 });
 
-Route::post('/ON-5',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/ON-5',[QuestionController::class,'store']);
 Route::get('/ON-5',[ViewController::class,'ON5']);
 
-Route::post('/ON-CM',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/ON-CM',[QuestionController::class,'store']);
 Route::get('/ON-CM',[ViewController::class,'ONCM']);
 
-Route::post('/WLS-301',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/WLS-301',[QuestionController::class,'store']);
 Route::get('/WLS-301',[ViewController::class,'WLS301']);
 
-Route::post('/OM-78',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OM-78',[QuestionController::class,'store']);
 Route::get('/OM-78',[ViewController::class,'OM78']);
 
-Route::post('/OB-201L',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OB-201L',[QuestionController::class,'store']);
 Route::get('/OB-201L',[ViewController::class,'OB201L']);
 
-Route::post('/OP-408S',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-408S',[QuestionController::class,'store']);
 Route::get('/OP-408S',[ViewController::class,'OP408S']);
 
-Route::post('/OP-747',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-747',[QuestionController::class,'store']);
 Route::get('/OP-747',[ViewController::class,'OP747']);
 
-Route::post('/OW-40',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OW-40',[QuestionController::class,'store']);
 Route::get('/OW-40',[ViewController::class,'OW40']);
 
-Route::post('/DS-FS',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/DS-FS',[QuestionController::class,'store']);
 Route::get('/DS-FS',[ViewController::class,'DSFS']);
 
-Route::post('/OP-102A',[QuestionController::class,'store'])->name('UW-2S');
+Route::post('/OP-102A',[QuestionController::class,'store']);
 Route::get('/OP-102A',[ViewController::class,'OP102A']);
 
 
