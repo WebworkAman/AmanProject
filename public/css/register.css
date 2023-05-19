@@ -180,9 +180,6 @@ body main .log .alert.alert-fail {
   body main .log .left form .formgroup {
     text-align: center;
   }
-  body main .log .left form .formgroup input {
-    width: 300px;
-  }
   body main .log .left .input input {
     font-size: 1rem;
   }
