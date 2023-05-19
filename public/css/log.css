@@ -52,24 +52,24 @@ table {
   border-spacing: 0;
 }
 
-body {
+.UserLogin {
   background-color: rgb(110, 134, 201);
   min-width: 311px;
 }
-body main .topText {
+.UserLogin main .topText {
   text-align: center;
   color: whitesmoke;
   margin-top: 100px;
   font-size: 2rem;
 }
-body main .topText img {
+.UserLogin main .topText img {
   width: 12rem;
 }
-body main .log.forgot p {
+.UserLogin main .log.forgot p {
   margin-top: 15px;
   line-height: 1.2;
 }
-body main .log {
+.UserLogin main .log {
   color: cornsilk;
   display: flex;
   justify-content: space-evenly;
@@ -82,35 +82,35 @@ body main .log {
   margin: 50px auto;
   background-color: rgb(110, 134, 201);
 }
-body main .log .left {
+.UserLogin main .log .left {
   height: 394px;
   width: 300px;
   padding-left: 10px;
   padding-top: 10px;
 }
-body main .log .left p {
+.UserLogin main .log .left p {
   letter-spacing: 1.5;
 }
-body main .log .left h1 {
+.UserLogin main .log .left h1 {
   font-size: 24px;
   margin-bottom: 10px;
 }
-body main .log .left .txt {
+.UserLogin main .log .left .txt {
   display: flex;
 }
-body main .log .left .txt a {
+.UserLogin main .log .left .txt a {
   margin-left: 10px;
   text-decoration: none;
   color: #273252;
 }
-body main .log .left .txt a:hover {
+.UserLogin main .log .left .txt a:hover {
   color: cornsilk;
 }
-body main .log .left .input {
+.UserLogin main .log .left .input {
   margin-top: 30px;
   margin-bottom: 15px;
 }
-body main .log .left .input input {
+.UserLogin main .log .left .input input {
   border: 0;
   border-radius: 10px;
   margin-top: 15px;
@@ -120,34 +120,34 @@ body main .log .left .input input {
   padding-left: 15px;
   color: #273252;
 }
-body main .log .left .input .text-danger {
+.UserLogin main .log .left .input .text-danger {
   margin-top: 10px;
   color: #820d0d;
 }
-body main .log .left .check {
+.UserLogin main .log .left .check {
   text-align: right;
   margin-right: 50px;
 }
-body main .log .left .check input {
+.UserLogin main .log .left .check input {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-body main .log .left .check a {
+.UserLogin main .log .left .check a {
   text-decoration: none;
   color: cornsilk;
   font-size: 0.8rem;
 }
-body main .log .left .check a:hover {
+.UserLogin main .log .left .check a:hover {
   color: #273252;
 }
-body main .log .left .alert.alert-info {
+.UserLogin main .log .left .alert.alert-info {
   margin-top: 10px;
   text-align: center;
   line-height: 2;
   background-color: rgb(197, 24, 80);
   border-radius: 10px;
 }
-body main .log .left button {
+.UserLogin main .log .left button {
   margin-top: 20px;
   width: 250px;
   height: 45px;
@@ -159,88 +159,117 @@ body main .log .left button {
   border: none;
   cursor: pointer;
 }
-body main .log .left button a {
+.UserLogin main .log .left button a {
   text-decoration: none;
   color: aliceblue;
   letter-spacing: 1px;
   font-size: 1.2rem;
 }
-body main .log .left .baseline {
+.UserLogin main .log .left .baseline {
   margin-top: 20px;
   width: 270px;
   border: 1px cornsilk solid;
 }
-body main .log .left .admin-text {
+.UserLogin main .log .left .admin-text {
   color: rgb(17, 36, 91);
   margin-top: 30px;
 }
-body main .log .left .admin-text a {
+.UserLogin main .log .left .admin-text a {
   text-decoration: none;
   color: cornsilk;
 }
-body main .log .left .admin-text a:hover {
+.UserLogin main .log .left .admin-text a:hover {
   color: rgb(17, 36, 91);
 }
-body main .log .right img {
+.UserLogin main .log .right img {
   width: 12vw;
 }
 @media screen and (max-width: 1280px) {
-  body main .log .right img {
+  .UserLogin main .log .right img {
     width: 10vw;
     margin-right: 50px;
     min-width: 150px;
   }
 }
 @media (max-width: 699px) {
-  body main .log {
+  .UserLogin main .log {
     display: block;
     margin: 0 auto;
     width: 100%;
     border: 0;
     min-width: auto;
   }
-  body main .left {
+  .UserLogin main .left {
     margin: 0 auto;
   }
-  body main .left h1 {
+  .UserLogin main .left h1 {
     display: block;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 20px;
   }
-  body main .left .txt {
+  .UserLogin main .left .txt {
     justify-content: center;
     padding: 10px;
   }
-  body main .left p {
+  .UserLogin main .left p {
     font-size: 1.3rem;
   }
-  body main .left a {
+  .UserLogin main .left a {
     font-size: 1.3rem;
   }
-  body main .left form {
+  .UserLogin main .left form {
     margin: 0 auto;
   }
-  body main .left form .formgroup {
+  .UserLogin main .left form .formgroup {
     text-align: center;
   }
-  body main .left .input input {
+  .UserLogin main .left .input input {
     font-size: 1rem;
   }
-  body main .left button {
+  .UserLogin main .left button {
     margin: 20px;
   }
-  body main .right {
+  .UserLogin main .right {
     display: none;
   }
 }
 
 .admin {
   background-color: #273252;
+  min-width: 311px;
+}
+.admin main .topText {
+  text-align: center;
+  color: whitesmoke;
+  margin-top: 100px;
+  font-size: 2rem;
+}
+.admin main .topText img {
+  width: 12rem;
+}
+.admin main .log.forgot p {
+  margin-top: 15px;
+  line-height: 1.2;
 }
 .admin main .log {
+  color: cornsilk;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 45vw;
+  min-width: 660px;
+  height: 500px;
+  border: 2px solid cornsilk;
+  border-radius: 10px;
+  margin: 50px auto;
   background-color: #273252;
-  justify-content: center;
+}
+.admin main .log .right {
+  height: 394px;
+  width: 300px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 .admin main .log .right h1 {
   font-size: 24px;
@@ -266,16 +295,18 @@ body main .log .right img {
   border-radius: 10px;
   margin-top: 15px;
   width: 13vw;
+  min-width: 250px;
   height: 30px;
   padding-left: 15px;
   color: #273252;
 }
 .admin main .log .right .input .text-danger {
   margin-top: 30px;
+  color: #820d0d;
 }
 .admin main .log .right .check {
   text-align: right;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 .admin main .log .right .check input {
   margin-top: 15px;
@@ -310,4 +341,51 @@ body main .log .right img {
 .admin main .log .right button:hover {
   background-color: #bbc5e2;
   color: #273252;
+}
+@media (max-width: 699px) {
+  .admin main .log {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: 0;
+    min-width: auto;
+  }
+  .admin main .left {
+    display: none;
+  }
+  .admin main .right {
+    margin: 0 auto;
+  }
+  .admin main .right h1 {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  .admin main .right .txt {
+    justify-content: center;
+    padding: 10px;
+  }
+  .admin main .right p {
+    font-size: 1.3rem;
+  }
+  .admin main .right a {
+    font-size: 1.3rem;
+  }
+  .admin main .right form {
+    margin: 0 auto;
+  }
+  .admin main .right form .formgroup {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .admin main .right .input {
+    text-align: center;
+  }
+  .admin main .right .input input {
+    font-size: 1rem;
+  }
+  .admin main .right button {
+    margin: 20px;
+  }
 }

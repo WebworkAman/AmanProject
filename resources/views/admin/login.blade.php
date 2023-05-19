@@ -27,13 +27,13 @@
                                
                 <form method="post" action="{{route('login')}}">
                    @csrf
-                <div>
+                <div class="formgroup">
                       <label class="input">
                           <p><input type="email" name="email" placeholder="請 輸 入 管 理 者 帳 號"></p>
                           <span class="text-danger">@error('email') {{$message}} @enderror</span>
                       </label>
                 </div>
-                <div>
+                <div class="formgroup">
                     <label class="input">
                         <p><input type="password" name="password" placeholder="請 輸 入 管 理 者 密 碼"></p>
                         <span class="text-danger">@error('email') {{$message}} @enderror</span>

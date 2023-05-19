@@ -1,7 +1,7 @@
 @import "./reset";
 @import "./set";
 
-body {
+.UserLogin {
     background-color: rgb(110, 134, 201);
     min-width: 311px;
 
@@ -189,59 +189,63 @@ body {
         }
 
         @media (max-width:699px) {
-                    
-            .log{
-                display: block;
-                margin: 0 auto;
-                width: 100%;
-                border: 0;
-                min-width:auto;
-            }
-            .left{
-                
-                margin: 0 auto;
-                h1{
+
+            
+                .log{
                     display: block;
-                    text-align: center;
-                    margin-top: 30px;
-                    margin-bottom: 20px;
-
+                    margin: 0 auto;
+                    width: 100%;
+                    border: 0;
+                    min-width:auto;
                 }
-                .txt{
-                    justify-content: center;
-                    padding:10px;
+                .left{
+                    
+                    margin: 0 auto;
+                    h1{
+                        display: block;
+                        text-align: center;
+                        margin-top: 30px;
+                        margin-bottom: 20px;
+    
+                    }
+                    .txt{
+                        justify-content: center;
+                        padding:10px;
+                        
+                    }
+                    p{
+                        font-size: 1.3rem;
+                    }
+                    a{
+                        font-size: 1.3rem;
+                    }
+    
+                    form{
+                        margin: 0 auto;
+                        .formgroup{
+                            text-align: center;
+                        }
+    
+                    }
+    
+                    .input input{
+                        font-size: 1rem;
+                    }
+    
+                    button{
+                        margin:20px;
+                    }
+    
                     
                 }
-                p{
-                    font-size: 1.3rem;
+            
+                .right{
+                    display: none;
+    
                 }
-                a{
-                    font-size: 1.3rem;
-                }
+            
+                    
 
-                form{
-                    margin: 0 auto;
-                    .formgroup{
-                        text-align: center;
-                    }
-
-                }
-
-                .input input{
-                    font-size: 1rem;
-                }
-
-                button{
-                    margin:20px;
-                }
-
-                
-            }
-        
-            .right{
-                display: none;
-
-            }
         
 
 
@@ -256,16 +260,45 @@ body {
 //admin UI  
 .admin{
     background-color:#273252;
+    min-width: 311px;
 
     main{
+        .topText {
+            text-align: center;
+            color: whitesmoke;
+            margin-top: 100px;
+            font-size: 2rem;
+            img{
+                width: 12rem;
+            }
+    
+        }
+        .log.forgot{
+            p{
+                margin-top: 15px;
+                line-height: 1.2;
+            }
+        }
         .log{
+          color: cornsilk;
+
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          width: 45vw;
+          min-width: 660px;
+          height: 500px;
+          border: 2px solid cornsilk;
+          border-radius: 10px;
+          margin: 50px auto;
           background-color:#273252;
-          justify-content: center;
 
           .right {
             // border: 1px solid slategrey;
-           
-
+            height: 394px;
+            width: 300px;
+            padding-left: 10px;
+            padding-top: 10px;
             h1 {
                 font-size: 24px;
                 margin-bottom: 10px;
@@ -295,6 +328,7 @@ body {
                     border-radius: 10px;
                     margin-top: 15px;
                     width: 13vw;
+                    min-width: 250px;
                     height: 30px;
                     padding-left: 15px;
                     color: #273252;
@@ -303,13 +337,14 @@ body {
                 }
                 .text-danger{
                     margin-top: 30px;
+                    color: #820d0d;
                 }
             }
 
             .check{
                 text-align: right;
                 
-                margin-right: 20px;
+                margin-right: 50px;
                 input{
                     margin-top: 15px;
                     margin-bottom: 15px;
@@ -356,5 +391,74 @@ body {
         }
 
         }
+
+        @media (max-width:699px) {
+                    
+            .log{
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                border: 0;
+                min-width:auto;
+            }
+            .left{
+                display: none;
+                
+            }
+        
+            .right{
+                
+                margin: 0 auto;
+                h1{
+                    display: block;
+                    text-align: center;
+                    margin-top: 30px;
+                    margin-bottom: 20px;
+
+                }
+                .txt{
+                    justify-content: center;
+                    padding:10px;
+                    
+                }
+                p{
+                    font-size: 1.3rem;
+                }
+                a{
+                    font-size: 1.3rem;
+                }
+
+                form{
+                    margin: 0 auto;
+                    .formgroup{
+                        text-align: center;
+                        margin-bottom: 15px;
+                    }
+
+
+                }
+
+                .input{
+                    text-align: center;
+                    
+                    
+                }
+
+                .input input{
+                    font-size: 1rem;
+                    
+                }
+
+                button{
+                    margin:20px;
+                }
+
+                
+            }
+        
+
+
+ 
+      }
     }
 }
