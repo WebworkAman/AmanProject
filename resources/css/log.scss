@@ -3,19 +3,21 @@
 
 body {
     background-color: rgb(110, 134, 201);
+    min-width: 311px;
 
-    .topText {
-        text-align: center;
-        color: whitesmoke;
-        margin-top: 100px;
-        font-size: 2rem;
-        img{
-            width: 12rem;
-        }
 
-    }
 
     main {
+        .topText {
+            text-align: center;
+            color: whitesmoke;
+            margin-top: 100px;
+            font-size: 2rem;
+            img{
+                width: 12rem;
+            }
+    
+        }
         .log.forgot{
             p{
                 margin-top: 15px;
@@ -186,7 +188,7 @@ body {
 
         }
 
-        @media (max-width:414px) {
+        @media (max-width:699px) {
                     
             .log{
                 display: block;
@@ -210,6 +212,12 @@ body {
                     padding:10px;
                     
                 }
+                p{
+                    font-size: 1.3rem;
+                }
+                a{
+                    font-size: 1.3rem;
+                }
 
                 form{
                     margin: 0 auto;
@@ -217,7 +225,10 @@ body {
                         text-align: center;
                     }
 
+                }
 
+                .input input{
+                    font-size: 1rem;
                 }
 
                 button{
