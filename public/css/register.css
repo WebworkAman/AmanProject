@@ -184,7 +184,7 @@ body main .log .alert.alert-fail {
     font-size: 1rem;
   }
   body main .log .left button {
-    margin: 30px;
+    margin: 25px;
   }
   body main .right {
     display: none;

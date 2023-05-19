@@ -228,7 +228,7 @@ table {
     font-size: 1rem;
   }
   .UserLogin main .left button {
-    margin: 30px;
+    margin: 25px;
   }
   .UserLogin main .right {
     display: none;
@@ -385,6 +385,6 @@ table {
     font-size: 1rem;
   }
   .admin main .right button {
-    margin: 30px;
+    margin: 25px;
   }
 }
