@@ -190,6 +190,40 @@ body main .log .right img {
     min-width: 150px;
   }
 }
+@media (max-width: 414px) {
+  body main .log {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border: 0;
+    min-width: auto;
+  }
+  body main .left {
+    margin: 0 auto;
+  }
+  body main .left h1 {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  body main .left .txt {
+    justify-content: center;
+    padding: 10px;
+  }
+  body main .left form {
+    margin: 0 auto;
+  }
+  body main .left form .formgroup {
+    text-align: center;
+  }
+  body main .left button {
+    margin: 20px;
+  }
+  body main .right {
+    display: none;
+  }
+}
 
 .admin {
   background-color: #273252;
