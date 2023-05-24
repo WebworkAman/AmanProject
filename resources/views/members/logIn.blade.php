@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/log.css">
 </head>
 
-<body class="UserLogin">
+<body class="UserLogin" style="background-image: url('{{ asset('/imgs/photo/logbg.jpg') }}')">
 
     <main>
     <h1 class="topText"><img src="{{asset('imgs/photo/logo.png')}}"></h1>
