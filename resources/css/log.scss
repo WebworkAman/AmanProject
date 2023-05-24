@@ -3,18 +3,25 @@
 
 .UserLogin {
     background-color: rgb(110, 134, 201);
+    background-image: url("../../public/imgs/photo/logbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     min-width: 311px;
 
 
 
     main {
         .topText {
-            text-align: center;
+            text-align: end;
             color: whitesmoke;
-            margin-top: 100px;
+            margin-top: 70px;
+            margin-bottom: 10px;
             font-size: 2rem;
+           
             img{
-                width: 12rem;
+                width: 11rem;
+                margin-right: 75px;
+                
             }
     
         }
@@ -25,38 +32,53 @@
             }
         }
         .log {
+            
             color: cornsilk;
 
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
             align-items: center;
-            width: 45vw;
-            min-width: 660px;
-            height: 500px;
-            border: 2px solid cornsilk;
-            border-radius: 10px;
-            margin: 50px auto;
-            background-color: rgb(110, 134, 201);
+            justify-content: center;
+            
+            width:25vw;
+            min-width: 360px;
+            height: 700px;
+            margin-left: 29vw;
+            // margin: 0 auto;
+            background-color: black;
+            opacity: .7;
+            h1 {
+                font-size: 36px;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
 
             .left {
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
                 // border: 1px solid slategrey;
+                margin: 0 auto;
+                margin-top: 10px;
+
                 height: 394px;
                 width: 300px;
                 p{
-                    letter-spacing: 1.5;
+                    text-align: center;
+                    letter-spacing: 2.6;
+                    font-size: 1.5rem;
                 }
 
 
-                padding-left: 10px;
-                padding-top: 10px;
 
-                h1 {
-                    font-size: 24px;
-                    margin-bottom: 10px;
-                }
+
 
                 .txt {
                     display: flex;
+                    font-size: 12rem;
 
                     a {
                         margin-left: 10px;
@@ -69,20 +91,29 @@
                         color: cornsilk;
                     }
                 }
-
+                 .formgroup{
+                    margin-bottom: 40px ;
+                 }
                 .input {
+                    
                     margin-top: 30px;
-                    margin-bottom: 15px;
+                    margin-bottom: 30px;
                    
                     input {
-                        border: 0;
-                        border-radius: 10px;
+                        border: 0px;
+                        border-color: #878787;
+                        border-style:solid;
+                        border-bottom-width: 1px;
+                        background-color: transparent;
                         margin-top: 15px;
-                        width: 13vw;
+                        width: 17vw;
                         min-width: 250px;
                         height: 30px;
                         padding-left: 15px;
+                        text-align: center;
                         color: #273252;
+                        font-size: 1.1rem;
+                        letter-spacing: 2.6;
                         
                        
                     }
@@ -93,20 +124,29 @@
                 }
 
                 .check{
-                    text-align: right;
+                    margin-top: 20px;
+                    display: flex;
+                    // border: 1px solid silver;
+                    width: 17vw;
+                    min-width: 250px;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: center;
                     
-                    margin-right: 50px;
-                    input{
+                    span{
                         margin-top: 15px;
                         margin-bottom: 15px;
+                        
                     }
                     a{
                         text-decoration: none;
-                        color: cornsilk;
-                        font-size: .8rem;
+                        color: yellow;
+                        border-bottom: 1px solid yellow;
+                        cursor: pointer;
                     }
                     a:hover{
                         color: #273252;
+                        border-bottom: 1px solid #273252;;
 
                     }
                 }
@@ -118,28 +158,33 @@
                     border-radius: 10px;
 
                 }
-
-                button {
+                .button-style{
                    
-                    margin-top: 20px;
-                    width: 250px;
-                    height: 45px;
-                    font-size: 1rem;
-                    border-radius: 2px;
+                    text-align: center;
+                    button {
+                    
+                        margin-top: 30px;
 
-                    color: cornsilk;
-                    background-color: rgb(17, 36, 91);
-                    border-radius: 20px;
-                    border: none;
-                    cursor: pointer;
-
-                    a{
-                        text-decoration: none;
-                        color: aliceblue;
-                        letter-spacing: 1px;
-                        font-size: 1.2rem;
+                        width: 200px;
+                        height: 45px;
+                        font-size: 1rem;
+                        border-radius: 2px;
+    
+                        color: white;
+                        background-color: orange;
+                        border-radius: 20px;
+                        border: none;
+                        cursor: pointer;
+    
+                        a{
+                            text-decoration: none;
+                            color: aliceblue;
+                            letter-spacing: 1px;
+                            font-size: 1.2rem;
+                        }
                     }
                 }
+
                 .baseline{
                     margin-top: 20px;
                     width: 270px;
@@ -164,6 +209,7 @@
             .right{
                 img{
                     width: 12vw;
+                    display: none;
                 }
                 
             }

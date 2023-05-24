@@ -10,22 +10,23 @@
 <body class="UserLogin">
 
     <main>
-    <h1 class="topText"><img src="{{asset('imgs/logo-01.png')}}"></h1>
+    <h1 class="topText"><img src="{{asset('imgs/photo/logo.png')}}"></h1>
     
         <div class="log">
-
+            <h1>登 入</h1>
             <div class="left">
-                <h1>登入首頁</h1>
-                <div class="txt">
+                
+                <!-- <div class="txt">
 
                     <p>新用戶? </p><a href="{{route('members.create')}}"> 註 冊 </a>
-                </div>
+                </div> -->
                                
                 <form method="post" action="{{route('members.session.store')}}">
                    @csrf
                 <div class='formgroup'>
                       <label class="input">
-                          <p><input type="email" name="email" placeholder="請輸入郵件地址"
+                          <p>請輸入帳號</p>
+                          <p><input type="email" name="email" placeholder=""
                           value="{{Session::get('verifiedEmail')?Session::get('verifiedEmail'):old('email')}}"
                           ></p>
                           <p class="text-danger">@error('email') {{$message}} @enderror</p>
@@ -33,18 +34,27 @@
                 </div>
                 <div class='formgroup'>
                     <label class="input">
-                        <p><input type="password" name="password" placeholder="請輸入密碼" value="{{old('password')}}"></p>
+                        <p>請輸入密碼</p>
+                        <p><input type="password" name="password" placeholder="" value="{{old('password')}}"></p>
                         <p class="text-danger">@error('password') {{$message}} @enderror</p>
                     </label>
                 </div> 
-                <div class="check">
-                       <input type="checkbox"> 記 住 我 </br>
-                       <a href="{{asset('forgot')}}"> 忘 記 密 碼</a>
-                </div>
+
                 <div>
-                <button type="submit">
+                <div class="button-style">
+                    <button type="submit">
                        登 入
-                </button>
+                    </button>
+                </div>
+
+
+                <div class="check">
+                       <label> <input type="checkbox"> 保 持 登 入</label>
+                       
+                       <span>忘 記 密 碼？<a href="{{asset('forgot')}}"> 協 助 </a></span>                     
+                       
+                       
+                </div>
                 @if(Session::has('fail'))
                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
                 @endif

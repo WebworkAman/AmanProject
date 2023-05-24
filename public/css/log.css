@@ -54,16 +54,21 @@ table {
 
 .UserLogin {
   background-color: rgb(110, 134, 201);
+  background-image: url(/images/logbg.jpg?80dbf3afbd40f1d107864f6f880cfe30);
+  background-repeat: no-repeat;
+  background-size: cover;
   min-width: 311px;
 }
 .UserLogin main .topText {
-  text-align: center;
+  text-align: end;
   color: whitesmoke;
-  margin-top: 100px;
+  margin-top: 70px;
+  margin-bottom: 10px;
   font-size: 2rem;
 }
 .UserLogin main .topText img {
-  width: 12rem;
+  width: 11rem;
+  margin-right: 75px;
 }
 .UserLogin main .log.forgot p {
   margin-top: 15px;
@@ -72,31 +77,39 @@ table {
 .UserLogin main .log {
   color: cornsilk;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
-  width: 45vw;
-  min-width: 660px;
-  height: 500px;
-  border: 2px solid cornsilk;
-  border-radius: 10px;
-  margin: 50px auto;
-  background-color: rgb(110, 134, 201);
+  justify-content: center;
+  width: 25vw;
+  min-width: 360px;
+  height: 700px;
+  margin-left: 29vw;
+  background-color: black;
+  opacity: 0.7;
+}
+.UserLogin main .log h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 .UserLogin main .log .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 10px;
   height: 394px;
   width: 300px;
-  padding-left: 10px;
-  padding-top: 10px;
 }
 .UserLogin main .log .left p {
-  letter-spacing: 1.5;
-}
-.UserLogin main .log .left h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 2.6;
+  font-size: 1.5rem;
 }
 .UserLogin main .log .left .txt {
   display: flex;
+  font-size: 12rem;
 }
 .UserLogin main .log .left .txt a {
   margin-left: 10px;
@@ -106,39 +119,55 @@ table {
 .UserLogin main .log .left .txt a:hover {
   color: cornsilk;
 }
+.UserLogin main .log .left .formgroup {
+  margin-bottom: 40px;
+}
 .UserLogin main .log .left .input {
   margin-top: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .UserLogin main .log .left .input input {
-  border: 0;
-  border-radius: 10px;
+  border: 0px;
+  border-color: #878787;
+  border-style: solid;
+  border-bottom-width: 1px;
+  background-color: transparent;
   margin-top: 15px;
-  width: 13vw;
+  width: 17vw;
   min-width: 250px;
   height: 30px;
   padding-left: 15px;
+  text-align: center;
   color: #273252;
+  font-size: 1.1rem;
+  letter-spacing: 2.6;
 }
 .UserLogin main .log .left .input .text-danger {
   margin-top: 10px;
   color: #820d0d;
 }
 .UserLogin main .log .left .check {
-  text-align: right;
-  margin-right: 50px;
+  margin-top: 20px;
+  display: flex;
+  width: 17vw;
+  min-width: 250px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
-.UserLogin main .log .left .check input {
+.UserLogin main .log .left .check span {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 .UserLogin main .log .left .check a {
   text-decoration: none;
-  color: cornsilk;
-  font-size: 0.8rem;
+  color: yellow;
+  border-bottom: 1px solid yellow;
+  cursor: pointer;
 }
 .UserLogin main .log .left .check a:hover {
   color: #273252;
+  border-bottom: 1px solid #273252;
 }
 .UserLogin main .log .left .alert.alert-info {
   margin-top: 10px;
@@ -147,19 +176,22 @@ table {
   background-color: rgb(197, 24, 80);
   border-radius: 10px;
 }
-.UserLogin main .log .left button {
-  margin-top: 20px;
-  width: 250px;
+.UserLogin main .log .left .button-style {
+  text-align: center;
+}
+.UserLogin main .log .left .button-style button {
+  margin-top: 30px;
+  width: 200px;
   height: 45px;
   font-size: 1rem;
   border-radius: 2px;
-  color: cornsilk;
-  background-color: rgb(17, 36, 91);
+  color: white;
+  background-color: orange;
   border-radius: 20px;
   border: none;
   cursor: pointer;
 }
-.UserLogin main .log .left button a {
+.UserLogin main .log .left .button-style button a {
   text-decoration: none;
   color: aliceblue;
   letter-spacing: 1px;
@@ -183,6 +215,7 @@ table {
 }
 .UserLogin main .log .right img {
   width: 12vw;
+  display: none;
 }
 @media screen and (max-width: 1280px) {
   .UserLogin main .log .right img {
