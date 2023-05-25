@@ -10,7 +10,8 @@
           rel="stylesheet" 
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
           crossorigin="anonymous">
-          <link rel="stylesheet" href="../css/register.css">
+          <!-- <link rel="stylesheet" href="../css/register.css"> -->
+          <link rel="stylesheet" href="{{asset('css/register.css')}}">
           
 </head>
 <body>
@@ -19,7 +20,7 @@
     <div class="container">
         <div class="left">
             
-                <h1>Reset Password</h1><hr>
+                <h1>密 碼 重 置</h1><hr>
                 <form action="{{route('reset-password')}}" method="post">
                     @if(Session::has('success'))
                     <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -33,26 +34,26 @@
                     @csrf
                     <input type="hidden" name="token" value="{{ $token }}">
                     <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email">帳 號</label>
                             <input type="text" class="form-control" placeholder="Enter Email" name="email" 
                             value="{{$email ?? old('email')}}">
                             <p class="text-danger">@error('email') {{$message}} @enderror</p>
                         </div>
                     <div class="form-group">
-                            <label for="password">New Password</label>
+                            <label for="password">新 密 碼</label>
                             <input type="password" class="form-control" placeholder="Enter Password" name="password" value="{{old('password')}}">
                             <p class="text-danger">@error('password') {{$message}} @enderror</p>
                         </div>
                     <div class="form-group">
-                            <label for="password">Confirm Password</label>
+                            <label for="password">確 認 新 密 碼</label>
                             <input type="password" class="form-control" placeholder="Enter Password" name="password_confirmation" value="{{old('password_confirmation')}}">
                             <p class="text-danger">@error ('password_confirmation') {{$message}} @enderror</p>
                         </div>
                     <div class="form-group">
-                        <button type='submit' class="btn btn-block btn-primary" type="submit">Reset Password</button>
+                        <button type='submit' class="btn btn-block btn-primary" type="submit">提 交</button>
                         </div>
                         <br>
-                        <a href="{{route('members.session.create')}}">Return Login<a>
+                        <!-- <a href="{{route('members.session.create')}}">返 回 登 入<a> -->
                 </form>
             
             

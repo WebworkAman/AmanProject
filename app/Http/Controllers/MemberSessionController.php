@@ -100,11 +100,11 @@ class MemberSessionController extends Controller
         ]);
         $action_link = route('reset',['token'=>$token,'email'=>$request->email]);
         $body = "我們收到了重置與關聯的 <b>Oshima</b> 帳號請求來自&nbsp;" .$request->email.
-        ". 您可以通過點擊下面的連結重置您的密碼";
+        "&nbsp;您可以通過點擊下面的連結重置您的密碼";
 
         \Mail::send('email-forgot',['action_link'=>$action_link,'body'=>$body],function($message)use($request){
             $message->from('wwa87819tw77@gmail.com','Oshima');
-            $message->to($request->email,'Your Name')->subject('Reset Password');
+            $message->to($request->email,'Your Name')->subject('重 置 密 碼');
         });
 
         return back()->with('success','我們已通過E-mail發送您的密碼重置連結，請至個人信箱收取。');
