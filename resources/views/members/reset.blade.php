@@ -11,14 +11,14 @@
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
           crossorigin="anonymous">
           <!-- <link rel="stylesheet" href="../css/register.css"> -->
-          <link rel="stylesheet" href="{{asset('css/register.css')}}">
+          <link rel="stylesheet" href="{{asset('css/log.css')}}">
           
 </head>
-<body>
+<body class="UserLogin forgotPW" style="background-image: url('{{ asset('/imgs/photo/logbg.jpg') }}')">
     <main>
-         <h1 class="topText"><img src="../../imgs/logo-01.png"></h1>
-    <div class="container">
-        <div class="left">
+         <h1 class="topText"><img src="{{asset('imgs/photo/logo.png')}}"></h1>
+             <div class="container">
+                <div class="left">
             
                 <h1>密 碼 重 置</h1><hr>
                 <form action="{{route('reset-password')}}" method="post">
@@ -58,9 +58,7 @@
             
             
         </div>
-        <div class="right">
-            <img src="../imgs/Illustration1.png">
-            </div>
+
     </div>
     </main>
    
