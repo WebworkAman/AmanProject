@@ -24,12 +24,7 @@
             }
     
         }
-        .log.forgot{
-            p{
-                margin-top: 15px;
-                line-height: 1.2;
-            }
-        }
+
         .log {
             
             color: cornsilk;
@@ -50,6 +45,10 @@
                 font-size: 36px;
                 margin-bottom: 40px;
                 text-align: center;
+            }
+            h2{
+                font-size: 2vw;
+                letter-spacing: 2.6;
             }
             
 
@@ -110,7 +109,7 @@
                         height: 30px;
                         padding-left: 15px;
                         text-align: center;
-                        color: #273252;
+                        color: whitesmoke;
                         font-size: 1.1rem;
                         letter-spacing: 2.6;
                         
@@ -231,6 +230,14 @@
 
             
 
+        }
+        .log.forgot{
+            p{
+                margin-top: 15px;
+                line-height: 1.6;
+                font-size: 1.2vw;
+
+            }
         }
 
         @media (max-width:699px) {
