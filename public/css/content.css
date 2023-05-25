@@ -377,6 +377,10 @@ main .chooseItem ul li p {
   height: 300px;
   overflow: scroll;
 }
+.QA_content .right-content .message_border p {
+  color: #555;
+  letter-spacing: 1.2;
+}
 .QA_content .right-content .message_border .message {
   border-bottom: 1px silver solid;
 }

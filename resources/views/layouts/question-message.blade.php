@@ -1,6 +1,6 @@
 <div class="message_border">
         @if($questions->isEmpty())
-            <p> ▽ 此機型還沒有客戶提問問題呦！從下面輸入問題吧 ▽</p>
+            <p>此機型暫無提供常見問題</p>
         @else    
               @foreach($questions as $question)
                 <div class="message">

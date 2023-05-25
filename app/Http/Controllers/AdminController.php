@@ -71,7 +71,8 @@ class AdminController extends Controller
     public function QuestionList(){
 
         $questions = Question::all();
-        return view('admin.Question.question-list', compact('questions')) ;
+        $products = Product::all();
+        return view('admin.Question.question-list', compact('questions','products'));
     }
      public function memberList(){
 
