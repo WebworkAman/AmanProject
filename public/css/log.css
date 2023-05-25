@@ -124,6 +124,7 @@ table {
 .UserLogin main .log .left .input {
   margin-top: 30px;
   margin-bottom: 30px;
+  align-items: center;
 }
 .UserLogin main .log .left .input input {
   border: 0px;
@@ -143,7 +144,9 @@ table {
 }
 .UserLogin main .log .left .input .text-danger {
   margin-top: 10px;
-  color: #820d0d;
+  margin-left: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .UserLogin main .log .left .check {
   margin-top: 20px;
@@ -227,6 +230,12 @@ table {
   margin-top: 15px;
   line-height: 1.6;
   font-size: 1.2vw;
+}
+.UserLogin main .log.forgot .alert {
+  color: #df3737;
+  margin-top: 30px;
+  letter-spacing: 1.5;
+  line-height: 1.5;
 }
 @media (max-width: 699px) {
   .UserLogin main .log {

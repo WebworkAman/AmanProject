@@ -26,7 +26,7 @@
                               value="{{old('email')}}"
                           ></p>
                           <br/>
-                          <span class="text-danger" style="color:#f5c8c8;">@error('email') {{$message}} @enderror</span>
+                          <span class="text-danger" style="color:#f5c8c8;text-align: center;">@error('email') {{$message}} @enderror</span>
                       </label>
                 </div>
                 
@@ -44,10 +44,6 @@
                     <div class="alert alert-danger">{{Session::get('fail')}}</div>
                     @endif
                </form>
-            </div>
-
-            <div class="right">
-                <img src="{{asset('imgs/Illustration.png')}}">
             </div>
             
         </div>

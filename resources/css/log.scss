@@ -96,7 +96,7 @@
                     
                     margin-top: 30px;
                     margin-bottom: 30px;
-                   
+                    align-items: center;
                     input {
                         border: 0px;
                         border-color: #878787;
@@ -112,12 +112,17 @@
                         color: whitesmoke;
                         font-size: 1.1rem;
                         letter-spacing: 2.6;
+                       
+                       
                         
                        
                     }
                     .text-danger{
                         margin-top: 10px;
-                        color: #820d0d;
+                        margin-left: 30px;
+                        width: fit-content;
+                        
+                        
                     }
                 }
 
@@ -238,6 +243,16 @@
                 font-size: 1.2vw;
 
             }
+            .alert{
+                color:#df3737;
+                margin-top: 30px;
+                letter-spacing: 1.5;
+                line-height: 1.5;
+            }
+
+
+
+
         }
 
         @media (max-width:699px) {
