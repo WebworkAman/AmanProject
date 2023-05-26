@@ -382,6 +382,26 @@ main{
         }
     }
 
+    .Show_form.member-permissions{
+        h3{
+            color: #555;
+            font-size: 1.5rem;
+            
+        }
+        .checkSelect{
+            ul{
+                display: flex;
+                flex-wrap:wrap;
+
+                li{
+                    width: fit-content;
+                    margin: 10px;
+                }
+
+            }
+        }
+    }
+
 
 
     

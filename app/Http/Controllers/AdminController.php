@@ -84,6 +84,13 @@ class AdminController extends Controller
         $members = Member::all();
         return view('admin.Member.member-create', compact('members')) ;
     }
+    public function SetPermissions(Request $request){
+
+        $products = Product::all();
+
+        return view('admin.Member.member-permissions', compact('products')) ;
+    }
+
     public function destroy(Member $member)
     {
          $member->delete();

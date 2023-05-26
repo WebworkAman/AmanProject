@@ -355,3 +355,16 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   border-bottom: 1px solid #555;
   margin: 8px auto;
 }
+.Show_.reply .Show_form.member-permissions h3 {
+  color: #555;
+  font-size: 1.5rem;
+}
+.Show_.reply .Show_form.member-permissions .checkSelect ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.Show_.reply .Show_form.member-permissions .checkSelect ul li {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
+}

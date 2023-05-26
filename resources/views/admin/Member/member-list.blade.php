@@ -6,6 +6,7 @@
                                   <tr>
                                       <th>會員姓名</th>
                                       <th>會員信箱</th>
+                                      <th>問題權限</th>
                                       <th></th>
                                   </tr>
                               </thead>
@@ -14,6 +15,7 @@
                                         <tr>
                                             <td><p>{{ $member->name }}</p></td>
                                             <td>{{ $member->email }}</td>
+                                            <td><a href="#">設定權限</a></td>
                                             <td>
                                                 <form method="POST" action="{{ route('members.destroy', $member->id) }}">
                                                     @csrf

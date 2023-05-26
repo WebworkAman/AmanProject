@@ -47,6 +47,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
     Route::get('/index/member-list', [AdminController::class, 'memberList'])->name('memberList');
     Route::get('/index/member-create', [AdminController::class, 'memberCreate'])->name('members.adminCreate');
+    Route::get('/index/member-permissions', [AdminController::class, 'SetPermissions'])->name('members.adminSetPermissions');
     Route::post('/index/member-create', [MemberController::class, 'AdminStore'])->name('members.adminStore');
     Route::get('/index/faq-list', [AdminController::class, 'faqList'])->name('faqList');
     Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
