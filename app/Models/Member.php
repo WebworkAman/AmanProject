@@ -12,13 +12,13 @@ class Member extends Model
 
     use HasFactory;
 
-//     public function permissions()
-//    {
-//     return $this->belongsToMany(Product::class, 'member_permissions');
-//    }
-
     public function permissions()
-    {
-        return $this->hasMany(MemberPermission::class, 'member_id');
-    }
+   {
+    return $this->belongsToMany(Product::class, 'member_permissions');
+   }
+
+    // public function permissions()
+    // {
+    //     return $this->hasMany(MemberPermission::class, 'member_id');
+    // }
 }

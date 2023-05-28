@@ -14,31 +14,31 @@
          <div class="Show_form member-permissions">
                     <h3> 權 限 管 理 </h3>
                     <a class="btn control-option" href="{{route('members.adminCreate')}}">提交更新</a>
-                    <form action="{{ route('members.adminSetPermissions',$member->id) }}" method="POST">
-    @csrf
+                    <form action="{{ route('member.permissions.update',$member->id) }}" method="POST">
+                         @csrf
 
-    <!-- 显示所有产品的复选框 -->
+                         <!-- 显示所有产品的复选框 -->
  
-    <div class="checkSelect">
-    <ul>
-    @foreach ($products as $product)
-                <li>
-                    <label>
-                        <input type="checkbox" name="products[]" value="{{ $product->id }}"
-                            @if (in_array($product->id,$memberPermissions))
-                                checked 
-                            @endif>
+                     <div class="checkSelect">
+                     <ul>
+                     @foreach ($products as $product)
+                                 <li>
+                                     <label>
+                                         <input type="checkbox" name="products[]" value="{{ $product->id }}"
+                                             @if (in_array($product->id,array_column($memberPermissions, 'id')))
+                                                 checked 
+                                             @endif>
 
-                        {{ $product->title }}
-                    </label>
-                </li>
-    @endforeach
-    </ul>
-</div>
+                                         {{ $product->title }}
+                                     </label>
+                                 </li>
+                     @endforeach
+                     </ul>
+                 </div>
 
 
-    <button type="submit">更新權限</button>
-</form>
+                      <button type="submit">更新權限</button>
+                  </form>
  
                        @stack('scripts')
 </div>

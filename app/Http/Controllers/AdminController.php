@@ -88,9 +88,39 @@ class AdminController extends Controller
         
         $member = Member::find($memberId);
         $products = Product::all();
-        $memberPermissions = $member->permissions->pluck('product_id')->toArray();
+        $memberPermissions = $member->permissions->toArray();
 
         return view('admin.Member.member-permissions', compact('member','products','memberPermissions')) ;
+    }
+
+    public function updateMemberPermissions(Request $request, $memberId){
+
+        $member = Member::find($memberId);
+        $productIds = $request->input('products',[]);
+
+        // 刪除舊的關聯
+        $member->permissions()->detach();
+        // $memberPermissions = new MemberPermissions;
+        
+
+            // 逐一建立新的關聯
+        foreach ($productIds as $productId) {
+            $member->permissions()->attach($productId);
+           }
+
+
+        // //逐一更新權限
+        // foreach($productIds as $productId){
+        //     $memberPermissions -> member_id = $member;
+        //     $memberPermissions -> product_id = $productId;
+        //     $memberPermissions ->save();
+        // }
+         
+         
+        
+     
+
+        return redirect()->back()->with('success', '權限更新成功');
     }
 
     public function destroy(Member $member)
