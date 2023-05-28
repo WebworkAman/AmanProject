@@ -17,4 +17,8 @@ class Product extends Model
     public function faq(){
         return $this->hasMany(FAQ::class);
     }
+    public function members()
+    {
+        return $this->belongsToMany(Member::class, 'member_permissions');
+    }
 }

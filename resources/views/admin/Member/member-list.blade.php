@@ -15,7 +15,7 @@
                                         <tr>
                                             <td><p>{{ $member->name }}</p></td>
                                             <td>{{ $member->email }}</td>
-                                            <td><a href="#">設定權限</a></td>
+                                            <td><a href="{{ route('members.adminSetPermissions', $member->id) }}">設定權限</a></td>
                                             <td>
                                                 <form method="POST" action="{{ route('members.destroy', $member->id) }}">
                                                     @csrf

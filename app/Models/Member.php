@@ -12,8 +12,13 @@ class Member extends Model
 
     use HasFactory;
 
-//     public static function getUser()
+//     public function permissions()
 //    {
-//     return Auth::user();
-//     }
+//     return $this->belongsToMany(Product::class, 'member_permissions');
+//    }
+
+    public function permissions()
+    {
+        return $this->hasMany(MemberPermission::class, 'member_id');
+    }
 }
