@@ -164,6 +164,25 @@ main .admin_block .Show_ .question-list h3 {
   margin-bottom: 20px;
   font-size: 1.2rem;
 }
+main .admin_block .Show_ .question-list .photoPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .admin_block .Show_ .question-list .popclose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+}
 main .admin_block .Show_ .Show_form {
   margin: 60px 100px;
   overflow: auto;

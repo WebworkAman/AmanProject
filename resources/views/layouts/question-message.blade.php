@@ -13,6 +13,9 @@
                                     查看回覆
                                 </button>
                              </p>
+                             <!-- @if($question->photo)
+                             <img src="{{ Storage::url($question->photo) }}" alt="Question Photo">
+                             @endif -->
                <div class="popup" style="display: none">
                   <div class="popup-content">
                              @if($question->answers->count() > 0)
