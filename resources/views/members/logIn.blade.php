@@ -10,7 +10,7 @@
 <body class="UserLogin" style="background-image: url('{{ asset('/imgs/photo/logbg.jpg') }}')">
 
     <main>
-    <h1 class="topText"><img src="{{asset('imgs/photo/logo.png')}}"></h1>
+    <div class="topText"><img src="{{asset('imgs/photo/logo.png')}}"></div>
     
         <div class="log">
             <h1>登 入</h1>

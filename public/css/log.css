@@ -53,10 +53,8 @@ table {
 }
 
 .UserLogin {
-  background-color: rgb(110, 134, 201);
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 311px;
 }
 .UserLogin main .topText {
   text-align: end;
@@ -129,7 +127,8 @@ table {
   justify-content: center;
   width: 25vw;
   min-width: 360px;
-  height: 700px;
+  height: 40vw;
+  min-height: 600px;
   margin-left: 29vw;
   background-color: black;
   opacity: 0.7;
@@ -293,46 +292,29 @@ table {
   .UserLogin main .log {
     display: block;
     margin: 0 auto;
-    width: 100%;
     border: 0;
-    min-width: auto;
+    overflow: hidden;
   }
-  .UserLogin main .left {
-    margin: 0 auto;
-  }
-  .UserLogin main .left h1 {
-    display: block;
-    text-align: center;
+  .UserLogin main .log h1 {
     margin-top: 30px;
-    margin-bottom: 20px;
   }
-  .UserLogin main .left .txt {
-    justify-content: center;
-    padding: 10px;
-  }
-  .UserLogin main .left p {
-    font-size: 1.3rem;
-  }
-  .UserLogin main .left a {
-    font-size: 1.3rem;
-  }
-  .UserLogin main .left form {
-    margin: 0 auto;
-  }
-  .UserLogin main .left form .formgroup {
-    text-align: center;
-  }
-  .UserLogin main .left .input input {
-    font-size: 1rem;
-  }
-  .UserLogin main .left button {
-    margin: 25px;
-  }
-  .UserLogin main .right {
-    display: none;
+  .UserLogin main .log .left .check {
+    margin-top: 30px;
+    flex-direction: column;
   }
 }
 
+@media (max-width: 699px) {
+  .UserLogin {
+    background-position: center;
+    background-repeat: repeat;
+  }
+  .UserLogin main .topText {
+    text-align: center;
+    margin-left: 70px;
+    margin-bottom: 50px;
+  }
+}
 .admin {
   background-color: #273252;
   min-width: 311px;
