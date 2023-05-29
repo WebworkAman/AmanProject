@@ -120,6 +120,7 @@
             }
 
 }
+
 main {
     margin-top: 50px;
 
@@ -159,7 +160,7 @@ main {
                 img{
 
                     width: 20vw;
-                    // margin-right: 5vw;
+                    min-width: 300px;
                     margin-top: 15px;
                     margin-bottom: 20px;
                     
@@ -189,10 +190,10 @@ main {
 
     .chooseItem {
         width: 90vw;
-        min-height: 55vh;
         margin: 0 auto;
         text-align: center;
-
+        display: flex;
+        justify-content: center;
 
         ul {
             margin-top: 50px;
@@ -200,12 +201,13 @@ main {
             justify-content: space-around;
             flex-wrap: wrap;
 
-
             li {
                 margin: 20px;
                 
                 img {
-                    width: 20vw;
+                    width: 25vw;
+                    max-width: 500px;
+                    min-width: 300px;
                     cursor: pointer;
                     
 
@@ -218,6 +220,20 @@ main {
             }
         }
     }
+
+    @media (max-width:615px) {
+    
+            .chooseItem {
+
+                ul {
+                    width: 50px;
+                }
+            }
+            
+
+    }
+
+
 }
 .faq-search-show{
     min-height: 30vw;
@@ -272,6 +288,8 @@ main {
     }
     
 }
+
+
 
 // .blur {
 //     filter: blur(5px); /* 设置模糊度，可以根据需要调整 */
@@ -461,3 +479,9 @@ main {
     
     }
 }
+
+
+
+
+
+

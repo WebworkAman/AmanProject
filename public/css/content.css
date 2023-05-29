@@ -247,6 +247,7 @@ main .img-block ul {
 }
 main .img-block ul li img {
   width: 20vw;
+  min-width: 300px;
   margin-top: 15px;
   margin-bottom: 20px;
 }
@@ -268,9 +269,10 @@ main .img-block ul li ol li img {
 }
 main .chooseItem {
   width: 90vw;
-  min-height: 55vh;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 main .chooseItem ul {
   margin-top: 50px;
@@ -282,12 +284,19 @@ main .chooseItem ul li {
   margin: 20px;
 }
 main .chooseItem ul li img {
-  width: 20vw;
+  width: 25vw;
+  max-width: 500px;
+  min-width: 300px;
   cursor: pointer;
 }
 main .chooseItem ul li p {
   margin: 15px;
   font-weight: 500;
+}
+@media (max-width: 615px) {
+  main .chooseItem ul {
+    width: 50px;
+  }
 }
 
 .faq-search-show {
