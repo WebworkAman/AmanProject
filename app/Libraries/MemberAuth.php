@@ -82,8 +82,7 @@ class MemberAuth{
                 // return redirect(MemberAuth::HOME);
 
             }else{
-                return back()->with('fail','You need to confirm your account. We have sent you
-                activation link, please check your email');
+                return back()->with('fail','請確認你的帳號驗證. 我們已將驗證信寄到此帳號郵件');
             }
              
             // if( Hash::needsRehash($_member->password)){
@@ -91,7 +90,7 @@ class MemberAuth{
             //     self::$member->save();
             // }
         }else{
-            return back()->with('fail','This email is not registered.');
+            return back()->with('fail','此信箱尚未註冊.');
         } 
        
     }

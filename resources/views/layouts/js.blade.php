@@ -48,6 +48,7 @@
                 }
             })
         }
+        
         $(document).ready(function(){
             //在此處添加 jQuery
 

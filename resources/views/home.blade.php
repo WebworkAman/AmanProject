@@ -4,12 +4,8 @@
 <main>
     <!-- <div id="main" data-title="Title Home"></div> -->
 
-    
-
-
-       
-
         <div class="img-block">
+
             <ul>
                  @foreach($pages as $page)
                  <li>

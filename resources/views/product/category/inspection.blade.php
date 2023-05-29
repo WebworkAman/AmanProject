@@ -3,6 +3,12 @@
 @section('content')
 <main>
         <h1>請選擇機器</h1>
+        @if(session('fail'))
+      <div class="alert alert-danger">
+        {{ session('fail') }}
+       </div>
+       @endif
+
 
         <div class="chooseItem">
             <ul>

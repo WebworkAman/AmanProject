@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cookie;
 use App\Models\Message;
 use App\Models\FAQ;
 use App\Models\Product;
+use App\Models\MemberPermission;
 
 
 class FAQController extends Controller
@@ -56,8 +57,24 @@ class FAQController extends Controller
     }
     //----------------------------- 驗布系列
     public function OC40N02(){
+        $memberId = session()->get('memberId');
+        $id = 1;
+        //檢查權限
+        $hasPermission = MemberPermission::where('member_id',$memberId)
+                      ->where('product_id',$id)->exists();
+
         $faqs = FAQ::where('product_id', 1)->get();
-        return view('product.FAQ.inspection.OC40N02', compact('faqs')) ;
+
+        if($hasPermission == $id){
+            return view('product.FAQ.inspection.OC40N02', compact('faqs')) ;
+
+        }else{
+             // 没有权限，显示提示信息
+             return view('product/category/others');
+        }             
+
+        
+        
     }
     public function OC1(){
         $faqs = FAQ::where('product_id', 2)->get();
