@@ -29,12 +29,11 @@
                                                 @if($question->photo)
                                                    <button class="showPhotoBtn" data-photo-url="{{Storage::url($question->photo)}}">
                                                          點擊檢視上傳
-                                                   </button>
-                                                  <div class="photoPopup" style="display: none">
+                                                   </button>  
+                                                   <div class="photoPopup" style="display: none">
                                                         <img src="{{ Storage::url($question->photo) }}" alt="Question Photo">
                                                         <button class="popclose">關閉</button>
-                                                  </div>
-                                                  
+                                                   </div> 
                                                 @else
                                                     <p>無</p>
                                                 @endif
@@ -48,6 +47,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+
                                     @endforeach
                                </tbody>
                        </table>   
@@ -55,10 +55,10 @@
                         //點擊檢視上傳圖片按鈕
                         $('.showPhotoBtn').click(function(){
                                 //獲取圖片 URL
-                                // var photoUrl = $this.data('photo-url');
+                                var photoUrl = $(this).data('photo-url');
 
                                 // //在彈窗中顯示圖片
-                                // $('.photoPopup img').attr('src',photoUrl);
+                                $('.photoPopup img').attr('src',photoUrl);
 
                                 //顯示彈窗
                                 $('.photoPopup').show();
@@ -70,6 +70,7 @@
                             $('.photoPopup').hide();
                         })
                     </script>
+                    
                        @stack('scripts')               
 </div>
 
