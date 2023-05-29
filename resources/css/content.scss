@@ -123,8 +123,38 @@
 
 main {
     margin-top: 50px;
+    display: block;
+
+    .forbidUl{
+        
+       margin-top: 100px;
+       li{
+        margin: 30px;
+        .forbid-icon{
+            width: 20vw;
+        }
+        p{
+            letter-spacing: 1.2;
+            color: red;
+        }
+        .forbid-link{
+            width: 15vw;
+            letter-spacing: 1.2;
+            text-decoration: none;
+            
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            background-color: black;
+        }
+        .forbid-link:hover{
+            background-color: #706e6e;
+             
+        }
+       }
 
 
+    }
 
     .null-icon{
         width: 15vw;

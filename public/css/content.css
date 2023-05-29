@@ -226,6 +226,32 @@ footer .social_block p {
 
 main {
   margin-top: 50px;
+  display: block;
+}
+main .forbidUl {
+  margin-top: 100px;
+}
+main .forbidUl li {
+  margin: 30px;
+}
+main .forbidUl li .forbid-icon {
+  width: 20vw;
+}
+main .forbidUl li p {
+  letter-spacing: 1.2;
+  color: red;
+}
+main .forbidUl li .forbid-link {
+  width: 15vw;
+  letter-spacing: 1.2;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: black;
+}
+main .forbidUl li .forbid-link:hover {
+  background-color: #706e6e;
 }
 main .null-icon {
   width: 15vw;

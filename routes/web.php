@@ -99,13 +99,16 @@ Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 
 //改寫 middleware group 寫法
 
-Route::get('/',[PageController::class,'home'])->middleware('MemberAuthRedirect');
+Route::get('/',[PageController::class,'home'])->middleware('MemberAuthRedirect')->name('home');
 
 Route::middleware('MemberAuthRedirect')->group(function(){
 
 Route::get('/search', [FAQController::class, 'createSearch'])->name('faqs.create-search');
 Route::get('/search', [FAQController::class, 'search'])->name('faqs.search');
 
+//<*--------  權限禁止 -----------*>
+
+Route::get('/forbid', [FAQController::class, 'forbid'])->name('faqs.forbid');
 
 //<*--------  驗布 -----------*>
 
