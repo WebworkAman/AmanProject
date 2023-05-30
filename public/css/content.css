@@ -465,18 +465,40 @@ main .chooseItem ul li p {
   margin-top: 50px;
 }
 .QA_content .right-content .faq .listblock .topline {
-  border: 1px solid black;
   width: 1000px;
   margin-bottom: 20px;
+}
+.QA_content .right-content .faq .listblock table {
+  font-size: 1rem;
+  border-collapse: collapse;
+  width: 100%;
+  letter-spacing: 1.5px;
+}
+.QA_content .right-content .faq .listblock th, .QA_content .right-content .faq .listblock td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  width: 10vw;
+}
+.QA_content .right-content .faq .listblock th p, .QA_content .right-content .faq .listblock td p {
+  font-size: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.QA_content .right-content .faq .listblock th {
+  background-color: #f2f2f2;
 }
 .QA_content .right-content .faq .listblock ul li {
   margin-bottom: 30px;
   letter-spacing: 2;
   line-height: 1.4;
 }
+.QA_content .right-content .faq .listblock ul li h5 {
+  color: #555;
+}
 .QA_content .right-content .faq .listblock ul li .faq-title {
   color: rgb(15, 59, 101);
-  border-bottom: 1px solid rgb(15, 59, 101);
 }
 .QA_content .right-content .faq .listblock ul li .faq-content {
   color: rgb(138, 166, 166);

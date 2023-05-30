@@ -8,14 +8,27 @@
              @else
                  @foreach($faqs as $faq)
                
-                 <ul>
-                    <li>
-                     <p class="faq-title"><span>Q.</span>{{$faq->question}}</p>
-                     <p class="faq-content"><span>A.</span>{{$faq->answer}}</p>
-                     
+                 <!-- <ul>
+                    <li> 
+                        <h5>常見問題</h5>
+                        <p class="faq-title"><pre>{{$faq->question}}</pre></p></li>
+                    <li> 
+                        <h5>問題回覆</h5>
+                        <p class="faq-content"><pre>{{$faq->answer}}</pre></p>
                     </li>
-                 </ul>
-               
+                 </ul> -->
+                <table>
+                      <thead>
+                             <tr>
+                                 <th>常見問題</th>
+                                 <th>問題回覆</th>
+                             </tr>
+                      </thead>
+                      <tbody>
+                              <td><p class="faq-title"><pre>{{$faq->question}}</pre></p></td>
+                              <td><p class="faq-content"><pre>{{$faq->answer}}</pre></p></td>
+                      </tbody>
+                </table>
                  @endforeach
              @endif
              
