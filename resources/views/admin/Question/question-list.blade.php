@@ -41,7 +41,7 @@
                                             </td>
                                             <td>
                                                 @if($question->video)
-                                                   <button class="showVideoBtn" data-photo-url="{{Storage::url($question->video)}}">
+                                                   <button class="showVideoBtn" data-video-url="{{Storage::url($question->video)}}">
                                                          檢視影片
                                                    </button>  
                                                    <div class="videoPopup" style="display: none">
