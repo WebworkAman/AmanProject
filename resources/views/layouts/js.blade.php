@@ -130,4 +130,18 @@
             })
         };
     </script>
+        <script>
+                        //點擊檢視上傳圖片按鈕
+                        $('.showPostBtn').click(function(){
+
+                                //顯示彈窗
+                                $('.questionPostpop').show();
+
+                        });
+
+                        //點擊關閉按鈕關閉彈窗
+                        $('.closePostBtn').click(function(){
+                            $('.questionPostpop').hide();
+                        })
+    </script>
     
