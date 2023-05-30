@@ -9,7 +9,8 @@
                                       <th>產品</th>
                                       <th>標題</th>
                                       <th>內容</th>
-                                      <th>上傳檔案</th>
+                                      <th>照片</th>
+                                      <th>影片</th>
                                       <th></th>
                                       <th></th>
                                   </tr>
@@ -28,10 +29,26 @@
                                             <td>
                                                 @if($question->photo)
                                                    <button class="showPhotoBtn" data-photo-url="{{Storage::url($question->photo)}}">
-                                                         點擊檢視上傳
+                                                         檢視照片
                                                    </button>  
                                                    <div class="photoPopup" style="display: none">
                                                         <img src="{{ Storage::url($question->photo) }}" alt="Question Photo">
+                                                        <button class="popclose">關閉</button>
+                                                   </div> 
+                                                @else
+                                                    <p>無</p>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if($question->video)
+                                                   <button class="showVideoBtn" data-photo-url="{{Storage::url($question->video)}}">
+                                                         檢視影片
+                                                   </button>  
+                                                   <div class="videoPopup" style="display: none">
+                                                        <video controls>
+                                                            <source src="{{ Storage::url($question->video) }}" type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
                                                         <button class="popclose">關閉</button>
                                                    </div> 
                                                 @else
@@ -70,6 +87,26 @@
                             $('.photoPopup').hide();
                         })
                     </script>
+                    <script>
+    // 點擊檢視上傳影片按鈕
+    $('.showVideoBtn').click(function () {
+        // 獲取影片 URL
+        var videoUrl = $(this).data('video-url');
+
+        // 在彈窗中顯示影片
+        var videoPopup = $('.videoPopup');
+        videoPopup.find('video source').attr('src', videoUrl);
+        videoPopup.find('video')[0].load();
+
+        // 顯示彈窗
+        videoPopup.show();
+    });
+
+    // 點擊關閉按鈕關閉彈窗
+    $('.popclose').click(function () {
+        $(this).closest('.videoPopup').hide();
+    });
+</script>
                     
                        @stack('scripts')               
 </div>
