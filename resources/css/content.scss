@@ -473,6 +473,7 @@ main {
 
                         h5{
                             color: #555;
+                            border-bottom: 1px solid silver;
                         }
                         .faq-title{
                             color: rgb(15, 59, 101);
@@ -482,6 +483,9 @@ main {
                         .faq-content{
                             color: rgb(138, 166, 166);
                         }
+                    }
+                    .faq-content{
+                        border-bottom: 1px solid rgb(15, 59, 101);
                     }
                     
                 }

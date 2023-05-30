@@ -8,16 +8,16 @@
              @else
                  @foreach($faqs as $faq)
                
-                 <!-- <ul>
+                 <ul>
                     <li> 
                         <h5>常見問題</h5>
                         <p class="faq-title"><pre>{{$faq->question}}</pre></p></li>
-                    <li> 
+                    <li class="faq-content"> 
                         <h5>問題回覆</h5>
-                        <p class="faq-content"><pre>{{$faq->answer}}</pre></p>
+                        <p><pre>{{$faq->answer}}</pre></p>
                     </li>
-                 </ul> -->
-                <table>
+                 </ul>
+                <!-- <table>
                       <thead>
                              <tr>
                                  <th>常見問題</th>
@@ -28,7 +28,7 @@
                               <td><p class="faq-title"><pre>{{$faq->question}}</pre></p></td>
                               <td><p class="faq-content"><pre>{{$faq->answer}}</pre></p></td>
                       </tbody>
-                </table>
+                </table> -->
                  @endforeach
              @endif
              
