@@ -547,6 +547,16 @@ main {
     }
 }
 
+@media (max-width:902px){
+    .QA_content{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+
 
 
 
