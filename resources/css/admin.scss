@@ -160,6 +160,26 @@ main{
                         white-space: nowrap;
                       
                     }
+                    a{
+                        color: rgb(10, 30, 208);
+                        font-weight: 350;
+                        text-decoration: none;
+                        letter-spacing: .5px;
+                    }
+                    a:hover{
+                        color: orange;
+                    }
+                    button{
+                        color: rgb(10, 30, 208);
+                        border: none;
+                        background-color: transparent;
+                        cursor: pointer;
+                        font-weight: 300;
+                        letter-spacing: .5px;
+                    }
+                    button:hover{
+                        color: orange;
+                    }
                    
                  
                     
@@ -403,23 +423,67 @@ main{
     }
 
     .Show_form.member-permissions{
-        h3{
-            color: #555;
-            font-size: 1.5rem;
-            
+        .text-block{
+            display: flex;
+            justify-content: space-between;
+            width: 55vw;
+            h3{
+                color: #555;
+                font-size: 1.5rem;
+                margin: 20px;
+                
+            }
         }
-        .checkSelect{
-            ul{
-                display: flex;
-                flex-wrap:wrap;
 
-                li{
-                    width: fit-content;
+        form{
+            margin-top: 30px;
+
+            
+            .checkSelect{
+
+                .selectAll{
                     margin: 10px;
                 }
+                .baseline{
+                    border-bottom: 1px solid #555;
+                    margin: 8px auto;
+                }
+    
+                ul{
+                    display: flex;
+                    flex-wrap:wrap;
+    
+                    li{
+                        width: fit-content;
+                        margin: 10px;
+                    }
+    
+                }
+
+  
+            }
+            button{
+                width: 7vw;
+                border: 1px solid rgb(110, 134, 201);
+                color: rgb(110, 134, 201);
+                border-radius: 10px;
+                background-color: transparent;
+                cursor: pointer;
+                float: right;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                font-weight: 350;
+            }
+            button:hover{
+                background-color: orange;
+                border: 1px solid orange;
+                color: white;
+               
+                
 
             }
         }
+
     }
 
 

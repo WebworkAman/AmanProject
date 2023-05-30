@@ -232,6 +232,26 @@ main .admin_block .Show_ .Show_form th p, main .admin_block .Show_ .Show_form td
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+main .admin_block .Show_ .Show_form th a, main .admin_block .Show_ .Show_form td a {
+  color: rgb(10, 30, 208);
+  font-weight: 350;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+main .admin_block .Show_ .Show_form th a:hover, main .admin_block .Show_ .Show_form td a:hover {
+  color: orange;
+}
+main .admin_block .Show_ .Show_form th button, main .admin_block .Show_ .Show_form td button {
+  color: rgb(10, 30, 208);
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+main .admin_block .Show_ .Show_form th button:hover, main .admin_block .Show_ .Show_form td button:hover {
+  color: orange;
+}
 main .admin_block .Show_ .Show_form th {
   background-color: #f2f2f2;
 }
@@ -375,16 +395,49 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
   border-bottom: 1px solid #555;
   margin: 8px auto;
 }
-.Show_.reply .Show_form.member-permissions h3 {
+.Show_.reply .Show_form.member-permissions .text-block {
+  display: flex;
+  justify-content: space-between;
+  width: 55vw;
+}
+.Show_.reply .Show_form.member-permissions .text-block h3 {
   color: #555;
   font-size: 1.5rem;
+  margin: 20px;
 }
-.Show_.reply .Show_form.member-permissions .checkSelect ul {
+.Show_.reply .Show_form.member-permissions form {
+  margin-top: 30px;
+}
+.Show_.reply .Show_form.member-permissions form .checkSelect .selectAll {
+  margin: 10px;
+}
+.Show_.reply .Show_form.member-permissions form .checkSelect .baseline {
+  border-bottom: 1px solid #555;
+  margin: 8px auto;
+}
+.Show_.reply .Show_form.member-permissions form .checkSelect ul {
   display: flex;
   flex-wrap: wrap;
 }
-.Show_.reply .Show_form.member-permissions .checkSelect ul li {
+.Show_.reply .Show_form.member-permissions form .checkSelect ul li {
   width: -moz-fit-content;
   width: fit-content;
   margin: 10px;
+}
+.Show_.reply .Show_form.member-permissions form button {
+  width: 7vw;
+  border: 1px solid rgb(110, 134, 201);
+  color: rgb(110, 134, 201);
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  float: right;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 350;
+}
+.Show_.reply .Show_form.member-permissions form button:hover {
+  background-color: orange;
+  border: 1px solid orange;
+  color: white;
 }
