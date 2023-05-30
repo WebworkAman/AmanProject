@@ -32,7 +32,7 @@
                                                          檢視照片
                                                    </button>  
                                                    <div class="photoPopup" style="display: none">
-                                                        <img src="{{ Storage::url($question->photo) }}" alt="Question Photo">
+                                                        <img src="/public/{{ Storage::url($question->photo) }}" alt="Question Photo">
                                                         <button class="popclose">關閉</button>
                                                    </div> 
                                                 @else
@@ -46,7 +46,7 @@
                                                    </button>  
                                                    <div class="videoPopup" style="display: none">
                                                         <video controls>
-                                                            <source src="{{ Storage::url($question->video) }}" type="video/mp4">
+                                                            <source src="/public/{{ Storage::url($question->video) }}" type="video/mp4">
                                                             Your browser does not support the video tag.
                                                         </video>
                                                         <button class="popclose">關閉</button>
