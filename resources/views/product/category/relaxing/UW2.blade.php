@@ -21,7 +21,7 @@
                    <input type="hidden" name="product_id" value="5">
                     @include('layouts.question-post')
               </form>
-             
+              </div>
         </div>
 
        

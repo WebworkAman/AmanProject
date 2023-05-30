@@ -16,12 +16,15 @@
         <div class="right-content">
               
            @include('layouts.question-message')
+           
+
+           
               <form method="post" action="{{ route('A-100U')}}" enctype="multipart/form-data">
               <input type="hidden" name="product_id" value="21">
                     
               @include('layouts.question-post')
               </form>
-             
+            </div>
         </div>
 
        

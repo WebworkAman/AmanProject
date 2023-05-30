@@ -22,7 +22,7 @@
                     
                     @include('layouts.question-post')
               </form>
-             
+              </div>
         </div>
 
        

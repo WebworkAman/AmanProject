@@ -393,6 +393,38 @@ main .chooseItem ul li p {
           backdrop-filter: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+.QA_content .questionPostpop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.QA_content .questionPostpop form label {
+  color: white;
+  letter-spacing: 1.2px;
+  font-size: 1.2rem;
+}
+.QA_content .questionPostpop form input {
+  color: white;
+  letter-spacing: 1.2px;
+}
+.QA_content .questionPostpop form .closePostBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #555;
+}
+.QA_content .questionPostpop form .closePostBtn:hover {
+  color: white;
+}
 .QA_content .left-content img {
   width: 30rem;
   border-radius: 999em;

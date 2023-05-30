@@ -26,3 +26,5 @@
         {{ $message }}
     </div>
 @enderror
+
+<button class="closePostBtn">關閉</button>

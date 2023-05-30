@@ -1,6 +1,6 @@
 <div class="message_border">
         @if($questions->isEmpty())
-            <p>此機型暫無提供常見問題</p>
+            <p>此機型暫無用戶提問</p>
         @else    
               @foreach($questions as $question)
                 <div class="message">
@@ -33,4 +33,5 @@
         @endif
 </div>
 <div class="baseline"></div>
-<h3>機器相關問題提交</h3>
+<button class="showPostBtn">我要提問</button>
+<div class="questionPostpop" style="display: none">
