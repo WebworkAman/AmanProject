@@ -234,7 +234,7 @@ main .admin_block .Show_ .Show_form th p, main .admin_block .Show_ .Show_form td
 }
 main .admin_block .Show_ .Show_form th a, main .admin_block .Show_ .Show_form td a {
   color: rgb(10, 30, 208);
-  font-weight: 350;
+  font-weight: 300;
   text-decoration: none;
   letter-spacing: 0.5px;
 }

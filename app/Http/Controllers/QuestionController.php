@@ -59,6 +59,14 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'product_id' => 'required',
+            'title' => 'required',
+            'content' => 'required',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'video' => 'nullable|mimes:mp4,mov,avi|max:2048',
+        ]);
+        
         $question = new Question;
         $question -> product_id = $request->input('product_id');
         $question -> member_id =  MemberAuth::member()->id;
@@ -70,6 +78,12 @@ class QuestionController extends Controller
             $photoName = time() . '.' . $photo ->getClientOriginalExtension();
             $photoPath = $photo->storeAs('public/photos',$photoName);
             $question->photo = $photoPath;
+        }
+        if ($request->hasFile('video')) {
+            $video = $request->file('video');
+            $videoName = time() . '.' . $video->getClientOriginalExtension();
+            $videoPath = $video->storeAs('public/videos', $videoName);
+            $question->video = $videoPath;
         }
 
         $question->save();
