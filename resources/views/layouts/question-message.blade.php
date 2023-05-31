@@ -36,6 +36,11 @@
 </div>
 <div class="baseline"></div>
 <button class="showPostBtn">我要提問</button>
+@if (session('success'))
+    <div class="alert alert-success popup">
+        {{ session('success') }}
+    </div>
+@endif
 
 <div class="questionPostpop" style="display: none">
 <button class="closePostBtn">關閉</button>

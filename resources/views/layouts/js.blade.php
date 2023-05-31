@@ -145,4 +145,14 @@
                             $('form')[0].reset(); // 重置表單
                         })
     </script>
-    
+    <script>
+        // 在點擊其他區域時隱藏 alert-success 訊息視窗
+          document.addEventListener('click', function(event) {
+          var targetElement = event.target;
+          var alertElement = document.querySelector('.alert-success');
+
+          if (alertElement && !alertElement.contains(targetElement)) {
+              alertElement.style.display = 'none';
+          }
+      });
+    </script>

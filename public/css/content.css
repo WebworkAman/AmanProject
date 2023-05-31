@@ -426,8 +426,8 @@ main .chooseItem ul li p {
 }
 .QA_content .questionPostpop .closePostBtn {
   position: relative;
-  bottom: 18%;
-  left: 28%;
+  bottom: 175px;
+  left: 545px;
   background-color: #fff;
   padding: 5px 10px;
   cursor: pointer;

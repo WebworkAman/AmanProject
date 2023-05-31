@@ -88,8 +88,17 @@ class QuestionController extends Controller
 
         $question->save();
 
-        $url = url()->previous(); // 取得當前頁面的 URL
-        return redirect($url); // 重新導向當前頁面
+        // 提交成功後的訊息
+        $message = '已成功提交！';
+
+        //將訊息儲存到 Session 中
+        $request -> session()->flash('success',$message);
+
+        // $url = url()->previous(); // 取得當前頁面的 URL
+        // return redirect($url); // 重新導向當前頁面
+
+        // 重新導向回當前頁面並顯示成功訊息
+        return redirect()->back()->with('success', $message);
     }
 
     /**
