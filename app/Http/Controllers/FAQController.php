@@ -36,13 +36,24 @@ class FAQController extends Controller
     // 根據關鍵字搜尋產品名稱列表
     // $faqs = FAQ::where('question', 'like', '%'.$keyword.'%')->get();
     // $products = Product::all();
+
     if (empty($product) && empty($keyword)) {
         return redirect()->back()->with('error', '請至少輸入一個選項 ✎ ');
     }
     $faqs = FAQ::query();
 
     if($product){
-        $faqs->where('product_id',$product);
+
+        //判斷會員是否有該產品權限
+        $memberId = session()->get('memberId');
+        $hasPermission = MemberPermission::where('member_id', $memberId)
+             ->where('product_id',$product)
+             ->exists();
+        if($hasPermission){
+            $faqs->where('product_id',$product);
+         }else {
+            $faqs->where('product_id', null); // 將搜尋條件設為 null，以確保不會返回任何結果
+        }
     }
 
     if($keyword){

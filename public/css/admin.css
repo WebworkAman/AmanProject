@@ -413,7 +413,7 @@ main .admin_block .Show_.select_ .Show_form ul .message_ p {
 .Show_.reply .Show_form.member-permissions .text-block {
   display: flex;
   justify-content: space-between;
-  width: 55vw;
+  width: 70vw;
 }
 .Show_.reply .Show_form.member-permissions .text-block h3 {
   color: #555;
