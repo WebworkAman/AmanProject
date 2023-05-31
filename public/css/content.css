@@ -393,6 +393,13 @@ main .chooseItem ul li p {
           backdrop-filter: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+.QA_content .popup .popup-content {
+  text-align: start;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #555;
+}
 .QA_content .questionPostpop {
   position: fixed;
   top: 0;
