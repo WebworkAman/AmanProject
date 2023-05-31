@@ -27,6 +27,7 @@
                                     @endforeach
                                </tbody>
                        </table>   
+                       
                        @stack('scripts')
 </div>
 

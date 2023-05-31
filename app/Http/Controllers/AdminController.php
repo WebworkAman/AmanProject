@@ -115,12 +115,27 @@ class AdminController extends Controller
         //     $memberPermissions -> product_id = $productId;
         //     $memberPermissions ->save();
         // }
+
+                // 提交成功後的訊息
+                $message = '權限更新成功！';
+
+                //將訊息儲存到 Session 中
+                $request -> session()->flash('success',$message);
+        
+                // $url = url()->previous(); // 取得當前頁面的 URL
+                // return redirect($url); // 重新導向當前頁面
+        
+                
+                
          
          
         
      
 
-        return redirect()->back()->with('success', '權限更新成功');
+        // return redirect()->back()->with('success', '權限更新成功');
+        // 重新導向回當前頁面並顯示成功訊息
+        return redirect()->route('faqs.index')
+            ->with('success', $message);
     }
 
     public function destroy(Member $member)
