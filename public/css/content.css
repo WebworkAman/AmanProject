@@ -150,6 +150,8 @@ footer .social_block p {
   width: 100px;
   height: 30px;
   border-radius: 10px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 .search button:hover {
   background-color: orange;
@@ -423,13 +425,16 @@ main .chooseItem ul li p {
   color: white;
 }
 .QA_content .questionPostpop .closePostBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  position: relative;
+  bottom: 18%;
+  left: 28%;
   background-color: #fff;
   padding: 5px 10px;
   cursor: pointer;
   color: #555;
+  width: 80px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
 }
 .QA_content .questionPostpop .closePostBtn:hover {
   color: white;
@@ -455,7 +460,7 @@ main .chooseItem ul li p {
 .QA_content .right-content .message_border {
   width: -moz-max-content;
   width: max-content;
-  height: 300px;
+  height: 500px;
   overflow: scroll;
 }
 .QA_content .right-content .message_border p {
@@ -487,6 +492,9 @@ main .chooseItem ul li p {
   width: 100px;
   height: 30px;
   border-radius: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
 }
 .QA_content .right-content button a {
   text-decoration: none;
@@ -569,12 +577,12 @@ main .chooseItem ul li p {
   font-size: 15px;
   width: 550px;
   height: 100px;
-  border: 1px rgb(138, 166, 166) solid;
+  border: 1px #ccc solid;
   padding: 10px;
 }
 .QA_content .right-content input {
   padding: 5px 15px;
-  border: 1px rgb(138, 166, 166) solid;
+  border: 1px #ccc solid;
   cursor: pointer;
   border-radius: 5px;
 }
