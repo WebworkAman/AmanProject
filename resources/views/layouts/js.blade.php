@@ -142,6 +142,7 @@
                         //點擊關閉按鈕關閉彈窗
                         $('.closePostBtn').click(function(){
                             $('.questionPostpop').hide();
+                            $('form')[0].reset(); // 重置表單
                         })
     </script>
     

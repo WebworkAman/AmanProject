@@ -14,17 +14,15 @@
         </p>
 
         <!-- 照片驗證錯誤訊息 -->
-@error('photo')
-    <div class="alert alert-danger">
-        {{ $message }}
-    </div>
-@enderror
+        @error('photo')
+            <div class="alert alert-danger">
+                {{ $message }}
+            </div>
+        @enderror
 
-<!-- 影片驗證錯誤訊息 -->
-@error('video')
-    <div class="alert alert-danger">
-        {{ $message }}
-    </div>
-@enderror
-
-<button class="closePostBtn">關閉</button>
+        <!-- 影片驗證錯誤訊息 -->
+        @error('video')
+            <div class="alert alert-danger">
+                {{ $message }}
+            </div>
+        @enderror

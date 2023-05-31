@@ -415,7 +415,7 @@ main .chooseItem ul li p {
 .QA_content .questionPostpop form .attachfile {
   color: white;
 }
-.QA_content .questionPostpop form .closePostBtn {
+.QA_content .questionPostpop .closePostBtn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -424,7 +424,7 @@ main .chooseItem ul li p {
   cursor: pointer;
   color: #555;
 }
-.QA_content .questionPostpop form .closePostBtn:hover {
+.QA_content .questionPostpop .closePostBtn:hover {
   color: white;
 }
 .QA_content .left-content img {
@@ -446,7 +446,8 @@ main .chooseItem ul li p {
   margin-right: 50px;
 }
 .QA_content .right-content .message_border {
-  width: 40vw;
+  width: -moz-max-content;
+  width: max-content;
   height: 300px;
   overflow: scroll;
 }
