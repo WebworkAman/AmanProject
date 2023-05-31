@@ -74,8 +74,9 @@
                                 //獲取圖片 URL
                                 var photoUrl = $(this).data('photo-url');
 
-                                // //在彈窗中顯示圖片
-                                $('.photoPopup img').attr('src',photoUrl);
+                                //在彈窗中顯示圖片
+                                // $('.photoPopup img').attr('src','/public/'+photoUrl);
+                                $('.photoPopup img').attr('src','/public'+photoUrl.trim('/'));
 
                                 //顯示彈窗
                                 $('.photoPopup').show();
@@ -88,25 +89,26 @@
                         })
                     </script>
                     <script>
-    // 點擊檢視上傳影片按鈕
-    $('.showVideoBtn').click(function () {
-        // 獲取影片 URL
-        var videoUrl = $(this).data('video-url');
+                     // 點擊檢視上傳影片按鈕
+                     $('.showVideoBtn').click(function () {
+                         // 獲取影片 URL
+                         var videoUrl = $(this).data('video-url');
 
-        // 在彈窗中顯示影片
-        var videoPopup = $('.videoPopup');
-        videoPopup.find('video source').attr('src', videoUrl);
-        videoPopup.find('video')[0].load();
+                        // 在彈窗中顯示影片
+                         var videoPopup = $('.videoPopup');
+                        //  videoPopup.find('video source').attr('src', videoUrl);
+                         videoPopup.find('video source').attr('src','/public'+ videoUrl.trim('/'));
+                         videoPopup.find('video')[0].load();
 
-        // 顯示彈窗
-        videoPopup.show();
-    });
+                         // 顯示彈窗
+                         videoPopup.show();
+                     });
 
-    // 點擊關閉按鈕關閉彈窗
-    $('.popclose').click(function () {
-        $(this).closest('.videoPopup').hide();
-    });
-</script>
+                        // 點擊關閉按鈕關閉彈窗
+                        $('.popclose').click(function () {
+                            $(this).closest('.videoPopup').hide();
+                        });
+                    </script>
                     
                        @stack('scripts')               
 </div>

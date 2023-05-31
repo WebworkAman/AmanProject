@@ -157,7 +157,7 @@ main .admin_block .control_ .control_list a:hover {
   color: orange;
 }
 main .admin_block .Show_ {
-  width: 66vw;
+  width: 80vw;
   border: 1px solid silver;
   border-radius: 20px;
 }

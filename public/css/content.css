@@ -412,6 +412,9 @@ main .chooseItem ul li p {
 .QA_content .questionPostpop form input {
   letter-spacing: 1.2px;
 }
+.QA_content .questionPostpop form .attachfile {
+  color: white;
+}
 .QA_content .questionPostpop form .closePostBtn {
   position: absolute;
   top: 10px;

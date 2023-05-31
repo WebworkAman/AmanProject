@@ -63,8 +63,8 @@ class QuestionController extends Controller
             'product_id' => 'required',
             'title' => 'required',
             'content' => 'required',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'video' => 'nullable|mimes:mp4,mov,avi|max:2048',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'video' => 'nullable|mimes:mp4,mov,avi',
         ]);
         
         $question = new Question;
