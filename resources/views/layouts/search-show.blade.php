@@ -11,7 +11,7 @@
                     <tr>
                         <th>產品型號</th>
                         <th>常見問題</th>
-                        <th>我們的回復</th>
+                        <th>檢查及處理方式</th>
                                       
                     </tr>
                 </thead>
@@ -19,8 +19,8 @@
                    @foreach ($results as $faq)
                         <tr>
                             <td>{{ $products->find($faq->product_id)->title }}</td>
-                            <td>{{ $faq->question }}</td>
-                            <td>{{ $faq->answer }}</td>
+                            <td><pre>{{ $faq->question }}</pre></td>
+                            <td><pre>{{ $faq->answer }}</pre></td>
                                             
                         </tr>
                     @endforeach

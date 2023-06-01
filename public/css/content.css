@@ -348,16 +348,19 @@ main .chooseItem ul li p {
   font-size: large;
 }
 .faq-search-show table {
-  font-size: 14px;
+  font-size: 1rem;
   border-collapse: collapse;
   width: 50vw;
   margin: 0 auto;
   border: 1px solid #ddd;
   border-radius: 10px;
+  line-height: 1.5;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 350;
 }
 .faq-search-show th, .faq-search-show td {
-  text-align: center;
-  padding: 8px;
+  text-align: left;
+  padding: 10px;
   border: 1px solid #ddd;
   width: 10vw;
   letter-spacing: 1px;

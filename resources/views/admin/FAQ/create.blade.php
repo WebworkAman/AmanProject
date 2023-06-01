@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group">
                             <label for="question">問題 :</label>
-                            <input type="text" name="question" id="question" class="form-control" value="{{ old('question') }}" required>
+                            <textarea name="question" id="question" class="form-control" required>{{ old('question') }}</textarea>
                         </div>
 
                         <div class="form-group">

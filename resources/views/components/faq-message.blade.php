@@ -9,9 +9,9 @@
                  @foreach($faqs as $faq)
                
                  <ul>
-                    <li> 
+                    <li class="faq-title"> 
                         <h5>常見問題</h5>
-                        <p class="faq-title"><pre>{{$faq->question}}</pre></p></li>
+                        <p><pre>{{$faq->question}}</pre></p></li>
                     <li class="faq-content"> 
                         <h5>問題回覆</h5>
                         <p><pre>{{$faq->answer}}</pre></p>
