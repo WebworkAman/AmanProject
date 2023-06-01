@@ -8,11 +8,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/MB9018B-600.png">
             <h2>超聲波花邊機(雙電機) MB9018B</h2>
             <h3>2020必備</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
             <div class="faq">

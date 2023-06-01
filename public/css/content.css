@@ -229,6 +229,7 @@ footer .social_block p {
 main {
   margin-top: 50px;
   display: block;
+  min-height: 600px;
 }
 main .forbidUl {
   margin-top: 100px;
@@ -249,7 +250,7 @@ main .forbidUl li .forbid-link {
   text-decoration: none;
   color: white;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   background-color: black;
 }
 main .forbidUl li .forbid-link:hover {
@@ -261,10 +262,12 @@ main .null-icon {
 }
 main .null-link {
   text-decoration: none;
-  color: rgb(15, 59, 101);
+  padding: 10px;
+  color: white;
+  background-color: rgb(15, 59, 101);
 }
 main .null-link:hover {
-  color: orange;
+  background-color: #555;
 }
 main h1 {
   font-size: 2.5rem;
@@ -390,7 +393,8 @@ main .chooseItem ul li p {
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 20px;
-  width: 400px;
+  width: 50vw;
+  min-width: 400px;
   border: 1px solid #ccc;
   border-radius: 20px;
   text-align: center;
@@ -404,6 +408,11 @@ main .chooseItem ul li p {
   line-height: 1.5;
   font-weight: 300;
   color: #555;
+}
+.QA_content .popup .popup-content .pre-wrap {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 100%; /* 根據需要調整最大寬度 */
 }
 .QA_content .questionPostpop {
   position: fixed;
@@ -457,12 +466,10 @@ main .chooseItem ul li p {
   text-align: center;
 }
 .QA_content .right-content {
-  width: 40vw;
   margin-right: 50px;
 }
 .QA_content .right-content .message_border {
-  width: -moz-max-content;
-  width: max-content;
+  width: 50vw;
   height: 500px;
   overflow: scroll;
 }
@@ -472,11 +479,13 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .message_border .message {
   border-bottom: 1px silver solid;
+  padding-bottom: 10px;
 }
 .QA_content .right-content .message_border .message .reply-button {
-  float: none;
+  float: right;
   margin-left: 150px;
   background-color: rgb(15, 59, 101);
+  bottom: 10px;
 }
 .QA_content .right-content .message_border .message .reply-button:hover {
   background-color: rgb(138, 166, 166);
@@ -508,8 +517,6 @@ main .chooseItem ul li p {
   background-color: rgb(236, 133, 8);
 }
 .QA_content .right-content .faq {
-  width: 40vw;
-  max-width: 880px;
   min-width: 500px;
   height: 100%;
   overflow: auto;
@@ -546,6 +553,7 @@ main .chooseItem ul li p {
   margin-bottom: 30px;
   letter-spacing: 2;
   line-height: 1.4;
+  width: 80vw;
 }
 .QA_content .right-content .faq .listblock ul li h5 {
   color: #555;
@@ -553,12 +561,52 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .faq .listblock ul li .faq-title {
   color: rgb(15, 59, 101);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed gray;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title h3 {
+  color: rgb(233, 168, 74);
+  font-size: 2.3rem;
+  font-style: italic;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title label {
+  border: 1px solid rgb(233, 168, 74);
+  border-radius: 999em;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  background: rgb(233, 168, 74);
+  color: white;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title button {
+  margin-left: auto;
+  background-color: rgb(15, 59, 101);
+}
+.QA_content .right-content .faq .listblock ul li .faq-title button:hover {
+  background-color: rgb(237, 188, 14);
 }
 .QA_content .right-content .faq .listblock ul li .faq-content {
-  color: rgb(138, 166, 166);
+  display: none;
+  background-color: #8a8a8a;
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
 }
-.QA_content .right-content .faq .listblock ul .faq-content {
-  border-bottom: 1px solid rgb(15, 59, 101);
+.QA_content .right-content .faq .listblock ul li .faq-toggle {
+  width: 60px;
+  font-size: 1.2rem;
 }
 .QA_content .right-content .faq h2 {
   position: relative;

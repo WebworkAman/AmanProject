@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-15A4-600.png">
             <h2>自動轉印機 OP-15A4N</h2>
             <h3>旋轉手臂 冷熱定型 效果更行</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="message_border">

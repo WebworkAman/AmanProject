@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-5288-600-2.png">
             <h2>轉台式平版粘合機 OP-5288/5388</h2>
             <h3>高效生產專用</h3>
-        </div>
+        </div> -->
         <div class="right-content">
       
              <div class="message_border">

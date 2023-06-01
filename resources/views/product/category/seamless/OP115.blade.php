@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-115-600-2.png">
             <h2>無縫上膠/貼條機 OP-115</h2>
             <h3>有弧度的工藝</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="message_border">

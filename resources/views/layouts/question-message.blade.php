@@ -22,7 +22,7 @@
                              @if($question->answers->count() > 0)
                              <h3>歐西瑪回覆</h3>
                               @foreach($question->answers as $answer)
-                                  <p><pre>{{ $answer->answer }}</pre></p>
+                                  <p><pre class="pre-wrap">{{ $answer->answer }}</pre></p>
                               @endforeach
                           @else
                                    <p>暫無回答</p>

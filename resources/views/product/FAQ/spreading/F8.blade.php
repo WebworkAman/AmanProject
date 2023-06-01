@@ -8,11 +8,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/F8-600-2.png">
             <h2>平織拉布機 F8</h2>
             <h3>再黏的膠一定分開</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="faq">

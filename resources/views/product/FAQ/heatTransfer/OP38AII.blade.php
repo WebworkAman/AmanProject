@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-38AII-600.png">
             <h2>左右移動自動轉印機 OP-38AII/54AII/105AII/108AII</h2>
             <h3>國際牌羽絨服御用</h3>
-        </div>
+        </div> -->
         <div class="right-content">
       
              <div class="message_border">

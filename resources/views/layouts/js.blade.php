@@ -156,3 +156,27 @@
           }
       });
     </script>
+<script>
+$(document).ready(function() {
+    // 使用事件委派處理點擊事件
+    $(document).on('click', '.faq-toggle', function() {
+        
+        // 找到相應的 faq-item 元素
+        var faqItem = $(this).closest('.faq-item');
+        // 找到相應的 faq-content
+        var faqContent = faqItem.find('.faq-content');
+
+        // 切換 faq-content 的顯示狀態
+        if (faqContent.is(':hidden')) {
+            faqContent.fadeIn('slow');
+            $(this).text('-');
+        } else {
+            faqContent.slideUp('slow',function(){
+                faqContent.hide();// 隱藏 faqContent 元素
+            })
+            // faqContent.hide();
+            $(this).text('+');
+        }
+    });
+});
+    </script>

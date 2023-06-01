@@ -8,11 +8,11 @@
 
         @include('components.question-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-114-600.png">
             <h2>無縫摺邊/包邊機 OP-114</h2>
             <h3>包邊首選</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              @include('layouts.question-message')

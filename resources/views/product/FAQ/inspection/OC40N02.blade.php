@@ -6,11 +6,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1646990118.png">
             <h2>人工智慧驗布機 OSHIMA EagleAi/Plus/Pro</h2>
             <h3>縮短AI訓練 與眾不同</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="faq">

@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-1600-600-5.png">
             <h2>大型連續式粘合機 OP-1400/1600/1800/L</h2>
             <h3>大型工廠批量生產</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
            @include('layouts.question-message')

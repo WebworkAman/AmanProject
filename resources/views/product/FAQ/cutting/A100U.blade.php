@@ -8,11 +8,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1597635338.png">
             <h2>電剪裁剪機 A-100U(DS)/100H</h2>
             <h3>手的延伸，超值</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="faq">

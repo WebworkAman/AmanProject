@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OS-5R-600.png">
             <h2>自動送料機 OS-5R/L、OS-6R/L</h2>
             <h3>轉印 貼標必備</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="message_border">

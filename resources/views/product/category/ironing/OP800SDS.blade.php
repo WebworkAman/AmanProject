@@ -8,10 +8,10 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-800SDS-600.png">
             <h2>隧道式蒸氣整燙 OP-800SDS</h2>
-        </div>
+        </div> -->
         <div class="right-content">
               
              @include('layouts.question-message')

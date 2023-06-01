@@ -126,7 +126,7 @@
 main {
     margin-top: 50px;
     display: block;
-
+    min-height: 600px;
     .forbidUl{
         
        margin-top: 100px;
@@ -146,7 +146,7 @@ main {
             
             color: white;
             border-radius: 10px;
-            padding: 5px;
+            padding: 10px;
             background-color: black;
         }
         .forbid-link:hover{
@@ -166,11 +166,13 @@ main {
     .null-link{
         
         text-decoration: none;
-        color: rgb(15, 59, 101);
+        padding: 10px;
+        color: white;
+        background-color: rgb(15, 59, 101);
          
     }
     .null-link:hover{
-        color: orange;
+        background-color: #555;
          
     }
 
@@ -343,7 +345,8 @@ main {
         transform: translate(-50%,-50%);
         background-color: #fff;
         padding: 20px;
-        width: 400px;
+        width: 50vw;
+        min-width: 400px;
         border: 1px solid #ccc;
         border-radius: 20px;
         text-align: center;
@@ -357,6 +360,12 @@ main {
             line-height: 1.5;
             font-weight: 300;
             color: #555;
+            .pre-wrap{
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                max-width: 100%; /* 根據需要調整最大寬度 */
+            }
+            
 
         }
     }
@@ -428,10 +437,10 @@ main {
 
     .right-content{
         // border: 1px solid saddlebrown;
-        width: 40vw;
+        // width:40vw;
         margin-right: 50px;
         .message_border{
-            width: max-content;
+            width: 50vw;
             height: 500px;
             overflow:scroll;
             p{
@@ -442,11 +451,13 @@ main {
             
             .message{
                 border-bottom: 1px silver solid;
+                padding-bottom: 10px;
 
                 .reply-button{
-                    float: none;
+                    float: right;
                     margin-left: 150px;
                     background-color: rgb(15, 59, 101);
+                    bottom: 10px;
                 }
                 .reply-button:hover{
                     background-color: rgb(138, 166, 166);
@@ -484,9 +495,7 @@ main {
         button:hover{
             background-color: rgb(236, 133, 8);
         }
-        .faq{
-            width: 40vw;
-            max-width: 880px;
+        .faq{  
             min-width: 500px;
             height: 100%;
             overflow: auto;
@@ -531,6 +540,7 @@ main {
                         margin-bottom: 30px;
                         letter-spacing: 2;
                         line-height: 1.4;
+                        width: 80vw;
                         // border-top: 1px solid rgb(15, 59, 101);
 
                         h5{
@@ -539,15 +549,58 @@ main {
                         }
                         .faq-title{
                             color: rgb(15, 59, 101);
+                            display: flex;
+                            align-items: center;
+                            border-bottom: 1px dashed gray;
+                            padding: 10px;
+                            font-size: 1.2rem;
+                            font-weight: 400;
+                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            h3{
+                                color: rgb(233 168 74);
+                                font-size: 2.3rem;
+                                font-style: italic;
+                            }
+                            label{
+                                border: 1px solid rgb(233 168 74);
+                                border-radius: 999em;
+                                width: 26px;
+                                height: 26px;
+                                text-align: center;
+                                background: rgb(233 168 74);
+                                color: white;
+                                font-size: 18px;
+                                font-family: sans-serif;
+                            }
+                            p{
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                            button{
+                                margin-left: auto;
+                                background-color: rgb(15, 59, 101);
+                            }
+                            button:hover{
+                               
+                                background-color: rgb(237, 188, 14);
+                            }
+
                             
                             
                         }
                         .faq-content{
-                            color: rgb(138, 166, 166);
+                            display: none;
+                            background-color: #8a8a8a;
+                            color: white;
+                            padding: 10px;
+                            padding-left: 20px;
                         }
-                    }
-                    .faq-content{
-                        border-bottom: 1px solid rgb(15, 59, 101);
+                        .faq-toggle{
+                            width: 60px;
+                            font-size: 1.2rem;
+                            
+                        }
                     }
                     
                 }

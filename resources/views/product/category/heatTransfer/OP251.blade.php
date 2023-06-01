@@ -8,11 +8,11 @@
 
         <h1>Customer Question & Answer</h1>
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-251-600.png">
             <h2>墨杯式單色移印機 OP-251</h2>
             <h3>國際運動品牌指定</h3>
-        </div>
+        </div> -->
         <div class="right-content">
       
              <div class="message_border">

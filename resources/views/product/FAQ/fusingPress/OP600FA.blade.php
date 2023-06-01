@@ -8,11 +8,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-600FA-600-7.png">
             <h2>連續式粘合機 OP-600FA/600FAL</h2>
             <h3>經濟款</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="message_border">

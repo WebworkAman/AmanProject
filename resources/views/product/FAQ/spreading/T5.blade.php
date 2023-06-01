@@ -8,11 +8,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/T5-600-2.png">
             <h2>針織圓筒布拉布機 T5</h2>
             <h3>貼身衣物的最佳選擇</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="faq">

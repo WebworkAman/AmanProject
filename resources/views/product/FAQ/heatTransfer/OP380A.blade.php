@@ -8,11 +8,11 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-380A-600-2.png">
             <h2>自動轉印機 OP-380A/380AII/380AIIT/550A</h2>
             <h3>印花首選</h3>
-        </div>
+        </div> -->
         <div class="right-content">
               
              <div class="faq">

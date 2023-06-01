@@ -8,10 +8,10 @@
 
         @include('components.faq-title')
         <div class="QA_content">
-        <div class="left-content">
+        <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-87-600.png">
             <h2>全蒸氣式燙斗 OP-87/88S/89</h2>
-        </div>
+        </div> -->
         <div class="right-content">
               
         <div class="faq">
