@@ -584,6 +584,7 @@ main .chooseItem ul li p {
   color: white;
   font-size: 18px;
   font-family: sans-serif;
+  margin-right: 20px;
 }
 .QA_content .right-content .faq .listblock ul li .faq-title p {
   white-space: nowrap;

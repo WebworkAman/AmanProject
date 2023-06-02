@@ -1,4 +1,6 @@
+<button class="showPostBtn">我要提問</button>
 <div class="message_border">
+
         @if($questions->isEmpty())
             <p>此機型暫無用戶提問</p>
         @else    
@@ -17,7 +19,7 @@
                              <img src="{{ Storage::url($question->photo) }}" alt="Question Photo">
                              @endif -->
                <div class="popup" style="display: none">
-                  <div class="popup-content">
+                     <div class="popup-content">
 
                              @if($question->answers->count() > 0)
                              <h3>歐西瑪回覆</h3>
@@ -27,7 +29,7 @@
                           @else
                                    <p>暫無回答</p>
                           @endif
-                  </div>
+                    </div>
                   <button class="popclose">Close</button>
                </div>
                </div>
@@ -35,7 +37,6 @@
         @endif
 </div>
 <div class="baseline"></div>
-<button class="showPostBtn">我要提問</button>
 @if (session('success'))
     <div class="alert alert-success popup">
         {{ session('success') }}

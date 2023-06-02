@@ -1,7 +1,7 @@
 @extends('layouts.content')
 
 @section('content')
-     <div class="faq-search-show">
+<div class="faq-search-show">
 <h1>搜 尋 結 果</h1>
 
 
