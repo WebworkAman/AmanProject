@@ -314,6 +314,11 @@ main {
             
           
         }
+        pre{
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-width: 100%; /* 根據需要調整最大寬度 */
+        }
        
      
         

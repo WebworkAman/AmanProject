@@ -14,7 +14,7 @@
                         <div class="faq-title">
                             <!-- <h3>{{ $index + 1 }}.</h3> -->
                              <label>Q</label>
-                              <p><pre>{{$faq->question}}</pre></p>
+                              <pre>{{$faq->question}}</pre>
                             <button class="faq-toggle">+</button>
                         </div>
                         <div class="faq-content">
