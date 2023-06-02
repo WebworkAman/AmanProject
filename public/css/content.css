@@ -374,11 +374,6 @@ main .chooseItem ul li p {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.faq-search-show th pre, .faq-search-show td pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  max-width: 100%; /* 根據需要調整最大寬度 */
-}
 .faq-search-show th {
   background-color: #f2f2f2;
 }

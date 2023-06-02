@@ -20,8 +20,7 @@
                         <tr>
                             <td>{{ $products->find($faq->product_id)->title }}</td>
                             <td><pre>{{ $faq->question }}</pre></td>
-                            <td><pre>{{ $faq->answer }}</pre></td>
-                                            
+                            <td><pre>{{ $faq->answer }}</pre></td>                                         
                         </tr>
                     @endforeach
                 </tbody>
