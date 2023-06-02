@@ -353,7 +353,7 @@ main .chooseItem ul li p {
 .faq-search-show table {
   font-size: 1rem;
   border-collapse: collapse;
-  width: 50vw;
+  width: 90vw;
   margin: 0 auto;
   border: 1px solid #ddd;
   border-radius: 10px;
