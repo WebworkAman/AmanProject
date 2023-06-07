@@ -39,16 +39,27 @@ class QuestionController extends Controller
     }
     public function storeReply(Request $request, Question $question)
 {
-    // 處理回覆表單的提交
-    $ans = new Answer;
-    $ans -> question_id = $question-> id;
-    $ans -> member_id = $question-> member_id;
-    $ans -> answer = $request -> answer;
+    $answer = $question->answers->first();
 
-    $ans->save();
+    if($answer){
+        
+        //如果已存在回覆，則更新回覆內容
+        $answer->answer = $request->answer;
+        $answer->save();
+    }else{
+
+        // 處理回覆表單的提交
+        $newans = new Answer;
+        $newans -> question_id = $question-> id;
+        $newans -> member_id = $question-> member_id;
+        $newans -> answer = $request -> answer;
+
+        $ans->save();
+    }
+
 
     return redirect()->route('faqs.index')
-    ->with('success', 'Question created successfully.');
+    ->with('success', '回覆儲存成功.');
 }
 
     /**

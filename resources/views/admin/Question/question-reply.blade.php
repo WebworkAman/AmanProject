@@ -33,10 +33,18 @@
                                         
                                         問題內容：<span class="user-content">{{ $question->content }}</span>
                                         
-                                
+                                    </li>
+                                    <li>
                                         
-        
-                                        
+                                        @if($question->answers->count() > 0)
+                                           
+                                        @foreach($question->answers as $answer)
+                                            <p>問題內容：{{ $answer->answer }}</p>
+                                        @endforeach
+                                         
+                                         @else
+                                              <p>問題內容：暫無回答</p>
+                                         @endif
                                         
                                     </li>
                                  </ul>
@@ -49,7 +57,8 @@
                          
                         <div class="form-group">
                             <label for="answer">回答 :</label>
-                            <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea>
+                            <!-- <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea> -->
+                            <textarea name="answer" rows="4">{{ $question->answers->count() > 0 ? $question->answers[0]->answer : '' }}</textarea>
                         </div>
 
                         <div class="form-group">
