@@ -180,40 +180,6 @@ main .admin_block .Show_ .question-list h3 {
   margin-bottom: 20px;
   font-size: 1.2rem;
 }
-main .admin_block .Show_ .question-list .photoPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .admin_block .Show_ .question-list .videoPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-main .admin_block .Show_ .question-list .videoPopup video {
-  max-width: 90%;
-  max-height: 90%;
-}
-main .admin_block .Show_ .question-list .popclose {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #fff;
-  padding: 5px 10px;
-  cursor: pointer;
-}
 main .admin_block .Show_ .Show_form {
   margin: 60px 100px;
   overflow: auto;
@@ -287,6 +253,40 @@ main .admin_block .Show_ .Show_form th {
 }
 main .admin_block .Show_ .Show_form tbody tr:hover {
   background-color: #f5f5f5;
+}
+main .admin_block .Show_ .Show_form .photoPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .admin_block .Show_ .Show_form .videoPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .admin_block .Show_ .Show_form .videoPopup video {
+  max-width: 90%;
+  max-height: 90%;
+}
+main .admin_block .Show_ .Show_form .popclose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 main .admin_block .Show_.select_ .Show_form ul {
   margin-left: 0;

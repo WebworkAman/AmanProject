@@ -19,7 +19,7 @@
                     </div>
                     
                 <div class="ans">
-                    <form method="POST" action="{{ route('faqs.store') }}">
+                    <form method="POST" action="{{ route('faqs.store') }}" enctype="multipart/form-data">
                          @csrf
                          <div class="form-group">
                              <label for="product_id">請選擇產品</label>
@@ -38,15 +38,23 @@
                             <label for="answer">回答 :</label>
                             <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea>
                         </div>
+                        <div class="form-group">
+                            <label for="photo">附加照片：</label>
+                            <input class="attachfile" type="file" name="photo" accept="image/jpeg, image/png, image/gif">
+                        </div>
+                        <div class="form-group">
+                            <label for="video">附加影片：</label>
+                            <input class="attachfile" type="file" name="video" accept="video/mp4, video/mov, video/avi">
+                        </div>
 
                         <div class="form-group">
                             <div class="text-right">
                             <button type="submit" class="btn btn-primary">新增</button>
 
-                            </div>
                         </div>
-                    </form>
                     </div>
+                    </form>
+                </div>
                     
                 </div>
                     

@@ -744,13 +744,30 @@ class FAQController extends Controller
             'product_id' => 'required',
             'question' => 'required|max:255',
             'answer' => 'required',
-            
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'video' => 'nullable|mimes:mp4,mov,avi',         
         ]);
+
+        $faq = new FAQ;
+        $faq -> product_id = $request->input('product_id');
+        $faq -> question = $request->input('question');
+        $faq -> answer = $request-> input('answer');
         
-        $faq = FAQ::create($validatedData);
+        if($request->hasFile('photo')){
+            $photoPath = $request->file('photo')->store('public/photos');
+            $faq->photo = $photoPath;
+        }
+
+        if($request->hasFile('video')){
+            $videoPath = $request->file('video')->store('public/videos');
+            $faq->video = $videoPath;
+        }
+
+        $faq->save();
+
 
         return redirect()->route('faqs.index', $faq->id)
-            ->with('success', 'Question created successfully.');
+            ->with('success', '常見問題建立成功.');
     }
     public function delete(Request $request, $id)
     {    
@@ -783,8 +800,8 @@ class FAQController extends Controller
             return redirect()->route('faqs.index')->withInput();
         }
     
-        return redirect()->route('faqs.index')
-            ->with('success', 'FAQ deleted successfully.');
+            return redirect()->route('faqs.index')
+            ->with('success', '常見問題刪除成功.');
          
     }
 }

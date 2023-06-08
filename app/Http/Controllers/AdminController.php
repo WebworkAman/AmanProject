@@ -143,7 +143,7 @@ class AdminController extends Controller
          $member->delete();
     
         return redirect()->route('faqs.index')
-            ->with('success', 'member deleted successfully.');
+            ->with('success', '會員刪除成功.');
          
     }
 }
