@@ -73,8 +73,8 @@
                                 var photoUrl = $(this).data('photo-url');
 
                                 //在彈窗中顯示圖片
-                                $('.photoPopup img').attr('src',photoUrl);
-                                // $('.photoPopup img').attr('src','/public'+photoUrl.trim('/'));
+                                // $('.photoPopup img').attr('src',photoUrl);
+                                $('.photoPopup img').attr('src','/public'+photoUrl.trim('/'));
 
                                 //顯示彈窗
                                 $('.photoPopup').show();
@@ -94,8 +94,8 @@
 
                         // 在彈窗中顯示影片
                          var videoPopup = $(this).next('.videoPopup');
-                         videoPopup.find('video source').attr('src', videoUrl);
-                        //  videoPopup.find('video source').attr('src','/public'+ videoUrl.trim('/'));
+                        //  videoPopup.find('video source').attr('src', videoUrl);
+                         videoPopup.find('video source').attr('src','/public'+ videoUrl.trim('/'));
                          videoPopup.find('video')[0].load();
 
                          // 顯示彈窗
