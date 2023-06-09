@@ -54,7 +54,7 @@ class QuestionController extends Controller
         $newans -> member_id = $question-> member_id;
         $newans -> answer = $request -> answer;
 
-        $ans->save();
+        $newans->save();
     }
 
 
