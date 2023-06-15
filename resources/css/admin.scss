@@ -404,6 +404,28 @@ main{
                         resize: vertical;
                         font-size: 16px;
                       }
+                      ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        min-width: 300px;
+                        width: 100%;
+                        li{
+                            margin:10px;
+                            color: #1e2d64;
+                            border-bottom: 1px solid #1e2d64;
+                        }
+                      }
+                }
+                .form-group.select{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    select{
+                        margin-left: 50px;
+                        width: 30vw;
+                        height: 10px;
+                    }
                 }
 
               
@@ -451,6 +473,14 @@ main{
                         /* 自訂文字位置 */
                         text-align: center;
                         }
+
+                        select[multiple]{
+                            height: auto;
+                            min-height: 100px; /* 設定選單的最小高度 */
+                            overflow-y: scroll; /* 超過最小高度時，出現垂直滾動條 */
+                            width: 20vw;
+                            text-align: left;
+                        } 
 
 
             }

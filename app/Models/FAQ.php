@@ -11,7 +11,7 @@ class FAQ extends Model
     protected $table = 'faqs';
     protected $fillable = ['product_id','question','answer'];
     
-    public function faq()
+    public function product()
     {
         return $this->belongsTo(Product::class);
     }

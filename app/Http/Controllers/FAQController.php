@@ -741,33 +741,38 @@ class FAQController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'product_id' => 'required',
             'question' => 'required|max:255',
             'answer' => 'required',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'video' => 'nullable|mimes:mp4,mov,avi',         
         ]);
 
-        $faq = new FAQ;
-        $faq -> product_id = $request->input('product_id');
-        $faq -> question = $request->input('question');
-        $faq -> answer = $request-> input('answer');
+        $productIds = $request->input('product_id');
         
-        if($request->hasFile('photo')){
-            $photoPath = $request->file('photo')->store('public/photos');
-            $faq->photo = $photoPath;
+        foreach($productIds as $productId){
+            $faq = new FAQ;
+            $faq -> product_id = $productId;
+            $faq -> question = $request->input('question');
+            $faq -> answer = $request-> input('answer');
+            
+            if($request->hasFile('photo')){
+                $photoPath = $request->file('photo')->store('public/photos');
+                $faq->photo = $photoPath;
+            }
+    
+            if($request->hasFile('video')){
+                $videoPath = $request->file('video')->store('public/videos');
+                $faq->video = $videoPath;
+            }
+    
+            $faq->save();
         }
+   
+        return redirect()->route('faqs.index', $productId) // 修改這行
+        ->with('success', '常見問題建立成功.');
 
-        if($request->hasFile('video')){
-            $videoPath = $request->file('video')->store('public/videos');
-            $faq->video = $videoPath;
-        }
-
-        $faq->save();
-
-
-        return redirect()->route('faqs.index', $faq->id)
-            ->with('success', '常見問題建立成功.');
+        // return redirect()->route('faqs.index', $faq->id)
+        //     ->with('success', '常見問題建立成功.');
     }
     public function delete(Request $request, $id)
     {    

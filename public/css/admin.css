@@ -385,6 +385,27 @@ main .admin_block .Show_form.setting-page form .btn {
   resize: vertical;
   font-size: 16px;
 }
+.Show_.reply .Show_form .question_reply .ans .form-group ul, .Show_.reply .Show_form .question_reply .create-ins .form-group ul, .Show_.reply .Show_form .member-create .ans .form-group ul, .Show_.reply .Show_form .member-create .create-ins .form-group ul {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  width: 100%;
+}
+.Show_.reply .Show_form .question_reply .ans .form-group ul li, .Show_.reply .Show_form .question_reply .create-ins .form-group ul li, .Show_.reply .Show_form .member-create .ans .form-group ul li, .Show_.reply .Show_form .member-create .create-ins .form-group ul li {
+  margin: 10px;
+  color: #1e2d64;
+  border-bottom: 1px solid #1e2d64;
+}
+.Show_.reply .Show_form .question_reply .ans .form-group.select, .Show_.reply .Show_form .question_reply .create-ins .form-group.select, .Show_.reply .Show_form .member-create .ans .form-group.select, .Show_.reply .Show_form .member-create .create-ins .form-group.select {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Show_.reply .Show_form .question_reply .ans .form-group.select select, .Show_.reply .Show_form .question_reply .create-ins .form-group.select select, .Show_.reply .Show_form .member-create .ans .form-group.select select, .Show_.reply .Show_form .member-create .create-ins .form-group.select select {
+  margin-left: 50px;
+  width: 30vw;
+  height: 10px;
+}
 .Show_.reply .Show_form .question_reply .ans select, .Show_.reply .Show_form .question_reply .create-ins select, .Show_.reply .Show_form .member-create .ans select, .Show_.reply .Show_form .member-create .create-ins select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -424,6 +445,13 @@ main .admin_block .Show_form.setting-page form .btn {
   font-size: 16px;
   /* 自訂文字位置 */
   text-align: center;
+}
+.Show_.reply .Show_form .question_reply .ans select[multiple], .Show_.reply .Show_form .question_reply .create-ins select[multiple], .Show_.reply .Show_form .member-create .ans select[multiple], .Show_.reply .Show_form .member-create .create-ins select[multiple] {
+  height: auto;
+  min-height: 100px; /* 設定選單的最小高度 */
+  overflow-y: scroll; /* 超過最小高度時，出現垂直滾動條 */
+  width: 20vw;
+  text-align: left;
 }
 .Show_.reply .Show_form .question_reply .question-block ul, .Show_.reply .Show_form .member-create .question-block ul {
   display: block;
