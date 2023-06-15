@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\FAQ;
 use App\Models\Question;
 use App\Models\Member;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 
@@ -53,12 +54,41 @@ class AdminController extends Controller
         // return !empty(self::$member);
         // 如果這樣寫會有問題
     }
+    
     public function delete()
     {
         session()->forget('adminId');
         
         // self::$admin = null;
         return redirect()->route('login');
+    }
+    public function Setting(){
+
+        $emailAddress = Setting::findOrFail(1) -> email_address;
+
+        return view('admin.Setting.Setting', compact('emailAddress'));
+    }
+    public function submitMail(Request $request)
+    {
+        $validateData = $request->validate([
+            'email_address' => 'required|email',
+        ]);
+
+        // $setting = new Setting;
+        // $setting->email_address = $request -> input('email_address');
+        // $setting->save();
+
+        $setting = Setting::first(); //假設 Setting 模型代表信箱設定的資料表，使用 first 方法獲取第一筆資料。
+
+        if($setting){
+            $setting->email_address = $request -> input('email_address');
+            $setting->save();
+        }else{
+            Setting::create(['email_address'=> $request->input('email_address')]);
+        }
+
+        
+        return redirect()->back()->with('success','收信信箱已儲存');
     }
     
     public function faqList(){

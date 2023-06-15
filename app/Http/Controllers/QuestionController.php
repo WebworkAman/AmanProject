@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Question;
 use App\Models\Product;
 use App\Models\Answer;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Libraries\MemberAuth;
+use Illuminate\Support\Facades\Mail;
+use App\Notifications\NewQuestionNotification;
+use Illuminate\Support\Facades\Notification;
+use App\Mail\NewAnswerNotification;
 
 class QuestionController extends Controller
 {
@@ -38,29 +43,39 @@ class QuestionController extends Controller
         return view('admin.Question.question-reply', compact('question'));
     }
     public function storeReply(Request $request, Question $question)
-{
-    $answer = $question->answers->first();
+    {
+        $answer = $question->answers->first();
 
-    if($answer){
+        if($answer){
         
-        //如果已存在回覆，則更新回覆內容
-        $answer->answer = $request->answer;
-        $answer->save();
-    }else{
+             //如果已存在回覆，則更新回覆內容
+             $answer->answer = $request->answer;
+             $answer->save();
 
-        // 處理回覆表單的提交
-        $newans = new Answer;
-        $newans -> question_id = $question-> id;
-        $newans -> member_id = $question-> member_id;
-        $newans -> answer = $request -> answer;
+         }else{
 
-        $newans->save();
-    }
+              // 處理回覆表單的提交
+              $newans = new Answer;
+              $newans -> question_id = $question-> id;
+              $newans -> member_id = $question-> member_id;
+              $newans -> answer = $request -> answer;
+
+              $newans->save();
+
+              //取得用戶信箱
+              $memberEmail = $question->member->email;
+
+              //確認 $memberEmail 的值
+              //dd($memberEmail);
+
+              //發送郵件通知
+              Mail::to($memberEmail)->send(new NewAnswerNotification($question));
 
 
-    return redirect()->route('faqs.index')
-    ->with('success', '回覆儲存成功.');
-}
+          }
+              return redirect()->route('faqs.index')
+              ->with('success', '回覆儲存成功.');
+      }
 
     /**
      * Store a newly created resource in storage.
@@ -105,11 +120,29 @@ class QuestionController extends Controller
         //將訊息儲存到 Session 中
         $request -> session()->flash('success',$message);
 
+        //寄送通知郵件給收信者
+        $emailAddress = Setting::find(1)->email_address;
+        $questionData = [
+            'title' => $question->title,
+            'content' => $question->content,
+        ];
+
+        //使用通知類別發送郵件
+
+        $notification = new NewQuestionNotification($questionData);
+        Notification::route('mail',$emailAddress)->notify($notification);
+
+
         // $url = url()->previous(); // 取得當前頁面的 URL
         // return redirect($url); // 重新導向當前頁面
 
         // 重新導向回當前頁面並顯示成功訊息
         return redirect()->back()->with('success', $message);
+    }
+
+    public function notifications()
+    {
+        return $this->morphMany(DatabaseNotification::class,'notifiable')->orderBy('created-at','desc');
     }
 
     /**
