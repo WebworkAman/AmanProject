@@ -343,6 +343,25 @@ class FAQController extends Controller
              return view('layouts.forbid');
         } 
     }
+
+    public function K5(){
+        $memberId = session()->get('memberId');
+        $id = 44;
+        //檢查權限
+        $hasPermission = MemberPermission::where('member_id',$memberId)
+                      ->where('product_id',$id)->exists();
+
+        $faqs = FAQ::where('product_id', 44)->get();
+
+        
+        if($hasPermission == $id){
+            return view('product.FAQ.spreading.K5', compact('faqs')) ;
+
+        }else{
+             // 没有权限，显示提示信息
+             return view('layouts.forbid');
+        } 
+    }
      //----------------------------- 裁剪系列
      public function OneCut(){
         $memberId = session()->get('memberId');
@@ -669,8 +688,27 @@ class FAQController extends Controller
                     // 没有权限，显示提示信息
                     return view('layouts.forbid');
         } 
-    
         }
+
+        public function OP900A(){
+            $memberId = session()->get('memberId');
+            $id = 46;
+             //檢查權限
+            $hasPermission = MemberPermission::where('member_id',$memberId)
+                      ->where('product_id',$id)->exists();
+
+            $faqs = FAQ::where('product_id', 46)->get();
+            
+
+            if($hasPermission == $id){
+                return view('product.FAQ.fusingPress.OP900A', compact('faqs')) ;
+
+            }else{
+             // 没有权限，显示提示信息
+             return view('layouts.forbid');
+            } 
+    
+             }
 
         //----------------------------- 黏合系列
 
@@ -729,6 +767,27 @@ class FAQController extends Controller
             } 
     
            }
+           //----------------------------- 金屬、重量檢測系列
+                //----------------------------- 成衣
+                public function ON688CD5(){
+                    $memberId = session()->get('memberId');
+                    $id = 45;
+                    //檢查權限
+                    $hasPermission = MemberPermission::where('member_id',$memberId)
+                              ->where('product_id',$id)->exists();
+        
+                    $faqs = FAQ::where('product_id', 45)->get();
+        
+                    
+                    if($hasPermission == $id){
+                     return view('product.FAQ.needleWeighing.clothing.ON688CD5', compact('faqs')) ;
+        
+                    }else{
+                     // 没有权限，显示提示信息
+                     return view('layouts.forbid');
+                    } 
+            
+                   }
 
     // 管理者
     public function index()

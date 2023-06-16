@@ -92,6 +92,11 @@ class ViewController extends Controller
         $questions = Question::where('product_id', 15)->get();
         return view('product/category/spreading/T5', compact('questions')) ;
     }
+
+    function K5(){
+        $questions = Question::where('product_id', 44)->get();
+        return view('product/category/spreading/K5', compact('questions')) ;
+    }
     
      // <*--------  裁剪 -----------*>
 
@@ -301,8 +306,8 @@ class ViewController extends Controller
     }
 
     function OP900A(){
-        return view('product/category/fusingPress/OP900A') 
-        ;
+        $questions = Question::where('product_id', 46)->get();
+        return view('product/category/fusingPress/OP900A', compact('questions'));
     }
 
     function OP600FA(){
@@ -418,10 +423,11 @@ class ViewController extends Controller
     // <*--------  金屬、重量檢測 -----------*>
     
     // 成衣
-    function ON688CD6(){
-        return view('product/category/needleWeighing/clothing/ON688CD6') 
-        ;
+    function ON688CD5(){
+        $questions = Question::where('product_id', 45)->get();
+        return view('product/category/needleWeighing/clothing/ON688CD5', compact('questions'));
     }
+
     function OMW600(){
         return view('product/category/needleWeighing/clothing/OMW600') 
         ;

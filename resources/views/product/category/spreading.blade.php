@@ -30,6 +30,10 @@
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/T5-600-2.png"></a>
                     <p>針織圓筒布拉布機 T5</p>
                 </li>
+                <li><a href="{{asset('FAQ/spreading/K5')}}"><img
+                            src="{{asset('imgs/Spreading/K5-600-2.png')}}"></a>
+                    <p>全能拉布機 K5</p>
+                </li>
 
             </ul>
         </div>

@@ -180,6 +180,9 @@ Route::get('/F8',[ViewController::class,'F8']);
 Route::post('/T5',[QuestionController::class,'store'])->name('T5');
 Route::get('/T5',[ViewController::class,'T5']);
 
+Route::post('/K5',[QuestionController::class,'store'])->name('K5');
+Route::get('/K5',[ViewController::class,'K5']);
+
 // <*--------  裁剪 -----------*>
 
 Route::get('/cutting', function () {
@@ -323,8 +326,8 @@ Route::get('/OP-1400',[ViewController::class,'OP1400']);
 // Route::post('/OP-600SPII',[QuestionController::class,'store'])->name('UW-2S');
 // Route::get('/OP-600SPII',[ViewController::class,'OP600SPII']);
 
-// Route::post('/OP-900A',[QuestionController::class,'store'])->name('UW-2S');
-// Route::get('/OP-900A',[ViewController::class,'OP900A']);
+Route::post('/OP-900A',[QuestionController::class,'store'])->name('OP900A');
+Route::get('/OP-900A',[ViewController::class,'OP900A']);
 
 // Route::post('/OP-600FA',[QuestionController::class,'store'])->name('UW-2S');
 // Route::get('/OP-600FA',[ViewController::class,'OP600FA']);
@@ -406,12 +409,13 @@ Route::get('/OSZ-50XN',[ViewController::class,'OSZ50XN']);
 Route::get('/needleWeighing', function () {
     return view('product/category/needleWeighing');
 });
+
 // 成衣
 Route::get('/needleWeighing/clothing', function () {
     return view('product/category/needleWeighing/clothing');
 });
-Route::post('/needleWeighing/clothing/ON-688CD6',[QuestionController::class,'store']);
-Route::get('/needleWeighing/clothing/ON-688CD6',[ViewController::class,'ON688CD6']);
+Route::post('/needleWeighing/clothing/ON-688CD5',[QuestionController::class,'store'])->name('ON688CD5');;
+Route::get('/needleWeighing/clothing/ON-688CD5',[ViewController::class,'ON688CD5']);
 
 Route::post('/needleWeighing/clothing/OMW-600',[QuestionController::class,'store']);
 Route::get('/needleWeighing/clothing/OMW-600',[ViewController::class,'OMW600']);
@@ -598,6 +602,7 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/spreading/KProLite',[FAQController::class,'KProLite']);
    Route::get('/spreading/F8',[FAQController::class,'F8']);
    Route::get('/spreading/T5',[FAQController::class,'T5']);
+   Route::get('/spreading/K5',[FAQController::class,'K5']);
  //裁剪
    Route::get('/cutting/OneCut',[FAQController::class,'OneCut']);
    Route::get('/cutting/M6S',[FAQController::class,'M6S']);
@@ -619,10 +624,14 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/fusingPress/OP-450GS',[FAQController::class,'OP450GS']);
    Route::get('/fusingPress/OP-1200NL',[FAQController::class,'OP1200NL']);
    Route::get('/fusingPress/OP-1400',[FAQController::class,'OP1400']);
+   Route::get('/fusingPress/OP-900A',[FAQController::class,'OP900A']);
  //無縫黏合
    Route::get('/seamless/MB9018B',[FAQController::class,'MB9018B']);
    Route::get('/seamless/OP-114',[FAQController::class,'OP114']);
-   Route::get('/seamless/OP-114S',[FAQController::class,'OP114S']);
+   Route::get('/seamless/OP-900A',[FAQController::class,'OP900A']);
+ //金屬、重量檢測
+     //成衣
+   Route::get('/needleWeighing/clothing/ON688CD5',[FAQController::class,'ON688CD5']);
 });
 });
 

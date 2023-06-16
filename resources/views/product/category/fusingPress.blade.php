@@ -41,12 +41,12 @@
                 <li><a href="{{asset('FAQ/fusingPress/OP-600SPII')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-600SPII-600.png"></a>
                     <p>連續式粘合機 OP-600SPII</p>
-                </li>
+                </li> -->
                 <li><a href="{{asset('FAQ/fusingPress/OP-900A')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-900A-600-4.png"></a>
                     <p>連續式粘合機 OP-900A/900LA/1000A/1000LA</p>
                 </li>
-                <li><a href="{{asset('FAQ/fusingPress/OP-600FA')}}"><img
+                <!-- <li><a href="{{asset('FAQ/fusingPress/OP-600FA')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-600FA-600-7.png"></a>
                     <p>連續式粘合機 OP-600FA/600FAL</p>
                 </li>
