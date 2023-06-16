@@ -39,11 +39,11 @@
                                         @if($question->answers->count() > 0)
                                            
                                         @foreach($question->answers as $answer)
-                                            <p>問題內容：{{ $answer->answer }}</p>
+                                            <p>回覆：{{ $answer->answer }}</p>
                                         @endforeach
                                          
                                          @else
-                                              <p>問題內容：暫無回答</p>
+                                              <p>回覆：暫無回答</p>
                                          @endif
                                         
                                     </li>
