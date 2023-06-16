@@ -372,8 +372,20 @@ main{
                 }
             }
 
-            
-            .ans,.create-ins{
+            .create-faq{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    min-width: 300px;
+                    width: 100%;
+                    li{
+                        margin:10px;
+                        color: #1e2d64;
+                        border-bottom: 1px solid #1e2d64;
+                    }
+                  }
+            }
+            .ans,.create-faq{
                 margin-left: 120px;
                 .form-group{
                     margin: 20px;
@@ -404,17 +416,7 @@ main{
                         resize: vertical;
                         font-size: 16px;
                       }
-                      ul{
-                        display: flex;
-                        flex-wrap: wrap;
-                        min-width: 300px;
-                        width: 100%;
-                        li{
-                            margin:10px;
-                            color: #1e2d64;
-                            border-bottom: 1px solid #1e2d64;
-                        }
-                      }
+
                 }
                 .form-group.select{
                     display: flex;

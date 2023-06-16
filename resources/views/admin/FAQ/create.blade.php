@@ -18,7 +18,7 @@
                           <a class="btn" href="{{ asset('admin/index') }}">返回列表</a>
                     </div>
                     
-                <div class="ans">
+                <div class="create-faq">
                     <form method="POST" action="{{ route('faqs.store') }}" enctype="multipart/form-data">
                          @csrf
                          <div class="form-group select">
