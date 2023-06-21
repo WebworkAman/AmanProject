@@ -19,7 +19,7 @@
                           <a class="btn" href="{{ asset('admin/index') }}">返回列表</a>
                 </div>
                  
-                 <div class="create-ins">
+                 <div class="create-member">
 
                  
                     <form method="post" action="{{ route('members.adminStore') }}">

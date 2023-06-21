@@ -361,20 +361,20 @@ main .admin_block .Show_form.setting-page form .btn {
   color: #1e2d64;
   border-bottom: 1px solid #1e2d64;
 }
-.Show_.reply .Show_form .question_reply .ans, .Show_.reply .Show_form .question_reply .create-faq, .Show_.reply .Show_form .member-create .ans, .Show_.reply .Show_form .member-create .create-faq {
+.Show_.reply .Show_form .question_reply .ans, .Show_.reply .Show_form .question_reply .create-faq, .Show_.reply .Show_form .question_reply .create-member, .Show_.reply .Show_form .member-create .ans, .Show_.reply .Show_form .member-create .create-faq, .Show_.reply .Show_form .member-create .create-member {
   margin-left: 120px;
   /* 隱藏原本的下拉箭頭 */
   /* 自訂下拉箭頭 */
   /* 自訂下拉選單樣式 */
 }
-.Show_.reply .Show_form .question_reply .ans .form-group, .Show_.reply .Show_form .question_reply .create-faq .form-group, .Show_.reply .Show_form .member-create .ans .form-group, .Show_.reply .Show_form .member-create .create-faq .form-group {
+.Show_.reply .Show_form .question_reply .ans .form-group, .Show_.reply .Show_form .question_reply .create-faq .form-group, .Show_.reply .Show_form .question_reply .create-member .form-group, .Show_.reply .Show_form .member-create .ans .form-group, .Show_.reply .Show_form .member-create .create-faq .form-group, .Show_.reply .Show_form .member-create .create-member .form-group {
   margin: 20px;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group label, .Show_.reply .Show_form .question_reply .create-faq .form-group label, .Show_.reply .Show_form .member-create .ans .form-group label, .Show_.reply .Show_form .member-create .create-faq .form-group label {
+.Show_.reply .Show_form .question_reply .ans .form-group label, .Show_.reply .Show_form .question_reply .create-faq .form-group label, .Show_.reply .Show_form .question_reply .create-member .form-group label, .Show_.reply .Show_form .member-create .ans .form-group label, .Show_.reply .Show_form .member-create .create-faq .form-group label, .Show_.reply .Show_form .member-create .create-member .form-group label {
   color: #555;
   letter-spacing: 1.2;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group input, .Show_.reply .Show_form .question_reply .create-faq .form-group input, .Show_.reply .Show_form .member-create .ans .form-group input, .Show_.reply .Show_form .member-create .create-faq .form-group input {
+.Show_.reply .Show_form .question_reply .ans .form-group input, .Show_.reply .Show_form .question_reply .create-faq .form-group input, .Show_.reply .Show_form .question_reply .create-member .form-group input, .Show_.reply .Show_form .member-create .ans .form-group input, .Show_.reply .Show_form .member-create .create-faq .form-group input, .Show_.reply .Show_form .member-create .create-member .form-group input {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -385,7 +385,7 @@ main .admin_block .Show_form.setting-page form .btn {
   resize: vertical;
   font-size: 16px;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group textarea, .Show_.reply .Show_form .question_reply .create-faq .form-group textarea, .Show_.reply .Show_form .member-create .ans .form-group textarea, .Show_.reply .Show_form .member-create .create-faq .form-group textarea {
+.Show_.reply .Show_form .question_reply .ans .form-group textarea, .Show_.reply .Show_form .question_reply .create-faq .form-group textarea, .Show_.reply .Show_form .question_reply .create-member .form-group textarea, .Show_.reply .Show_form .member-create .ans .form-group textarea, .Show_.reply .Show_form .member-create .create-faq .form-group textarea, .Show_.reply .Show_form .member-create .create-member .form-group textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -396,17 +396,17 @@ main .admin_block .Show_form.setting-page form .btn {
   resize: vertical;
   font-size: 16px;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group.select, .Show_.reply .Show_form .question_reply .create-faq .form-group.select, .Show_.reply .Show_form .member-create .ans .form-group.select, .Show_.reply .Show_form .member-create .create-faq .form-group.select {
+.Show_.reply .Show_form .question_reply .ans .form-group.select, .Show_.reply .Show_form .question_reply .create-faq .form-group.select, .Show_.reply .Show_form .question_reply .create-member .form-group.select, .Show_.reply .Show_form .member-create .ans .form-group.select, .Show_.reply .Show_form .member-create .create-faq .form-group.select, .Show_.reply .Show_form .member-create .create-member .form-group.select {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-.Show_.reply .Show_form .question_reply .ans .form-group.select select, .Show_.reply .Show_form .question_reply .create-faq .form-group.select select, .Show_.reply .Show_form .member-create .ans .form-group.select select, .Show_.reply .Show_form .member-create .create-faq .form-group.select select {
+.Show_.reply .Show_form .question_reply .ans .form-group.select select, .Show_.reply .Show_form .question_reply .create-faq .form-group.select select, .Show_.reply .Show_form .question_reply .create-member .form-group.select select, .Show_.reply .Show_form .member-create .ans .form-group.select select, .Show_.reply .Show_form .member-create .create-faq .form-group.select select, .Show_.reply .Show_form .member-create .create-member .form-group.select select {
   margin-left: 50px;
   width: 30vw;
   height: 10px;
 }
-.Show_.reply .Show_form .question_reply .ans select, .Show_.reply .Show_form .question_reply .create-faq select, .Show_.reply .Show_form .member-create .ans select, .Show_.reply .Show_form .member-create .create-faq select {
+.Show_.reply .Show_form .question_reply .ans select, .Show_.reply .Show_form .question_reply .create-faq select, .Show_.reply .Show_form .question_reply .create-member select, .Show_.reply .Show_form .member-create .ans select, .Show_.reply .Show_form .member-create .create-faq select, .Show_.reply .Show_form .member-create .create-member select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -429,7 +429,7 @@ main .admin_block .Show_form.setting-page form .btn {
        text-align-last: center;
   text-align: center;
 }
-.Show_.reply .Show_form .question_reply .ans select::after, .Show_.reply .Show_form .question_reply .create-faq select::after, .Show_.reply .Show_form .member-create .ans select::after, .Show_.reply .Show_form .member-create .create-faq select::after {
+.Show_.reply .Show_form .question_reply .ans select::after, .Show_.reply .Show_form .question_reply .create-faq select::after, .Show_.reply .Show_form .question_reply .create-member select::after, .Show_.reply .Show_form .member-create .ans select::after, .Show_.reply .Show_form .member-create .create-faq select::after, .Show_.reply .Show_form .member-create .create-member select::after {
   content: "▼";
   position: absolute;
   top: 15px;
@@ -438,7 +438,7 @@ main .admin_block .Show_form.setting-page form .btn {
   color: #555;
   pointer-events: none;
 }
-.Show_.reply .Show_form .question_reply .ans select option, .Show_.reply .Show_form .question_reply .create-faq select option, .Show_.reply .Show_form .member-create .ans select option, .Show_.reply .Show_form .member-create .create-faq select option {
+.Show_.reply .Show_form .question_reply .ans select option, .Show_.reply .Show_form .question_reply .create-faq select option, .Show_.reply .Show_form .question_reply .create-member select option, .Show_.reply .Show_form .member-create .ans select option, .Show_.reply .Show_form .member-create .create-faq select option, .Show_.reply .Show_form .member-create .create-member select option {
   /* 自訂背景顏色 */
   background-color: #fff;
   /* 自訂字體大小 */
@@ -446,7 +446,7 @@ main .admin_block .Show_form.setting-page form .btn {
   /* 自訂文字位置 */
   text-align: center;
 }
-.Show_.reply .Show_form .question_reply .ans select[multiple], .Show_.reply .Show_form .question_reply .create-faq select[multiple], .Show_.reply .Show_form .member-create .ans select[multiple], .Show_.reply .Show_form .member-create .create-faq select[multiple] {
+.Show_.reply .Show_form .question_reply .ans select[multiple], .Show_.reply .Show_form .question_reply .create-faq select[multiple], .Show_.reply .Show_form .question_reply .create-member select[multiple], .Show_.reply .Show_form .member-create .ans select[multiple], .Show_.reply .Show_form .member-create .create-faq select[multiple], .Show_.reply .Show_form .member-create .create-member select[multiple] {
   height: auto;
   min-height: 100px; /* 設定選單的最小高度 */
   overflow-y: scroll; /* 超過最小高度時，出現垂直滾動條 */
