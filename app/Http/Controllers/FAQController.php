@@ -307,7 +307,25 @@ class FAQController extends Controller
              return view('layouts.forbid');
         } 
     }
-    public function F8(){
+    // public function F8(){
+    //     $memberId = session()->get('memberId');
+    //     $id = 14;
+    //     //檢查權限
+    //     $hasPermission = MemberPermission::where('member_id',$memberId)
+    //                   ->where('product_id',$id)->exists();
+
+    //     $faqs = FAQ::where('product_id', 14)->get();
+
+        
+    //     if($hasPermission == $id){
+    //          return view('product.FAQ.spreading.F8', compact('faqs')) ;
+
+    //     }else{
+    //          // 没有权限，显示提示信息
+    //          return view('layouts.forbid');
+    //     } 
+    // }
+    public function T5(){
         $memberId = session()->get('memberId');
         $id = 14;
         //檢查權限
@@ -315,24 +333,6 @@ class FAQController extends Controller
                       ->where('product_id',$id)->exists();
 
         $faqs = FAQ::where('product_id', 14)->get();
-
-        
-        if($hasPermission == $id){
-             return view('product.FAQ.spreading.F8', compact('faqs')) ;
-
-        }else{
-             // 没有权限，显示提示信息
-             return view('layouts.forbid');
-        } 
-    }
-    public function T5(){
-        $memberId = session()->get('memberId');
-        $id = 15;
-        //檢查權限
-        $hasPermission = MemberPermission::where('member_id',$memberId)
-                      ->where('product_id',$id)->exists();
-
-        $faqs = FAQ::where('product_id', 15)->get();
 
         
         if($hasPermission == $id){
@@ -365,12 +365,12 @@ class FAQController extends Controller
      //----------------------------- 裁剪系列
      public function OneCut(){
         $memberId = session()->get('memberId');
-        $id = 16;
+        $id = 15;
         //檢查權限
         $hasPermission = MemberPermission::where('member_id',$memberId)
                       ->where('product_id',$id)->exists();
 
-        $faqs = FAQ::where('product_id', 16)->get();
+        $faqs = FAQ::where('product_id', 15)->get();
         
         if($hasPermission == $id){
             return view('product.FAQ.cutting.OneCut', compact('faqs')) ;
@@ -383,12 +383,12 @@ class FAQController extends Controller
     }
     public function M6S(){
         $memberId = session()->get('memberId');
-        $id = 17;
+        $id = 16;
         //檢查權限
         $hasPermission = MemberPermission::where('member_id',$memberId)
                       ->where('product_id',$id)->exists();
 
-        $faqs = FAQ::where('product_id', 17)->get();
+        $faqs = FAQ::where('product_id', 16)->get();
 
         
         if($hasPermission == $id){

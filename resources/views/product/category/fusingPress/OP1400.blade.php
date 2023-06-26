@@ -6,7 +6,7 @@
 
      <main>
 
-        <h1>Customer Question & Answer</h1>
+        @include('components.question-title')
         <div class="QA_content">
         <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-1600-600-5.png">

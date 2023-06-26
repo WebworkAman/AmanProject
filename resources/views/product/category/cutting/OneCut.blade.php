@@ -17,7 +17,7 @@
               
               @include('layouts.question-message')
               <form method="post" action="{{ route('OneCut')}}" enctype="multipart/form-data">
-              <input type="hidden" name="product_id" value="16">
+              <input type="hidden" name="product_id" value="15">
                     
               @include('layouts.question-post')
               </form>

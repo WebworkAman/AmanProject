@@ -83,13 +83,13 @@ class ViewController extends Controller
         return view('product/category/spreading/KProLite', compact('questions')) ;
     }
 
-    function F8(){
-        $questions = Question::where('product_id', 14)->get();
-        return view('product/category/spreading/F8', compact('questions')) ;
-    }
+    // function F8(){
+    //     $questions = Question::where('product_id', 14)->get();
+    //     return view('product/category/spreading/F8', compact('questions')) ;
+    // }
 
     function T5(){
-        $questions = Question::where('product_id', 15)->get();
+        $questions = Question::where('product_id', 14)->get();
         return view('product/category/spreading/T5', compact('questions')) ;
     }
 
@@ -101,12 +101,12 @@ class ViewController extends Controller
      // <*--------  裁剪 -----------*>
 
     function OneCut(){
-        $questions = Question::where('product_id', 16)->get();
+        $questions = Question::where('product_id', 15)->get();
         return view('product/category/cutting/OneCut', compact('questions'));
     }
 
     function M6S(){
-        $questions = Question::where('product_id', 17)->get();
+        $questions = Question::where('product_id', 16)->get();
         return view('product/category/cutting/M6S', compact('questions'));
     }
 

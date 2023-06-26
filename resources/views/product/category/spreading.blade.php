@@ -22,10 +22,10 @@
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/KProLite-600.png"></a>
                     <p>全能拉布機 KPro Lite</p>
                 </li>
-                <li><a href="{{asset('FAQ/spreading/F8')}}"><img
+                <!-- <li><a href="{{asset('FAQ/spreading/F8')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/F8-600-2.png"></a>
                     <p>平織拉布機 F8</p>
-                </li>
+                </li> -->
                 <li><a href="{{asset('FAQ/spreading/T5')}}"><img
                             src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/T5-600-2.png"></a>
                     <p>針織圓筒布拉布機 T5</p>

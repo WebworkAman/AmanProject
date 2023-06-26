@@ -17,7 +17,7 @@
               
               @include('layouts.question-message')
               <form method="post" action="{{ route('T5')}}" enctype="multipart/form-data">
-                    <input type="hidden" name="product_id" value="15">
+                    <input type="hidden" name="product_id" value="14">
                     
                     @include('layouts.question-post')
               </form>
