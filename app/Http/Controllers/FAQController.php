@@ -803,7 +803,7 @@ class FAQController extends Controller
             'question' => 'required|max:255',
             'answer' => 'required',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-            'video' => 'nullable|mimes:mp4,mov,avi',         
+            'video' => 'nullable|mimes:mp4,mov,avi,mpeg',         
         ]);
 
         $productIds = $request->input('product_id');
