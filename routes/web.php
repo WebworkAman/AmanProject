@@ -58,7 +58,12 @@ Route::group(['prefix'=>'admin'],function(){
     Route::delete('/index/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
     Route::delete('/index/question-list/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
     Route::delete('/index/member-list/{member}', [AdminController::class, 'destroy'])->name('members.destroy');
-
+    Route::get('/index/ERP-list', [AdminController::class, 'ERP_List'])->name('ERP.List');
+    Route::get('/index/Maintenance-list', [AdminController::class, 'Maintenance_List'])->name('Maintenance.List');
+    Route::get('/index/Maintenance-list/{maintenanceRecord}/check', [AdminController::class, 'Maintenance_check'])->name('Maintenance.check');
+    Route::delete('/index/Maintenance-list/{maintenanceRecord}', [AdminController::class, 'Maintenance_destroy'])->name('Maintenance.destroy');
+    Route::get('/index/Maintenance-create', [AdminController::class, 'Maintenance_create'])->name('Maintenance.create');
+    Route::post('/index/Maintenance-create',[AdminController::class,'Maintenance_store'])->name('Maintenance.store');
     Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
     
     

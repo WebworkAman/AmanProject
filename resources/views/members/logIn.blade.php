@@ -16,10 +16,6 @@
             <h1>登 入</h1>
             <div class="left">
                 
-                <!-- <div class="txt">
-
-                    <p>新用戶? </p><a href="{{route('members.create')}}"> 註 冊 </a>
-                </div> -->
                                
                 <form method="post" action="{{route('members.session.store')}}">
                    @csrf
@@ -55,6 +51,10 @@
                        
                        
                 </div>
+                <div class="check">
+                        <a href="{{route('members.create')}}"> 註 冊 </a>
+                </div>
+                
                 @if(Session::has('fail'))
                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
                 @endif

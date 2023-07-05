@@ -1,7 +1,8 @@
 <div class="Show_form question-list">
                     <h3>客戶問題區管理</h3>
                     
-
+                    <a href="{{route('ERP.List')}}"  class="btn">查閱ERP資料</a>
+                    
                       <table>
                               <thead>
                                   <tr>

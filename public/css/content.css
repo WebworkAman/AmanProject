@@ -296,7 +296,8 @@ main .img-block ul li ol {
 }
 main .img-block ul li ol li p {
   margin: 15px;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: "Noto Sans TC", sans-serif !important;
 }
 main .img-block ul li ol li img {
   width: 1.2rem;

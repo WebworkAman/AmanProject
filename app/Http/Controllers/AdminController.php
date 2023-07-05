@@ -8,6 +8,8 @@ use App\Models\FAQ;
 use App\Models\Question;
 use App\Models\Member;
 use App\Models\Setting;
+use App\Models\Tbm10;
+use App\Models\MaintenanceRecord;
 use Illuminate\Http\Request;
 
 
@@ -109,9 +111,64 @@ class AdminController extends Controller
         $members = Member::all();
         return view('admin.Member.member-list', compact('members')) ;
     }
+    public function ERP_List(){
+        ini_set('memory_limit', '512M');
+
+        $tbm10Data = Tbm10::paginate(10);
+    
+        return view('admin.ERP.ERP-list', compact('tbm10Data'));
+    }
+    public function Maintenance_List(){
+
+        $maintenanceRecords = MaintenanceRecord::all();
+         
+        return view('admin.Maintenance.Mainten_list', compact('maintenanceRecords'));
+    }
+    public function Maintenance_create(){
+         
+        return view('admin.Maintenance.Mainten_create');
+    }
+    public function Maintenance_check(MaintenanceRecord $maintenanceRecord)
+    {
+        return view('admin.Maintenance.Mainten_check', compact('maintenanceRecord'));
+    }
+    public function Maintenance_store(Request $request){
+
+        //驗證輸入
+        $validateData = $request->validate([
+            'customer_name' => 'required',
+            'factory' => 'required',
+            'equipment_model' => 'required',
+            'purchase_date' => 'required|date',
+            'serial_number' => 'required',
+            'installation_date' => 'required|date',
+            'maintenance_date' => 'required|date',
+            'description' => 'required',
+            'maintenance_content' => 'required',
+            'quantity' => 'required|numeric',
+            'maintenance_personnel' => 'required',
+        ]);
+
+        //建立維修履歷
+        $maintenanceRecord = MaintenanceRecord::create($validateData);
+
+        // 重定向或其他操作
+        return redirect('admin/index')->with('success', '維修履歷已成功建立');
+    }
+    public function Maintenance_destroy(MaintenanceRecord $maintenanceRecord)
+    {
+         $maintenanceRecord->delete();
+    
+        return redirect()->back()
+            ->with('success', '刪除成功.');
+         
+    }
+
     public function memberCreate(){
 
-        $members = Member::all();
+        $faqs = FAQ::all();
+        $products = Product::all();
+
         return view('admin.Member.member-create', compact('members')) ;
     }
     public function showSetPermissions($memberId){

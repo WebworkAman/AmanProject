@@ -7,6 +7,6 @@
                     <!-- <a class="control-option" href="/admin/index/member-create">新增會員</a> -->
                     <a href="{{route('faqList')}}" data-url="{{'/admin/index/faq-list'}}" class="control-option">常見問題</a>
                     <a href="{{route('questions.index')}}" data-url="{{'/admin/index/question-list'}}" class="control-option">客戶問題</a>
-                    
+                    <a href="{{route('Maintenance.List')}}" data-url="{{'/admin/index/maintenance-list'}}" class="control-option">維修履歷</a>
                 </div>
 </div>

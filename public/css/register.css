@@ -67,22 +67,18 @@ body .topText img {
 body main .log {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
   width: 45vw;
   min-width: 700px;
-  height: 600px;
+  height: 2000px;
   border: 2px solid cornsilk;
   border-radius: 10px;
   margin: 50px auto;
   background-color: rgb(104, 159, 198);
 }
 body main .log .left {
-  height: 394px;
-  width: 300px;
   color: rgb(255, 246, 122);
   letter-spacing: 1.1;
-  padding-left: 10px;
-  padding-top: 10px;
+  margin-top: 100px;
 }
 body main .log .left h1 {
   font-size: 24px;
