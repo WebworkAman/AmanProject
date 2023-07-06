@@ -21,7 +21,7 @@
     <!-- 編輯表單的其他欄位 -->
 
     <div class="form-group">
-        <label for="question">問題</label>
+        <label for="question"></label>
         <input type="text" name="question" id="question" value="{{ $faq->question }}" required>
     </div>
 

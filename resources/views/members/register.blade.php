@@ -89,7 +89,15 @@
 
     <div class="formgroup">
         <label for="company_address">公司地址</label>
-        <input type="text" name="company_address" id="company_address">
+        <!-- <input type="text" name="company_address" id="company_address"> -->
+        <ul>
+            <li>國家 <input type="text"></li>
+            <li>郵遞區號<input type="text"></li>
+            <li>區域<input type="text"></li>
+            <li>城市 <input type="text"></li>
+            <li>街/路名<input type="text"></li>
+        </ul>
+     
     </div>
 
     <div class="formgroup">
@@ -99,17 +107,33 @@
 
     <div class="formgroup">
         <label for="company_phone">公司電話</label>
-        <input type="text" name="company_phone" id="company_phone">
+        <!-- <input type="text" name="company_phone" id="company_phone"> -->
+        <ul>
+            <li>國碼 <input type="text"></li>
+            <li>區碼<input type="text"></li>
+            <li>電話號碼<input type="text"></li>
+            <li>國碼 <input type="text"></li>
+            <li>區碼<input type="text"></li>
+            <li>電話號碼<input type="text"></li>
+            <li>國碼 <input type="text"></li>
+            <li>區碼<input type="text"></li>
+            <li>電話號碼<input type="text"></li>
+        </ul>
     </div>
 
     <div class="formgroup">
         <label for="company_fax">公司傳真</label>
-        <input type="text" name="company_fax" id="company_fax">
+        <!-- <input type="text" name="company_fax" id="company_fax"> -->
+        <ul>
+            <li>國碼 <input type="text"></li>
+            <li>區碼<input type="text"></li>
+            <li>電話號碼<input type="text"></li>
+        </ul>
     </div>
 
     <div class="formgroup">
         <label for="company_website">公司網址</label>
-        <input type="text" name="company_website" id="company_website">
+        WWW. <input type="text" name="company_website" id="company_website">
     </div>
 
     <div class="formgroup">
@@ -119,18 +143,25 @@
 
     <div class="formgroup">
         <label for="purchase_person">採購人員</label>
-        <input type="text" name="purchase_person" id="purchase_person">
+        <!-- <input type="text" name="purchase_person" id="purchase_person"> -->
+        <ul>
+            <li>姓名 <input type="text"></li>
+            <li>國碼 <input type="text"></li>
+            <li>區碼<input type="text"></li>
+            <li>電話號碼<input type="text"></li>
+            <li>分機<input type="text"></li>
+        </ul>
     </div>
 
-    <div class="formgroup">
+    <!-- <div class="formgroup">
         <label for="purchase_person_phone">採購人員電話</label>
         <input type="text" name="purchase_person_phone" id="purchase_person_phone">
-    </div>
+    </div> -->
 
-    <div class="formgroup">
+    <!-- <div class="formgroup">
         <label for="purchase_person_ext">採購人員分機</label>
         <input type="text" name="purchase_person_ext" id="purchase_person_ext">
-    </div>
+    </div> -->
 
     <div class="formgroup">
         <label for="purchase_person_email">E-mail</label>
@@ -152,17 +183,37 @@
 
     <div class="formgroup">
         <label for="machine_model">機器型號</label>
-        <input type="text" name="machine_model" id="machine_model">
+        <input type="text" name="machine_model" id="machine_model" Placeholder="字元最長15碼">
     </div>
 
     <div class="formgroup">
         <label for="machine_serial">機器序號</label>
-        <input type="text" name="machine_serial" id="machine_serial">
+        <input type="text" name="machine_serial" id="machine_serial" Placeholder="字元最長15碼">
     </div>
 
     <div class="formgroup">
         <label for="machine_installation">機器安裝地址</label>
-        <input type="text" name="machine_installation" id="machine_installation">
+        <!-- <input type="text" name="machine_installation" id="machine_installation"> -->
+        <ul>
+            <li>公司名稱 <input type="text"></li>
+            <li>公司地址 <input type="text"></li>
+            <li>統一編號<input type="text"></li>
+            <li>公司電話
+             <ol>
+                 <li>國碼 <input type="text"></li>
+                 <li>區碼<input type="text"></li>
+                 <li>電話號碼<input type="text"></li>
+             </ol>
+            </li>
+            <li>公司傳真
+            <ol>
+                 <li>國碼 <input type="text"></li>
+                 <li>區碼<input type="text"></li>
+                 <li>電話號碼<input type="text"></li>
+             </ol>
+            </li>
+        </ul>
+
     </div>
 
     <!-- 聯絡人 -->
@@ -186,13 +237,20 @@
 
     <div class="formgroup">
         <label for="contact_person_phone">公司電話</label>
-        <input type="text" name="contact_person_phone" id="contact_person_phone">
+        <!-- <input type="text" name="contact_person_phone" id="contact_person_phone"> -->
+        <ul>
+            <!-- <li>姓名 <input type="text"></li> -->
+            <li>國碼 <input type="text"></li>
+            <li>區碼<input type="text"></li>
+            <li>電話號碼<input type="text"></li>
+            <li>分機<input type="text"></li>
+        </ul>
     </div>
 
-    <div class="formgroup">
+    <!-- <div class="formgroup">
         <label for="contact_person_ext">分機</label>
         <input type="text" name="contact_person_ext" id="contact_person_ext">
-    </div>
+    </div> -->
 
     <div class="formgroup">
         <label for="contact_person_mobile">手機</label>
