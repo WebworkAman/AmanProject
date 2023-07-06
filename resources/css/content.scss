@@ -23,11 +23,15 @@
 
     input{
         width: 20vw;
+        height: 35px;
         padding: 5px 15px;
         border: 1px #ccc solid;
         cursor: pointer;
         border-radius: 5px;
         color: #555;
+
+        font-size: 1rem;
+        letter-spacing: 1.2px;
     }
     button{
         text-decoration: none;
@@ -82,9 +86,9 @@
              -moz-appearance: none;
              appearance: none;
              /* 選擇框寬度 */
-             width: 200px;
+             width: 20vw;
              /* 選擇框高度 */
-             height: 20px;
+             height: 30px;
              /* 自訂選擇框背景 */
              background-color: #fff;
              /* 自訂邊框 */
@@ -94,7 +98,7 @@
              /* 自訂字型 */
              font-family: inherit;
              /* 自訂字體大小 */
-             font-size: .8rem;
+             font-size: 1rem;
              /* 自訂文字位置 */
              text-align-last: center;
              text-align: center;
@@ -251,7 +255,8 @@ main {
                 }
                 p{
                     margin: 15px;
-                    font-weight: 500;
+                    font-size: 1.2rem;
+                    letter-spacing: 1.2px;
                 }
             }
         }
@@ -290,7 +295,7 @@ main {
     }
     table {
                     
-        font-size: 1rem;
+        font-size: 1.1rem;
         border-collapse: collapse;
         width: 90vw;
         margin: 0 auto;
@@ -298,7 +303,7 @@ main {
         border-radius: 10px;
         line-height: 1.5;
         font-family: 'Courier New', Courier, monospace;
-        font-weight: 350;
+        font-weight: 450;
 
     }
     th, td {

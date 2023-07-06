@@ -135,11 +135,14 @@ footer .social_block p {
 }
 .search input {
   width: 20vw;
+  height: 35px;
   padding: 5px 15px;
   border: 1px #ccc solid;
   cursor: pointer;
   border-radius: 5px;
   color: #555;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
 }
 .search button {
   text-decoration: none;
@@ -190,9 +193,9 @@ footer .social_block p {
   -moz-appearance: none;
   appearance: none;
   /* 選擇框寬度 */
-  width: 200px;
+  width: 20vw;
   /* 選擇框高度 */
-  height: 20px;
+  height: 30px;
   /* 自訂選擇框背景 */
   background-color: #fff;
   /* 自訂邊框 */
@@ -202,7 +205,7 @@ footer .social_block p {
   /* 自訂字型 */
   font-family: inherit;
   /* 自訂字體大小 */
-  font-size: 0.8rem;
+  font-size: 1rem;
   /* 自訂文字位置 */
   -moz-text-align-last: center;
        text-align-last: center;
@@ -327,7 +330,8 @@ main .chooseItem ul li img {
 }
 main .chooseItem ul li p {
   margin: 15px;
-  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
 }
 @media (max-width: 615px) {
   main .chooseItem ul {
@@ -352,7 +356,7 @@ main .chooseItem ul li p {
   font-size: large;
 }
 .faq-search-show table {
-  font-size: 1rem;
+  font-size: 1.1rem;
   border-collapse: collapse;
   width: 90vw;
   margin: 0 auto;
@@ -360,7 +364,7 @@ main .chooseItem ul li p {
   border-radius: 10px;
   line-height: 1.5;
   font-family: "Courier New", Courier, monospace;
-  font-weight: 350;
+  font-weight: 450;
 }
 .faq-search-show th, .faq-search-show td {
   text-align: left;
