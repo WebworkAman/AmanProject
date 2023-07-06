@@ -53,7 +53,7 @@ table {
 }
 
 body {
-  background-color: rgb(104, 159, 198);
+  background-color: 273252;
 }
 body .topText {
   text-align: center;
@@ -67,22 +67,27 @@ body .topText img {
 body main .log {
   display: flex;
   justify-content: space-evenly;
-  width: 45vw;
+  width: 50vw;
   min-width: 700px;
   height: 2000px;
   border: 2px solid cornsilk;
   border-radius: 10px;
   margin: 50px auto;
-  background-color: rgb(104, 159, 198);
+  background-color: 273252;
 }
 body main .log .left {
   color: rgb(255, 246, 122);
   letter-spacing: 1.1;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 body main .log .left h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+body main .log .left h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 body main .log .left .txt {
   display: flex;
@@ -95,15 +100,20 @@ body main .log .left .txt a {
 body main .log .left .txt a:hover {
   color: #273252;
 }
-body main .log .left .first-block {
-  margin-top: 15px;
-}
 body main .log .left .formgroup {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
 }
 body main .log .left .formgroup .text-danger {
   margin-top: 10px;
   color: #820d0d;
+}
+body main .log .left .formgroup label {
+  display: block;
+  width: 180px;
+  margin-right: 10px;
 }
 body main .log .left .formgroup input {
   border: 0;
@@ -114,6 +124,12 @@ body main .log .left .formgroup input {
   padding-left: 15px;
   color: #273252;
 }
+body main .log .left .formgroup select {
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+}
 body main .log .left button {
   margin-top: 20px;
   width: 250px;
@@ -123,7 +139,7 @@ body main .log .left button {
   border-radius: 20px;
   width: fit;
   color: white;
-  background-color: rgb(17, 36, 91);
+  background-color: rgb(119, 90, 201);
   border: none;
   cursor: pointer;
 }

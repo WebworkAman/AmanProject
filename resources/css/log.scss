@@ -196,7 +196,7 @@
                     justify-content: space-between;
                     align-items: center;
                     text-align: center;
-                    
+                    font-size: 1.2rem;
                     span{
                         margin-top: 15px;
                         margin-bottom: 15px;
@@ -214,6 +214,8 @@
 
                     }
                 }
+
+
                 .alert.alert-info{
                     margin-top: 10px;
                     text-align: center;
@@ -267,6 +269,25 @@
                     }
                 }
 
+
+            }
+            .register{
+                font-size: 1.2rem;
+                text-align: center;
+                margin-top: 100px;
+                letter-spacing: 1.2px;
+                
+                a{
+                    text-decoration: none;
+                    color: yellow;
+                    border-bottom: 1px solid yellow;
+                    cursor: pointer;
+                }
+                a:hover{
+                    color: #273252;
+                    border-bottom: 1px solid #273252;;
+
+                }
 
             }
 
@@ -334,6 +355,7 @@
                         .check{
                             margin-top: 30px;
                             flex-direction: column;
+                            
                         }
                     }
                 }

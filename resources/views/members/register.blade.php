@@ -25,7 +25,7 @@
      action="{{ route('members.store') }}"
     >
        @csrf
-
+    
     <div class="formgroup">
         <label for="identity">註冊人身份</label>
         <select name="identity" id="identity">
@@ -33,40 +33,41 @@
             <option value="2">廠長</option>
         </select>
     </div>
+     
 
-    <div class="formgroup first-block ">
-        <label class="input"><label for="name">姓名</label>
+    <div class="formgroup">
+        <label for="name">姓名</label>
         <input type="text" name=name value="{{old('name')}}">
         <br/>
         <p class="text-danger">@error('name') {{$message}} @enderror</p>
-        </label>
+        
     </div>
     <div class="formgroup">
-        <label class="input" for="phone">手機
+        <label class="input" for="phone">手機</label>
+        
         <input type="text" name="phone" id="phone">
-        </label>
-    </div>
-    <div class="formgroup">
-       <label class="input">電子郵件
-          
-          <input type="email" name="email" value="{{old('email')}}">
-          <p class="text-danger">@error('email') {{$message}} @enderror</p>
-       </label>
-    </div>
-    <div class="formgroup">
-       <label class="input">
-          密碼       
-          <input type="password" name="password" value="{{old('password')}}">
-          <p class="text-danger">@error('password') {{$message}} @enderror</p>
-       </label>
+        
     </div>
 
     <div class="formgroup">
-       <label class="input">
-            再次輸入密碼       
+       <label class="input">電子郵件</label>
+          <input type="email" name="email" value="{{old('email')}}">
+          <p class="text-danger">@error('email') {{$message}} @enderror</p>
+       
+    </div>
+    <div class="formgroup">
+       <label class="input"> 密碼 </label>        
+          <input type="password" name="password" value="{{old('password')}}">
+          <p class="text-danger">@error('password') {{$message}} @enderror</p>
+       
+    </div>
+
+    <div class="formgroup">
+       <label class="input">再次輸入密碼 </label>
+                 
            <input type="password" name="password_confirmation" value="{{old('password_confirmation')}}">
           <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>
-       </label>
+       
     </div>
     <!-- <div>
         <label for="password">修改密碼</label>
@@ -79,7 +80,7 @@
     </div> -->
 
     <!-- 公司基本資料 -->
-    <h1>一、公司基本資料</h1>
+    <h2>一、公司基本資料</h2>
 
     <div class="formgroup">
         <label for="company_name">公司名稱</label>
@@ -142,11 +143,11 @@
     </div>
 
     <!-- 機器基本資料建檔 -->
-    <h1>二、機器基本資料建檔 (採購註冊)</h1>
+    <h2>二、機器基本資料建檔 (採購註冊)</h2>
 
     <div class="formgroup">
         <label for="purchase_date">購買日期</label>
-        <input type="text" name="purchase_date" id="purchase_date">
+        <input type="date" name="purchase_date" id="purchase_date">
     </div>
 
     <div class="formgroup">
@@ -165,7 +166,7 @@
     </div>
 
     <!-- 聯絡人 -->
-    <h1>聯絡人</h1>
+    <h2>三、聯絡人</h2>
 
     <div class="formgroup">
         <label for="contact_person">聯絡人</label>
@@ -227,7 +228,7 @@
     <!-- 其他說明 -->
     <div class="formgroup">
         <label for="other_description">其他說明</label>
-        <textarea name="other_description" id="other_description" cols="30" rows="10"></textarea>
+        <input name="other_description" id="other_description" cols="30" rows="10"></input>
     </div>
 
 <div>

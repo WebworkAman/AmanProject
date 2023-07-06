@@ -207,6 +207,7 @@ table {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  font-size: 1.2rem;
 }
 .UserLogin main .log .left .check span {
   margin-top: 15px;
@@ -265,6 +266,22 @@ table {
 }
 .UserLogin main .log .left .admin-text a:hover {
   color: rgb(17, 36, 91);
+}
+.UserLogin main .log .register {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 100px;
+  letter-spacing: 1.2px;
+}
+.UserLogin main .log .register a {
+  text-decoration: none;
+  color: yellow;
+  border-bottom: 1px solid yellow;
+  cursor: pointer;
+}
+.UserLogin main .log .register a:hover {
+  color: #273252;
+  border-bottom: 1px solid #273252;
 }
 .UserLogin main .log .right img {
   width: 12vw;

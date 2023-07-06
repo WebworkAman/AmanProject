@@ -47,10 +47,43 @@ class MemberController extends Controller
 
             
             $password=\Hash::make($request->password);
+            // $member = Member::create([
+            //     'name'=> $request->name,
+            //     'email' => $request->email,
+            //     'password' => $password,
+            // ]);
+
             $member = Member::create([
-                'name'=> $request->name,
+                'name' => $request->name,
                 'email' => $request->email,
                 'password' => $password,
+                'identity' => $request->identity,
+                'phone' => $request->phone,
+                'company_name' => $request->company_name,
+                'company_address' => $request->company_address,
+                'tax_id' => $request->tax_id,
+                'company_phone' => $request->company_phone,
+                'company_fax' => $request->company_fax,
+                'company_website' => $request->company_website,
+                'company_ceo' => $request->company_ceo,
+                'purchase_person' => $request->purchase_person,
+                'purchase_person_phone' => $request->purchase_person_phone,
+                'purchase_person_ext' => $request->purchase_person_ext,
+                'purchase_person_email' => $request->purchase_person_email,
+                'other_info' => $request->other_info,
+                'purchase_date' => $request->purchase_date,
+                'machine_model' => $request->machine_model,
+                'machine_serial' => $request->machine_serial,
+                'machine_installation' => $request->machine_installation,
+                'contact_person' => $request->contact_person,
+                'contact_person_name' => $request->contact_person_name,
+                'contact_person_phone' => $request->contact_person_phone,
+                'contact_person_ext' => $request->contact_person_ext,
+                'contact_person_mobile' => $request->contact_person_mobile,
+                'contact_person_email' => $request->contact_person_email,
+                'contact_software' => $request->contact_software,
+                'purchase_source' => $request->purchase_source,
+                'other_description' => $request->other_description
             ]);
 
             $last_id = $member->id;
@@ -82,7 +115,7 @@ class MemberController extends Controller
 
 
 
-            return back()->with('success','註冊成功，請到信箱收取你的驗證連結.');
+            return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
         }else{
             return back()->with('fail','確認密碼與原密碼並不相同');
         }

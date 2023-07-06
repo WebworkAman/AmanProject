@@ -51,9 +51,7 @@
                        
                        
                 </div>
-                <div class="check">
-                        <a href="{{route('members.create')}}"> 註 冊 </a>
-                </div>
+
                 
                 @if(Session::has('fail'))
                  <div class="alert alert-danger">{{Session::get('fail')}}</div>
@@ -69,8 +67,13 @@
 
                     
                </form>
-            </div>
 
+
+            </div>
+            <div class="register">
+                        <span>首次登入？<a href="{{route('members.create')}}"> 註 冊 </a></span> 
+                        
+                </div>
             <div class="right">
                 <img src="{{asset('imgs/Illustration.png')}}">
             </div>

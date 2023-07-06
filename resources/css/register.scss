@@ -1,7 +1,7 @@
 @import "./reset";
 
 body {
-    background-color: rgb(104 159 198);
+    background-color: 273252;
 
     .topText {
         text-align: center;
@@ -18,13 +18,14 @@ body {
         .log {
             display: flex;
             justify-content: space-evenly;
-            width: 45vw;
+            width: 50vw;
             min-width: 700px;
             height: 2000px;
             border: 2px solid cornsilk;
             border-radius: 10px;
             margin: 50px auto;
-            background-color: rgb(104 159 198);
+            // background-color: rgb(104 159 198);
+            background-color: 273252;
 
 
 
@@ -32,15 +33,20 @@ body {
                 // border: 1px solid slategrey;
                 color:rgb(255 246 122);
                 letter-spacing: 1.1;
-                margin-top: 100px;
+                margin-top: 50px;
 
                
 
                 h1 {
-                    font-size: 24px;
-                    margin-bottom: 10px;
+                    font-size: 2rem;
+                    margin-bottom: 30px;
+                    text-align: center;
                     
-                    
+
+                }
+                h2{
+                    font-size: 1.5rem;
+                    margin-bottom: 30px;
                 }
 
                 .txt {
@@ -57,17 +63,23 @@ body {
                         color: #273252;
                     }
                 }
-                .first-block{
-                    margin-top: 15px;
-                }
+
+
 
                 .formgroup{
                     margin-bottom: 20px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.2rem;
                     .text-danger{     
                         margin-top: 10px;
-                        color: #820d0d;
+                        color: #820d0d;                       
+                    }
 
-                        
+                    label{
+                        display: block;
+                        width: 180px;
+                        margin-right: 10px;
                     }
 
                     
@@ -85,6 +97,13 @@ body {
                 
                     }
 
+                    select{
+                        width: 200px;
+                        height: 30px;
+                        padding-left: 10px;
+                        font-size: 1.1rem;
+                    }
+
                     
 
                     
@@ -99,9 +118,10 @@ body {
                     border-radius: 20px;
                     width: fit;
                     color: white;
-                    background-color: rgb(17, 36, 91);
+                    background-color: rgb(119 90 201);
                     border: none;
                     cursor: pointer;
+                    
                 }
                 button:hover{
                     color: #273252;
