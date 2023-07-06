@@ -797,6 +797,39 @@ class FAQController extends Controller
         return view('admin.index', compact('faqs'));
     }
 
+    public function edit(FAQ $faq)
+    {
+        return view('admin.edit', compact('faq'));
+    }
+    public function update(Request $request, FAQ $faq)
+    {
+    $validatedData = $request->validate([
+        'question' => 'required|max:255',
+        'answer' => 'required',
+        'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+        'video' => 'nullable|mimes:mp4,mov,avi,mpeg',         
+    ]);
+
+    $faq->question = $request->input('question');
+    $faq->answer = $request->input('answer');
+
+    if ($request->hasFile('photo')) {
+        $photoPath = $request->file('photo')->store('public/photos');
+        $faq->photo = $photoPath;
+    }
+
+    if ($request->hasFile('video')) {
+        $videoPath = $request->file('video')->store('public/videos');
+        $faq->video = $videoPath;
+    }
+
+    $faq->save();
+
+    return redirect()->route('faqs.index')
+        ->with('success', '常見問題更新成功.');
+     }
+
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([

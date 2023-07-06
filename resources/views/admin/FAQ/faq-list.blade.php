@@ -8,6 +8,7 @@
                                       <th>產品型號</th>
                                       <th>問題詳情</th>
                                       <th>問題回復</th>
+                                      <th></th>
                                       <th>照片</th>
                                       <th>影片</th>
                                       <th></th>
@@ -23,6 +24,7 @@
                                             @endif
                                             <td>{{ $faq->question }}</td>
                                             <td>{{ $faq->answer }}</td>
+                                            <td><a href="{{ route('faqs.edit', $faq) }}">編輯</a></td>
                                             <td>
                                                 @if($faq->photo)
                                                    <button class="showPhotoBtn" data-photo-url="{{Storage::url($faq->photo)}}">
