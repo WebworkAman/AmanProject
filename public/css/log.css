@@ -207,7 +207,7 @@ table {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .UserLogin main .log .left .check span {
   margin-top: 15px;
@@ -268,9 +268,9 @@ table {
   color: rgb(17, 36, 91);
 }
 .UserLogin main .log .register {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 50px;
   letter-spacing: 1.2px;
 }
 .UserLogin main .log .register a {
