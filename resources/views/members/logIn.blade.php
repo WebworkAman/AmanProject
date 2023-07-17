@@ -40,6 +40,10 @@
                 </div> 
 
                 <div>
+
+                @if(Session::has('fail'))
+                 <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                @endif
                 <div class="button-style">
                     <button type="submit">
                        登 入
@@ -56,9 +60,7 @@
                 </div>
 
                 
-                @if(Session::has('fail'))
-                 <div class="alert alert-danger">{{Session::get('fail')}}</div>
-                @endif
+
                 <!-- <div class="baseline"></div> -->
                 @if(Session::get('info'))
                     <div class="alert alert-info">{{Session::get('info')}}</div>

@@ -180,9 +180,11 @@
                     }
                     .text-danger{
                         margin-top: 10px;
-                        margin-left: 30px;
-                        width: fit-content;
                         
+                        width: fit-content;
+                        margin: 10px auto;
+                        color: #c53535;
+                        font-size: 1.2rem;
                         
                     }
                 }
@@ -222,7 +224,17 @@
                     line-height: 2;
                     background-color: rgb(197 24 80);
                     border-radius: 10px;
+                    
+                }
 
+                .alert.alert-danger{
+                    margin-top: 10px;
+                    text-align: center;
+                    line-height: 2;
+                    color: #c53535;
+                    font-size: 1.2rem;
+                    letter-spacing: 1.2px;
+                    
                 }
                 .button-style{
                    

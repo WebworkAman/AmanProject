@@ -195,9 +195,11 @@ table {
 }
 .UserLogin main .log .left .input .text-danger {
   margin-top: 10px;
-  margin-left: 30px;
   width: -moz-fit-content;
   width: fit-content;
+  margin: 10px auto;
+  color: #c53535;
+  font-size: 1.2rem;
 }
 .UserLogin main .log .left .check {
   margin-top: 20px;
@@ -229,6 +231,14 @@ table {
   line-height: 2;
   background-color: rgb(197, 24, 80);
   border-radius: 10px;
+}
+.UserLogin main .log .left .alert.alert-danger {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 2;
+  color: #c53535;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
 }
 .UserLogin main .log .left .button-style {
   text-align: center;

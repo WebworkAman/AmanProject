@@ -51,8 +51,8 @@ class MemberSessionController extends Controller
 
                     return redirect(MemberAuth::HOME_URL);
                 }
-                return back()->with('fail','You need to confirm your account. We have sent you
-                        activation link, please check your email');
+                return back()->with('fail','您需要確認您的帳戶。 我們已發送給您
+                相關連結，請查看您的郵箱');
                 
             }
                 return back()->with('fail','密碼並未相符.請重新輸入');
