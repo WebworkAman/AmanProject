@@ -26,6 +26,8 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\LocaleController;
+
 
 
 
@@ -77,6 +79,7 @@ Route::group(['prefix'=>'admin'],function(){
 
 //會員登入 Members login -> group 
 Route::prefix('members')->name('members.')->group(function () {
+    Route::get('/switch-locale/{locale}', [LocaleController::class, 'switchLocale'])->name('switchLocale');
     Route::resource('/',MemberController::class)->only(['create','store']);
     Route::delete('/session',[MemberSessionController::class,'delete'])->name('session.delete');
     Route::resource('session',MemberSessionController::class)->only([

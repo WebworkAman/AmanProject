@@ -16,6 +16,7 @@
 </div> -->
 <div class="left">
     <h1>新 會 員 註 冊</h1>
+    <div class="fontline"></div>
     <div class="txt">
 
         <!-- <p>已經是會員?</p><a href="{{route('members.session.create')}}">  點 此 登 入 吧</a> -->
@@ -25,6 +26,9 @@
      action="{{ route('members.store') }}"
     >
        @csrf
+
+
+    
     
     <div class="formgroup">
         <label for="identity">註冊人身份</label>
@@ -69,6 +73,9 @@
           <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>
        
     </div>
+
+
+    <div class="baseline"></div>
     <!-- <div>
         <label for="password">修改密碼</label>
         <input type="password" name="password" id="password">
@@ -91,11 +98,11 @@
         <label for="company_address">公司地址</label>
         <!-- <input type="text" name="company_address" id="company_address"> -->
         <ul>
-            <li>國家 <input type="text"></li>
-            <li>郵遞區號<input type="text"></li>
-            <li>區域<input type="text"></li>
-            <li>城市 <input type="text"></li>
-            <li>街/路名<input type="text"></li>
+            <li><span>國家</span> <input type="text"></li>
+            <li><span>郵遞區號</span><input type="text"></li>
+            <li><span>區域</span><input type="text"></li>
+            <li><span>城市</span><input type="text"></li>
+            <li><span>街/路名</span><input type="text"></li>
         </ul>
      
     </div>
@@ -109,15 +116,18 @@
         <label for="company_phone">公司電話</label>
         <!-- <input type="text" name="company_phone" id="company_phone"> -->
         <ul>
-            <li>國碼 <input type="text"></li>
-            <li>區碼<input type="text"></li>
-            <li>電話號碼<input type="text"></li>
-            <li>國碼 <input type="text"></li>
-            <li>區碼<input type="text"></li>
-            <li>電話號碼<input type="text"></li>
-            <li>國碼 <input type="text"></li>
-            <li>區碼<input type="text"></li>
-            <li>電話號碼<input type="text"></li>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <div class="fontline"></div>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <div class="fontline"></div>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <div class="fontline"></div>
         </ul>
     </div>
 
@@ -125,15 +135,16 @@
         <label for="company_fax">公司傳真</label>
         <!-- <input type="text" name="company_fax" id="company_fax"> -->
         <ul>
-            <li>國碼 <input type="text"></li>
-            <li>區碼<input type="text"></li>
-            <li>電話號碼<input type="text"></li>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
         </ul>
     </div>
 
     <div class="formgroup">
         <label for="company_website">公司網址</label>
-        WWW. <input type="text" name="company_website" id="company_website">
+        <span>WWW.</span>
+        <input type="text" name="company_website" id="company_website">
     </div>
 
     <div class="formgroup">
@@ -145,11 +156,11 @@
         <label for="purchase_person">採購人員</label>
         <!-- <input type="text" name="purchase_person" id="purchase_person"> -->
         <ul>
-            <li>姓名 <input type="text"></li>
-            <li>國碼 <input type="text"></li>
-            <li>區碼<input type="text"></li>
-            <li>電話號碼<input type="text"></li>
-            <li>分機<input type="text"></li>
+            <li><span>姓名</span><input type="text"></li>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <li><span>分機</span><input type="text"></li>
         </ul>
     </div>
 
@@ -172,55 +183,75 @@
         <label for="other_info">其他說明</label>
         <input type="text" name="other_info" id="other_info">
     </div>
-
+    <div class="baseline"></div>
     <!-- 機器基本資料建檔 -->
     <h2>二、機器基本資料建檔 (採購註冊)</h2>
 
     <div class="formgroup">
-        <label for="purchase_date">購買日期</label>
+        <label for="purchase_date">1. 購買日期</label>
         <input type="date" name="purchase_date" id="purchase_date">
     </div>
 
     <div class="formgroup">
-        <label for="machine_model">機器型號</label>
+        <label for="machine_model">2. 機器型號</label>
         <input type="text" name="machine_model" id="machine_model" Placeholder="字元最長15碼">
     </div>
 
     <div class="formgroup">
-        <label for="machine_serial">機器序號</label>
+        <label for="machine_serial">3. 機器序號</label>
         <input type="text" name="machine_serial" id="machine_serial" Placeholder="字元最長15碼">
     </div>
 
     <div class="formgroup">
-        <label for="machine_installation">機器安裝地址</label>
+        <label for="machine_installation">4. 機器安裝地址</label>
         <!-- <input type="text" name="machine_installation" id="machine_installation"> -->
         <ul>
-            <li>公司名稱 <input type="text"></li>
-            <li>公司地址 <input type="text"></li>
+            <li><span>公司名稱</span><input type="text"></li>
+            
+            <li>
+                <ol>
+                <span>公司地址</span>
+                <li><span>國家</span> <input type="text"></li>
+                <li><span>郵遞區號</span><input type="text"></li>
+                <li><span>區域</span><input type="text"></li>
+                <li><span>城市</span><input type="text"></li>
+                <li><span>街/路名</span><input type="text"></li>
+                </ol>
+            </li>
             <li>統一編號<input type="text"></li>
-            <li>公司電話
+            <li>
              <ol>
-                 <li>國碼 <input type="text"></li>
-                 <li>區碼<input type="text"></li>
-                 <li>電話號碼<input type="text"></li>
+             <li><span>公司電話</span></li>
+             <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <div class="fontline"></div>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <div class="fontline"></div>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <div class="fontline"></div>
              </ol>
             </li>
-            <li>公司傳真
+            <li>
             <ol>
-                 <li>國碼 <input type="text"></li>
-                 <li>區碼<input type="text"></li>
-                 <li>電話號碼<input type="text"></li>
+                 <li> <span>公司傳真</span></li>
+                 <li><span>國碼</span><input type="text"></li>
+                 <li><span>區碼</span><input type="text"></li>
+                 <li><span>電話號碼</span><input type="text"></li>
              </ol>
             </li>
         </ul>
 
     </div>
 
-    <!-- 聯絡人 -->
-    <h2>三、聯絡人</h2>
+
 
     <div class="formgroup">
-        <label for="contact_person">聯絡人</label>
+        <label for="contact_person">5. 聯絡人</label>
         <select name="contact_person" id="contact_person">
             <option value="1">廠長</option>
             <option value="2">組長</option>
@@ -239,11 +270,10 @@
         <label for="contact_person_phone">公司電話</label>
         <!-- <input type="text" name="contact_person_phone" id="contact_person_phone"> -->
         <ul>
-            <!-- <li>姓名 <input type="text"></li> -->
-            <li>國碼 <input type="text"></li>
-            <li>區碼<input type="text"></li>
-            <li>電話號碼<input type="text"></li>
-            <li>分機<input type="text"></li>
+            <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+            <li><span>分機</span><input type="text"></li>
         </ul>
     </div>
 
@@ -273,7 +303,7 @@
     </div>
 
     <div class="formgroup">
-        <label for="purchase_source">購入來源</label>
+        <label for="purchase_source">6. 購入來源</label>
         <select name="purchase_source" id="purchase_source">
             <option value="1">製造商</option>
             <option value="2">台灣歐西瑪股份有限公司</option>
@@ -281,6 +311,49 @@
             <option value="4">廣州貴鵬</option>
             <option value="5">其他</option>
         </select>
+    </div>
+
+    <div class="formgroup">
+        <span>業務姓名</span><input type="text">
+    </div>
+    <div class="formgroup">
+        <span>手機號碼</span><input type="text">
+    </div>
+
+    <div class="formgroup">
+        <label>其他管道</label>
+        <select>
+            <option value="1">1. 製造商同業</option>
+            <option value="2">2. 代理商</option>
+            <option value="3">3. 貿易商</option>
+            <option value="4">4. 成衣廠</option>
+            <option value="5">5. 針車行</option>
+            <option value="6">6. 其他</option>
+        </select>
+        <ul>
+            <li><span>1.公司名稱</span><input type="text"></li>
+            
+            <li>
+                <ol>
+                <span>2.公司地址</span>
+                <li><span>國家</span> <input type="text"></li>
+                <li><span>郵遞區號</span><input type="text"></li>
+                <li><span>區域</span><input type="text"></li>
+                <li><span>城市</span><input type="text"></li>
+                <li><span>街/路名</span><input type="text"></li>
+                </ol>
+            </li>
+            <li>3.統一編號<input type="text"></li>
+
+            <li><span>4.公司電話</span></li>
+             <li><span>國碼</span><input type="text"></li>
+            <li><span>區碼</span><input type="text"></li>
+            <li><span>電話號碼</span><input type="text"></li>
+
+            <li><span>5.聯絡人</span></li>
+            <li><span>姓名</span><input type="text"></li>
+            <li><span>手機</span><input type="text"></li>
+        </ul>
     </div>
 
     <!-- 其他說明 -->

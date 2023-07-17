@@ -853,8 +853,13 @@ class FAQController extends Controller
             }
     
             if($request->hasFile('video')){
-                $videoPath = $request->file('video')->store('public/videos');
-                $faq->video = $videoPath;
+                if($request->file('video')->isValid()){
+                    $videoPath = $request->file('video')->store('public/videos');
+                    $faq->video = $videoPath;
+                }else{
+                    return redirect()->back()->withErrors(['video' => '影片上傳失敗']);
+                }
+
             }
     
             $faq->save();

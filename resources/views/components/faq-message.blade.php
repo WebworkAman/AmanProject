@@ -15,6 +15,16 @@
                             <!-- <h3>{{ $index + 1 }}.</h3> -->
                              <label>Q</label>
                               <pre>{{$faq->question}}</pre>
+                            <div class="itemBlock">                              
+                            @if($faq->photo)
+                            <img src="{{asset('imgs/icon/camera.png')}}">
+                            @else
+                            @endif
+                            @if($faq->video)
+                            <img src="{{asset('imgs/icon/video-camera.png')}}">
+                            @else
+                            @endif
+                            </div>
                             <button class="faq-toggle">+</button>
                         </div>
                         <div class="faq-content">
@@ -48,7 +58,15 @@
                            </div>
                         </div>
 
-
+                        @if($erros->any())
+                          <div class="alert alert-danger">
+                             <ul>
+                                @foreach($erros->all() as $error)
+                                <li>{{$error}}</li>
+                                @endforeach
+                             </ul>
+                          </div>
+                        @endif
 
 
                     </li>
@@ -64,8 +82,8 @@
                                 var photoUrl = $(this).data('photo-url');
 
                                 //在彈窗中顯示圖片
-                                // $('.photoPopup img').attr('src',photoUrl);
-                                $('.photoPopup img').attr('src','/public'+photoUrl.trim('/'));
+                                $('.photoPopup img').attr('src',photoUrl);
+                                // $('.photoPopup img').attr('src','/public'+photoUrl.trim('/'));
 
                                 //顯示彈窗
                                 $('.photoPopup').show();

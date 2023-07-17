@@ -13,7 +13,10 @@
     <div class="topText"><img src="{{asset('imgs/photo/logo.png')}}"></div>
     
         <div class="log">
-            <h1>登 入</h1>
+            <h1>登入</h1>
+
+            <!-- <a href="{{ route('members.switchLocale', ['locale' => 'en']) }}">English</a> -->
+            <!-- <a href="{{ route('members.switchLocale', ['locale' => 'tw']) }}">中文</a> -->
             <div class="left">
                 
                                
