@@ -98,35 +98,34 @@
         <label for="company_address">公司地址</label>
         <!-- <input type="text" name="company_address" id="company_address"> -->
         <ul>
-            <li><span>國家</span> <input type="text"></li>
-            <li><span>郵遞區號</span><input type="text"></li>
-            <li><span>區域</span><input type="text"></li>
-            <li><span>城市</span><input type="text"></li>
-            <li><span>街/路名</span><input type="text"></li>
+            <li><span>國家</span> <input type="text" id="country"></li>
+            <li><span>郵遞區號</span><input type="text" id="postal_code"></li>
+            <li><span>區域</span><input type="text" id="region"></li>
+            <li><span>城市</span><input type="text" id="city"></li>
+            <li><span>街/路名</span><input type="text" id="street"></li>
         </ul>
-     
     </div>
 
     <div class="formgroup">
-        <label for="tax_id">統一編號</label>
-        <input type="text" name="tax_id" id="tax_id">
+        <label for="company_tax_id">統一編號</label>
+        <input type="text" name="company_tax_id" id="company_tax_id">
     </div>
 
     <div class="formgroup">
         <label for="company_phone">公司電話</label>
         <!-- <input type="text" name="company_phone" id="company_phone"> -->
         <ul>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
+            <li><span>國碼</span><input type="text" id="country_code_1"></li>
+            <li><span>區碼</span><input type="text" id="area_code_1"></li>
+            <li><span>電話號碼</span><input type="text" id="phone_number_1"></li>
             <div class="fontline"></div>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
+            <li><span>國碼</span><input type="text" id="country_code_2"></li>
+            <li><span>區碼</span><input type="text" id="area_code_2"></li>
+            <li><span>電話號碼</span><input type="text" id="phone_number_2"></li>
             <div class="fontline"></div>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
+            <li><span>國碼</span><input type="text" id="country_code_3"></li>
+            <li><span>區碼</span><input type="text" id="area_code_3"></li>
+            <li><span>電話號碼</span><input type="text" id="phone_number_3"></li>
             <div class="fontline"></div>
         </ul>
     </div>
@@ -135,9 +134,9 @@
         <label for="company_fax">公司傳真</label>
         <!-- <input type="text" name="company_fax" id="company_fax"> -->
         <ul>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
+            <li><span>國碼</span><input type="text" id="country_code"></li>
+            <li><span>區碼</span><input type="text" id="area_code"></li>
+            <li><span>電話號碼</span><input type="text" id="phone_number"></li>
         </ul>
     </div>
 
@@ -153,43 +152,33 @@
     </div>
 
     <div class="formgroup">
-        <label for="purchase_person">採購人員</label>
+        <label for="company_purchase_person">採購人員</label>
         <!-- <input type="text" name="purchase_person" id="purchase_person"> -->
         <ul>
-            <li><span>姓名</span><input type="text"></li>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
-            <li><span>分機</span><input type="text"></li>
+            <li><span>姓名</span><input type="text" id="company_purchase_person_name"></li>
+            <li><span>國碼</span><input type="text" id="purchase_country_code"></li>
+            <li><span>區碼</span><input type="text" id="purchase_area_code"></li>
+            <li><span>電話號碼</span><input type="text" id="purchase_phone_number"></li>
+            <li><span>分機</span><input type="text" id="purchase_extension"></li>
         </ul>
     </div>
 
-    <!-- <div class="formgroup">
-        <label for="purchase_person_phone">採購人員電話</label>
-        <input type="text" name="purchase_person_phone" id="purchase_person_phone">
-    </div> -->
-
-    <!-- <div class="formgroup">
-        <label for="purchase_person_ext">採購人員分機</label>
-        <input type="text" name="purchase_person_ext" id="purchase_person_ext">
-    </div> -->
-
     <div class="formgroup">
-        <label for="purchase_person_email">E-mail</label>
-        <input type="email" name="purchase_person_email" id="purchase_person_email">
+        <label for="company_email">E-mail</label>
+        <input type="email" name="company_email" id="company_email">
     </div>
 
     <div class="formgroup">
-        <label for="other_info">其他說明</label>
-        <input type="text" name="other_info" id="other_info">
+        <label for="company_other_info">其他說明</label>
+        <input type="text" name="company_other_info" id="company_other_info">
     </div>
     <div class="baseline"></div>
     <!-- 機器基本資料建檔 -->
     <h2>二、機器基本資料建檔 (採購註冊)</h2>
 
     <div class="formgroup">
-        <label for="purchase_date">1. 購買日期</label>
-        <input type="date" name="purchase_date" id="purchase_date">
+        <label for="machine_purchase_date">1. 購買日期</label>
+        <input type="date" name="machine_purchase_date" id="machine_purchase_date">
     </div>
 
     <div class="formgroup">
@@ -206,53 +195,51 @@
         <label for="machine_installation">4. 機器安裝地址</label>
         <!-- <input type="text" name="machine_installation" id="machine_installation"> -->
         <ul>
-            <li><span>公司名稱</span><input type="text"></li>
+            <li><span>公司名稱</span><input type="text" id="installation_company_name"></li>
             
             <li>
                 <ol>
-                <span>公司地址</span>
-                <li><span>國家</span> <input type="text"></li>
-                <li><span>郵遞區號</span><input type="text"></li>
-                <li><span>區域</span><input type="text"></li>
-                <li><span>城市</span><input type="text"></li>
-                <li><span>街/路名</span><input type="text"></li>
+                    <span id="installation_company_address">公司地址</span>
+                    <li><span>國家</span><input type="text" id="installation_country"></li>
+                    <li><span>郵遞區號</span><input type="text" id="installation_postal_code"></li>
+                    <li><span>區域</span><input type="text" id="installation_region"></li>
+                    <li><span>城市</span><input type="text" id="installation_city"></li>
+                    <li><span>街/路名</span><input type="text" id="installation_street"></li>
                 </ol>
             </li>
-            <li>統一編號<input type="text"></li>
+            <li>統一編號<input type="text" id="installation_vat_number"></li>
             <li>
              <ol>
-             <li><span>公司電話</span></li>
-             <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
-            <div class="fontline"></div>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
-            <div class="fontline"></div>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
-            <div class="fontline"></div>
+                <li><span id="installation_company_phone">公司電話</span></li>
+                <li><span>國碼</span><input type="text" id="installation_phone_country_code_1"></li>
+                <li><span>區碼</span><input type="text" id="installation_phone_area_code_1"></li>
+                <li><span>電話號碼</span><input type="text" id="installation_phone_number_1"></li>
+                <div class="fontline"></div>
+                <li><span>國碼</span><input type="text" id="installation_phone_country_code_2"></li>
+                <li><span>區碼</span><input type="text" id="installation_phone_area_code_2"></li>
+                <li><span>電話號碼</span><input type="text" id="installation_phone_number_2"></li>
+                <div class="fontline"></div>
+                <li><span>國碼</span><input type="text" id="installation_phone_country_code_3"></li>
+                <li><span>區碼</span><input type="text" id="installation_phone_area_code_3"></li>
+                <li><span>電話號碼</span><input type="text" id="installation_phone_number_3"></li>
+                <div class="fontline"></div>
              </ol>
             </li>
             <li>
             <ol>
-                 <li> <span>公司傳真</span></li>
-                 <li><span>國碼</span><input type="text"></li>
-                 <li><span>區碼</span><input type="text"></li>
-                 <li><span>電話號碼</span><input type="text"></li>
+                <li><span id="installation_company_">公司傳真</span></li>
+                <li><span>國碼</span><input type="text" id="installation_fax_country_code"></li>
+                <li><span>區碼</span><input type="text" id="installation_fax_area_code"></li>
+                <li><span>電話號碼</span><input type="text" id="installation_fax_number"></li>
              </ol>
             </li>
         </ul>
 
     </div>
 
-
-
     <div class="formgroup">
-        <label for="contact_person">5. 聯絡人</label>
-        <select name="contact_person" id="contact_person">
+        <label for="contact_person_position">5. 聯絡人</label>
+        <select name="contact_person_position" id="contact_person_position">
             <option value="1">廠長</option>
             <option value="2">組長</option>
             <option value="3">機修保養人</option>
@@ -270,17 +257,12 @@
         <label for="contact_person_phone">公司電話</label>
         <!-- <input type="text" name="contact_person_phone" id="contact_person_phone"> -->
         <ul>
-            <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
-            <li><span>分機</span><input type="text"></li>
+            <li><span>國碼</span><input type="text" id="contact_country_code"></li>
+            <li><span>區碼</span><input type="text" id="contact_area_code"></li>
+            <li><span>電話號碼</span><input type="text" id="contact_phone_number"></li>
+            <li><span>分機</span><input type="text" id="contact_extension"></li>
         </ul>
     </div>
-
-    <!-- <div class="formgroup">
-        <label for="contact_person_ext">分機</label>
-        <input type="text" name="contact_person_ext" id="contact_person_ext">
-    </div> -->
 
     <div class="formgroup">
         <label for="contact_person_mobile">手機</label>
@@ -321,7 +303,7 @@
     </div>
 
     <div class="formgroup">
-        <label>其他管道</label>
+        <label for="other_purchase_source">其他管道</label>
         <select>
             <option value="1">1. 製造商同業</option>
             <option value="2">2. 代理商</option>
@@ -331,28 +313,28 @@
             <option value="6">6. 其他</option>
         </select>
         <ul>
-            <li><span>1.公司名稱</span><input type="text"></li>
+            <li><span>1.公司名稱</span><input type="text" id="other_purchase_company_name"></li>
             
             <li>
                 <ol>
-                <span>2.公司地址</span>
-                <li><span>國家</span> <input type="text"></li>
-                <li><span>郵遞區號</span><input type="text"></li>
-                <li><span>區域</span><input type="text"></li>
-                <li><span>城市</span><input type="text"></li>
-                <li><span>街/路名</span><input type="text"></li>
+                <span id="other_purchase_company_address">2.公司地址</span>
+                    <li><span>國家</span><input type="text" id="other_purchase_country"></li>
+                    <li><span>郵遞區號</span><input type="text" id="other_purchase_postal_code"></li>
+                    <li><span>區域</span><input type="text" id="other_purchase_region"></li>
+                    <li><span>城市</span><input type="text" id="other_purchase_city"></li>
+                    <li><span>街/路名</span><input type="text" id="other_purchase_street"></li>
                 </ol>
             </li>
-            <li>3.統一編號<input type="text"></li>
+            <li>3.統一編號<input type="text" id="other_purchase_tax_id"></li>
 
-            <li><span>4.公司電話</span></li>
-             <li><span>國碼</span><input type="text"></li>
-            <li><span>區碼</span><input type="text"></li>
-            <li><span>電話號碼</span><input type="text"></li>
+            <li><span id="other_purchase_company_phone">4.公司電話</span></li>
+            <li><span>國碼</span><input type="text" id="other_purchase_phone_country_code"></li>
+            <li><span>區碼</span><input type="text" id="other_purchase_phone_area_code"></li>
+            <li><span>電話號碼</span><input type="text" id="other_purchase_phone_number"></li>
 
             <li><span>5.聯絡人</span></li>
-            <li><span>姓名</span><input type="text"></li>
-            <li><span>手機</span><input type="text"></li>
+            <li><span>姓名</span><input type="text" id="other_purchase_name"></li>
+            <li><span>手機</span><input type="text" id="other_purchase_phone"></li>
         </ul>
     </div>
 
@@ -375,6 +357,9 @@
 <div class="alert alert-danger">{{Session::get('fail')}}</div>
 @endif
 </form>
+<button onclick="getMachineInstallation()">
+         JSON 測試
+    </button>
 </div>
 
 
@@ -388,6 +373,100 @@
 </main>      
 
 </body>
+
+<script>
+    function printAddressJson(){
+        // const address = {
+        //     country: document.getElementById('country').value,
+        //     postal_code:document.getElementById('postal_code').value,
+        //     region:document.getElementById('region').value,
+        //     city: document.getElementById('city').value,
+        //     street: document.getElementById('street').value
+
+        // };
+
+        // const addressJson= JSON.stringify(address);
+
+
+        // console.log(addressJson);
+    }
+</script>
+<script>
+    function getCompanyPhones(){
+        const phones = [];
+
+        for(let i = 1; i <= 3; i++){
+            const countryCode = document.getElementById(`country_code_${i}`).value;
+            const areaCode = document.getElementById(`area_code_${i}`).value;
+            const phoneNumber = document.getElementById(`phone_number_${i}`).value;
+
+            if(countryCode && areaCode && phoneNumber){
+                const phone = {
+                    country_code: countryCode,
+                    area_code: areaCode,
+                    phone_number: phoneNumber
+                };
+
+                phones.push(phone);
+            }
+        }
+
+        const phonesJson = JSON.stringify(phones);
+        console.log(phonesJson);
+
+        const purchasePerson = {
+            name: document.getElementById('purchase_name').value,
+            country_code: document.getElementById('purchase_country_code').value,
+            area_code: document.getElementById('purchase_area_code').value,
+            phone_number: document.getElementById('purchase_phone_number').value,
+            extension: document.getElementById('purchase_extension').value
+        };
+
+        const purchasePersonJson = JSON.stringify(purchasePerson);
+        console.log(purchasePersonJson);
+
+    }
+</script>
+<script>
+    function getMachineInstallation() {
+        const installationAddress = {
+            company_name: document.getElementById('installation_company_name').value,
+            address: {
+                country: document.getElementById('installation_country').value,
+                postal_code: document.getElementById('installation_postal_code').value,
+                region: document.getElementById('installation_region').value,
+                city: document.getElementById('installation_city').value,
+                street: document.getElementById('installation_street').value
+            },
+            vat_number: document.getElementById('vat_number').value,
+            phone_numbers: [
+                {
+                    country_code: document.getElementById('installation_phone_country_code_1').value,
+                    area_code: document.getElementById('installation_phone_area_code_1').value,
+                    phone_number: document.getElementById('installation_phone_number_1').value
+                },
+                {
+                    country_code: document.getElementById('installation_phone_country_code_2').value,
+                    area_code: document.getElementById('installation_phone_area_code_2').value,
+                    phone_number: document.getElementById('installation_phone_number_2').value
+                },
+                {
+                    country_code: document.getElementById('installation_phone_country_code_3').value,
+                    area_code: document.getElementById('installation_phone_area_code_3').value,
+                    phone_number: document.getElementById('installation_phone_number_3').value
+                }
+            ],
+            fax: {
+                country_code: document.getElementById('fax_country_code').value,
+                area_code: document.getElementById('fax_area_code').value,
+                fax_number: document.getElementById('fax_number').value
+            }
+        };
+
+        const installationJson = JSON.stringify(installationAddress);
+        console.log(installationJson);
+    }
+</script>
  
  </html>  
    
