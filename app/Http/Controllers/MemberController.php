@@ -60,31 +60,128 @@ class MemberController extends Controller
                 'identity' => $request->identity,
                 'phone' => $request->phone,
                 'company_name' => $request->company_name,
-                'company_address' => $request->company_address,
-                'tax_id' => $request->tax_id,
-                'company_phone' => $request->company_phone,
-                'company_fax' => $request->company_fax,
+                'company_address' => json_encode([
+                    'country' => $request->input('company_address.country'),
+                    'postal_code' => $request->input('company_address.postal_code'),
+                    'region' => $request->input('company_address.region'),
+                    'city' => $request->input('company_address.city'),
+                    'street' => $request->input('company_address.street'),
+                ]),
+                'company_tax_id' => $request->company_tax_id,
+                'company_phone' => json_encode([
+                    [
+                        'country_code_1' => $request->input('company_phone.country_code_1'),
+                        'area_code_1' => $request->input('company_phone.area_code_1'),
+                        'phone_number_1' => $request->input('company_phone.phone_number_1'),
+                    ],
+                    [
+                        'country_code_2' => $request->input('company_phone.country_code_2'),
+                        'area_code_2' => $request->input('company_phone.area_code_2'),
+                        'phone_number_2' => $request->input('company_phone.phone_number_2'),
+                    ],
+                    [
+                        'country_code_3' => $request->input('company_phone.country_code_3'),
+                        'area_code_3' => $request->input('company_phone.area_code_3'),
+                        'phone_number_3' => $request->input('company_phone.phone_number_3'),
+                    ],
+                ]),
+                'company_fax' => json_encode([
+                    'country_code' => $request->input('company_fax.country_code'),
+                    'area_code' => $request->input('company_fax.area_code'),
+                    'fax_number' => $request->input('company_fax.phone_number'),
+                ]),
                 'company_website' => $request->company_website,
                 'company_ceo' => $request->company_ceo,
-                'purchase_person' => $request->purchase_person,
-                'purchase_person_phone' => $request->purchase_person_phone,
-                'purchase_person_ext' => $request->purchase_person_ext,
-                'purchase_person_email' => $request->purchase_person_email,
-                'other_info' => $request->other_info,
-                'purchase_date' => $request->purchase_date,
+                'company_purchase_person_name' => $request->company_purchase_person_name,
+                'company_purchase_person_phone' => json_encode([
+                
+                        'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
+                        'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
+                        'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
+                        'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
+                    
+           
+                ]),
+                'company_email' => $request->company_email,
+                'company_other_info' => $request->company_other_info,
+
+                //機器基本資料建檔
+                'machine_purchase_date' => $request->machine_purchase_date,
                 'machine_model' => $request->machine_model,
                 'machine_serial' => $request->machine_serial,
-                'machine_installation' => $request->machine_installation,
-                'contact_person' => $request->contact_person,
+                'installation_company_name' => $request->installation_company_name,
+                'installation_company_address' => json_encode([
+                    'country' => $request->input('installation_company_address.installation_country'),
+                    'postal_code' => $request->input('installation_company_address.installation_postal_code'),
+                    'region' => $request->input('installation_company_address.installation_region'),
+                    'city' => $request->input('installation_company_address.installation_city'),
+                    'street' => $request->input('installation_company_address.installation_street'),
+                ]),
+                'installation_vat_number' => $request->installation_vat_number,
+                'installation_company_phone' => json_encode([
+                    [
+                        'country_code_1' => $request->input('installation_company_phone.country_code_1'),
+                        'area_code_1' => $request->input('installation_company_phone.area_code_1'),
+                        'phone_number_1' => $request->input('installation_company_phone.phone_ddnumber_1'),
+                    ],
+                    [
+                        'country_code_2' => $request->input('installation_company_phone.country_code_2'),
+                        'area_code_2' => $request->input('installation_company_phone.area_code_2'),
+                        'phone_number_2' => $request->input('installation_company_phone.phone_number_2'),
+                    ],
+                    [
+                        'country_code_3' => $request->input('installation_company_phone.country_code_3'),
+                        'area_code_3' => $request->input('installation_company_phone.area_code_3'),
+                        'phone_number_3' => $request->input('installation_company_phone.phone_number_3'),
+                    ],
+                ]),
+                'installation_company_fax' => json_encode([
+                    'country_code' => $request->input('installation_company_fax.country_code'),
+                    'area_code' => $request->input('installation_company_fax.area_code'),
+                    'fax_number' => $request->input('installation_company_fax.fax_number'),
+                ]),
+                'contact_person_position' => $request->contact_person_position,
                 'contact_person_name' => $request->contact_person_name,
-                'contact_person_phone' => $request->contact_person_phone,
-                'contact_person_ext' => $request->contact_person_ext,
+                'contact_person_phone' => json_encode([
+                        'country_code' => $request->input('contact_person_phone.country_code'),
+                        'area_code' => $request->input('contact_person_phone.area_code'),
+                        'phone_number' => $request->input('contact_person_phone.phone_number'),
+                        'contact_extension' => $request->input('contact_person_phone.extension'),
+                ]),
                 'contact_person_mobile' => $request->contact_person_mobile,
                 'contact_person_email' => $request->contact_person_email,
-                'contact_software' => $request->contact_software,
-                'purchase_source' => $request->purchase_source,
-                'other_description' => $request->other_description
+                'contact_software_data' => json_encode([
+                    'contact_software_type' => $request->input('contact_software_type'),
+                    'contact_software_id' => $request->input('contact_software_data.software_id'),
+            
+                ]),
+                
+                //購入來源
+                'purchase_manufacturer' => $request->purchase_manufacturer,
+                'purchase_manufacturer_person' => $request->purchase_manufacturer_person,
+                'purchase_manufacturer_phone' => $request->purchase_manufacturer_phone,
+                'other_purchase_source' => $request->other_purchase_source,
+                'other_purchase_company' => $request->other_purchase_company,
+                'other_purchase_company_name' => $request->other_purchase_company_name,
+                'other_purchase_company_address' => json_encode([
+                    'country' => $request->input('other_purchase_company_address.country'),
+                    'postal_code' => $request->input('other_purchase_company_address.postal_code'),
+                    'region' => $request->input('other_purchase_company_address.region'),
+                    'city' => $request->input('other_purchase_company_address.city'),
+                    'street' => $request->input('other_purchase_company_address.street'),
+                ]),
+                'other_purchase_tax_id' => $request->other_purchase_tax_id,
+                'other_purchase_company_phone' => json_encode([
+                        'country_code' => $request->input('other_purchase_company_phone.country_code'),
+                        'area_code' => $request->input('other_purchase_company_phone.area_code'),
+                        'phone_number' => $request->input('other_purchase_company_phone.phone_number'),
+
+                ]),
+                'other_purchase_name' => $request->other_purchase_name,
+                'other_purchase_phone' => $request->other_purchase_phone,
+                'other_purchase_description' => $request->other_purchase_description,
             ]);
+            
 
             $last_id = $member->id;
             $token = $last_id.hash('sha256',\Str::random(120));

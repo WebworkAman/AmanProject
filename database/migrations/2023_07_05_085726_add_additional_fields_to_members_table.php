@@ -17,7 +17,6 @@ class AddAdditionalFieldsToMembersTable extends Migration
                         // 新增欄位
                         //基本資料
                         $table->string('identity')->nullable();
-                        $table->string('password_confirmation');
 
                      
                         // 將原本的公司基本資料欄位移至新的區塊
@@ -48,10 +47,9 @@ class AddAdditionalFieldsToMembersTable extends Migration
                         $table->string('contact_person_position')->nullable();
                         $table->string('contact_person_name')->nullable();
                         $table->json('contact_person_phone')->nullable();
-                        $table->string('contact_person_ext')->nullable();
                         $table->string('contact_person_mobile')->nullable();
                         $table->string('contact_person_email')->nullable();
-                        $table->json('contact_software')->nullable();
+                        $table->json('contact_software_data')->nullable();
 
 
                         //購入來源
@@ -62,7 +60,6 @@ class AddAdditionalFieldsToMembersTable extends Migration
 
                         //其他管道 
                         $table->string('other_purchase_source')->nullable();
-                        $table->string('other_purchase_company')->nullable();
                         $table->string('other_purchase_company_name')->nullable();
                         $table->json('other_purchase_company_address')->nullable();
                         $table->string('other_purchase_tax_id')->nullable();
@@ -83,7 +80,6 @@ class AddAdditionalFieldsToMembersTable extends Migration
     Schema::table('members', function (Blueprint $table) {
         // 刪除欄位
         $table->dropColumn('identity');
-        $table->dropColumn('password_confirmation');
 
         // 將原本的公司基本資料欄位移回舊的區塊
         $table->dropColumn('company_name');
@@ -114,10 +110,9 @@ class AddAdditionalFieldsToMembersTable extends Migration
         $table->dropColumn('contact_person_position');
         $table->dropColumn('contact_person_name');
         $table->dropColumn('contact_person_phone');
-        $table->dropColumn('contact_person_ext');
         $table->dropColumn('contact_person_mobile');
         $table->dropColumn('contact_person_email');
-        $table->dropColumn('contact_software');
+        $table->dropColumn('contact_software_data');
 
         // 購入來源
         // 製造商
@@ -127,7 +122,6 @@ class AddAdditionalFieldsToMembersTable extends Migration
 
         // 其他管道
         $table->dropColumn('other_purchase_source');
-        $table->dropColumn('other_purchase_company');
         $table->dropColumn('other_purchase_company_name');
         $table->dropColumn('other_purchase_company_address');
         $table->dropColumn('other_purchase_tax_id');

@@ -7,6 +7,8 @@
      <main>
 
         @include('components.faq-title')
+
+        
         <div class="QA_content">
         <!-- <div class="left-content">
             <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OC-1-600-4.png">
