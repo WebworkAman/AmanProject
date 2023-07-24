@@ -68,7 +68,7 @@ body main .log {
   display: flex;
   justify-content: space-evenly;
   width: 55vw;
-  min-width: 700px;
+  min-width: 1200px;
   height: -moz-fit-content;
   height: fit-content;
   border: 2px solid cornsilk;
