@@ -225,7 +225,7 @@ body main .log .left .formgroup.installation_type ul ol {
   display: flex;
 }
 body main .log .left .formgroup.installation_type ul ol li span {
-  width: 5vw;
+  width: 7vw;
   line-height: 2.2;
   text-align: center;
 }
