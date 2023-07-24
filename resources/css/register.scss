@@ -18,19 +18,25 @@ body {
         .log {
             display: flex;
             justify-content: space-evenly;
-            width: 50vw;
+            width: 55vw;
             min-width: 700px;
-            height: 5000px;
+            // height: 5000px;
+            height: fit-content;
             border: 2px solid cornsilk;
             border-radius: 10px;
             margin: 50px auto;
             // background-color: rgb(104 159 198);
             background-color: 273252;
 
+            .baseArea{
+                margin: 0 auto;
+                width: fit-content;
+                
 
+            }
             .baseline{
 
-                width: 30vw;
+                width: 50vw;
                 border: 1px solid #ebcba1;
                 margin-bottom: 30px;
             }
@@ -47,7 +53,14 @@ body {
                 margin-top: 50px;
 
                
-
+                .CompanyData-nav{
+                    display: flex;
+                    justify-content: space-between;
+                    img{
+                        width: 1.5vw;
+                        cursor: pointer;
+                    }
+                }
                 h1 {
                     font-size: 2rem;
                     margin-bottom: 30px;
@@ -76,39 +89,61 @@ body {
                     }
                 }
 
+                .popup{
+                    position: fixed;
+                    top:10%;
+                    left:50%;
+                    transform: translate(-50%,-50%);
+                    background-color: #fff;
+                    padding: 20px;
+                    width: 400px;
+                    border: 1px solid #ccc;
+                    border-radius: 20px;
+                    text-align: center;
+                    backdrop-filter: none;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+                }
+
+
 
 
                 .formgroup{
-                    margin: 30px 0;
+                    margin: 50px auto;
                     display: flex;
                     align-items: center;
                     font-size: 1.2rem;
+                    
                     .text-danger{     
-                        margin-top: 10px;
-                        color: #820d0d;                       
+                        margin-left: 30px;
+                        color: #ca2929;                       
                     }
 
                     label{
                         display: block;
-                        width: 180px;
+                        width: max-content;
+                        min-width: 8vw;
                         margin-right: 10px;
+                        
                     }
 
                     span{
                         display: block;
-                        width: 100px;
+                        width: fit-content;
+                        margin-right: 20px;
                     }
 
                     input {
                         border:0;
-                        border-radius: 10px;
+                       
                         width: 13vw;
                         height: 30px;
-                        min-width: 250px;
+                        // min-width: 250px;
                         // margin-bottom: 15px;
-                        
+                        font-size: 1.2rem;
                         padding-left: 15px;
-                        color: #273252;
+                        color: white;
+                        background-color: transparent;
+                        border-bottom: 1px solid yellow;
                 
                     }
 
@@ -130,13 +165,87 @@ body {
                             input{
                                 margin-left: 10px;
                             }
+                            p{
+                                line-height: 2.2;
+                                margin-left: 10px;
+                            }
                         }
+                    }
+
+                    textarea{
+
+                        width: 20vw;
+                        margin-left: 50px;
+                        border-radius: 10px;
+                        padding: 10px;
+                        font-size: 1.1rem;
+                        height: 40px;
                     }
 
                     
 
                     
                 }
+                .formgroup.phone_type{
+                      display: block;
+                      label{
+                         margin-bottom: 10px;
+                      }
+                      ul{
+                        display: flex;
+                        
+                        
+                        li{
+                            span{
+                                line-height: 2.2;
+                                text-align: center;
+                            }
+                            input{
+                                width: 7vw;
+                            }
+                        }
+                      }
+                    
+                }
+                .formgroup.installation_type{
+                    ul{
+                        margin-left:60px;
+                        ol{
+                            display: flex;
+                            li{
+                                span{
+                                    width: 5vw;
+                                    line-height: 2.2;
+                                    text-align: center;
+                                }
+                                input{
+                                    width: 7vw;
+                                }
+                            }
+                        }
+                        li{
+
+                            span{
+                                width: fit-content;
+                                line-height: 2.2;
+                            }
+                            ol{
+                               
+                                li{
+                                    input{
+                                        width: 7vw;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .formgroup.subBlock{
+                    margin-left:60px;
+                    margin-bottom: 50px;
+                }
+
 
                 button {
                     margin-top: 20px;
@@ -145,12 +254,13 @@ body {
                     font-size: 1rem;
                     letter-spacing: 1.3;
                     border-radius: 20px;
-                    width: fit;
                     color: white;
-                    background-color: rgb(119 90 201);
+                    background-color: #2c7863;
                     border: none;
                     cursor: pointer;
-                    
+                    margin-bottom: 50px;
+                    display: block;
+                    margin: 50px auto;
                 }
                 button:hover{
                     color: #273252;
@@ -159,10 +269,10 @@ body {
             }
 
             .alert{
-                color: cornsilk;
                 margin-top: 15px;
                 text-align: center;
                 line-height: 2;
+                color: #c80101;
             }
             .alert.alert-success{
                 background-color: #343660;
@@ -170,6 +280,7 @@ body {
             .alert.alert-fail{
                 background-color: #c80101;
             }
+
 
 
         }

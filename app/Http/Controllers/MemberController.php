@@ -38,9 +38,29 @@ class MemberController extends Controller
          $request->validate([
                 'name'=>'required',
                 'email'=>'required|email|unique:members',
-                'password'=>'required|min:5|max:18',
+                'password'=>'required|min:5|max:18|regex:/^(?=.*[a-zA-Z])(?=.*\d).+$/',
                 'password_confirmation'=>'required|min:5|max:18'
 
+         ], [
+            'name.required' => '請填寫姓名',
+            'name.string' => '姓名必須是文字',
+            'name.max' => '姓名不能超過 :max 個字元',
+            
+            'email.required' => '請填寫電子郵件',
+            'email.email' => '請填寫有效的電子郵件地址',
+            'email.unique' => '此電子郵件已經被註冊過了',
+            
+            'password.required' => '請填寫密碼',
+            'password.string' => '密碼必須是文字',
+            'password.min' => '密碼不能少於 :min 個字元',
+            'password.max' => '密碼不能超過 :max 個字元',
+            'password.confirmed' => '密碼確認不符',
+            'password.regex' => '密碼至少要有一個英文及數字',
+    
+            'password_confirmation.required' => '請填寫確認密碼',
+            'password_confirmation.string' => '確認密碼必須是文字',
+            'password_confirmation.min' => '確認密碼不能少於 :min 個字元',
+            'password_confirmation.max' => '確認密碼不能超過 :max 個字元',
          ]);
         
         if($request->password === $request ->password_confirmation){
