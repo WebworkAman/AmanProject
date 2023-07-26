@@ -38,8 +38,8 @@ class MemberController extends Controller
          $request->validate([
                 'name'=>'required',
                 'email'=>'required|email|unique:members',
-                'password'=>'required|min:5|max:18|regex:/^(?=.*[a-zA-Z])(?=.*\d).+$/',
-                'password_confirmation'=>'required|min:5|max:18'
+                // 'password'=>'required|min:5|max:18|regex:/^(?=.*[a-zA-Z])(?=.*\d).+$/',
+                // 'password_confirmation'=>'required|min:5|max:18'
 
          ], [
             'name.required' => '請填寫姓名',
@@ -206,20 +206,23 @@ class MemberController extends Controller
             $last_id = $member->id;
             $token = $last_id.hash('sha256',\Str::random(120));
             $verifyURL = route('verify',['token'=>$token,'service'=>'Email_verification']);
+            $verificationCode = \Str::random(6);
 
             VerifyMember::create([
                 'user_id'=>$last_id,
                 'token'=>$token,
+                'verification_code'=>$verificationCode,
             ]);
-
-            $message = 'Dear <b>'.$request->name.'</b>';
-            $message.= '感謝您的註冊,我們需要驗證你的郵件信箱去完成帳號註冊';
+            
+            $message = '親愛的 <b>'.$request->name.'</b>><br>';
+            $message.= '感謝您的註冊';
 
             $mail_data = [
                 'recipient'=>$request->email,
                 'fromEmail'=>$request->email,
                 'fromName'=>$request->name,
                 'subject'=>'會員註冊認證信',
+                'verification_code'=>$verificationCode,
                 'body'=> $message,
                 'actionLink'=>$verifyURL,
             ];
@@ -230,7 +233,7 @@ class MemberController extends Controller
                         ->subject($mail_data['subject']);
             });
 
-
+            
 
             return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
         }else{
@@ -281,8 +284,8 @@ class MemberController extends Controller
                 $verifyUser->user->email_verified=1;
                 $verifyUser->user->email_verified_at=Carbon::now('ROC');
                 $verifyUser->user->save();
-                return redirect()->route('members.session.create')
-                       ->with('info','已完成驗證，請登入會員！')
+                return redirect()->route('verification.password')
+                       ->with('info','請輸入郵件驗證碼和新密碼！')
                        ->with('verifiedEmail',$user->email);
 
             }

@@ -90,6 +90,10 @@
     p.sub {
       font-size: 13px;
     }
+    .verification_code{
+      font-size:1.2rem;
+      
+    }
     /* Utilities ------------------------------ */
     
     .align-right {
@@ -456,18 +460,22 @@
                   <tr>
                     <td class="content-cell">
                       <div class="f-fallback">
-                        <h1>Welcome!</h1>
+                        <h1>歡迎</h1>
                         <p>{!! $body !!}</p>
                         <!-- Action -->
                         <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
+                            <td><p class="verification_code">{{$verification_code}}</p></td>
                             <td align="center">
                               <!-- Border based button
            https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design -->
                               <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                 <tr>
                                   <td align="center">
-                                    <a href="{{$actionLink}}" class="f-fallback button" target="_blank">Verify Email</a>
+                                    <a href="{{$actionLink}}" class="f-fallback button" target="_blank">請點此設定密碼</a>
+                                  </td>
+                                  <td align="center">
+                                    
                                   </td>
                                 </tr>
                               </table>
@@ -478,8 +486,8 @@
                         <table class="body-sub" role="presentation">
                           <tr>
                             <td>
-                              <p class="f-fallback sub">If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
-                              <p class="f-fallback sub">{{$actionLink}}</p>
+                              <!-- <p class="f-fallback sub">如果您在使用上面的按鈕時遇到問題，請將下面的 URL 複製並粘貼到您的網絡瀏覽器中。</p>
+                              <p class="f-fallback sub">{{$actionLink}}</p> -->
                             </td>
                           </tr>
                         </table>
@@ -495,7 +503,7 @@
                   <tr>
                     <td class="content-cell" align="center">
                       <p class="f-fallback sub align-center">
-                        [Company Name, OShima]
+                        [Oshima,歐西瑪公司]
                       </p>
                     </td>
                   </tr>

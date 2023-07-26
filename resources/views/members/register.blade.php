@@ -59,7 +59,7 @@
           <p class="text-danger">@error('email') {{$message}} @enderror</p>
        
     </div>
-    <div class="formgroup">
+    <!-- <div class="formgroup">
        <label class="input"> 密碼 :</label>        
           <input type="password" name="password"  id="password" placeholder="請輸入英數混合的密碼" value="{{old('password')}}">
           <p class="text-danger">@error('password') {{$message}} @enderror</p>
@@ -73,7 +73,7 @@
            <input type="password" name="password_confirmation" id="password_confirmation" placeholder="請輸入英數混合的密碼" value="{{old('password_confirmation')}}">
           <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>      
           <span class="text-danger" id="password-match-error"></span>
-    </div>
+    </div> -->
     
     </div>
 

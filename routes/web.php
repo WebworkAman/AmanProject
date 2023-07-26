@@ -87,6 +87,9 @@ Route::prefix('members')->name('members.')->group(function () {
         'store',
     ]);
 });
+//驗證會員
+Route::get('/verification',[MemberSessionController::class,'verification'])->name('verification');
+Route::post('/verification',[MemberSessionController::class,'verificationPassword'])->name('verification.password');
 //忘記密碼
 Route::get('/forgot',[MemberSessionController::class,'showForgotForm'])->name('forgot');
 Route::post('/forgot-password',[MemberSessionController::class,'sendResetLink'])->name('forgot-password');

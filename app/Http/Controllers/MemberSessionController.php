@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Libraries\MemberAuth; 
+use App\Models\VerifyMember;
 use App\Models\Member;
 use Hash;
 
@@ -103,13 +104,41 @@ class MemberSessionController extends Controller
         "&nbsp;您可以通過點擊下面的連結重置您的密碼";
 
         \Mail::send('email-forgot',['action_link'=>$action_link,'body'=>$body],function($message)use($request){
-            $message->from('wwa87819tw77@gmail.com','Oshima');
+            $message->from('oshima.itdepartment@gmail.com','Oshima');
             $message->to($request->email,'Your Name')->subject('重 置 密 碼');
         });
 
         return back()->with('success','我們已通過E-mail發送您的密碼重置連結，請至個人信箱收取。');
     }
+    public function verification(){
+        return view('members.verify_member');
+    }
+    public function verificationPassword(Request $request){
 
+        $request->validate([
+            'email'=>'required|email|exists:members,email',
+            'verification_code' => 'required',
+            'password'=>'required',
+            // 'password_confirmation'=>'required',
+        ]);
+
+        //檢查驗證碼是否正確
+        $verification = VerifyMember::where('verification_code',$request->verification_code)
+              ->whereHas('member',function($query)use($request){
+                   $query->where('email',$request->email);
+              })->first();
+
+              if(!$verification){
+                 return back()->with('fail','驗證碼或郵件地址不正確');
+              }
+
+              //更新密碼
+              $member = $verification->member;
+              $member -> password = Hash::make($request->password);
+              $member -> save();
+
+              return redirect()->route('members.session.create')->with('info','密碼設置成功，請登入');
+    }
     public function showResetForm(Request $request, $token = null){
         return view('members.reset')->with(['token'=>$token,'email'=>$request->email]);
     }
