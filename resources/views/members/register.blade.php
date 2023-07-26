@@ -31,17 +31,16 @@
     
     <div class="baseArea">
     <div class="formgroup">
-        <label for="identity">註冊人身份</label>
-        <select name="identity" id="identity">
-            <option value="1">採購</option>
-            <option value="2">廠長</option>
-        </select>
+        <label for="company_tax_id">統一編號 ：</label>
+        <input type="text" name="company_tax_id" id="company_tax_id" value="{{old('company_tax_id')}}">
+        <br/>
+        <p class="text-danger">@error('company_tax_id') {{$message}} @enderror</p>
     </div>
      
 
     <div class="formgroup">
         <label for="name">姓名 :</label>
-        <input type="text" name=name value="{{old('name')}}">
+        <input type="text" name="name" value="{{old('name')}}">
         <br/>
         <p class="text-danger">@error('name') {{$message}} @enderror</p>
         
@@ -98,6 +97,13 @@
 
     <div id="companyData" style="display: none;">
     <div class="formgroup">
+        <label for="identity">註冊人身份</label>
+        <select name="identity" id="identity">
+            <option value="1">採購</option>
+            <option value="2">廠長</option>
+        </select>
+    </div>
+    <div class="formgroup">
         <label for="company_name">公司名稱 ：</label>
         <input type="text" name="company_name" id="company_name">
     </div>
@@ -113,10 +119,10 @@
         </ul>
     </div>
 
-    <div class="formgroup">
+    <!-- <div class="formgroup">
         <label for="company_tax_id">統一編號 ：</label>
         <input type="text" name="company_tax_id" id="company_tax_id">
-    </div>
+    </div> -->
 
     <div class="formgroup phone_type">
         <label for="company_phone">公司電話 ：</label>
@@ -270,6 +276,10 @@
             <option value="4">操作員</option>
             <option value="5">其他</option>
         </select>
+        <ul>
+            <li><input type="text" name="other_contact_person_position" id="other_contact_person_position" placeholder="請輸入職位" style="display: none;"></li>
+        </ul>
+        
     </div>
 
     
@@ -314,32 +324,37 @@
             <option value="3">WeChat</option>
             <option value="4">其他</option>
         </select>
+            
+        
         <ul>
+            <li><input type="text" name="other_contact_software_type" id="other_contact_software_type" placeholder="請輸入你的通訊軟體" style="display: none;"></li>
             <li><p>ID ：</p><input type="text" name="contact_software_data[software_id]" id="contact_software_id"></li>
         </ul>
         
     </div>
 
     <div class="formgroup">
-        <label for="purchase_manufacturer">6. 購入來源</label>
+        <label for="purchase_manufacturer">6. 購入來源｜製造商</label>
         <select name="purchase_manufacturer" id="purchase_manufacturer">
-            <option value="1">製造商</option>
-            <option value="2">台灣歐西瑪股份有限公司</option>
-            <option value="3">速飛得(中國)</option>
-            <option value="4">廣州貴鵬</option>
-            <option value="5">其他</option>
+            <option value="1">台灣歐西瑪股份有限公司</option>
+            <option value="2">速飛得(中國)</option>
+            <option value="3">廣州貴鵬</option>
+            <option value="4">其他</option>
         </select>
     </div>
 
-    <div class="formgroup subBlock">
-        <span>業務姓名 </span><input type="text" name="purchase_manufacturer_person" id="purchase_manufacturer_person">
+    <div class="purchase_manufacturer_block">
+         <div class="formgroup subBlock">
+             <span>業務姓名 </span><input type="text" name="purchase_manufacturer_person" id="purchase_manufacturer_person">
+         </div>
+         <div class="formgroup subBlock">
+             <span>手機號碼 </span><input type="text" name="purchase_manufacturer_phone" id="purchase_manufacturer_phone">
+         </div>
     </div>
-    <div class="formgroup subBlock">
-        <span>手機號碼 </span><input type="text" name="purchase_manufacturer_phone" id="purchase_manufacturer_phone">
-    </div>
-    
+
+    <div class="other_purchase_source_block" style="display:none;">
+
     <div class="formgroup">
-    <label for="other_purchase_source">其他管道</label>
         <select name="other_purchase_source" id="other_purchase_source">
             <option value="1">1. 製造商同業</option>
             <option value="2">2. 代理商</option>
@@ -348,6 +363,9 @@
             <option value="5">5. 針車行</option>
             <option value="6">6. 其他</option>
         </select>
+        <ul>
+            <li><input type="text" name="other_other_purchase_source" id="other_other_purchase_source" placeholder="請輸入其他購入來源" style="display: none;"></li>
+        </ul>
     </div>
     <div class="formgroup subBlock">
         <span>1.公司名稱</span><input type="text" name="other_purchase_company_name" id="other_purchase_company_name">
@@ -397,6 +415,8 @@
         <!-- <input name="other_purchase_description" id="other_purchase_description" cols="30" rows="10"></input> -->
         <textarea name="other_purchase_description" id="other_purchase_description" cols="30" rows="10"></textarea>
     </div>
+
+    </div>
     </div>
 
 <div>
@@ -426,8 +446,89 @@
 </main>      
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
+    // 當頁面載入完成時
+    $(document).ready(function(){
+        // 監聽選擇聯絡人的 select 元素
+        $("#contact_person_position").change(function(){
+            //獲取選擇的值
+            var selectedValue = $(this).val();
+
+            //如果選擇的值為 "5" (其他)
+            if(selectedValue == "5"){
+                //顯示輸入框
+                $("#other_contact_person_position").show();
+            }else{
+                //隱藏輸入匡
+                $("#other_contact_person_position").hide();
+            }
+        }
+        )
+    });
+        // 當頁面載入完成時
+        $(document).ready(function(){
+        // 監聽選擇聯絡人的 select 元素
+        $("#contact_software_type").change(function(){
+            //獲取選擇的值
+            var selectedValue = $(this).val();
+
+            //如果選擇的值為 "5" (其他)
+            if(selectedValue == "4"){
+                //顯示輸入框
+                $("#other_contact_software_type").show();
+            }else{
+                //隱藏輸入匡
+                $("#other_contact_software_type").hide();
+            }
+        }
+        )
+    })
+
+      // 當頁面載入完成時
+            $(document).ready(function(){
+        // 監聽選擇聯絡人的 select 元素
+        $("#purchase_manufacturer").change(function(){
+            //獲取選擇的值
+            var selectedValue = $(this).val();
+
+            //如果選擇的值為 "4" (其他)
+            if(selectedValue == "4"){
+                //顯示輸入框
+                $(".other_purchase_source_block").show();
+                $(".purchase_manufacturer_block").hide();
+            }else{
+                //隱藏輸入匡
+                $(".other_purchase_source_block").hide();
+                $(".purchase_manufacturer_block").show();
+            }
+        }
+        )
+    })
+
+            // 當頁面載入完成時
+    $(document).ready(function(){
+        // 監聽選擇聯絡人的 select 元素
+        $("#other_purchase_source").change(function(){
+            //獲取選擇的值
+            var selectedValue = $(this).val();
+
+            //如果選擇的值為 "6" (其他)
+            if(selectedValue == "6"){
+                //顯示輸入框
+                $("#other_other_purchase_source").show();
+            }else{
+                //隱藏輸入匡
+                $("#other_other_purchase_source").hide();
+            }
+        }
+        )
+    })
+
+</script>
+
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const passwordInput = document.getElementById("password");
         const confirmPasswordInput = document.getElementById("password_confirmation");
@@ -444,7 +545,7 @@
             }
         });
     });
-</script>
+</script> -->
 
 <script>
     document.getElementById('toggleCompanyData').addEventListener('click', function() {
@@ -477,7 +578,7 @@
           }
       });
 </script>
-<script>
+<!-- <script>
     document.addEventListener("DOMContentLoaded", function() {
         const passwordInput = document.getElementById("password");
         const validationMessage = document.getElementById("password-validation-message");
@@ -495,7 +596,7 @@
             }
         });
     });
-</script>
+</script> -->
 
 
  </html>  
