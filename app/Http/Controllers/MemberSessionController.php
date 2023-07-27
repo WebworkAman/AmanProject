@@ -118,8 +118,15 @@ class MemberSessionController extends Controller
         $request->validate([
             'email'=>'required|email|exists:members,email',
             'verification_code' => 'required',
-            'password'=>'required',
+            'password'=>'required|min:5|max:18|regex:/^(?=.*[a-zA-Z])(?=.*\d).+$/',
             // 'password_confirmation'=>'required',
+        ],[
+            'password.required' => '請填寫密碼',
+            'password.string' => '密碼必須是文字',
+            'password.min' => '密碼不能少於 :min 個字元',
+            'password.max' => '密碼不能超過 :max 個字元',
+            'password.confirmed' => '密碼確認不符',
+            'password.regex' => '密碼至少要有一個英文及數字',
         ]);
 
         //檢查驗證碼是否正確

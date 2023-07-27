@@ -19,7 +19,7 @@
     }
     
     a {
-      color: #000000;
+      color: #000000; !important;
     }
     
     a img {
@@ -432,13 +432,13 @@
       /*supported-color-schemes: light dark;*/
     }
     </style>
-    <!--[if mso]>
+    <!-- [if mso]> -->
     <style type="text/css">
       .f-fallback  {
         font-family: Arial, sans-serif;
       }
     </style>
-  <![endif]-->
+  <!-- <![endif] -->
   </head>
   <body>
     <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -460,7 +460,7 @@
                   <tr>
                     <td class="content-cell">
                       <div class="f-fallback">
-                        <h1>歡迎</h1>
+                        <h1>歐西碼集團歡迎您加入會員:</h1>
                         <p>{!! $body !!}</p>
                         <!-- Action -->
                         <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -472,7 +472,7 @@
                               <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                 <tr>
                                   <td align="center">
-                                    <a href="{{$actionLink}}" class="f-fallback button" target="_blank">請點此設定密碼</a>
+                                    <a href="{{$actionLink}}" class="f-fallback button" target="_blank">請點此重新設定密碼</a>
                                   </td>
                                   <td align="center">
                                     

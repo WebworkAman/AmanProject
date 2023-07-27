@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Member;
 use App\Models\VerifyMember;
 use App\Models\Tbm01;
+use App\Models\Tbm02;
 use App\Libraries\MemberAuth;
 use Carbon\Carbon;
 
@@ -38,11 +39,14 @@ class MemberController extends Controller
     public function store(Request $request){
 
          $request->validate([
-                'company_tax_id'=>'required',
                 'name'=>'required',
                 'email'=>'required|email|unique:members',
                 // 'password'=>'required|min:5|max:18|regex:/^(?=.*[a-zA-Z])(?=.*\d).+$/',
                 // 'password_confirmation'=>'required|min:5|max:18'
+
+                // 'company_name'=>'required',
+
+                // 'company_address[country]'=>'required',
 
          ], [
             'company_tax_id.required' => '請填寫統一編號',
@@ -66,271 +70,26 @@ class MemberController extends Controller
             'password_confirmation.string' => '確認密碼必須是文字',
             'password_confirmation.min' => '確認密碼不能少於 :min 個字元',
             'password_confirmation.max' => '確認密碼不能超過 :max 個字元',
+
+            // 'company_address[country].required' => '請填寫此欄位',
          ]);
 
         $companyTaxId = $request->company_tax_id;
-        // dd($companyTaxId);
+        $email = $request ->email;
 
         $tbm01 = Tbm01::where('ba19',$companyTaxId)->first();
-        
-        // dd($tbm01);
+        $tbm02 = Tbm02::where('bb06',$email)->first();
+
+
         // if ($tbm01) {
         //     dd($tbm01); // 在網頁上顯示資料，用來確認是否接收到 tbm01 的資料
         // }
         
-        if(!$tbm01){
-            return back()->with('fail','目前未成為公司客戶，欲知詳情請洽歐西瑪');
+        if(!$tbm01&&!$tbm02){
+                return back()->with('fail','目前未成為公司客戶，欲知詳情請洽歐西瑪');
+
         }else{
-            if($request->password === $request ->password_confirmation){
-
-            
-                $password=\Hash::make($request->password);
-                // $member = Member::create([
-                //     'name'=> $request->name,
-                //     'email' => $request->email,
-                //     'password' => $password,
-                // ]);
-    
-    
-                // 獲取選擇的職位名
-                $selectedPositionValue = $request->input('contact_person_position');
-    
-                // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
-                if($selectedPositionValue== '5'){
-                    $otherPosition = $request->input('other_contact_person_position');
-                }else{
-                    $positionMap = [
-                        '1' => '廠長',
-                        '2' => '組長',
-                        '3' => '機修保養人',
-                        '4' => '操作員',
-                        '5' => '其他',
-                    ];
-    
-                    $selectedPositionName = isset($positionMap[$selectedPositionValue]) ? $positionMap[$selectedPositionValue] : null;
-                    $otherPosition = $selectedPositionName;
-                }
-    
-    
-                
-    
-                $contactSoftwareType = $request->input('contact_software_type');
-                $contactSoftwareId = $request->input('contact_software_data.software_id');
-                
-                if ($contactSoftwareType === '4') {
-                    // 如果選擇的是其他，將輸入的其他通訊軟體名稱存入
-                    $otherContactSoftwareType = $request->input('other_contact_software_type');
-                
-                    $contactSoftwareData = [
-                        'contact_software_type' => $otherContactSoftwareType,
-                        'contact_software_id' => $contactSoftwareId,
-                    ];
-                } else {
-                    // 如果選擇的不是其他，將原先 value 值對應的名稱存入
-                    $softwareTypes = [
-                        '1' => 'Whats APP',
-                        '2' => 'Line',
-                        '3' => 'WeChat',
-                        // 添加其他 value 值對應的名稱
-                    ];
-                
-                    $selectedSoftwareType = isset($softwareTypes[$contactSoftwareType]) ? $softwareTypes[$contactSoftwareType] : null;
-                
-                    $contactSoftwareData = [
-                        'contact_software_type' => $selectedSoftwareType,
-                        'contact_software_id' => $contactSoftwareId,
-                    ];
-                }
-                
-                $contactSoftwareDataJson = json_encode($contactSoftwareData);
-    
-    
-                
-    
-                            // 獲取
-                            $selectedOtherPurchaseSourceValue = $request->input('other_purchase_source');
-    
-                            // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
-                            if($selectedOtherPurchaseSourceValue== '6'){
-                                $otherPurchaseSource = $request->input('other_other_purchase_source');
-                            }else{
-                                $otherPurchaseMap = [
-                                    '1' => '製造商同業',
-                                    '2' => '代理商',
-                                    '3' => '貿易商',
-                                    '4' => '成衣廠',
-                                    '5' => '針車行',
-                                ];
-                
-                                $selectedPurchaseSourceName = isset($otherPurchaseMap[$selectedOtherPurchaseSourceValue]) ? $otherPurchaseMap[$selectedOtherPurchaseSourceValue] : null;
-                                $otherPurchaseSource = $selectedPurchaseSourceName;
-                            }
-                
-    
-    
-                $member = Member::create([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'password' => $password,
-                    'identity' => $request->identity,
-                    'phone' => $request->phone,
-                    'company_name' => $request->company_name,
-                    'company_address' => json_encode([
-                        'country' => $request->input('company_address.country'),
-                        'postal_code' => $request->input('company_address.postal_code'),
-                        'region' => $request->input('company_address.region'),
-                        'city' => $request->input('company_address.city'),
-                        'street' => $request->input('company_address.street'),
-                    ]),
-                    'company_tax_id' => $companyTaxId,
-                    'company_phone' => json_encode([
-                        [
-                            'country_code_1' => $request->input('company_phone.country_code_1'),
-                            'area_code_1' => $request->input('company_phone.area_code_1'),
-                            'phone_number_1' => $request->input('company_phone.phone_number_1'),
-                        ],
-                        [
-                            'country_code_2' => $request->input('company_phone.country_code_2'),
-                            'area_code_2' => $request->input('company_phone.area_code_2'),
-                            'phone_number_2' => $request->input('company_phone.phone_number_2'),
-                        ],
-                        [
-                            'country_code_3' => $request->input('company_phone.country_code_3'),
-                            'area_code_3' => $request->input('company_phone.area_code_3'),
-                            'phone_number_3' => $request->input('company_phone.phone_number_3'),
-                        ],
-                    ]),
-                    'company_fax' => json_encode([
-                        'country_code' => $request->input('company_fax.country_code'),
-                        'area_code' => $request->input('company_fax.area_code'),
-                        'fax_number' => $request->input('company_fax.phone_number'),
-                    ]),
-                    'company_website' => $request->company_website,
-                    'company_ceo' => $request->company_ceo,
-                    'company_purchase_person_name' => $request->company_purchase_person_name,
-                    'company_purchase_person_phone' => json_encode([
-                    
-                            'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
-                            'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
-                            'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
-                            'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
-                        
-               
-                    ]),
-                    'company_email' => $request->company_email,
-                    'company_other_info' => $request->company_other_info,
-    
-                    //機器基本資料建檔
-                    'machine_purchase_date' => $request->machine_purchase_date,
-                    'machine_model' => $request->machine_model,
-                    'machine_serial' => $request->machine_serial,
-                    'installation_company_name' => $request->installation_company_name,
-                    'installation_company_address' => json_encode([
-                        'country' => $request->input('installation_company_address.installation_country'),
-                        'postal_code' => $request->input('installation_company_address.installation_postal_code'),
-                        'region' => $request->input('installation_company_address.installation_region'),
-                        'city' => $request->input('installation_company_address.installation_city'),
-                        'street' => $request->input('installation_company_address.installation_street'),
-                    ]),
-                    'installation_vat_number' => $request->installation_vat_number,
-                    'installation_company_phone' => json_encode([
-                        [
-                            'country_code_1' => $request->input('installation_company_phone.country_code_1'),
-                            'area_code_1' => $request->input('installation_company_phone.area_code_1'),
-                            'phone_number_1' => $request->input('installation_company_phone.phone_ddnumber_1'),
-                        ],
-                        [
-                            'country_code_2' => $request->input('installation_company_phone.country_code_2'),
-                            'area_code_2' => $request->input('installation_company_phone.area_code_2'),
-                            'phone_number_2' => $request->input('installation_company_phone.phone_number_2'),
-                        ],
-                        [
-                            'country_code_3' => $request->input('installation_company_phone.country_code_3'),
-                            'area_code_3' => $request->input('installation_company_phone.area_code_3'),
-                            'phone_number_3' => $request->input('installation_company_phone.phone_number_3'),
-                        ],
-                    ]),
-                    'installation_company_fax' => json_encode([
-                        'country_code' => $request->input('installation_company_fax.country_code'),
-                        'area_code' => $request->input('installation_company_fax.area_code'),
-                        'fax_number' => $request->input('installation_company_fax.fax_number'),
-                    ]),
-                    'contact_person_position' => $otherPosition,
-                    'contact_person_name' => $request->contact_person_name,
-                    'contact_person_phone' => json_encode([
-                            'country_code' => $request->input('contact_person_phone.country_code'),
-                            'area_code' => $request->input('contact_person_phone.area_code'),
-                            'phone_number' => $request->input('contact_person_phone.phone_number'),
-                            'contact_extension' => $request->input('contact_person_phone.extension'),
-                    ]),
-                    'contact_person_mobile' => $request->contact_person_mobile,
-                    'contact_person_email' => $request->contact_person_email,
-                    'contact_software_data' => $contactSoftwareDataJson,
-                    
-                    //購入來源
-                    'purchase_manufacturer' => $request->purchase_manufacturer,
-                    'purchase_manufacturer_person' => $request->purchase_manufacturer_person,
-                    'purchase_manufacturer_phone' => $request->purchase_manufacturer_phone,
-                    'other_purchase_source' => $otherPurchaseSource,
-                    'other_purchase_company' => $request->other_purchase_company,
-                    'other_purchase_company_name' => $request->other_purchase_company_name,
-                    'other_purchase_company_address' => json_encode([
-                        'country' => $request->input('other_purchase_company_address.country'),
-                        'postal_code' => $request->input('other_purchase_company_address.postal_code'),
-                        'region' => $request->input('other_purchase_company_address.region'),
-                        'city' => $request->input('other_purchase_company_address.city'),
-                        'street' => $request->input('other_purchase_company_address.street'),
-                    ]),
-                    'other_purchase_tax_id' => $request->other_purchase_tax_id,
-                    'other_purchase_company_phone' => json_encode([
-                            'country_code' => $request->input('other_purchase_company_phone.country_code'),
-                            'area_code' => $request->input('other_purchase_company_phone.area_code'),
-                            'phone_number' => $request->input('other_purchase_company_phone.phone_number'),
-    
-                    ]),
-                    'other_purchase_name' => $request->other_purchase_name,
-                    'other_purchase_phone' => $request->other_purchase_phone,
-                    'other_purchase_description' => $request->other_purchase_description,
-                ]);
-                
-    
-                $last_id = $member->id;
-                $token = $last_id.hash('sha256',\Str::random(120));
-                $verifyURL = route('verify',['token'=>$token,'service'=>'Email_verification']);
-                $verificationCode = \Str::random(6);
-    
-                VerifyMember::create([
-                    'user_id'=>$last_id,
-                    'token'=>$token,
-                    'verification_code'=>$verificationCode,
-                ]);
-                
-                $message = '親愛的 <b>'.$request->name.'</b>><br>';
-                $message.= '感謝您的註冊';
-    
-                $mail_data = [
-                    'recipient'=>$request->email,
-                    'fromEmail'=>$request->email,
-                    'fromName'=>$request->name,
-                    'subject'=>'會員註冊認證信',
-                    'verification_code'=>$verificationCode,
-                    'body'=> $message,
-                    'actionLink'=>$verifyURL,
-                ];
-    
-                \Mail::send('email-template',$mail_data,function($message)use($mail_data){
-                    $message->to($mail_data['recipient'])
-                            ->from($mail_data['fromEmail'],$mail_data['fromName'])
-                            ->subject($mail_data['subject']);
-                });
-    
-                
-    
-                return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
-            }else{
-                return back()->with('fail','確認密碼與原密碼並不相同');
-            }
-
+                return $this->registerMember($request);
         }
         
 
@@ -366,6 +125,262 @@ class MemberController extends Controller
         
 
         
+    }
+
+    private function registerMember(Request $request)
+    {
+        $companyTaxId = $request->company_tax_id;
+        $email = $request ->email;
+
+        if($request->password === $request ->password_confirmation){
+
+            
+            $password=\Hash::make($request->password);
+            // $member = Member::create([
+            //     'name'=> $request->name,
+            //     'email' => $request->email,
+            //     'password' => $password,
+            // ]);
+
+
+            // 獲取選擇的職位名
+            $selectedPositionValue = $request->input('contact_person_position');
+
+            // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
+            if($selectedPositionValue== '5'){
+                $otherPosition = $request->input('other_contact_person_position');
+            }else{
+                $positionMap = [
+                    '1' => '廠長',
+                    '2' => '組長',
+                    '3' => '機修保養人',
+                    '4' => '操作員',
+                    '5' => '其他',
+                ];
+
+                $selectedPositionName = isset($positionMap[$selectedPositionValue]) ? $positionMap[$selectedPositionValue] : null;
+                $otherPosition = $selectedPositionName;
+            }
+
+
+            
+
+            $contactSoftwareType = $request->input('contact_software_type');
+            $contactSoftwareId = $request->input('contact_software_data.software_id');
+            
+            if ($contactSoftwareType === '4') {
+                // 如果選擇的是其他，將輸入的其他通訊軟體名稱存入
+                $otherContactSoftwareType = $request->input('other_contact_software_type');
+            
+                $contactSoftwareData = [
+                    'contact_software_type' => $otherContactSoftwareType,
+                    'contact_software_id' => $contactSoftwareId,
+                ];
+            } else {
+                // 如果選擇的不是其他，將原先 value 值對應的名稱存入
+                $softwareTypes = [
+                    '1' => 'Whats APP',
+                    '2' => 'Line',
+                    '3' => 'WeChat',
+                    // 添加其他 value 值對應的名稱
+                ];
+            
+                $selectedSoftwareType = isset($softwareTypes[$contactSoftwareType]) ? $softwareTypes[$contactSoftwareType] : null;
+            
+                $contactSoftwareData = [
+                    'contact_software_type' => $selectedSoftwareType,
+                    'contact_software_id' => $contactSoftwareId,
+                ];
+            }
+            
+            $contactSoftwareDataJson = json_encode($contactSoftwareData);
+
+
+            
+
+                        // 獲取
+                        $selectedOtherPurchaseSourceValue = $request->input('other_purchase_source');
+
+                        // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
+                        if($selectedOtherPurchaseSourceValue== '6'){
+                            $otherPurchaseSource = $request->input('other_other_purchase_source');
+                        }else{
+                            $otherPurchaseMap = [
+                                '1' => '製造商同業',
+                                '2' => '代理商',
+                                '3' => '貿易商',
+                                '4' => '成衣廠',
+                                '5' => '針車行',
+                            ];
+            
+                            $selectedPurchaseSourceName = isset($otherPurchaseMap[$selectedOtherPurchaseSourceValue]) ? $otherPurchaseMap[$selectedOtherPurchaseSourceValue] : null;
+                            $otherPurchaseSource = $selectedPurchaseSourceName;
+                        }
+            
+
+
+            $member = Member::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => $password,
+                'identity' => $request->identity,
+                'phone' => $request->phone,
+                'company_name' => $request->company_name,
+                'company_address' => json_encode([
+                    'country' => $request->input('company_address.country'),
+                    'postal_code' => $request->input('company_address.postal_code'),
+                    'region' => $request->input('company_address.region'),
+                    'city' => $request->input('company_address.city'),
+                    'street' => $request->input('company_address.street'),
+                ]),
+                'company_tax_id' => $companyTaxId,
+                'company_phone' => json_encode([
+                    [
+                        'country_code_1' => $request->input('company_phone.country_code_1'),
+                        'area_code_1' => $request->input('company_phone.area_code_1'),
+                        'phone_number_1' => $request->input('company_phone.phone_number_1'),
+                    ],
+                    [
+                        'country_code_2' => $request->input('company_phone.country_code_2'),
+                        'area_code_2' => $request->input('company_phone.area_code_2'),
+                        'phone_number_2' => $request->input('company_phone.phone_number_2'),
+                    ],
+                    [
+                        'country_code_3' => $request->input('company_phone.country_code_3'),
+                        'area_code_3' => $request->input('company_phone.area_code_3'),
+                        'phone_number_3' => $request->input('company_phone.phone_number_3'),
+                    ],
+                ]),
+                'company_fax' => json_encode([
+                    'country_code' => $request->input('company_fax.country_code'),
+                    'area_code' => $request->input('company_fax.area_code'),
+                    'fax_number' => $request->input('company_fax.phone_number'),
+                ]),
+                'company_website' => $request->company_website,
+                'company_ceo' => $request->company_ceo,
+                'company_purchase_person_name' => $request->company_purchase_person_name,
+                'company_purchase_person_phone' => json_encode([
+                
+                        'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
+                        'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
+                        'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
+                        'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
+                    
+           
+                ]),
+                'company_email' => $request->company_email,
+                'company_other_info' => $request->company_other_info,
+
+                //機器基本資料建檔
+                'machine_purchase_date' => $request->machine_purchase_date,
+                'machine_model' => $request->machine_model,
+                'machine_serial' => $request->machine_serial,
+                'installation_company_name' => $request->installation_company_name,
+                'installation_company_address' => json_encode([
+                    'country' => $request->input('installation_company_address.installation_country'),
+                    'postal_code' => $request->input('installation_company_address.installation_postal_code'),
+                    'region' => $request->input('installation_company_address.installation_region'),
+                    'city' => $request->input('installation_company_address.installation_city'),
+                    'street' => $request->input('installation_company_address.installation_street'),
+                ]),
+                'installation_vat_number' => $request->installation_vat_number,
+                'installation_company_phone' => json_encode([
+                    [
+                        'country_code_1' => $request->input('installation_company_phone.country_code_1'),
+                        'area_code_1' => $request->input('installation_company_phone.area_code_1'),
+                        'phone_number_1' => $request->input('installation_company_phone.phone_ddnumber_1'),
+                    ],
+                    [
+                        'country_code_2' => $request->input('installation_company_phone.country_code_2'),
+                        'area_code_2' => $request->input('installation_company_phone.area_code_2'),
+                        'phone_number_2' => $request->input('installation_company_phone.phone_number_2'),
+                    ],
+                    [
+                        'country_code_3' => $request->input('installation_company_phone.country_code_3'),
+                        'area_code_3' => $request->input('installation_company_phone.area_code_3'),
+                        'phone_number_3' => $request->input('installation_company_phone.phone_number_3'),
+                    ],
+                ]),
+                'installation_company_fax' => json_encode([
+                    'country_code' => $request->input('installation_company_fax.country_code'),
+                    'area_code' => $request->input('installation_company_fax.area_code'),
+                    'fax_number' => $request->input('installation_company_fax.fax_number'),
+                ]),
+                'contact_person_position' => $otherPosition,
+                'contact_person_name' => $request->contact_person_name,
+                'contact_person_phone' => json_encode([
+                        'country_code' => $request->input('contact_person_phone.country_code'),
+                        'area_code' => $request->input('contact_person_phone.area_code'),
+                        'phone_number' => $request->input('contact_person_phone.phone_number'),
+                        'contact_extension' => $request->input('contact_person_phone.extension'),
+                ]),
+                'contact_person_mobile' => $request->contact_person_mobile,
+                'contact_person_email' => $request->contact_person_email,
+                'contact_software_data' => $contactSoftwareDataJson,
+                
+                //購入來源
+                'purchase_manufacturer' => $request->purchase_manufacturer,
+                'purchase_manufacturer_person' => $request->purchase_manufacturer_person,
+                'purchase_manufacturer_phone' => $request->purchase_manufacturer_phone,
+                'other_purchase_source' => $otherPurchaseSource,
+                'other_purchase_company' => $request->other_purchase_company,
+                'other_purchase_company_name' => $request->other_purchase_company_name,
+                'other_purchase_company_address' => json_encode([
+                    'country' => $request->input('other_purchase_company_address.country'),
+                    'postal_code' => $request->input('other_purchase_company_address.postal_code'),
+                    'region' => $request->input('other_purchase_company_address.region'),
+                    'city' => $request->input('other_purchase_company_address.city'),
+                    'street' => $request->input('other_purchase_company_address.street'),
+                ]),
+                'other_purchase_tax_id' => $request->other_purchase_tax_id,
+                'other_purchase_company_phone' => json_encode([
+                        'country_code' => $request->input('other_purchase_company_phone.country_code'),
+                        'area_code' => $request->input('other_purchase_company_phone.area_code'),
+                        'phone_number' => $request->input('other_purchase_company_phone.phone_number'),
+
+                ]),
+                'other_purchase_name' => $request->other_purchase_name,
+                'other_purchase_phone' => $request->other_purchase_phone,
+                'other_purchase_description' => $request->other_purchase_description,
+            ]);
+            
+
+            $last_id = $member->id;
+            $token = $last_id.hash('sha256',\Str::random(120));
+            $verifyURL = route('verify',['token'=>$token,'service'=>'Email_verification']);
+            $verificationCode = \Str::random(6);
+
+            VerifyMember::create([
+                'user_id'=>$last_id,
+                'token'=>$token,
+                'verification_code'=>$verificationCode,
+            ]);
+            
+            $message = '親愛的 <b>'.$request->name.'</b><br>';
+            $message.= '感謝您的註冊，系統發送的驗證碼如下：';
+
+            $mail_data = [
+                'recipient'=>$request->email,
+                'fromEmail'=>$request->email,
+                'fromName'=>$request->name,
+                'subject'=>'會員註冊認證信',
+                'verification_code'=>$verificationCode,
+                'body'=> $message,
+                'actionLink'=>$verifyURL,
+            ];
+
+            \Mail::send('email-template',$mail_data,function($message)use($mail_data){
+                $message->to($mail_data['recipient'])
+                        ->from($mail_data['fromEmail'],$mail_data['fromName'])
+                        ->subject($mail_data['subject']);
+            });
+
+            
+
+            return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
+        }else{
+            return back()->with('fail','確認密碼與原密碼並不相同');
+        }
     }
 
     public function verify(Request $request){

@@ -17,6 +17,7 @@
 <div class="left">
     <h1>新 會 員 註 冊</h1>
     <div class="fontline"></div>
+    <p style="text-align:end;"> * 欄位為必填</p>
     <div class="txt">
 
         <!-- <p>已經是會員?</p><a href="{{route('members.session.create')}}">  點 此 登 入 吧</a> -->
@@ -30,16 +31,9 @@
 
     
     <div class="baseArea">
-    <div class="formgroup">
-        <label for="company_tax_id">統一編號 ：</label>
-        <input type="text" name="company_tax_id" id="company_tax_id" value="{{old('company_tax_id')}}">
-        <br/>
-        <p class="text-danger">@error('company_tax_id') {{$message}} @enderror</p>
-    </div>
-     
 
     <div class="formgroup">
-        <label for="name">姓名 :</label>
+        <label for="name">* 姓名 :</label>
         <input type="text" name="name" value="{{old('name')}}">
         <br/>
         <p class="text-danger">@error('name') {{$message}} @enderror</p>
@@ -53,10 +47,17 @@
     </div> -->
 
     <div class="formgroup">
-       <label class="input">電子郵件 :</label>
+       <label class="input"> * 電子郵件 :</label>
           <input type="email" name="email" value="{{old('email')}}">
           <p class="text-danger">@error('email') {{$message}} @enderror</p>
        
+    </div>
+
+    <div class="formgroup">
+        <label for="company_tax_id">統一編號 ：</label>
+        <input type="text" name="company_tax_id" id="company_tax_id" value="{{old('company_tax_id')}}">
+        <br/>
+        <p class="text-danger">@error('company_tax_id') {{$message}} @enderror</p>
     </div>
     <!-- <div class="formgroup">
        <label class="input"> 密碼 :</label>        
@@ -90,7 +91,7 @@
     </div> -->
 
     <!-- 公司基本資料 -->
-    <div class="CompanyData-nav">
+    <div class="CompanyData-nav" style="display:none;">
     <h2>一、公司基本資料</h2>
     <div name="toggleCompanyData" id="toggleCompanyData"><img src="{{asset('imgs/icon/down-arrow.png')}}"></div>
     </div>
@@ -111,7 +112,10 @@
     <div class="formgroup">
         <label for="company_address">公司地址 ：</label>
         <ul>
-            <li><span>國家</span> <input type="text" name="company_address[country]" id="country"></li>
+            <li>
+                <span>國家</span> <input type="text" name="company_address[country]" id="country">
+                <p class="text-danger">@error('company_address[country]') {{$message}} @enderror</p>
+            </li>
             <li><span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code"></li>
             <li><span>區域</span><input type="text" name="company_address[region]" id="region"></li>
             <li><span>城市</span><input type="text" name="company_address[city]" id="city"></li>
@@ -190,7 +194,7 @@
     <div class="baseline"></div>
     </div>
     <!-- 機器基本資料建檔 -->
-    <div class="CompanyData-nav">
+    <div class="CompanyData-nav" style="display:none;">
     <h2>二、機器基本資料建檔 (採購註冊)</h2>
     <div name="toggleMachineData" id="toggleMachineData"><img src="{{asset('imgs/icon/down-arrow.png')}}"></div>
     </div>
