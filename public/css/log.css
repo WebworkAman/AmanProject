@@ -92,6 +92,7 @@ table {
 }
 .UserLogin main .container .left .form-group input {
   width: 20vw;
+  min-width: 300px;
 }
 .UserLogin main .container .left .form-group .btn {
   margin-top: 30px;
