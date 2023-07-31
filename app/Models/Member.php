@@ -23,9 +23,9 @@ class Member extends Model
         // Original fields
         'name', 'email', 'password',
         // New fields
-        'identity', 
+        'company_ERP_id','company_tax_id','identity_perm', 'stat_info',
         // Company basic data fields
-        'company_name', 'company_address', 'company_tax_id', 'company_phone', 'company_fax',
+        'company_name', 'company_address', 'company_phone', 'company_fax',
         'company_website', 'company_ceo', 'company_purchase_person_name', 'company_purchase_person_phone',
         'company_email', 'company_other_info',
         // Machine basic data fields

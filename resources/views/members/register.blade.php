@@ -52,6 +52,14 @@
           <p class="text-danger">@error('email') {{$message}} @enderror</p>
        
     </div>
+    <div class="formgroup">
+        <label for="identity_perm"> * 註冊人身份</label>
+        <select name="identity_perm" id="identity_perm">
+            <option value="1">採購</option>
+            <option value="2">廠長</option>
+            <option value="3">一般會員</option>
+        </select>
+    </div>
 
     <div class="formgroup">
         <label for="company_tax_id">統一編號 ：</label>
@@ -97,13 +105,7 @@
     </div>
 
     <div id="companyData" style="display: none;">
-    <div class="formgroup">
-        <label for="identity">註冊人身份</label>
-        <select name="identity" id="identity">
-            <option value="1">採購</option>
-            <option value="2">廠長</option>
-        </select>
-    </div>
+
     <div class="formgroup">
         <label for="company_name">公司名稱 ：</label>
         <input type="text" name="company_name" id="company_name">
