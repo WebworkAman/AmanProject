@@ -49,6 +49,12 @@ class Member extends Model
     return $this->belongsToMany(Product::class, 'member_permissions');
    }
 
+    // 定義一對多關聯，一個 company_ERP_id 可以對應多個會員
+    public function membersWithSameERP()
+    {
+        return $this->hasMany(self::class, 'company_ERP_id', 'company_ERP_id');
+    }
+
     // public function permissions()
     // {
     //     return $this->hasMany(MemberPermission::class, 'member_id');
