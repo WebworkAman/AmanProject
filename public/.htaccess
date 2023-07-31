@@ -9,6 +9,15 @@
     
     RewriteEngine On
 
+    <Files .env>
+        Order deny,allow
+        Deny from all
+    </Files>
+
+    <Files .git>
+        Order deny,allow
+        Deny from all
+    </Files>
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
