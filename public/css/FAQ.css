@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -90,6 +91,39 @@ nav .nav-right ul li a {
 }
 nav .nav-right ul li a:hover {
   color: rgb(248, 165, 20);
+}
+nav .nav-right ul li img {
+  width: 2rem;
+  cursor: pointer;
+}
+nav .nav-right #hamburger-menu {
+  opacity: 0;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-radius: 10px;
+  z-index: 1;
+  right: 146;
+  margin-top: 10px;
+  width: 120px;
+  padding: 10px;
+}
+nav .nav-right #hamburger-menu li {
+  margin: 10px auto;
+}
+nav .nav-right #hamburger-menu li a {
+  color: rgb(69, 112, 195);
+  letter-spacing: 1.2;
+}
+nav .nav-right #hamburger-menu li a:hover {
+  color: orange;
+}
+nav .nav-right #hamburger-menu .menu-line {
+  border-bottom: 1px solid darkblue;
+  width: 50px;
+  margin: 0 auto;
+}
+nav .nav-right #hamburger-menu.show {
+  opacity: 1; /* 透明度為 1 時顯示 */
 }
 
 footer {

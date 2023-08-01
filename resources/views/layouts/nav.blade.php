@@ -10,15 +10,32 @@
             <ul>
                 <li><p>Hi,{{ MemberAuth::member()->name }}</p></li>
                 <li>
+                    <img id="hamburger-icon" src="{{asset('imgs/icon/user.png')}}">
+                </li>
+                
+                <li>
                 <form method="POST" action="{{ route('members.session.delete') }}">
                     @csrf
                    @method('DELETE')
                 <button type="submit"> 登 出 </button>
                 </form>
                 </li>
-            </ul>     
+            </ul> 
+            <ul id="hamburger-menu">
+                <li><a href="#">客戶基本資料</a></li>
+                <div class="menu-line"></div>
+                <li><a href="#">機器基本資料</a></li>
+            </ul>    
          @endif
 
         </div>
     </nav>
+    <script>
+    $(document).ready(function () {
+        // 點擊圖片時切換漢堡選單的顯示與隱藏
+        $('#hamburger-icon').on('click', function () {
+            $('#hamburger-menu').toggleClass('show');
+        });
+    });
+</script>
 </html>

@@ -46,8 +46,50 @@ nav {
                 a:hover{
                     color: rgb(248, 165, 20);
                 }
+                img{
+                    width: 2rem;
+                    cursor: pointer;
+                }
             }
         }
+        #hamburger-menu{
+            opacity: 0;
+            flex-direction: column;
+            border: 1px solid gray;
+            border-radius: 10px;
+            // position: fixed;
+            z-index: 1;
+            right: 146;
+            margin-top: 10px;
+            width: 120px;
+            padding: 10px;
+            // transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+            li{
+               margin: 10px auto;
+               a{
+                color: rgb(69 112 195);
+                letter-spacing: 1.2;
+               }
+               a:hover{
+                color: orange;
+               }
+
+  
+
+            }
+            .menu-line{
+                border-bottom: 1px solid  darkblue;
+                width: 50px;
+                margin: 0 auto;
+              }
+            
+            
+        }
+        #hamburger-menu.show {
+            
+            opacity: 1; /* 透明度為 1 時顯示 */
+        }
+
     }
 
 }
