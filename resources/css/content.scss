@@ -127,10 +127,320 @@
 
 }
 
+
+  
+
 main {
     margin-top: 50px;
     display: block;
     min-height: 600px;
+
+    .companyData,.companyDataEdit{
+        width: 55vw;
+        border: 1px solid rgb(2, 24, 18);
+        border-radius: 10px;
+
+        margin:0 auto;
+        padding-left: 20px;
+        text-align: center;
+
+        h2{
+            font-size: 2rem;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+        .formgroup{
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            
+            .text-danger{     
+                margin-left: 30px;
+                color: #ca2929;                       
+            }
+
+            label{
+                display: block;
+                width: max-content;
+                min-width: 8vw;
+                margin-right: 10px;
+                
+            }
+
+            span{
+                display: block;
+                width: fit-content;
+                margin-right: 20px;
+            }
+
+            input {
+                border:0;
+               
+                width: 13vw;
+                height: 30px;
+                // min-width: 250px;
+                // margin-bottom: 15px;
+                font-size: 1.2rem;
+                padding-left: 15px;
+                color: black;
+                background-color: transparent;
+                border-bottom: 1px solid rgb(61, 79, 69);
+        
+            }
+
+            select{
+                width: 200px;
+                height: 30px;
+                padding-left: 10px;
+                font-size: 1.1rem;
+            }
+
+            ul{
+                flex-wrap: wrap;
+                li{
+                    margin: 10px;
+                    display: flex;
+                    span{
+                        display: block;
+                        width: 100px;
+                    }
+                    input{
+                        margin-left: 10px;
+                    }
+                    p{
+                        line-height: 2.2;
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            textarea{
+
+                width: 20vw;
+                margin-left: 50px;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 1.1rem;
+                height: 40px;
+            }
+
+            
+
+            
+        }
+        .formgroup.phone_type{
+            display: block;
+            label{
+               margin-bottom: 10px;
+            }
+            ul{
+              display: flex;
+              
+              
+              li{
+                  span{
+                      line-height: 2.2;
+                      text-align: center;
+                  }
+                  input{
+                      width: 7vw;
+                  }
+              }
+            }
+          
+      }
+        
+    }
+
+
+    
+    .memberBasicDate{
+       
+        width: 55vw;
+        border: 1px solid rgb(2, 24, 18);
+        border-radius: 10px;
+        
+        margin:  0 auto;
+        .baseArea{
+            margin: 0 auto;
+            width: 30vw;
+
+            h3{
+                font-size: 2rem;
+                margin: 20px auto;
+                text-align: center;
+            }
+
+        }
+        .baseline{
+
+            
+            border: 1px solid #ebcba1;
+            margin-bottom: 30px;
+        }
+        .formgroup{
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            
+            .text-danger{     
+                margin-left: 30px;
+                color: #ca2929;                       
+            }
+
+            label{
+                display: block;
+                width: max-content;
+                min-width: 8vw;
+                margin-right: 10px;
+                
+            }
+
+            span{
+                display: block;
+                width: fit-content;
+                margin-right: 20px;
+            }
+
+            input {
+                border:0;
+               
+                width: 13vw;
+                height: 30px;
+                // min-width: 250px;
+                // margin-bottom: 15px;
+                font-size: 1.2rem;
+                padding-left: 15px;
+                color: white;
+                background-color: transparent;
+                border-bottom: 1px solid yellow;
+        
+            }
+
+            select{
+                width: 200px;
+                height: 30px;
+                padding-left: 10px;
+                font-size: 1.1rem;
+            }
+
+            ul{
+                li{
+                    margin: 10px;
+                    display: flex;
+                    span{
+                        display: block;
+                        width: 100px;
+                    }
+                    input{
+                        margin-left: 10px;
+                    }
+                    p{
+                        line-height: 2.2;
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            textarea{
+
+                width: 20vw;
+                margin-left: 50px;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 1.1rem;
+                height: 40px;
+            }
+
+            
+
+            
+        }
+        .formgroup.phone_type{
+              display: block;
+              label{
+                 margin-bottom: 10px;
+              }
+              ul{
+                display: flex;
+                
+                
+                li{
+                    span{
+                        line-height: 2.2;
+                        text-align: center;
+                    }
+                    input{
+                        width: 7vw;
+                    }
+                }
+              }
+            
+        }
+        .formgroup.installation_type{
+            ul{
+                margin-left:60px;
+                ol{
+                    display: flex;
+                    li{
+                        span{
+                            width: 7vw;
+                            line-height: 2.2;
+                            text-align: center;
+                        }
+                        input{
+                            width: 7vw;
+                        }
+                    }
+                }
+                li{
+
+                    span{
+                        width: fit-content;
+                        line-height: 2.2;
+                    }
+                    ol{
+                       
+                        li{
+                            input{
+                                width: 7vw;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        .formgroup.subBlock{
+            margin-left:60px;
+            margin-bottom: 50px;
+        }
+
+
+        button {
+            margin-top: 20px;
+            width: 250px;
+            height: 45px;
+            font-size: 1rem;
+            letter-spacing: 1.3;
+            border-radius: 20px;
+            color: white;
+            background-color: #2c7863;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 50px;
+            display: block;
+            margin: 50px auto;
+        }
+        button:hover{
+            color: #273252;
+            background-color: rgb(255 246 122);
+        }
+    }
+
     .forbidUl{
         
        margin-top: 100px;

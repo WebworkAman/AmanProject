@@ -389,51 +389,7 @@ class MemberController extends Controller
                 'identity_perm' => $request->identity_perm,
                 'company_tax_id' => $companyTaxId,
                 // 'phone' => $request->phone,
-                // 'company_name' => $request->company_name,
-                // 'company_address' => json_encode([
-                //     'country' => $request->input('company_address.country'),
-                //     'postal_code' => $request->input('company_address.postal_code'),
-                //     'region' => $request->input('company_address.region'),
-                //     'city' => $request->input('company_address.city'),
-                //     'street' => $request->input('company_address.street'),
-                // ]),
-                
-                // 'company_phone' => json_encode([
-                //     [
-                //         'country_code_1' => $request->input('company_phone.country_code_1'),
-                //         'area_code_1' => $request->input('company_phone.area_code_1'),
-                //         'phone_number_1' => $request->input('company_phone.phone_number_1'),
-                //     ],
-                //     [
-                //         'country_code_2' => $request->input('company_phone.country_code_2'),
-                //         'area_code_2' => $request->input('company_phone.area_code_2'),
-                //         'phone_number_2' => $request->input('company_phone.phone_number_2'),
-                //     ],
-                //     [
-                //         'country_code_3' => $request->input('company_phone.country_code_3'),
-                //         'area_code_3' => $request->input('company_phone.area_code_3'),
-                //         'phone_number_3' => $request->input('company_phone.phone_number_3'),
-                //     ],
-                // ]),
-                // 'company_fax' => json_encode([
-                //     'country_code' => $request->input('company_fax.country_code'),
-                //     'area_code' => $request->input('company_fax.area_code'),
-                //     'fax_number' => $request->input('company_fax.phone_number'),
-                // ]),
-                // 'company_website' => $request->company_website,
-                // 'company_ceo' => $request->company_ceo,
-                // 'company_purchase_person_name' => $request->company_purchase_person_name,
-                // 'company_purchase_person_phone' => json_encode([
-                
-                //         'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
-                //         'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
-                //         'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
-                //         'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
-                    
-           
-                // ]),
-                // 'company_email' => $request->company_email,
-                // 'company_other_info' => $request->company_other_info,
+
 
                 //機器基本資料建檔
                 // 'machine_purchase_date' => $request->machine_purchase_date,
@@ -568,4 +524,6 @@ class MemberController extends Controller
         }
 
     }
+
+
 }

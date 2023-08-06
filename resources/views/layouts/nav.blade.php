@@ -22,7 +22,7 @@
                 </li>
             </ul> 
             <ul id="hamburger-menu">
-                <li><a href="#">客戶基本資料</a></li>
+                <li><a href="{{asset('member-basic')}}">客戶基本資料</a></li>
                 <div class="menu-line"></div>
                 <li><a href="#">機器基本資料</a></li>
             </ul>    

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Libraries\MemberAuth; 
 use App\Models\VerifyMember;
 use App\Models\Member;
+use App\Models\CRM_MainCust_Info;
 use Hash;
 
 class MemberSessionController extends Controller
@@ -178,5 +179,153 @@ class MemberSessionController extends Controller
         }
 
     }
+
+    public function memberBasic(Request $request){
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
     
-} 
+        return view('members.memberBasicData', compact('member'));
+    }
+
+    // public function company(Request $request){
+    //     $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+    
+    //     return view('members.companyData', compact('member'));
+    // }
+    public function company($companyId){
+
+        // $company_ERP_id = $request->query('company_ERP_id');
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+        
+        if (!$crmMainCustInfo) {
+            // 如果找不到對應的 CRM_MainCust_Info 資料，可以進行相應處理，例如返回錯誤頁面或提示訊息等
+            return back()->with('error', '找不到相應的公司基本資料');
+        }
+
+
+
+        return view('members.companyData', compact('crmMainCustInfo'));
+    }
+        // 處理編輯模式表單提交
+        public function update(Request $request)
+        {
+            $companyId = $request->input('company_id');
+            $company = CRM_MainCust_Info::findOrFail($companyId);
+    
+            $company->update([
+                'company_name' => $request->input('company_name'),
+                // 在這裡更新其他資料，根據需要添加其他資料的更新
+                
+            ]);
+    
+            return redirect()->route('company.show', $companyId)->with('success', '資料已更新');
+        }
+
+
+
+    public function companyEdit(Request $request){
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+
+        $companyERPId = $member->company_ERP_id;
+        $companyTaxId = $member->company_tax_id;
+        
+        //公司地址
+        $companyAddress = [
+            'country' => $request->input('company_address.country'),
+            'postal_code' => $request->input('company_address.postal_code'),
+            'region' => $request->input('company_address.region'),
+            'city' => $request->input('company_address.city'),
+            'street' => $request->input('company_address.street'),
+        ];
+        //公司電話
+        $companyPhone = [
+            [
+                'country_code_1' => $request->input('company_phone.country_code_1'),
+                'area_code_1' => $request->input('company_phone.area_code_1'),
+                'phone_number_1' => $request->input('company_phone.phone_number_1'),
+            ],
+            [
+                'country_code_2' => $request->input('company_phone.country_code_2'),
+                'area_code_2' => $request->input('company_phone.area_code_2'),
+                'phone_number_2' => $request->input('company_phone.phone_number_2'),
+            ],
+            [
+                'country_code_3' => $request->input('company_phone.country_code_3'),
+                'area_code_3' => $request->input('company_phone.area_code_3'),
+                'phone_number_3' => $request->input('company_phone.phone_number_3'),
+            ],
+        ];
+        //公司傳真
+        $companyFax = [
+            'country_code' => $request->input('company_fax.country_code'),
+            'area_code' => $request->input('company_fax.area_code'),
+            'fax_number' => $request->input('company_fax.phone_number'),
+        ];
+        //公司採購人員電話
+        $companyPurchasePersonPhone = [
+            'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
+            'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
+            'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
+            'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
+        ];
+        
+        
+        $filteredCompanyAddress = array_filter($companyAddress); // 過濾掉空值
+        $filteredCompanyPhone = array_filter($companyPhone); // 過濾掉空值
+        $filteredCompanyFax = array_filter($companyFax); // 過濾掉空值
+        $filteredCompanyPurchasePersonPhone = array_filter($companyPurchasePersonPhone); // 過濾掉空值
+        
+        $company = CRM_MainCust_Info::create([
+
+            'company_ERP_id' => $companyERPId,
+            'company_Tax_id' => $companyTaxId,
+            'company_name' => $request->company_name,
+
+            'company_address' => !empty($filteredCompanyAddress) ? json_encode($filteredCompanyAddress) : null,
+                
+            'company_phone' => json_encode([
+                [
+                    'country_code_1' => $request->input('company_phone.country_code_1'),
+                    'area_code_1' => $request->input('company_phone.area_code_1'),
+                    'phone_number_1' => $request->input('company_phone.phone_number_1'),
+                ],
+                [
+                    'country_code_2' => $request->input('company_phone.country_code_2'),
+                    'area_code_2' => $request->input('company_phone.area_code_2'),
+                    'phone_number_2' => $request->input('company_phone.phone_number_2'),
+                ],
+                [
+                    'country_code_3' => $request->input('company_phone.country_code_3'),
+                    'area_code_3' => $request->input('company_phone.area_code_3'),
+                    'phone_number_3' => $request->input('company_phone.phone_number_3'),
+                ],
+                ]),
+            'company_fax' => json_encode([
+                'country_code' => $request->input('company_fax.country_code'),
+                'area_code' => $request->input('company_fax.area_code'),
+                'fax_number' => $request->input('company_fax.phone_number'),
+            ]),
+            'company_website' => $request->company_website,
+            'company_ceo' => $request->company_ceo,
+            'company_purchase_person_name' => $request->company_purchase_person_name,
+            'company_purchase_person_phone' => json_encode([
+                
+                'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
+                'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
+                'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
+                'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
+                    
+           
+            ]),
+            'company_email' => $request->company_email,
+            'company_other_info' => $request->company_other_info,
+
+        ]);
+
+
+        return redirect()->route('memberBasic')->with('info','修改成功');
+
+
+    }
+    
+    
+}

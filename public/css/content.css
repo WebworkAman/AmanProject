@@ -267,6 +267,242 @@ main {
   display: block;
   min-height: 600px;
 }
+main .companyData, main .companyDataEdit {
+  width: 55vw;
+  border: 1px solid rgb(2, 24, 18);
+  border-radius: 10px;
+  margin: 0 auto;
+  padding-left: 20px;
+  text-align: center;
+}
+main .companyData h2, main .companyDataEdit h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .companyData .formgroup, main .companyDataEdit .formgroup {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .companyData .formgroup .text-danger, main .companyDataEdit .formgroup .text-danger {
+  margin-left: 30px;
+  color: #ca2929;
+}
+main .companyData .formgroup label, main .companyDataEdit .formgroup label {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 8vw;
+  margin-right: 10px;
+}
+main .companyData .formgroup span, main .companyDataEdit .formgroup span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 20px;
+}
+main .companyData .formgroup input, main .companyDataEdit .formgroup input {
+  border: 0;
+  width: 13vw;
+  height: 30px;
+  font-size: 1.2rem;
+  padding-left: 15px;
+  color: black;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(61, 79, 69);
+}
+main .companyData .formgroup select, main .companyDataEdit .formgroup select {
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+}
+main .companyData .formgroup ul, main .companyDataEdit .formgroup ul {
+  flex-wrap: wrap;
+}
+main .companyData .formgroup ul li, main .companyDataEdit .formgroup ul li {
+  margin: 10px;
+  display: flex;
+}
+main .companyData .formgroup ul li span, main .companyDataEdit .formgroup ul li span {
+  display: block;
+  width: 100px;
+}
+main .companyData .formgroup ul li input, main .companyDataEdit .formgroup ul li input {
+  margin-left: 10px;
+}
+main .companyData .formgroup ul li p, main .companyDataEdit .formgroup ul li p {
+  line-height: 2.2;
+  margin-left: 10px;
+}
+main .companyData .formgroup textarea, main .companyDataEdit .formgroup textarea {
+  width: 20vw;
+  margin-left: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  height: 40px;
+}
+main .companyData .formgroup.phone_type, main .companyDataEdit .formgroup.phone_type {
+  display: block;
+}
+main .companyData .formgroup.phone_type label, main .companyDataEdit .formgroup.phone_type label {
+  margin-bottom: 10px;
+}
+main .companyData .formgroup.phone_type ul, main .companyDataEdit .formgroup.phone_type ul {
+  display: flex;
+}
+main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formgroup.phone_type ul li span {
+  line-height: 2.2;
+  text-align: center;
+}
+main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
+  width: 7vw;
+}
+main .memberBasicDate {
+  width: 55vw;
+  border: 1px solid rgb(2, 24, 18);
+  border-radius: 10px;
+  margin: 0 auto;
+}
+main .memberBasicDate .baseArea {
+  margin: 0 auto;
+  width: 30vw;
+}
+main .memberBasicDate .baseArea h3 {
+  font-size: 2rem;
+  margin: 20px auto;
+  text-align: center;
+}
+main .memberBasicDate .baseline {
+  border: 1px solid #ebcba1;
+  margin-bottom: 30px;
+}
+main .memberBasicDate .formgroup {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .memberBasicDate .formgroup .text-danger {
+  margin-left: 30px;
+  color: #ca2929;
+}
+main .memberBasicDate .formgroup label {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 8vw;
+  margin-right: 10px;
+}
+main .memberBasicDate .formgroup span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 20px;
+}
+main .memberBasicDate .formgroup input {
+  border: 0;
+  width: 13vw;
+  height: 30px;
+  font-size: 1.2rem;
+  padding-left: 15px;
+  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid yellow;
+}
+main .memberBasicDate .formgroup select {
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+}
+main .memberBasicDate .formgroup ul li {
+  margin: 10px;
+  display: flex;
+}
+main .memberBasicDate .formgroup ul li span {
+  display: block;
+  width: 100px;
+}
+main .memberBasicDate .formgroup ul li input {
+  margin-left: 10px;
+}
+main .memberBasicDate .formgroup ul li p {
+  line-height: 2.2;
+  margin-left: 10px;
+}
+main .memberBasicDate .formgroup textarea {
+  width: 20vw;
+  margin-left: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  height: 40px;
+}
+main .memberBasicDate .formgroup.phone_type {
+  display: block;
+}
+main .memberBasicDate .formgroup.phone_type label {
+  margin-bottom: 10px;
+}
+main .memberBasicDate .formgroup.phone_type ul {
+  display: flex;
+}
+main .memberBasicDate .formgroup.phone_type ul li span {
+  line-height: 2.2;
+  text-align: center;
+}
+main .memberBasicDate .formgroup.phone_type ul li input {
+  width: 7vw;
+}
+main .memberBasicDate .formgroup.installation_type ul {
+  margin-left: 60px;
+}
+main .memberBasicDate .formgroup.installation_type ul ol {
+  display: flex;
+}
+main .memberBasicDate .formgroup.installation_type ul ol li span {
+  width: 7vw;
+  line-height: 2.2;
+  text-align: center;
+}
+main .memberBasicDate .formgroup.installation_type ul ol li input {
+  width: 7vw;
+}
+main .memberBasicDate .formgroup.installation_type ul li span {
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 2.2;
+}
+main .memberBasicDate .formgroup.installation_type ul li ol li input {
+  width: 7vw;
+}
+main .memberBasicDate .formgroup.subBlock {
+  margin-left: 60px;
+  margin-bottom: 50px;
+}
+main .memberBasicDate button {
+  margin-top: 20px;
+  width: 250px;
+  height: 45px;
+  font-size: 1rem;
+  letter-spacing: 1.3;
+  border-radius: 20px;
+  color: white;
+  background-color: #2c7863;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+  display: block;
+  margin: 50px auto;
+}
+main .memberBasicDate button:hover {
+  color: #273252;
+  background-color: rgb(255, 246, 122);
+}
 main .forbidUl {
   margin-top: 100px;
 }

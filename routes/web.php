@@ -70,8 +70,6 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/index/Maintenance-create',[AdminController::class,'Maintenance_store'])->name('Maintenance.store');
     Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
     
-    
-    
     Route::get('question_select',function(){
         return view('admin/question_select');
     });
@@ -98,6 +96,13 @@ Route::get('/reset{token}',[MemberSessionController::class,'showResetForm'])->na
 Route::post('/reset-password',[MemberSessionController::class,'resetPassword'])->name('reset-password');
 //驗證
 Route::get('/verify',[MemberController::class,'verify'])->name('verify');
+//會員資料頁面
+Route::get('/member-basic',[MemberSessionController::class,'memberBasic'])->name('memberBasic');
+//公司資料頁面
+Route::get('/company/{companyId}',[MemberSessionController::class,'company'])->name('company');
+Route::put('/company/{companyId}',[MemberSessionController::class,'companyEdit'])->name('companyEdit');
+// 在 web.php 裡面新增 /company 路由處理函式
+Route::get('/companyView', [MemberSessionController::class, 'companyView'])->name('companyView');
 
 
 
