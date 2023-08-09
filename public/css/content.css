@@ -267,8 +267,31 @@ main {
   display: block;
   min-height: 600px;
 }
+main #toggleEditMode, main #ReturnButton {
+  color: #273252;
+  float: right;
+  margin-right: 50px;
+  border-radius: 10px;
+  width: 100px;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+main #toggleEditMode:hover, main #ReturnButton:hover, main #submitButton:hover {
+  background-color: #202329;
+  color: white;
+}
+main #submitButton {
+  width: 100px;
+  margin-bottom: 50px;
+  color: #273252;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
 main .companyData, main .companyDataEdit {
-  width: 55vw;
+  width: 50vw;
   border: 1px solid rgb(2, 24, 18);
   border-radius: 10px;
   margin: 0 auto;
@@ -321,6 +344,7 @@ main .companyData .formgroup select, main .companyDataEdit .formgroup select {
 }
 main .companyData .formgroup ul, main .companyDataEdit .formgroup ul {
   flex-wrap: wrap;
+  width: 39vw;
 }
 main .companyData .formgroup ul li, main .companyDataEdit .formgroup ul li {
   margin: 10px;
@@ -334,7 +358,7 @@ main .companyData .formgroup ul li input, main .companyDataEdit .formgroup ul li
   margin-left: 10px;
 }
 main .companyData .formgroup ul li p, main .companyDataEdit .formgroup ul li p {
-  line-height: 2.2;
+  line-height: 2;
   margin-left: 10px;
 }
 main .companyData .formgroup textarea, main .companyDataEdit .formgroup textarea {
@@ -354,8 +378,10 @@ main .companyData .formgroup.phone_type label, main .companyDataEdit .formgroup.
 main .companyData .formgroup.phone_type ul, main .companyDataEdit .formgroup.phone_type ul {
   display: flex;
 }
+main .companyData .formgroup.phone_type ul li, main .companyDataEdit .formgroup.phone_type ul li {
+  line-height: 2;
+}
 main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formgroup.phone_type ul li span {
-  line-height: 2.2;
   text-align: center;
 }
 main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
@@ -499,9 +525,14 @@ main .memberBasicDate button {
   display: block;
   margin: 50px auto;
 }
+main .memberBasicDate button a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
 main .memberBasicDate button:hover {
   color: #273252;
-  background-color: rgb(255, 246, 122);
+  background-color: rgb(243, 175, 30);
 }
 main .forbidUl {
   margin-top: 100px;

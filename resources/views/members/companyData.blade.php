@@ -5,11 +5,22 @@
  <main>
    <!-- 公司基本資料 -->
    <!-- 檢視區塊 -->
-   <button id="toggleEditMode">切換</button>
+   @php
+        $identityPerm = $member->identity_perm;
+   @endphp
+
 
    <div id="companyDataView" class="CompanyData-nav companyData">
+
         <h2>公司基本資料</h2>
+
         <p>檢視模式</p>
+        @if($identityPerm == 1 || $identityPerm == 2)
+          <button id="toggleEditMode">編輯</button>
+        @else
+        @endif
+
+
 
          <div class="formgroup">
              <label for="company_name">公司名稱 ：</label>
@@ -95,7 +106,7 @@
 
          <div class="formgroup">
              <label for="company_website">公司網址 ：</label>
-             <span>WWW.</span>
+             <span>www.</span>
              <p>{{$crmMainCustInfo->company_website}}</p>
          </div>
 
@@ -114,12 +125,13 @@
              @if ($companyPurchasePerson)     
                  <ul>
                      <li><span>姓名</span><p>{{$crmMainCustInfo->company_purchase_person_name}}</p></li>
-                     <li><span>國碼 ： {{ json_decode($crmMainCustInfo->company_purchase_person_phone)->country_code }}</span></li>
-                     <li><span>區碼 ： {{ json_decode($crmMainCustInfo->company_purchase_person_phone)->area_code }}</span></li>
+                     
                  </ul>
                  <ul>
-                     <li><span>電話號碼 ： {{ json_decode($crmMainCustInfo->company_purchase_person_phone)->phone_number }}</span></li>
-                     <li><span>分機 ： {{ json_decode($crmMainCustInfo->company_purchase_person_phone)->purchase_extension }}</span></li>
+                     <li><span>國碼 ： </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->country_code }}</li>
+                     <li><span>區碼 ： </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->area_code }}</li>
+                     <li><span>電話號碼：</span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->phone_number }}</li>
+                     <li><span>分機 ： </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->purchase_extension }}</li>
                  </ul>
              @else
                   <p>無資料</p>
@@ -149,7 +161,10 @@
     <div id="companyDataEdit" class="companyDataEdit" style="display:none;">
     <h2>公司基本資料</h2>
     <p>編輯模式</p>
-      <form method="post" action="{{ route('companyEdit', ['companyId' => $companyId]) }}">
+    <form action="{{ route('company', ['companyId' => $companyId]) }}" method="get">
+    <button type="submit" id="ReturnButton">返回</button>
+    </form>
+      <form method="post" action="{{ route('companyUpdate', ['companyId' => $companyId]) }}">
        @method('PUT') 
        @csrf
        <input type="hidden" name="company_id" value="{{ $crmMainCustInfo->id }}" >
@@ -240,7 +255,7 @@
                 <input type="text" name="company_other_info" id="company_other_info" value="{{ $crmMainCustInfo->company_other_info ?? '' }}">
             </div>
              <div class="baseline"></div>
-             <button>儲存</button>
+             <button id="submitButton">儲存</button>
         </form> 
      </div>
 

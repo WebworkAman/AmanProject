@@ -47,7 +47,14 @@
 
 
            <!-- <button onclick="redirectToCompany('{{ $member->company_ERP_id }}')">公司基本資料</button> -->
-           <button><a href="{{ route('company', ['companyId' => $member->company_ERP_id]) }}">會員資料</a></button>
+           @if($crmMainCustInfo)
+             <button><a href="{{ route('company', ['companyId' => $member->company_ERP_id]) }}">公司資料</a></button>
+            @else
+             @if($member->identity_perm == 1 || $member->identity_perm == 2)
+             <button><a href="{{ route('companyCreateShow',['companyId' => $member->company_ERP_id]) }}">建立</a></button>
+             @else
+             @endif
+           @endif
     </div>
 
         
@@ -56,6 +63,6 @@
     function redirectToCompany(company_ERP_id) {
         window.location.href = `/company?company_ERP_id=${company_ERP_id}`;
     }
-     </script>
+    </script>
 
 @endsection 

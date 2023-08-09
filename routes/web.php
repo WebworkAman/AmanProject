@@ -100,7 +100,10 @@ Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 Route::get('/member-basic',[MemberSessionController::class,'memberBasic'])->name('memberBasic');
 //公司資料頁面
 Route::get('/company/{companyId}',[MemberSessionController::class,'company'])->name('company');
-Route::put('/company/{companyId}',[MemberSessionController::class,'companyEdit'])->name('companyEdit');
+Route::put('/company/{companyId}',[MemberSessionController::class,'companyUpdate'])->name('companyUpdate');
+//公司創建資料頁面
+Route::get('/companyCreate/{companyId}',[MemberSessionController::class,'companCreateShow'])->name('companyCreateShow');
+Route::post('/companyCreate/{companyId}',[MemberSessionController::class,'companyCreate'])->name('companyCreate');
 // 在 web.php 裡面新增 /company 路由處理函式
 Route::get('/companyView', [MemberSessionController::class, 'companyView'])->name('companyView');
 

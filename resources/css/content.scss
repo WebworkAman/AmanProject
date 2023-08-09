@@ -134,9 +134,31 @@ main {
     margin-top: 50px;
     display: block;
     min-height: 600px;
-
+     #toggleEditMode,#ReturnButton{
+        color: #273252;
+        float: right;
+        margin-right: 50px;
+        border-radius: 10px;
+        width: 100px;
+        cursor: pointer;
+        font-size: 1rem;
+        letter-spacing: 2px;
+     }
+     #toggleEditMode:hover,#ReturnButton:hover,#submitButton:hover{
+        background-color: #202329;
+        color: white;
+     }
+     #submitButton{
+        width: 100px;
+        margin-bottom: 50px;
+        color: #273252;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        letter-spacing: 2px;
+     }
     .companyData,.companyDataEdit{
-        width: 55vw;
+        width: 50vw;
         border: 1px solid rgb(2, 24, 18);
         border-radius: 10px;
 
@@ -199,6 +221,7 @@ main {
 
             ul{
                 flex-wrap: wrap;
+                width: 39vw;
                 li{
                     margin: 10px;
                     display: flex;
@@ -210,7 +233,7 @@ main {
                         margin-left: 10px;
                     }
                     p{
-                        line-height: 2.2;
+                        line-height: 2;
                         margin-left: 10px;
                     }
                 }
@@ -240,8 +263,9 @@ main {
               
               
               li{
+                line-height: 2;
                   span{
-                      line-height: 2.2;
+                      
                       text-align: center;
                   }
                   input{
@@ -434,10 +458,17 @@ main {
             margin-bottom: 50px;
             display: block;
             margin: 50px auto;
+
+            a{
+                display: block;
+                color: white;
+                text-decoration: none;
+
+            }
         }
         button:hover{
             color: #273252;
-            background-color: rgb(255 246 122);
+            background-color: rgb(243, 175, 30);
         }
     }
 
