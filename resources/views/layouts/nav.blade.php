@@ -24,6 +24,11 @@
             <ul id="hamburger-menu">
                 <li><a href="{{asset('member-basic')}}">客戶基本資料</a></li>
                 <div class="menu-line"></div>
+                @if(MemberAuth::member()->identity_perm == 1 || MemberAuth::member()->identity_perm == 2)
+                   <li><a href="{{asset('companyMemberList')}}">群組管理</a></li>
+                 @else
+                @endif
+                <div class="menu-line"></div>
                 <li><a href="#">機器基本資料</a></li>
             </ul>    
          @endif

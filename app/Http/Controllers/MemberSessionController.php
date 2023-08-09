@@ -183,36 +183,36 @@ class MemberSessionController extends Controller
 
     }
 
-    public function memberBasic(Request $request){
-        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
-        $companyId = $member -> company_ERP_id;
+       public function memberBasic(Request $request){
+           $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+           $companyId = $member -> company_ERP_id;
 
-        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+           $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
         
 
     
-        return view('members.memberBasicData', compact('crmMainCustInfo','member'));
-    }
+           return view('members.memberBasicData', compact('crmMainCustInfo','member'));
+       }
 
     // public function company(Request $request){
     //     $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
     
     //     return view('members.companyData', compact('member'));
     // }
-    public function company($companyId){
-        $member = MemberAuth::member();
-        // $company_ERP_id = $request->query('company_ERP_id');
-        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+        public function company($companyId){
+            $member = MemberAuth::member();
+            // $company_ERP_id = $request->query('company_ERP_id');
+            $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
         
-        // if (!$crmMainCustInfo) {
-        //     // 如果找不到對應的 CRM_MainCust_Info 資料，可以進行相應處理，例如返回錯誤頁面或提示訊息等
-        //     return back()->with('error', '找不到相應的公司基本資料');
-        // }
+            // if (!$crmMainCustInfo) {
+            //     // 如果找不到對應的 CRM_MainCust_Info 資料，可以進行相應處理，例如返回錯誤頁面或提示訊息等
+            //     return back()->with('error', '找不到相應的公司基本資料');
+            // }
 
 
 
-        return view('members.companyData', compact('crmMainCustInfo','member'));
-    }
+            return view('members.companyData', compact('crmMainCustInfo','member'));
+        }
         // 處理編輯模式表單提交
         public function CompanyUpdate(Request $request)
         {
@@ -271,6 +271,17 @@ class MemberSessionController extends Controller
             ]);
     
             return redirect()->route('memberBasic')->with('info','修改成功');
+        }
+
+        public function companyMemberList(Request $request){
+            $member = Member::all(); 
+            // $companyId = $member -> company_ERP_id;
+ 
+            // $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+
+
+            return view('members.CompanyMemberList', compact('member'));
         }
     public function companCreateShow($companyId){
 

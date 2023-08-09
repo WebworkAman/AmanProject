@@ -21,6 +21,6 @@
     
     @show
 
-    @include('layouts.js')
+    <!-- @include('layouts.js') -->
 </body>
 </html> 

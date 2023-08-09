@@ -277,7 +277,7 @@ main #toggleEditMode, main #ReturnButton {
   font-size: 1rem;
   letter-spacing: 2px;
 }
-main #toggleEditMode:hover, main #ReturnButton:hover, main #submitButton:hover {
+main #toggleEditMode:hover, main #ReturnButton:hover, main #submitButton {
   background-color: #202329;
   color: white;
 }
