@@ -10,25 +10,25 @@
    @endphp
 
 
-   <div id="companyDataView" class="CompanyData-nav companyData">
+    <div id="companyDataView" class="CompanyData-nav companyData">
 
         <h2>公司基本資料</h2>
 
         <p>檢視模式</p>
-        @if($identityPerm == 1 || $identityPerm == 2)
-          <button id="toggleEditMode">編輯</button>
-        @else
-        @endif
+           @if($identityPerm == 1 || $identityPerm == 2)
+               <button id="toggleEditMode">編輯</button>
+           @else
+           @endif
 
 
 
          <div class="formgroup">
              <label for="company_name">公司名稱 ：</label>
-             <p>{{$crmMainCustInfo->company_name}}</p>
+             <p>{{$crmMainCustInfo->company_name??''}}</p>
          </div>
 
         @php
-            $company_address = json_decode($crmMainCustInfo->company_address);
+            $company_address = json_decode($crmMainCustInfo->company_address??'');
         @endphp
 
         @if ($company_address)
@@ -47,19 +47,19 @@
                    <li>城市 :  {{ json_decode($crmMainCustInfo->company_address)->city }}</li>
                    <li>街/路名  :  {{ json_decode($crmMainCustInfo->company_address)->street }}</li>
                </ul>
+       </div>
            @else
                 <p>無公司地址資料</p>
            @endif
-       </div>
 
         <div class="formgroup">
             <label for="company_tax_id">統一編號 ：</label>
-            <p>{{$crmMainCustInfo->company_tax_id}}</p>
+            <p>{{$crmMainCustInfo->company_tax_id??""}}</p>
         </div>
 
 
          @php
-             $companyPhones = json_decode($crmMainCustInfo->company_phone, true);
+             $companyPhones = json_decode($crmMainCustInfo->company_phone??'', true);
          @endphp
 
          @if(is_array($companyPhones) && count($companyPhones) > 0)
@@ -88,7 +88,7 @@
          @endif
     
          @php
-             $companyFax = json_decode($crmMainCustInfo->company_fax);
+             $companyFax = json_decode($crmMainCustInfo->company_fax??'');
          @endphp
 
          <div class="formgroup phone_type">
@@ -107,16 +107,16 @@
          <div class="formgroup">
              <label for="company_website">公司網址 ：</label>
              <span>www.</span>
-             <p>{{$crmMainCustInfo->company_website}}</p>
+             <p>{{$crmMainCustInfo->company_website??''}}</p>
          </div>
 
          <div class="formgroup">
              <label for="company_ceo">公司負責人(董事長) ：</label>
-             <p>{{$crmMainCustInfo->company_ceo}}</p>
+             <p>{{$crmMainCustInfo->company_ceo??''}}</p>
          </div>
 
          @php
-             $companyPurchasePerson = json_decode($crmMainCustInfo->company_purchase_person_phone);
+             $companyPurchasePerson = json_decode($crmMainCustInfo->company_purchase_person_phone??'');
          @endphp
 
          <div class="formgroup phone_type">
@@ -140,34 +140,40 @@
 
          <div class="formgroup">
              <label for="company_email">E-mail ：</label>
-             <p>{{$crmMainCustInfo->company_email}}</p>
+             <p>{{$crmMainCustInfo->company_email??''}}</p>
          </div>
 
          <div class="formgroup">
              <label for="company_other_info">其他說明 ：</label>
-             <p>{{$crmMainCustInfo->company_other_info}}</p>
+             <p>{{$crmMainCustInfo->company_other_info??''}}</p>
          </div>
          <div class="baseline"></div>
     </div>
 
-
+   
    <!-- 公司基本資料 -->
-   <!-- 編輯區塊 -->
-   @php
-     $companyId = $crmMainCustInfo->id ; // 假設這裡獲取到了會員的 companyId，您需要替換為正確的值
-   @endphp
+       <!-- 編輯區塊 -->
+       @php
+         $companyId = $crmMainCustInfo->company_ERP_id; // 假設這裡獲取到了會員的 companyId，您需要替換為正確的值
+       @endphp
 
 
     <div id="companyDataEdit" class="companyDataEdit" style="display:none;">
-    <h2>公司基本資料</h2>
-    <p>編輯模式</p>
-    <form action="{{ route('company', ['companyId' => $companyId]) }}" method="get">
-    <button type="submit" id="ReturnButton">返回</button>
-    </form>
+
+         <h2>公司基本資料</h2>
+         <p>編輯模式</p>
+          
+        <form action="{{ route('company', ['companyId' => $companyId]) }}" method="get">
+             <button type="submit" id="ReturnButton">返回</button>
+        </form>
+
+
       <form method="post" action="{{ route('companyUpdate', ['companyId' => $companyId]) }}">
-       @method('PUT') 
-       @csrf
-       <input type="hidden" name="company_id" value="{{ $crmMainCustInfo->id }}" >
+        
+                 @method('PUT') 
+                 @csrf
+            <input type="hidden" name="company_id" value="{{ $crmMainCustInfo->id }}" >
+
             <div class="formgroup">
                 <label for="company_name">公司名稱 ：</label>
                 <input type="text" name="company_name" id="company_name" value="{{ $crmMainCustInfo->company_name }}">
@@ -261,8 +267,9 @@
 
     </div>  
     
-    </main>
+</main>
    
+    
 
     <script>
         $(document).ready(function() {

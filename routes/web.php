@@ -97,7 +97,7 @@ Route::post('/reset-password',[MemberSessionController::class,'resetPassword'])-
 //驗證
 Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 //會員資料頁面
-Route::get('/member-basic',[MemberSessionController::class,'memberBasic'])->name('memberBasic');
+Route::get('/memberBasic',[MemberSessionController::class,'memberBasic'])->name('memberBasic');
 //公司會員資料頁面
 Route::get('/companyMemberList',[MemberSessionController::class,'companyMemberList'])->name('companyMemberList');
 //公司資料頁面

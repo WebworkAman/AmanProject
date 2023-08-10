@@ -46,7 +46,7 @@
     </div>
 
 
-           <!-- <button onclick="redirectToCompany('{{ $member->company_ERP_id }}')">公司基本資料</button> -->
+       
            @if($crmMainCustInfo)
              <button><a href="{{ route('company', ['companyId' => $member->company_ERP_id]) }}">公司資料</a></button>
             @else
@@ -59,10 +59,6 @@
 
         
     </main>
-    <script>
-    function redirectToCompany(company_ERP_id) {
-        window.location.href = `/company?company_ERP_id=${company_ERP_id}`;
-    }
-    </script>
+
 
 @endsection 

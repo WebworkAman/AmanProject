@@ -7,7 +7,7 @@
 
      <div class="Show_form member-list">
                     <h3>公 司 會 員 管 理 </h3>
-                    <a class="btn control-option" href="{{route('members.adminCreate')}}">新增會員</a>
+                    <a class="btn control-option" href="">新增會員</a>
                       <table>
                               <thead>
                                   <tr>
@@ -22,7 +22,7 @@
                                         <tr>
                                             <td><p>{{ $member->name }}</p></td>
                                             <td>{{ $member->email }}</td>
-                                            <td><a href="{{ route('members.adminSetPermissions', $member->id) }}">設定權限</a></td>
+                                            <td><a href="">設定權限</a></td>
                                             <td>
                                                 <form method="POST" action="{{ route('members.destroy', $member->id) }}">
                                                     @csrf
