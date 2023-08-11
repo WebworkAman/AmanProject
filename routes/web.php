@@ -100,6 +100,9 @@ Route::get('/verify',[MemberController::class,'verify'])->name('verify');
 Route::get('/memberBasic',[MemberSessionController::class,'memberBasic'])->name('memberBasic');
 //公司會員資料頁面
 Route::get('/companyMemberList',[MemberSessionController::class,'companyMemberList'])->name('companyMemberList');
+//公司群組修改會員
+Route::get('/updateStatus', [MemberSessionController::class, 'updateStatusView'])->name('members.updateStatusView');
+Route::put('/updateStatus/{id}', [MemberSessionController::class, 'updateStatus'])->name('members.updateStatus');
 //公司資料頁面
 Route::get('/company/{companyId}',[MemberSessionController::class,'company'])->name('company');
 Route::put('/company/{companyId}',[MemberSessionController::class,'companyUpdate'])->name('companyUpdate');

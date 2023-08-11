@@ -273,36 +273,93 @@ class MemberSessionController extends Controller
             return redirect()->route('memberBasic')->with('info','修改成功');
         }
 
-        public function companyMemberList(Request $request){
-            $member = Member::all(); 
-            // $companyId = $member -> company_ERP_id;
+        public function companyMemberList(Request $request){ 
+
+            $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+            $companyId = $member -> company_ERP_id;
  
-            // $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+            $members = Member::where('company_ERP_id', $companyId)->get();
+            $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+            // 檢查該公司已經有多少會員
+            $memberCount = Member::where('company_ERP_id', $companyId)->count();
 
 
-
-            return view('members.CompanyMemberList', compact('member'));
+            return view('members.CompanyMemberList', compact('members','crmMainCustInfo','memberCount'));
         }
-    public function companCreateShow($companyId){
+        public function updateStatusView(Request $request){ 
 
-        $member = MemberAuth::member();
+            $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+            $companyId = $member -> company_ERP_id;
+ 
+            $members = Member::where('company_ERP_id', $companyId)->get();
+            $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
-        $companyId = $member -> company_ERP_id;
 
-        $tfm01 = Tfm01::where('fa04',$companyId)->first();
-        $tbm01 = Tbm01::where('ba01',$companyId)->first();
 
-        if($tfm01){
-            $fa03 = Carbon::parse($tfm01->fa03);
-            $currentDate = Carbon::now();
-            $yearsDifference = $currentDate->diffInYears($fa03);
-        }else{
-            $yearsDifference = null;
+            return view('members.updateStatus', compact('members','crmMainCustInfo'));
         }
+        public function updateStatus(Request $request, $id) {
+
+            $member = Member::find($id);
+            if (!$member) {
+                // 如果找不到該會員，可能需要進行處理（例如顯示錯誤信息）
+                return back()->with('error', '找不到該會員');
+            }
+
+            $newIdentity = $request->input('identity_perm');
+
+            // 檢查是否選擇了廠長或採購
+            if($newIdentity == 1 || $newIdentity == 2){
+                $existingMembersWithSameIdentity = Member::where('company_ERP_id',$member->company_ERP_id)
+                ->where('stat_info','y')
+                ->where('identity_perm',$newIdentity)
+                ->where('id','!=',$id)
+                ->count();
+
+                if($existingMembersWithSameIdentity > 0){
+                    // 已經有同樣身份的在職會員，不允許更新
+                    // 可以返回錯誤訊息或做其他處理
+
+                    return back()->with('error', '已經有同樣身份的在職會員，不允許更新');
+                }else{
+                    // 沒有同樣身份的在職會員，允許更新
+                    $member->identity_perm = $newIdentity;
+                    $member->stat_info = $request->input('stat_info');
+                    $member->save();
+                    // 其他處理
+                }
+            }else{
+                // 非廠長或採購身份，直接更新
+                $member->identity_perm = $newIdentity;
+                $member->stat_info = $request->input('stat_info');
+                $member->save();
+                // 其他處理
+
+            }
+        
+            return back()->with('success', '在職狀況已更新');
+        }
+        public function companCreateShow($companyId){
+
+                 $member = MemberAuth::member();
+
+                 $companyId = $member -> company_ERP_id;
+
+                 $tfm01 = Tfm01::where('fa04',$companyId)->first();
+                 $tbm01 = Tbm01::where('ba01',$companyId)->first();
+
+                 if($tfm01){
+                     $fa03 = Carbon::parse($tfm01->fa03);
+                     $currentDate = Carbon::now();
+                     $yearsDifference = $currentDate->diffInYears($fa03);
+                 }else{
+                     $yearsDifference = null;
+                 };
 
 
-        return view('members.createCompanyData', compact('member','tbm01','yearsDifference'));
-    }
+             return view('members.createCompanyData', compact('member','tbm01','yearsDifference'));
+        }
 
 
     public function companyCreate(Request $request){

@@ -66,7 +66,7 @@
             resize: vertical;
             font-size: 16px;
         }
-        textarea {
+        textarea{
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -134,6 +134,187 @@ main {
     margin-top: 50px;
     display: block;
     min-height: 600px;
+    .Show_form{
+        margin: 60px 100px;
+        overflow: auto;
+
+        #position-error{
+            text-align: center;
+            color: red; 
+            display: none;
+            margin-top: 50px;
+        }
+
+        h3{
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 50px;
+        }
+        h5{
+            text-align: center;
+            margin: 30px auto;
+            letter-spacing: 1.2px;
+            color: #555;
+        }
+        .btn{
+            float: right;
+            display: block;
+            text-decoration: none;
+            color: rgb(10, 30, 208);
+            font-weight: 300;
+            border: 1px solid rgb(10, 30, 208);
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+            margin: 20px;
+            padding: 5px;
+        }
+        .btn:hover{
+            color: whitesmoke;
+            background-color: orange;
+            border: 1px solid orange;
+        }
+        .question-reply{
+            color:rgb(10, 30 ,208);
+            font-weight: 300;
+            text-decoration: none;
+    
+            
+        }
+        .question-reply:hover{
+            color: orange;
+            text-shadow: #555 0.1em;
+           
+        }
+    
+        table {
+            
+            font-size: 14px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            width: 10vw;
+            p{
+                width: 8vw;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              
+            }
+            a{
+                color: rgb(10, 30, 208);
+                font-weight: 300;
+                text-decoration: none;
+                letter-spacing: .5px;
+            }
+            a:hover{
+                color: orange;
+            }
+            button{
+                color: rgb(10, 30, 208);
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                font-weight: 300;
+                letter-spacing: .5px;
+            }
+            button:hover{
+                color: orange;
+            }
+           
+         
+            
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+    
+        .photoPopup{
+            position: fixed;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .videoPopup{
+            position: fixed;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .videoPopup video {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .popclose {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #fff;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    
+        .pagination {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-top: 50px;
+          
+            li {
+              display: inline-block;
+              margin: 0 5px;
+          
+              a {
+                display: block;
+                padding: 5px 10px;
+                text-decoration: none;
+                color: #333;
+                background-color: #f5f5f5;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                transition: background-color 0.3s ease;
+          
+                &:hover {
+                  background-color: #e0e0e0;
+                }
+              }
+          
+              &.active {
+                a {
+                  background-color: #007bff;
+                  color: #fff;
+                }
+              }
+          
+              &.disabled {
+                opacity: 0.5;
+                pointer-events: none;
+              }
+            }
+          }
+          
+        
+    }
      #toggleEditMode,#ReturnButton{
         color: #273252;
         float: right;
