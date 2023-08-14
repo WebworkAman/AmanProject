@@ -53,11 +53,13 @@ nav {
             }
         }
         #hamburger-menu{
+            
             opacity: 0;
             flex-direction: column;
             border: 1px solid gray;
             border-radius: 10px;
-            // position: fixed;
+            position: fixed;
+            top:-100;
             z-index: 1;
             right: 146;
             margin-top: 10px;
@@ -86,8 +88,8 @@ nav {
             
         }
         #hamburger-menu.show {
-            
             opacity: 1; /* 透明度為 1 時顯示 */
+            top:100;
         }
 
     }
