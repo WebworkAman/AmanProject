@@ -228,11 +228,18 @@ class MemberSessionController extends Controller
                 'city' => $request->input('company_address.city'),
                 'street' => $request->input('company_address.street'),
             ];
+
+            $member = MemberAuth::member();
+
+            $member->update([
+                'company_tax_id' => $request->input('company_tax_id'),
+            ]);
     
         $company->update([
                 'company_name' => $request->input('company_name'),
                 // 在這裡更新其他資料，根據需要添加其他資料的更新
                 'company_address' => $companyAddress,
+                'company_tax_id' => $request->input('company_tax_id'),
                 'company_phone' => json_encode([
                     [
                         'country_code_1' => $request->input('company_phone.country_code_1'),
