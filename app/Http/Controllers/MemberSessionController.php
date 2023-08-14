@@ -304,7 +304,9 @@ class MemberSessionController extends Controller
             $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
             $companyId = $member -> company_ERP_id;
  
-            $members = Member::where('company_ERP_id', $companyId)->get();
+            $members = Member::where('company_ERP_id', $companyId)
+            ->where('email_verified',1)
+            ->get();
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
 
