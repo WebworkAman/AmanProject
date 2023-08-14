@@ -392,6 +392,11 @@ main {
                 border-bottom: 1px solid rgb(61, 79, 69);
         
             }
+            @media (max-width:1200px){
+                input {                 
+                    width: 20vw;          
+                }
+            }
 
             select{
                 width: 200px;
@@ -451,6 +456,9 @@ main {
                   }
                   input{
                       width: 7vw;
+                  }
+                  #phone_number_1,#phone_number_2,#phone_number_3{
+                    width:10vw;
                   }
               }
             }

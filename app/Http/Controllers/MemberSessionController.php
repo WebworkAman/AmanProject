@@ -9,6 +9,9 @@ use App\Models\Member;
 use App\Models\CRM_MainCust_Info;
 use App\Models\Tfm01;
 use App\Models\Tbm01;
+
+use Illuminate\Support\Facades\Validator;
+
 use Carbon\Carbon;
 use Hash;
 
@@ -365,8 +368,31 @@ class MemberSessionController extends Controller
     public function companyCreate(Request $request){
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
 
+        // 先檢查 company_address 是否存在於請求中
+
+         $rules = [
+            'company_name' => 'required',
+            'company_address.country' => 'required',
+            'company_address.postal_code' => 'required',
+            'company_address.region' => 'required',
+            'company_address.city' => 'required',
+            'company_address.street' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+            // 如果驗證失敗
+        if ($validator->fails()) {
+
+           
+            return back()
+                   ->withErrors($validator)  // 傳遞驗證錯誤訊息到視圖
+                   ->withInput();  // 保留用戶的輸入值
+        }else{
+
         $companyERPId = $member->company_ERP_id;
         $companyTaxId = $member->company_tax_id;
+        $newCompanyId = $request->input('company_tax_id');
         
         //公司地址
         $companyAddress = [
@@ -417,7 +443,7 @@ class MemberSessionController extends Controller
         $company = CRM_MainCust_Info::create([
 
             'company_ERP_id' => $companyERPId,
-            'company_Tax_id' => $companyTaxId,
+            'company_tax_id' => $newCompanyId,
             'company_name' => $request->company_name,
 
             'company_address' => !empty($filteredCompanyAddress) ? json_encode($filteredCompanyAddress) : null,
@@ -463,6 +489,10 @@ class MemberSessionController extends Controller
 
 
         return redirect()->route('memberBasic')->with('info','修改成功');
+
+        }
+
+
 
 
     }

@@ -193,10 +193,10 @@
                 </ul>
             </div>
 
-             <!-- <div class="formgroup">
+              <div class="formgroup">
                  <label for="company_tax_id">統一編號 ：</label>
-                 <input type="text" name="company_tax_id" id="company_tax_id">
-             </div> -->
+                 <input type="text" name="company_tax_id" id="company_tax_id" value="{{ $crmMainCustInfo->company_tax_id }}">
+             </div>
 
              <div class="formgroup phone_type">
                  <label for="company_phone">公司電話 ：</label>

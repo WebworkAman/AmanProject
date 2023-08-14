@@ -493,6 +493,11 @@ main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   background-color: transparent;
   border-bottom: 1px solid rgb(61, 79, 69);
 }
+@media (max-width: 1200px) {
+  main .companyData .formgroup input, main .companyDataEdit .formgroup input {
+    width: 20vw;
+  }
+}
 main .companyData .formgroup select, main .companyDataEdit .formgroup select {
   width: 200px;
   height: 30px;
@@ -543,6 +548,9 @@ main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formg
 }
 main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
   width: 7vw;
+}
+main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3 {
+  width: 10vw;
 }
 main .memberBasicDate {
   width: 55vw;
