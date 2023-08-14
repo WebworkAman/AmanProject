@@ -107,6 +107,10 @@ class MemberController extends Controller
                 ->where('identity_perm', 2)
                 ->first();
 
+                $existingMemberIdentity3 = Member::where('company_ERP_id', $company_ERP_id)
+                ->where('identity_perm', 3)
+                ->count();
+
                 if($existingMemberIdentity1  && $request->identity_perm == 1){
                     // 如果已經存在相同 identity_perm 的記錄，且值不為 3，則不能重複註冊
                       return back()->with('fail', '該公司已有採購註冊，請重新選取其他身份');
@@ -116,50 +120,58 @@ class MemberController extends Controller
                 }
                 else{
 
-                    $member = Member::create([
-                        'name' => $request->name,
-                        'email' => $request->email,
-                        'identity_perm' => $request->identity_perm,
-                        'company_tax_id' => $companyTaxId,
-                        'company_ERP_id' => $company_ERP_id,
-                        'stat_info' => $stat_info,           
-    
-                    ]);
+                    if ($existingMemberIdentity3 >= 10) {
+                        return back()->with('fail', '超過限制，無法註冊新會員');
+                    }else{
+
+                        $member = Member::create([
+                            'name' => $request->name,
+                            'email' => $request->email,
+                            'identity_perm' => $request->identity_perm,
+                            'company_tax_id' => $companyTaxId,
+                            'company_ERP_id' => $company_ERP_id,
+                            'stat_info' => $stat_info,           
+        
+                        ]);
+                        
+            
+                        $last_id = $member->id;
+                        $token = $last_id.hash('sha256',\Str::random(120));
+                        $verifyURL = route('verify',['token'=>$token,'service'=>'Email_verification']);
+                        $verificationCode = \Str::random(6);
+            
+                        VerifyMember::create([
+                            'user_id'=>$last_id,
+                            'token'=>$token,
+                            'verification_code'=>$verificationCode,
+                        ]);
+                        
+                        $message = '親愛的 <b>'.$request->name.'</b><br>';
+                        $message.= '感謝您的註冊，系統發送的驗證碼如下：';
+            
+                        $mail_data = [
+                            'recipient'=>$request->email,
+                            'fromEmail'=>$request->email,
+                            'fromName'=>$request->name,
+                            'subject'=>'會員註冊認證信',
+                            'verification_code'=>$verificationCode,
+                            'body'=> $message,
+                            'actionLink'=>$verifyURL,
+                        ];
+            
+                        \Mail::send('email-template',$mail_data,function($message)use($mail_data){
+                            $message->to($mail_data['recipient'])
+                                    ->from($mail_data['fromEmail'],$mail_data['fromName'])
+                                    ->subject($mail_data['subject']);
+                        });
+            
+                        
+            
+                        return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
+
+                    }
+
                     
-        
-                    $last_id = $member->id;
-                    $token = $last_id.hash('sha256',\Str::random(120));
-                    $verifyURL = route('verify',['token'=>$token,'service'=>'Email_verification']);
-                    $verificationCode = \Str::random(6);
-        
-                    VerifyMember::create([
-                        'user_id'=>$last_id,
-                        'token'=>$token,
-                        'verification_code'=>$verificationCode,
-                    ]);
-                    
-                    $message = '親愛的 <b>'.$request->name.'</b><br>';
-                    $message.= '感謝您的註冊，系統發送的驗證碼如下：';
-        
-                    $mail_data = [
-                        'recipient'=>$request->email,
-                        'fromEmail'=>$request->email,
-                        'fromName'=>$request->name,
-                        'subject'=>'會員註冊認證信',
-                        'verification_code'=>$verificationCode,
-                        'body'=> $message,
-                        'actionLink'=>$verifyURL,
-                    ];
-        
-                    \Mail::send('email-template',$mail_data,function($message)use($mail_data){
-                        $message->to($mail_data['recipient'])
-                                ->from($mail_data['fromEmail'],$mail_data['fromName'])
-                                ->subject($mail_data['subject']);
-                    });
-        
-                    
-        
-                    return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
 
                 }
             
@@ -191,6 +203,9 @@ class MemberController extends Controller
                 $existingMemberIdentity2 = Member::where('company_tax_id', $companyTaxId)
                 ->where('identity_perm', 2)
                 ->first();
+                $existingMemberIdentity3 = Member::where('company_ERP_id', $company_ERP_id)
+                ->where('identity_perm', 3)
+                ->count();
 
 
                 if($existingMemberIdentity1  && $request->identity_perm == 1){
@@ -200,6 +215,11 @@ class MemberController extends Controller
                     return back()->with('fail', '該公司已有廠長註冊，請重新選取其他身份');
                 }
                 else{
+
+
+                    if ($existingMemberIdentity3 >= 10) {
+                        return back()->with('fail', '超過限制，無法註冊新會員');
+                    }else{
 
                     $member = Member::create([
                         'name' => $request->name,
@@ -245,6 +265,8 @@ class MemberController extends Controller
                     
         
                     return redirect()->route('members.session.create')->with('info','註冊成功，請到信箱收取你的驗證連結.');
+
+                };
 
                 }
 
