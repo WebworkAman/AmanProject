@@ -13,10 +13,10 @@
                       @else
                       @endif
 
-                    <label for=""><span>公司名稱：</span>{{$crmMainCustInfo->company_name}}</label>
+                    <label for=""><span>公司名稱：</span>{{$crmMainCustInfo->company_name?? '尚未建立公司資料'}}</label>
                      </br>
                      </br>
-                    <label for=""><span>統一編號：</span>{{$crmMainCustInfo->company_tax_id}}</label>
+                    <label for=""><span>統一編號：</span>{{$crmMainCustInfo->company_tax_id?? '尚未建立公司資料'}}</label>
                     </br>
                       <table>
                               <thead>
