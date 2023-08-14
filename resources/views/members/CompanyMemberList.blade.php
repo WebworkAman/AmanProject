@@ -7,11 +7,12 @@
 
      <div class="Show_form member-list">
                     <h3>公 司 會 員 管 理 </h3>
-                    @if($memberCount <= 10)
+                
+                      @if($member->identity_perm == 1 || $member->identity_perm == 2)
                       <a class="btn control-option" href="{{route('members.updateStatusView')}}">資料修改</a>
-                    @else
-                    
-                    @endif
+                      @else
+                      @endif
+
                     <label for=""><span>公司名稱：</span>{{$crmMainCustInfo->company_name}}</label>
                      </br>
                      </br>

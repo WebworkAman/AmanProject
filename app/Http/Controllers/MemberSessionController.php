@@ -285,7 +285,7 @@ class MemberSessionController extends Controller
             $memberCount = Member::where('company_ERP_id', $companyId)->count();
 
 
-            return view('members.CompanyMemberList', compact('members','crmMainCustInfo','memberCount'));
+            return view('members.CompanyMemberList', compact('members','crmMainCustInfo','memberCount','member'));
         }
         public function updateStatusView(Request $request){ 
 
