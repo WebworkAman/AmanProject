@@ -109,6 +109,7 @@ class MemberController extends Controller
 
                 $existingMemberIdentity3 = Member::where('company_ERP_id', $company_ERP_id)
                 ->where('identity_perm', 3)
+                ->where('stat_info','y')
                 ->count();
 
                 if($existingMemberIdentity1  && $request->identity_perm == 1){
@@ -205,6 +206,7 @@ class MemberController extends Controller
                 ->first();
                 $existingMemberIdentity3 = Member::where('company_ERP_id', $company_ERP_id)
                 ->where('identity_perm', 3)
+                ->where('stat_info','y')
                 ->count();
 
 
