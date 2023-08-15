@@ -94,7 +94,7 @@ class MemberController extends Controller
                 if(strpos($bb011Value,'C')===0){
 
                 $company_ERP_id = $tbm02->bb011;
-                $stat_info = 'y';
+                $stat_info = '';
                 $identityPermValue = $request->identity_prem;
 
                 //檢查是否已經存在具有相同 identitly_perm 值的紀錄
@@ -194,7 +194,7 @@ class MemberController extends Controller
             if(strpos($ba01Value, 'C') === 0 || strpos($ba01Value, 'T') === 0){
                 
                 $company_ERP_id = $ba01Value;
-                $stat_info = 'y';
+                $stat_info = '';
                 $identityPermValue = $request->identity_perm;
 
                 $existingMemberIdentity1 = Member::where('company_tax_id', $companyTaxId)

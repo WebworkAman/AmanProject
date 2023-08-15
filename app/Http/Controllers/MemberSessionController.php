@@ -289,7 +289,7 @@ class MemberSessionController extends Controller
             $companyId = $member -> company_ERP_id;
  
             $members = Member::where('company_ERP_id', $companyId)
-            ->where('email_verified',1)
+            ->orderBy('identity_perm')
             ->get();
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
@@ -305,6 +305,7 @@ class MemberSessionController extends Controller
             $companyId = $member -> company_ERP_id;
  
             $members = Member::where('company_ERP_id', $companyId)
+            ->orderBy('identity_perm')
             ->where('email_verified',1)
             ->get();
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();

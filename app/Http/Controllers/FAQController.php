@@ -23,7 +23,7 @@ class FAQController extends Controller
     public function createSearch(Request $request)
     {
 
-    $products = Product::all();
+         $products = Product::all();
 
     
     return view('layouts.search-show', ['products'=> $products]);
@@ -835,13 +835,17 @@ class FAQController extends Controller
         $validatedData = $request->validate([
             'question' => 'required|max:255',
             'answer' => 'required',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
-            'video' => 'nullable|mimes:mp4,mov,avi,mpeg',         
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'video' => 'nullable|mimes:mp4,mov,avi,mpeg|max:20480',         
+        ],[
+            'video.max' => '附加影片超過限制大小',
         ]);
 
         $productIds = $request->input('product_id');
+        $hasError = false;
         
         foreach($productIds as $productId){
+
             $faq = new FAQ;
             $faq -> product_id = $productId;
             $faq -> question = $request->input('question');
@@ -854,19 +858,29 @@ class FAQController extends Controller
     
             if($request->hasFile('video')){
                 if($request->file('video')->isValid()){
-                    $videoPath = $request->file('video')->store('public/videos');
-                    $faq->video = $videoPath;
-                }else{
-                    return redirect()->back()->withErrors(['video' => '影片上傳失敗']);
+                    $hasError = true;
+                    break; // 驗證失敗,停止迴圈
                 }
+                    
+                
+                $videoPath = $request->file('video')->store('public/videos');
+                $faq->video = $videoPath;
 
+                $faq->save();               
             }
+            
+            if($hasError){
+                return redirect()->back()->withErrors(['video' => '影片上傳失敗']);
+            }else{
+                return redirect()->route('faqs.index', $productId) // 修改這行
+                ->with('success', '常見問題建立成功.');
+            }
+            
     
-            $faq->save();
+            
         }
    
-        return redirect()->route('faqs.index', $productId) // 修改這行
-        ->with('success', '常見問題建立成功.');
+        
 
         // return redirect()->route('faqs.index', $faq->id)
         //     ->with('success', '常見問題建立成功.');

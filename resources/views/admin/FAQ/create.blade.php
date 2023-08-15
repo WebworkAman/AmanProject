@@ -41,12 +41,14 @@
                             <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="photo">附加照片：</label>
+                            <label for="photo">附加照片(檔案限制大小2MB)：</label>
                             <input class="attachfile" type="file" name="photo" accept="image/jpeg, image/png, image/gif">
+                            <p class="text-danger" id="photo-error" style="color: red;"></p>
                         </div>
                         <div class="form-group">
-                            <label for="video">附加影片：</label>
+                            <label for="video">附加影片(檔案限制大小20MB)：</label>
                             <input class="attachfile" type="file" name="video" accept="video/mp4, video/mov, video/avi">
+                            <p class="text-danger" id="video-error" style="color: red;"></p>
                         </div>
 
                         <div class="form-group">
@@ -70,6 +72,34 @@
         </div>
 
    </main>
+   <script>
+    const photoInput = document.querySelector('input[name="photo"]');
+    const videoInput = document.querySelector('input[name="video"]');
+    const photoError = document.getElementById('photo-error');
+    const videoError = document.getElementById('video-error');
+
+    const maxPhotoSize = 2 * 1024 * 1024; // 2MB in bytes
+    const maxVideoSize = 20 * 1024 * 1024; // 20MB in bytes
+
+    photoInput.addEventListener('change', () => {
+        if (photoInput.files[0].size > maxPhotoSize) {
+            photoInput.value = ''; // Clear the selected file
+            photoError.textContent = '-照片檔案大小超過2MB的限制';
+        } else {
+            photoError.textContent = '';
+        }
+    });
+
+    videoInput.addEventListener('change', () => {
+        if (videoInput.files[0].size > maxVideoSize) {
+            videoInput.value = ''; // Clear the selected file
+            videoError.textContent = '-影片檔案大小超過20MB的限制';
+        } else {
+            videoError.textContent = '';
+        }
+    });
+</script>
+
 <!-- <script>
     $(document).ready(function() {
   // 檢查 localStorage 中是否有已儲存的項目值
