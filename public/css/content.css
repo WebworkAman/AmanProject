@@ -1035,12 +1035,21 @@ main .chooseItem ul li p {
 .QA_content .right-content .faq .listblock ul li .faq-title {
   color: rgb(15, 59, 101);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px dashed gray;
   padding: 10px;
   font-size: 1.2rem;
   font-weight: 400;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title .textBlock {
+  display: flex;
+}
+.QA_content .right-content .faq .listblock ul li .faq-title .itemBlock img {
+  width: 1.2vw;
+  margin-right: 25px;
+  margin-top: 3px;
 }
 .QA_content .right-content .faq .listblock ul li .faq-title h3 {
   color: rgb(233, 168, 74);
@@ -1070,12 +1079,6 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .faq .listblock ul li .faq-title button:hover {
   background-color: rgb(237, 188, 14);
-}
-.QA_content .right-content .faq .listblock ul li .faq-title .itemBlock {
-  margin-left: 1190px;
-}
-.QA_content .right-content .faq .listblock ul li .faq-title .itemBlock img {
-  width: 2vw;
 }
 .QA_content .right-content .faq .listblock ul li .faq-content {
   display: none;

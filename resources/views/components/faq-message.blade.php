@@ -13,8 +13,12 @@
                     <li class="faq-item"> 
                         <div class="faq-title">
                             <!-- <h3>{{ $index + 1 }}.</h3> -->
-                             <label>Q</label>
+                            <div class="textBlock">
+                              <label>Q</label>
                               <pre>{{$faq->question}}</pre>
+                            </div>
+                             
+
                             <div class="itemBlock">                              
                             @if($faq->photo)
                             <img src="{{asset('imgs/icon/camera.png')}}">
@@ -24,8 +28,9 @@
                             <img src="{{asset('imgs/icon/video-camera.png')}}">
                             @else
                             @endif
-                            </div>
                             <button class="faq-toggle">+</button>
+                            </div>
+                            
                         </div>
                         <div class="faq-content">
                             <p><pre>{{$faq->answer}}</pre></p>
