@@ -21,7 +21,7 @@
         @show
     
     <!-- @show -->
-    @include('layouts.js')
+    @include('layouts.admin.js')
     @push('scripts')
     <script>
         function truncatedText(elementId,maxLength){
