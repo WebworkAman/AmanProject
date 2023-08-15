@@ -8,19 +8,19 @@
    </head>
    <body>
 
-   @include('layouts.nav')
+       @include('layouts.nav')
        <div id="app"></div>
        <div class="container">
           
             @yield('content')
           
        </div>
-    @include('layouts.footer')
+       @include('layouts.footer')
     
-    @section('inline_js')
+       @section('inline_js')
     
-    @show
+       @show
 
-    @include('layouts.js')
+       <!-- @include('layouts.js') -->
 </body>
 </html> 
