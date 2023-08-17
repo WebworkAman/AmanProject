@@ -31,7 +31,7 @@
                     @else
                    @endif
                 <div class="menu-line"></div>
-                <li><a href="#">機器基本資料</a></li>
+                <li><a href="{{asset('companyMachineList')}}">機器基本資料</a></li>
             </ul>    
          @endif
 

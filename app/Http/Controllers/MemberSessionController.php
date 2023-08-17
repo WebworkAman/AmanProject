@@ -7,8 +7,10 @@ use App\Libraries\MemberAuth;
 use App\Models\VerifyMember;
 use App\Models\Member;
 use App\Models\CRM_MainCust_Info;
+use App\Models\CRM_Machines;
 use App\Models\Tfm01;
 use App\Models\Tbm01;
+
 
 use Illuminate\Support\Facades\Validator;
 
@@ -508,6 +510,22 @@ class MemberSessionController extends Controller
 
 
     }
+
+    public function companyMachineList(Request $request){ 
+
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $companyId = $member -> company_ERP_id;
+
+        $members = Member::where('company_ERP_id', $companyId)
+        ->orderBy('identity_perm')
+        ->get();
+        
+        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId);
+
+
+        return view('members.companyMachines', compact('members','crmMachines','member'));
+    }
+
     
     
 }

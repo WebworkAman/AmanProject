@@ -85,7 +85,7 @@ class FAQController extends Controller
             return view('product.FAQ.inspection.OC40N02', compact('faqs')) ;
 
         }else{
-             // 没有权限，显示提示信息
+             // 沒有權限，顯示訊息
              return view('layouts.forbid');
         }             
 
