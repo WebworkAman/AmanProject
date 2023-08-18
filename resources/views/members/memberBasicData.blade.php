@@ -39,7 +39,11 @@
          </div>
          <div class="formgroup">
              <label for="company_tax_id">是否在職 ：</label>
-             <p>{{$member->stat_info}}</p>
+             @if ($member->stat_info == 'y')
+                <p>在職</p>
+             @else
+                <p>離職</p>
+             @endif
          </div>
 
     
