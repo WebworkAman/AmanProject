@@ -166,10 +166,8 @@ class AdminController extends Controller
 
     public function memberCreate(){
 
-        $faqs = FAQ::all();
-        $products = Product::all();
 
-        return view('admin.Member.member-create', compact('members')) ;
+        return view('admin.Member.member-create') ;
     }
     public function showSetPermissions($memberId){
         

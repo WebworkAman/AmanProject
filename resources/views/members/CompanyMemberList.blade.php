@@ -72,7 +72,7 @@
                                 @endforeach
                                </tbody>
                        </table>
-                       <h5>尚未註冊員工列表</h5>
+                       <h5>註冊尚待驗證列表</h5>
                        <table>
                               <thead>
                                   <tr>
@@ -84,14 +84,14 @@
                               </thead>
                                <tbody>
                                @foreach ($members as $member)
-                                @if ($member->email_verified == 0)
-                                <tr>
-                                    <td><p>{{ $member->name }}</p></td>
-                                    <td>{{ $member->email }}</td>
-                                    <td>{{ $identityMap[$member->identity_perm] ?? '未知身份' }}</td>
-                                    <td>{{ $member->stat_info ?? '未知' }}</td>
-                                </tr>
-                                @endif
+                                   @if ($member->email_verified == 0)
+                                        <tr>
+                                            <td><p>{{ $member->name }}</p></td>
+                                            <td>{{ $member->email }}</td>
+                                            <td>{{ $identityMap[$member->identity_perm] ?? '未知身份' }}</td>
+                                            <td>{{ $member->stat_info ?? '未知' }}</td>
+                                        </tr>
+                                   @endif
                                 @endforeach
                                </tbody>
                        </table>

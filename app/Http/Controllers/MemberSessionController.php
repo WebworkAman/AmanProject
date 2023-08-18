@@ -330,7 +330,6 @@ class MemberSessionController extends Controller
  
             $members = Member::where('company_ERP_id', $companyId)
             ->orderBy('identity_perm')
-            ->where('email_verified',1)
             ->get();
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
@@ -379,6 +378,17 @@ class MemberSessionController extends Controller
         
             return back()->with('success', '在職狀況已更新');
         }
+
+        public function companyMembersDestroy(Member $member)
+        {
+             $member->delete();
+        
+            return redirect()->route('members.updateStatusView')
+                ->with('success', '會員刪除成功.');
+             
+        }
+
+
         public function companCreateShow($companyId){
 
                  $member = MemberAuth::member();

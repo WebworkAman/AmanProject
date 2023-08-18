@@ -70,6 +70,39 @@
                         </tbody>
 
                         </table>
+
+
+                        <h5>註冊尚待驗證列表</h5>
+                       <table>
+                              <thead>
+                                  <tr>
+                                      <th>員工姓名</th>
+                                      <th>員工信箱</th>
+                                      <th>職位</th>
+                                      <th>在職狀況</th>
+                                      <th></th>
+                                  </tr>
+                              </thead>
+                               <tbody>
+                               @foreach ($members as $member)
+                                @if ($member->email_verified == 0)
+                                <tr>
+                                    <td><p>{{ $member->name }}</p></td>
+                                    <td>{{ $member->email }}</td>
+                                    <td>{{ $identityMap[$member->identity_perm] ?? '未知身份' }}</td>
+                                    <td>{{ $member->stat_info ?? '未知' }}</td>
+                                    <td>
+                                         <form method="POST" action="{{ route('company.members.destroy', $member->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="delete-button">刪除</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endif
+                                @endforeach
+                               </tbody>
+                       </table>
                  
                            
                    </div>
@@ -77,15 +110,39 @@
 
                     
                 <span id="position-error">[ 在職狀況下，廠長和採購的身份只能各有一位 ]</span>
+
+                @if (session('success'))
+                    <div class="alert alert-success popup">
+                        {{ session('success') }}
+                    </div>
+                @endif
                    
                      
             </div>
 
         </div>
+        
 
     </div>
 
    </main>
+   <script>
+    // 選取所有的刪除按鈕
+    var deleteButtons = document.querySelectorAll('.delete-button');
+
+    // 對每個刪除按鈕添加點擊事件處理程序
+    deleteButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            // 彈出確認視窗，讓使用者確定是否刪除
+            var shouldDelete = confirm('確定要刪除這個項目嗎？');
+            
+            // 如果使用者點擊確認，則提交表單；否則取消
+            if (!shouldDelete) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
    <script>
     $(document).ready(function() {
     // 監聽職位和在職狀況選擇框的變化事件

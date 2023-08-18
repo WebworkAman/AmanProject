@@ -103,6 +103,7 @@ Route::get('/companyMemberList',[MemberSessionController::class,'companyMemberLi
 //公司群組修改會員
 Route::get('/updateStatus', [MemberSessionController::class, 'updateStatusView'])->name('members.updateStatusView');
 Route::put('/updateStatus/{id}', [MemberSessionController::class, 'updateStatus'])->name('members.updateStatus');
+Route::delete('/updateStatus/{member}', [MemberSessionController::class, 'companyMembersDestroy'])->name('company.members.destroy');
 //公司資料頁面
 Route::get('/company/{companyId}',[MemberSessionController::class,'company'])->name('company');
 Route::put('/company/{companyId}',[MemberSessionController::class,'companyUpdate'])->name('companyUpdate');
