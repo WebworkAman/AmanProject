@@ -20,14 +20,30 @@
                                                 <form method="POST" action="{{ route('members.destroy', $member->id) }}">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit">刪除</button>
+                                                    <button type="submit" class="delete-button">刪除</button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                </tbody>
                        </table>   
-                       
+                       <script>
+                              // 選取所有的刪除按鈕
+                              var deleteButtons = document.querySelectorAll('.delete-button');
+
+                              // 對每個刪除按鈕添加點擊事件處理程序
+                              deleteButtons.forEach(function(button) {
+                                  button.addEventListener('click', function(event) {
+                                      // 彈出確認視窗，讓使用者確定是否刪除
+                                      var shouldDelete = confirm('確定要刪除這個項目嗎？');
+            
+                                      // 如果使用者點擊確認，則提交表單；否則取消
+                                      if (!shouldDelete) {
+                                          event.preventDefault();
+                                      }
+                                  });
+                              });
+                      </script>
                        @stack('scripts')
 </div>
 

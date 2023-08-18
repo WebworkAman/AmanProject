@@ -21,15 +21,20 @@ class MemberController extends Controller
     public function AdminStore(Request $request){
         $request->validate([
             'name'=>'required',
+            'company_ERP_id'=>'required',
             'email'=>'required|email|unique:members',
             'password'=>'required|min:5|max:18',
             ]);
-
+            
+            $emailVerified = 1 ;
             $password=\Hash::make($request->password);
             $member = Member::create([
                 'name'=> $request->name,
+                'company_ERP_id'=>$request->company_ERP_id,
                 'email' => $request->email,
+                'email_verified'=>$emailVerified,
                 'password' => $password,
+
             ]);
 
             return redirect()->route('faqs.index');

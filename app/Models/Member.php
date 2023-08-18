@@ -21,7 +21,7 @@ class Member extends Model
     // ];
     protected $fillable = [
         // Original fields
-        'name', 'email', 'password',
+        'name', 'email', 'password','email_verified',
         // New fields
         'company_ERP_id','company_tax_id','identity_perm', 'stat_info',
         // Company basic data fields

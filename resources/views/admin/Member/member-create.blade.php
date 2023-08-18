@@ -33,6 +33,13 @@
                            <p class="text-danger">@error('name') {{$message}} @enderror</p>
                            </label>
                        </div>
+
+                       <div class="form-group">
+                          <label class="company_ERP_id">
+                          <input type="text" name="company_ERP_id" id="company_ERP_id" placeholder="輸 入 客 戶 編 號" value="{{old('company_ERP_id')}}">
+                          <p class="text-danger">@error('email') {{$message}} @enderror</p>
+                          </label>
+                       </div>
  
                        <div class="form-group">
                           <label class="input">
