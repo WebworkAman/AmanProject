@@ -29,9 +29,9 @@
 
             <div class="formgroup">
                 <label for="company_address">公司地址 ：</label>
-                <ul>
+                <!-- <ul>
                     <li>
-                        <span>*國家</span> <input type="text" name="company_address[country]" id="country" value="{{ old('company_address.country',$company_address->country ?? '') }}" required>
+                        <span>國家</span> <input type="text" name="company_address[country]" id="country" value="{{ old('company_address.country',$company_address->country ?? '') }}" required>
                         @error('company_address.country[0]')
                          <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -40,6 +40,36 @@
                     <li><span>區域</span><input type="text" name="company_address[region]" id="region" value="{{ $company_address->region ?? '' }}"></li>
                     <li><span>城市</span><input type="text" name="company_address[city]" id="city" value="{{ $company_address->city ?? '' }}"></li>
                     <li><span>街/路名</span><input type="text" name="company_address[street]" id="street" value="{{ $company_address->street ?? '' }}"></li>
+                </ul> -->
+
+                <ul>
+                    <li>
+                        <span>國家(*)</span> <input type="text" name="company_address[country]" id="country">
+                        @error('company_address.country')
+                         <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </li>
+                    <li>
+                        <span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code" value="{{ $postalCode ?? '' }}">
+                    </li>
+                    <li>
+                        <span>區域(*)</span><input type="text" name="company_address[region]" id="region" value="{{ $company_address->region ?? '' }}">
+                        @error('company_address.region')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </li>
+                    <li>
+                        <span>城市(*)</span><input type="text" name="company_address[city]" id="city" value="{{ $cityRegionStreet ?? '' }}">
+                        @error('company_address.city')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </li>
+                    <li>
+                        <span>街/路名(*)</span><input type="text" name="company_address[street]" id="street" value="{{ $company_address->street ?? '' }}">
+                        @error('company_address.street')
+                          <p class="text-danger">{{ $message }}</p>
+                        @enderror
+                    </li>
                 </ul>
             </div>
 
@@ -82,7 +112,6 @@
 
             <div class="formgroup">
                 <label for="company_website">公司網址 ：</label>
-                <span>WWW.</span>
                 <input type="text" name="company_website" id="company_website" value="{{ $crmMainCustInfo ?? ''->company_website ?? '' }}">
             </div>
 
@@ -92,9 +121,11 @@
             </div>
 
             <div class="formgroup phone_type">
-                <label for="company_purchase_person">採購人員 ：</label>     
+                <label for="company_purchase_person">採購人員 ：</label>
                 <ul>
                     <li><span>姓名</span><input type="text" name="company_purchase_person_name" id="company_purchase_person_name" value="{{ $crmMainCustInfo ?? ''->company_purchase_person_name ?? '' }}"></li>
+                </ul>     
+                <ul>
                     <li><span>國碼</span><input type="text" name="company_purchase_person_phone[purchase_country_code]" id="purchase_country_code" value="{{ $companyPurchasePerson->country_code ?? '' }}"></li>
                     <li><span>區碼</span><input type="text" name="company_purchase_person_phone[purchase_area_code]" id="purchase_area_code" value="{{ $companyPurchasePerson->area_code ?? '' }}"></li>
                 </ul>
@@ -134,10 +165,7 @@
                         @enderror
                     </li>
                     <li>
-                        <span>郵遞區號(*)</span><input type="text" name="company_address[postal_code]" id="postal_code" value="{{ $postalCode ?? '' }}">
-                        @error('company_address.postal_code')
-                         <p class="text-danger">{{ $message }}</p>
-                        @enderror
+                        <span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code" value="{{ $postalCode ?? '' }}">
                     </li>
                     <li>
                         <span>區域(*)</span><input type="text" name="company_address[region]" id="region" value="{{ $company_address->region ?? '' }}">
@@ -183,8 +211,8 @@
        
                  <ul>
                      <li><span>國碼</span><input type="text" name="company_phone[country_code_1]" id="country_code_1" value="{{ $companyPhones[0]['country_code_1'] ?? '' }}"></li>
-                     <li><span>區碼</span><input type="text" name="company_phone[area_code_1]" id="area_code_1" value="{{ $phoneAreaCode }}"></li>
-                     <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_1]" id="phone_number_1" value="{{ $phoneDigits }}"></li>
+                     <li><span>區碼</span><input type="text" name="company_phone[area_code_1]" id="area_code_1" value="{{ $companyPhones[0]['area_code_1'] ?? '' }}"></li>
+                     <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_1]" id="phone_number_1" value="{{ $companyPhones[0]['phone_number_1'] ?? '' }}"></li>
                  </ul>
                  <ul>
                      <li><span>國碼</span><input type="text" name="company_phone[country_code_2]" id="country_code_2" value="{{ $companyPhones[1]['country_code_2'] ?? '' }}"></li>
@@ -222,7 +250,6 @@
 
             <div class="formgroup">
                 <label for="company_website">公司網址 ：</label>
-                <span>WWW.</span>
                 <input type="text" name="company_website" id="company_website" value="{{ $crmMainCustInfo ?? ''->company_website ?? '' }}">
             </div>
 
@@ -232,9 +259,11 @@
             </div>
 
             <div class="formgroup phone_type">
-                <label for="company_purchase_person">採購人員 ：</label>     
+                <label for="company_purchase_person">採購人員 ：</label>    
                 <ul>
-                    <li><span>姓名</span><input type="text" name="company_purchase_person_name" id="company_purchase_person_name" value="{{ $crmMainCustInfo ?? ''->company_purchase_person_name ?? '' }}"></li>
+                   <li><span>姓名</span><input type="text" name="company_purchase_person_name" id="company_purchase_person_name" value="{{ $crmMainCustInfo ?? ''->company_purchase_person_name ?? '' }}"></li>
+                </ul> 
+                <ul>
                     <li><span>國碼</span><input type="text" name="company_purchase_person_phone[purchase_country_code]" id="purchase_country_code" value="{{ $companyPurchasePerson->country_code ?? '' }}"></li>
                     <li><span>區碼</span><input type="text" name="company_purchase_person_phone[purchase_area_code]" id="purchase_area_code" value="{{ $companyPurchasePerson->area_code ?? '' }}"></li>
                 </ul>
@@ -272,6 +301,7 @@
                 $('#companyDataEdit').toggle();
             });
         })
+        
     </script>
 
 

@@ -221,8 +221,30 @@ class MemberSessionController extends Controller
         // 處理編輯模式表單提交
         public function CompanyUpdate(Request $request)
         {
+            
             $companyId = $request->input('company_id');
             $company = CRM_MainCust_Info::findOrFail($companyId);
+
+            $updateRules = [
+                'company_name' => 'required',
+                'company_address.country' => 'required',
+                'company_address.region' => 'required',
+                'company_address.city' => 'required',
+                'company_address.street' => 'required',
+                // 添加其他需要更新的欄位的驗證
+            ];
+
+            $updateValidator = Validator::make($request->all(), $updateRules);
+
+            if ($updateValidator->fails()) {
+
+                return back()
+                    ->withErrors($updateValidator)
+                    ->withInput()
+                    ->with('editMode',true); //將editMode 變數傳遞回視圖
+            }
+
+
             $companyAddress = [
                 'country' => $request->input('company_address.country'),
                 'postal_code' => $request->input('company_address.postal_code'),
@@ -387,7 +409,6 @@ class MemberSessionController extends Controller
          $rules = [
             'company_name' => 'required',
             'company_address.country' => 'required',
-            'company_address.postal_code' => 'required',
             'company_address.region' => 'required',
             'company_address.city' => 'required',
             'company_address.street' => 'required',

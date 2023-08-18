@@ -110,7 +110,7 @@ Route::put('/company/{companyId}',[MemberSessionController::class,'companyUpdate
 Route::get('/companyCreate/{companyId}',[MemberSessionController::class,'companCreateShow'])->name('companyCreateShow');
 Route::post('/companyCreate/{companyId}',[MemberSessionController::class,'companyCreate'])->name('companyCreate');
 // 在 web.php 裡面新增 /company 路由處理函式
-Route::get('/companyView', [MemberSessionController::class, 'companyView'])->name('companyView');
+// Route::get('/companyView', [MemberSessionController::class, 'companyView'])->name('companyView');
 //公司購買機器資料
 Route::get('/companyMachineList',[MemberSessionController::class,'companyMachineList'])->name('companyMachineList');
 

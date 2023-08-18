@@ -451,11 +451,11 @@ main #submitButton {
   letter-spacing: 2px;
 }
 main .companyData, main .companyDataEdit {
-  width: 50vw;
+  width: 60vw;
   border: 1px solid rgb(2, 24, 18);
   border-radius: 10px;
   margin: 0 auto;
-  padding-left: 20px;
+  padding-left: 60px;
   text-align: center;
 }
 main .companyData h2, main .companyDataEdit h2 {
@@ -472,6 +472,7 @@ main .companyData .formgroup, main .companyDataEdit .formgroup {
 main .companyData .formgroup .text-danger, main .companyDataEdit .formgroup .text-danger {
   margin-left: 30px;
   color: #ca2929;
+  font-size: 0.9rem;
 }
 main .companyData .formgroup label, main .companyDataEdit .formgroup label {
   display: block;
@@ -488,17 +489,34 @@ main .companyData .formgroup span, main .companyDataEdit .formgroup span {
 }
 main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   border: 0;
+  text-align: center;
   width: 13vw;
   height: 30px;
-  font-size: 1.2rem;
-  padding-left: 15px;
+  font-size: 1rem;
   color: black;
   background-color: transparent;
   border-bottom: 1px solid rgb(61, 79, 69);
 }
+main .companyData .formgroup #company_name, main .companyDataEdit .formgroup #company_name {
+  width: 30vw;
+}
+main .companyData .formgroup #street, main .companyDataEdit .formgroup #street {
+  width: 20vw;
+  padding-left: 15px;
+  text-align: start;
+}
+main .companyData .formgroup #company_website, main .companyDataEdit .formgroup #company_website {
+  width: 15vw;
+}
 @media (max-width: 1200px) {
   main .companyData .formgroup input, main .companyDataEdit .formgroup input {
     width: 20vw;
+  }
+  main .companyData .formgroup #company_website, main .companyDataEdit .formgroup #company_website {
+    width: 20vw;
+  }
+  main .companyData .formgroup #street, main .companyDataEdit .formgroup #street {
+    width: 35vw;
   }
 }
 main .companyData .formgroup select, main .companyDataEdit .formgroup select {
@@ -509,7 +527,7 @@ main .companyData .formgroup select, main .companyDataEdit .formgroup select {
 }
 main .companyData .formgroup ul, main .companyDataEdit .formgroup ul {
   flex-wrap: wrap;
-  width: 39vw;
+  width: 50vw;
 }
 main .companyData .formgroup ul li, main .companyDataEdit .formgroup ul li {
   margin: 10px;
@@ -550,10 +568,25 @@ main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formg
   text-align: center;
 }
 main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
-  width: 7vw;
+  width: 8vw;
 }
-main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3 {
-  width: 10vw;
+main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyData .formgroup.phone_type ul li #purchase_phone_number, main .companyData .formgroup.phone_type ul li #fax_number, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #purchase_phone_number, main .companyDataEdit .formgroup.phone_type ul li #fax_number {
+  width: 24vw;
+}
+@media (max-width: 1200px) {
+  main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyData .formgroup.phone_type ul li #fax_number, main .companyData .formgroup.phone_type ul li #purchase_phone_number, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #fax_number, main .companyDataEdit .formgroup.phone_type ul li #purchase_phone_number {
+    width: 29vw;
+  }
+}
+main .companyData .formgroup.phone_type ul #company_purchase_person_name, main .companyDataEdit .formgroup.phone_type ul #company_purchase_person_name {
+  width: 22vw;
+}
+@media (max-width: 1200px) {
+  main .companyData, main .companyDataEdit {
+    width: 66vw;
+    padding-left: 80px;
+    padding-top: 30px;
+  }
 }
 main .memberBasicDate {
   width: 55vw;

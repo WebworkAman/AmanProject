@@ -339,12 +339,12 @@ main {
         letter-spacing: 2px;
      }
     .companyData,.companyDataEdit{
-        width: 50vw;
+        width: 60vw;
         border: 1px solid rgb(2, 24, 18);
         border-radius: 10px;
 
         margin:0 auto;
-        padding-left: 20px;
+        padding-left: 60px;
         text-align: center;
 
         h2{
@@ -361,7 +361,8 @@ main {
             
             .text-danger{     
                 margin-left: 30px;
-                color: #ca2929;                       
+                color: #ca2929; 
+                font-size: .9rem;                      
             }
 
             label{
@@ -380,22 +381,43 @@ main {
 
             input {
                 border:0;
-               
+               text-align: center;
                 width: 13vw;
                 height: 30px;
                 // min-width: 250px;
                 // margin-bottom: 15px;
-                font-size: 1.2rem;
-                padding-left: 15px;
+                font-size: 1rem;
                 color: black;
                 background-color: transparent;
                 border-bottom: 1px solid rgb(61, 79, 69);
+
+            
         
+            }
+            #company_name{
+                width: 30vw;
+            }
+            #street{
+                width: 20vw;
+                padding-left: 15px;
+                text-align: start;
+            }
+            #company_website{
+                width: 15vw;
             }
             @media (max-width:1200px){
                 input {                 
-                    width: 20vw;          
+                    width: 20vw; 
+                            
                 }
+                #company_website{
+                    width: 20vw;
+                }
+                #street{
+                    width: 35vw;
+                }
+               
+                
             }
 
             select{
@@ -407,7 +429,7 @@ main {
 
             ul{
                 flex-wrap: wrap;
-                width: 39vw;
+                width: 50vw;
                 li{
                     margin: 10px;
                     display: flex;
@@ -455,16 +477,38 @@ main {
                       text-align: center;
                   }
                   input{
-                      width: 7vw;
+                      width: 8vw;
                   }
-                  #phone_number_1,#phone_number_2,#phone_number_3{
-                    width:10vw;
+                  #phone_number_1,#phone_number_2,#phone_number_3,#purchase_phone_number,#fax_number{
+                    width:24vw;
                   }
+                  @media (max-width:1200px){
+                    #phone_number_1,#phone_number_2,#phone_number_3,#fax_number,#purchase_phone_number{
+                        width:29vw;
+                      }
+                    
+            
+                }
+
+              }
+              #company_purchase_person_name{
+                width: 22vw;
               }
             }
           
       }
         
+    }
+
+    @media (max-width:1200px){
+        .companyData,.companyDataEdit{
+            width: 66vw;
+            padding-left: 80px;
+            padding-top: 30px;
+            
+        }
+        
+
     }
 
 
