@@ -151,6 +151,7 @@ class MemberSessionController extends Controller
               //更新密碼
               $member = $verification->member;
               $member -> password = Hash::make($request->password);
+              $member -> stat_info = 'y';
               $member -> save();
 
               return redirect()->route('members.session.create')->with('info','密碼設置成功，請登入');
@@ -259,7 +260,7 @@ class MemberSessionController extends Controller
                 'company_tax_id' => $request->input('company_tax_id'),
             ]);
     
-        $company->update([
+            $company->update([
                 'company_name' => $request->input('company_name'),
                 // 在這裡更新其他資料，根據需要添加其他資料的更新
                 'company_address' => $companyAddress,
@@ -551,10 +552,133 @@ class MemberSessionController extends Controller
         ->orderBy('identity_perm')
         ->get();
         
-        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId);
+        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+        return view('members.companyMachines', compact('members','crmMachines','member','crmMainCustInfo'));
+    }
+    public function companyMachineAdd(Request $request){ 
+
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $companyId = $member -> company_ERP_id;
+
+        $members = Member::where('company_ERP_id', $companyId)
+        ->orderBy('identity_perm')
+        ->get();
+        
+        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+        return view('members.companyMachineAdd', compact('members','crmMachines','member','crmMainCustInfo'));
+    }
 
 
-        return view('members.companyMachines', compact('members','crmMachines','member'));
+    public function companyMachineAddPost(Request $request){ 
+
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $companyId = $member -> company_ERP_id;
+        $companyTaxId = $member->company_tax_id;
+        
+        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+
+        // 獲取
+        $selectedOtherPurchaseSourceValue = $request->input('other_purchase_source');
+
+        // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
+        if($selectedOtherPurchaseSourceValue== '6'){
+            $otherPurchaseSource = $request->input('other_other_purchase_source');
+        }else{
+            $otherPurchaseMap = [
+                '1' => '製造商同業',
+                '2' => '代理商',
+                '3' => '貿易商',
+                '4' => '成衣廠',
+                '5' => '針車行',
+            ];
+                    
+            $selectedPurchaseSourceName = isset($otherPurchaseMap[$selectedOtherPurchaseSourceValue]) ? $otherPurchaseMap[$selectedOtherPurchaseSourceValue] : null;
+            $otherPurchaseSource = $selectedPurchaseSourceName;
+        }
+
+        $companyMachine = CRM_Machines::create([
+
+            'company_ERP_id' => $companyId,
+            'company_tax_id' => $companyTaxId,
+
+            //機器基本資料建檔
+            'machine_purchase_date' => $request->machine_purchase_date,
+            'machine_model' => $request->machine_model,
+            'machine_serial' => $request->machine_serial,
+            'installation_company_name' => $request->installation_company_name,
+
+            'installation_company_address' => json_encode([
+                'country' => $request->input('installation_company_address.installation_country'),
+                'postal_code' => $request->input('installation_company_address.installation_postal_code'),
+                'region' => $request->input('installation_company_address.installation_region'),
+                'city' => $request->input('installation_company_address.installation_city'),
+                'street' => $request->input('installation_company_address.installation_street'),
+            ]),
+
+            'installation_company_country' => $request->installation_country,
+            'installation_company_postal_code' => $request->installation_postal_code,
+            'installation_company_region' => $request->installation_region,
+            'installation_company_city' => $request->installation_city,
+            'installation_company_street' => $request->installation_street,
+
+            'installation_vat_number' => $request->installation_vat_number,
+            'installation_company_phone' => json_encode([
+                [
+                    'country_code_1' => $request->input('installation_company_phone.country_code_1'),
+                    'area_code_1' => $request->input('installation_company_phone.area_code_1'),
+                    'phone_number_1' => $request->input('installation_company_phone.phone_ddnumber_1'),
+                ],
+                [
+                    'country_code_2' => $request->input('installation_company_phone.country_code_2'),
+                    'area_code_2' => $request->input('installation_company_phone.area_code_2'),
+                    'phone_number_2' => $request->input('installation_company_phone.phone_number_2'),
+                ],
+                [
+                    'country_code_3' => $request->input('installation_company_phone.country_code_3'),
+                    'area_code_3' => $request->input('installation_company_phone.area_code_3'),
+                    'phone_number_3' => $request->input('installation_company_phone.phone_number_3'),
+                ],
+            ]),
+            'installation_company_fax' => json_encode([
+                'country_code' => $request->input('installation_company_fax.country_code'),
+                'area_code' => $request->input('installation_company_fax.area_code'),
+                'fax_number' => $request->input('installation_company_fax.fax_number'),
+            ]),
+
+            
+            //購入來源
+            'purchase_manufacturer' => $request->purchase_manufacturer,
+            'purchase_manufacturer_person' => $request->purchase_manufacturer_person,
+            'purchase_manufacturer_phone' => $request->purchase_manufacturer_phone,
+
+            'other_purchase_source' => $otherPurchaseSource,
+            'other_purchase_company_name' => $request->other_purchase_company_name,
+            'other_purchase_company_address' => json_encode([
+                'country' => $request->input('other_purchase_company_address.country'),
+                'postal_code' => $request->input('other_purchase_company_address.postal_code'),
+                'region' => $request->input('other_purchase_company_address.region'),
+                'city' => $request->input('other_purchase_company_address.city'),
+                'street' => $request->input('other_purchase_company_address.street'),
+            ]),
+            'other_purchase_tax_id' => $request->other_purchase_tax_id,
+            'other_purchase_company_phone' => json_encode([
+                    'country_code' => $request->input('other_purchase_company_phone.country_code'),
+                    'area_code' => $request->input('other_purchase_company_phone.area_code'),
+                    'phone_number' => $request->input('other_purchase_company_phone.phone_number'),
+
+            ]),
+            'other_purchase_name' => $request->other_purchase_name,
+            'other_purchase_phone' => $request->other_purchase_phone,
+            'other_purchase_description' => $request->other_purchase_description,
+        ]);
+
+        return view('members.companyMachines',compact('member','crmMachines'))->with('info','新增成功');;
     }
 
     

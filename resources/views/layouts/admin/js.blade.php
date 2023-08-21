@@ -95,4 +95,4 @@
               alertElement.style.display = 'none';
           }
       });
-    </script>
+</script>

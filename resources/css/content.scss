@@ -329,6 +329,7 @@ main {
           
         
     }
+
      #toggleEditMode,#ReturnButton{
         color: #273252;
         float: right;
@@ -512,6 +513,145 @@ main {
           
       }
         
+    }
+    .companyDataEdit.Machines-list{
+        .formgroup{
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            
+            .text-danger{     
+                margin-left: 30px;
+                color: #ca2929;                       
+            }
+
+            label{
+                display: block;
+                width: max-content;
+                min-width: 8vw;
+                margin-right: 10px;
+                
+            }
+
+            span{
+                display: block;
+                width: fit-content;
+                margin-right: 20px;
+            }
+
+            input {
+                border:0;
+               
+                width: 13vw;
+                height: 30px;
+                // min-width: 250px;
+                // margin-bottom: 15px;
+                font-size: 1.2rem;
+                padding-left: 15px;
+                background-color: transparent;
+                border-bottom: 1px solid black;
+        
+            }
+
+            select{
+                width: fit-content;
+                height: 30px;
+                padding-left: 10px;
+                font-size: 1.1rem;
+            }
+
+            ul{
+                li{
+                    margin: 10px;
+                    display: flex;
+                    span{
+                        display: block;
+                        width: 100px;
+                    }
+                    input{
+                        margin-left: 10px;
+                    }
+                    p{
+                        line-height: 2.2;
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            textarea{
+
+                width: 20vw;
+                margin-left: 50px;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 1.1rem;
+                height: 40px;
+            }
+
+            
+
+            
+        }
+        .formgroup.phone_type{
+              display: block;
+              label{
+                 margin-bottom: 10px;
+              }
+              ul{
+                display: flex;
+                
+                
+                li{
+                    span{
+                        line-height: 2.2;
+                        text-align: center;
+                    }
+                    input{
+                        width: 7vw;
+                    }
+                }
+              }
+            
+        }
+        .formgroup.installation_type{
+            ul{
+                margin-left:60px;
+                ol{
+                    display: flex;
+                    li{
+                        span{
+                            width: 7vw;
+                            line-height: 2.2;
+                            text-align: center;
+                        }
+                        input{
+                            width: 7vw;
+                        }
+                    }
+                }
+                li{
+
+                    span{
+                        width: fit-content;
+                        line-height: 2.2;
+                    }
+                    ol{
+                       
+                        li{
+                            input{
+                                width: 7vw;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        .formgroup.subBlock{
+            margin-left:60px;
+            margin-bottom: 50px;
+        }
     }
 
     @media (max-width:1200px){

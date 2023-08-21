@@ -596,6 +596,110 @@ main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData
 main .companyData .formgroup.phone_type ul #company_purchase_person_name, main .companyDataEdit .formgroup.phone_type ul #company_purchase_person_name {
   width: 22vw;
 }
+main .companyDataEdit.Machines-list .formgroup {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .companyDataEdit.Machines-list .formgroup .text-danger {
+  margin-left: 30px;
+  color: #ca2929;
+}
+main .companyDataEdit.Machines-list .formgroup label {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 8vw;
+  margin-right: 10px;
+}
+main .companyDataEdit.Machines-list .formgroup span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 20px;
+}
+main .companyDataEdit.Machines-list .formgroup input {
+  border: 0;
+  width: 13vw;
+  height: 30px;
+  font-size: 1.2rem;
+  padding-left: 15px;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+}
+main .companyDataEdit.Machines-list .formgroup select {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+}
+main .companyDataEdit.Machines-list .formgroup ul li {
+  margin: 10px;
+  display: flex;
+}
+main .companyDataEdit.Machines-list .formgroup ul li span {
+  display: block;
+  width: 100px;
+}
+main .companyDataEdit.Machines-list .formgroup ul li input {
+  margin-left: 10px;
+}
+main .companyDataEdit.Machines-list .formgroup ul li p {
+  line-height: 2.2;
+  margin-left: 10px;
+}
+main .companyDataEdit.Machines-list .formgroup textarea {
+  width: 20vw;
+  margin-left: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  height: 40px;
+}
+main .companyDataEdit.Machines-list .formgroup.phone_type {
+  display: block;
+}
+main .companyDataEdit.Machines-list .formgroup.phone_type label {
+  margin-bottom: 10px;
+}
+main .companyDataEdit.Machines-list .formgroup.phone_type ul {
+  display: flex;
+}
+main .companyDataEdit.Machines-list .formgroup.phone_type ul li span {
+  line-height: 2.2;
+  text-align: center;
+}
+main .companyDataEdit.Machines-list .formgroup.phone_type ul li input {
+  width: 7vw;
+}
+main .companyDataEdit.Machines-list .formgroup.installation_type ul {
+  margin-left: 60px;
+}
+main .companyDataEdit.Machines-list .formgroup.installation_type ul ol {
+  display: flex;
+}
+main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li span {
+  width: 7vw;
+  line-height: 2.2;
+  text-align: center;
+}
+main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li input {
+  width: 7vw;
+}
+main .companyDataEdit.Machines-list .formgroup.installation_type ul li span {
+  width: -moz-fit-content;
+  width: fit-content;
+  line-height: 2.2;
+}
+main .companyDataEdit.Machines-list .formgroup.installation_type ul li ol li input {
+  width: 7vw;
+}
+main .companyDataEdit.Machines-list .formgroup.subBlock {
+  margin-left: 60px;
+  margin-bottom: 50px;
+}
 @media (max-width: 1200px) {
   main .companyData, main .companyDataEdit {
     width: 66vw;

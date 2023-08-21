@@ -5,19 +5,18 @@
      <main>
 
 
-     <div class="Show_form member-list">
+     <div class="Show_form Machines-list">
                     <h3>採 購 機 器 資 料 </h3>
                 
-                      @if($member->identity_perm == 1 || $member->identity_perm == 2)
-                      <a class="btn control-option" href="{{route('members.updateStatusView')}}">資料修改</a>
-                      @else
-                      @endif
+                    @if($member->identity_perm == 2)
+                      <a class="btn control-option" href="{{route('companyMachineAdd')}}">新增機器資料</a>
+                    @else
+                    @endif
 
-                    <label for=""><span>公司名稱：</span>{{$crmMachines->installation_company_name?? '尚未建立公司資料'}}</label>
+                    <label for=""><span>公司名稱：</span>{{$crmMainCustInfo->company_name?? '尚未建立公司資料'}}</label>
                      </br>
                      </br>
-                    <label for=""><span>統一編號：</span>{{$crmMachines->company_tax_id?? '尚未建立公司資料'}}</label>
-                    </br>
+                    <label for=""><span>統一編號：</span>{{$crmMainCustInfo->company_tax_id?? '尚未建立公司資料'}}</label>
                       <table>
                               <thead>
                                   <tr>
@@ -36,12 +35,15 @@
                                @foreach ($crmMachines as $crmMachine)
                                     
                                         <tr>
-                                            <td><p>{{ $crmMachine->machine_purchase_date}}</p></td>
-                                            <td>{{ $crmMachine->email }}</td>
-                                        
-                                            <td>{{ $identityMap[$member->identity_perm] ?? '未知身份'}}</td>
-                                            <td></td>
-      
+                                            <td>{{ $crmMachine->machine_purchase_date??''}}</td>
+                                            <td>{{ $crmMachine->installation_company_name??'' }}</td>
+                                            <td>{{ $crmMachine->machine_model ?? ''}}</td>
+                                            <td>{{ $crmMachine->machine_serial ?? ''}}</td>
+                                            <td>{{ $crmMachine->installation_company_country ?? ''}}</td>
+                                            <td>{{ $crmMachine->installation_company_region ?? ''}}</td>
+                                            <td>{{ $crmMachine->installation_company_city ?? ''}}</td>
+                                            <td>{{ $crmMachine->purchase_manufacturer ?? ''}}</td>
+                                            <td>{{ $crmMachine->stat_info ?? ''}}</td>
                                         </tr>
                                     
                                     @endforeach

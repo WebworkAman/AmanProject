@@ -114,6 +114,8 @@ Route::post('/companyCreate/{companyId}',[MemberSessionController::class,'compan
 // Route::get('/companyView', [MemberSessionController::class, 'companyView'])->name('companyView');
 //公司購買機器資料
 Route::get('/companyMachineList',[MemberSessionController::class,'companyMachineList'])->name('companyMachineList');
+Route::get('/companyMachineAdd',[MemberSessionController::class,'companyMachineAdd'])->name('companyMachineAdd');
+Route::post('/companyMachineAdd',[MemberSessionController::class,'companyMachineAddPost'])->name('companyMachineAddPost');
 
 
 //登入首頁

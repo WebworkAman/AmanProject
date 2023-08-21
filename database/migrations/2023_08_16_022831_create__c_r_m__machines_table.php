@@ -21,8 +21,9 @@ class CreateCRMMachinesTable extends Migration
 
             // 將原本的機器基本資料欄位移至新的區塊
             $table->date('machine_purchase_date');
-            $table->string('machine_model',40);
-            $table->string('machine_serial',40)->index();
+            $table->string('machine_model',15);
+            $table->string('machine_serial',15)->index();
+            $table->string('installation_company_name',80);
             
             $table->json('installation_company_address')->nullable();
 
@@ -32,18 +33,18 @@ class CreateCRMMachinesTable extends Migration
             $table->string('installation_company_city',40)->nullable();
             $table->string('installation_company_street',40)->nullable();
 
-            $table->string('installation_company_name',40);
+            
             $table->string('installation_vat_number',10)->nullable();
             $table->json('installation_company_phone');
             $table->json('installation_company_fax')->nullable();
 
-            $table->string('purchase_manufacturer',40)->nullable();
+            $table->string('purchase_manufacturer',80)->nullable();
             $table->string('purchase_manufacturer_person',40)->nullable();
-            $table->string('purchase_manufacturer_phone',40)->nullable();
+            $table->string('purchase_manufacturer_phone',16)->nullable();
 
             // 將原本的聯絡人欄位移至新的區塊
-            $table->string('other_purchase_source',40)->nullable();
-            $table->string('other_purchase_company_name',40)->nullable();
+            $table->string('other_purchase_source',80)->nullable();
+            $table->string('other_purchase_company_name',80)->nullable();
             $table->json('other_purchase_company_address')->nullable();
             $table->string('other_purchase_tax_id',10)->nullable();
             $table->json('other_purchase_company_phone')->nullable();

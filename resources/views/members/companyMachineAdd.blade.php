@@ -1,206 +1,37 @@
- <html>
- <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="../css/register.css">
-</head>
-<body>
-<main>
-<h1 class="topText"><img src="{{asset('imgs/logo-01.png')}}"></h1>
+@extends('layouts.content')
 
-<div class="log">
-<!-- <div class="right">
-    <img src="../imgs/Illustration1.png">
-</div> -->
-<div class="left">
-    <h1>新 會 員 註 冊</h1>
-    <div class="fontline"></div>
-    <p style="text-align:end;"> * 欄位為必填</p>
-    <div class="txt">
+@section('content')
 
-        <!-- <p>已經是會員?</p><a href="{{route('members.session.create')}}">  點 此 登 入 吧</a> -->
-    </div>   
-    <form
-     method="post"
-     action="{{ route('members.store') }}"
-    >
-       @csrf
+     <main>
 
+
+     <div class="Show_form">
+                    
+     <!-- <h3>新 增 機 器 資 料 </h3> -->
+                
+                    
+     <a class="btn control-option" href="{{route('companyMachineList')}}">返回</a>
+                    
+
+                    
+
+  
 
     
-    <div class="baseArea">
-
-    <div class="formgroup">
-        <label for="name">* 姓名 :</label>
-        <input type="text" name="name" value="{{old('name')}}">
-        <br/>
-        <p class="text-danger">@error('name') {{$message}} @enderror</p>
-        
-    </div>
-    <!-- <div class="formgroup">
-        <label class="input" for="phone">手機</label>
-        
-        <input type="text" name="phone" id="phone">
-        
-    </div> -->
-
-    <div class="formgroup">
-       <label class="input"> * 電子郵件 :</label>
-          <input type="email" name="email" value="{{old('email')}}">
-          <p class="text-danger">@error('email') {{$message}} @enderror</p>
-    </div>
-    <div class="formgroup">
-        <label for="identity_perm"> * 註冊人身份</label>
-        <select name="identity_perm" id="identity_perm">
-            <option value="1">採購</option>
-            <option value="2">廠長</option>
-            <option value="3">一般會員</option>
-        </select>
-    </div>
-
-    <div class="formgroup">
-        <label for="company_tax_id">統一編號 ：</label>
-        <input type="text" name="company_tax_id" id="company_tax_id" value="{{old('company_tax_id')}}">
-        <br/>
-        <p class="text-danger">@error('company_tax_id') {{$message}} @enderror</p>
-    </div>
-    <!-- <div class="formgroup">
-       <label class="input"> 密碼 :</label>        
-          <input type="password" name="password"  id="password" placeholder="請輸入英數混合的密碼" value="{{old('password')}}">
-          <p class="text-danger">@error('password') {{$message}} @enderror</p>
-          <p class="text-danger" id="password-validation-message"></p>
-       
-    </div>
-
-    <div class="formgroup">
-       <label class="input">再次輸入密碼 :</label>
-                 
-           <input type="password" name="password_confirmation" id="password_confirmation" placeholder="請輸入英數混合的密碼" value="{{old('password_confirmation')}}">
-          <p class="text-danger">@error('password_confirmation') {{$message}} @enderror</p>      
-          <span class="text-danger" id="password-match-error"></span>
-    </div> -->
+     <div id="companyDataEdit" class="companyDataEdit Machines-list">
+      
+      <form method="post" action="{{ route('companyMachineAddPost') }}">
+          @method('post') 
+           @csrf
+          
+        <div class="CompanyData-nav">
+               <h2>機器基本資料建檔 (採購註冊)</h2>
+        </div>
     
-    </div>
-
-
-
-    <div class="baseline"></div>
-    <!-- <div>
-        <label for="password">修改密碼</label>
-        <input type="password" name="password" id="password">
-    </div> -->
-
-    <!-- <div>
-        <label for="second_password">第二次登入或以後登入，目的是為(新增)或(修改)必需取得驗證碼</label>
-        <input type="password" name="second_password" id="second_password">
-    </div> -->
-
-    <!-- 公司基本資料 -->
-    <div class="CompanyData-nav" style="display:none;">
-    <h2>一、公司基本資料</h2>
-    <div name="toggleCompanyData" id="toggleCompanyData"><img src="{{asset('imgs/icon/down-arrow.png')}}"></div>
-    </div>
-
-    <div id="companyData" style="display: none;">
-
-    <div class="formgroup">
-        <label for="company_name">公司名稱 ：</label>
-        <input type="text" name="company_name" id="company_name">
-    </div>
-
-    <div class="formgroup">
-        <label for="company_address">公司地址 ：</label>
-        <ul>
-            <li>
-                <span>國家</span> <input type="text" name="company_address[country]" id="country">
-                <p class="text-danger">@error('company_address[country]') {{$message}} @enderror</p>
-            </li>
-            <li><span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code"></li>
-            <li><span>區域</span><input type="text" name="company_address[region]" id="region"></li>
-            <li><span>城市</span><input type="text" name="company_address[city]" id="city"></li>
-            <li><span>街/路名</span><input type="text" name="company_address[street]" id="street"></li>
-        </ul>
-    </div>
-
-    <!-- <div class="formgroup">
-        <label for="company_tax_id">統一編號 ：</label>
-        <input type="text" name="company_tax_id" id="company_tax_id">
-    </div> -->
-
-    <div class="formgroup phone_type">
-        <label for="company_phone">公司電話 ：</label>
-       
-        <ul>
-            <li><span>國碼</span><input type="text" name="company_phone[country_code_1]" id="country_code_1"></li>
-            <li><span>區碼</span><input type="text" name="company_phone[area_code_1]" id="area_code_1"></li>
-            <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_1]" id="phone_number_1"></li>
-        </ul>
-        <ul>
-            <li><span>國碼</span><input type="text" name="company_phone[country_code_2]" id="country_code_2"></li>
-            <li><span>區碼</span><input type="text" name="company_phone[area_code_2]" id="area_code_2"></li>
-            <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_2]" id="phone_number_2"></li>
-        </ul>
-        <ul>
-            <li><span>國碼</span><input type="text" name="company_phone[country_code_3]" id="country_code_3"></li>
-            <li><span>區碼</span><input type="text" name="company_phone[area_code_3]" id="area_code_3"></li>
-            <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_3]" id="phone_number_3"></li>
-            
-        </ul>
-    </div>
-
-    <div class="formgroup phone_type">
-        <label for="company_fax">公司傳真 ：</label>
-        <ul>
-            <li><span>國碼</span><input type="text" name="company_fax[country_code]" id="country_code"></li>
-            <li><span>區碼</span><input type="text" name="company_fax[area_code]" id="area_code"></li>
-            <li><span>電話號碼</span><input type="text" name="company_fax[phone_number]" id="phone_number"></li>
-        </ul>
-    </div>
-
-    <div class="formgroup">
-        <label for="company_website">公司網址 ：</label>
-        <span>WWW.</span>
-        <input type="text" name="company_website" id="company_website">
-    </div>
-
-    <div class="formgroup">
-        <label for="company_ceo">公司負責人(董事長) ：</label>
-        <input type="text" name="company_ceo" id="company_ceo">
-    </div>
-
-    <div class="formgroup phone_type">
-        <label for="company_purchase_person">採購人員 ：</label>     
-        <ul>
-        <li><span>姓名</span><input type="text" name="company_purchase_person_name" id="company_purchase_person_name"></li>
-            <li><span>國碼</span><input type="text" name="company_purchase_person_phone[purchase_country_code]" id="purchase_country_code"></li>
-            <li><span>區碼</span><input type="text" name="company_purchase_person_phone[purchase_area_code]" id="purchase_area_code"></li>
-        </ul>
-            <ul>
-            <li><span>電話號碼</span><input type="text" name="company_purchase_person_phone[purchase_phone_number]" id="purchase_phone_number"></li>
-            <li><span>分機</span><input type="text" name="company_purchase_person_phone[purchase_extension]" id="purchase_extension"></li>
-        </ul>
-    </div>
-
-    <div class="formgroup">
-        <label for="company_email">E-mail ：</label>
-        <input type="email" name="company_email" id="company_email">
-    </div>
-
-    <div class="formgroup">
-        <label for="company_other_info">其他說明 ：</label>
-        <input type="text" name="company_other_info" id="company_other_info">
-    </div>
-    <div class="baseline"></div>
-    </div>
-    <!-- 機器基本資料建檔 -->
-    <div class="CompanyData-nav" style="display:none;">
-    <h2>二、機器基本資料建檔 (採購註冊)</h2>
-    <div name="toggleMachineData" id="toggleMachineData"><img src="{{asset('imgs/icon/down-arrow.png')}}"></div>
-    </div>
-    
-    <div id="machineData" style="display: none;">
+    <div id="machineData" style="display: block;">
+    <label for=""><span>公司名稱：</span>{{$crmMainCustInfo->company_name?? '尚未建立公司資料'}}</label>                     
+     </br></br>
+     <label for=""><span>統一編號：</span>{{$crmMainCustInfo->company_tax_id?? '尚未建立公司資料'}}</label>
     <div class="formgroup">
         <label for="machine_purchase_date">1. 購買日期</label>
         <input type="date" name="machine_purchase_date" id="machine_purchase_date">
@@ -424,36 +255,23 @@
     </div>
     </div>
 
-<div>
-    <button type="submit">
-         註 冊 提 交
-    </button>
-</div>
 
-@if(Session::has('success'))
-<div class="alert alert-success popup">{{Session::get('success')}}</div>
-@endif
-@if(Session::has('fail'))
-<div class="alert alert-danger popup">{{Session::get('fail')}}</div>
-@endif
-
-</form>
+             <div class="baseline"></div>
+             <button id="submitButton">儲存</button>
+        </form> 
+                                                                
+    </div>            
+                       
 </div>
 
 
 
+    </div>
 
+        
+    </main>
 
-
-</div>
-
-
-</main>      
-
-</body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
+    <script>
     // 當頁面載入完成時
     $(document).ready(function(){
         // 監聽選擇聯絡人的 select 元素
@@ -532,78 +350,4 @@
     })
 
 </script>
-
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const passwordInput = document.getElementById("password");
-        const confirmPasswordInput = document.getElementById("password_confirmation");
-        const errorContainer = document.getElementById("password-match-error");
-
-        confirmPasswordInput.addEventListener("keyup", function() {
-            const password = passwordInput.value;
-            const confirmPassword = this.value;
-
-            if (password !== confirmPassword) {
-                errorContainer.textContent = "輸入密碼不相符";
-            } else {
-                errorContainer.textContent = "";
-            }
-        });
-    });
-</script> -->
-
-<script>
-    document.getElementById('toggleCompanyData').addEventListener('click', function() {
-        var companyData = document.getElementById('companyData');
-        if (companyData.style.display === 'none') {
-            companyData.style.display = 'block';
-        } else {
-            companyData.style.display = 'none';
-        }
-    });
-</script>
-<script>
-    document.getElementById('toggleMachineData').addEventListener('click', function() {
-        var companyData = document.getElementById('machineData');
-        if (companyData.style.display === 'none') {
-            companyData.style.display = 'block';
-        } else {
-            companyData.style.display = 'none';
-        }
-    });
-</script>
-<script>
-        // 在點擊其他區域時隱藏 alert-success 訊息視窗
-          document.addEventListener('click', function(event) {
-          var targetElement = event.target;
-          var alertElement = document.querySelector('.alert');
-
-          if (alertElement && !alertElement.contains(targetElement)) {
-              alertElement.style.display = 'none';
-          }
-      });
-</script>
-<!-- <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const passwordInput = document.getElementById("password");
-        const validationMessage = document.getElementById("password-validation-message");
-
-        passwordInput.addEventListener("input", function() {
-            const password = this.value;
-
-            // 使用正則表達式檢查密碼是否包含至少一個字母和至少一個數字
-            const hasLetterAndNumber = /^(?=.*[a-zA-Z])(?=.*\d).*$/.test(password);
-
-            if (!hasLetterAndNumber) {
-                validationMessage.textContent = "密碼必須包含至少一個字母和至少一個數字";
-            } else {
-                validationMessage.textContent = "";
-            }
-        });
-    });
-</script> -->
-
-
- </html>  
-   
-
+@endsection 
