@@ -8,6 +8,7 @@ use App\Models\VerifyMember;
 use App\Models\Member;
 use App\Models\CRM_MainCust_Info;
 use App\Models\CRM_Machines;
+use App\Models\CRM_Machines_Contactlist;
 use App\Models\Tfm01;
 use App\Models\Tbm01;
 
@@ -334,7 +335,7 @@ class MemberSessionController extends Controller
             ->get();
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
-
+           
 
             return view('members.updateStatus', compact('members','crmMainCustInfo'));
         }
@@ -554,6 +555,8 @@ class MemberSessionController extends Controller
         
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+        
+        
 
         return view('members.companyMachinesList', compact('members','crmMachines','member','crmMainCustInfo'));
     }
@@ -566,12 +569,13 @@ class MemberSessionController extends Controller
         ->orderBy('identity_perm')
         ->get();
         
+        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMachine = CRM_Machines::find($machine);
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+         
+        $crmMachinesContactlist = CRM_Machines_Contactlist::where('crm_machine_id',$machine)->get();
 
-        // dd($crmMachine);
-
-        return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo'));
+        return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo','crmMachines','crmMachinesContactlist'));
     }
     public function companyMachineAdd(Request $request){ 
 

@@ -22,10 +22,10 @@ class CreateCRMMachinesContactlistTable extends Migration
 
             $table->string('contact_person_position',30);
             $table->string('contact_person_name',40);
-            $table->Json('contact_person_phone');
-            $table->string('contact_person_mobile',30);
-            $table->string('contact_person_email',40);
-            $table->Json('contact_commu_software');
+            $table->Json('contact_person_phone')->nullable();;
+            $table->string('contact_person_mobile',30)->nullable();;
+            $table->string('contact_person_email',40)->nullable();;
+            $table->Json('contact_commu_software')->nullable();;
 
             $table->timestamps();
         });

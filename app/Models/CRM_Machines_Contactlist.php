@@ -9,5 +9,5 @@ class CRM_Machines_Contactlist extends Model
 {
     use HasFactory;
 
-    protected $table = 'CRM_MachinesContactlist';
+    protected $table = 'CRM_Machines_Contactlist';
 }

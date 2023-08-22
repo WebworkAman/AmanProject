@@ -2,18 +2,11 @@
 
 @section('content')
 
-     <main>
+    <main>
 
 
      <div class="Show_form">
-                    
-     <!-- <h3>新 增 機 器 資 料 </h3> -->
-                
-                    
-     
-                    
-
-    
+                 
      <div id="companyDataEdit" class="companyDataEdit Machines-list">
       
           
@@ -25,7 +18,7 @@
         </div>
         <a class="btn control-option" href="{{route('companyMachineList')}}">返回</a>
     
-    <div id="machineData" style="display: block;">
+     <div id="machineData" style="display: block;">
 
     <div class="formgroup">
         <label for="machine_purchase_date">購買日期</label>
@@ -317,7 +310,36 @@
 
     </div>
                                                                    
-    </div>            
+    </div>  
+    
+    <h5>機器聯絡人列表</h5>
+                       <table>
+                              <thead>
+                                  <tr>
+                                      <th>職稱</th>
+                                      <th>姓名</th>
+                                      <th>手機</th>
+                                      <th>電郵</th>
+                                      <th>通訊軟體</th>
+                                  </tr>
+                              </thead>
+                               <tbody>
+                               @foreach ($crmMachinesContactlist as $crmMachinesContact)
+                                    
+                                        <tr>
+                                            <td>{{ $crmMachinesContact->contact_person_position??''}}</td>
+                                            <td>{{ $crmMachinesContact->contact_person_name??'' }}</td>
+                                            <td>{{ $crmMachinesContact->contact_person_mobile?? ''}}</td>
+                                            <td>{{ $crmMachinesContact->contact_person_email?? ''}}</td>
+                                            <td>{{ $crmMachinesContact->contact_commu_software?? ''}}</td>
+                                            
+                                            
+                                            
+                                        </tr>
+                                    
+                                    @endforeach
+                               </tbody>
+                       </table>
                        
 </div>
 
