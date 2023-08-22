@@ -16,7 +16,9 @@ class CRM_Machines extends Model
         'company_ERP_id','company_tax_id','identity_perm', 'stat_info',
         // Machine basic data fields
         'machine_purchase_date', 'machine_model', 'machine_serial', 'installation_company_name',
-        'installation_company_address', 'installation_vat_number', 'installation_company_phone',
+        'installation_company_address',
+        'installation_company_country','installation_company_postal_code', 'installation_company_region','installation_company_city','installation_company_street',
+        'installation_vat_number', 'installation_company_phone',
         'installation_company_fax',
         // Purchase source fields
         'purchase_manufacturer', 'purchase_manufacturer_person', 'purchase_manufacturer_phone',

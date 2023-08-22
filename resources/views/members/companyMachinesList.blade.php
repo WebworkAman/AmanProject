@@ -8,7 +8,7 @@
      <div class="Show_form Machines-list">
                     <h3>採 購 機 器 資 料 </h3>
                 
-                    @if($member->identity_perm == 2)
+                    @if($member->identity_perm == 1)
                       <a class="btn control-option" href="{{route('companyMachineAdd')}}">新增機器資料</a>
                     @else
                     @endif
@@ -29,6 +29,7 @@
                                       <th>城市</th>
                                       <th>購入來源</th>
                                       <th>使用狀況</th>
+                                      <th></th>
                                   </tr>
                               </thead>
                                <tbody>
@@ -42,8 +43,36 @@
                                             <td>{{ $crmMachine->installation_company_country ?? ''}}</td>
                                             <td>{{ $crmMachine->installation_company_region ?? ''}}</td>
                                             <td>{{ $crmMachine->installation_company_city ?? ''}}</td>
-                                            <td>{{ $crmMachine->purchase_manufacturer ?? ''}}</td>
-                                            <td>{{ $crmMachine->stat_info ?? ''}}</td>
+                                            @if($crmMachine->purchase_manufacturer == 4)
+                                            
+                                              
+                                               
+                                              <td>其他:{{ $crmMachine->other_purchase_source}}</td>
+                                     
+                                               
+                                             
+                                            @else
+                                               
+                                               @php
+                                                   $manufacturerMap = [
+                                                       1 => '台灣歐西馬股份有限公司',
+                                                       2 => '速飛得(中國)',
+                                                       3 => '廣州貴鵬',
+                                                       4 => '其他管道'
+                                                   ];
+                                               @endphp
+                                               <td>{{ $manufacturerMap[$crmMachine->purchase_manufacturer] ?? '未知身份'}}</td>
+                                            @endif
+                                            
+                                            @if($crmMachine->stat_info == 'y')                                       
+                                               <td>使用中</td>
+                                            @elseif($crmMachine->stat_info == 'n')
+                                               <td>停用</td>
+                                            @else
+                                               <td></td>
+                                            @endif
+                                            <td><a href="{{ route('companyMachineData', $crmMachine) }}">檢視</a></td>
+                                            
                                         </tr>
                                     
                                     @endforeach

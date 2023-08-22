@@ -555,7 +555,23 @@ class MemberSessionController extends Controller
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
-        return view('members.companyMachines', compact('members','crmMachines','member','crmMainCustInfo'));
+        return view('members.companyMachinesList', compact('members','crmMachines','member','crmMainCustInfo'));
+    }
+    public function companyMachineData(Request $request,$machine){ 
+
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $companyId = $member -> company_ERP_id;
+
+        $members = Member::where('company_ERP_id', $companyId)
+        ->orderBy('identity_perm')
+        ->get();
+        
+        $crmMachine = CRM_Machines::find($machine);
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+        // dd($crmMachine);
+
+        return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo'));
     }
     public function companyMachineAdd(Request $request){ 
 
@@ -569,6 +585,7 @@ class MemberSessionController extends Controller
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
+
         return view('members.companyMachineAdd', compact('members','crmMachines','member','crmMainCustInfo'));
     }
 
@@ -581,6 +598,7 @@ class MemberSessionController extends Controller
         
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+        $statInfo = 'y';
 
 
         // 獲取
@@ -602,6 +620,7 @@ class MemberSessionController extends Controller
             $otherPurchaseSource = $selectedPurchaseSourceName;
         }
 
+
         $companyMachine = CRM_Machines::create([
 
             'company_ERP_id' => $companyId,
@@ -621,11 +640,18 @@ class MemberSessionController extends Controller
                 'street' => $request->input('installation_company_address.installation_street'),
             ]),
 
-            'installation_company_country' => $request->installation_country,
-            'installation_company_postal_code' => $request->installation_postal_code,
-            'installation_company_region' => $request->installation_region,
-            'installation_company_city' => $request->installation_city,
-            'installation_company_street' => $request->installation_street,
+            // 'installation_company_country' => $request->input('installation_company_address.installation_country'),
+            // 'installation_company_postal_code' => $request->input('installation_company_address.installation_postal_code'),
+            // 'installation_company_region' => $request->input('installation_company_address.installation_region'),
+            // 'installation_company_city' => $request->input('installation_company_address.installation_city'),
+            // 'installation_company_street' => $request->input('installation_company_address.installation_street'),
+
+
+            'installation_company_country' => $request->installation_company_address['installation_country'],
+            'installation_company_postal_code' => $request->installation_company_address['installation_postal_code'],
+            'installation_company_region' => $request->installation_company_address['installation_region'],
+            'installation_company_city' => $request->installation_company_address['installation_city'],
+            'installation_company_street' => $request->installation_company_address['installation_street'],
 
             'installation_vat_number' => $request->installation_vat_number,
             'installation_company_phone' => json_encode([
@@ -676,9 +702,10 @@ class MemberSessionController extends Controller
             'other_purchase_name' => $request->other_purchase_name,
             'other_purchase_phone' => $request->other_purchase_phone,
             'other_purchase_description' => $request->other_purchase_description,
+            'stat_info' => $statInfo,
         ]);
 
-        return view('members.companyMachines',compact('member','crmMachines'))->with('info','新增成功');;
+        return redirect()->route('companyMachineList')->with('info','新增成功');;
     }
 
     

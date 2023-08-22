@@ -10,7 +10,7 @@
      <!-- <h3>新 增 機 器 資 料 </h3> -->
                 
                     
-     <a class="btn control-option" href="{{route('companyMachineList')}}">返回</a>
+     <a class="btn control-option" href="{{route('companyMachineList')}}" style="width:112px;">返回</a>
                     
 
                     
@@ -103,7 +103,7 @@
 
     </div>
 
-    <div class="formgroup">
+    <!-- <div class="formgroup">
         <label for="contact_person_position">5. 聯絡人</label>
         <select name="contact_person_position" id="contact_person_position">
             <option value="1">廠長</option>
@@ -162,15 +162,14 @@
         </select>
             
         
-        <ul>
+         <ul>
             <li><input type="text" name="other_contact_software_type" id="other_contact_software_type" placeholder="請輸入你的通訊軟體" style="display: none;"></li>
             <li><p>ID ：</p><input type="text" name="contact_software_data[software_id]" id="contact_software_id"></li>
-        </ul>
-        
-    </div>
+         </ul>        
+    </div> -->
 
     <div class="formgroup">
-        <label for="purchase_manufacturer">6. 購入來源｜製造商</label>
+        <label for="purchase_manufacturer">5. 購入來源｜製造商</label>
         <select name="purchase_manufacturer" id="purchase_manufacturer">
             <option value="1">台灣歐西瑪股份有限公司</option>
             <option value="2">速飛得(中國)</option>
