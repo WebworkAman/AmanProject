@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\OrderController; 
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Controls\PageController as ControlsPageController;
 use App\Http\Controllers\AdminController;
@@ -36,7 +36,7 @@ use App\Http\Controllers\LocaleController;
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/',[AdminController::class,'create'])->name('create');
     Route::post('/',[AdminController::class,'login'])->name('login');
- 
+
     Route::get('index',function(){
 
         return view('admin/index');
@@ -69,13 +69,13 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/index/Maintenance-create', [AdminController::class, 'Maintenance_create'])->name('Maintenance.create');
     Route::post('/index/Maintenance-create',[AdminController::class,'Maintenance_store'])->name('Maintenance.store');
     Route::delete('/session',[AdminController::class,'delete'])->name('admin.session.delete');
-    
+
     Route::get('question_select',function(){
         return view('admin/question_select');
     });
  });
 
-//會員登入 Members login -> group 
+//會員登入 Members login -> group
 Route::prefix('members')->name('members.')->group(function () {
     Route::get('/switch-locale/{locale}', [LocaleController::class, 'switchLocale'])->name('switchLocale');
     Route::resource('/',MemberController::class)->only(['create','store']);
@@ -112,18 +112,23 @@ Route::get('/companyCreate/{companyId}',[MemberSessionController::class,'companC
 Route::post('/companyCreate/{companyId}',[MemberSessionController::class,'companyCreate'])->name('companyCreate');
 // 在 web.php 裡面新增 /company 路由處理函式
 // Route::get('/companyView', [MemberSessionController::class, 'companyView'])->name('companyView');
+
 //公司購買機器資料
+
 Route::get('/companyMachineList',[MemberSessionController::class,'companyMachineList'])->name('companyMachineList');
 Route::get('/companyMachineList/{machine}',[MemberSessionController::class,'companyMachineData'])->name('companyMachineData');
 Route::get('/companyMachineAdd',[MemberSessionController::class,'companyMachineAdd'])->name('companyMachineAdd');
 Route::post('/companyMachineAdd',[MemberSessionController::class,'companyMachineAddPost'])->name('companyMachineAddPost');
+
+//購買機器聯絡人資料
+Route::post('/companyMachineList/{machine}/',[MemberSessionController::class,'MachineContactAdd'])->name('MachineContactAdd');
 
 
 //登入首頁
 // Route::get('/', [PageController::class,'home']);
 //顯示產品系列
 // Route::get(
-//     '/{id}', 
+//     '/{id}',
 //     [PageController::class,'home']
 // )->where('id','[0-9]+');
 // Route::get('/OC40N02', function () {
@@ -145,7 +150,7 @@ Route::get('/forbid', [FAQController::class, 'forbid'])->name('faqs.forbid');
 
 //<*--------  驗布 -----------*>
 
-Route::get('/inspection', function () { 
+Route::get('/inspection', function () {
 return view('product/category/inspection');});
 
 // Route::get('/OC40N02',ViewController::class)->name('view');
@@ -326,7 +331,7 @@ Route::get('/OP-15A',[ViewController::class,'OP15A']);
 
 // <*--------  黏合 -----------*>
 
-Route::get('/fusingPress', function () { 
+Route::get('/fusingPress', function () {
     return view('product/category/fusingPress');
 });
 
@@ -616,7 +621,7 @@ Route::get('/OP-102A',[ViewController::class,'OP102A']);
 Route::group(['prefix'=>'FAQ'],function(){
 // Route::post('/FAQ',MessageController::class)->name('post');
  //驗布
-   Route::get('/inspection/OC40N02',[FAQController::class,'OC40N02']); 
+   Route::get('/inspection/OC40N02',[FAQController::class,'OC40N02']);
    Route::get('/inspection/OC1',[FAQController::class,'OC1']);
    Route::get('/inspection/OC-5B',[FAQController::class,'OC5B']);
    Route::get('/inspection/OC-83',[FAQController::class,'OC83']);
@@ -643,7 +648,7 @@ Route::group(['prefix'=>'FAQ'],function(){
    Route::get('/cutting/A-100U',[FAQController::class,'A100U']);
    Route::get('/cutting/LU-933',[FAQController::class,'LU933']);
    Route::get('/cutting/OB-700A',[FAQController::class,'OB700A']);
- //整燙定型 
+ //整燙定型
    Route::get('/ironing/OP-800SDS',[FAQController::class,'OP800SDS']);
    Route::get('/ironing/OP-87',[FAQController::class,'OP87']);
    Route::get('/ironing/OP-302',[FAQController::class,'OP302']);
@@ -671,7 +676,7 @@ Route::group(['prefix'=>'FAQ'],function(){
 // Forgot password
 
 // Route::get('/forgot',function index(){
-    
+
 //     return view('./members/forgotPW');
 // });
 
@@ -682,7 +687,7 @@ Route::get(
      [ProductController::class,'show']
     )->where('id','[0-9]+'); //0~999999
 
-// Route::resource('orders',OrderController::class); 
+// Route::resource('orders',OrderController::class);
 
 
 
@@ -731,12 +736,12 @@ Route::get('/register', function () {
 //層級下一種寫法
 // Route::prefix('controls')->name('controls.')->group(function () {
 //     Route::get('/',['App\Http\Controllers\Controls\PageController','home'])->name('home');
-// }); 
+// });
 
 //第二種
 // Route::prefix('controls')->name('controls.')->group(function () {
 //     Route::get('/',[ControlsPageController::class,'home'])->name('home');
-// }); 
+// });
 
 
 // require _DIR_.'/auth.php';

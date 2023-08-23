@@ -12,13 +12,13 @@
 
     .alert-danger{
          margin:10px auto;
-       
-         
+
+
           p{
             color: #706e6e;
             letter-spacing: 1px;
           }
-         
+
     }
 
     input{
@@ -79,7 +79,7 @@
           }
     }
 
-  
+
     /* 隱藏原本的下拉箭頭 */
     select {
              -webkit-appearance: none;
@@ -128,7 +128,7 @@
 }
 
 
-  
+
 
 main {
     margin-top: 50px;
@@ -138,9 +138,154 @@ main {
         margin: 60px 100px;
         overflow: auto;
 
+    //新增機器聯絡人彈窗設計
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                border-radius: 10px;
+                width: 80%;
+
+                .formgroup{
+                    margin: 50px auto;
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.2rem;
+
+                    .text-danger{
+                        margin-left: 30px;
+                        color: #ca2929;
+                        font-size: .9rem;
+                    }
+
+                    label{
+                        display: block;
+                        width: max-content;
+                        min-width: 8vw;
+                        margin-right: 10px;
+
+                    }
+
+                    span{
+                        display: block;
+                        width: fit-content;
+                        margin-right: 20px;
+                    }
+
+                    input {
+                        border:0;
+                       text-align: center;
+                        width: 13vw;
+                        height: 30px;
+                        // min-width: 250px;
+                        // margin-bottom: 15px;
+                        font-size: 1rem;
+                        color: black;
+                        background-color: transparent;
+                        border-bottom: 1px solid rgb(61, 79, 69);
+
+
+
+                    }
+                    #company_name{
+                        width: 30vw;
+                    }
+                    #street{
+                        width: 20vw;
+                        padding-left: 15px;
+                        text-align: start;
+                    }
+                    #company_website{
+                        width: 15vw;
+                    }
+                    @media (max-width:1200px){
+                        input {
+                            width: 20vw;
+
+                        }
+                        #company_website{
+                            width: 20vw;
+                        }
+                        #street{
+                            width: 35vw;
+                        }
+
+
+                    }
+
+                    select{
+                        width: 200px;
+                        height: 30px;
+                        padding-left: 10px;
+                        font-size: 1.1rem;
+                    }
+
+                    ul{
+                        flex-wrap: wrap;
+                        width: 50vw;
+                        li{
+                            margin: 10px;
+                            display: flex;
+                            span{
+                                display: block;
+                                width: 100px;
+                            }
+                            input{
+                                margin-left: 10px;
+                            }
+                            p{
+                                line-height: 2;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+
+                    textarea{
+
+                        width: 20vw;
+                        margin-left: 50px;
+                        border-radius: 10px;
+                        padding: 10px;
+                        font-size: 1.1rem;
+                        height: 40px;
+                    }
+
+
+
+
+                }
+            }
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+
+        }
+
         #position-error{
             text-align: center;
-            color: red; 
+            color: red;
             display: none;
             margin-top: 50px;
         }
@@ -192,23 +337,23 @@ main {
             color:rgb(10, 30 ,208);
             font-weight: 300;
             text-decoration: none;
-    
-            
+
+
         }
         .question-reply:hover{
             color: orange;
             text-shadow: #555 0.1em;
-           
+
         }
-    
+
         table {
-            
+
             font-size: 14px;
             border-collapse: collapse;
             width: 100%;
         }
         th, td {
-            
+
             text-align: left;
             padding: 8px;
             border-bottom: 1px solid #ddd;
@@ -218,7 +363,7 @@ main {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-              
+
             }
             a{
                 color: rgb(10, 30, 208);
@@ -240,9 +385,9 @@ main {
             button:hover{
                 color: orange;
             }
-           
-         
-            
+
+
+
         }
         th {
             background-color: #f2f2f2;
@@ -250,7 +395,7 @@ main {
         tbody tr:hover {
             background-color: #f5f5f5;
         }
-    
+
         .photoPopup{
             position: fixed;
             top:0;
@@ -277,7 +422,7 @@ main {
             max-width: 90%;
             max-height: 90%;
         }
-        
+
         .popclose {
             position: absolute;
             top: 10px;
@@ -286,18 +431,18 @@ main {
             padding: 5px 10px;
             cursor: pointer;
         }
-    
+
         .pagination {
             display: flex;
             justify-content: center;
             list-style: none;
             padding: 0;
             margin-top: 50px;
-          
+
             li {
               display: inline-block;
               margin: 0 5px;
-          
+
               a {
                 display: block;
                 padding: 5px 10px;
@@ -307,27 +452,27 @@ main {
                 border: 1px solid #ccc;
                 border-radius: 3px;
                 transition: background-color 0.3s ease;
-          
+
                 &:hover {
                   background-color: #e0e0e0;
                 }
               }
-          
+
               &.active {
                 a {
                   background-color: #007bff;
                   color: #fff;
                 }
               }
-          
+
               &.disabled {
                 opacity: 0.5;
                 pointer-events: none;
               }
             }
           }
-          
-        
+
+
     }
 
      #toggleEditMode,#ReturnButton{
@@ -368,16 +513,16 @@ main {
             margin-bottom: 20px;
 
         }
-        .formgroup{
+     .formgroup{
             margin: 50px auto;
             display: flex;
             align-items: center;
             font-size: 1.2rem;
-            
-            .text-danger{     
+
+            .text-danger{
                 margin-left: 30px;
-                color: #ca2929; 
-                font-size: .9rem;                      
+                color: #ca2929;
+                font-size: .9rem;
             }
 
             label{
@@ -385,7 +530,7 @@ main {
                 width: max-content;
                 min-width: 8vw;
                 margin-right: 10px;
-                
+
             }
 
             span{
@@ -406,8 +551,8 @@ main {
                 background-color: transparent;
                 border-bottom: 1px solid rgb(61, 79, 69);
 
-            
-        
+
+
             }
             #company_name{
                 width: 30vw;
@@ -421,9 +566,9 @@ main {
                 width: 15vw;
             }
             @media (max-width:1200px){
-                input {                 
-                    width: 20vw; 
-                            
+                input {
+                    width: 20vw;
+
                 }
                 #company_website{
                     width: 20vw;
@@ -431,8 +576,8 @@ main {
                 #street{
                     width: 35vw;
                 }
-               
-                
+
+
             }
 
             select{
@@ -472,9 +617,9 @@ main {
                 height: 40px;
             }
 
-            
 
-            
+
+
         }
         .formgroup.phone_type{
             display: block;
@@ -483,12 +628,12 @@ main {
             }
             ul{
               display: flex;
-              
-              
+
+
               li{
                 line-height: 2;
                   span{
-                      
+
                       text-align: center;
                   }
                   input{
@@ -501,8 +646,8 @@ main {
                     #phone_number_1,#phone_number_2,#phone_number_3,#fax_number,#purchase_phone_number{
                         width:29vw;
                       }
-                    
-            
+
+
                 }
 
               }
@@ -510,9 +655,9 @@ main {
                 width: 22vw;
               }
             }
-          
+
       }
-        
+
     }
     .companyDataEdit.Machines-list{
         .formgroup{
@@ -520,10 +665,10 @@ main {
             display: flex;
             align-items: center;
             font-size: 1.2rem;
-            
-            .text-danger{     
+
+            .text-danger{
                 margin-left: 30px;
-                color: #ca2929;                       
+                color: #ca2929;
             }
 
             label{
@@ -531,7 +676,7 @@ main {
                 width: max-content;
                 min-width: 8vw;
                 margin-right: 10px;
-                
+
             }
 
             span{
@@ -542,7 +687,7 @@ main {
 
             input {
                 border:0;
-               
+
                 width: 13vw;
                 height: 30px;
                 // min-width: 250px;
@@ -551,7 +696,7 @@ main {
                 padding-left: 15px;
                 background-color: transparent;
                 border-bottom: 1px solid black;
-        
+
             }
 
             select{
@@ -589,9 +734,9 @@ main {
                 height: 40px;
             }
 
-            
 
-            
+
+
         }
         .formgroup.phone_type{
               display: block;
@@ -600,8 +745,8 @@ main {
               }
               ul{
                 display: flex;
-                
-                
+
+
                 li{
                     span{
                         line-height: 2.2;
@@ -612,7 +757,7 @@ main {
                     }
                 }
               }
-            
+
         }
         .formgroup.installation_type{
             ul{
@@ -637,7 +782,7 @@ main {
                         line-height: 2.2;
                     }
                     ol{
-                       
+
                         li{
                             input{
                                 width: 7vw;
@@ -659,20 +804,20 @@ main {
             width: 66vw;
             padding-left: 80px;
             padding-top: 30px;
-            
+
         }
-        
+
 
     }
 
 
-    
+
     .memberBasicDate{
-       
+
         width: 55vw;
         border: 1px solid rgb(2, 24, 18);
         border-radius: 10px;
-        
+
         margin:  0 auto;
         .baseArea{
             margin: 0 auto;
@@ -687,7 +832,7 @@ main {
         }
         .baseline{
 
-            
+
             border: 1px solid #ebcba1;
             margin-bottom: 30px;
         }
@@ -696,10 +841,10 @@ main {
             display: flex;
             align-items: center;
             font-size: 1.2rem;
-            
-            .text-danger{     
+
+            .text-danger{
                 margin-left: 30px;
-                color: #ca2929;                       
+                color: #ca2929;
             }
 
             label{
@@ -707,7 +852,7 @@ main {
                 width: max-content;
                 min-width: 8vw;
                 margin-right: 10px;
-                
+
             }
 
             span{
@@ -718,7 +863,7 @@ main {
 
             input {
                 border:0;
-               
+
                 width: 13vw;
                 height: 30px;
                 // min-width: 250px;
@@ -728,7 +873,7 @@ main {
                 color: white;
                 background-color: transparent;
                 border-bottom: 1px solid yellow;
-        
+
             }
 
             select{
@@ -766,9 +911,9 @@ main {
                 height: 40px;
             }
 
-            
 
-            
+
+
         }
         .formgroup.phone_type{
               display: block;
@@ -777,8 +922,8 @@ main {
               }
               ul{
                 display: flex;
-                
-                
+
+
                 li{
                     span{
                         line-height: 2.2;
@@ -789,7 +934,7 @@ main {
                     }
                 }
               }
-            
+
         }
         .formgroup.installation_type{
             ul{
@@ -814,7 +959,7 @@ main {
                         line-height: 2.2;
                     }
                     ol{
-                       
+
                         li{
                             input{
                                 width: 7vw;
@@ -860,7 +1005,7 @@ main {
     }
 
     .forbidUl{
-        
+
        margin-top: 100px;
        li{
         margin: 30px;
@@ -875,7 +1020,7 @@ main {
             width: 15vw;
             letter-spacing: 1.2;
             text-decoration: none;
-            
+
             color: white;
             border-radius: 10px;
             padding: 10px;
@@ -883,7 +1028,7 @@ main {
         }
         .forbid-link:hover{
             background-color: #706e6e;
-             
+
         }
        }
 
@@ -896,15 +1041,15 @@ main {
 
     }
     .null-link{
-        
+
         text-decoration: none;
         padding: 10px;
         color: white;
         background-color: rgb(15, 59, 101);
-         
+
     }
     .null-link:hover{
-        background-color: #555;         
+        background-color: #555;
     }
 
 
@@ -913,9 +1058,9 @@ main {
         text-align: center;
     }
     .img-block{
-        
+
         ul{
-            
+
             display: flex;
             flex-wrap: wrap;
             justify-content:space-evenly;
@@ -928,8 +1073,8 @@ main {
                     min-width: 300px;
                     margin-top: 15px;
                     margin-bottom: 20px;
-                    
-                    
+
+
                 }
                 img:hover{
                     cursor: pointer;
@@ -970,13 +1115,13 @@ main {
 
             li {
                 margin: 20px;
-                
+
                 img {
                     width: 25vw;
                     max-width: 500px;
                     min-width: 300px;
                     cursor: pointer;
-                    
+
 
 
                 }
@@ -990,14 +1135,14 @@ main {
     }
 
     @media (max-width:615px) {
-    
+
             .chooseItem {
 
                 ul {
                     width: 50px;
                 }
             }
-            
+
 
     }
 
@@ -1005,7 +1150,7 @@ main {
 }
 .faq-search-show{
     min-height: 30vw;
-    
+
     h1{
         text-align: center;
         font-size: 2vw;
@@ -1021,7 +1166,7 @@ main {
 
     }
     table {
-                    
+
         font-size: 1rem;
         border-collapse: collapse;
         width: 90vw;
@@ -1034,7 +1179,7 @@ main {
 
     }
     th, td {
-        
+
         text-align: left;
         padding: 10px;
         border: 1px solid #ddd;
@@ -1045,8 +1190,8 @@ main {
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            
-          
+
+
         }
         // pre{
         //     white-space: pre-wrap;
@@ -1054,9 +1199,9 @@ main {
         //     max-width: 100%; /* 根據需要調整最大寬度 */
         //     text-indent: 20px;
         // }
-       
-     
-        
+
+
+
     }
     th {
         background-color: #f2f2f2;
@@ -1064,7 +1209,7 @@ main {
     tbody tr:hover {
         background-color: #f5f5f5;
     }
-    
+
 }
 
 
@@ -1105,7 +1250,7 @@ main {
                 word-wrap: break-word;
                 max-width: 100%; /* 根據需要調整最大寬度 */
             }
-            
+
 
         }
     }
@@ -1119,7 +1264,7 @@ main {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         form{
             label{
                 color: white;
@@ -1152,9 +1297,9 @@ main {
         }
 
     }
-    
-   
-      
+
+
+
     .left-content{
         img{
             width: 30rem;
@@ -1172,7 +1317,7 @@ main {
             margin-top: 20px;
             text-align: center;
         }
-        
+
     }
 
     .right-content{
@@ -1186,9 +1331,9 @@ main {
             p{
                 color: #555;
                 letter-spacing: 1.2;
-                
+
             }
-            
+
             .message{
                 border-bottom: 1px silver solid;
                 padding-bottom: 10px;
@@ -1202,7 +1347,7 @@ main {
                 .reply-button:hover{
                     background-color: rgb(138, 166, 166);
                 }
-                 
+
             }
         }
         .baseline{
@@ -1222,20 +1367,20 @@ main {
             font-weight: 300;
             letter-spacing: 1.5px;
             font-size: .9rem;
-            
+
 
             a{
                 text-decoration: none;
                 color: white;
                 font-weight: 300;
-                
+
             }
-            
+
         }
         button:hover{
             background-color: rgb(236, 133, 8);
         }
-        .faq{  
+        .faq{
             min-width: 500px;
             height: 100%;
             overflow: auto;
@@ -1247,27 +1392,27 @@ main {
                     margin-bottom: 20px;
                 }
                 table {
-                    
+
                     font-size: 1rem;
                     border-collapse: collapse;
                     width: 100%;
                     letter-spacing: 1.5px;
                 }
                 th, td {
-                    
+
                     text-align: left;
                     padding: 8px;
                     border-bottom: 1px solid #ddd;
                     width: 10vw;
-                     
+
                     p{
                         font-size: 2rem;
                         overflow: hidden;
                         text-overflow: ellipsis;
-                        white-space: nowrap; 
-                                         
-                    }            
-                    
+                        white-space: nowrap;
+
+                    }
+
                 }
                 th {
                     background-color: #f2f2f2;
@@ -1302,12 +1447,12 @@ main {
                             }
 
                             .itemBlock{
-                                 
+
                                 img{
                                    width: 1.2vw;
                                    margin-right: 25px;
                                    margin-top: 3px;
-                                   
+
                                 }
                            }
                             h3{
@@ -1337,13 +1482,13 @@ main {
                                 background-color: rgb(15, 59, 101);
                             }
                             button:hover{
-                               
+
                                 background-color: rgb(237, 188, 14);
                             }
 
 
-                            
-                            
+
+
                         }
                         .faq-content{
                             display: none;
@@ -1378,7 +1523,7 @@ main {
                                 max-width: 90%;
                                 max-height: 90%;
                             }
-                            
+
                             .popclose {
                                 position: absolute;
                                 top: 10px;
@@ -1390,15 +1535,15 @@ main {
                         .faq-toggle{
                             width: 60px;
                             font-size: 1.2rem;
-                            
+
                         }
                     }
-                    
+
                 }
             }
-           
 
-            
+
+
             h2{
                 position: relative;
                 top: 50%;
@@ -1408,8 +1553,8 @@ main {
             }
 
         }
-        
-       
+
+
         h3{
            color: rgb(15, 59, 101);
            text-align: end;
@@ -1418,7 +1563,7 @@ main {
         p{
             margin: 10px;
             color: rgb(15, 59, 101);
-            
+
         }
         textarea{
             // font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -1435,8 +1580,8 @@ main {
             cursor: pointer;
             border-radius: 5px;
 
-            
-            
+
+
         }
 
         .submit{
@@ -1445,11 +1590,11 @@ main {
             color: aliceblue;
             }
             .submit:hover{
-                
+
                 background-color: rgb(138, 166, 166);
                 color: aliceblue;
                 }
-    
+
     }
 }
 

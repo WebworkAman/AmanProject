@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Libraries\MemberAuth; 
+use App\Libraries\MemberAuth;
 use App\Models\VerifyMember;
 use App\Models\Member;
 use App\Models\CRM_MainCust_Info;
@@ -21,7 +21,7 @@ use Hash;
 class MemberSessionController extends Controller
 {
     public function create()
-    {    
+    {
         // $member = null;
 
         // if(session()->exists('memberId')){
@@ -64,32 +64,32 @@ class MemberSessionController extends Controller
                 }
                 return back()->with('fail','您需要確認您的帳戶。 我們已發送給您
                 相關連結，請查看您的郵箱');
-                
+
             }
                 return back()->with('fail','密碼並未相符.請重新輸入');
-            
-            
+
+
         }
 
             return back()->with('fail','此電子信箱尚未註冊！');
-        
 
-        
+
+
 
         // 有寫 MemberAuth.php 的寫法
-        
+
         // MemberAuth::logIn(
         //     $request->email,
         //     $request->password
         // );
-        
+
         // return redirect(MemberAuth::HOME);
         // return redirect()->route('members.session.create');
     }
     public function delete(Request $request)
     {
         // session()->forget('memberId');
-        
+
         // return redirect()->route('members.session.create');
 
         MemberAuth::logOut();
@@ -195,22 +195,22 @@ class MemberSessionController extends Controller
            $companyId = $member -> company_ERP_id;
 
            $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
-        
 
-    
+
+
            return view('members.memberBasicData', compact('crmMainCustInfo','member'));
        }
 
     // public function company(Request $request){
     //     $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
-    
+
     //     return view('members.companyData', compact('member'));
     // }
         public function company($companyId){
             $member = MemberAuth::member();
             // $company_ERP_id = $request->query('company_ERP_id');
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
-        
+
             // if (!$crmMainCustInfo) {
             //     // 如果找不到對應的 CRM_MainCust_Info 資料，可以進行相應處理，例如返回錯誤頁面或提示訊息等
             //     return back()->with('error', '找不到相應的公司基本資料');
@@ -223,7 +223,7 @@ class MemberSessionController extends Controller
         // 處理編輯模式表單提交
         public function CompanyUpdate(Request $request)
         {
-            
+
             $companyId = $request->input('company_id');
             $company = CRM_MainCust_Info::findOrFail($companyId);
 
@@ -260,7 +260,7 @@ class MemberSessionController extends Controller
             $member->update([
                 'company_tax_id' => $request->input('company_tax_id'),
             ]);
-    
+
             $company->update([
                 'company_name' => $request->input('company_name'),
                 // 在這裡更新其他資料，根據需要添加其他資料的更新
@@ -292,28 +292,28 @@ class MemberSessionController extends Controller
                 'company_ceo' => $request->company_ceo,
                 'company_purchase_person_name' => $request->company_purchase_person_name,
                 'company_purchase_person_phone' => json_encode([
-                    
+
                     'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
                     'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
                     'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
                     'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
-                        
-               
+
+
                 ]),
                 'company_email' => $request->company_email,
                 'company_other_info' => $request->company_other_info,
-                    
+
 
             ]);
-    
+
             return redirect()->route('memberBasic')->with('info','修改成功');
         }
 
-        public function companyMemberList(Request $request){ 
+        public function companyMemberList(Request $request){
 
             $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
             $companyId = $member -> company_ERP_id;
- 
+
             $members = Member::where('company_ERP_id', $companyId)
             ->orderBy('identity_perm')
             ->get();
@@ -325,17 +325,17 @@ class MemberSessionController extends Controller
 
             return view('members.CompanyMemberList', compact('members','crmMainCustInfo','memberCount','member'));
         }
-        public function updateStatusView(Request $request){ 
+        public function updateStatusView(Request $request){
 
             $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
             $companyId = $member -> company_ERP_id;
- 
+
             $members = Member::where('company_ERP_id', $companyId)
             ->orderBy('identity_perm')
             ->get();
             $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
-           
+
 
             return view('members.updateStatus', compact('members','crmMainCustInfo'));
         }
@@ -377,17 +377,17 @@ class MemberSessionController extends Controller
                 // 其他處理
 
             }
-        
+
             return back()->with('success', '在職狀況已更新');
         }
 
         public function companyMembersDestroy(Member $member)
         {
              $member->delete();
-        
+
             return redirect()->route('members.updateStatusView')
                 ->with('success', '會員刪除成功.');
-             
+
         }
 
 
@@ -431,7 +431,7 @@ class MemberSessionController extends Controller
             // 如果驗證失敗
         if ($validator->fails()) {
 
-           
+
             return back()
                    ->withErrors($validator)  // 傳遞驗證錯誤訊息到視圖
                    ->withInput();  // 保留用戶的輸入值
@@ -440,7 +440,7 @@ class MemberSessionController extends Controller
         $companyERPId = $member->company_ERP_id;
         $companyTaxId = $member->company_tax_id;
         $newCompanyId = $request->input('company_tax_id');
-        
+
         //公司地址
         $companyAddress = [
             'country' => $request->input('company_address.country'),
@@ -480,13 +480,13 @@ class MemberSessionController extends Controller
             'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
             'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
         ];
-        
-        
+
+
         $filteredCompanyAddress = array_filter($companyAddress); // 過濾掉空值
         $filteredCompanyPhone = array_filter($companyPhone); // 過濾掉空值
         $filteredCompanyFax = array_filter($companyFax); // 過濾掉空值
         $filteredCompanyPurchasePersonPhone = array_filter($companyPurchasePersonPhone); // 過濾掉空值
-        
+
         $company = CRM_MainCust_Info::create([
 
             'company_ERP_id' => $companyERPId,
@@ -494,7 +494,7 @@ class MemberSessionController extends Controller
             'company_name' => $request->company_name,
 
             'company_address' => !empty($filteredCompanyAddress) ? json_encode($filteredCompanyAddress) : null,
-                
+
             'company_phone' => json_encode([
                 [
                     'country_code_1' => $request->input('company_phone.country_code_1'),
@@ -521,13 +521,13 @@ class MemberSessionController extends Controller
             'company_ceo' => $request->company_ceo,
             'company_purchase_person_name' => $request->company_purchase_person_name,
             'company_purchase_person_phone' => json_encode([
-                
+
                 'country_code' => $request->input('company_purchase_person_phone.purchase_country_code'),
                 'area_code' => $request->input('company_purchase_person_phone.purchase_area_code'),
                 'phone_number' => $request->input('company_purchase_person_phone.purchase_phone_number'),
                 'purchase_extension' =>  $request->input('company_purchase_person_phone.purchase_extension'),
-                    
-           
+
+
             ]),
             'company_email' => $request->company_email,
             'company_other_info' => $request->company_other_info,
@@ -544,7 +544,7 @@ class MemberSessionController extends Controller
 
     }
 
-    public function companyMachineList(Request $request){ 
+    public function companyMachineList(Request $request){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
         $companyId = $member -> company_ERP_id;
@@ -552,15 +552,15 @@ class MemberSessionController extends Controller
         $members = Member::where('company_ERP_id', $companyId)
         ->orderBy('identity_perm')
         ->get();
-        
+
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
-        
-        
+
+
 
         return view('members.companyMachinesList', compact('members','crmMachines','member','crmMainCustInfo'));
     }
-    public function companyMachineData(Request $request,$machine){ 
+    public function companyMachineData(Request $request,$machine){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
         $companyId = $member -> company_ERP_id;
@@ -568,16 +568,17 @@ class MemberSessionController extends Controller
         $members = Member::where('company_ERP_id', $companyId)
         ->orderBy('identity_perm')
         ->get();
-        
+
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMachine = CRM_Machines::find($machine);
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
-         
+
         $crmMachinesContactlist = CRM_Machines_Contactlist::where('crm_machine_id',$machine)->get();
 
         return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo','crmMachines','crmMachinesContactlist'));
     }
-    public function companyMachineAdd(Request $request){ 
+
+    public function MachineContactAdd(Request $request,$machine){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
         $companyId = $member -> company_ERP_id;
@@ -585,7 +586,82 @@ class MemberSessionController extends Controller
         $members = Member::where('company_ERP_id', $companyId)
         ->orderBy('identity_perm')
         ->get();
-        
+
+        $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
+        $crmMachine = CRM_Machines::find($machine);
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+        $selectedOtherPurchaseSourceValue = $request->input('contact_person_position');
+
+        // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
+        if($selectedOtherPurchaseSourceValue== '5'){
+            $otherPurchaseSource = $request->input('other_contact_person_position');
+        }else{
+            $otherPurchaseMap = [
+                '1' => '廠長',
+                '2' => '組長',
+                '3' => '機修保養人',
+                '4' => '操作員',
+            ];
+
+            $selectedPurchaseSourceName = isset($otherPurchaseMap[$selectedOtherPurchaseSourceValue]) ? $otherPurchaseMap[$selectedOtherPurchaseSourceValue] : null;
+            $otherPurchaseSource = $selectedPurchaseSourceName;
+        }
+
+
+        $selectedSoftwareType = $request->input('contact_software_type');
+
+        // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
+        if($selectedSoftwareType == '4'){
+            $otherSoftwareType = $request->input('other_contact_software_type');
+        }else{
+            $otherSoftwareTypeMap = [
+                '1' => 'Whats App',
+                '2' => 'Line',
+                '3' => 'WeChat',
+            ];
+
+            $selectedSoftwareTypeName = isset($otherSoftwareTypeMap[$selectedSoftwareType]) ? $otherSoftwareTypeMap[$selectedSoftwareType] : null;
+            $otherSoftwareType = $selectedSoftwareTypeName;
+        }
+
+        $request->validate([
+            'contact_person_name'=>'required',
+        ]);
+
+        $crmMachinesContactlist = CRM_Machines_Contactlist::create([
+
+              'crm_machine_id' => $machine,
+              'contact_person_position' => $otherPurchaseSource,
+              'contact_person_name' => $request->contact_person_name,
+              'contact_person_phone' => json_encode([
+                'country_code' => $request->input('contact_person_phone.country_code'),
+                'postal_code' => $request->input('contact_person_phone.area_code'),
+                'region' => $request->input('contact_person_phone.phone_number'),
+                'city' => $request->input('contact_person_phone.extension'),
+            ]),
+              'contact_person_mobile' => $request->contact_person_mobile,
+              'contact_person_email' => $request->contact_person_email,
+              'contact_commu_software' => json_encode([
+              'type' => $otherSoftwareType,
+              'id'   => $request->input('contact_software_data.software_id'),
+            ]),
+
+        ]);
+
+
+        return redirect()->route('companyMachineData',$machine)->with('info','新增成功');
+    }
+
+    public function companyMachineAdd(Request $request){
+
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $companyId = $member -> company_ERP_id;
+
+        $members = Member::where('company_ERP_id', $companyId)
+        ->orderBy('identity_perm')
+        ->get();
+
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
@@ -594,12 +670,12 @@ class MemberSessionController extends Controller
     }
 
 
-    public function companyMachineAddPost(Request $request){ 
+    public function companyMachineAddPost(Request $request){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
         $companyId = $member -> company_ERP_id;
         $companyTaxId = $member->company_tax_id;
-        
+
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
         $statInfo = 'y';
@@ -619,7 +695,7 @@ class MemberSessionController extends Controller
                 '4' => '成衣廠',
                 '5' => '針車行',
             ];
-                    
+
             $selectedPurchaseSourceName = isset($otherPurchaseMap[$selectedOtherPurchaseSourceValue]) ? $otherPurchaseMap[$selectedOtherPurchaseSourceValue] : null;
             $otherPurchaseSource = $selectedPurchaseSourceName;
         }
@@ -681,7 +757,7 @@ class MemberSessionController extends Controller
                 'fax_number' => $request->input('installation_company_fax.fax_number'),
             ]),
 
-            
+
             //購入來源
             'purchase_manufacturer' => $request->purchase_manufacturer,
             'purchase_manufacturer_person' => $request->purchase_manufacturer_person,
@@ -701,7 +777,6 @@ class MemberSessionController extends Controller
                     'country_code' => $request->input('other_purchase_company_phone.country_code'),
                     'area_code' => $request->input('other_purchase_company_phone.area_code'),
                     'phone_number' => $request->input('other_purchase_company_phone.phone_number'),
-
             ]),
             'other_purchase_name' => $request->other_purchase_name,
             'other_purchase_phone' => $request->other_purchase_phone,
@@ -709,9 +784,9 @@ class MemberSessionController extends Controller
             'stat_info' => $statInfo,
         ]);
 
-        return redirect()->route('companyMachineList')->with('info','新增成功');;
+        return redirect()->route('companyMachineList')->with('info','新增成功');
     }
 
-    
-    
+
+
 }

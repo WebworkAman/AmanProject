@@ -274,6 +274,126 @@ main .Show_form {
   margin: 60px 100px;
   overflow: auto;
 }
+main .Show_form .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+main .Show_form .modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+}
+main .Show_form .modal .modal-content .formgroup {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+main .Show_form .modal .modal-content .formgroup .text-danger {
+  margin-left: 30px;
+  color: #ca2929;
+  font-size: 0.9rem;
+}
+main .Show_form .modal .modal-content .formgroup label {
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 8vw;
+  margin-right: 10px;
+}
+main .Show_form .modal .modal-content .formgroup span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 20px;
+}
+main .Show_form .modal .modal-content .formgroup input {
+  border: 0;
+  text-align: center;
+  width: 13vw;
+  height: 30px;
+  font-size: 1rem;
+  color: black;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(61, 79, 69);
+}
+main .Show_form .modal .modal-content .formgroup #company_name {
+  width: 30vw;
+}
+main .Show_form .modal .modal-content .formgroup #street {
+  width: 20vw;
+  padding-left: 15px;
+  text-align: start;
+}
+main .Show_form .modal .modal-content .formgroup #company_website {
+  width: 15vw;
+}
+@media (max-width: 1200px) {
+  main .Show_form .modal .modal-content .formgroup input {
+    width: 20vw;
+  }
+  main .Show_form .modal .modal-content .formgroup #company_website {
+    width: 20vw;
+  }
+  main .Show_form .modal .modal-content .formgroup #street {
+    width: 35vw;
+  }
+}
+main .Show_form .modal .modal-content .formgroup select {
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+}
+main .Show_form .modal .modal-content .formgroup ul {
+  flex-wrap: wrap;
+  width: 50vw;
+}
+main .Show_form .modal .modal-content .formgroup ul li {
+  margin: 10px;
+  display: flex;
+}
+main .Show_form .modal .modal-content .formgroup ul li span {
+  display: block;
+  width: 100px;
+}
+main .Show_form .modal .modal-content .formgroup ul li input {
+  margin-left: 10px;
+}
+main .Show_form .modal .modal-content .formgroup ul li p {
+  line-height: 2;
+  margin-left: 10px;
+}
+main .Show_form .modal .modal-content .formgroup textarea {
+  width: 20vw;
+  margin-left: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1.1rem;
+  height: 40px;
+}
+main .Show_form .modal .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+main .Show_form .modal .close:hover,
+main .Show_form .modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 main .Show_form #position-error {
   text-align: center;
   color: red;
