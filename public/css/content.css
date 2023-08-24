@@ -270,6 +270,17 @@ main {
   display: block;
   min-height: 600px;
 }
+main #openFormBtn {
+  margin: 10px auto;
+  border: 1px solid blue;
+  width: 10vw;
+  border-radius: 10px;
+  background: transparent;
+  color: blue;
+  font-size: 1rem;
+  float: right;
+  font-weight: 300;
+}
 main .Show_form {
   margin: 60px 100px;
   overflow: auto;
@@ -826,6 +837,105 @@ main .companyDataEdit.Machines-list .formgroup.subBlock {
     padding-left: 80px;
     padding-top: 30px;
   }
+}
+main .companyDataEdit1 {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+main .companyDataEdit1 h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #555;
+  text-align: center;
+}
+main .companyDataEdit1 form {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .companyDataEdit1 form .formgroup {
+  width: calc(50% - 20px);
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+main .companyDataEdit1 form .formgroup label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+main .companyDataEdit1 form .formgroup input[type=text],
+main .companyDataEdit1 form .formgroup input[type=email] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+  margin: 10px;
+}
+main .companyDataEdit1 form .formgroup input[type=text]:focus,
+main .companyDataEdit1 form .formgroup input[type=email]:focus {
+  border-color: #007bff;
+}
+main .companyDataEdit1 form .formgroup ul {
+  list-style: none;
+  display: flex;
+}
+main .companyDataEdit1 form .formgroup ul li {
+  margin-right: 10px;
+}
+main .companyDataEdit1 form .formgroup ul li span {
+  font-weight: bold;
+}
+main .companyDataEdit1 form .formgroup ul li input[type=text] {
+  width: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+main .companyDataEdit1 form .formgroup ul li input[type=text]:focus {
+  border-color: #007bff;
+}
+main .companyDataEdit1 form .phone_type ul {
+  display: flex;
+}
+main .companyDataEdit1 form .phone_type ul li {
+  width: 33%;
+  margin-right: 10px;
+}
+main .companyDataEdit1 form .phone_type ul li span {
+  font-weight: bold;
+}
+main .companyDataEdit1 form .phone_type ul li input[type=text] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+main .companyDataEdit1 form .phone_type ul li input[type=text]:focus {
+  border-color: #007bff;
+}
+main .companyDataEdit1 form .baseline {
+  width: 100%;
+  margin-bottom: 20px;
+}
+main .companyDataEdit1 form #submitButton {
+  margin: 0 auto;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main .companyDataEdit1 form #submitButton:hover {
+  background-color: #0056b3;
 }
 main .memberBasicDate {
   width: 55vw;

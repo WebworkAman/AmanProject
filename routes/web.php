@@ -119,6 +119,8 @@ Route::get('/companyMachineList',[MemberSessionController::class,'companyMachine
 Route::get('/companyMachineList/{machine}',[MemberSessionController::class,'companyMachineData'])->name('companyMachineData');
 Route::get('/companyMachineAdd',[MemberSessionController::class,'companyMachineAdd'])->name('companyMachineAdd');
 Route::post('/companyMachineAdd',[MemberSessionController::class,'companyMachineAddPost'])->name('companyMachineAddPost');
+Route::get('/companyMachine/{machine}',[MemberSessionController::class,'companyMachineUpdateView'])->name('companyMachineUpdateView');
+Route::put('/companyMachine/{machine}',[MemberSessionController::class,'companyMachineUpdate'])->name('companyMachineUpdate');
 
 //購買機器聯絡人資料
 Route::post('/companyMachineList/{machine}/',[MemberSessionController::class,'MachineContactAdd'])->name('MachineContactAdd');
