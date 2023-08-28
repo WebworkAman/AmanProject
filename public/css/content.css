@@ -627,8 +627,11 @@ main .companyData h2, main .companyDataEdit h2 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+main .companyData .formBlock, main .companyDataEdit .formBlock {
+  margin-top: 100px;
+}
 main .companyData .formgroup, main .companyDataEdit .formgroup {
-  margin: 50px auto;
+  margin: 10px auto;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -659,7 +662,8 @@ main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   font-size: 1rem;
   color: black;
   background-color: transparent;
-  border-bottom: 1px solid rgb(61, 79, 69);
+  border: 1px solid rgb(61, 79, 69);
+  border-radius: 10px;
 }
 main .companyData .formgroup #company_name, main .companyDataEdit .formgroup #company_name {
   width: 30vw;
@@ -770,7 +774,7 @@ main .companyDataEdit.Machines-list .company-button {
   justify-content: center;
 }
 main .companyDataEdit.Machines-list .formgroup {
-  margin: 50px auto;
+  margin: 20px auto;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -799,7 +803,7 @@ main .companyDataEdit.Machines-list .formgroup input {
   font-size: 1.2rem;
   padding-left: 15px;
   background-color: transparent;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
 }
 main .companyDataEdit.Machines-list .formgroup select {
   width: -moz-fit-content;

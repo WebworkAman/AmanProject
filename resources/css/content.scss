@@ -537,8 +537,12 @@ main {
             margin-bottom: 20px;
 
         }
+        .formBlock{
+            margin-top: 100px;
+        }
+
      .formgroup{
-            margin: 50px auto;
+            margin: 10px auto;
             display: flex;
             align-items: center;
             font-size: 1.2rem;
@@ -573,7 +577,8 @@ main {
                 font-size: 1rem;
                 color: black;
                 background-color: transparent;
-                border-bottom: 1px solid rgb(61, 79, 69);
+                border: 1px solid rgb(61, 79, 69);
+                border-radius: 10px;
 
 
 
@@ -683,6 +688,7 @@ main {
       }
 
     }
+
     .companyDataEdit.Machines-list{
 
         .control-option.delete-button{
@@ -715,7 +721,7 @@ main {
 
 
         .formgroup{
-            margin: 50px auto;
+            margin: 20px auto;
             display: flex;
             align-items: center;
             font-size: 1.2rem;
@@ -749,7 +755,7 @@ main {
                 font-size: 1.2rem;
                 padding-left: 15px;
                 background-color: transparent;
-                border-bottom: 1px solid black;
+                border: 1px solid black;
 
             }
 

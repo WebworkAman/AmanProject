@@ -22,8 +22,6 @@
 
 
             <div id="companyDataForm">
-
-
                 <div class="formgroup">
                     <label for="company_name">公司名稱 ：</label>
                     <p>{{ $crmMainCustInfo->company_name ?? '' }}</p>
@@ -183,14 +181,13 @@
             @if (session('editMode')) style="display:block;" @else style="display:none;" @endif>
 
             <h2>公司基本資料</h2>
-            <p>編輯模式</p>
 
             <form action="{{ route('company', ['companyId' => $companyId]) }}" method="get">
                 <button type="submit" id="ReturnButton">返回</button>
             </form>
 
 
-            <form method="post" action="{{ route('companyUpdate', ['companyId' => $companyId]) }}">
+            <form class="formBlock" method="post" action="{{ route('companyUpdate', ['companyId' => $companyId]) }}">
 
                 @method('PUT')
                 @csrf
@@ -260,8 +257,8 @@
                                 value="{{ $companyPhones[1]['country_code_2'] ?? '' }}"></li>
                         <li><span>區碼</span><input type="text" name="company_phone[area_code_2]" id="area_code_2"
                                 value="{{ $companyPhones[1]['area_code_2'] ?? '' }}"></li>
-                        <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_2]" id="phone_number_2"
-                                value="{{ $companyPhones[1]['phone_number_2'] ?? '' }}"></li>
+                        <li><span>電話號碼</span><input type="text" name="company_phone[phone_number_2]"
+                                id="phone_number_2" value="{{ $companyPhones[1]['phone_number_2'] ?? '' }}"></li>
                     </ul>
                     <ul>
                         <li><span>國碼</span><input type="text" name="company_phone[country_code_3]" id="country_code_3"
