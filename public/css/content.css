@@ -579,18 +579,26 @@ main .Show_form .pagination li.disabled {
   pointer-events: none;
 }
 main #toggleEditMode, main #ReturnButton {
-  color: #273252;
   float: right;
-  margin-right: 50px;
+  display: block;
+  text-decoration: none;
+  color: rgb(10, 30, 208);
+  font-weight: 350;
+  letter-spacing: 1.2;
+  border: 1px solid rgb(10, 30, 208);
   border-radius: 10px;
-  width: 100px;
+  width: 150px;
+  text-align: center;
+  margin: 20px;
+  padding: 5px;
+  background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
-  letter-spacing: 2px;
 }
 main #toggleEditMode:hover, main #ReturnButton:hover, main #submitButton:hover {
-  background-color: #202329;
-  color: white;
+  color: whitesmoke;
+  background-color: orange;
+  border: 1px solid orange;
 }
 main #submitButton {
   margin-top: 20px;

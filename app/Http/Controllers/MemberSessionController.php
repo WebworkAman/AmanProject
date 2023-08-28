@@ -58,9 +58,15 @@ class MemberSessionController extends Controller
             if(Hash::check($request->password,$member->password)){
 
                 if($member->email_verified){
-                    session(['memberId' => $member->id]);
 
-                    return redirect(MemberAuth::HOME_URL);
+                    if($member->stat_info == 'y'){
+                        session(['memberId' => $member->id]);
+
+                        return redirect(MemberAuth::HOME_URL);
+                    }else{
+                        return back()->with('fail','您已經離職，如有需要，請洽註冊公司更改資料');
+                    }
+
                 }
                 return back()->with('fail','您需要確認您的帳戶。 我們已發送給您
                 相關連結，請查看您的郵箱');
