@@ -672,6 +672,34 @@ main {
     }
     .companyDataEdit.Machines-list{
 
+        .control-option.delete-button{
+            background-color: white;
+            float: right;
+            display: block;
+            text-decoration: none;
+            color: rgb(10, 30, 208);
+            font-weight: 300;
+            border: 1px solid rgb(10, 30, 208);
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+            margin: 20px;
+            padding: 2px;
+            font-size: 1rem;
+            cursor: pointer;
+
+        }
+        .control-option.delete-button:hover{
+            color: whitesmoke;
+            background-color: orange;
+            border: 1px solid orange;
+        }
+
+        .company-button{
+            display: flex;
+            justify-content: center;
+        }
+
 
         .formgroup{
             margin: 50px auto;

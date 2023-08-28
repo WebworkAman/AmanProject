@@ -732,6 +732,31 @@ main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData
 main .companyData .formgroup.phone_type ul #company_purchase_person_name, main .companyDataEdit .formgroup.phone_type ul #company_purchase_person_name {
   width: 22vw;
 }
+main .companyDataEdit.Machines-list .control-option.delete-button {
+  background-color: white;
+  float: right;
+  display: block;
+  text-decoration: none;
+  color: rgb(10, 30, 208);
+  font-weight: 300;
+  border: 1px solid rgb(10, 30, 208);
+  border-radius: 10px;
+  width: 150px;
+  text-align: center;
+  margin: 20px;
+  padding: 2px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+main .companyDataEdit.Machines-list .control-option.delete-button:hover {
+  color: whitesmoke;
+  background-color: orange;
+  border: 1px solid orange;
+}
+main .companyDataEdit.Machines-list .company-button {
+  display: flex;
+  justify-content: center;
+}
 main .companyDataEdit.Machines-list .formgroup {
   margin: 50px auto;
   display: flex;

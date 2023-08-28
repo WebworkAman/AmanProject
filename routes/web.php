@@ -117,6 +117,7 @@ Route::post('/companyCreate/{companyId}',[MemberSessionController::class,'compan
 
 Route::get('/companyMachineList',[MemberSessionController::class,'companyMachineList'])->name('companyMachineList');
 Route::get('/companyMachineList/{machine}',[MemberSessionController::class,'companyMachineData'])->name('companyMachineData');
+Route::delete('/deleteCompanyMachine/{machine}', [MemberSessionController::class, 'deleteCompanyMachine'])->name('deleteCompanyMachine');
 Route::get('/companyMachineAdd',[MemberSessionController::class,'companyMachineAdd'])->name('companyMachineAdd');
 Route::post('/companyMachineAdd',[MemberSessionController::class,'companyMachineAddPost'])->name('companyMachineAddPost');
 Route::get('/companyMachine/{machine}',[MemberSessionController::class,'companyMachineUpdateView'])->name('companyMachineUpdateView');

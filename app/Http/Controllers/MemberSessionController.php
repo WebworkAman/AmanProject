@@ -578,6 +578,19 @@ class MemberSessionController extends Controller
 
         return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo','crmMachines','crmMachinesContactlist'));
     }
+    public function deleteCompanyMachine($machine)
+{
+    $crmMachine = CRM_Machines::findOrFail($machine);
+
+    // 如果需要，您可以在這裡添加權限檢查或其他安全性措施
+
+    // 刪除機器資料
+    $crmMachine->delete();
+
+    return redirect()->route('companyMachineList')
+        ->with('success', '機器資料已成功刪除');
+}
+
     public function editMachineContact($machine, $id)
 {
     $member = MemberAuth::member(); // 獲取會員訊息，類似之前的操作

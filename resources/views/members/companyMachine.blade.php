@@ -17,9 +17,16 @@
                     </br></br>
                     <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
                 </div>
-                <a class="btn control-option" href="{{ route('companyMachineList') }}">返回</a>
-                <a class="btn control-option" href="{{ route('companyMachineUpdateView', $crmMachine) }}">更新</a>
+                <div class="company-button">
+                    <a class="btn control-option" href="{{ route('companyMachineUpdateView', $crmMachine) }}">更新</a>
+                    <form method="POST" action="{{ route('deleteCompanyMachine', ['machine' => $crmMachine]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="control-option delete-button">刪除</button>
+                    </form>
 
+                    <a class="btn control-option" href="{{ route('companyMachineList') }}">返回</a>
+                </div>
                 <div id="machineData" style="display: block;">
 
                     <div class="formgroup">
@@ -626,5 +633,22 @@
                 }
             })
         })
+    </script>
+    <script>
+        // 選取所有的刪除按鈕
+        var deleteButtons = document.querySelectorAll('.delete-button');
+
+        // 對每個刪除按鈕添加點擊事件處理程序
+        deleteButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                // 彈出確認視窗，讓使用者確定是否刪除
+                var shouldDelete = confirm('確定要刪除這個項目嗎？');
+
+                // 如果使用者點擊確認，則提交表單；否則取消
+                if (!shouldDelete) {
+                    event.preventDefault();
+                }
+            });
+        });
     </script>
 @endsection
