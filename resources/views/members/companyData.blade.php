@@ -138,7 +138,7 @@
 
                     @if ($companyPurchasePerson)
                         <ul>
-                            <li><span>姓名</span>
+                            <li><span>姓名：</span>
                                 <p>{{ $crmMainCustInfo->company_purchase_person_name }}</p>
                             </li>
                             <li><span>國碼 ：

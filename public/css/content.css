@@ -705,8 +705,7 @@ main .companyData .formgroup ul li input, main .companyDataEdit .formgroup ul li
   margin-left: 10px;
 }
 main .companyData .formgroup ul li p, main .companyDataEdit .formgroup ul li p {
-  line-height: 2;
-  margin-left: 10px;
+  line-height: 1;
 }
 main .companyData .formgroup textarea, main .companyDataEdit .formgroup textarea {
   width: 20vw;
@@ -726,7 +725,7 @@ main .companyData .formgroup.phone_type ul, main .companyDataEdit .formgroup.pho
   display: flex;
 }
 main .companyData .formgroup.phone_type ul li, main .companyDataEdit .formgroup.phone_type ul li {
-  line-height: 2;
+  line-height: 1;
 }
 main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formgroup.phone_type ul li span {
   text-align: center;
