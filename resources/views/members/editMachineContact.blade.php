@@ -104,7 +104,7 @@
 
                     </div>
 
-                    <button type="submit">更新</button>
+                    <button type="submit" id="submitButton">更新</button>
                 </form>
 
             </div>
