@@ -490,10 +490,9 @@ main {
             float: right;
             display: block;
             text-decoration: none;
-            color: rgb(10, 30, 208);
-            font-weight: 350;
+            color: #23547a;
             letter-spacing: 1.2;
-            border: 1px solid rgb(10, 30, 208);
+            border: 1px solid #23547a;
             border-radius: 10px;
             width: 150px;
             text-align: center;
@@ -553,7 +552,7 @@ main {
             label{
                 display: block;
                 width: max-content;
-                min-width: 8vw;
+                min-width: 110px;
                 margin-right: 10px;
 
             }
@@ -864,7 +863,49 @@ main {
 
 
     }
+#companyDataView{
 
+    border: none;
+    #companyDataForm{
+        margin-top: 100px;
+        .formgroup{
+            border: 1px solid silver;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px;
+
+
+            label{
+                color: #8d4726;
+            }
+            span{
+                color: #23547a;
+
+            }
+
+
+            ul{
+                display: flex;
+            }
+
+        }
+        .formgroup.phone_type{
+            display: flex;
+            align-items: center;
+            span{
+                color: #23547a;
+            }
+            label{
+                margin-bottom: 0;
+                min-width: 110px;
+            }
+        }
+
+    }
+
+
+
+}
 
 
 // 公司基本資料表單樣式（橫向版）
@@ -1028,7 +1069,7 @@ main {
             label{
                 display: block;
                 width: max-content;
-                min-width: 8vw;
+                min-width: 110px;
                 margin-right: 10px;
 
             }

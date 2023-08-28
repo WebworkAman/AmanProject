@@ -582,10 +582,9 @@ main #toggleEditMode, main #ReturnButton {
   float: right;
   display: block;
   text-decoration: none;
-  color: rgb(10, 30, 208);
-  font-weight: 350;
+  color: #23547a;
   letter-spacing: 1.2;
-  border: 1px solid rgb(10, 30, 208);
+  border: 1px solid #23547a;
   border-radius: 10px;
   width: 150px;
   text-align: center;
@@ -643,7 +642,7 @@ main .companyData .formgroup label, main .companyDataEdit .formgroup label {
   display: block;
   width: -moz-max-content;
   width: max-content;
-  min-width: 8vw;
+  min-width: 110px;
   margin-right: 10px;
 }
 main .companyData .formgroup span, main .companyDataEdit .formgroup span {
@@ -882,6 +881,38 @@ main .companyDataEdit.Machines-list .formgroup.subBlock {
     padding-top: 30px;
   }
 }
+main #companyDataView {
+  border: none;
+}
+main #companyDataView #companyDataForm {
+  margin-top: 100px;
+}
+main #companyDataView #companyDataForm .formgroup {
+  border: 1px solid silver;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px;
+}
+main #companyDataView #companyDataForm .formgroup label {
+  color: #8d4726;
+}
+main #companyDataView #companyDataForm .formgroup span {
+  color: #23547a;
+}
+main #companyDataView #companyDataForm .formgroup ul {
+  display: flex;
+}
+main #companyDataView #companyDataForm .formgroup.phone_type {
+  display: flex;
+  align-items: center;
+}
+main #companyDataView #companyDataForm .formgroup.phone_type span {
+  color: #23547a;
+}
+main #companyDataView #companyDataForm .formgroup.phone_type label {
+  margin-bottom: 0;
+  min-width: 110px;
+}
 main .companyDataEdit1 {
   width: 100%;
   max-width: 900px;
@@ -1014,7 +1045,7 @@ main .memberBasicDate .formgroup label {
   display: block;
   width: -moz-max-content;
   width: max-content;
-  min-width: 8vw;
+  min-width: 110px;
   margin-right: 10px;
 }
 main .memberBasicDate .formgroup span {

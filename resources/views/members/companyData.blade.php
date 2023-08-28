@@ -15,146 +15,160 @@
 
             <h2>公司基本資料</h2>
 
-            <p>檢視模式</p>
             @if ($identityPerm == 1 || $identityPerm == 2)
                 <button id="toggleEditMode" class="btn control-option">編輯</button>
             @else
             @endif
 
 
+            <div id="companyDataForm">
 
-            <div class="formgroup">
-                <label for="company_name">公司名稱 ：</label>
-                <p>{{ $crmMainCustInfo->company_name ?? '' }}</p>
-            </div>
 
-            @php
-                $company_address = json_decode($crmMainCustInfo->company_address ?? '');
-            @endphp
-
-            @if ($company_address)
                 <div class="formgroup">
-                    <label for="company_address">公司地址 ：</label>
-                    <ul>
-                        <li>
-                            國家 : {{ json_decode($crmMainCustInfo->company_address)->country }}
-                        </li>
-                        <li>
-                            郵遞區號 : {{ json_decode($crmMainCustInfo->company_address)->postal_code ?? '' }}
-                        </li>
-                        <li>
-                            區域 : {{ json_decode($crmMainCustInfo->company_address)->region }}
-                        </li>
-                        <li>城市 : {{ json_decode($crmMainCustInfo->company_address)->city }}</li>
-                        <li>街/路名 : {{ json_decode($crmMainCustInfo->company_address)->street }}</li>
-                    </ul>
+                    <label for="company_name">公司名稱 ：</label>
+                    <p>{{ $crmMainCustInfo->company_name ?? '' }}</p>
                 </div>
-            @else
-                <p>無公司地址資料</p>
-            @endif
 
-            <div class="formgroup">
-                <label for="company_tax_id">統一編號 ：</label>
-                <p>{{ $crmMainCustInfo->company_tax_id ?? '' }}</p>
-            </div>
+                @php
+                    $company_address = json_decode($crmMainCustInfo->company_address ?? '');
+                @endphp
+
+                @if ($company_address)
+                    <div class="formgroup">
+                        <label for="company_address">公司地址 ：</label>
+                        <ul>
+                            <li><span>國家 :</span>
+                                {{ json_decode($crmMainCustInfo->company_address)->country }}
+                            </li>
+                            <li><span>郵遞區號 : </span>
+                                {{ json_decode($crmMainCustInfo->company_address)->postal_code ?? '' }}
+                            </li>
+                            <li><span>區域 :</span>
+                                {{ json_decode($crmMainCustInfo->company_address)->region }}
+                            </li>
+                            <li>
+                                <span>城市 : </span>{{ json_decode($crmMainCustInfo->company_address)->city }}
+                            </li>
+                            <li><span>街/路名 :</span>
+                                {{ json_decode($crmMainCustInfo->company_address)->street }}</li>
+                        </ul>
+                    </div>
+                @else
+                    <p>無公司地址資料</p>
+                @endif
+
+                <div class="formgroup">
+                    <label for="company_tax_id">統一編號 ：</label>
+                    <p>{{ $crmMainCustInfo->company_tax_id ?? '' }}</p>
+                </div>
 
 
-            @php
-                $companyPhones = json_decode($crmMainCustInfo->company_phone ?? '', true);
-            @endphp
+                @php
+                    $companyPhones = json_decode($crmMainCustInfo->company_phone ?? '', true);
+                @endphp
 
-            @if (is_array($companyPhones) && count($companyPhones) > 0)
+                @if (is_array($companyPhones) && count($companyPhones) > 0)
+                    <div class="formgroup phone_type">
+                        <label for="company_phone">公司電話 ：</label>
+
+                        <div class="phoneType">
+                            @foreach ($companyPhones as $phone)
+                                @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']))
+                                    <ul>
+                                        <li><span>國碼</span>{{ $phone['country_code_1'] ?? '' }}</li>
+                                        <li><span>區碼</span>{{ $phone['area_code_1'] ?? '' }}</li>
+                                        <li><span>電話號碼</span>{{ $phone['phone_number_1'] ?? '' }}</li>
+                                    </ul>
+                                @endif
+                                @if (!empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']))
+                                    <ul>
+                                        <li><span>國碼</span>{{ $phone['country_code_2'] ?? '' }}</li>
+                                        <li><span>區碼</span>{{ $phone['area_code_2'] ?? '' }}</li>
+                                        <li><span>電話號碼</span>{{ $phone['phone_number_2'] ?? '' }}</li>
+                                    </ul>
+                                @endif
+                                @if (!empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
+                                    <ul>
+                                        <li><span>國碼</span>{{ $phone['country_code_3'] ?? '' }}</li>
+                                        <li><span>區碼</span>{{ $phone['area_code_3'] ?? '' }}</li>
+                                        <li><span>電話號碼</span>{{ $phone['phone_number_3'] ?? '' }}</li>
+                                    </ul>
+                                @endif
+                            @endforeach
+                        </div>
+
+
+
+                    </div>
+                @endif
+
+                @php
+                    $companyFax = json_decode($crmMainCustInfo->company_fax ?? '');
+                @endphp
+
                 <div class="formgroup phone_type">
-                    <label for="company_phone">公司電話 ：</label>
-                    <ul>
-                        @foreach ($companyPhones as $phone)
-                            @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']))
-                                <li><span>國碼</span>{{ $phone['country_code_1'] ?? '' }}</li>
-                                <li><span>區碼</span>{{ $phone['area_code_1'] ?? '' }}</li>
-                                <li><span>電話號碼</span>{{ $phone['phone_number_1'] ?? '' }}</li>
-                            @endif
-                            @if (!empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']))
-                                <li><span>國碼</span>{{ $phone['country_code_2'] ?? '' }}</li>
-                                <li><span>區碼</span>{{ $phone['area_code_2'] ?? '' }}</li>
-                                <li><span>電話號碼</span>{{ $phone['phone_number_2'] ?? '' }}</li>
-                            @endif
-                            @if (!empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
-                                <li><span>國碼</span>{{ $phone['country_code_3'] ?? '' }}</li>
-                                <li><span>區碼</span>{{ $phone['area_code_3'] ?? '' }}</li>
-                                <li><span>電話號碼</span>{{ $phone['phone_number_3'] ?? '' }}</li>
-                            @endif
-                        @endforeach
-                    </ul>
+                    <label for="company_fax">公司傳真 ：</label>
+                    @if ($companyFax)
+                        <ul>
+                            <li><span>國碼</span>{{ $companyFax->country_code }}</li>
+                            <li><span>區碼</span>{{ $companyFax->area_code }}</li>
+                            <li><span>電話號碼</span>{{ $companyFax->fax_number }}</li>
+                        </ul>
+                    @else
+                        <p>無公司傳真資料</p>
+                    @endif
                 </div>
-            @endif
 
-            @php
-                $companyFax = json_decode($crmMainCustInfo->company_fax ?? '');
-            @endphp
+                <div class="formgroup">
+                    <label for="company_website">公司網址 ：</label>
+                    <p>{{ $crmMainCustInfo->company_website ?? '' }}</p>
+                </div>
 
-            <div class="formgroup phone_type">
-                <label for="company_fax">公司傳真 ：</label>
-                @if ($companyFax)
-                    <ul>
-                        <li><span>國碼</span>{{ $companyFax->country_code }}</li>
-                        <li><span>區碼</span>{{ $companyFax->area_code }}</li>
-                        <li><span>電話號碼</span>{{ $companyFax->fax_number }}</li>
-                    </ul>
-                @else
-                    <p>無公司傳真資料</p>
-                @endif
+                <div class="formgroup">
+                    <label for="company_ceo">公司負責人(董事長) ：</label>
+                    <p>{{ $crmMainCustInfo->company_ceo ?? '' }}</p>
+                </div>
+
+                @php
+                    $companyPurchasePerson = json_decode($crmMainCustInfo->company_purchase_person_phone ?? '');
+                @endphp
+
+                <div class="formgroup phone_type">
+                    <label for="company_purchase_person">採購人員 ：</label>
+
+                    @if ($companyPurchasePerson)
+                        <ul>
+                            <li><span>姓名</span>
+                                <p>{{ $crmMainCustInfo->company_purchase_person_name }}</p>
+                            </li>
+                            <li><span>國碼 ：
+                                </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->country_code }}
+                            </li>
+                            <li><span>區碼 ：
+                                </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->area_code }}
+                            </li>
+                            <li><span>電話號碼：</span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->phone_number }}
+                            </li>
+                            <li><span>分機 ：
+                                </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->purchase_extension }}
+                            </li>
+                        </ul>
+                    @else
+                        <p>無資料</p>
+                    @endif
+                </div>
+
+                <div class="formgroup">
+                    <label for="company_email">E-mail ：</label>
+                    <p>{{ $crmMainCustInfo->company_email ?? '' }}</p>
+                </div>
+
+                <div class="formgroup">
+                    <label for="company_other_info">其他說明 ：</label>
+                    <p>{{ $crmMainCustInfo->company_other_info ?? '' }}</p>
+                </div>
+                <div class="baseline"></div>
             </div>
-
-            <div class="formgroup">
-                <label for="company_website">公司網址 ：</label>
-                <p>{{ $crmMainCustInfo->company_website ?? '' }}</p>
-            </div>
-
-            <div class="formgroup">
-                <label for="company_ceo">公司負責人(董事長) ：</label>
-                <p>{{ $crmMainCustInfo->company_ceo ?? '' }}</p>
-            </div>
-
-            @php
-                $companyPurchasePerson = json_decode($crmMainCustInfo->company_purchase_person_phone ?? '');
-            @endphp
-
-            <div class="formgroup phone_type">
-                <label for="company_purchase_person">採購人員 ：</label>
-
-                @if ($companyPurchasePerson)
-                    <ul>
-                        <li><span>姓名</span>
-                            <p>{{ $crmMainCustInfo->company_purchase_person_name }}</p>
-                        </li>
-
-                    </ul>
-                    <ul>
-                        <li><span>國碼 ：
-                            </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->country_code }}</li>
-                        <li><span>區碼 ： </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->area_code }}
-                        </li>
-                        <li><span>電話號碼：</span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->phone_number }}
-                        </li>
-                        <li><span>分機 ：
-                            </span>{{ json_decode($crmMainCustInfo->company_purchase_person_phone)->purchase_extension }}
-                        </li>
-                    </ul>
-                @else
-                    <p>無資料</p>
-                @endif
-            </div>
-
-            <div class="formgroup">
-                <label for="company_email">E-mail ：</label>
-                <p>{{ $crmMainCustInfo->company_email ?? '' }}</p>
-            </div>
-
-            <div class="formgroup">
-                <label for="company_other_info">其他說明 ：</label>
-                <p>{{ $crmMainCustInfo->company_other_info ?? '' }}</p>
-            </div>
-            <div class="baseline"></div>
         </div>
 
 
