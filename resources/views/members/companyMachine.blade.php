@@ -151,73 +151,82 @@
 
                     </div>
 
-                    <!-- <div class="formgroup">
-                                                  <label for="contact_person_position">5. 聯絡人</label>
-                                                  <select name="contact_person_position" id="contact_person_position">
-                                                      <option value="1">廠長</option>
-                                                      <option value="2">組長</option>
-                                                      <option value="3">機修保養人</option>
-                                                      <option value="4">操作員</option>
-                                                      <option value="5">其他</option>
-                                                  </select>
-                                                  <ul>
-                                                      <li><input type="text" name="other_contact_person_position" id="other_contact_person_position" placeholder="請輸入職位" style="display: none;"></li>
-                                                  </ul>
+                    {{-- <div class="formgroup">
+                        <label for="contact_person_position">5. 聯絡人</label>
+                        <select name="contact_person_position" id="contact_person_position">
+                            <option value="1">廠長</option>
+                            <option value="2">組長</option>
+                            <option value="3">機修保養人</option>
+                            <option value="4">操作員</option>
+                            <option value="5">其他</option>
+                        </select>
+                        <ul>
+                            <li><input type="text" name="other_contact_person_position"
+                                    id="other_contact_person_position" placeholder="請輸入職位" style="display: none;"></li>
+                        </ul>
 
-                                                  </div>
-
-
-                                                  <div class="formgroup subBlock">
-                                                  <label for="contact_person_name">姓名 ：</label>
-                                                  <p></p>
-                                                  <input type="text" name="contact_person_name" id="contact_person_name">
-                                                  </div>
+                    </div>
 
 
+                    <div class="formgroup subBlock">
+                        <label for="contact_person_name">姓名 ：</label>
+                        <p></p>
+                        <input type="text" name="contact_person_name" id="contact_person_name">
+                    </div>
 
 
-                                                  <div class="formgroup phone_type subBlock">
-                                                  <label for="contact_person_phone">公司電話 ：</label>
-                                                  <ul>
-                                                      <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]" id="contact_country_code"></li>
-                                                      <li><span>區碼</span><input type="text" name="contact_person_phone[area_code]" id="contact_area_code"></li>
-                                                  </ul>
-                                                  <ul>
-                                                      <li><span>電話號碼</span><input type="text" name="contact_person_phone[phone_number]" id="contact_phone_number"></li>
-                                                      <li><span>分機</span><input type="text" name="contact_person_phone[extension]" id="contact_extension"></li>
-                                                  </ul>
-                                                  </div>
-
-                                                  <div class="formgroup subBlock">
-                                                  <label for="contact_person_mobile">手機 ：</label>
-                                                  <input type="text" name="contact_person_mobile" id="contact_person_mobile">
-                                                  <p></p>
-                                                  </div>
-
-                                                  <div class="formgroup subBlock">
-                                                  <label for="contact_person_email">E-mail ：</label>
-
-                                                  <input type="email" name="contact_person_email" id="contact_person_email">
-                                                  <p>{{ $crmMachine->contact_person_email }}</p>
-
-                                                  </div>
-
-                                                  <div class="formgroup subBlock">
-                                                  <label for="contact_software_data">通訊軟體 ：</label>
-                                                  <select name="contact_software_type" id="contact_software_type">
-                                                      <option value="1">Whats APP</option>
-                                                      <option value="2">Line</option>
-                                                      <option value="3">WeChat</option>
-                                                      <option value="4">其他</option>
-                                                  </select>
 
 
-                                                  <ul>
-                                                      <li><input type="text" name="other_contact_software_type" id="other_contact_software_type" placeholder="請輸入你的通訊軟體" style="display: none;"></li>
-                                                      <li><p>ID ：{{ $crmMachine->contact_software_id }}</p><input type="text" name="contact_software_data[software_id]" id="contact_software_id"></li>
-                                                  </ul>
+                    <div class="formgroup phone_type subBlock">
+                        <label for="contact_person_phone">公司電話 ：</label>
+                        <ul>
+                            <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]"
+                                    id="contact_country_code"></li>
+                            <li><span>區碼</span><input type="text" name="contact_person_phone[area_code]"
+                                    id="contact_area_code"></li>
+                        </ul>
+                        <ul>
+                            <li><span>電話號碼</span><input type="text" name="contact_person_phone[phone_number]"
+                                    id="contact_phone_number"></li>
+                            <li><span>分機</span><input type="text" name="contact_person_phone[extension]"
+                                    id="contact_extension"></li>
+                        </ul>
+                    </div>
 
-                                                  </div> -->
+                    <div class="formgroup subBlock">
+                        <label for="contact_person_mobile">手機 ：</label>
+                        <input type="text" name="contact_person_mobile" id="contact_person_mobile">
+                        <p></p>
+                    </div>
+
+                    <div class="formgroup subBlock">
+                        <label for="contact_person_email">E-mail ：</label>
+
+                        <input type="email" name="contact_person_email" id="contact_person_email">
+                        <p>{{ $crmMachine->contact_person_email }}</p>
+
+                    </div>
+
+                    <div class="formgroup subBlock">
+                        <label for="contact_software_data">通訊軟體 ：</label>
+                        <select name="contact_software_type" id="contact_software_type">
+                            <option value="1">Whats APP</option>
+                            <option value="2">Line</option>
+                            <option value="3">WeChat</option>
+                            <option value="4">其他</option>
+                        </select>
+
+
+                        <ul>
+                            <li><input type="text" name="other_contact_software_type" id="other_contact_software_type"
+                                    placeholder="請輸入你的通訊軟體" style="display: none;"></li>
+                            <li>
+                                <p>ID ：{{ $crmMachine->contact_software_id }}</p><input type="text"
+                                    name="contact_software_data[software_id]" id="contact_software_id">
+                            </li>
+                        </ul>
+
+                    </div> --}}
 
                     @if ($crmMachine->purchase_manufacturer == 4)
                         <div class="formgroup">
@@ -357,16 +366,43 @@
                         <th>手機</th>
                         <th>電郵</th>
                         <th>通訊軟體</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($crmMachinesContactlist as $crmMachinesContact)
                         <tr>
-                            <td>{{ $crmMachinesContact->contact_person_position ?? '' }}</td>
+                            @if ($crmMachinesContact->contact_person_position == 5)
+                                <td>{{ $crmMachinesContact->other_contact_person_position ?? '' }}</td>
+                            @else
+                                @php
+                                    $PositionMap = [
+                                        1 => '廠長',
+                                        2 => '組長',
+                                        3 => '機器保養人',
+                                        4 => '操作員',
+                                    ];
+                                @endphp
+                                <td>{{ $PositionMap[$crmMachinesContact->contact_person_position] ?? '' }}</td>
+                            @endif
+
                             <td>{{ $crmMachinesContact->contact_person_name ?? '' }}</td>
                             <td>{{ $crmMachinesContact->contact_person_mobile ?? '' }}</td>
                             <td>{{ $crmMachinesContact->contact_person_email ?? '' }}</td>
                             <td>{{ json_decode($crmMachinesContact->contact_commu_software)->type }}:{{ json_decode($crmMachinesContact->contact_commu_software)->id }}
+                            </td>
+                            <td>
+                                <a
+                                    href="{{ route('editMachineContact', ['machine' => $crmMachine, 'id' => $crmMachinesContact->id]) }}">編輯</a>
+                            </td>
+                            <td>
+                                <form method="POST"
+                                    action="{{ route('MachinesContact.destroy', ['machine' => $crmMachine, 'id' => $crmMachinesContact->id]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete-button">刪除</button>
+                                </form>
                             </td>
 
                         </tr>
@@ -422,8 +458,8 @@
                             <ul>
                                 <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]"
                                         id="contact_country_code"></li>
-                                <li><span>區碼</span><input type="text" name="contact_person_phone[area_code]"
-                                        id="contact_area_code"></li>
+                                <li><span>區碼</span><input type="text" name="contact_person_phone[postal_code]"
+                                        id="contact_postal_code"></li>
                             </ul>
                             <ul>
                                 <li><span>電話號碼</span><input type="text" name="contact_person_phone[phone_number]"

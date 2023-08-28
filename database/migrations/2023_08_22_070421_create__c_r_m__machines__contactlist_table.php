@@ -20,9 +20,11 @@ class CreateCRMMachinesContactlistTable extends Migration
             $table->unsignedBigInteger('crm_machine_id'); // 對應到 CRM_Machines 資料表的 id
             $table->foreign('crm_machine_id')->references('id')->on('crm_machines')->onDelete('cascade');
 
-            $table->string('contact_person_position',30);
+            $table->string('contact_person_position',1);
+            $table->string('other_contact_person_position',30)->nullable();
+
             $table->string('contact_person_name',40);
-            $table->Json('contact_person_phone')->nullable();;
+            $table->Json('contact_person_phone')->nullable();
             $table->string('contact_person_mobile',30)->nullable();;
             $table->string('contact_person_email',40)->nullable();;
             $table->Json('contact_commu_software')->nullable();;

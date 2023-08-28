@@ -121,9 +121,13 @@ Route::get('/companyMachineAdd',[MemberSessionController::class,'companyMachineA
 Route::post('/companyMachineAdd',[MemberSessionController::class,'companyMachineAddPost'])->name('companyMachineAddPost');
 Route::get('/companyMachine/{machine}',[MemberSessionController::class,'companyMachineUpdateView'])->name('companyMachineUpdateView');
 Route::put('/companyMachine/{machine}',[MemberSessionController::class,'companyMachineUpdate'])->name('companyMachineUpdate');
-
+Route::delete('/companyMachineList/{machine}/{id}', [MemberSessionController::class, 'MachinesContactDestroy'])->name('MachinesContact.destroy');
 //購買機器聯絡人資料
 Route::post('/companyMachineList/{machine}/',[MemberSessionController::class,'MachineContactAdd'])->name('MachineContactAdd');
+//編輯機器聯絡人資料
+Route::get('/editMachineContact/{machine}/{id}', [MemberSessionController::class, 'editMachineContact'])->name('editMachineContact');
+Route::put('/updateMachineContact/{machine}/{id}', [MemberSessionController::class, 'updateMachineContact'])->name('updateMachineContact');
+
 
 
 //登入首頁

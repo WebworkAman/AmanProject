@@ -560,6 +560,7 @@ class MemberSessionController extends Controller
 
         return view('members.companyMachinesList', compact('members','crmMachines','member','crmMainCustInfo'));
     }
+
     public function companyMachineData(Request $request,$machine){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -576,6 +577,55 @@ class MemberSessionController extends Controller
         $crmMachinesContactlist = CRM_Machines_Contactlist::where('crm_machine_id',$machine)->get();
 
         return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo','crmMachines','crmMachinesContactlist'));
+    }
+    public function editMachineContact($machine, $id)
+{
+    $member = MemberAuth::member(); // 獲取會員訊息，類似之前的操作
+    $crmMachine = CRM_Machines::find($machine);
+    $crmMachinesContact = CRM_Machines_Contactlist::findOrFail($id);
+
+    return view('members.editMachineContact', compact('crmMachine', 'crmMachinesContact'));
+}
+
+public function updateMachineContact(Request $request, $machine, $id)
+{
+    $crmMachinesContact = CRM_Machines_Contactlist::findOrFail($id);
+
+    // 更新聯絡人資料
+    $crmMachinesContact->update([
+        // 其他欄位...
+        'contact_person_position' => $request->contact_person_position,
+        'other_contact_person_position' => $request->other_contact_person_position,
+        'contact_person_name' => $request->contact_person_name,
+        'contact_person_phone' => json_encode([
+          'country_code' => $request->input('contact_person_phone.country_code'),
+          'postal_code' => $request->input('contact_person_phone.postal_code'),
+          'phone_number' => $request->input('contact_person_phone.phone_number'),
+          'extension' => $request->input('contact_person_phone.extension'),
+      ]),
+        'contact_person_mobile' => $request->contact_person_mobile,
+        'contact_person_email' => $request->contact_person_email,
+        'contact_commu_software' => json_encode([
+        'type' => $request->input('contact_software_type'),
+        'id'   => $request->input('contact_software_data.software_id'),
+      ]),
+    ]);
+
+    return redirect()->route('companyMachineData', ['machine' => $machine])
+        ->with('success', '機器聯絡人已成功更新');
+}
+
+    public function MachinesContactDestroy($machine, $id)
+    {
+        // 使用 $machine 和 $id 進行刪除操作
+        $crmMachineContact = CRM_Machines_Contactlist::findOrFail($id);
+        $crmMachineContact->delete();
+
+        // return redirect()->back()->with('success', '聯絡人已刪除');
+        return redirect()->route('companyMachineData', ['machine' => $machine])
+                     ->with('success', '聯絡人已成功刪除');
+
+
     }
 
     public function companyMachineUpdateView(Request $request,$machine){
@@ -756,13 +806,14 @@ class MemberSessionController extends Controller
         $crmMachinesContactlist = CRM_Machines_Contactlist::create([
 
               'crm_machine_id' => $machine,
-              'contact_person_position' => $otherPurchaseSource,
+              'contact_person_position' => $request->contact_person_position,
+              'other_contact_person_position' => $request->other_contact_person_position,
               'contact_person_name' => $request->contact_person_name,
               'contact_person_phone' => json_encode([
                 'country_code' => $request->input('contact_person_phone.country_code'),
-                'postal_code' => $request->input('contact_person_phone.area_code'),
-                'region' => $request->input('contact_person_phone.phone_number'),
-                'city' => $request->input('contact_person_phone.extension'),
+                'postal_code' => $request->input('contact_person_phone.postal_code'),
+                'phone_number' => $request->input('contact_person_phone.phone_number'),
+                'extension' => $request->input('contact_person_phone.extension'),
             ]),
               'contact_person_mobile' => $request->contact_person_mobile,
               'contact_person_email' => $request->contact_person_email,

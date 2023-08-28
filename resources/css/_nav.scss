@@ -15,7 +15,7 @@ nav {
     .nav-right {
 
         button{
-            
+
             cursor: pointer;
             border: 0;
             background-color: brown;
@@ -32,7 +32,7 @@ nav {
             margin-top: 30px;
             li {
                 margin-left: 20px;
-                
+
                p{
                 margin-top: 8px;
                 color: rgb(6, 34, 87);
@@ -41,7 +41,7 @@ nav {
                 a{
                     text-decoration: none;
                     color: rgb(6, 34, 87);
-                    
+
                 }
                 a:hover{
                     color: rgb(248, 165, 20);
@@ -53,7 +53,7 @@ nav {
             }
         }
         #hamburger-menu{
-            
+
             opacity: 0;
             flex-direction: column;
             border: 1px solid gray;
@@ -76,7 +76,7 @@ nav {
                 color: orange;
                }
 
-  
+
 
             }
             .menu-line{
@@ -84,13 +84,23 @@ nav {
                 width: 50px;
                 margin: 0 auto;
               }
-            
-            
+
+
         }
+        @media (max-width:1700px){
+
+            #hamburger-menu{
+                right: 100;
+            }
+
+        }
+
         #hamburger-menu.show {
             opacity: 1; /* 透明度為 1 時顯示 */
             top:100;
         }
+
+
 
     }
 

@@ -124,6 +124,11 @@ nav .nav-right #hamburger-menu .menu-line {
   width: 50px;
   margin: 0 auto;
 }
+@media (max-width: 1700px) {
+  nav .nav-right #hamburger-menu {
+    right: 100;
+  }
+}
 nav .nav-right #hamburger-menu.show {
   opacity: 1; /* 透明度為 1 時顯示 */
   top: 100;
