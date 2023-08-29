@@ -11,7 +11,7 @@ nav{
         }
     }
     button{
-            
+
         cursor: pointer;
         border: 0;
         background-color: brown;
@@ -55,22 +55,22 @@ nav{
         font-weight: 300;
         text-decoration: none;
 
-        
+
     }
     .question-reply:hover{
         color: orange;
         text-shadow: #555 0.1em;
-       
+
     }
 
     table {
-        
+
         font-size: 14px;
         border-collapse: collapse;
         width: 100%;
     }
     th, td {
-        
+
         text-align: left;
         padding: 8px;
         border-bottom: 1px solid #ddd;
@@ -80,7 +80,7 @@ nav{
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-          
+
         }
         a{
             color: rgb(10, 30, 208);
@@ -102,9 +102,9 @@ nav{
         button:hover{
             color: orange;
         }
-       
-     
-        
+
+
+
     }
     th {
         background-color: #f2f2f2;
@@ -139,7 +139,7 @@ nav{
         max-width: 90%;
         max-height: 90%;
     }
-    
+
     .popclose {
         position: absolute;
         top: 10px;
@@ -155,11 +155,11 @@ nav{
         list-style: none;
         padding: 0;
         margin-top: 50px;
-      
+
         li {
           display: inline-block;
           margin: 0 5px;
-      
+
           a {
             display: block;
             padding: 5px 10px;
@@ -169,31 +169,31 @@ nav{
             border: 1px solid #ccc;
             border-radius: 3px;
             transition: background-color 0.3s ease;
-      
+
             &:hover {
               background-color: #e0e0e0;
             }
           }
-      
+
           &.active {
             a {
               background-color: #007bff;
               color: #fff;
             }
           }
-      
+
           &.disabled {
             opacity: 0.5;
             pointer-events: none;
           }
         }
       }
-      
-    
+
+
 }
 
 main{
-    margin-top: 100px;
+    margin-top: 50px;
     .admin_block{
         display: flex;
         justify-content: space-evenly;
@@ -249,7 +249,7 @@ main{
                     text-decoration: none;
                     color: rgb(10, 30, 208);
                     font-weight: 300;
-                    
+
                 }
                 a:hover{
                     color: orange;
@@ -270,7 +270,7 @@ main{
                     font-size: 1.2rem;
                 }
 
-                
+
             }
             .Show_form{
                 margin: 60px 100px;
@@ -299,22 +299,22 @@ main{
                     font-weight: 300;
                     text-decoration: none;
 
-                    
+
                 }
                 .question-reply:hover{
                     color: orange;
                     text-shadow: #555 0.1em;
-                   
+
                 }
 
                 table {
-                    
+
                     font-size: 14px;
                     border-collapse: collapse;
                     width: 100%;
                 }
                 th, td {
-                    
+
                     text-align: left;
                     padding: 8px;
                     border-bottom: 1px solid #ddd;
@@ -324,7 +324,7 @@ main{
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
-                      
+
                     }
                     a{
                         color: rgb(10, 30, 208);
@@ -346,9 +346,9 @@ main{
                     button:hover{
                         color: orange;
                     }
-                   
-                 
-                    
+
+
+
                 }
                 th {
                     background-color: #f2f2f2;
@@ -383,7 +383,7 @@ main{
                     max-width: 90%;
                     max-height: 90%;
                 }
-                
+
                 .popclose {
                     position: absolute;
                     top: 10px;
@@ -399,11 +399,11 @@ main{
                     list-style: none;
                     padding: 0;
                     margin-top: 50px;
-                  
+
                     li {
                       display: inline-block;
                       margin: 0 5px;
-                  
+
                       a {
                         display: block;
                         padding: 5px 10px;
@@ -413,19 +413,19 @@ main{
                         border: 1px solid #ccc;
                         border-radius: 3px;
                         transition: background-color 0.3s ease;
-                  
+
                         &:hover {
                           background-color: #e0e0e0;
                         }
                       }
-                  
+
                       &.active {
                         a {
                           background-color: #007bff;
                           color: #fff;
                         }
                       }
-                  
+
                       &.disabled {
                         opacity: 0.5;
                         pointer-events: none;
@@ -442,21 +442,21 @@ main{
                         border-radius: 10px;
                         background-color: transparent;
                         cursor: pointer;
-                        
-                        
-        
+
+
+
                     }
                     button:hover{
                         background-color: orange;
                         border: 1px solid orange;
                         color: white;
-                       
-                        
-        
+
+
+
                     }
                     .form-group{
                         margin: 20px;
-    
+
                         label{
                             color: #555;
                             letter-spacing: 1.2;
@@ -483,12 +483,12 @@ main{
                             resize: vertical;
                             font-size: 16px;
                           }
-    
+
                     }
                   }
 
-                  
-                
+
+
             }
 
         }
@@ -500,8 +500,8 @@ main{
                         li{
                             width: 7vw;
                             font-size: .5rem;
-                            
-                           
+
+
                         }
                         .message_{
                             p{
@@ -510,8 +510,8 @@ main{
                             }
                         }
                     }
-                
-        
+
+
             }}
             .Show_form.setting-page{
 
@@ -536,7 +536,7 @@ main{
                     .btn{
                         background-color: transparent;
                     }
-                    
+
                 }
 
             }
@@ -546,7 +546,7 @@ main{
 // adminreply
 
 .Show_.reply{
-    
+
     .Show_form{
         .nav{
             margin-bottom: 50px;
@@ -556,7 +556,7 @@ main{
             }
         }
         // .member-create{
-                    
+
         //     .formgroup{
         //         margin: 20px;
 
@@ -584,9 +584,9 @@ main{
         //             border-radius: 10px;
         //             background-color: transparent;
         //             cursor: pointer;
-                    
-                    
-    
+
+
+
         //         }
         //         button:hover{
         //             background-color: orange;
@@ -594,7 +594,7 @@ main{
         //             color: white;
         //         }
 
-       
+
         //     }
         //     .text-right{
         //         text-align: right;
@@ -615,16 +615,16 @@ main{
                 border-radius: 10px;
                 background-color: transparent;
                 cursor: pointer;
-                
-                
+
+
 
             }
             button:hover{
                 background-color: orange;
                 border: 1px solid orange;
                 color: white;
-               
-                
+
+
 
             }
             .nav{
@@ -696,7 +696,7 @@ main{
                     }
                 }
 
-              
+
                 /* 隱藏原本的下拉箭頭 */
                 select {
                          -webkit-appearance: none;
@@ -720,7 +720,7 @@ main{
                          text-align-last: center;
                          text-align: center;
                        }
-  
+
                         /* 自訂下拉箭頭 */
                         select::after {
                           content: "\25BC";
@@ -731,7 +731,7 @@ main{
                           color: #555;
                           pointer-events: none;
                         }
-  
+
                         /* 自訂下拉選單樣式 */
                         select option {
                         /* 自訂背景顏色 */
@@ -748,11 +748,11 @@ main{
                             overflow-y: scroll; /* 超過最小高度時，出現垂直滾動條 */
                             width: 20vw;
                             text-align: left;
-                        } 
+                        }
 
 
             }
-            
+
 
             .question-block{
                 ul{
@@ -767,7 +767,7 @@ main{
                             font-weight: 300;
                             letter-spacing: 1;
                         }
-                       
+
 
                     }
                 }
@@ -788,14 +788,14 @@ main{
                 color: #555;
                 font-size: 1.5rem;
                 margin: 20px;
-                
+
             }
         }
 
         form{
             margin-top: 30px;
 
-            
+
             .checkSelect{
 
                 .selectAll{
@@ -805,19 +805,19 @@ main{
                     border-bottom: 1px solid #555;
                     margin: 8px auto;
                 }
-    
+
                 ul{
                     display: flex;
                     flex-wrap:wrap;
-    
+
                     li{
                         width: fit-content;
                         margin: 10px;
                     }
-    
+
                 }
 
-  
+
             }
             button{
                 width: 7vw;
@@ -835,8 +835,8 @@ main{
                 background-color: orange;
                 border: 1px solid orange;
                 color: white;
-               
-                
+
+
 
             }
         }
@@ -845,7 +845,7 @@ main{
 
 
 
-    
+
 }
 
 .Maintenance_table{
@@ -863,14 +863,14 @@ main{
 
    .form-group {
        margin-bottom: 20px;
-  
+
     label {
          display: block;
          font-weight: bold;
          margin-bottom: 15px;
 
     }
-  
+
     input[type="text"],
     input[type="date"],
     textarea,
@@ -881,7 +881,7 @@ main{
       border-radius: 4px;
     }
   }
-  
+
   .btn-primary {
     display: inline-block;
     padding: 10px 20px;
@@ -891,12 +891,12 @@ main{
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-  
+
     &:hover {
       background-color: #0056b3;
     }
   }
-  
+
 }
 
 .Maintenance_tableCheck {
@@ -912,32 +912,32 @@ main{
       flex-wrap: wrap;
       gap: 20px;
       margin-bottom: 20px;
-  
+
       li {
         flex: 1 1 300px;
         display: flex;
         align-items: center;
         background-color: #f2f2f2;
         padding: 10px;
-  
+
         span {
           margin-left: 10px;
           color: #0056b3;
         }
       }
     }
-  
+
     h3 {
       font-size: 1.2rem;
       margin-bottom: 20px;
     }
-  
+
     ul > li {
       margin-bottom: 10px;
-  
+
       ol {
         padding-left: 20px;
-  
+
         li {
           margin-bottom: 5px;
           color: #0056b3;
@@ -946,6 +946,6 @@ main{
       }
     }
   }
-  
-  
+
+
 
