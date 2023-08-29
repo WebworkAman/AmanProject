@@ -13,9 +13,7 @@
 
                 <div class="CompanyData-nav">
                     <h2>機器基本資料</h2>
-                    <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
-                    </br></br>
-                    <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
+
                 </div>
                 <div class="company-button">
                     <a class="btn control-option" href="{{ route('companyMachineUpdateView', $crmMachine) }}">更新</a>
