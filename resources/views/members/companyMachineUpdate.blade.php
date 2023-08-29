@@ -13,9 +13,6 @@
 
                 <div class="CompanyData-nav">
                     <h2>機器基本資料</h2>
-                    <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
-                    </br></br>
-                    <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
                 </div>
                 <a class="btn control-option" href="{{ route('companyMachineData', $crmMachine) }}">返回</a>
 
@@ -57,8 +54,9 @@
 
 
 
-                                <li><span id="installation_company_address">公司地址 ：</span></li>
+
                                 <ol>
+                                    <li><span id="installation_company_address">公司地址 ：</span></li>
                                     <li><span>國家</span>
                                         <input type="text" name="installation_company_address[installation_country]"
                                             id="installation_country"
@@ -71,11 +69,8 @@
                                     </li>
                                     <li><span>區域</span>
                                         <input type="text" name="installation_company_address[installation_region]"
-                                            id="installation_region"
-                                            value="{{ $crmMachine->installation_company_region }}">
+                                            id="installation_region" value="{{ $crmMachine->installation_company_region }}">
                                     </li>
-                                </ol>
-                                <ol>
                                     <li><span>城市</span>
                                         <input type="text" name="installation_company_address[installation_city]"
                                             id="installation_city" value="{{ $crmMachine->installation_company_city }}">
@@ -86,6 +81,7 @@
                                             value="{{ $crmMachine->installation_company_street }}">
                                     </li>
                                 </ol>
+
 
 
 

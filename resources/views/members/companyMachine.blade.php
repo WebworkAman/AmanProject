@@ -55,8 +55,9 @@
 
 
 
-                            <li><span id="installation_company_address">公司地址 ：</span></li>
+
                             <ol>
+                                <li><span id="installation_company_address">公司地址 ：</span></li>
                                 <li><span>國家</span>
                                     <p>{{ $crmMachine->installation_company_country }}</p>
                                 </li>
