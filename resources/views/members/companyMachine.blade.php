@@ -25,7 +25,7 @@
 
                     <a class="btn control-option" href="{{ route('companyMachineList') }}">返回</a>
                 </div>
-                <div id="machineData" style="display: block;">
+                <div id="machineData" style="display: block; margin-top:40px;">
 
                     <div class="formgroup">
                         <label for="machine_purchase_date">購買日期</label>
@@ -52,9 +52,6 @@
                                 <p>{{ $crmMachine->installation_company_name }}</p>
 
                             </li>
-
-
-
 
                             <ol>
                                 <li><span id="installation_company_address">公司地址 ：</span></li>

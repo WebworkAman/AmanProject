@@ -438,7 +438,7 @@ main .Show_form h3 {
 }
 main .Show_form h5 {
   text-align: center;
-  margin: 30px auto;
+  margin: 30px auto 10px;
   letter-spacing: 1.2px;
   color: #555;
 }

@@ -10,13 +10,13 @@
 
             <div id="companyDataEdit" class="companyDataEdit Machines-list">
 
+                <a class="btn control-option" href="{{ route('companyMachineData', $crmMachine) }}">返回</a>
 
                 <div class="CompanyData-nav">
                     <h2>機器基本資料</h2>
                 </div>
-                <a class="btn control-option" href="{{ route('companyMachineData', $crmMachine) }}">返回</a>
 
-                <div id="machineData" style="display: block;">
+                <div id="machineData" style="display: block;margin-top:40px;">
 
                     <form method="POST" action="{{ route('companyMachineUpdate', $crmMachine) }}">
                         @csrf
