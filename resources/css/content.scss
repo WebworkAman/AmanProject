@@ -849,7 +849,9 @@ main {
             ul{
                 margin-left:60px;
                 ol{
+                    width: 50vw;
                     display: flex;
+                    flex-wrap: wrap;
                     li{
                         span{
                             width: 7vw;

@@ -875,7 +875,9 @@ main .companyDataEdit.Machines-list .formgroup.installation_type ul {
   margin-left: 60px;
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul ol {
+  width: 50vw;
   display: flex;
+  flex-wrap: wrap;
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li span {
   width: 7vw;
