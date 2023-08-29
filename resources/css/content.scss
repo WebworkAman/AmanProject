@@ -1050,7 +1050,7 @@ main {
 
             h3{
                 font-size: 2rem;
-                margin: 20px auto;
+                margin: 30px auto;
                 text-align: center;
             }
 
@@ -1065,7 +1065,7 @@ main {
             margin: 50px auto;
             display: flex;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
 
             .text-danger{
                 margin-left: 30px;
@@ -1077,6 +1077,7 @@ main {
                 width: max-content;
                 min-width: 110px;
                 margin-right: 10px;
+                color: #8d4726;
 
             }
 
@@ -1085,6 +1086,7 @@ main {
                 width: fit-content;
                 margin-right: 20px;
             }
+
 
             input {
                 border:0;
@@ -1108,6 +1110,28 @@ main {
                 font-size: 1.1rem;
             }
 
+            p{
+                position: relative;
+                display: inline-block;
+                cursor: default;
+            }
+
+            p::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: rgb(221, 156, 43);
+                transition: width 0.3s ease;
+            }
+
+            p:hover::before {
+                width: 100%;
+            }
+
+
             ul{
                 li{
                     margin: 10px;
@@ -1123,6 +1147,7 @@ main {
                         line-height: 2.2;
                         margin-left: 10px;
                     }
+
                 }
             }
 
@@ -1208,24 +1233,32 @@ main {
             font-size: 1rem;
             letter-spacing: 1.3;
             border-radius: 20px;
-            color: white;
-            background-color: #2c7863;
             border: none;
             cursor: pointer;
             margin-bottom: 50px;
             display: block;
             margin: 50px auto;
+            /* 背景漸變 */
+            background-image: linear-gradient(to right, rgb(77, 76, 76) 0%, rgb(117, 111, 111) 50%, #3d9f84 50%, #2c7863 100%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            transition: background-position 0.3s ease, color 0.3s ease;
 
             a{
                 display: block;
                 color: white;
                 text-decoration: none;
+                font-size: 1.2rem;
+                letter-spacing: 2;
 
             }
         }
         button:hover{
             color: #273252;
             background-color: rgb(243, 175, 30);
+             /* 背景顏色和漸變位置變化 */
+            background-position: 0 0;
+
         }
     }
 
