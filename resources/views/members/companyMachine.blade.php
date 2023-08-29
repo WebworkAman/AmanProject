@@ -420,7 +420,8 @@
 
             <!-- <button id="openFormBtn">打開表單</button> -->
 
-            <div id="modal" class="modal" style="{{ $errors->any() ? 'display: block;' : 'display: none;' }}">
+            <div id="modal" class="modal companyDataEdit"
+                style="{{ $errors->any() ? 'display: block;' : 'display: none;' }}">
                 <div class="modal-content">
                     <span class="close" id="closeModal">&times;</span>
                     <form method="post" id="contactForm"

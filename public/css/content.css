@@ -334,14 +334,10 @@ main .Show_form .modal .modal-content .formgroup span {
   margin-right: 20px;
 }
 main .Show_form .modal .modal-content .formgroup input {
-  border: 0;
   text-align: center;
   width: 13vw;
   height: 30px;
-  font-size: 1rem;
-  color: black;
-  background-color: transparent;
-  border-bottom: 1px solid rgb(61, 79, 69);
+  min-width: 150px;
 }
 main .Show_form .modal .modal-content .formgroup #company_name {
   width: 30vw;
@@ -905,6 +901,7 @@ main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li span {
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li input {
   width: 7vw;
+  min-width: 150px;
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul li span {
   width: -moz-fit-content;
@@ -914,6 +911,7 @@ main .companyDataEdit.Machines-list .formgroup.installation_type ul li span {
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul li ol li input {
   width: 7vw;
+  min-width: 150px;
 }
 main .companyDataEdit.Machines-list .formgroup.subBlock {
   margin-left: 60px;

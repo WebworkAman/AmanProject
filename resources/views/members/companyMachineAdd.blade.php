@@ -121,70 +121,81 @@
 
                         </div>
 
-                        <!-- <div class="formgroup">
-                                                                                                <label for="contact_person_position">5. 聯絡人</label>
-                                                                                                <select name="contact_person_position" id="contact_person_position">
-                                                                                                    <option value="1">廠長</option>
-                                                                                                    <option value="2">組長</option>
-                                                                                                    <option value="3">機修保養人</option>
-                                                                                                    <option value="4">操作員</option>
-                                                                                                    <option value="5">其他</option>
-                                                                                                </select>
-                                                                                                <ul>
-                                                                                                    <li><input type="text" name="other_contact_person_position" id="other_contact_person_position" placeholder="請輸入職位" style="display: none;"></li>
-                                                                                                </ul>
+                        {{-- <div class="formgroup">
+                            <label for="contact_person_position">5. 聯絡人</label>
+                            <select name="contact_person_position" id="contact_person_position">
+                                <option value="1">廠長</option>
+                                <option value="2">組長</option>
+                                <option value="3">機修保養人</option>
+                                <option value="4">操作員</option>
+                                <option value="5">其他</option>
+                            </select>
+                            <ul>
+                                <li><input type="text" name="other_contact_person_position"
+                                        id="other_contact_person_position" placeholder="請輸入職位" style="display: none;">
+                                </li>
+                            </ul>
 
-                                                                                            </div>
-
-
-                                                                                            <div class="formgroup subBlock">
-                                                                                                <label for="contact_person_name">姓名 ：</label>
-                                                                                                <input type="text" name="contact_person_name" id="contact_person_name">
-                                                                                            </div>
+                        </div>
 
 
+                        <div class="formgroup subBlock">
+                            <label for="contact_person_name">姓名 ：</label>
+                            <input type="text" name="contact_person_name" id="contact_person_name">
+                        </div>
 
 
-                                                                                            <div class="formgroup phone_type subBlock">
-                                                                                                <label for="contact_person_phone">公司電話 ：</label>
-                                                                                                <ul>
-                                                                                                    <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]" id="contact_country_code"></li>
-                                                                                                    <li><span>區碼</span><input type="text" name="contact_person_phone[area_code]" id="contact_area_code"></li>
-                                                                                                </ul>
-                                                                                                <ul>
-                                                                                                    <li><span>電話號碼</span><input type="text" name="contact_person_phone[phone_number]" id="contact_phone_number"></li>
-                                                                                                    <li><span>分機</span><input type="text" name="contact_person_phone[extension]" id="contact_extension"></li>
-                                                                                                </ul>
-                                                                                            </div>
-
-                                                                                            <div class="formgroup subBlock">
-                                                                                                <label for="contact_person_mobile">手機 ：</label>
-                                                                                                <input type="text" name="contact_person_mobile" id="contact_person_mobile">
-                                                                                            </div>
-
-                                                                                            <div class="formgroup subBlock">
-                                                                                                <label for="contact_person_email">E-mail ：</label>
-
-                                                                                                <input type="email" name="contact_person_email" id="contact_person_email">
 
 
-                                                                                            </div>
+                        <div class="formgroup phone_type subBlock">
+                            <label for="contact_person_phone">公司電話 ：</label>
+                            <ul>
+                                <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]"
+                                        id="contact_country_code"></li>
+                                <li><span>區碼</span><input type="text" name="contact_person_phone[area_code]"
+                                        id="contact_area_code"></li>
+                            </ul>
+                            <ul>
+                                <li><span>電話號碼</span><input type="text" name="contact_person_phone[phone_number]"
+                                        id="contact_phone_number"></li>
+                                <li><span>分機</span><input type="text" name="contact_person_phone[extension]"
+                                        id="contact_extension"></li>
+                            </ul>
+                        </div>
 
-                                                                                            <div class="formgroup subBlock">
-                                                                                                <label for="contact_commu_software">通訊軟體 ：</label>
-                                                                                                <select name="contact_software_type" id="contact_software_type">
-                                                                                                    <option value="1">Whats APP</option>
-                                                                                                    <option value="2">Line</option>
-                                                                                                    <option value="3">WeChat</option>
-                                                                                                    <option value="4">其他</option>
-                                                                                                </select>
+                        <div class="formgroup subBlock">
+                            <label for="contact_person_mobile">手機 ：</label>
+                            <input type="text" name="contact_person_mobile" id="contact_person_mobile">
+                        </div>
+
+                        <div class="formgroup subBlock">
+                            <label for="contact_person_email">E-mail ：</label>
+
+                            <input type="email" name="contact_person_email" id="contact_person_email">
 
 
-                                                                                                 <ul>
-                                                                                                    <li><input type="text" name="other_contact_software_type" id="other_contact_software_type" placeholder="請輸入你的通訊軟體" style="display: none;"></li>
-                                                                                                    <li><p>ID ：</p><input type="text" name="contact_software_data[software_id]" id="contact_software_id"></li>
-                                                                                                 </ul>
-                                                                                            </div> -->
+                        </div>
+
+                        <div class="formgroup subBlock">
+                            <label for="contact_commu_software">通訊軟體 ：</label>
+                            <select name="contact_software_type" id="contact_software_type">
+                                <option value="1">Whats APP</option>
+                                <option value="2">Line</option>
+                                <option value="3">WeChat</option>
+                                <option value="4">其他</option>
+                            </select>
+
+
+                            <ul>
+                                <li><input type="text" name="other_contact_software_type"
+                                        id="other_contact_software_type" placeholder="請輸入你的通訊軟體" style="display: none;">
+                                </li>
+                                <li>
+                                    <p>ID ：</p><input type="text" name="contact_software_data[software_id]"
+                                        id="contact_software_id">
+                                </li>
+                            </ul>
+                        </div> --}}
 
                         <div class="formgroup">
                             <label for="purchase_manufacturer">5. 購入來源｜製造商</label>
@@ -197,11 +208,11 @@
                         </div>
 
                         <div class="purchase_manufacturer_block">
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span>業務姓名 </span><input type="text" name="purchase_manufacturer_person"
                                     id="purchase_manufacturer_person">
                             </div>
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span>手機號碼 </span><input type="text" name="purchase_manufacturer_phone"
                                     id="purchase_manufacturer_phone">
                             </div>
@@ -209,7 +220,7 @@
 
                         <div class="other_purchase_source_block" style="display:none;">
 
-                            <div class="formgroup">
+                            <div class="formgroup selectType">
                                 <select name="other_purchase_source" id="other_purchase_source">
                                     <option value="1">製造商同業</option>
                                     <option value="2">代理商</option>
@@ -218,20 +229,18 @@
                                     <option value="5">針車行</option>
                                     <option value="6">其他</option>
                                 </select>
-                                <ul>
-                                    <li><input type="text" name="other_other_purchase_source"
-                                            id="other_other_purchase_source" placeholder="請輸入其他購入來源"
-                                            style="display: none;"></li>
-                                </ul>
+
+                                <input type="text" name="other_other_purchase_source" id="other_other_purchase_source"
+                                    placeholder="請輸入其他購入來源" style="display: none;">
+
                             </div>
-                            <div class="formgroup subBlock">
-                                <span>公司名稱</span><input type="text" name="other_purchase_company_name"
+                            <div class="formgroup">
+                                <label>公司名稱</label><input type="text" name="other_purchase_company_name"
                                     id="other_purchase_company_name">
                             </div>
-                            <div class="formgroup subBlock">
-                                <span id="other_purchase_company_address">公司地址</span>
-                            </div>
-                            <div class="formgroup phone_type subBlock">
+
+                            <div class="formgroup phone_type">
+                                <label id="other_purchase_company_address">公司地址</label>
                                 <ul>
                                     <li><span>國家</span><input type="text"
                                             name="other_purchase_company_address[country]" id="other_purchase_country">
@@ -240,23 +249,25 @@
                                             name="other_purchase_company_address[postal_code]"
                                             id="other_purchase_postal_code"></li>
                                     <li><span>區域</span><input type="text" name="other_purchase_company_address[region]"
-                                            id="other_purchase_region"></li>
+                                            id="other_purchase_region">
+                                    </li>
                                 </ul>
                                 <ul>
                                     <li><span>城市</span><input type="text" name="other_purchase_company_address[city]"
                                             id="other_purchase_city"></li>
                                     <li><span>街/路名</span><input type="text"
-                                            name="other_purchase_company_address[street]" id="other_purchase_street"></li>
+                                            name="other_purchase_company_address[street]" id="other_purchase_street">
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="formgroup subBlock">
-                                <span>統一編號 </span><input type="text" name="other_purchase_tax_id"
+                            <div class="formgroup">
+                                <label>統一編號 </label><input type="text" name="other_purchase_tax_id"
                                     id="other_purchase_tax_id">
                             </div>
-                            <div class="formgroup subBlock">
-                                <span id="other_purchase_company_phone">公司電話</span>
-                            </div>
-                            <div class="formgroup phone_type subBlock">
+
+                            <div class="formgroup phone_type">
+                                <label id="other_purchase_company_phone">公司電話</label>
+
                                 <ul>
                                     <li><span>國碼</span><input type="text"
                                             name="other_purchase_company_phone[country_code]"
@@ -270,11 +281,9 @@
                                 </ul>
 
                             </div>
-                            <div class="formgroup subBlock">
-                                <span>聯絡人</span>
-                            </div>
-                            <div class="formgroup phone_type subBlock">
 
+                            <div class="formgroup phone_type">
+                                <label>聯絡人</label>
                                 <ul>
                                     <li><span>姓名</span><input type="text" name="other_purchase_name"
                                             id="other_purchase_name"></li>
