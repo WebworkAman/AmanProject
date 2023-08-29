@@ -75,7 +75,8 @@
                                         <input type="text" name="installation_company_address[installation_city]"
                                             id="installation_city" value="{{ $crmMachine->installation_company_city }}">
                                     </li>
-                                    <li><span>街/路名</span>
+                                    <li>
+                                        <span>街/路名</span>
                                         <input type="text" name="installation_company_address[installation_street]"
                                             id="installation_street"
                                             value="{{ $crmMachine->installation_company_street }}">

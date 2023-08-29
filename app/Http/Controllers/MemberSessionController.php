@@ -720,7 +720,7 @@ class MemberSessionController extends Controller
                 [
                     'country_code_1' => $request->input('installation_company_phone.country_code_1'),
                     'area_code_1' => $request->input('installation_company_phone.area_code_1'),
-                    'phone_number_1' => $request->input('installation_company_phone.phone_ddnumber_1'),
+                    'phone_number_1' => $request->input('installation_company_phone.phone_number_1'),
                 ],
                 [
                     'country_code_2' => $request->input('installation_company_phone.country_code_2'),
