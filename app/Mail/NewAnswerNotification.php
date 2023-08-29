@@ -46,7 +46,6 @@ class NewAnswerNotification extends Mailable
      */
     public function build()
     {
-
         $greeting = '親愛的會員';
         return $this->subject('您的問題已獲得回覆')
                     ->with(['greeting' => $greeting, 'question' => $this->question])

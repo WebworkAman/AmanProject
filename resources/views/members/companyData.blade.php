@@ -203,7 +203,7 @@
                     <label for="company_address">公司地址 ：</label>
                     <ul>
                         <li>
-                            <span>國家(*)</span> <input type="text" name="company_address[country]" id="country"
+                            <span>國家*</span> <input type="text" name="company_address[country]" id="country"
                                 value="{{ old('company_address.country', $company_address->country ?? '') }}">
                             @error('company_address.country')
                                 <p class="text-danger">{{ $message }}</p>
@@ -212,21 +212,21 @@
                         <li><span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code"
                                 value="{{ $company_address->postal_code ?? '' }}"></li>
                         <li>
-                            <span>區域(*)</span><input type="text" name="company_address[region]" id="region"
+                            <span>區域*</span><input type="text" name="company_address[region]" id="region"
                                 value="{{ old('company_address.region', $company_address->region ?? '') }}">
                             @error('company_address.region')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </li>
                         <li>
-                            <span>城市(*)</span><input type="text" name="company_address[city]" id="city"
+                            <span>城市*</span><input type="text" name="company_address[city]" id="city"
                                 value="{{ old('company_address.city', $company_address->city ?? '') }}">
                             @error('company_address.city')
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </li>
                         <li>
-                            <span>街/路名(*)</span><input type="text" name="company_address[street]" id="street"
+                            <span>街/路名*</span><input type="text" name="company_address[street]" id="street"
                                 value="{{ old('company_address.street', $company_address->street ?? '') }}">
                             @error('company_address.street')
                                 <p class="text-danger">{{ $message }}</p>

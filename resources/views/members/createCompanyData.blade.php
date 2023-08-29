@@ -13,7 +13,7 @@
         @endphp
 
 
-        <div id="companyDataEdit1" class="companyDataEdit1">
+        <div id="companyDataEdit" class="companyDataEdit">
             <h2>公司基本資料</h2>
             <form method="post" action="{{ route('companyCreate', ['companyId' => $companyId]) }}">
                 @method('post')
@@ -29,21 +29,21 @@
                     <div class="formgroup">
                         <label for="company_address">公司地址 ：</label>
                         <!-- <ul>
-                            <li>
-                                <span>國家</span> <input type="text" name="company_address[country]" id="country" value="{{ old('company_address.country', $company_address->country ?? '') }}" required>
-                                @error('company_address.country[0]')
+                                                    <li>
+                                                        <span>國家</span> <input type="text" name="company_address[country]" id="country" value="{{ old('company_address.country', $company_address->country ?? '') }}" required>
+                                                        @error('company_address.country[0]')
         <p class="text-danger">{{ $message }}</p>
     @enderror
-                            </li>
-                            <li><span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code" value="{{ $company_address->postal_code ?? '' }}"></li>
-                            <li><span>區域</span><input type="text" name="company_address[region]" id="region" value="{{ $company_address->region ?? '' }}"></li>
-                            <li><span>城市</span><input type="text" name="company_address[city]" id="city" value="{{ $company_address->city ?? '' }}"></li>
-                            <li><span>街/路名</span><input type="text" name="company_address[street]" id="street" value="{{ $company_address->street ?? '' }}"></li>
-                        </ul> -->
+                                                    </li>
+                                                    <li><span>郵遞區號</span><input type="text" name="company_address[postal_code]" id="postal_code" value="{{ $company_address->postal_code ?? '' }}"></li>
+                                                    <li><span>區域</span><input type="text" name="company_address[region]" id="region" value="{{ $company_address->region ?? '' }}"></li>
+                                                    <li><span>城市</span><input type="text" name="company_address[city]" id="city" value="{{ $company_address->city ?? '' }}"></li>
+                                                    <li><span>街/路名</span><input type="text" name="company_address[street]" id="street" value="{{ $company_address->street ?? '' }}"></li>
+                                                </ul> -->
 
                         <ul>
                             <li>
-                                <span>國家(*)</span> <input type="text" name="company_address[country]" id="country">
+                                <span>國家*</span> <input type="text" name="company_address[country]" id="country">
                                 @error('company_address.country')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
@@ -53,21 +53,21 @@
                                     value="{{ $postalCode ?? '' }}">
                             </li>
                             <li>
-                                <span>區域(*)</span><input type="text" name="company_address[region]" id="region"
+                                <span>區域*</span><input type="text" name="company_address[region]" id="region"
                                     value="{{ $company_address->region ?? '' }}">
                                 @error('company_address.region')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </li>
                             <li>
-                                <span>城市(*)</span><input type="text" name="company_address[city]" id="city"
+                                <span>城市*</span><input type="text" name="company_address[city]" id="city"
                                     value="{{ $cityRegionStreet ?? '' }}">
                                 @error('company_address.city')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </li>
                             <li>
-                                <span>街/路名(*)</span><input type="text" name="company_address[street]" id="street"
+                                <span>街/路名*</span><input type="text" name="company_address[street]" id="street"
                                     value="{{ $company_address->street ?? '' }}">
                                 @error('company_address.street')
                                     <p class="text-danger">{{ $message }}</p>
@@ -179,7 +179,7 @@
                         <input type="text" name="company_name" id="company_name" value="{{ $tbm01->ba02 ?? '' }}">
                     </div>
 
-                    <p>原地址：{{ $tbm01->ba05 ?? '' }}</p>
+                    <p style="color:rgb(63, 75, 75);font-size:1.2rem;">原地址：{{ $tbm01->ba05 ?? '' }}</p>
 
                     <div class="formgroup">
                         <label for="company_address">公司地址 ：</label>
@@ -187,7 +187,7 @@
 
                         <ul>
                             <li>
-                                <span>國家(*)</span> <input type="text" name="company_address[country]" id="country">
+                                <span>國家*</span> <input type="text" name="company_address[country]" id="country">
                                 @error('company_address.country')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
@@ -197,21 +197,21 @@
                                     id="postal_code" value="{{ $postalCode ?? '' }}">
                             </li>
                             <li>
-                                <span>區域(*)</span><input type="text" name="company_address[region]" id="region"
+                                <span>區域*</span><input type="text" name="company_address[region]" id="region"
                                     value="{{ $company_address->region ?? '' }}">
                                 @error('company_address.region')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </li>
                             <li>
-                                <span>城市(*)</span><input type="text" name="company_address[city]" id="city"
+                                <span>城市*</span><input type="text" name="company_address[city]" id="city"
                                     value="{{ $cityRegionStreet ?? '' }}">
                                 @error('company_address.city')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </li>
                             <li>
-                                <span>街/路名(*)</span><input type="text" name="company_address[street]" id="street"
+                                <span>街/路名*</span><input type="text" name="company_address[street]" id="street"
                                     value="{{ $company_address->street ?? '' }}">
                                 @error('company_address.street')
                                     <p class="text-danger">{{ $message }}</p>

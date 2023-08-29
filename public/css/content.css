@@ -594,7 +594,12 @@ main #toggleEditMode, main #ReturnButton {
   cursor: pointer;
   font-size: 1rem;
 }
-main #toggleEditMode:hover, main #ReturnButton:hover, main #submitButton:hover {
+main #submitButton:hover {
+  color: whitesmoke;
+  background-color: orange;
+  background-position: 0 0;
+}
+main #toggleEditMode:hover, main #ReturnButton:hover {
   color: whitesmoke;
   background-color: orange;
   border: 1px solid orange;
@@ -613,10 +618,13 @@ main #submitButton {
   margin-bottom: 50px;
   display: block;
   margin: 50px auto;
+  background-image: linear-gradient(to right, rgb(77, 76, 76) 0%, rgb(117, 111, 111) 50%, #3d9f84 50%, #2c7863 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease, color 0.3s ease;
 }
 main .companyData, main .companyDataEdit {
   width: 60vw;
-  border: 1px solid rgb(2, 24, 18);
   border-radius: 10px;
   margin: 0 auto;
   padding-left: 60px;
@@ -624,7 +632,7 @@ main .companyData, main .companyDataEdit {
 }
 main .companyData h2, main .companyDataEdit h2 {
   font-size: 2rem;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 main .companyData .formBlock, main .companyDataEdit .formBlock {
@@ -635,6 +643,10 @@ main .companyData .formgroup, main .companyDataEdit .formgroup {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid silver;
+  border-radius: 10px;
 }
 main .companyData .formgroup .text-danger, main .companyDataEdit .formgroup .text-danger {
   margin-left: 30px;
@@ -647,6 +659,7 @@ main .companyData .formgroup label, main .companyDataEdit .formgroup label {
   width: max-content;
   min-width: 110px;
   margin-right: 10px;
+  color: #8d4726;
 }
 main .companyData .formgroup span, main .companyDataEdit .formgroup span {
   display: block;
@@ -659,11 +672,12 @@ main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   text-align: center;
   width: 13vw;
   height: 30px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: black;
-  background-color: transparent;
-  border: 1px solid rgb(61, 79, 69);
+  background-color: white;
+  border: 1px solid silver;
   border-radius: 10px;
+  color: #202953;
 }
 main .companyData .formgroup #company_name, main .companyDataEdit .formgroup #company_name {
   width: 30vw;
@@ -694,16 +708,19 @@ main .companyData .formgroup select, main .companyDataEdit .formgroup select {
   font-size: 1.1rem;
 }
 main .companyData .formgroup ul, main .companyDataEdit .formgroup ul {
+  display: flex;
   flex-wrap: wrap;
-  width: 50vw;
+  width: 60vw;
 }
 main .companyData .formgroup ul li, main .companyDataEdit .formgroup ul li {
   margin: 10px;
   display: flex;
+  align-items: center;
 }
 main .companyData .formgroup ul li span, main .companyDataEdit .formgroup ul li span {
   display: block;
   width: 100px;
+  font-size: 1.2rem;
 }
 main .companyData .formgroup ul li input, main .companyDataEdit .formgroup ul li input {
   margin-left: 10px;
@@ -718,6 +735,9 @@ main .companyData .formgroup textarea, main .companyDataEdit .formgroup textarea
   padding: 10px;
   font-size: 1.1rem;
   height: 40px;
+}
+main .companyData .formgroup:hover, main .companyDataEdit .formgroup:hover {
+  background-color: #f2f2f2;
 }
 main .companyData .formgroup.phone_type, main .companyDataEdit .formgroup.phone_type {
   display: block;
@@ -738,7 +758,7 @@ main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .form
   width: 8vw;
 }
 main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyData .formgroup.phone_type ul li #purchase_phone_number, main .companyData .formgroup.phone_type ul li #fax_number, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #purchase_phone_number, main .companyDataEdit .formgroup.phone_type ul li #fax_number {
-  width: 24vw;
+  width: 19vw;
 }
 @media (max-width: 1200px) {
   main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyData .formgroup.phone_type ul li #fax_number, main .companyData .formgroup.phone_type ul li #purchase_phone_number, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #fax_number, main .companyDataEdit .formgroup.phone_type ul li #purchase_phone_number {
@@ -900,7 +920,7 @@ main #companyDataView #companyDataForm .formgroup label {
   color: #8d4726;
 }
 main #companyDataView #companyDataForm .formgroup span {
-  color: #23547a;
+  color: rgba(73, 76, 78, 0.8705882353);
 }
 main #companyDataView #companyDataForm .formgroup ul {
   display: flex;
@@ -910,7 +930,7 @@ main #companyDataView #companyDataForm .formgroup.phone_type {
   align-items: center;
 }
 main #companyDataView #companyDataForm .formgroup.phone_type span {
-  color: #23547a;
+  color: rgba(73, 76, 78, 0.8705882353);
 }
 main #companyDataView #companyDataForm .formgroup.phone_type label {
   margin-bottom: 0;

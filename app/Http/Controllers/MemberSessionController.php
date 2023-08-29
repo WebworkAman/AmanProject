@@ -12,6 +12,8 @@ use App\Models\CRM_Machines_Contactlist;
 use App\Models\Tfm01;
 use App\Models\Tbm01;
 
+use App\Notifications\MachineDataAdded;
+use Illuminate\Support\Facades\Notification;
 
 use Illuminate\Support\Facades\Validator;
 
@@ -196,39 +198,38 @@ class MemberSessionController extends Controller
 
     }
 
-       public function memberBasic(Request $request){
-           $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
-           $companyId = $member -> company_ERP_id;
+    public function memberBasic(Request $request){
+        $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $companyId = $member -> company_ERP_id;
 
-           $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
 
 
-           return view('members.memberBasicData', compact('crmMainCustInfo','member'));
-       }
+        return view('members.memberBasicData', compact('crmMainCustInfo','member'));
+    }
 
     // public function company(Request $request){
     //     $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
 
     //     return view('members.companyData', compact('member'));
     // }
-        public function company($companyId){
-            $member = MemberAuth::member();
-            // $company_ERP_id = $request->query('company_ERP_id');
-            $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+    public function company($companyId){
+        $member = MemberAuth::member();
+        // $company_ERP_id = $request->query('company_ERP_id');
+        $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
 
-            // if (!$crmMainCustInfo) {
-            //     // 如果找不到對應的 CRM_MainCust_Info 資料，可以進行相應處理，例如返回錯誤頁面或提示訊息等
-            //     return back()->with('error', '找不到相應的公司基本資料');
-            // }
+        // if (!$crmMainCustInfo) {
+        //     // 如果找不到對應的 CRM_MainCust_Info 資料，可以進行相應處理，例如返回錯誤頁面或提示訊息等
+        //     return back()->with('error', '找不到相應的公司基本資料');
+        // }
 
 
 
-            return view('members.companyData', compact('crmMainCustInfo','member'));
-        }
+        return view('members.companyData', compact('crmMainCustInfo','member'));
+    }
         // 處理編輯模式表單提交
-        public function CompanyUpdate(Request $request)
-        {
+    public function CompanyUpdate(Request $request){
 
             $companyId = $request->input('company_id');
             $company = CRM_MainCust_Info::findOrFail($companyId);
@@ -387,8 +388,7 @@ class MemberSessionController extends Controller
             return back()->with('success', '在職狀況已更新');
         }
 
-        public function companyMembersDestroy(Member $member)
-        {
+    public function companyMembersDestroy(Member $member){
              $member->delete();
 
             return redirect()->route('members.updateStatusView')
@@ -397,7 +397,7 @@ class MemberSessionController extends Controller
         }
 
 
-        public function companCreateShow($companyId){
+    public function companCreateShow($companyId){
 
                  $member = MemberAuth::member();
 
@@ -597,42 +597,41 @@ class MemberSessionController extends Controller
         ->with('success', '機器資料已成功刪除');
 }
 
-    public function editMachineContact($machine, $id)
-{
-    $member = MemberAuth::member(); // 獲取會員訊息，類似之前的操作
-    $crmMachine = CRM_Machines::find($machine);
-    $crmMachinesContact = CRM_Machines_Contactlist::findOrFail($id);
+    public function editMachineContact($machine, $id){
+         $member = MemberAuth::member(); // 獲取會員訊息，類似之前的操作
+         $crmMachine = CRM_Machines::find($machine);
+         $crmMachinesContact = CRM_Machines_Contactlist::findOrFail($id);
 
-    return view('members.editMachineContact', compact('crmMachine', 'crmMachinesContact'));
-}
+         return view('members.editMachineContact', compact('crmMachine', 'crmMachinesContact'));
+     }
 
-public function updateMachineContact(Request $request, $machine, $id)
-{
-    $crmMachinesContact = CRM_Machines_Contactlist::findOrFail($id);
+    public function updateMachineContact(Request $request, $machine, $id){
 
-    // 更新聯絡人資料
-    $crmMachinesContact->update([
-        // 其他欄位...
-        'contact_person_position' => $request->contact_person_position,
-        'other_contact_person_position' => $request->other_contact_person_position,
-        'contact_person_name' => $request->contact_person_name,
-        'contact_person_phone' => json_encode([
-          'country_code' => $request->input('contact_person_phone.country_code'),
-          'postal_code' => $request->input('contact_person_phone.postal_code'),
-          'phone_number' => $request->input('contact_person_phone.phone_number'),
-          'extension' => $request->input('contact_person_phone.extension'),
-      ]),
-        'contact_person_mobile' => $request->contact_person_mobile,
-        'contact_person_email' => $request->contact_person_email,
-        'contact_commu_software' => json_encode([
-        'type' => $request->input('contact_software_type'),
-        'id'   => $request->input('contact_software_data.software_id'),
-      ]),
-    ]);
+        $crmMachinesContact = CRM_Machines_Contactlist::findOrFail($id);
 
-    return redirect()->route('companyMachineData', ['machine' => $machine])
-        ->with('success', '機器聯絡人已成功更新');
-}
+         // 更新聯絡人資料
+         $crmMachinesContact->update([
+             // 其他欄位...
+             'contact_person_position' => $request->contact_person_position,
+             'other_contact_person_position' => $request->other_contact_person_position,
+             'contact_person_name' => $request->contact_person_name,
+             'contact_person_phone' => json_encode([
+               'country_code' => $request->input('contact_person_phone.country_code'),
+               'postal_code' => $request->input('contact_person_phone.postal_code'),
+               'phone_number' => $request->input('contact_person_phone.phone_number'),
+               'extension' => $request->input('contact_person_phone.extension'),
+           ]),
+             'contact_person_mobile' => $request->contact_person_mobile,
+             'contact_person_email' => $request->contact_person_email,
+             'contact_commu_software' => json_encode([
+             'type' => $request->input('contact_software_type'),
+             'id'   => $request->input('contact_software_data.software_id'),
+           ]),
+         ]);
+
+         return redirect()->route('companyMachineData', ['machine' => $machine])
+             ->with('success', '機器聯絡人已成功更新');
+     }
 
     public function MachinesContactDestroy($machine, $id)
     {
@@ -977,6 +976,11 @@ public function updateMachineContact(Request $request, $machine, $id)
             'other_purchase_description' => $request->other_purchase_description,
             'stat_info' => $statInfo,
         ]);
+
+        // 發送郵件通知給系統管理者
+        $adminEmail = 'aman@oshima.com.tw'; // 系統管理者的郵件地址
+        Notification::route('mail', $adminEmail)->notify(new MachineDataAdded($companyMachine));
+
 
         return redirect()->route('companyMachineList')->with('info','新增成功');
     }
