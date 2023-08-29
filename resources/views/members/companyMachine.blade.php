@@ -41,11 +41,11 @@
                         <label for="machine_serial">機器序號</label>
                         {{ $crmMachine->machine_serial }}
                     </div>
-                    <div class="formgroup">
+                    {{-- <div class="formgroup">
                         <label for="machine_installation">機器安裝地址</label>
-                    </div>
+                    </div> --}}
                     <div class="formgroup installation_type">
-
+                        <label for="machine_installation">機器安裝地址</label>
                         <ul>
                             <li>
                                 <span>公司名稱 ：</span>
@@ -75,17 +75,22 @@
                             </ol>
 
 
-
-                            <li><span>統一編號 ：</span>
-                                <p>{{ $crmMachine->installation_vat_number }}</p>
-                            </li>
+                            <ol>
+                                <li><span>統一編號 ：</span>
+                                    <p>{{ $crmMachine->installation_vat_number }}</p>
+                                </li>
+                            </ol>
 
 
                             @php
                                 $companyPhones = json_decode($crmMachine->installation_company_phone ?? '', true);
                             @endphp
                             @if (is_array($companyPhones) && count($companyPhones) > 0)
-                                <li><span id="installation_company_phone">公司電話 ：</span></li>
+                                <ol>
+                                    <li><span id="installation_company_phone">公司電話 ：</span></li>
+                                </ol>
+
+
                                 <ol>
                                     @foreach ($companyPhones as $phone)
                                         @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']))
@@ -129,11 +134,11 @@
                                 </ol>
                             @endforeach
                             @endif
-                            <li>
 
-                                @php
-                                    $companyFax = json_decode($crmMachine->installation_company_fax ?? '');
-                                @endphp
+
+                            @php
+                                $companyFax = json_decode($crmMachine->installation_company_fax ?? '');
+                            @endphp
 
                             <li><span id="installation_company_fax">公司傳真 ：</span></li>
                             @if ($companyFax)
@@ -149,7 +154,7 @@
                                     </li>
                                 </ol>
                             @endif
-                            </li>
+
                         </ul>
 
                     </div>
@@ -345,11 +350,11 @@
                             <p>{{ $manufacturerMap[$crmMachine->purchase_manufacturer] ?? '' }}</p>
                         </div>
                         <div class="purchase_manufacturer_block">
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span>業務姓名 </span>
                                 <p>{{ $crmMachine->purchase_manufacturer_person }}</p>
                             </div>
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span>手機號碼 </span>
                                 <p>{{ $crmMachine->purchase_manufacturer_phone }}</p>
                             </div>
@@ -456,7 +461,7 @@
                             @endif
                         </div>
 
-                        <div class="formgroup phone_type subBlock">
+                        <div class="formgroup phone_type">
                             <label for="contact_person_phone">公司電話 ：</label>
                             <ul>
                                 <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]"

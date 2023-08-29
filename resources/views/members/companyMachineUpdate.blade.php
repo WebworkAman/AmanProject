@@ -209,7 +209,7 @@
                             <div class="formgroup subBlock">
                                 <span id="other_purchase_company_address">公司地址</span>
                             </div>
-                            <div class="formgroup phone_type subBlock">
+                            <div class="formgroup phone_type">
                                 @if ($otherPurchaseCompanyAddress)
                                     <ul>
                                         <li>
@@ -238,7 +238,7 @@
                                 @endif
                             </div>
 
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span>統一編號 </span>
                                 <p>{{ $crmMachine->other_purchase_tax_id }}</p>
                             </div>
@@ -248,10 +248,10 @@
                                 $otherPurchaseCompanyPhone = json_decode($crmMachine->other_purchase_company_phone ?? '');
                                 
                             @endphp
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span id="other_purchase_company_phone">公司電話</span>
                             </div>
-                            <div class="formgroup phone_type subBlock">
+                            <div class="formgroup phone_type">
                                 @if ($otherPurchaseCompanyPhone)
                                     <ul>
                                         <li>
@@ -269,10 +269,10 @@
                                     </ul>
                                 @endif
                             </div>
-                            <div class="formgroup subBlock">
+                            <div class="formgroup">
                                 <span>聯絡人</span>
                             </div>
-                            <div class="formgroup phone_type subBlock">
+                            <div class="formgroup phone_type">
                                 <ul>
                                     <li>
                                         <span>姓名</span>
@@ -307,14 +307,14 @@
                                 </select>
                             </div>
                             <div class="purchase_manufacturer_block">
-                                <div class="formgroup subBlock">
+                                <div class="formgroup">
                                     <span>業務姓名 </span>
 
                                     <input type="text" name="purchase_manufacturer_person"
                                         id="purchase_manufacturer_person"
                                         value="{{ $crmMachine->purchase_manufacturer_person }}">
                                 </div>
-                                <div class="formgroup subBlock">
+                                <div class="formgroup">
                                     <span>手機號碼 </span>
                                     <input type="text" name="purchase_manufacturer_phone"
                                         id="purchase_manufacturer_phone"
@@ -324,29 +324,27 @@
 
                             <div class="other_purchase_source_block" style="display:none;">
 
-                                <div class="formgroup">
+                                <div class="formgroup selectType">
                                     <select name="other_purchase_source" id="other_purchase_source">
-                                        <option value="1">1. 製造商同業</option>
-                                        <option value="2">2. 代理商</option>
-                                        <option value="3">3. 貿易商</option>
-                                        <option value="4">4. 成衣廠</option>
-                                        <option value="5">5. 針車行</option>
-                                        <option value="6">6. 其他</option>
+                                        <option value="1">製造商同業</option>
+                                        <option value="2">代理商</option>
+                                        <option value="3">貿易商</option>
+                                        <option value="4">成衣廠</option>
+                                        <option value="5">針車行</option>
+                                        <option value="6">其他</option>
                                     </select>
-                                    <ul>
-                                        <li><input type="text" name="other_other_purchase_source"
-                                                id="other_other_purchase_source" placeholder="請輸入其他購入來源"
-                                                style="display: none;"></li>
-                                    </ul>
+
+                                    <input type="text" name="other_other_purchase_source"
+                                        id="other_other_purchase_source" placeholder="請輸入其他購入來源" style="display: none;">
+
                                 </div>
-                                <div class="formgroup subBlock">
-                                    <span>1.公司名稱</span><input type="text" name="other_purchase_company_name"
+                                <div class="formgroup">
+                                    <label>公司名稱</label><input type="text" name="other_purchase_company_name"
                                         id="other_purchase_company_name">
                                 </div>
-                                <div class="formgroup subBlock">
-                                    <span id="other_purchase_company_address">2.公司地址</span>
-                                </div>
-                                <div class="formgroup phone_type subBlock">
+
+                                <div class="formgroup phone_type">
+                                    <label id="other_purchase_company_address">公司地址</label>
                                     <ul>
                                         <li><span>國家</span><input type="text"
                                                 name="other_purchase_company_address[country]"
@@ -367,14 +365,13 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="formgroup subBlock">
-                                    <span>3.統一編號 </span><input type="text" name="other_purchase_tax_id"
+                                <div class="formgroup">
+                                    <label>統一編號 </label><input type="text" name="other_purchase_tax_id"
                                         id="other_purchase_tax_id">
                                 </div>
-                                <div class="formgroup subBlock">
-                                    <span id="other_purchase_company_phone">4. 公司電話</span>
-                                </div>
-                                <div class="formgroup phone_type subBlock">
+
+                                <div class="formgroup phone_type">
+                                    <label id="other_purchase_company_phone">公司電話</label>
                                     <ul>
                                         <li><span>國碼</span><input type="text"
                                                 name="other_purchase_company_phone[country_code]"
@@ -388,11 +385,9 @@
                                     </ul>
 
                                 </div>
-                                <div class="formgroup subBlock">
-                                    <span>5. 聯絡人</span>
-                                </div>
-                                <div class="formgroup phone_type subBlock">
 
+                                <div class="formgroup phone_type">
+                                    <label>聯絡人</label>
                                     <ul>
                                         <li><span>姓名</span><input type="text" name="other_purchase_name"
                                                 id="other_purchase_name"></li>

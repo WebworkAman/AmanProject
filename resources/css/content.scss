@@ -717,6 +717,23 @@ main {
 
     .companyDataEdit.Machines-list{
 
+        #installation_street{
+            width: 26vw;
+        }
+        .formgroup.selectType{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            select{
+                width: 10vw;
+                border-radius: 10px;
+
+            }
+            input{
+                margin-left: 10px;
+            }
+
+        }
         .control-option.delete-button{
             background-color: white;
             float: right;
@@ -780,7 +797,7 @@ main {
                 // margin-bottom: 15px;
                 font-size: 1.2rem;
                 padding-left: 15px;
-                background-color: transparent;
+                background-color: white;
                 border: 1px solid black;
 
             }
@@ -790,6 +807,7 @@ main {
                 height: 30px;
                 padding-left: 10px;
                 font-size: 1.1rem;
+                border-radius: 10px;
             }
 
             ul{
@@ -825,7 +843,7 @@ main {
 
         }
         .formgroup.phone_type{
-              display: block;
+              display: flex;
               label{
                  margin-bottom: 10px;
               }
@@ -839,7 +857,7 @@ main {
                         text-align: center;
                     }
                     input{
-                        width: 7vw;
+                        width: fit-content;
                     }
                 }
               }
@@ -854,9 +872,10 @@ main {
                     flex-wrap: wrap;
                     li{
                         span{
-                            width: 7vw;
+                            width: fit-content;
                             line-height: 2.2;
                             text-align: center;
+                            color: #333;
                         }
                         input{
                             width: 7vw;
@@ -868,6 +887,7 @@ main {
                     span{
                         width: fit-content;
                         line-height: 2.2;
+                        color: #333;
                     }
                     ol{
 
@@ -1215,6 +1235,7 @@ main {
 
         }
         .formgroup.installation_type{
+
             ul{
                 margin-left:60px;
                 ol{
@@ -1247,6 +1268,8 @@ main {
                     }
                 }
             }
+
+
         }
         .formgroup.subBlock{
             margin-left:60px;
