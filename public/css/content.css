@@ -752,6 +752,7 @@ main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formg
 }
 main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
   width: 8vw;
+  min-width: 120px;
 }
 main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyData .formgroup.phone_type ul li #purchase_phone_number, main .companyData .formgroup.phone_type ul li #fax_number, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #purchase_phone_number, main .companyDataEdit .formgroup.phone_type ul li #fax_number {
   width: 19vw;

@@ -185,6 +185,7 @@ main {
                         display: block;
                         width: max-content;
                         min-width: 8vw;
+
                         margin-right: 10px;
 
                     }
@@ -691,6 +692,7 @@ main {
                   }
                   input{
                       width: 8vw;
+                      min-width: 120px
                   }
                   #phone_number_1,#phone_number_2,#phone_number_3,#purchase_phone_number,#fax_number{
                     width:19vw;
