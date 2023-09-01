@@ -31,7 +31,7 @@ class AdminController extends Controller
         return view('admin.index', compact('products'));
     }
     public function create(){
-       
+
 
         return view('admin.login');
     }
@@ -52,47 +52,50 @@ class AdminController extends Controller
     }
     public static function isLoggedIn(){
         return !empty(self::admin());
- 
+
         // return !empty(self::$member);
         // 如果這樣寫會有問題
     }
-    
+
     public function delete()
     {
         session()->forget('adminId');
-        
+
         // self::$admin = null;
         return redirect()->route('login');
     }
-    public function Setting(){
+    public function settings(){
 
-        $emailAddress = Setting::findOrFail(1) -> email_address;
+        $emailAddresses = Setting::findOrFail(1) -> email_address;
 
-        return view('admin.Setting.Setting', compact('emailAddress'));
+        return view('admin.Setting.setting', compact('emailAddresses'));
     }
     public function submitMail(Request $request)
     {
         $validateData = $request->validate([
-            'email_address' => 'required|email',
+            'email_addresses' => 'required',
         ]);
 
         // $setting = new Setting;
         // $setting->email_address = $request -> input('email_address');
         // $setting->save();
 
+        $emailAddresses = explode(',', $request->input('email_addresses'));
+        $formattedEmails = implode(',', $emailAddresses);
+
         $setting = Setting::first(); //假設 Setting 模型代表信箱設定的資料表，使用 first 方法獲取第一筆資料。
 
         if($setting){
-            $setting->email_address = $request -> input('email_address');
+            $setting->email_address = $formattedEmails;
             $setting->save();
         }else{
-            Setting::create(['email_address'=> $request->input('email_address')]);
+            Setting::create(['email_address'=> $formattedEmails]);
         }
 
-        
+
         return redirect()->back()->with('success','收信信箱已儲存');
     }
-    
+
     public function faqList(){
 
         $faqs = FAQ::all();
@@ -115,17 +118,17 @@ class AdminController extends Controller
         ini_set('memory_limit', '512M');
 
         $tbm10Data = Tbm10::paginate(10);
-    
+
         return view('admin.ERP.ERP-list', compact('tbm10Data'));
     }
     public function Maintenance_List(){
 
         $maintenanceRecords = MaintenanceRecord::all();
-         
+
         return view('admin.Maintenance.Mainten_list', compact('maintenanceRecords'));
     }
     public function Maintenance_create(){
-         
+
         return view('admin.Maintenance.Mainten_create');
     }
     public function Maintenance_check(MaintenanceRecord $maintenanceRecord)
@@ -158,10 +161,10 @@ class AdminController extends Controller
     public function Maintenance_destroy(MaintenanceRecord $maintenanceRecord)
     {
          $maintenanceRecord->delete();
-    
+
         return redirect()->back()
             ->with('success', '刪除成功.');
-         
+
     }
 
     public function memberCreate(){
@@ -170,7 +173,7 @@ class AdminController extends Controller
         return view('admin.Member.member-create') ;
     }
     public function showSetPermissions($memberId){
-        
+
         $member = Member::find($memberId);
         $products = Product::all();
         $memberPermissions = $member->permissions->toArray();
@@ -186,7 +189,7 @@ class AdminController extends Controller
         // 刪除舊的關聯
         $member->permissions()->detach();
         // $memberPermissions = new MemberPermissions;
-        
+
 
             // 逐一建立新的關聯
         foreach ($productIds as $productId) {
@@ -206,16 +209,16 @@ class AdminController extends Controller
 
                 //將訊息儲存到 Session 中
                 $request -> session()->flash('success',$message);
-        
+
                 // $url = url()->previous(); // 取得當前頁面的 URL
                 // return redirect($url); // 重新導向當前頁面
-        
-                
-                
-         
-         
-        
-     
+
+
+
+
+
+
+
 
         // return redirect()->back()->with('success', '權限更新成功');
         // 重新導向回當前頁面並顯示成功訊息
@@ -226,9 +229,9 @@ class AdminController extends Controller
     public function destroy(Member $member)
     {
          $member->delete();
-    
+
         return redirect()->route('faqs.index')
             ->with('success', '會員刪除成功.');
-         
+
     }
 }

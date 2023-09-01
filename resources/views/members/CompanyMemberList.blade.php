@@ -17,7 +17,7 @@
             </br>
             <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
             </br>
-            <table>
+            <table class="MemberList">
                 <thead>
                     <tr>
                         <th>員工姓名</th>
@@ -50,7 +50,7 @@
             </table>
 
             <h5>已離職員工列表</h5>
-            <table>
+            <table class="MemberList">
                 <thead>
                     <tr>
                         <th>員工姓名</th>
@@ -75,7 +75,7 @@
                 </tbody>
             </table>
             <h5>註冊尚待驗證列表</h5>
-            <table>
+            <table class="MemberList">
                 <thead>
                     <tr>
                         <th>員工姓名</th>

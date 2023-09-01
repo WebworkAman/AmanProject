@@ -361,6 +361,8 @@ main {
             font-size: 14px;
             border-collapse: collapse;
             width: 100%;
+            max-width: 1280px;
+            margin: 20px auto;
         }
         th, td {
 
@@ -546,7 +548,7 @@ main {
         h2{
             font-size: 2rem;
             margin-top: 30px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
 
         }
         .formBlock{
@@ -692,7 +694,8 @@ main {
                   }
                   input{
                       width: 8vw;
-                      min-width: 120px
+                      min-width: 120px;
+                      max-width: 180px;
                   }
                   #phone_number_1,#phone_number_2,#phone_number_3,#purchase_phone_number,#fax_number{
                     width:19vw;
@@ -777,7 +780,7 @@ main {
             label{
                 display: block;
                 width: max-content;
-                min-width: 8vw;
+                min-width: 110px;
                 margin-right: 10px;
 
             }
@@ -844,23 +847,30 @@ main {
         }
         .formgroup.phone_type{
               display: flex;
+
               label{
                  margin-bottom: 10px;
               }
               ul{
                 display: flex;
+                flex-wrap: wrap;
 
 
                 li{
+                    width: fit-content;
                     span{
                         line-height: 2.2;
                         text-align: center;
                     }
                     input{
                         width: fit-content;
+                        max-width: 180px;
                     }
                 }
               }
+
+
+
 
         }
         .formgroup.installation_type{
@@ -957,6 +967,8 @@ main {
                 min-width: 110px;
             }
         }
+
+
 
     }
 

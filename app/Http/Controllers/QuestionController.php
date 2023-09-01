@@ -47,7 +47,7 @@ class QuestionController extends Controller
         $answer = $question->answers->first();
 
         if($answer){
-        
+
              //如果已存在回覆，則更新回覆內容
              $answer->answer = $request->answer;
              $answer->save();
@@ -92,7 +92,7 @@ class QuestionController extends Controller
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'video' => 'nullable|mimes:mp4,mov,avi',
         ]);
-        
+
         $question = new Question;
         $question -> product_id = $request->input('product_id');
         $question -> member_id =  MemberAuth::member()->id;
@@ -121,7 +121,9 @@ class QuestionController extends Controller
         $request -> session()->flash('success',$message);
 
         //寄送通知郵件給收信者
-        $emailAddress = Setting::find(1)->email_address;
+        // $emailAddress = Setting::find(1)->email_address;
+        $emailAddresses = explode(',', Setting::find(1)->email_address);
+
         $questionData = [
             'title' => $question->title,
             'content' => $question->content,
@@ -130,7 +132,11 @@ class QuestionController extends Controller
         //使用通知類別發送郵件
 
         $notification = new NewQuestionNotification($questionData);
-        Notification::route('mail',$emailAddress)->notify($notification);
+        // Notification::route('mail',$emailAddress)->notify($notification);
+
+        foreach ($emailAddresses as $emailAddress) {
+            Notification::route('mail', $emailAddress)->notify($notification);
+        }
 
 
         // $url = url()->previous(); // 取得當前頁面的 URL
@@ -189,7 +195,7 @@ class QuestionController extends Controller
     public function destroy(Question $question)
     {
         $question->delete();
-        
+
         session()->flash('subpage','question-list');
 
         // return response()->json(['success' => true]);
@@ -197,20 +203,20 @@ class QuestionController extends Controller
 
         return redirect()->back()
         ->with('success','Question deleted successfully');
-        
+
 
         // $subpage= session('subpage');
 
         // if($subpage){
         //     return redirect()->route('faqs.index')
         //            ->with('success','Question deleted successfully');
-        
+
         // }
         // else{
         //     return redirect()->route('questions.index')
         //     ->with('success', 'Question deleted successfully.');
         // }
-       
-    
+
+
     }
 }

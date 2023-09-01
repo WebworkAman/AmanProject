@@ -43,7 +43,7 @@ Route::group(['prefix'=>'admin'],function(){
     });
     // 常見問題區管理
     Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
-    Route::get('/index/setting', [AdminController::class, 'Setting'])->name('Setting');
+    Route::get('/index/setting', [AdminController::class,'settings'])->name('setting');
     Route::put('/index/setting', [AdminController::class,'submitMail'])->name('settings.store');
     Route::get('/index/question-list', [AdminController::class, 'QuestionList'])->name('questions.index');
     Route::get('/index/question-list/{question}/reply', [QuestionController::class, 'reply'])->name('question.answer');

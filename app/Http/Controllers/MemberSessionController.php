@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Libraries\MemberAuth;
 use App\Models\VerifyMember;
 use App\Models\Member;
+use App\Models\Setting;
 use App\Models\CRM_MainCust_Info;
 use App\Models\CRM_Machines;
 use App\Models\CRM_Machines_Contactlist;
@@ -232,8 +233,9 @@ class MemberSessionController extends Controller
     public function CompanyUpdate(Request $request){
 
             $companyId = $request->input('company_id');
-            $company = CRM_MainCust_Info::findOrFail($companyId);
 
+            $company = CRM_MainCust_Info::findOrFail($companyId);
+            $id = $company -> company_ERP_id;
             $updateRules = [
                 'company_name' => 'required',
                 'company_address.country' => 'required',
@@ -313,7 +315,9 @@ class MemberSessionController extends Controller
 
             ]);
 
-            return redirect()->route('memberBasic')->with('info','修改成功');
+            // return redirect()->route('company')->with('info','修改成功');
+            return redirect()->route('company', ['companyId' => $id])->with('info', '修改成功');
+
         }
 
         public function companyMemberList(Request $request){
@@ -387,17 +391,14 @@ class MemberSessionController extends Controller
 
             return back()->with('success', '在職狀況已更新');
         }
-
-    public function companyMembersDestroy(Member $member){
+        public function companyMembersDestroy(Member $member){
              $member->delete();
 
             return redirect()->route('members.updateStatusView')
                 ->with('success', '會員刪除成功.');
 
         }
-
-
-    public function companCreateShow($companyId){
+        public function companCreateShow($companyId){
 
                  $member = MemberAuth::member();
 
@@ -582,20 +583,23 @@ class MemberSessionController extends Controller
 
         $crmMachinesContactlist = CRM_Machines_Contactlist::where('crm_machine_id',$machine)->get();
 
-        return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo','crmMachines','crmMachinesContactlist'));
+        $contactCount = CRM_Machines_Contactlist::where('crm_machine_id',$machine)->count();
+
+
+
+        return view('members.companyMachine', compact('members','crmMachine','member','crmMainCustInfo','crmMachines','crmMachinesContactlist','contactCount'));
     }
-    public function deleteCompanyMachine($machine)
-{
-    $crmMachine = CRM_Machines::findOrFail($machine);
+    public function deleteCompanyMachine($machine){
+        $crmMachine = CRM_Machines::findOrFail($machine);
 
-    // 如果需要，您可以在這裡添加權限檢查或其他安全性措施
+        // 如果需要，您可以在這裡添加權限檢查或其他安全性措施
 
-    // 刪除機器資料
-    $crmMachine->delete();
+        // 刪除機器資料
+        $crmMachine->delete();
 
-    return redirect()->route('companyMachineList')
-        ->with('success', '機器資料已成功刪除');
-}
+        return redirect()->route('companyMachineList')
+            ->with('success', '機器資料已成功刪除');
+    }
 
     public function editMachineContact($machine, $id){
          $member = MemberAuth::member(); // 獲取會員訊息，類似之前的操作
@@ -633,8 +637,7 @@ class MemberSessionController extends Controller
              ->with('success', '機器聯絡人已成功更新');
      }
 
-    public function MachinesContactDestroy($machine, $id)
-    {
+    public function MachinesContactDestroy($machine, $id){
         // 使用 $machine 和 $id 進行刪除操作
         $crmMachineContact = CRM_Machines_Contactlist::findOrFail($id);
         $crmMachineContact->delete();
@@ -782,6 +785,10 @@ class MemberSessionController extends Controller
         $crmMachines = CRM_Machines::where('company_ERP_id', $companyId)->get();
         $crmMachine = CRM_Machines::find($machine);
         $crmMainCustInfo = CRM_MainCust_Info::where('company_ERP_id', $companyId)->first();
+
+        //獲取特定機器的聯絡人數量
+        $contactCount = CRM_Machines_Contactlist::where('crm_machine_id',$machine)->count();
+
 
         $selectedOtherPurchaseSourceValue = $request->input('contact_person_position');
 
@@ -978,9 +985,33 @@ class MemberSessionController extends Controller
         ]);
 
         // 發送郵件通知給系統管理者
-        $adminEmail = 'aman@oshima.com.tw'; // 系統管理者的郵件地址
-        Notification::route('mail', $adminEmail)->notify(new MachineDataAdded($companyMachine));
+        // $adminEmail = 'aman@oshima.com.tw'; // 系統管理者的郵件地址
 
+        $emailAddresses = explode(',', Setting::find(1)->email_address);
+
+        $message = '親愛的歐西瑪客服人員您好：';
+        $message.= '本公司的客戶'.$request->installation_company_name.'已註冊一台'.$request->machine_model.'-'.$request->machine_serial.'於CRM系統上，請您立即開通授予客戶相關產品的提問權限，非常感謝您！';
+        $link = route('members.adminSetPermissions', ['member' => $member->id]);
+
+        foreach ($emailAddresses as $emailAddress) {
+
+
+            $mail_data = [
+                'recipient'=>$emailAddress,
+                'fromEmail'=>$emailAddress,
+                'fromName'=>$request->name,
+                'subject'=>'CRM系統客戶新增購買機器申請通知',
+                'link'=> $link,
+                'body'=> $message,
+
+            ];
+
+            \Mail::send('emails.machineAdd-notification',$mail_data,function($message)use($mail_data){
+                $message->to($mail_data['recipient'])
+                        ->from(config('mail.from.address'), config('mail.from.name'))
+                        ->subject($mail_data['subject']);
+            });
+         }
 
         return redirect()->route('companyMachineList')->with('info','新增成功');
     }

@@ -1,19 +1,27 @@
 <div class="Show_form setting-page">
-                    <h3>管 理 設 定</h3>
+    <h3>管 理 設 定</h3>
 
-                    <form method="POST" action="{{ route('settings.store') }}">
+    <form method="POST" action="{{ route('settings.store') }}">
 
-                      @csrf
-                      @method('PUT')
-                      <div class="form-group">
-                           <label for="email_address">系統收信設定</label>
-                           <input type="email" name="email_address" id="email_address" class="form-control" placeholder="輸入信箱" value="{{ $emailAddress }}" required>                     
-                       </div>
+        @csrf
+        @method('PUT')
+        <div class="form-group">
+            <label for="email_address">系統收信設定</label>
 
-                       <button type="submit" class="btn btn-primary">儲存設定</button>
 
-                    </form>
+            <input type="text" name="email_addresses" id="email_addresses" class="form-control"
+                placeholder="請輸入多個 Email 地址" value="{{ $emailAddresses }}" required>
+            <span>(多個請用[,]逗號隔開)</span>
 
-                       
-                       @stack('scripts')
+            {{-- @foreach (explode(',', $emailAddresses) as $email)
+                <p>{{ $email }}</p>
+            @endforeach --}}
+        </div>
+
+        <button type="submit" class="btn btn-primary">儲存設定</button>
+
+    </form>
+
+
+    @stack('scripts')
 </div>

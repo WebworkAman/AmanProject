@@ -469,6 +469,8 @@ main .Show_form table {
   font-size: 14px;
   border-collapse: collapse;
   width: 100%;
+  max-width: 1280px;
+  margin: 20px auto;
 }
 main .Show_form th, main .Show_form td {
   text-align: left;
@@ -629,7 +631,7 @@ main .companyData, main .companyDataEdit {
 main .companyData h2, main .companyDataEdit h2 {
   font-size: 2rem;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 main .companyData .formBlock, main .companyDataEdit .formBlock {
   margin-top: 100px;
@@ -753,6 +755,7 @@ main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formg
 main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
   width: 8vw;
   min-width: 120px;
+  max-width: 180px;
 }
 main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData .formgroup.phone_type ul li #phone_number_2, main .companyData .formgroup.phone_type ul li #phone_number_3, main .companyData .formgroup.phone_type ul li #purchase_phone_number, main .companyData .formgroup.phone_type ul li #fax_number, main .companyDataEdit .formgroup.phone_type ul li #phone_number_1, main .companyDataEdit .formgroup.phone_type ul li #phone_number_2, main .companyDataEdit .formgroup.phone_type ul li #phone_number_3, main .companyDataEdit .formgroup.phone_type ul li #purchase_phone_number, main .companyDataEdit .formgroup.phone_type ul li #fax_number {
   width: 19vw;
@@ -819,7 +822,7 @@ main .companyDataEdit.Machines-list .formgroup label {
   display: block;
   width: -moz-max-content;
   width: max-content;
-  min-width: 8vw;
+  min-width: 110px;
   margin-right: 10px;
 }
 main .companyDataEdit.Machines-list .formgroup span {
@@ -876,6 +879,11 @@ main .companyDataEdit.Machines-list .formgroup.phone_type label {
 }
 main .companyDataEdit.Machines-list .formgroup.phone_type ul {
   display: flex;
+  flex-wrap: wrap;
+}
+main .companyDataEdit.Machines-list .formgroup.phone_type ul li {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main .companyDataEdit.Machines-list .formgroup.phone_type ul li span {
   line-height: 2.2;
@@ -884,6 +892,7 @@ main .companyDataEdit.Machines-list .formgroup.phone_type ul li span {
 main .companyDataEdit.Machines-list .formgroup.phone_type ul li input {
   width: -moz-fit-content;
   width: fit-content;
+  max-width: 180px;
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul {
   margin-left: 60px;

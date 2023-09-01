@@ -7,7 +7,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class MachineDataAdded extends Notification
+class MachineDataAdded extends Notification implements ShouldQueue
+
 {
     use Queueable;
 
@@ -44,7 +45,8 @@ class MachineDataAdded extends Notification
                ->subject('機器資料新增通知')
                ->line('您好，機器資料已經成功新增。')
                ->action('查看機器資料', url('/'))
-               ->line('感謝您的使用！');
+               ->line('感謝您的使用！')
+               ->view('emails.question-notification');
     }
 
     /**

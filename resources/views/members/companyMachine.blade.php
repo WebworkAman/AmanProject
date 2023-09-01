@@ -524,15 +524,22 @@
 
     </main>
 
+    {{--  在 Js 中使用 contactCount 變數進行判斷 --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const openFormBtn = document.getElementById('openFormBtn');
             const modal = document.getElementById('modal');
             const closeModal = document.getElementById('closeModal');
             const contactForm = document.getElementById('contactForm');
+            const existingContactCount = {{ $contactCount }};
 
             // 打開懸浮視窗
             openFormBtn.addEventListener('click', function() {
+
+                if (existingContactCount >= 10) {
+                    alert('聯絡人不能超過十筆，請先刪除在進行操作');
+                    return;
+                }
                 modal.style.display = 'block';
             });
 

@@ -8,7 +8,7 @@
         <div class="Show_form">
 
             <div id="companyDataEdit" class="companyDataEdit Machines-list">
-                <h5>編輯機器聯絡人</h5>
+                <h2>編輯機器聯絡人</h2>
                 <form method="POST"
                     action="{{ route('updateMachineContact', ['machine' => $crmMachine, 'id' => $crmMachinesContact->id]) }}">
                     @csrf
@@ -31,7 +31,7 @@
                         </ul>
                     </div>
 
-                    <div class="formgroup subBlock">
+                    <div class="formgroup">
                         <label for="contact_person_name">姓名 ：</label>
                         <p></p>
                         <input type="text" name="contact_person_name" id="contact_person_name"
@@ -49,40 +49,38 @@
                     @php
                         $ContactPersonPhone = json_decode($crmMachinesContact->contact_person_phone ?? '');
                     @endphp
-                    <div class="formgroup phone_type subBlock">
+                    <div class="formgroup phone_type">
                         <label for="contact_person_phone">公司電話 ：</label>
                         <ul>
                             <li><span>國碼</span><input type="text" name="contact_person_phone[country_code]"
                                     id="contact_country_code" value="{{ $ContactPersonPhone->country_code }}"></li>
                             <li><span>區碼</span><input type="text" name="contact_person_phone[postal_code]"
                                     id="contact_postal_code" value="{{ $ContactPersonPhone->postal_code }}"></li>
-                        </ul>
-                        <ul>
                             <li><span>電話號碼</span><input type="text" name="contact_person_phone[phone_number]"
                                     id="contact_phone_number" value="{{ $ContactPersonPhone->phone_number }}"></li>
                             <li><span>分機</span><input type="text" name="contact_person_phone[extension]"
                                     id="contact_extension" value="{{ $ContactPersonPhone->extension }}"></li>
                         </ul>
+
                     </div>
 
-                    <div class="formgroup subBlock">
+                    <div class="formgroup">
                         <label for="contact_person_mobile">手機 ：</label>
                         <input type="text" name="contact_person_mobile" id="contact_person_mobile"
-                            value="{{ $crmMachinesContact->contact_person_mobile }}">
-                        <p></p>
+                            value="{{ $crmMachinesContact->contact_person_mobile }}" style="min-width: 200px;">
                     </div>
 
-                    <div class="formgroup subBlock">
+                    <div class="formgroup">
                         <label for="contact_person_email">E-mail ：</label>
 
                         <input type="email" name="contact_person_email" id="contact_person_email"
-                            value="{{ $crmMachinesContact->contact_person_email }}" style="width:21vw;">
+                            value="{{ $crmMachinesContact->contact_person_email }}" style="width:21vw;min-width: 350px;">
 
                     </div>
                     @php
                         $contactCommuSoftware = json_decode($crmMachinesContact->contact_commu_software ?? '');
                     @endphp
-                    <div class="formgroup subBlock">
+                    <div class="formgroup">
                         <label for="contact_software_data">通訊軟體 ：</label>
                         {{-- <select name="contact_software_type" id="contact_software_type">
                             <option value="1">Whats APP</option>
