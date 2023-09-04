@@ -499,9 +499,7 @@
                                                             cellpadding="0" role="presentation">
                                                             <tr>
                                                                 <td align="center">
-                                                                    <a href="{{ $link }}"
-                                                                        class="f-fallback button"
-                                                                        target="_blank">按此前往</a>
+                                                                    {!! $link !!}
                                                                 </td>
                                                                 <td align="center">
 

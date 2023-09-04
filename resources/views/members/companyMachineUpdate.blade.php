@@ -95,11 +95,12 @@
                                 @php
                                     $companyPhones = json_decode($crmMachine->installation_company_phone ?? '', true);
                                 @endphp
-                                @if (is_array($companyPhones) && count($companyPhones) > 0)
+                                {{-- @if (is_array($companyPhones) && count($companyPhones) > 0)
                                     <li><span id="installation_company_phone">公司電話 ：</span></li>
-                                    <ol>
-                                        @foreach ($companyPhones as $phone)
-                                            @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']))
+
+                                    @foreach ($companyPhones as $phone)
+                                        @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']) || !empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']) || !empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
+                                            <ol>
                                                 <li><span>國碼</span>
                                                     <input type="text" name="installation_company_phone[country_code_1]"
                                                         id="installation_phone_country_code_1"
@@ -108,69 +109,175 @@
                                                 <li><span>區碼</span>
                                                     <input type="text" name="installation_company_phone[area_code_1]"
                                                         id="installation_phone_area_code_1"
-                                                        value="{{ $phone['area_code_1'] ?? '' }}">
+                                                        value="{{ $phone['area_code_1'] ?? ' ' }}">
                                                 </li>
                                                 <li><span>電話號碼</span>
                                                     <input type="text" name="installation_company_phone[phone_number_1]"
                                                         id="installation_phone_number_1"
-                                                        value="{{ $phone['phone_number_1'] ?? '' }}">
+                                                        value="{{ $phone['phone_number_1'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>國碼</span>
+                                                    <input type="text" name="installation_company_phone[country_code_2]"
+                                                        id="installation_phone_country_code_2"
+                                                        value="{{ $phone['country_code_2'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_2]"
+                                                        id="installation_phone_area_code_2"
+                                                        value="{{ $phone['area_code_2'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text" name="installation_company_phone[phone_number_2]"
+                                                        id="installation_phone_number_2"
+                                                        value="{{ $phone['phone_number_2'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>國碼</span>
+                                                    <input type="text" name="installation_company_phone[country_code_3]"
+                                                        id="installation_phone_country_code_3"
+                                                        value="{{ $phone['country_code_3'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_3]"
+                                                        id="installation_phone_area_code_3"
+                                                        value="{{ $phone['area_code_3'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text" name="installation_company_phone[phone_number_3]"
+                                                        id="installation_phone_number_3"
+                                                        value="{{ $phone['phone_number_3'] ?? ' ' }}">
+                                                </li>
+                                            </ol>
+                                        @else
+                                            <ol>
+                                                <li><span>國碼</span>
+                                                    <input type="text" name="installation_company_phone[country_code_1]"
+                                                        id="installation_phone_country_code_1" value="">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_1]"
+                                                        id="installation_phone_area_code_1" value="">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[phone_number_1]"
+                                                        id="installation_phone_number_1" value="">
+                                                </li>
+                                                <li><span>國碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[country_code_2]"
+                                                        id="installation_phone_country_code_2" value="">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_2]"
+                                                        id="installation_phone_area_code_2" value="">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[phone_number_2]"
+                                                        id="installation_phone_number_2" value="">
+                                                </li>
+                                                <li><span>國碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[country_code_3]"
+                                                        id="installation_phone_country_code_3" value="">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_3]"
+                                                        id="installation_phone_area_code_3" value="">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[phone_number_3]"
+                                                        id="installation_phone_number_3" value="">
+                                                </li>
+                                            </ol>
+                                        @endif
+
+
+                                        <ol>
+                                            @if (!empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']))
+                                                <li><span>國碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[country_code_2]"
+                                                        id="installation_phone_country_code_2"
+                                                        value="{{ $phone['country_code_2'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_2]"
+                                                        id="installation_phone_area_code_2"
+                                                        value="{{ $phone['area_code_2'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[phone_number_2]"
+                                                        id="installation_phone_number_2"
+                                                        value="{{ $phone['phone_number_2'] ?? ' ' }}">
                                                 </li>
                                             @endif
+                                        </ol>
+                                        <ol>
+                                            @if (!empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
+                                                <li><span>國碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[country_code_3]"
+                                                        id="installation_phone_country_code_3"
+                                                        value="{{ $phone['country_code_3'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>區碼</span>
+                                                    <input type="text" name="installation_company_phone[area_code_3]"
+                                                        id="installation_phone_area_code_3"
+                                                        value="{{ $phone['area_code_3'] ?? ' ' }}">
+                                                </li>
+                                                <li><span>電話號碼</span>
+                                                    <input type="text"
+                                                        name="installation_company_phone[phone_number_3]"
+                                                        id="installation_phone_number_3"
+                                                        value="{{ $phone['phone_number_3'] ?? ' ' }}">
+                                                </li>
+                                            @endif
+                                        </ol>
+                                    @endforeach
+                                @endif --}}
 
-                                    </ol>
+                                @if (is_array($companyPhones) && count($companyPhones) > 0)
+                                    <li><span id="installation_company_phone">公司電話 ：</span></li>
                                     <ol>
-                                        @if (!empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']))
+                                        @foreach ($companyPhones as $index => $phone)
                                             <li><span>國碼</span>
-                                                <input type="text" name="installation_company_phone[country_code_2]"
-                                                    id="installation_phone_country_code_2"
-                                                    value="{{ $phone['country_code_2'] ?? '' }}">
+                                                <input type="text"
+                                                    name="installation_company_phone[country_code_{{ $index + 1 }}]"
+                                                    id="installation_phone_country_code_{{ $index + 1 }}"
+                                                    value="{{ $phone['country_code_' . ($index + 1)] ?? '' }}">
                                             </li>
                                             <li><span>區碼</span>
-                                                <input type="text" name="installation_company_phone[area_code_2]"
-                                                    id="installation_phone_area_code_2"
-                                                    value="{{ $phone['area_code_2'] ?? '' }}">
+                                                <input type="text"
+                                                    name="installation_company_phone[area_code_{{ $index + 1 }}]"
+                                                    id="installation_phone_area_code_{{ $index + 1 }}"
+                                                    value="{{ $phone['area_code_' . ($index + 1)] ?? '' }}">
                                             </li>
                                             <li><span>電話號碼</span>
-                                                <input type="text" name="installation_company_phone[phone_number_2]"
-                                                    id="installation_phone_number_2"
-                                                    value="{{ $phone['phone_number_2'] ?? '' }}">
+                                                <input type="text"
+                                                    name="installation_company_phone[phone_number_{{ $index + 1 }}]"
+                                                    id="installation_phone_number_{{ $index + 1 }}"
+                                                    value="{{ $phone['phone_number_' . ($index + 1)] ?? '' }}">
                                             </li>
-                                        @endif
+                                        @endforeach
                                     </ol>
-                                    <ol>
-                                        @if (!empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
-                                            <li><span>國碼</span>
-                                                <input type="text" name="installation_company_phone[country_code_3]"
-                                                    id="installation_phone_country_code_3"
-                                                    value="{{ $phone['country_code_3'] ?? '' }}">
-                                            </li>
-                                            <li><span>區碼</span>
-                                                <input type="text" name="installation_company_phone[area_code_3]"
-                                                    id="installation_phone_area_code_3"
-                                                    value="{{ $phone['area_code_3'] ?? '' }}">
-                                            </li>
-                                            <li><span>電話號碼</span>
-                                                <input type="text" name="installation_company_phone[phone_number_3]"
-                                                    id="installation_phone_number_3"
-                                                    value="{{ $phone['phone_number_3'] ?? '' }}">
-                                            </li>
-                                        @endif
-                                    </ol>
-                                @endforeach
                                 @endif
-                                <li>
 
-                                    @php
-                                        $companyFax = json_decode($crmMachine->installation_company_fax ?? '');
-                                    @endphp
+
+
+
+                                {{-- @php
+                                    $companyFax = json_decode($crmMachine->installation_company_fax ?? '');
+                                @endphp
 
                                 <li><span id="installation_company_fax">公司傳真 ：</span></li>
                                 @if ($companyFax)
                                     <ol>
                                         <li><span>國碼</span>
                                             <input type="text" name="installation_company_fax[country_code]"
-                                                id="installation_fax_country_code"
-                                                value="{{ $companyFax->country_code }}">
+                                                id="installation_fax_country_code" value="{{ $companyFax->country_code }}">
                                         </li>
                                         <li><span>區碼</span>
                                             <input type="text" name="installation_company_fax[area_code]"
@@ -182,7 +289,7 @@
                                         </li>
                                     </ol>
                                 @endif
-                                </li>
+                                </li> --}}
                             </ul>
 
                         </div>

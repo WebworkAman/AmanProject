@@ -41,7 +41,6 @@ class MemberSessionController extends Controller
 
         return view('members.logIn');
     }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -550,7 +549,6 @@ class MemberSessionController extends Controller
 
 
     }
-
     public function companyMachineList(Request $request){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -567,7 +565,6 @@ class MemberSessionController extends Controller
 
         return view('members.companyMachinesList', compact('members','crmMachines','member','crmMainCustInfo'));
     }
-
     public function companyMachineData(Request $request,$machine){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -600,7 +597,6 @@ class MemberSessionController extends Controller
         return redirect()->route('companyMachineList')
             ->with('success', '機器資料已成功刪除');
     }
-
     public function editMachineContact($machine, $id){
          $member = MemberAuth::member(); // 獲取會員訊息，類似之前的操作
          $crmMachine = CRM_Machines::find($machine);
@@ -648,7 +644,6 @@ class MemberSessionController extends Controller
 
 
     }
-
     public function companyMachineUpdateView(Request $request,$machine){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -772,7 +767,6 @@ class MemberSessionController extends Controller
 
         return redirect()->route('companyMachineData',$machine)->with('info','修改成功');
     }
-
     public function MachineContactAdd(Request $request,$machine){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -852,7 +846,6 @@ class MemberSessionController extends Controller
 
         return redirect()->route('companyMachineData',$machine)->with('info','新增成功');
     }
-
     public function companyMachineAdd(Request $request){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -868,8 +861,6 @@ class MemberSessionController extends Controller
 
         return view('members.companyMachineAdd', compact('members','crmMachines','member','crmMainCustInfo'));
     }
-
-
     public function companyMachineAddPost(Request $request){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
@@ -900,7 +891,24 @@ class MemberSessionController extends Controller
             $otherPurchaseSource = $selectedPurchaseSourceName;
         }
 
+        $rules = [
+            'machine_purchase_date' => 'required',
+            'machine_model' => 'required',
+            'machine_serial' => 'required',
+            'installation_company_name' => 'required',
+        ];
 
+
+$validator = Validator::make($request->all(), $rules);
+
+            // 如果驗證失敗
+        if ($validator->fails()) {
+
+
+            return back()
+                   ->withErrors($validator)  // 傳遞驗證錯誤訊息到視圖
+                   ->withInput();  // 保留用戶的輸入值
+        }else{
         $companyMachine = CRM_Machines::create([
 
             'company_ERP_id' => $companyId,
@@ -991,7 +999,8 @@ class MemberSessionController extends Controller
 
         $message = '親愛的歐西瑪客服人員您好：';
         $message.= '本公司的客戶'.$request->installation_company_name.'已註冊一台'.$request->machine_model.'-'.$request->machine_serial.'於CRM系統上，請您立即開通授予客戶相關產品的提問權限，非常感謝您！';
-        $link = route('members.adminSetPermissions', ['member' => $member->id]);
+        $routeToRemember = route('members.adminSetPermissions', ['member' => $member->id]);
+        $link = '<a href="' . $routeToRemember . '?remember_route=true" class="f-fallback button" target="_blank">按此前往</a>';
 
         foreach ($emailAddresses as $emailAddress) {
 
@@ -1001,6 +1010,7 @@ class MemberSessionController extends Controller
                 'fromEmail'=>$emailAddress,
                 'fromName'=>$request->name,
                 'subject'=>'CRM系統客戶新增購買機器申請通知',
+                'routeToRemember'=>$routeToRemember,
                 'link'=> $link,
                 'body'=> $message,
 
@@ -1014,7 +1024,7 @@ class MemberSessionController extends Controller
          }
 
         return redirect()->route('companyMachineList')->with('info','新增成功');
-    }
+    } }
 
 
 

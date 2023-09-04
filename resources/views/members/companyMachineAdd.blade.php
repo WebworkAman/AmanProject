@@ -19,18 +19,27 @@
 
                     <div id="machineData" style="display: block; margin-top:40px;">
                         <div class="formgroup">
-                            <label for="machine_purchase_date">1. 購買日期</label>
+                            <label for="machine_purchase_date">1. 購買日期*</label>
                             <input type="date" name="machine_purchase_date" id="machine_purchase_date">
+                            @error('machine_purchase_date')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="formgroup">
-                            <label for="machine_model">2. 機器型號</label>
+                            <label for="machine_model">2. 機器型號*</label>
                             <input type="text" name="machine_model" id="machine_model" Placeholder="字元最長15碼">
+                            @error('machine_model')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="formgroup">
-                            <label for="machine_serial">3. 機器序號</label>
+                            <label for="machine_serial">3. 機器序號*</label>
                             <input type="text" name="machine_serial" id="machine_serial" Placeholder="字元最長15碼">
+                            @error('machine_serial')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="formgroup">
                             <label for="machine_installation">4. 機器安裝地址</label>
@@ -38,8 +47,12 @@
                         <div class="formgroup installation_type">
 
                             <ul>
-                                <li><span>公司名稱 ：</span><input type="text" name="installation_company_name"
-                                        id="installation_company_name"></li>
+                                <li><span>公司名稱* ：</span><input type="text" name="installation_company_name"
+                                        id="installation_company_name">
+                                    @error('installation_company_name')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </li>
 
 
 

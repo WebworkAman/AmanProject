@@ -180,7 +180,7 @@
                     </div>
                 @else
                     <div class="formgroup">
-                        <label for="company_name">公司名稱 ：</label>
+                        <label for="company_name">公司名稱* ：</label>
                         <input type="text" name="company_name" id="company_name" value="{{ $tbm01->ba02 ?? '' }}">
                     </div>
 

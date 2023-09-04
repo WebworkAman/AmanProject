@@ -41,6 +41,7 @@ Route::group(['prefix'=>'admin'],function(){
 
         return view('admin/index');
     });
+    Route::middleware('AdminAuthRedirect')->group(function(){
     // 常見問題區管理
     Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
     Route::get('/index/setting', [AdminController::class,'settings'])->name('setting');
@@ -73,6 +74,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('question_select',function(){
         return view('admin/question_select');
     });
+
+});
  });
 
 //會員登入 Members login -> group

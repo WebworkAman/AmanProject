@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    public const HOME_URL='/admin';
     private static $admin = null;
 
     public static function admin(){
@@ -26,6 +27,11 @@ class AdminController extends Controller
         }
         return self::$admin;
     }
+    public static function isLoggedIn(){
+        return !empty(self::admin());
+
+    }
+
     public function index(){
         $products = Product::all();
         return view('admin.index', compact('products'));
@@ -46,16 +52,12 @@ class AdminController extends Controller
         ])->first();
 
         if(!empty($admin)){
+            session(['adminId' => $admin->id]);
             return redirect('admin/index');
         }
         return back()->with('fail','帳號/密碼輸入錯誤');
     }
-    public static function isLoggedIn(){
-        return !empty(self::admin());
 
-        // return !empty(self::$member);
-        // 如果這樣寫會有問題
-    }
 
     public function delete()
     {
