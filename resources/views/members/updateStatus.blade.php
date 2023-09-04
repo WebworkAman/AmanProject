@@ -17,6 +17,12 @@
 
                             <a class="btn" href="{{ route('companyMemberList') }}">返回列表</a>
 
+                            <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
+                            </br>
+                            </br>
+                            <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
+                            </br>
+
                         </div>
 
                         <div class="updateStatus">

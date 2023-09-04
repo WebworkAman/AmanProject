@@ -5,17 +5,20 @@
 
 
         <div class="Show_form Machines-list">
-            <h3>採 購 機 器 資 料 </h3>
+            <div class="nav">
+                <h3>採 購 機 器 資 料 </h3>
 
-            @if ($member->identity_perm == 1)
-                <a class="btn control-option" href="{{ route('companyMachineAdd') }}">新增機器資料</a>
-            @else
-            @endif
+                @if ($member->identity_perm == 1)
+                    <a class="btn control-option" href="{{ route('companyMachineAdd') }}">新增機器資料</a>
+                @else
+                @endif
 
-            <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '尚未建立公司資料' }}</label>
-            </br>
-            </br>
-            <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '尚未建立公司資料' }}</label>
+                <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '尚未建立公司資料' }}</label>
+                </br>
+                </br>
+                <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '尚未建立公司資料' }}</label>
+            </div>
+
             <table>
                 <thead>
                     <tr>

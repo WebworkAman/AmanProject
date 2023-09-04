@@ -5,18 +5,21 @@
 
 
         <div class="Show_form member-list">
-            <h3>公 司 會 員 列 表 </h3>
+            <div class="nav">
+                <h3>公 司 會 員 列 表 </h3>
 
-            @if ($member->identity_perm == 1 || $member->identity_perm == 2)
-                <a class="btn control-option" href="{{ route('members.updateStatusView') }}">資料修改</a>
-            @else
-            @endif
+                @if ($member->identity_perm == 1 || $member->identity_perm == 2)
+                    <a class="btn control-option" href="{{ route('members.updateStatusView') }}">資料修改</a>
+                @else
+                @endif
 
-            <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
-            </br>
-            </br>
-            <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
-            </br>
+                <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
+                </br>
+                </br>
+                <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
+                </br>
+            </div>
+
             <table class="MemberList">
                 <thead>
                     <tr>

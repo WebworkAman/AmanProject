@@ -160,6 +160,14 @@ footer .social_block p {
   display: none;
 }
 
+.nav {
+  max-width: 1280px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 80vw;
+  margin: 0 auto;
+}
+
 .search {
   text-align: center;
   margin: 30px;
@@ -586,7 +594,6 @@ main #toggleEditMode, main #ReturnButton {
   border-radius: 10px;
   width: 150px;
   text-align: center;
-  margin: 20px;
   padding: 5px;
   background-color: transparent;
   cursor: pointer;
