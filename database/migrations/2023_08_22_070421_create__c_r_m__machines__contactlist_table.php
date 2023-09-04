@@ -18,7 +18,7 @@ class CreateCRMMachinesContactlistTable extends Migration
 
             // 定義外鍵關聯
             $table->unsignedBigInteger('crm_machine_id'); // 對應到 CRM_Machines 資料表的 id
-            $table->foreign('crm_machine_id')->references('id')->on('crm_machines')->onDelete('cascade');
+            $table->foreign('crm_machine_id')->references('id')->on('CRM_Machines')->onDelete('cascade');
 
             $table->string('contact_person_position',1);
             $table->string('other_contact_person_position',30)->nullable();
