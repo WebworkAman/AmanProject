@@ -70,7 +70,7 @@ class AdminController extends Controller
 
         $emailAddresses = Setting::findOrFail(1) -> email_address;
 
-        return view('admin.Setting.setting', compact('emailAddresses'));
+        return view('admin.Setting.Setting', compact('emailAddresses'));
     }
     public function submitMail(Request $request)
     {
