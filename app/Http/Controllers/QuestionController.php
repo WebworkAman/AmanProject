@@ -86,6 +86,8 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            'machine_model' => 'required',
+            'machine_serial' => 'required',
             'product_id' => 'required',
             'title' => 'required',
             'content' => 'required',
@@ -98,6 +100,13 @@ class QuestionController extends Controller
         $question -> member_id =  MemberAuth::member()->id;
         $question -> title = $request -> input('title');
         $question -> content = $request -> input('content');
+
+        // 存儲選擇的機器型號和序號
+        $question->machine_model = $request->input('machine_model');
+        $question->machine_serial = $request->input('machine_serial');
+
+
+
 
         if($request->hasFile('photo')){
             $photo = $request->file('photo');

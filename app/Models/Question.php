@@ -9,11 +9,15 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $table = 'questions';
+    protected $table = 'CRM_Questions';
     protected $fillable = [
         'title',
-        'content'
-    ]; 
+        'content',
+        'photo',
+        'video',
+        'machine_model',
+        'machine_serial'
+    ];
 
     public function member()
 {

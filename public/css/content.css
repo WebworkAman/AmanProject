@@ -1441,7 +1441,13 @@ main .chooseItem ul li p {
   justify-content: center;
   align-items: center;
 }
+.QA_content .questionPostpop form {
+  /* 隱藏原本的下拉箭頭 */
+  /* 自訂下拉箭頭 */
+  /* 自訂下拉選單樣式 */
+}
 .QA_content .questionPostpop form label {
+  margin-top: 50px;
   color: white;
   letter-spacing: 1.2px;
   font-size: 1.2rem;
@@ -1452,9 +1458,49 @@ main .chooseItem ul li p {
 .QA_content .questionPostpop form .attachfile {
   color: white;
 }
+.QA_content .questionPostpop form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* 選擇框寬度 */
+  width: 20vw;
+  /* 選擇框高度 */
+  height: 30px;
+  /* 自訂選擇框背景 */
+  background-color: #fff;
+  /* 自訂邊框 */
+  border: 1px solid #ccc;
+  /* 自訂邊框圓角 */
+  border-radius: 4px;
+  /* 自訂字型 */
+  font-family: inherit;
+  /* 自訂字體大小 */
+  font-size: 1rem;
+  /* 自訂文字位置 */
+  -moz-text-align-last: center;
+       text-align-last: center;
+  text-align: center;
+}
+.QA_content .questionPostpop form select::after {
+  content: "▼";
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  font-size: 25px;
+  color: #555;
+  pointer-events: none;
+}
+.QA_content .questionPostpop form select option {
+  /* 自訂背景顏色 */
+  background-color: #fff;
+  /* 自訂字體大小 */
+  font-size: 16px;
+  /* 自訂文字位置 */
+  text-align: center;
+}
 .QA_content .questionPostpop .closePostBtn {
   position: relative;
-  bottom: 175px;
+  bottom: 250px;
   left: 545px;
   background-color: #fff;
   padding: 5px 10px;

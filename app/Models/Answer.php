@@ -9,8 +9,8 @@ class Answer extends Model
 {
     use HasFactory;
 
-    protected $table = 'answers';
-    protected $fillable = ['question_id', 'member_id', 'answer']; 
+    protected $table = 'CRM_Answers';
+    protected $fillable = ['question_id', 'member_id', 'answer'];
 
     public function question()
 {

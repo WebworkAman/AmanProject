@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class DeleteCRMMachinesContactlistTable extends Migration
+class RenameQuestionTableToNewCRMQuestionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class DeleteCRMMachinesContactlistTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::rename('questions','CRM_Questions');
     }
 
     /**
@@ -23,6 +23,6 @@ class DeleteCRMMachinesContactlistTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('CRM_Machines_Contactlist');
+        Schema::rename('CRM_Questions','questions');
     }
 }

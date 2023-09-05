@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Member;
 use App\Models\Product;
 use App\Models\Question;
+use App\Models\CRM_Machines;
 
 class ProductController extends Controller
 {
@@ -13,13 +15,18 @@ class ProductController extends Controller
     //產生視圖
     public function __invoke(){
 
+        $memberId = session()->get('memberId');
+        $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
+
+        $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
+
         $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
-        return view('product/category/inspection/OC40N02', compact('questions'));
+        return view('product/category/inspection/OC40N02', compact('questions','machines'));
 
         // return view('product/category/inspection/OC40N02')
         // -> with('questions',Question::all());
     }
-    
+
     function index(){
 
           $products = $this->getProducts();
@@ -27,32 +34,32 @@ class ProductController extends Controller
           return view('/',[
             "products" => $products
           ]);
-            
+
     }
     function show($id, Request $request){
 
         // $id = $request -> input('id');
         // var_dump($id);
-          
-        
-        $products = $this -> getProducts();
-        
 
-        $index = $id - 1; 
-        
+
+        $products = $this -> getProducts();
+
+
+        $index = $id - 1;
+
         if($index >= 0 && $index < count($products)){
             //show page
 
             $product = $products[$index];
 
             return view('product.show',[
-              "product" => $product 
+              "product" => $product
         ]);
         }else{
             //404 not found
-            
+
             abort(404);
-        }        
+        }
     }
     public function showProduct($product_title)
     {
@@ -66,21 +73,21 @@ class ProductController extends Controller
 
         //取得當前產品的提問資料
         // $questions = $product->questions;
-        
+
         return view('products.show',['product' => $product]);
-       
-    } 
+
+    }
 
     private function getProducts(){
         return[
-            
+
                 [
                     "imageUrl" => asset('imgs/1596784113.png')
                 ],
                 [
-                    "imageUrl" => asset('imgs/1596784246.png')               
+                    "imageUrl" => asset('imgs/1596784246.png')
                 ]
-    
+
                 ];
     }
 
