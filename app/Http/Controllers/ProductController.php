@@ -14,6 +14,7 @@ class ProductController extends Controller
 
     //產生視圖
     public function __invoke(){
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
@@ -21,7 +22,7 @@ class ProductController extends Controller
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
         $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
-        return view('product/category/inspection/OC40N02', compact('questions','machines'));
+        return view('product/category/inspection/OC40N02', compact('questions','machines','products'));
 
         // return view('product/category/inspection/OC40N02')
         // -> with('questions',Question::all());

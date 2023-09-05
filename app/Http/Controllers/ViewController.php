@@ -20,13 +20,14 @@ class ViewController extends Controller
     }
     function OC1(){
         $questions = Question::with('answers')->where('product_id', 2)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/inspection/OC1', compact('questions','machines')) ;
+        return view('product/category/inspection/OC1', compact('questions','machines','products')) ;
     }
     function OC5B(){
         $questions = Question::where('product_id', 3)->get();

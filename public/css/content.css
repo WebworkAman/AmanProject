@@ -1578,6 +1578,46 @@ main .chooseItem ul li p {
 .QA_content .right-content button:hover {
   background-color: rgb(236, 133, 8);
 }
+.QA_content .right-content .showPhotoBtn, .QA_content .right-content .showVideoBtn, .QA_content .right-content .reply-button {
+  background-color: transparent;
+  color: rgb(15, 59, 101);
+  float: none;
+  font-weight: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 1px solid rgb(15, 59, 101);
+  border-radius: 0;
+  padding-top: 10px;
+  letter-spacing: 1.4px;
+}
+.QA_content .right-content .showPhotoBtn:hover, .QA_content .right-content .showVideoBtn:hover, .QA_content .right-content .reply-button:hover {
+  background-color: transparent;
+  color: #2c7863;
+  border-bottom: 1px solid #2c7863;
+}
+.QA_content .right-content .popclose {
+  position: absolute;
+  top: 13%;
+  right: 3%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.QA_content .right-content .popclose:hover {
+  background-color: orange;
+  color: white;
+}
+.QA_content .right-content .popup-content {
+  align-items: center;
+}
+.QA_content .right-content .popup-content h3 {
+  text-align: start;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+.QA_content .right-content .popup-content .textContent {
+  text-align: center;
+  font-size: 1.2em;
+}
 .QA_content .right-content .faq {
   min-width: 500px;
   height: 100%;

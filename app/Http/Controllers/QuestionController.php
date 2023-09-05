@@ -44,7 +44,9 @@ class QuestionController extends Controller
     }
     public function storeReply(Request $request, Question $question)
     {
+
         $answer = $question->answers->first();
+        $adminId = session()->get('adminId');
 
         if($answer){
 
@@ -59,6 +61,7 @@ class QuestionController extends Controller
               $newans -> question_id = $question-> id;
               $newans -> member_id = $question-> member_id;
               $newans -> answer = $request -> answer;
+              $newans -> admin_id = $adminId;
 
               $newans->save();
 
