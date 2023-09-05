@@ -893,13 +893,18 @@ class MemberSessionController extends Controller
 
         $rules = [
             'machine_purchase_date' => 'required',
-            'machine_model' => 'required',
-            'machine_serial' => 'required',
+            'machine_model' => 'required|max:15',
+            'machine_serial' => 'required|max:15',
             'installation_company_name' => 'required',
         ];
 
+        $messages = [
+            'machine_model.max' => '輸入不能超過 :max 個字元',
+            'machine_serial.max' => '輸入不能超過 :max 個字元',
+        ];
 
-$validator = Validator::make($request->all(), $rules);
+
+$validator = Validator::make($request->all(), $rules, $messages);
 
             // 如果驗證失敗
         if ($validator->fails()) {
