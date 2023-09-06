@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-// use App\Models\Member;
-// use App\Libraries\MemberAuth;
+use App\Models\CRM_Product_Series;
 
 
 class PageController extends Controller
 {
+
     public function home(){
 
         // $member = null;
@@ -22,18 +22,20 @@ class PageController extends Controller
         //     'member' => $member
         // ]);
         // $id = $request->input('id');
-         
-        $pages = $this -> getPages();
+
+        // $pages = $this -> getPages();
         $products = Product::all ();
-                      
-       
-        return view('home',["pages" => $pages],compact("products"));
-            
-       
+        $series = CRM_Product_Series::all();
+
+
+
+        // return view('home',["pages" => $pages],compact("products"));
+        return view('home',compact("products","series"));
+
     }
 
     // function show($id, Request $request){
-             
+
     //     // $pages = $this -> getPages();
 
     //     $index = $id - 1;
@@ -43,18 +45,18 @@ class PageController extends Controller
     //         abort(404);
     //     }
     //         //show page
-    //         $page = $pages[$index];  
+    //         $page = $pages[$index];
 
 
     //         return view('home',[
     //             "page" => $page
-    //         ]); 
+    //         ]);
     // }
 
         private function getPages (){
         return[
-            
-                [   
+
+                [
                     "link" => asset('inspection'),
                     "imageUrl" => asset('imgs/1596784113.png'),
                     "sort" => "驗 布",
