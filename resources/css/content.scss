@@ -140,6 +140,17 @@ main {
     margin-top: 50px;
     display: block;
     min-height: 600px;
+
+    .productQuestionTitle{
+        text-align: center;
+
+        h2{
+            margin-top: 15px;
+            font-size: 1.2em;
+            color: rgb(118, 114, 109);
+        }
+    }
+
     #openFormBtn{
         margin: 10px auto;
         border: 1px solid blue;
@@ -152,7 +163,7 @@ main {
         font-weight: 300;
     }
     .Show_form{
-        margin: 60px 100px;
+        // margin: 60px 100px;
         overflow: auto;
 
     //新增機器聯絡人彈窗設計
@@ -319,7 +330,10 @@ main {
             backdrop-filter: none;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
-
+        //副標
+        h2{
+            margin: 0 auto;
+        }
         h3{
             text-align: center;
             font-size: 1.8rem;
@@ -1551,7 +1565,33 @@ main {
 .QA_content{
     margin-top: 40px;
     display: flex;
-    justify-content:space-evenly;
+    justify-content: center;
+
+
+
+    .filter{
+        margin: 10px auto;
+        width: 80%;
+
+        select{
+            padding: 5px 15px;
+            border: 1px #ccc solid;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .showPostBtn{
+            float: none;
+            margin: 0 auto;
+        }
+        label{
+            margin-left: 10px;
+        }
+    }
+    .filter.btnblock{
+        margin-top: 20px;
+        text-align: center;
+    }
+
     .popup{
         position: fixed;
         top:50%;
@@ -1697,7 +1737,7 @@ main {
     .right-content{
         // border: 1px solid saddlebrown;
         // width:40vw;
-        margin-right: 50px;
+        // margin-right: 50px;
         .message_border{
             width: 50vw;
             height: 500px;
@@ -1725,8 +1765,9 @@ main {
             }
         }
         .baseline{
-            width: 20vw;
-            border:1px double silver;
+            width: 80%;
+            border-bottom:.5px solid silver;
+            margin: 0 auto;
         }
         button{
             text-decoration: none;
@@ -1766,6 +1807,7 @@ main {
             padding-top: 10px;
             letter-spacing: 1.4px;
         }
+
         .showPhotoBtn:hover,.showVideoBtn:hover,.reply-button:hover{
             background-color: transparent;
             color: #2c7863;
@@ -1797,7 +1839,8 @@ main {
         }
 
         .faq{
-            min-width: 500px;
+            width: 75vw;
+            min-width: 600px;
             height: 100%;
             overflow: auto;
             .listblock{
@@ -1836,12 +1879,13 @@ main {
 
 
                 ul{
-
+                    // width: 70vw;
+                    // min-width: 500px;
                     li{
                         margin-bottom: 30px;
                         letter-spacing: 2;
                         line-height: 1.4;
-                        width: 80vw;
+
                         // border-top: 1px solid rgb(15, 59, 101);
 
                         h5{

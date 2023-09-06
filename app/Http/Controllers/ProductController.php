@@ -13,7 +13,7 @@ class ProductController extends Controller
 
 
     //產生視圖
-    public function __invoke(){
+    public function __invoke(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -21,7 +21,43 @@ class ProductController extends Controller
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 1)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 1) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',1)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+
+
         return view('product/category/inspection/OC40N02', compact('questions','machines','products'));
 
         // return view('product/category/inspection/OC40N02')

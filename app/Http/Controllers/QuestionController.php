@@ -6,6 +6,7 @@ use App\Models\Question;
 use App\Models\Product;
 use App\Models\Answer;
 use App\Models\Setting;
+use App\Models\Member;
 use Illuminate\Http\Request;
 use App\Libraries\MemberAuth;
 use Illuminate\Support\Facades\Mail;
@@ -88,6 +89,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'machine_model' => 'required',
             'machine_serial' => 'required',
@@ -98,12 +100,15 @@ class QuestionController extends Controller
             'video' => 'nullable|mimes:mp4,mov,avi',
         ]);
 
+        $memberId = session()->get('memberId');
+        $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
+
         $question = new Question;
         $question -> product_id = $request->input('product_id');
         $question -> member_id =  MemberAuth::member()->id;
         $question -> title = $request -> input('title');
         $question -> content = $request -> input('content');
-
+        $question -> company_ERP_id = $ERPId;
         // 存儲選擇的機器型號和序號
         $question->machine_model = $request->input('machine_model');
         $question->machine_serial = $request->input('machine_serial');
