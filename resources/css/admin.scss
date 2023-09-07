@@ -555,6 +555,60 @@ main{
                 color: #555;
             }
         }
+
+        .series_filter{
+            label{
+                font-size: 1em;
+                font-weight: 350;
+                color: rgb(118, 114, 109);
+            }
+            select{
+                padding: 5px 15px;
+                border: 1px #ccc solid;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 1em;
+                font-weight: 350;
+            }
+
+            .filter-btn{
+                float: none;
+                text-decoration: none;
+                cursor: pointer;
+                border: 0;
+                background-color: rgb(118, 114, 109);
+                color: white;
+                width: 100px;
+                height: 30px;
+                border-radius: 10px;
+                font-weight: 300;
+                letter-spacing: 1.5px;
+                font-size: 0.9rem;
+            }
+
+        }
+
+        #permission-btn{
+
+            float: right;
+            text-decoration: none;
+            cursor: pointer;
+            border: 0;
+            background-color: rgb(118, 114, 109);
+            color: white;
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            font-size: 0.9rem;
+
+            margin-top: 15px;
+        }
+        #permission-btn:hover{
+
+            background-color: orange;
+        }
         // .member-create{
 
         //     .formgroup{

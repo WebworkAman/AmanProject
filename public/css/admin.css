@@ -587,6 +587,51 @@ main .admin_block .Show_form.setting-page form .btn {
   font-size: 1.5rem;
   color: #555;
 }
+.Show_.reply .Show_form .series_filter label {
+  font-size: 1em;
+  font-weight: 350;
+  color: rgb(118, 114, 109);
+}
+.Show_.reply .Show_form .series_filter select {
+  padding: 5px 15px;
+  border: 1px #ccc solid;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 350;
+}
+.Show_.reply .Show_form .series_filter .filter-btn {
+  float: none;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  background-color: rgb(118, 114, 109);
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+}
+.Show_.reply .Show_form #permission-btn {
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  background-color: rgb(118, 114, 109);
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+.Show_.reply .Show_form #permission-btn:hover {
+  background-color: orange;
+}
 .Show_.reply .Show_form .question_reply .text-right, .Show_.reply .Show_form .member-create .text-right {
   text-align: right;
 }

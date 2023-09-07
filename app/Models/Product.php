@@ -24,7 +24,7 @@ class Product extends Model
     }
     public function series()
     {
-        return $this->belongsTo(CRM_Product_Series::class);
+        return $this->belongsTo(CRM_Product_Series::class, 'CRM_Product_Series_id');
     }
 
 

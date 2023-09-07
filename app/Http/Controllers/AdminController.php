@@ -10,6 +10,7 @@ use App\Models\Member;
 use App\Models\Setting;
 use App\Models\Tbm10;
 use App\Models\MaintenanceRecord;
+use App\Models\CRM_Product_Series;
 use Illuminate\Http\Request;
 
 
@@ -174,13 +175,30 @@ class AdminController extends Controller
 
         return view('admin.Member.member-create') ;
     }
-    public function showSetPermissions($memberId){
+    public function showSetPermissions(Request $request,$memberId){
+
+        // 獲取所有系列
+        $seriesList = CRM_Product_Series::all();
+
+        // 獲取用户選擇的系列篩選條件，默認为空
+        $selectedSeries = $request->input('series_filter', '');
 
         $member = Member::find($memberId);
-        $products = Product::all();
+
         $memberPermissions = $member->permissions->toArray();
 
-        return view('admin.Member.member-permissions', compact('member','products','memberPermissions')) ;
+        $query = Product::where('CRM_Product_Series_id', '!=', 0)->paginate(10);
+
+        if ($selectedSeries !== "") {
+            // 如果选择了具体的系列，添加系列筛选条件
+            $query = Product::where('CRM_Product_Series_id',$selectedSeries)->paginate(10);
+        }
+
+
+
+        $products = $query;
+
+        return view('admin.Member.member-permissions', compact('member','products','memberPermissions', 'seriesList', 'selectedSeries')) ;
     }
 
     public function updateMemberPermissions(Request $request, $memberId){
@@ -214,12 +232,6 @@ class AdminController extends Controller
 
                 // $url = url()->previous(); // 取得當前頁面的 URL
                 // return redirect($url); // 重新導向當前頁面
-
-
-
-
-
-
 
 
         // return redirect()->back()->with('success', '權限更新成功');
