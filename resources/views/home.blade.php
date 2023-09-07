@@ -6,11 +6,23 @@
 
         <div class="img-block">
 
-            <ul>
+            {{-- <ul>
                 @foreach ($series as $serie)
                     <li>
                         <a href="{{ $serie->relatedLinks }}"><img src="{{ $serie->seriesImage }}"></img></a>
 
+                        <ol>
+                            <li>
+                                <p>{{ $serie->name }}</p>
+                            </li>
+                        </ol>
+                    </li>
+                @endforeach
+            </ul> --}}
+            <ul>
+                @foreach ($series as $serie)
+                    <li>
+                        <a href="{{ route('Series', $serie->name) }}"><img src="{{ $serie->seriesImage }}"></a>
                         <ol>
                             <li>
                                 <p>{{ $serie->name }}</p>

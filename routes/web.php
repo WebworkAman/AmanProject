@@ -159,9 +159,8 @@ Route::get('/search', [FAQController::class, 'search'])->name('faqs.search');
 Route::get('/forbid', [FAQController::class, 'forbid'])->name('faqs.forbid');
 
 //<*--------  驗布 -----------*>
-
-Route::get('/inspection', function () {
-return view('product/category/inspection');});
+Route::get('series/{series}',[PageController::class,'series'])->name('Series');
+Route::get('/inspection',[PageController::class,'inspection'])->name('Series.inspection');
 
 // Route::get('/OC40N02',ViewController::class)->name('view');
 

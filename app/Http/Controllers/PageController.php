@@ -10,6 +10,8 @@ use App\Models\CRM_Product_Series;
 class PageController extends Controller
 {
 
+    // 首頁
+
     public function home(){
 
         // $member = null;
@@ -32,6 +34,35 @@ class PageController extends Controller
         // return view('home',["pages" => $pages],compact("products"));
         return view('home',compact("products","series"));
 
+    }
+
+    // 產品系列分頁
+    public function series($series){
+
+        //根據 $series 參數從數據庫中獲取相應的系列產品數據
+        $seriesData = CRM_Product_Series::where('name',$series)->first();
+        $seriesId = $seriesData -> id;
+
+        if(!$seriesData){
+            abort(404); //如果找不到相對應的系列的話，可以返回404錯誤頁面
+        }
+
+        // 獲取該系列的所有產品數據
+        $products = Product::where('CRM_Product_Series_id',$seriesId)->get();
+
+
+        // 返回視圖，並將產品數據遞給視圖
+        return view('product.category.series',compact('products','seriesData'));
+
+    }
+    public function inspection(){
+
+        $series_id = 1;
+
+        $products = Product::where('CRM_Product_Series_id',$series_id)->get();
+
+
+        return view('product/category/inspection',compact('products'));
     }
 
     // function show($id, Request $request){

@@ -1344,7 +1344,7 @@ main .chooseItem ul li {
   margin: 20px;
 }
 main .chooseItem ul li img {
-  width: 25vw;
+  width: 20vw;
   max-width: 500px;
   min-width: 300px;
   cursor: pointer;
