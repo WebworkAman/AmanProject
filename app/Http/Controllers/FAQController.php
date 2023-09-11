@@ -800,8 +800,9 @@ class FAQController extends Controller
     public function index()
     {
         $faqs = FAQ::all();
+        $page = 'setting';
 
-        return view('admin.index', compact('faqs'));
+        return view('admin.index', compact('faqs','page'));
     }
 
     public function edit(FAQ $faq)
@@ -832,7 +833,7 @@ class FAQController extends Controller
 
     $faq->save();
 
-    return redirect()->route('faqs.index')
+    return redirect()->route('faqList')
         ->with('success', '常見問題更新成功.');
      }
 
@@ -879,7 +880,7 @@ class FAQController extends Controller
             if($hasError){
                 return redirect()->back()->withErrors(['video' => '影片上傳失敗']);
             }else{
-                return redirect()->route('faqs.index', $productId) // 修改這行
+                return redirect()->route('faqList', $productId) // 修改這行
                 ->with('success', '常見問題建立成功.');
             }
 

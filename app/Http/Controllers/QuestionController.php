@@ -77,7 +77,7 @@ class QuestionController extends Controller
 
 
           }
-              return redirect()->route('faqs.index')
+              return redirect()->route('questions.index')
               ->with('success', '回覆儲存成功.');
       }
 

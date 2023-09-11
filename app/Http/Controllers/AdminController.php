@@ -34,8 +34,29 @@ class AdminController extends Controller
     }
 
     public function index(){
-        $products = Product::all();
-        return view('admin.index', compact('products'));
+
+        $subblockContent = ''; // 初始化子页面内容
+        $page = '';
+
+        // if ($page === 'setting') {
+        //     // 加载管理设置页面的内容
+
+        //     $emailAddresses = Setting::findOrFail(1) -> email_address;
+        //     $subblockContent = view('admin.Setting.setting',compact('emailAddresses','page'))->render();
+
+        // } elseif ($page === 'member-list') {
+        //     // 加载会员管理页面的内容
+
+
+        //     $subblockContent = view('admin.member-list',compact('emailAddresses','page'))->render();
+        // } elseif ($page === 'faq-list') {
+        //     // 加载常见问题页面的内容
+        //     $faqs = FAQ::paginate(5); // 获取FAQ记录
+        //     $products = Product::all();
+        //     $subblockContent = view("admin.FAQ.faq-list", compact('faqs', 'products'))->render();
+        // }
+
+        return view('admin.index');
     }
     public function create(){
 
@@ -101,7 +122,7 @@ class AdminController extends Controller
 
     public function faqList(){
 
-        $faqs = FAQ::all();
+        $faqs = FAQ::paginate(5);
         $products = Product::all();
 
         return view('admin.FAQ.faq-list', compact('faqs','products'));
@@ -159,7 +180,7 @@ class AdminController extends Controller
         $maintenanceRecord = MaintenanceRecord::create($validateData);
 
         // 重定向或其他操作
-        return redirect('admin/index')->with('success', '維修履歷已成功建立');
+        return redirect()->route('Maintenance.List')->with('success', '維修履歷已成功建立');
     }
     public function Maintenance_destroy(MaintenanceRecord $maintenanceRecord)
     {
@@ -193,8 +214,6 @@ class AdminController extends Controller
             // 如果选择了具体的系列，添加系列筛选条件
             $query = Product::where('CRM_Product_Series_id',$selectedSeries)->paginate(10);
         }
-
-
 
         $products = $query;
 
@@ -236,7 +255,7 @@ class AdminController extends Controller
 
         // return redirect()->back()->with('success', '權限更新成功');
         // 重新導向回當前頁面並顯示成功訊息
-        return redirect()->route('faqs.index')
+        return redirect()->route('memberList')
             ->with('success', $message);
     }
 
@@ -244,7 +263,7 @@ class AdminController extends Controller
     {
          $member->delete();
 
-        return redirect()->route('faqs.index')
+        return redirect()->route('memberList')
             ->with('success', '會員刪除成功.');
 
     }

@@ -3,16 +3,27 @@
 <head>
     <title>OSHIMA CRM 客服關係管理系統</title>
     @include('layouts.meta')
-    @include('layouts.css')
-    <link rel="stylesheet" href="css/app.css">
+    @include('layouts.admin.css')
+    {{-- @include('layouts.css') --}}
+    {{-- <link rel="stylesheet" href="css/app.css"> --}}
 </head>
 
 <body>
-    @include('layouts.nav')
+    @include('layouts.admin.nav')
+    <div id="app"></div>
+    <div class="container">
+        <main>
+            <div class="admin_block">
+                @include('layouts.admin.control')
+                {{-- @livewire('contropanel') --}}
+                @yield('content')
+            </div>
+        </main>
+    </div>
 
 
 
-    @if (MemberAuth::isLoggedIn())
+    {{-- @if (MemberAuth::isLoggedIn())
         <p>Hi,{{ MemberAuth::member()->email }}</p>
         <form method="POST" action="{{ route('members.session.delete') }}">
             @csrf
@@ -24,15 +35,16 @@
         <div class="text"><a href="{{ route('members.create') }}">Register</a></div>
     @endif
 
-    <hr />
+    <hr /> --}}
 
 
 
-    <div class="container">
+    {{-- <div class="container">
         @yield('content')
-    </div>
-    @include('layouts.footer')
-    @include('layouts.js')
+    </div> --}}
+    {{-- @include('layouts.footer') --}}
+    @include('layouts.admin.js')
+    {{-- @include('layouts.js') --}}
 
     @section('inline_js')
 

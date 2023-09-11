@@ -27,8 +27,7 @@ use App\Http\Controllers\ViewController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\LocaleController;
-
-
+use App\Models\Setting;
 
 
 //管理者登入 Admin login -> group
@@ -43,6 +42,9 @@ Route::group(['prefix'=>'admin'],function(){
     });
     Route::middleware('AdminAuthRedirect')->group(function(){
     // 常見問題區管理
+
+    // Route::get('/{page}', \App\Http\Livewire\AdminContentComponent::class)->name('admin.page');
+    // Route::get('/index/{page}', [AdminController::class,'index'])->name('admin.index');
     Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
     Route::get('/index/setting', [AdminController::class,'settings'])->name('setting');
     Route::put('/index/setting', [AdminController::class,'submitMail'])->name('settings.store');

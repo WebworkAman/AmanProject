@@ -1,4 +1,4 @@
-<div class="control_">
+{{-- <div class="control_">
     <h3>功能列表</h3>
     <div class="control_list">
         <!-- <button id="question_block">客戶問題區</button> -->
@@ -10,5 +10,16 @@
             class="control-option">客戶問題</a>
         <a href="{{ route('Maintenance.List') }}" data-url="{{ '/admin/index/maintenance-list' }}"
             class="control-option">維修履歷</a>
+    </div>
+</div> --}}
+
+<div class="control_">
+    <h3>功能列表</h3>
+    <div class="control_list">
+        <a href="{{ route('setting') }}" class="control-option">管理設定</a>
+        <a href="{{ route('memberList') }}" class="control-option">會員管理</a>
+        <a href="{{ route('faqList') }}" class="control-option">常見問題</a>
+        <a href="{{ route('questions.index') }}" class="control-option">客戶問題</a>
+        <a href="{{ route('Maintenance.List') }}" class="control-option">維修履歷</a>
     </div>
 </div>
