@@ -58,6 +58,8 @@ class AdminController extends Controller
 
         return view('admin.index');
     }
+
+
     public function create(){
 
 
@@ -87,6 +89,11 @@ class AdminController extends Controller
 
         // self::$admin = null;
         return redirect()->route('login');
+    }
+    public function adminIndex()
+    {
+        $logIn = self::admin();
+        return view('admin.index','logIn');
     }
     public function adminlist(){
         $logIn = self::admin();

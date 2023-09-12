@@ -45,7 +45,7 @@ Route::group(['prefix'=>'admin'],function(){
 
     // Route::get('/{page}', \App\Http\Livewire\AdminContentComponent::class)->name('admin.page');
     // Route::get('/index/{page}', [AdminController::class,'index'])->name('admin.index');
-    Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
+    Route::get('/index', [AdminController::class, 'adminIndex'])->name('admins.index');
 
     //後台管理員CRUD
     Route::get('/index/admin-list', [AdminController::class,'adminlist'])->name('adminList');

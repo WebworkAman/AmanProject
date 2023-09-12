@@ -16,7 +16,7 @@ class ModifyCRMProductsTable extends Migration
         Schema::table('CRM_Products', function (Blueprint $table) {
 
             //新增欄位
-            $table->foreignId('CRM_Product_Series_id')->after('id')->constrained();
+            $table->foreignId('CRM_Product_Series_id')->constrained('CRM_Product_Series')->after('id');
             $table->string('relatedLink')->after('img_url')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
 
