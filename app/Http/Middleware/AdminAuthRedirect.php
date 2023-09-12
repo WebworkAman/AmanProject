@@ -19,7 +19,7 @@ class AdminAuthRedirect
     public function handle(Request $request, Closure $next)
     {
         if(!AdminController::isLoggedIn()){
-            return redirect()->route('login');
+            return redirect()->route('admin.login');
         }
         // 檢查是否存在記住的路由
         if (Session::has('remembered_route')) {

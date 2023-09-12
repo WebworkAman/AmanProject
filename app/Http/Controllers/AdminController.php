@@ -93,7 +93,7 @@ class AdminController extends Controller
     public function adminIndex()
     {
         $logIn = self::admin();
-        return view('admin.index','logIn');
+        return view('admin.index',compact('logIn'));
     }
     public function adminlist(){
         $logIn = self::admin();
