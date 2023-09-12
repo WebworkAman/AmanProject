@@ -64,7 +64,7 @@
                                 <form method="POST" action="{{ route('faqs.destroy', $faq) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">刪除</button>
+                                    <button type="submit" class="delete-button">刪除</button>
                                 </form>
                             </td>
                         </tr>
@@ -116,17 +116,7 @@
                     $(this).closest('.videoPopup').hide();
                 });
             </script>
-            <script>
-                function truncatedText(elementId, maxLength) {
-                    var element = document.getElementById(elementId);
-                    var text = element.innerHTML;
-                    if (text.length > maxLength) {
-                        element.innerHTML = text.substring(0, maxLength) + "<span style='color: red;'>...</span>";
-                    }
-                }
 
-                truncatedText("truncated-text", 10);
-            </script>
 
         </div>
     </div>

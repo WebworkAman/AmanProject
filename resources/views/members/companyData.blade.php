@@ -17,7 +17,6 @@
 
             @if ($identityPerm == 1 || $identityPerm == 2)
                 <button id="toggleEditMode" class="btn control-option">編輯</button>
-            @else
             @endif
 
 

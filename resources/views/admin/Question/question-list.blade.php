@@ -73,7 +73,7 @@
                                 <form method="POST" action="{{ route('questions.destroy', $question->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">刪除</button>
+                                    <button type="submit" class="delete-button">刪除</button>
                                 </form>
                             </td>
                         </tr>

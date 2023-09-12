@@ -58,9 +58,9 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/index/setting', [AdminController::class,'settings'])->name('setting');
     Route::put('/index/setting', [AdminController::class,'submitMail'])->name('settings.store');
     Route::get('/index/question-list', [AdminController::class, 'QuestionList'])->name('questions.index');
-    Route::get('/index/question-list/{question}/reply', [QuestionController::class, 'reply'])->name('question.answer');
+    Route::get('/index/question/{question}/reply', [AdminController::class, 'questionReply'])->name('question.answer');
     // Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
-    Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
+    Route::post('/index/question/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
     Route::get('/index/member-list', [AdminController::class, 'memberList'])->name('memberList');
     Route::get('/index/member-create', [AdminController::class, 'memberCreate'])->name('members.adminCreate');
     Route::post('/index/member-create', [MemberController::class, 'AdminStore'])->name('members.adminStore');
@@ -68,11 +68,11 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/index/member/permissions/{member}', [AdminController::class,'updateMemberPermissions'])->name('member.permissions.update');
 
     Route::get('/index/faq-list', [AdminController::class, 'faqList'])->name('faqList');
-    Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
-    Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');
-    Route::get('/faqs/{faq}/edit', [FAQController::class, 'edit'])->name('faqs.edit');
-    Route::put('/faqs/{faq}', [FAQController::class, 'update'])->name('faqs.update');
-    Route::delete('/index/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
+    Route::get('/index/faq-create', [AdminController::class, 'faqCreate'])->name('faqs.create');
+    Route::post('/index/faq-create', [AdminController::class, 'faqStore'])->name('faqs.store');
+    Route::get('/index/faqs/{faq}/edit', [AdminController::class, 'faqEdit'])->name('faqs.edit');
+    Route::put('/index/faqs/{faq}', [FAQController::class, 'update'])->name('faqs.update');
+    Route::delete('/index/faqs/{faq}', [FAQController::class, 'destroy'])->name('faqs.destroy');
     Route::delete('/index/question-list/{question}', [QuestionController::class, 'destroy'])->name('questions.destroy');
     Route::delete('/index/member-list/{member}', [AdminController::class, 'destroy'])->name('members.destroy');
     Route::get('/index/ERP-list', [AdminController::class, 'ERP_List'])->name('ERP.List');

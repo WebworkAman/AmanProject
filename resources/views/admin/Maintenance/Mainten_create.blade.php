@@ -75,7 +75,7 @@
                         <input type="text" name="maintenance_personnel" class="form-control" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">提交</button>
+                    <button type="submit" class="btn-primary">提交</button>
                 </form>
             </div>
         </div>

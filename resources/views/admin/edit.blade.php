@@ -24,7 +24,7 @@
                         <textarea name="answer" id="answer" rows="5" required>{{ $faq->answer }}</textarea>
                     </div>
 
-                    <button type="submit">更新</button>
+                    <button id="faqEditbtn" type="submit">更新</button>
                 </form>
             </div>
         </div>

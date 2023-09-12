@@ -15,13 +15,6 @@ use App\Models\CRM_Machines;
 class FAQController extends Controller
 {
 
-    public function create()
-    {
-        $products = Product::all();
-
-        return view('admin.FAQ.create', compact('products'));
-
-    }
     public function createSearch(Request $request)
     {
 
@@ -913,17 +906,7 @@ class FAQController extends Controller
     {
         $faq->delete();
 
-
-
-         // 檢查是否有先前操控的子頁面表單傳遞回來
-         $referer = request()->headers->get('referer');
-         if(strpos($referer, 'faq-list') !== false){
-            //重定向回 FAQ 列表頁面並帶回原先搜尋表單
-            return redirect()->route('faqs.index')->withInput();
-        }
-
-            return redirect()->route('faqs.index')
+        return redirect()->route('faqList')
             ->with('success', '常見問題刪除成功.');
-
     }
 }

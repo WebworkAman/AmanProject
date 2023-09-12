@@ -12,13 +12,20 @@
             class="control-option">維修履歷</a>
     </div>
 </div> --}}
+@php
+    $identityPerm = $logIn->identity_perm;
+@endphp
 
 <div class="control_">
     <h3>功能列表</h3>
     <div class="control_list">
-        <a href="{{ route('setting') }}" class="control-option">收信設定</a>
-        <a href="{{ route('adminList') }}" class="control-option">管理者設定</a>
-        <a href="{{ route('memberList') }}" class="control-option">會員管理</a>
+        @if ($identityPerm == 1)
+            <a href="{{ route('setting') }}" class="control-option">收信設定</a>
+        @endif
+        @if ($identityPerm == 1 || $identityPerm == 2)
+            <a href="{{ route('adminList') }}" class="control-option">管理者設定</a>
+            <a href="{{ route('memberList') }}" class="control-option">會員管理</a>
+        @endif
         <a href="{{ route('faqList') }}" class="control-option">常見問題</a>
         <a href="{{ route('questions.index') }}" class="control-option">客戶問題</a>
         <a href="{{ route('Maintenance.List') }}" class="control-option">維修履歷</a>

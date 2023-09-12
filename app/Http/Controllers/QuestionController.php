@@ -213,26 +213,9 @@ class QuestionController extends Controller
     {
         $question->delete();
 
-        session()->flash('subpage','question-list');
-
-        // return response()->json(['success' => true]);
-
 
         return redirect()->back()
-        ->with('success','Question deleted successfully');
-
-
-        // $subpage= session('subpage');
-
-        // if($subpage){
-        //     return redirect()->route('faqs.index')
-        //            ->with('success','Question deleted successfully');
-
-        // }
-        // else{
-        //     return redirect()->route('questions.index')
-        //     ->with('success', 'Question deleted successfully.');
-        // }
+        ->with('success','客戶問題刪除成功');
 
 
     }

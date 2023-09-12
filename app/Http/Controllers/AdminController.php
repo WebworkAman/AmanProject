@@ -89,15 +89,15 @@ class AdminController extends Controller
         return redirect()->route('login');
     }
     public function adminlist(){
-
+        $logIn = self::admin();
         $admins= Admin::all();
 
-        return view('admin.Admin.admin-list', compact('admins'));
+        return view('admin.Admin.admin-list', compact('admins','logIn'));
     }
     public function adminCreate(){
+        $logIn = self::admin();
 
-
-        return view('admin.Admin.admin-create') ;
+        return view('admin.Admin.admin-create', compact('logIn')) ;
     }
 
     public function adminStore(Request $request){
@@ -122,10 +122,10 @@ class AdminController extends Controller
 
     }
     public function adminStatusView(Request $request){
-
+        $logIn = self::admin();
         $admins= Admin::all();
 
-        return view('admin.Admin.admin-update',compact('admins'));
+        return view('admin.Admin.admin-update',compact('admins','logIn'));
 
     }
     public function adminUpdateStatus(Request $request,$id){
@@ -151,9 +151,11 @@ class AdminController extends Controller
 
     public function settings(){
 
+        $logIn = self::admin();
+
         $emailAddresses = Setting::findOrFail(1) -> email_address;
 
-        return view('admin.Setting.Setting', compact('emailAddresses'));
+        return view('admin.Setting.Setting', compact('emailAddresses','logIn'));
     }
     public function submitMail(Request $request)
     {
@@ -182,43 +184,120 @@ class AdminController extends Controller
     }
 
     public function faqList(){
-
+        $logIn = self::admin();
         $faqs = FAQ::paginate(5);
         $products = Product::all();
 
-        return view('admin.FAQ.faq-list', compact('faqs','products'));
+        return view('admin.FAQ.faq-list', compact('faqs','products','logIn'));
+    }
+    public function faqCreate()
+    {
+        $logIn = self::admin();
+        $products = Product::all();
+
+        return view('admin.FAQ.create', compact('products','logIn'));
+
+    }
+
+    public function faqStore(Request $request)
+    {
+        $validatedData = $request->validate([
+            'question' => 'required|max:255',
+            'answer' => 'required',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'video' => 'nullable|mimes:mp4,mov,avi,mpeg|max:20480',
+        ],[
+            'video.max' => '附加影片超過限制大小',
+        ]);
+
+        $productIds = $request->input('product_id');
+        $hasError = false;
+
+        foreach($productIds as $productId){
+
+            $faq = new FAQ;
+            $faq -> product_id = $productId;
+            $faq -> question = $request->input('question');
+            $faq -> answer = $request-> input('answer');
+
+            if($request->hasFile('photo')){
+                $photoPath = $request->file('photo')->store('public/photos');
+                $faq->photo = $photoPath;
+            }
+
+            if($request->hasFile('video')){
+                if($request->file('video')->isValid()){
+                    $hasError = true;
+                    break; // 驗證失敗,停止迴圈
+                }
+
+
+                $videoPath = $request->file('video')->store('public/videos');
+                $faq->video = $videoPath;
+
+            }
+            $faq->save();
+
+        }
+
+        if($hasError){
+            return redirect()->back()->withErrors(['video' => '影片上傳失敗']);
+        }else{
+            return redirect()->route('faqList', $productId) // 修改這行
+            ->with('success', '常見問題建立成功.');
+        }
+
+
+
+        // return redirect()->route('faqs.index', $faq->id)
+        //     ->with('success', '常見問題建立成功.');
+    }
+
+    public function faqEdit(FAQ $faq)
+    {
+        $logIn = self::admin();
+        return view('admin.edit', compact('faq','logIn'));
     }
     public function QuestionList(){
 
+        $logIn = self::admin();
         $questions = Question::all();
         $products = Product::all();
-        return view('admin.Question.question-list', compact('questions','products'));
+        return view('admin.Question.question-list', compact('questions','products','logIn'));
     }
-     public function memberList(){
+    public function questionReply(Question $question)
+    {
+        $logIn = self::admin();
 
+        return view('admin.Question.question-reply', compact('question','logIn'));
+    }
+    public function memberList(){
+        $logIn = self::admin();
         $members = Member::all();
-        return view('admin.Member.member-list', compact('members')) ;
+        return view('admin.Member.member-list', compact('members','logIn')) ;
     }
     public function ERP_List(){
+        $logIn = self::admin();
         ini_set('memory_limit', '512M');
 
         $tbm10Data = Tbm10::paginate(10);
 
-        return view('admin.ERP.ERP-list', compact('tbm10Data'));
+        return view('admin.ERP.ERP-list', compact('tbm10Data','logIn'));
     }
     public function Maintenance_List(){
-
+        $logIn = self::admin();
         $maintenanceRecords = MaintenanceRecord::all();
 
-        return view('admin.Maintenance.Mainten_list', compact('maintenanceRecords'));
+        return view('admin.Maintenance.Mainten_list', compact('maintenanceRecords','logIn'));
     }
     public function Maintenance_create(){
-
-        return view('admin.Maintenance.Mainten_create');
+        $logIn = self::admin();
+        return view('admin.Maintenance.Mainten_create', compact('logIn'));
     }
     public function Maintenance_check(MaintenanceRecord $maintenanceRecord)
     {
-        return view('admin.Maintenance.Mainten_check', compact('maintenanceRecord'));
+        $logIn = self::admin();
+        return view('admin.Maintenance.Mainten_check', compact('maintenanceRecord','logIn'));
     }
     public function Maintenance_store(Request $request){
 
@@ -254,10 +333,11 @@ class AdminController extends Controller
 
     public function memberCreate(){
 
-
-        return view('admin.Member.member-create') ;
+        $logIn = self::admin();
+        return view('admin.Member.member-create', compact('logIn')) ;
     }
     public function showSetPermissions(Request $request,$memberId){
+        $logIn = self::admin();
 
         // 獲取所有系列
         $seriesList = CRM_Product_Series::all();
@@ -278,7 +358,7 @@ class AdminController extends Controller
 
         $products = $query;
 
-        return view('admin.Member.member-permissions', compact('member','products','memberPermissions', 'seriesList', 'selectedSeries')) ;
+        return view('admin.Member.member-permissions', compact('member','products','memberPermissions', 'seriesList', 'selectedSeries','logIn')) ;
     }
 
     public function updateMemberPermissions(Request $request, $memberId){
