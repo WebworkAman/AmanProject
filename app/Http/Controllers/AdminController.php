@@ -88,6 +88,48 @@ class AdminController extends Controller
         // self::$admin = null;
         return redirect()->route('login');
     }
+    public function adminlist(){
+
+        $admins= Admin::all();
+
+        return view('admin.Admin.admin-list', compact('admins'));
+    }
+    public function adminCreate(){
+
+
+        return view('admin.Admin.admin-create') ;
+    }
+
+    public function adminStore(Request $request){
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email|unique:admins',
+            'password'=>'required|min:5|max:18',
+            'identity_perm'=>'required',
+            ]);
+
+
+            $password=\Hash::make($request->password);
+            $admin = Admin::create([
+                'name'=> $request->name,
+                'email' => $request->email,
+                'password' => $password,
+                'identity_perm' => $request->identity_perm,
+            ]);
+
+            return redirect()->route('adminList')
+            ->with('success', '管理者新增成功.');
+
+    }
+    public function adminDestroy(Admin $admin){
+
+        $admin->delete();
+
+        return redirect()->route('adminList')
+            ->with('success', '管理者刪除成功.');
+    }
+
+
     public function settings(){
 
         $emailAddresses = Setting::findOrFail(1) -> email_address;

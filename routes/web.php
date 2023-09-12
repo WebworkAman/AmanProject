@@ -36,16 +36,23 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/',[AdminController::class,'create'])->name('create');
     Route::post('/',[AdminController::class,'login'])->name('login');
 
-    Route::get('index',function(){
+    // Route::get('index',function(){
 
-        return view('admin/index');
-    });
+    //     return view('admin/index');
+    // });
     Route::middleware('AdminAuthRedirect')->group(function(){
     // 常見問題區管理
 
     // Route::get('/{page}', \App\Http\Livewire\AdminContentComponent::class)->name('admin.page');
     // Route::get('/index/{page}', [AdminController::class,'index'])->name('admin.index');
     Route::get('/index', [FAQController::class, 'index'])->name('faqs.index');
+
+    //後台管理員CRUD
+    Route::get('/index/admin-list', [AdminController::class,'adminlist'])->name('adminList');
+    Route::get('/index/admin-create', [AdminController::class, 'adminCreate'])->name('admin.create');
+    Route::post('/index/admin-create', [AdminController::class, 'adminStore'])->name('admin.store');
+    Route::delete('/index/admin-list/{admin}', [AdminController::class, 'adminDestroy'])->name('admin.destroy');
+
     Route::get('/index/setting', [AdminController::class,'settings'])->name('setting');
     Route::put('/index/setting', [AdminController::class,'submitMail'])->name('settings.store');
     Route::get('/index/question-list', [AdminController::class, 'QuestionList'])->name('questions.index');
@@ -54,9 +61,10 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/index/question-list/{question}/reply', [QuestionController::class, 'storeReply'])->name('question.storeReply');
     Route::get('/index/member-list', [AdminController::class, 'memberList'])->name('memberList');
     Route::get('/index/member-create', [AdminController::class, 'memberCreate'])->name('members.adminCreate');
+    Route::post('/index/member-create', [MemberController::class, 'AdminStore'])->name('members.adminStore');
     Route::get('/index/member/permissions/{member}', [AdminController::class, 'showSetPermissions'])->name('members.adminSetPermissions');
     Route::post('/index/member/permissions/{member}', [AdminController::class,'updateMemberPermissions'])->name('member.permissions.update');
-    Route::post('/index/member-create', [MemberController::class, 'AdminStore'])->name('members.adminStore');
+
     Route::get('/index/faq-list', [AdminController::class, 'faqList'])->name('faqList');
     Route::get('/FAQ/create', [FAQController::class, 'create'])->name('faqs.create');
     Route::post('/FAQ/create', [FAQController::class, 'store'])->name('faqs.store');

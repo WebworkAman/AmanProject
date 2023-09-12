@@ -799,10 +799,8 @@ class FAQController extends Controller
     // 管理者
     public function index()
     {
-        $faqs = FAQ::all();
-        $page = 'setting';
 
-        return view('admin.index', compact('faqs','page'));
+        return view('admin.index');
     }
 
     public function edit(FAQ $faq)
