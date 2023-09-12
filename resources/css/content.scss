@@ -1840,14 +1840,14 @@ main {
 
         .faq{
             width: 75vw;
-            min-width: 600px;
+            min-width: 900px;
             height: 100%;
             overflow: auto;
             .listblock{
                 margin-top: 50px;
                 .topline{
                     // border: 1px solid black;
-                    width: 1000px;
+                    // width: 1000px;
                     margin-bottom: 20px;
                 }
                 table {
@@ -1909,7 +1909,8 @@ main {
                             .itemBlock{
 
                                 img{
-                                   width: 1.2vw;
+                                   width: 2vw;
+                                   min-width: 30px;
                                    margin-right: 25px;
                                    margin-top: 3px;
 

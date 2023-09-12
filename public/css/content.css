@@ -1649,7 +1649,7 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .faq {
   width: 75vw;
-  min-width: 600px;
+  min-width: 900px;
   height: 100%;
   overflow: auto;
 }
@@ -1657,7 +1657,6 @@ main .chooseItem ul li p {
   margin-top: 50px;
 }
 .QA_content .right-content .faq .listblock .topline {
-  width: 1000px;
   margin-bottom: 20px;
 }
 .QA_content .right-content .faq .listblock table {
@@ -1705,7 +1704,8 @@ main .chooseItem ul li p {
   display: flex;
 }
 .QA_content .right-content .faq .listblock ul li .faq-title .itemBlock img {
-  width: 1.2vw;
+  width: 2vw;
+  min-width: 30px;
   margin-right: 25px;
   margin-top: 3px;
 }

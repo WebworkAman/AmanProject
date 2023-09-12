@@ -211,8 +211,8 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'question' => 'required|max:255',
             'answer' => 'required',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'video' => 'nullable|mimes:mp4,mov,avi,mpeg|max:20480',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'video' => 'nullable|mimes:mp4,mov,avi,mpeg',
         ],[
             'video.max' => '附加影片超過限制大小',
         ]);

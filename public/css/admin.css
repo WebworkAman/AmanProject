@@ -330,6 +330,7 @@ main .admin_block .control_ h3 {
 main .admin_block .control_ .control_list {
   border: 1px solid silver;
   width: 10vw;
+  min-width: 150px;
   height: 500px;
   border-radius: 20px;
   text-align: center;
