@@ -34,6 +34,7 @@
                                         <th>員工信箱</th>
                                         <th>職位</th>
                                         <th>在職狀況</th>
+                                        <th></th>
 
                                     </tr>
                                 </thead>
@@ -80,8 +81,8 @@
                                                                 {{ $member->stat_info == 'n' ? 'selected' : '' }}>離職
                                                             </option>
                                                         </select>
-                                                        <button type="submit">儲存</button>
                                                     </td>
+                                                    <td><button type="submit">儲存</button></td>
                                                 </form>
 
                                             </tr>

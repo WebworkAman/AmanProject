@@ -51,6 +51,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/index/admin-list', [AdminController::class,'adminlist'])->name('adminList');
     Route::get('/index/admin-create', [AdminController::class, 'adminCreate'])->name('admin.create');
     Route::post('/index/admin-create', [AdminController::class, 'adminStore'])->name('admin.store');
+    Route::get('/index/admin-status', [AdminController::class, 'adminStatusView'])->name('admin.Status');
+    Route::put('/index/admin-status/{id}', [AdminController::class, 'adminUpdateStatus'])->name('admin.updateStatus');
     Route::delete('/index/admin-list/{admin}', [AdminController::class, 'adminDestroy'])->name('admin.destroy');
 
     Route::get('/index/setting', [AdminController::class,'settings'])->name('setting');

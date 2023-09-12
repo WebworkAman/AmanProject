@@ -277,6 +277,15 @@ main{
                 margin: 60px 100px;
                 overflow: auto;
 
+                select{
+
+                    width: 5vw;
+                    min-width: 100px;
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-size: 1em;
+                }
+
                 .btn{
                     float: right;
                     display: block;

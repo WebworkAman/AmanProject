@@ -371,6 +371,13 @@ main .admin_block .Show_ .Show_form {
   margin: 60px 100px;
   overflow: auto;
 }
+main .admin_block .Show_ .Show_form select {
+  width: 5vw;
+  min-width: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1em;
+}
 main .admin_block .Show_ .Show_form .btn {
   float: right;
   display: block;

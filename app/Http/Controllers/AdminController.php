@@ -121,6 +121,25 @@ class AdminController extends Controller
             ->with('success', '管理者新增成功.');
 
     }
+    public function adminStatusView(Request $request){
+
+        $admins= Admin::all();
+
+        return view('admin.Admin.admin-update',compact('admins'));
+
+    }
+    public function adminUpdateStatus(Request $request,$id){
+
+        $admin= Admin::find($id);
+
+        $newIdentity = $request->input('identity_perm');
+
+        $admin->identity_perm = $newIdentity;
+        $admin->save();
+
+        return redirect()->route('adminList')->with('success', '在職狀況已更新');
+
+    }
     public function adminDestroy(Admin $admin){
 
         $admin->delete();
