@@ -713,14 +713,14 @@ main{
             .ans,.create-faq,.create-member{
                 margin-left: 120px;
                 .form-group{
-                    margin: 20px;
+                    // margin: 20px;
 
                     label{
                         color: #555;
                         letter-spacing: 1.2;
                     }
                     input{
-                        width: 100%;
+                        width: 65%;
                         padding: 12px;
                         border: 1px solid #ccc;
                         border-radius: 4px;
@@ -764,7 +764,7 @@ main{
                          /* 選擇框寬度 */
                          width: 200px;
                          /* 選擇框高度 */
-                         height: 20px;
+                         height: 30px;
                          /* 自訂選擇框背景 */
                          background-color: #fff;
                          /* 自訂邊框 */
@@ -774,10 +774,12 @@ main{
                          /* 自訂字型 */
                          font-family: inherit;
                          /* 自訂字體大小 */
-                         font-size: .8rem;
+                         font-size: 1rem;
                          /* 自訂文字位置 */
                          text-align-last: center;
                          text-align: center;
+
+                         margin-bottom: 10px;
                        }
 
                         /* 自訂下拉箭頭 */

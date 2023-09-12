@@ -18,7 +18,7 @@
 
                         @csrf
 
-                        <div class="formgroup selectType">
+                        <div class="formgroup select">
                             <select name="identity_perm" id="identity_perm">
                                 <option value="1">售後</option>
                                 <option value="2">技術</option>

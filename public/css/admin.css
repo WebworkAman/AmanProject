@@ -676,15 +676,12 @@ main .admin_block .Show_form.setting-page form .btn {
   /* 自訂下拉箭頭 */
   /* 自訂下拉選單樣式 */
 }
-.Show_.reply .Show_form .question_reply .ans .form-group, .Show_.reply .Show_form .question_reply .create-faq .form-group, .Show_.reply .Show_form .question_reply .create-member .form-group, .Show_.reply .Show_form .member-create .ans .form-group, .Show_.reply .Show_form .member-create .create-faq .form-group, .Show_.reply .Show_form .member-create .create-member .form-group {
-  margin: 20px;
-}
 .Show_.reply .Show_form .question_reply .ans .form-group label, .Show_.reply .Show_form .question_reply .create-faq .form-group label, .Show_.reply .Show_form .question_reply .create-member .form-group label, .Show_.reply .Show_form .member-create .ans .form-group label, .Show_.reply .Show_form .member-create .create-faq .form-group label, .Show_.reply .Show_form .member-create .create-member .form-group label {
   color: #555;
   letter-spacing: 1.2;
 }
 .Show_.reply .Show_form .question_reply .ans .form-group input, .Show_.reply .Show_form .question_reply .create-faq .form-group input, .Show_.reply .Show_form .question_reply .create-member .form-group input, .Show_.reply .Show_form .member-create .ans .form-group input, .Show_.reply .Show_form .member-create .create-faq .form-group input, .Show_.reply .Show_form .member-create .create-member .form-group input {
-  width: 100%;
+  width: 65%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -722,7 +719,7 @@ main .admin_block .Show_form.setting-page form .btn {
   /* 選擇框寬度 */
   width: 200px;
   /* 選擇框高度 */
-  height: 20px;
+  height: 30px;
   /* 自訂選擇框背景 */
   background-color: #fff;
   /* 自訂邊框 */
@@ -732,11 +729,12 @@ main .admin_block .Show_form.setting-page form .btn {
   /* 自訂字型 */
   font-family: inherit;
   /* 自訂字體大小 */
-  font-size: 0.8rem;
+  font-size: 1rem;
   /* 自訂文字位置 */
   -moz-text-align-last: center;
        text-align-last: center;
   text-align: center;
+  margin-bottom: 10px;
 }
 .Show_.reply .Show_form .question_reply .ans select::after, .Show_.reply .Show_form .question_reply .create-faq select::after, .Show_.reply .Show_form .question_reply .create-member select::after, .Show_.reply .Show_form .member-create .ans select::after, .Show_.reply .Show_form .member-create .create-faq select::after, .Show_.reply .Show_form .member-create .create-member select::after {
   content: "▼";
