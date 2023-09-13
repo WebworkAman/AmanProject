@@ -14,10 +14,10 @@
                         <th style="width:20%">產品</th>
                         <th style="width:20%">標題</th>
                         <th style="width:20%">內容</th>
-                        <th style="width:7%;text-align:center">照片</th>
-                        <th style="width:7%;text-align:center">影片</th>
-                        <th></th>
-                        <th></th>
+                        <th style="width:7%;text-align:center;min-width: 50px;">照片</th>
+                        <th style="width:7%;text-align:center;min-width: 50px;">影片</th>
+                        <th style="width:7%;text-align:center;min-width: 50px;"></th>
+                        <th style="width:7%;text-align:center;min-width: 50px;"></th>
                     </tr>
                 </thead>
                 <tbody>

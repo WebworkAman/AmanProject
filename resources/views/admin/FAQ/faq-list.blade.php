@@ -13,8 +13,8 @@
                         <th style="width:20%">問題詳情</th>
                         <th style="width:30%">問題回復</th>
                         <th></th>
-                        <th style="width:5%;text-align:center">照片</th>
-                        <th style="width:5%;text-align:center">影片</th>
+                        <th style="width:5%;text-align:center;min-width:50px;">照片</th>
+                        <th style="width:5%;text-align:center;min-width:50px;">影片</th>
                         <th></th>
                     </tr>
                 </thead>
