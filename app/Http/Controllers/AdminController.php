@@ -72,14 +72,19 @@ class AdminController extends Controller
         ]);
         $admin = Admin::where([
             'email' => $request->email,
-            'password'=>$request->password
+            // 'password'=>$request->password
         ])->first();
 
         if(!empty($admin)){
-            session(['adminId' => $admin->id]);
-            return redirect('admin/index');
+
+            if(\Hash::check($request->password,$admin->password)){
+                session(['adminId' => $admin->id]);
+                return redirect('admin/index');
+
+            }
+            return back()->with('fail','密碼輸入錯誤');
         }
-        return back()->with('fail','帳號/密碼輸入錯誤');
+        return back()->with('fail','此帳號尚未登記，請洽後台管理員');
     }
 
 

@@ -1,10 +1,10 @@
 @import "./reset";
 @import "./set";
 
-.UserLogin { 
+.UserLogin {
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 
     main {
         .topText {
@@ -13,13 +13,13 @@
             margin-top: 70px;
             margin-bottom: 10px;
             font-size: 2rem;
-           
+
             img{
                 width: 11rem;
                 margin-right: 75px;
-                
+
             }
-    
+
         }
         .container{
             display: flex;
@@ -35,7 +35,7 @@
             h1{
                 color: cornsilk;
                 font-size: 24px;
-         
+
             }
             .form-group{
                 color: cornsilk;
@@ -48,7 +48,7 @@
                     width: 20vw;
                     min-width: 300px;
                 }
-         
+
                 .btn{
                     margin-top: 30px;
 
@@ -65,13 +65,13 @@
                 }
                 .btn:hover{
                  background-color:rgb(17, 36, 91);
-                 
+
                 }
                 .text-danger{
                     margin-top: 10px;
                     color: #dee2e6 !important;
                 }
-         
+
             }
             a{
                 color: cornsilk;
@@ -79,22 +79,22 @@
             }
             a:hover{
                  color:#343660;
-        
+
             }
           }
-           
-           
+
+
         }
 
         .log {
-            
+
             color: cornsilk;
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            
+
             width:25vw;
             min-width: 360px;
             height: 40vw;
@@ -112,10 +112,10 @@
                 font-size: 2vw;
                 letter-spacing: 2.6;
             }
-            
+
 
             .left {
-                
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -151,11 +151,11 @@
                         color: cornsilk;
                     }
                 }
-                 .formgroup{
+                .formgroup{
                     margin-bottom: 40px ;
                  }
                 .input {
-                    
+
                     margin-top: 30px;
                     margin-bottom: 30px;
                     align-items: center;
@@ -174,19 +174,19 @@
                         color: whitesmoke;
                         font-size: 1.1rem;
                         letter-spacing: 2.6;
-                       
-                       
-                        
-                       
+
+
+
+
                     }
                     .text-danger{
                         margin-top: 10px;
-                        
+
                         width: fit-content;
                         margin: 10px auto;
                         color: #c53535;
                         font-size: 1.2rem;
-                        
+
                     }
                 }
 
@@ -203,7 +203,7 @@
                     span{
                         margin-top: 15px;
                         margin-bottom: 15px;
-                        
+
                     }
                     a{
                         text-decoration: none;
@@ -225,7 +225,7 @@
                     line-height: 2;
                     background-color: rgb(197 24 80);
                     border-radius: 10px;
-                    
+
                 }
 
                 .alert.alert-danger{
@@ -235,26 +235,26 @@
                     color: #c53535;
                     font-size: 1.2rem;
                     letter-spacing: 1.2px;
-                    
+
                 }
                 .button-style{
-                   
+
                     text-align: center;
                     button {
-                    
+
                         margin-top: 30px;
 
                         width: 200px;
                         height: 45px;
                         font-size: 1rem;
                         border-radius: 2px;
-    
+
                         color: white;
                         background-color: orange;
                         border-radius: 20px;
                         border: none;
                         cursor: pointer;
-    
+
                         a{
                             text-decoration: none;
                             color: aliceblue;
@@ -275,7 +275,7 @@
                     a{
                         text-decoration: none;
                         color: cornsilk;
-                        
+
                     }
                     a:hover{
                         color: rgb(17, 36, 91);
@@ -289,7 +289,7 @@
                 text-align: center;
                 margin-top: 50px;
                 letter-spacing: 1.2px;
-                
+
                 a{
                     text-decoration: none;
                     color: yellow;
@@ -309,10 +309,10 @@
                     width: 12vw;
                     display: none;
                 }
-                
+
             }
 
-           
+
             @media screen and (max-width:map-get($breakpoints,'desktop')){
 
                 .right{
@@ -321,14 +321,14 @@
                         margin-right: 50px;
                         min-width: 150px;
                     }
-                    
+
                 }
-            
-                                                   
+
+
             }
 
 
-            
+
 
         }
         .log.forgot{
@@ -351,8 +351,8 @@
         }
 
         @media (max-width:699px) {
-            
-            
+
+
                 .log{
 
                     display: block;
@@ -368,37 +368,37 @@
                         .check{
                             margin-top: 30px;
                             flex-direction: column;
-                            
+
                         }
                     }
                 }
 
-              
-            
-                    
 
-        
+
+
+
+
 
 
 
     }
     }
 
-      
+
 }
 
 @media (max-width:699px) {
-    .UserLogin { 
+    .UserLogin {
         background-position: center;
         background-repeat: repeat;
-    
+
         main{
             .topText{
                 text-align: center;
                 margin-left: 70px;
                 margin-bottom: 50px;
-            
-                
+
+
             }
         }
 
@@ -407,7 +407,7 @@
 }
 
 
-//admin UI  
+//admin UI
 .admin{
     background-color:#273252;
     min-width: 311px;
@@ -421,7 +421,7 @@
             img{
                 width: 12rem;
             }
-    
+
         }
         .log.forgot{
             p{
@@ -472,7 +472,7 @@
             .input{
                 margin-top: 30px;
                 margin-bottom: 15px;
-               
+
                 input{
                     border: 0;
                     border-radius: 10px;
@@ -482,8 +482,8 @@
                     height: 30px;
                     padding-left: 15px;
                     color: #273252;
-                    
-                   
+
+
                 }
                 .text-danger{
                     margin-top: 30px;
@@ -493,7 +493,7 @@
 
             .check{
                 text-align: right;
-                
+
                 margin-right: 30px;
                 input{
                     margin-top: 15px;
@@ -511,7 +511,7 @@
             }
 
             button {
-               
+
                 margin-top: 20px;
                 width: 250px;
                 height: 45px;
@@ -535,7 +535,19 @@
                 background-color: #bbc5e2;
                 color: #273252;
             }
-           
+            .alert{
+                margin-top: 10px;
+                text-align: center;
+                line-height: 1.5;
+                color: #c53535;
+                font-size: 1.2rem;
+                letter-spacing: 1.2px;
+                width: 240px;
+                border-radius: 5px;
+                background-color: #d3d7cd;
+                padding: 5px;
+            }
+
 
 
         }
@@ -543,7 +555,7 @@
         }
 
         @media (max-width:699px) {
-                    
+
             .log{
                 display: block;
                 margin: 0 auto;
@@ -553,11 +565,11 @@
             }
             .left{
                 display: none;
-                
+
             }
-        
+
             .right{
-                
+
                 margin: 0 auto;
                 h1{
                     display: block;
@@ -569,7 +581,7 @@
                 .txt{
                     justify-content: center;
                     padding:10px;
-                    
+
                 }
                 p{
                     font-size: 1.3rem;
@@ -590,25 +602,31 @@
 
                 .input{
                     text-align: center;
-                    
-                    
+
+
                 }
 
                 .input input{
                     font-size: 1rem;
-                    
+
                 }
 
                 button{
                     margin:25px;
                 }
 
-                
+                .alert{
+                    margin: 0 auto;
+                    line-height: 2;
+                }
+
+
+
             }
-        
 
 
- 
+
+
       }
     }
 }

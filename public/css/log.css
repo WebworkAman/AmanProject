@@ -449,6 +449,18 @@ table {
   background-color: #bbc5e2;
   color: #273252;
 }
+.admin main .log .right .alert {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.5;
+  color: #c53535;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
+  width: 240px;
+  border-radius: 5px;
+  background-color: #d3d7cd;
+  padding: 5px;
+}
 @media (max-width: 699px) {
   .admin main .log {
     display: block;
@@ -494,5 +506,9 @@ table {
   }
   .admin main .right button {
     margin: 25px;
+  }
+  .admin main .right .alert {
+    margin: 0 auto;
+    line-height: 2;
   }
 }
