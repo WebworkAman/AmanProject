@@ -168,6 +168,14 @@ nav button {
   margin: 40px 100px;
   overflow: auto;
 }
+.Show_form .textblock {
+  color: #a25f7d;
+  /* border: 1px solid; */
+  width: 14vw;
+  min-width: 350px;
+  margin: 25px;
+  line-height: 1.5;
+}
 .Show_form h3 {
   text-align: center;
   font-size: 1.8rem;
@@ -182,9 +190,9 @@ nav button {
   border-radius: 10px;
   width: 150px;
   text-align: center;
-  margin: 20px;
   padding: 5px;
   font-size: 1em;
+  margin-top: 50px;
 }
 .Show_form .btn:hover {
   color: whitesmoke;
@@ -401,6 +409,7 @@ main .admin_block .Show_ .Show_form .btn {
   text-align: center;
   margin: 20px;
   padding: 5px;
+  margin-top: 50px;
 }
 main .admin_block .Show_ .Show_form .btn:hover {
   color: whitesmoke;

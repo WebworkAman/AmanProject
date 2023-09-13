@@ -28,6 +28,14 @@ nav{
 .Show_form{
     margin: 40px 100px;
     overflow: auto;
+    .textblock{
+        color: #a25f7d;
+    /* border: 1px solid; */
+    width: 14vw;
+    min-width: 350px;
+    margin: 25px;
+    line-height: 1.5;
+    }
     h3{
         text-align: center;
         font-size: 1.8rem;
@@ -43,9 +51,10 @@ nav{
         border-radius: 10px;
         width: 150px;
         text-align: center;
-        margin: 20px;
+        // margin: 20px;
         padding: 5px;
         font-size: 1em;
+        margin-top: 50px;
     }
     .btn:hover{
         color: whitesmoke;
@@ -295,6 +304,7 @@ main{
                     text-align: center;
                     margin: 20px;
                     padding: 5px;
+                    margin-top: 50px;
                 }
                 .btn:hover{
                     color: whitesmoke;
