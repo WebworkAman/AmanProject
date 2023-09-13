@@ -78,8 +78,15 @@ class AdminController extends Controller
         if(!empty($admin)){
 
             if(\Hash::check($request->password,$admin->password)){
-                session(['adminId' => $admin->id]);
-                return redirect('admin/index');
+
+
+                if($admin->identity_perm !=4){
+
+                    session(['adminId' => $admin->id]);
+                    return redirect('admin/index');
+                }
+                return back()->with('fail','您已被解除使用權限，請洽後台管理員');
+
 
             }
             return back()->with('fail','密碼輸入錯誤');
