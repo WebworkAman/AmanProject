@@ -34,7 +34,7 @@ use App\Models\Setting;
 
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/',[AdminController::class,'create'])->name('create');
-    Route::post('/',[AdminController::class,'login'])->name('admin.login');
+    Route::post('/',[AdminController::class,'login'])->name('login');
 
     // Route::get('index',function(){
 
