@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use App\Models\Message;
+use App\Models\Product;
 use App\Models\Question;
 use App\Models\CRM_Machines;
 
@@ -19,143 +20,564 @@ class ViewController extends Controller
         // -> with('questions','machines',Question::all());
     }
     function OC1(){
-        $questions = Question::with('answers')->where('product_id', 2)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/inspection/OC1', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 2)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 2) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',2)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/inspection/OC1', compact('questions','machines','products')) ;
     }
     function OC5B(){
-        $questions = Question::where('product_id', 3)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/inspection/OC5B', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 3)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 3) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',3)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/inspection/OC5B', compact('questions','machines','products')) ;
     }
     function OC83(){
-        $questions = Question::where('product_id', 4)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/inspection/OC83', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 4)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 4) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',4)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/inspection/OC83', compact('questions','machines','products')) ;
     }
 
     // <*--------  鬆布 -----------*>
 
     function UW2(){
-        $questions = Question::where('product_id', 5)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/relaxing/UW2', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 5)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 5) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',5)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/relaxing/UW2', compact('questions','machines','products')) ;
     }
 
     function UW2S(){
 
-        $questions = Question::where('product_id', 6)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/relaxing/UW2S', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 6)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 6) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',6)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/relaxing/UW2S', compact('questions','machines','products')) ;
     }
 
     function OC100(){
 
-        $questions = Question::where('product_id', 7)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/relaxing/OC100', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 7)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 7) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',7)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/relaxing/OC100', compact('questions','machines','products')) ;
 
     }
 
     function OSP2000II(){
 
-        $questions = Question::where('product_id', 8)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/relaxing/OSP2000II', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 8)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 8) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',8)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/relaxing/OSP2000II', compact('questions','machines','products')) ;
 
     }
 
     function OSP2008(){
 
-        $questions = Question::where('product_id', 9)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/relaxing/OSP2008', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 9)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 9) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',9)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/relaxing/OSP2008', compact('questions','machines','products')) ;
 
     }
 
     // <*--------  拉布 -----------*>
 
     function M190G(){
-        $questions = Question::where('product_id', 10)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/spreading/M190G', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 10)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 10) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',10)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/spreading/M190G', compact('questions','machines','products')) ;
     }
-    function J3(){
-        $questions = Question::where('product_id', 11)->get();
+    function J3(Request $request){
+
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-            return view('product/category/spreading/J3', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 11)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 11) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',11)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+            return view('product/category/spreading/J3', compact('questions','machines','products')) ;
         }
 
     function KPro(){
-        $questions = Question::where('product_id', 12)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-            return view('product/category/spreading/KPro', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 12)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 12) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',12)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+            return view('product/category/spreading/KPro', compact('questions','machines','products')) ;
     }
 
     function KProLite(){
-        $questions = Question::where('product_id', 13)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/spreading/KProLite', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 13)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 13) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',13)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/spreading/KProLite', compact('questions','machines','products')) ;
     }
 
     // function F8(){
@@ -164,151 +586,606 @@ class ViewController extends Controller
     // }
 
     function T5(){
-        $questions = Question::where('product_id', 14)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/spreading/T5', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 14)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 14) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',14)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/spreading/T5', compact('questions','machines','products')) ;
     }
 
     function K5(){
-        $questions = Question::where('product_id', 44)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/spreading/K5', compact('questions','machines')) ;
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 44)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 44) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',44)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/spreading/K5', compact('questions','machines','products')) ;
     }
 
      // <*--------  裁剪 -----------*>
 
     function OneCut(){
-        $questions = Question::where('product_id', 15)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/OneCut', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 15)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 15) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',15)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/OneCut', compact('questions','machines','products'));
     }
 
     function M6S(){
-        $questions = Question::where('product_id', 16)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/M6S', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 16)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 16) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',16)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/M6S', compact('questions','machines','products'));
     }
 
     function TAC(){
 
-        $questions = Question::where('product_id', 18)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/TAC', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 18)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 18) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',18)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/TAC', compact('questions','machines','products'));
     }
 
     function OC510(){
-        $questions = Question::where('product_id', 19)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/OC510', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 19)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 19) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',19)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/OC510', compact('questions','machines','products'));
     }
 
     function OB90(){
-        $questions = Question::where('product_id', 20)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/OB90', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 20)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 20) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',20)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/OB90', compact('questions','machines','products'));
     }
 
     function A100U(){
-        $questions = Question::where('product_id', 21)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/A100U', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 21)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 21) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',21)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/A100U', compact('questions','machines','products'));
     }
 
     function LU933(){
-        $questions = Question::where('product_id', 22)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/LU933', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 22)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 22) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',22)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/LU933', compact('questions','machines','products'));
     }
 
     function OB700A(){
-        $questions = Question::where('product_id', 23)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/cutting/OB700A', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 23)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 23) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',23)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/cutting/OB700A', compact('questions','machines','products'));
     }
 
     // <*--------  整燙定型 -----------*>
 
     function OP800SDS(){
-        $questions = Question::where('product_id', 24)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/ironing/OP800SDS', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 24)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 24) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',24)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/ironing/OP800SDS', compact('questions','machines','products'));
     }
 
     function OP87(){
-        $questions = Question::where('product_id', 25)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/ironing/OP87', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 25)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 25) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',25)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/ironing/OP87', compact('questions','machines','products'));
     }
 
     function OP302(){
-        $questions = Question::where('product_id', 26)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/ironing/OP302', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 26)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 26) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',26)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/ironing/OP302', compact('questions','machines','products'));
     }
 
     function OP301(){
@@ -357,36 +1234,141 @@ class ViewController extends Controller
     // <*--------  轉印 -----------*>
 
     function OP10A5(){
-        $questions = Question::where('product_id', 27)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/heatTransfer/OP10A5', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 27)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 27) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',27)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/heatTransfer/OP10A5', compact('questions','machines','products'));
     }
 
     function OP380A(){
-        $questions = Question::where('product_id', 28)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/heatTransfer/OP380A', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 28)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 28) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',28)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/heatTransfer/OP380A', compact('questions','machines','products'));
     }
 
     function OP15A(){
-        $questions = Question::where('product_id', 29)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/heatTransfer/OP15A', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 29)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 29) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',29)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/heatTransfer/OP15A', compact('questions','machines','products'));
     }
 
     function OP305S(){
@@ -432,36 +1414,141 @@ class ViewController extends Controller
     // <*--------  黏合 -----------*>
 
     function OP450GS(){
-        $questions = Question::where('product_id', 30)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/fusingPress/OP450GS', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 30)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 30) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',30)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/fusingPress/OP450GS', compact('questions','machines','products'));
     }
 
     function OP1200NL(){
-        $questions = Question::where('product_id', 31)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/fusingPress/OP1200NL', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 31)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 31) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',31)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/fusingPress/OP1200NL', compact('questions','machines','products'));
     }
 
     function OP1400(){
-        $questions = Question::where('product_id', 32)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/fusingPress/OP1400', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 32)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 32) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',32)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/fusingPress/OP1400', compact('questions','machines','products'));
     }
 
     function OP1000NE(){
@@ -495,14 +1582,49 @@ class ViewController extends Controller
     }
 
     function OP900A(){
-        $questions = Question::where('product_id', 46)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/fusingPress/OP900A', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 46)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 46) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',46)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/fusingPress/OP900A', compact('questions','machines','products'));
     }
 
     function OP600FA(){
@@ -518,36 +1640,141 @@ class ViewController extends Controller
     // <*--------  無縫黏合 -----------*>
 
     function MB9018B(){
-        $questions = Question::where('product_id', 33)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/seamless/MB9018B', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 33)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 33) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',33)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/seamless/MB9018B', compact('questions','machines','products'));
     }
 
     function OP114(){
-        $questions = Question::where('product_id', 34)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/seamless/OP114', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 34)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 34) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',34)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/seamless/OP114', compact('questions','machines','products'));
     }
 
     function OP114S(){
-        $questions = Question::where('product_id', 35)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/seamless/OP114S', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 35)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 35) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',35)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/seamless/OP114S', compact('questions','machines','products'));
     }
 
     function OP701HAS(){
@@ -637,14 +1864,49 @@ class ViewController extends Controller
 
     // 成衣
     function ON688CD5(){
-        $questions = Question::where('product_id', 45)->get();
+        $products = Product::all();
 
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
         $machines = CRM_Machines::where('company_ERP_id',$ERPId)->get();
 
-        return view('product/category/needleWeighing/clothing/ON688CD5', compact('questions','machines'));
+        $start_date = $request->input('start_date');
+        $end_date = $request->input('end_date');
+
+        $filter = $request->input('filter'); // 獲取用戶選擇的篩選器值
+
+        $query = Question::with('answers')
+                         ->where('product_id', 45)
+                         ->where('company_ERP_id', $ERPId); // 假設產品ID為1
+
+
+        // $questions = Question::with('answers')->where('product_id', 1)->get(); //假設產品ID為1
+
+        if ($start_date && $end_date) {
+            // 如果提供了開始日期和結束日期，添加日期條件
+            $query->whereDate('created_at', '>=', $start_date)
+              ->whereDate('created_at', '<=', $end_date);
+        }
+
+        if($filter === 'personal'){
+            //個人問題
+            $questions = Question::with('answers')
+                 ->where('member_id', $memberId)
+                 ->where('product_id', 45) // 假設產品 I D 為 1
+                 ->get();
+        }elseif($filter === 'company'){
+            //公司問題
+            $questions = Question::with('answers')
+                  ->where('company_ERP_id', $ERPId)
+                  ->where('product_id',45)
+                  ->get();
+        }else {
+            // 默認情況下顯示所有問題
+            $questions = $query->get();
+        }
+
+        return view('product/category/needleWeighing/clothing/ON688CD5', compact('questions','machines','products'));
     }
 
     function OMW600(){
