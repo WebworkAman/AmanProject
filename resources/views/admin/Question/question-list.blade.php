@@ -11,11 +11,11 @@
                 <thead>
                     <tr>
                         <th>客戶姓名</th>
-                        <th>產品</th>
-                        <th>標題</th>
-                        <th>內容</th>
-                        <th>照片</th>
-                        <th>影片</th>
+                        <th style="width:20%">產品</th>
+                        <th style="width:20%">標題</th>
+                        <th style="width:20%">內容</th>
+                        <th style="width:7%;text-align:center">照片</th>
+                        <th style="width:7%;text-align:center">影片</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -34,10 +34,10 @@
                             <td>
                                 <p>{{ $question->title }}</p>
                             </td>
-                            <td>
+                            <td style="width:20%">
                                 <p id='truncated-text'>{{ $question->content }}</p>
                             </td>
-                            <td>
+                            <td style="width:7%;text-align:center">
                                 @if ($question->photo)
                                     <button class="showPhotoBtn" data-photo-url="{{ Storage::url($question->photo) }}">
                                         檢視照片
@@ -48,10 +48,10 @@
                                         <button class="popclose">關閉</button>
                                     </div>
                                 @else
-                                    <p>無</p>
+                                    無
                                 @endif
                             </td>
-                            <td>
+                            <td style="width:7%;text-align:center">
                                 @if ($question->video)
                                     <button class="showVideoBtn" data-video-url="{{ Storage::url($question->video) }}">
                                         檢視影片
@@ -65,11 +65,12 @@
                                         <button class="popclose">關閉</button>
                                     </div>
                                 @else
-                                    <p>無</p>
+                                    無
                                 @endif
                             </td>
-                            <td><a class='question-reply' href="{{ route('question.answer', $question->id) }}">回覆</a></td>
-                            <td>
+                            <td style="text-align:center"><a class='question-reply'
+                                    href="{{ route('question.answer', $question->id) }}">回覆</a></td>
+                            <td style="text-align:center">
                                 <form method="POST" action="{{ route('questions.destroy', $question->id) }}">
                                     @csrf
                                     @method('DELETE')

@@ -269,8 +269,10 @@ main{
             border-radius: 20px;
 
             .Show_form{
-                margin: 30px 100px;
+                margin: 30px auto;
                 overflow: auto;
+                font-weight: 300;
+                width: 95%;
 
                 select{
 
@@ -314,7 +316,7 @@ main{
 
                 table {
 
-                    font-size: 14px;
+                    font-size: 1.1em;
                     border-collapse: collapse;
                     width: 100%;
                 }
@@ -347,6 +349,7 @@ main{
                         cursor: pointer;
                         font-weight: 300;
                         letter-spacing: .5px;
+                        font-size: 1em;
                     }
                     button:hover{
                         color: orange;

@@ -10,11 +10,11 @@
                 <thead>
                     <tr>
                         <th>產品型號</th>
-                        <th>問題詳情</th>
-                        <th>問題回復</th>
+                        <th style="width:20%">問題詳情</th>
+                        <th style="width:30%">問題回復</th>
                         <th></th>
-                        <th>照片</th>
-                        <th>影片</th>
+                        <th style="width:5%;text-align:center">照片</th>
+                        <th style="width:5%;text-align:center">影片</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -26,10 +26,10 @@
                             @else
                                 <td>沒查詢到對應產品</td>
                             @endif
-                            <td>{{ $faq->question }}</td>
-                            <td>{{ $faq->answer }}</td>
-                            <td><a href="{{ route('faqs.edit', $faq) }}">編輯</a></td>
-                            <td>
+                            <td style="width:20%">{{ $faq->question }}</td>
+                            <td style="width:30%">{{ $faq->answer }}</td>
+                            <td style="text-align:center"><a href="{{ route('faqs.edit', $faq) }}">編輯</a></td>
+                            <td style="width:5%;text-align:center">
                                 @if ($faq->photo)
                                     <button class="showPhotoBtn" data-photo-url="{{ Storage::url($faq->photo) }}">
                                         檢視照片
@@ -40,10 +40,10 @@
                                         <button class="popclose">關閉</button>
                                     </div>
                                 @else
-                                    <p>無</p>
+                                    無
                                 @endif
                             </td>
-                            <td>
+                            <td style="width:5%;text-align:center">
                                 @if ($faq->video)
                                     <button class="showVideoBtn" data-video-url="{{ Storage::url($faq->video) }}">
                                         檢視影片
@@ -57,10 +57,10 @@
                                         <button class="popclose">關閉</button>
                                     </div>
                                 @else
-                                    <p>無</p>
+                                    無
                                 @endif
                             </td>
-                            <td>
+                            <td style="text-align:center">
                                 <form method="POST" action="{{ route('faqs.destroy', $faq) }}">
                                     @csrf
                                     @method('DELETE')

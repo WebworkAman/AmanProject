@@ -377,8 +377,10 @@ main .admin_block .Show_ {
   border-radius: 20px;
 }
 main .admin_block .Show_ .Show_form {
-  margin: 30px 100px;
+  margin: 30px auto;
   overflow: auto;
+  font-weight: 300;
+  width: 95%;
 }
 main .admin_block .Show_ .Show_form select {
   width: 5vw;
@@ -415,7 +417,7 @@ main .admin_block .Show_ .Show_form .question-reply:hover {
   text-shadow: #555 0.1em;
 }
 main .admin_block .Show_ .Show_form table {
-  font-size: 14px;
+  font-size: 1.1em;
   border-collapse: collapse;
   width: 100%;
 }
@@ -447,6 +449,7 @@ main .admin_block .Show_ .Show_form th button, main .admin_block .Show_ .Show_fo
   cursor: pointer;
   font-weight: 300;
   letter-spacing: 0.5px;
+  font-size: 1em;
 }
 main .admin_block .Show_ .Show_form th button:hover, main .admin_block .Show_ .Show_form td button:hover {
   color: orange;
