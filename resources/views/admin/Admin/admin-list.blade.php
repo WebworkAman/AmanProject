@@ -3,7 +3,7 @@
 @section('content')
     <div id="show" class="Show_">
         <div class="Show_form member-list">
-            <h3> 管 理 員 列 表 </h3>
+            <h3> 使 用 者 列 表 </h3>
             <a class="btn control-option" href="{{ route('admin.create') }}">新增</a>
             <a class="btn control-option" href="{{ route('admin.Status') }}">修改</a>
             <table>

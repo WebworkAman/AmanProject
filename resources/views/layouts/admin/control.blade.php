@@ -23,7 +23,7 @@
             <a href="{{ route('setting') }}" class="control-option">收信設定</a>
         @endif
         @if ($identityPerm == 1 || $identityPerm == 2)
-            <a href="{{ route('adminList') }}" class="control-option">管理者設定</a>
+            <a href="{{ route('adminList') }}" class="control-option">使用者設定</a>
             <a href="{{ route('memberList') }}" class="control-option">會員管理</a>
         @endif
         <a href="{{ route('faqList') }}" class="control-option">常見問題</a>

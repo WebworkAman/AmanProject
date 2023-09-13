@@ -6,7 +6,7 @@
         <div class="Show_form">
 
             <div class="nav">
-                <h3> 修 改 管 理 者</h3>
+                <h3> 修 改 使 用 者</h3>
 
                 <a class="btn" href="{{ route('adminList') }}">返回列表</a>
 

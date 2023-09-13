@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>OSHIMA CRM 客服關係管理系統</title>
+    <title>OSHIMA-CRM後台管理系統</title>
     @include('layouts.meta')
     @include('layouts.admin.css')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
