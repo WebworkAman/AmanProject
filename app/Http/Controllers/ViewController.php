@@ -19,7 +19,7 @@ class ViewController extends Controller
         return view('product/category/inspection/OC40N02');
         // -> with('questions','machines',Question::all());
     }
-    function OC1(){
+    function OC1(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -64,7 +64,7 @@ class ViewController extends Controller
 
         return view('product/category/inspection/OC1', compact('questions','machines','products')) ;
     }
-    function OC5B(){
+    function OC5B(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -109,7 +109,7 @@ class ViewController extends Controller
 
         return view('product/category/inspection/OC5B', compact('questions','machines','products')) ;
     }
-    function OC83(){
+    function OC83(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -157,7 +157,7 @@ class ViewController extends Controller
 
     // <*--------  鬆布 -----------*>
 
-    function UW2(){
+    function UW2(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -203,7 +203,7 @@ class ViewController extends Controller
         return view('product/category/relaxing/UW2', compact('questions','machines','products')) ;
     }
 
-    function UW2S(){
+    function UW2S(Request $request){
 
         $products = Product::all();
 
@@ -250,7 +250,7 @@ class ViewController extends Controller
         return view('product/category/relaxing/UW2S', compact('questions','machines','products')) ;
     }
 
-    function OC100(){
+    function OC100(Request $request){
 
         $products = Product::all();
 
@@ -298,7 +298,7 @@ class ViewController extends Controller
 
     }
 
-    function OSP2000II(){
+    function OSP2000II(Request $request){
 
         $products = Product::all();
 
@@ -346,7 +346,7 @@ class ViewController extends Controller
 
     }
 
-    function OSP2008(){
+    function OSP2008(Request $request){
 
         $products = Product::all();
 
@@ -396,7 +396,7 @@ class ViewController extends Controller
 
     // <*--------  拉布 -----------*>
 
-    function M190G(){
+    function M190G(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -488,7 +488,7 @@ class ViewController extends Controller
             return view('product/category/spreading/J3', compact('questions','machines','products')) ;
         }
 
-    function KPro(){
+    function KPro(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -534,7 +534,7 @@ class ViewController extends Controller
             return view('product/category/spreading/KPro', compact('questions','machines','products')) ;
     }
 
-    function KProLite(){
+    function KProLite(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -585,7 +585,7 @@ class ViewController extends Controller
     //     return view('product/category/spreading/F8', compact('questions','machines')) ;
     // }
 
-    function T5(){
+    function T5(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -631,7 +631,7 @@ class ViewController extends Controller
         return view('product/category/spreading/T5', compact('questions','machines','products')) ;
     }
 
-    function K5(){
+    function K5(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -679,7 +679,7 @@ class ViewController extends Controller
 
      // <*--------  裁剪 -----------*>
 
-    function OneCut(){
+    function OneCut(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -725,7 +725,7 @@ class ViewController extends Controller
         return view('product/category/cutting/OneCut', compact('questions','machines','products'));
     }
 
-    function M6S(){
+    function M6S(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -771,7 +771,7 @@ class ViewController extends Controller
         return view('product/category/cutting/M6S', compact('questions','machines','products'));
     }
 
-    function TAC(){
+    function TAC(Request $request){
 
         $products = Product::all();
 
@@ -818,7 +818,7 @@ class ViewController extends Controller
         return view('product/category/cutting/TAC', compact('questions','machines','products'));
     }
 
-    function OC510(){
+    function OC510(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -864,7 +864,7 @@ class ViewController extends Controller
         return view('product/category/cutting/OC510', compact('questions','machines','products'));
     }
 
-    function OB90(){
+    function OB90(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -910,7 +910,7 @@ class ViewController extends Controller
         return view('product/category/cutting/OB90', compact('questions','machines','products'));
     }
 
-    function A100U(){
+    function A100U(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -956,7 +956,7 @@ class ViewController extends Controller
         return view('product/category/cutting/A100U', compact('questions','machines','products'));
     }
 
-    function LU933(){
+    function LU933(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1002,7 +1002,7 @@ class ViewController extends Controller
         return view('product/category/cutting/LU933', compact('questions','machines','products'));
     }
 
-    function OB700A(){
+    function OB700A(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1050,7 +1050,7 @@ class ViewController extends Controller
 
     // <*--------  整燙定型 -----------*>
 
-    function OP800SDS(){
+    function OP800SDS(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1096,7 +1096,7 @@ class ViewController extends Controller
         return view('product/category/ironing/OP800SDS', compact('questions','machines','products'));
     }
 
-    function OP87(){
+    function OP87(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1142,7 +1142,7 @@ class ViewController extends Controller
         return view('product/category/ironing/OP87', compact('questions','machines','products'));
     }
 
-    function OP302(){
+    function OP302(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1233,7 +1233,7 @@ class ViewController extends Controller
     }
     // <*--------  轉印 -----------*>
 
-    function OP10A5(){
+    function OP10A5(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1279,7 +1279,7 @@ class ViewController extends Controller
         return view('product/category/heatTransfer/OP10A5', compact('questions','machines','products'));
     }
 
-    function OP380A(){
+    function OP380A(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1325,7 +1325,7 @@ class ViewController extends Controller
         return view('product/category/heatTransfer/OP380A', compact('questions','machines','products'));
     }
 
-    function OP15A(){
+    function OP15A(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1413,7 +1413,7 @@ class ViewController extends Controller
 
     // <*--------  黏合 -----------*>
 
-    function OP450GS(){
+    function OP450GS(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1459,7 +1459,7 @@ class ViewController extends Controller
         return view('product/category/fusingPress/OP450GS', compact('questions','machines','products'));
     }
 
-    function OP1200NL(){
+    function OP1200NL(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1505,7 +1505,7 @@ class ViewController extends Controller
         return view('product/category/fusingPress/OP1200NL', compact('questions','machines','products'));
     }
 
-    function OP1400(){
+    function OP1400(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1581,7 +1581,7 @@ class ViewController extends Controller
         ;
     }
 
-    function OP900A(){
+    function OP900A(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1639,7 +1639,7 @@ class ViewController extends Controller
 
     // <*--------  無縫黏合 -----------*>
 
-    function MB9018B(){
+    function MB9018B(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1685,7 +1685,7 @@ class ViewController extends Controller
         return view('product/category/seamless/MB9018B', compact('questions','machines','products'));
     }
 
-    function OP114(){
+    function OP114(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1731,7 +1731,7 @@ class ViewController extends Controller
         return view('product/category/seamless/OP114', compact('questions','machines','products'));
     }
 
-    function OP114S(){
+    function OP114S(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
@@ -1863,7 +1863,7 @@ class ViewController extends Controller
     // <*--------  金屬、重量檢測 -----------*>
 
     // 成衣
-    function ON688CD5(){
+    function ON688CD5(Request $request){
         $products = Product::all();
 
         $memberId = session()->get('memberId');
