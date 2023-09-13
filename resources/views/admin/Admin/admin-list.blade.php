@@ -4,8 +4,8 @@
     <div id="show" class="Show_">
         <div class="Show_form member-list">
             <h3> 使 用 者 列 表 </h3>
-            <a class="btn control-option" href="{{ route('admin.create') }}">新增</a>
-            <a class="btn control-option" href="{{ route('admin.Status') }}">修改</a>
+            <a class="btn control-option adminBtn" href="{{ route('admin.create') }}">新增</a>
+            <a class="btn control-option adminBtn" href="{{ route('admin.Status') }}">修改</a>
             <div class="textblock">
                 <p>售後為最高單位權限，可使用全功能</p>
 
