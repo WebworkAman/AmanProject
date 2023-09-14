@@ -16,7 +16,8 @@ class Question extends Model
         'photo',
         'video',
         'machine_model',
-        'machine_serial'
+        'machine_serial',
+        'answer_stat'
     ];
 
     public function member()

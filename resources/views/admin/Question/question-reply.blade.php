@@ -5,8 +5,8 @@
     <div class="Show_ reply">
         <div class="Show_form">
             <div class="question_reply">
-                <div class="nav">
-                    <h3>提交客戶問題回覆</h3>
+                <div class="reply_nav">
+                    <h3>客戶問題回覆</h3>
 
                     <a class="btn" href="{{ route('questions.index') }}">返回列表</a>
                 </div>
@@ -30,10 +30,12 @@
 
                                     @if ($question->answers->count() > 0)
                                         @foreach ($question->answers as $answer)
-                                            <p>回覆：{{ $answer->answer }}</p>
+                                            回覆：
+                                            <span class="user-content">{{ $answer->answer }}</span>
                                         @endforeach
                                     @else
-                                        <p>回覆：暫無回答</p>
+                                        回覆：
+                                        <span class="user-content">暫無回答</span>
                                     @endif
 
                                 </li>
@@ -41,23 +43,26 @@
                         </div>
                     </div>
                     <div class="baseline"></div>
-                    <!-- <form method="POST" action="{{ route('question.storeReply', $question->id) }}"> -->
-                    <form method="POST" action="{{ route('question.storeReply', $question->id) }}">
-                        @csrf
+                    <div class="reply-block">
+                        <form method="POST" action="{{ route('question.storeReply', $question->id) }}">
+                            @csrf
 
-                        <div class="form-group">
-                            <label for="answer">回答 :</label>
-                            <!-- <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea> -->
-                            <textarea name="answer" rows="4">{{ $question->answers->count() > 0 ? $question->answers[0]->answer : '' }}</textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-primary">提交</button>
-
+                            <div class="form-group">
+                                <label for="answer">歐西馬回覆 :</label>
+                                <!-- <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea> -->
+                                <textarea name="answer" rows="10">{{ $question->answers->count() > 0 ? $question->answers[0]->answer : '' }}</textarea>
                             </div>
-                        </div>
-                    </form>
+
+                            <div class="form-group">
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-primary">提交</button>
+
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
                 </div>
 
             </div>

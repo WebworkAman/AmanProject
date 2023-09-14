@@ -66,6 +66,12 @@ class QuestionController extends Controller
 
               $newans->save();
 
+              //更新question的answer_stat狀態
+
+              $question->answer_stat = 'y';
+
+              $question->save();
+
               //取得用戶信箱
               $memberEmail = $question->member->email;
 

@@ -886,6 +886,8 @@ main{
 
 
             .question-block{
+
+                font-size: 1.3rem;
                 ul{
                     display: block;
                     margin: 0 auto;
@@ -894,7 +896,7 @@ main{
                         margin: 10px;
                         line-height: 1.25;
                         .user-content{
-                            color: #555;
+                            color: #1e2d64;
                             font-weight: 300;
                             letter-spacing: 1;
                         }
@@ -902,10 +904,30 @@ main{
 
                     }
                 }
+
+
             }
             .baseline{
                 border-bottom: 1px solid #555;
                 margin: 8px auto;
+            }
+            .reply-block{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                form{
+                    .form-group{
+                        label{
+                            font-size: 1.3rem;
+                            font-weight: normal;
+
+                        }
+                        textarea{
+                            font-size: 1.1rem;
+                        }
+                }
+
+                }
+
             }
         }
     }

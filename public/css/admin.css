@@ -821,6 +821,9 @@ main .admin_block .Show_form.setting-page form .btn {
   width: 50vw;
   min-width: 300px;
 }
+.Show_.reply .Show_form .question_reply .question-block, .Show_.reply .Show_form .member-create .question-block {
+  font-size: 1.3rem;
+}
 .Show_.reply .Show_form .question_reply .question-block ul, .Show_.reply .Show_form .member-create .question-block ul {
   display: block;
   margin: 0 auto;
@@ -832,13 +835,24 @@ main .admin_block .Show_form.setting-page form .btn {
   line-height: 1.25;
 }
 .Show_.reply .Show_form .question_reply .question-block ul li .user-content, .Show_.reply .Show_form .member-create .question-block ul li .user-content {
-  color: #555;
+  color: #1e2d64;
   font-weight: 300;
   letter-spacing: 1;
 }
 .Show_.reply .Show_form .question_reply .baseline, .Show_.reply .Show_form .member-create .baseline {
   border-bottom: 1px solid #555;
   margin: 8px auto;
+}
+.Show_.reply .Show_form .question_reply .reply-block, .Show_.reply .Show_form .member-create .reply-block {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.Show_.reply .Show_form .question_reply .reply-block form .form-group label, .Show_.reply .Show_form .member-create .reply-block form .form-group label {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+.Show_.reply .Show_form .question_reply .reply-block form .form-group textarea, .Show_.reply .Show_form .member-create .reply-block form .form-group textarea {
+  font-size: 1.1rem;
 }
 .Show_.reply .Show_form.member-permissions .text-block {
   display: flex;
