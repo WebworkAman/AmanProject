@@ -175,7 +175,6 @@ nav button {
 .Show_form h3 {
   text-align: center;
   font-size: 1.8rem;
-  margin-top: 15px;
 }
 .Show_form .btn {
   float: right;
@@ -379,7 +378,7 @@ main .admin_block .Show_ {
   border-radius: 20px;
 }
 main .admin_block .Show_ .Show_form {
-  margin: 30px auto;
+  margin: 20px auto;
   overflow: auto;
   font-weight: 300;
   width: 95%;
@@ -422,6 +421,7 @@ main .admin_block .Show_ .Show_form .question-reply:hover {
   text-shadow: #555 0.1em;
 }
 main .admin_block .Show_ .Show_form table {
+  margin-top: 20px;
   font-size: 1.1em;
   border-collapse: collapse;
   width: 100%;
@@ -528,6 +528,10 @@ main .admin_block .Show_ .Show_form .pagination li.disabled {
   opacity: 0.5;
   pointer-events: none;
 }
+main .admin_block .Show_ .Show_form .edit-faq {
+  display: block;
+  clear: both;
+}
 main .admin_block .Show_ .Show_form .edit-faq #faqEditbtn {
   float: right;
   text-decoration: none;
@@ -540,18 +544,16 @@ main .admin_block .Show_ .Show_form .edit-faq #faqEditbtn {
   border-radius: 10px;
   font-weight: 300;
   letter-spacing: 1.5px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-top: 15px;
 }
 main .admin_block .Show_ .Show_form .edit-faq #faqEditbtn:hover {
   background-color: orange;
 }
-main .admin_block .Show_ .Show_form .edit-faq .form-group {
-  margin: 20px;
-}
 main .admin_block .Show_ .Show_form .edit-faq .form-group label {
   color: #555;
   letter-spacing: 1.2;
+  font-size: 1.3em;
 }
 main .admin_block .Show_ .Show_form .edit-faq .form-group input {
   width: 100%;
@@ -562,7 +564,7 @@ main .admin_block .Show_ .Show_form .edit-faq .form-group input {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  font-size: 16px;
+  font-size: 1.2em;
 }
 main .admin_block .Show_ .Show_form .edit-faq .form-group textarea {
   width: 100%;
@@ -573,7 +575,7 @@ main .admin_block .Show_ .Show_form .edit-faq .form-group textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  font-size: 16px;
+  font-size: 1.5em;
 }
 main .admin_block .Show_.select_ .Show_form ul {
   margin-left: 0;
@@ -663,35 +665,45 @@ main .admin_block .Show_form.setting-page form .btn {
 }
 .Show_.reply .Show_form .question_reply button, .Show_.reply .Show_form .member-create button {
   width: 5vw;
+  min-width: 100px;
   border: 1px solid rgb(110, 134, 201);
   color: rgb(110, 134, 201);
   border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
 }
+.Show_.reply .Show_form .question_reply .btn-primary, .Show_.reply .Show_form .member-create .btn-primary {
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  background-color: rgb(118, 114, 109);
+  color: white;
+  width: 150px;
+  border-radius: 10px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
 .Show_.reply .Show_form .question_reply button:hover, .Show_.reply .Show_form .member-create button:hover {
   background-color: orange;
   border: 1px solid orange;
   color: white;
 }
-.Show_.reply .Show_form .question_reply .nav, .Show_.reply .Show_form .member-create .nav {
+.Show_.reply .Show_form .question_reply .reply_nav, .Show_.reply .Show_form .member-create .reply_nav {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+}
+.Show_.reply .Show_form .question_reply .reply_nav h3, .Show_.reply .Show_form .member-create .reply_nav h3 {
+  margin: 20px;
+  color: #555;
+  font-size: 1.5rem;
 }
 .Show_.reply .Show_form .question_reply .text ul, .Show_.reply .Show_form .member-create .text ul {
   margin-left: 0;
   font-size: small;
-}
-.Show_.reply .Show_form .question_reply .create-faq ul, .Show_.reply .Show_form .member-create .create-faq ul {
-  display: flex;
-  flex-wrap: wrap;
-  min-width: 300px;
-  width: 100%;
-}
-.Show_.reply .Show_form .question_reply .create-faq ul li, .Show_.reply .Show_form .member-create .create-faq ul li {
-  margin: 10px;
-  color: #1e2d64;
-  border-bottom: 1px solid #1e2d64;
 }
 .Show_.reply .Show_form .question_reply .ans, .Show_.reply .Show_form .question_reply .create-faq, .Show_.reply .Show_form .question_reply .create-member, .Show_.reply .Show_form .member-create .ans, .Show_.reply .Show_form .member-create .create-faq, .Show_.reply .Show_form .member-create .create-member {
   margin-left: 120px;
@@ -712,7 +724,7 @@ main .admin_block .Show_form.setting-page form .btn {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  font-size: 16px;
+  font-size: 1em;
 }
 .Show_.reply .Show_form .question_reply .ans .form-group textarea, .Show_.reply .Show_form .question_reply .create-faq .form-group textarea, .Show_.reply .Show_form .question_reply .create-member .form-group textarea, .Show_.reply .Show_form .member-create .ans .form-group textarea, .Show_.reply .Show_form .member-create .create-faq .form-group textarea, .Show_.reply .Show_form .member-create .create-member .form-group textarea {
   width: 100%;
@@ -723,7 +735,7 @@ main .admin_block .Show_form.setting-page form .btn {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  font-size: 16px;
+  font-size: 1em;
 }
 .Show_.reply .Show_form .question_reply .ans .form-group.select, .Show_.reply .Show_form .question_reply .create-faq .form-group.select, .Show_.reply .Show_form .question_reply .create-member .form-group.select, .Show_.reply .Show_form .member-create .ans .form-group.select, .Show_.reply .Show_form .member-create .create-faq .form-group.select, .Show_.reply .Show_form .member-create .create-member .form-group.select {
   display: flex;
@@ -772,9 +784,17 @@ main .admin_block .Show_form.setting-page form .btn {
   /* 自訂背景顏色 */
   background-color: #fff;
   /* 自訂字體大小 */
-  font-size: 16px;
+  font-size: 1.2em;
   /* 自訂文字位置 */
   text-align: center;
+  color: #1e2d64;
+  font-weight: 300;
+}
+.Show_.reply .Show_form .question_reply .ans select option:hover, .Show_.reply .Show_form .question_reply .create-faq select option:hover, .Show_.reply .Show_form .question_reply .create-member select option:hover, .Show_.reply .Show_form .member-create .ans select option:hover, .Show_.reply .Show_form .member-create .create-faq select option:hover, .Show_.reply .Show_form .member-create .create-member select option:hover {
+  /* 自訂背景顏色 */
+  background-color: rgb(97, 90, 71);
+  color: white;
+  cursor: pointer;
 }
 .Show_.reply .Show_form .question_reply .ans select[multiple], .Show_.reply .Show_form .question_reply .create-faq select[multiple], .Show_.reply .Show_form .question_reply .create-member select[multiple], .Show_.reply .Show_form .member-create .ans select[multiple], .Show_.reply .Show_form .member-create .create-faq select[multiple], .Show_.reply .Show_form .member-create .create-member select[multiple] {
   height: auto;
@@ -782,6 +802,24 @@ main .admin_block .Show_form.setting-page form .btn {
   overflow-y: scroll; /* 超過最小高度時，出現垂直滾動條 */
   width: 20vw;
   text-align: left;
+}
+.Show_.reply .Show_form .question_reply .create-faq, .Show_.reply .Show_form .member-create .create-faq {
+  font-size: 1.2em;
+}
+.Show_.reply .Show_form .question_reply .create-faq ul, .Show_.reply .Show_form .member-create .create-faq ul {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  width: 100%;
+}
+.Show_.reply .Show_form .question_reply .create-faq ul li, .Show_.reply .Show_form .member-create .create-faq ul li {
+  margin: 10px;
+  color: #1e2d64;
+  border-bottom: 1px solid #1e2d64;
+}
+.Show_.reply .Show_form .question_reply .create-faq .form-group.select select, .Show_.reply .Show_form .member-create .create-faq .form-group.select select {
+  width: 50vw;
+  min-width: 300px;
 }
 .Show_.reply .Show_form .question_reply .question-block ul, .Show_.reply .Show_form .member-create .question-block ul {
   display: block;
@@ -805,7 +843,7 @@ main .admin_block .Show_form.setting-page form .btn {
 .Show_.reply .Show_form.member-permissions .text-block {
   display: flex;
   justify-content: space-between;
-  width: 70vw;
+  width: 75vw;
 }
 .Show_.reply .Show_form.member-permissions .text-block h3 {
   color: #555;
@@ -822,6 +860,8 @@ main .admin_block .Show_form.setting-page form .btn {
 .Show_.reply .Show_form.member-permissions .subContent .clientBlock {
   display: flex;
   width: 20vw;
+  min-width: 350px;
+  line-height: 1.5;
 }
 .Show_.reply .Show_form.member-permissions .subContent .clientBlock p {
   margin-left: 20px;

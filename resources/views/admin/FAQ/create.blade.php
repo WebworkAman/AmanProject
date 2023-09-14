@@ -4,7 +4,7 @@
     <div class="Show_ reply">
         <div class="Show_form">
             <div class="question_reply">
-                <div class="nav">
+                <div class="reply_nav">
                     <h3>新增常見問題</h3>
 
                     <a class="btn" href="{{ route('faqList') }}">返回列表</a>
@@ -33,13 +33,15 @@
                             <textarea name="answer" id="answer" class="form-control" required>{{ old('answer') }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="photo">附加照片(檔案限制大小2MB)：</label>
+                            <label for="photo"
+                                style="display: inline-block;
+                            width: 276px;">附加照片(檔案限制大小2MB)：</label>
                             <input class="attachfile" type="file" name="photo"
                                 accept="image/jpeg, image/png, image/gif">
                             <p class="text-danger" id="photo-error" style="color: red;"></p>
                         </div>
                         <div class="form-group">
-                            <label for="video">附加影片(檔案限制大小20MB)：</label>
+                            <label for="video" display: inline-block; width: 276px;>附加影片(檔案限制大小20MB)：</label>
                             <input class="attachfile" type="file" name="video"
                                 accept="video/mp4, video/mov, video/avi">
                             <p class="text-danger" id="video-error" style="color: red;"></p>

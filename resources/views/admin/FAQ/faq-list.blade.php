@@ -4,7 +4,10 @@
     <div id="show" class="Show_">
         <div class="Show_form">
             <h3>常見問題區管理</h3>
-            <a class="btn" href="{{ route('faqs.create') }}">新增常見問題</a>
+            @if ($logIn->identity_perm == 1 || $logIn->identity_perm == 2)
+                <a class="btn" href="{{ route('faqs.create') }}">新增常見問題</a>
+            @else
+            @endif
 
             <table>
                 <thead>

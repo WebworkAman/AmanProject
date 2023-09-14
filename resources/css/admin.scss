@@ -39,7 +39,6 @@ nav{
     h3{
         text-align: center;
         font-size: 1.8rem;
-        margin-top: 15px;
 
     }
     .btn{
@@ -278,7 +277,7 @@ main{
             border-radius: 20px;
 
             .Show_form{
-                margin: 30px auto;
+                margin: 20px auto;
                 overflow: auto;
                 font-weight: 300;
                 width: 95%;
@@ -328,7 +327,7 @@ main{
                 }
 
                 table {
-
+                    margin-top: 20px;
                     font-size: 1.1em;
                     border-collapse: collapse;
                     width: 100%;
@@ -456,6 +455,9 @@ main{
 
                   .edit-faq{
 
+                    display: block;
+                    clear: both;
+
                     #faqEditbtn{
 
                         float: right;
@@ -469,7 +471,7 @@ main{
                         border-radius: 10px;
                         font-weight: 300;
                         letter-spacing: 1.5px;
-                        font-size: 0.9rem;
+                        font-size: 1.1rem;
 
                         margin-top: 15px;
                     }
@@ -478,12 +480,15 @@ main{
                         background-color: orange;
                     }
 
+
                     .form-group{
-                        margin: 20px;
+                        // margin: 20px;
+
 
                         label{
                             color: #555;
                             letter-spacing: 1.2;
+                            font-size: 1.3em;
                         }
                         input{
                             width: 100%;
@@ -494,7 +499,7 @@ main{
                             margin-top: 6px;
                             margin-bottom: 16px;
                             resize: vertical;
-                            font-size: 16px;
+                            font-size: 1.2em;
                         }
                         textarea {
                             width: 100%;
@@ -505,7 +510,7 @@ main{
                             margin-top: 6px;
                             margin-bottom: 16px;
                             resize: vertical;
-                            font-size: 16px;
+                            font-size: 1.5em;
                           }
 
                     }
@@ -688,6 +693,7 @@ main{
             button{
 
                 width: 5vw;
+                min-width: 100px;
                 border: 1px solid rgb(110, 134, 201);
                 color: rgb(110, 134, 201);
                 border-radius: 10px;
@@ -695,7 +701,20 @@ main{
                 cursor: pointer;
 
 
-
+            }
+            .btn-primary{
+                float: right;
+                text-decoration: none;
+                cursor: pointer;
+                border: 0;
+                background-color: rgb(118, 114, 109);
+                color: white;
+                width: 150px;
+                border-radius: 10px;
+                font-weight: 300;
+                letter-spacing: 1.5px;
+                font-size: 1.2rem;
+                margin-top: 15px;
             }
             button:hover{
                 background-color: orange;
@@ -705,9 +724,17 @@ main{
 
 
             }
-            .nav{
+            .reply_nav{
                 display: flex;
                 justify-content: space-between;
+                margin-bottom: 20px;
+
+                h3{
+                    margin: 20px;
+                    color: #555;
+                    font-size: 1.5rem;
+
+                }
             }
             .text{
                 ul{
@@ -716,19 +743,6 @@ main{
                 }
             }
 
-            .create-faq{
-                ul{
-                    display: flex;
-                    flex-wrap: wrap;
-                    min-width: 300px;
-                    width: 100%;
-                    li{
-                        margin:10px;
-                        color: #1e2d64;
-                        border-bottom: 1px solid #1e2d64;
-                    }
-                  }
-            }
             .ans,.create-faq,.create-member{
                 margin-left: 120px;
                 .form-group{
@@ -747,7 +761,7 @@ main{
                         margin-top: 6px;
                         margin-bottom: 16px;
                         resize: vertical;
-                        font-size: 16px;
+                        font-size: 1em;
                     }
                     textarea {
                         width: 100%;
@@ -758,7 +772,7 @@ main{
                         margin-top: 6px;
                         margin-bottom: 16px;
                         resize: vertical;
-                        font-size: 16px;
+                        font-size: 1em;
                       }
 
                 }
@@ -817,10 +831,21 @@ main{
                         /* 自訂背景顏色 */
                         background-color: #fff;
                         /* 自訂字體大小 */
-                        font-size: 16px;
+                        font-size: 1.2em;
                         /* 自訂文字位置 */
                         text-align: center;
+                        color: #1e2d64;;
+                        font-weight: 300;
+                        // background-color: rgb(240, 182, 22);
+                        // color: white;
                         }
+                        select option:hover {
+                            /* 自訂背景顏色 */
+                            background-color: rgb(97 90 71);
+                            color: white;
+                            cursor: pointer;
+
+                            }
 
                         select[multiple]{
                             height: auto;
@@ -830,6 +855,32 @@ main{
                             text-align: left;
                         }
 
+
+            }
+
+            .create-faq{
+                font-size: 1.2em;
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    min-width: 300px;
+                    width: 100%;
+                    li{
+                        margin:10px;
+                        color: #1e2d64;
+                        border-bottom: 1px solid #1e2d64;
+                    }
+                  }
+
+
+                  .form-group.select{
+                    select{
+                        width: 50vw;
+                        min-width: 300px;
+
+
+                    }
+                  }
 
             }
 
@@ -863,11 +914,12 @@ main{
         .text-block{
             display: flex;
             justify-content: space-between;
-            width: 70vw;
+            width: 75vw;
             h3{
                 color: #555;
                 font-size: 1.5rem;
                 margin: 20px;
+
 
             }
         }
@@ -882,6 +934,8 @@ main{
 
                 display: flex;
                 width: 20vw;
+                min-width: 350px;
+                line-height: 1.5;
                 p{
                     margin-left: 20px;
                     font-size: 1.2em;
