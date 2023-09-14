@@ -280,7 +280,7 @@ class AdminController extends Controller
     public function QuestionList(){
 
         $logIn = self::admin();
-        $questions = Question::all();
+        $questions = Question::paginate(10);
         $products = Product::all();
         return view('admin.Question.question-list', compact('questions','products','logIn'));
     }

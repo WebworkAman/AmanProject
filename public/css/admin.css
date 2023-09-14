@@ -347,8 +347,8 @@ main .admin_block .control_ .control_list {
   min-height: 600px;
   border-radius: 20px;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: 200;
+  font-size: 1.3rem;
+  font-weight: 300;
 }
 main .admin_block .control_ .control_list button {
   margin-top: 20px;

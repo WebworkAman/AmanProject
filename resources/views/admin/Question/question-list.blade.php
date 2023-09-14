@@ -10,32 +10,32 @@
             <table>
                 <thead>
                     <tr>
-                        <th>客戶姓名</th>
+                        <th style="width:5%;min-width:100px;">客戶姓名</th>
                         <th style="width:20%">產品</th>
                         <th style="width:20%">標題</th>
-                        <th style="width:20%">內容</th>
-                        <th style="width:7%;text-align:center;min-width: 50px;">照片</th>
-                        <th style="width:7%;text-align:center;min-width: 50px;">影片</th>
-                        <th style="width:7%;text-align:center;min-width: 50px;"></th>
-                        <th style="width:7%;text-align:center;min-width: 50px;"></th>
+                        <th style="width:30%">內容</th>
+                        <th style="width:5%;text-align:center;min-width: 50px;">照片</th>
+                        <th style="width:5%;text-align:center;min-width: 50px;">影片</th>
+                        <th style="width:5%;text-align:center;min-width: 50px;"></th>
+                        <th style="width:5%;text-align:center;min-width: 50px;"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($questions as $question)
                         <tr>
                             <td>
-                                <p>{{ $question->member->name }}</p>
+                                {{ $question->member->name }}
                             </td>
                             @if ($question->product_id)
                                 <td>{{ $products->find($question->product_id)->title }}</td>
                             @else
                                 <td>沒查詢到對應產品</td>
                             @endif
-                            <td>
-                                <p>{{ $question->title }}</p>
-                            </td>
                             <td style="width:20%">
-                                <p id='truncated-text'>{{ $question->content }}</p>
+                                {{ $question->title }}
+                            </td>
+                            <td style="width:30%">
+                                {{ $question->content }}
                             </td>
                             <td style="width:7%;text-align:center">
                                 @if ($question->photo)
@@ -81,6 +81,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $questions->render('components.pagination') }}
             <script>
                 //點擊檢視上傳圖片按鈕
                 $('.showPhotoBtn').click(function() {
