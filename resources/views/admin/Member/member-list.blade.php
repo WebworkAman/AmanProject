@@ -3,8 +3,8 @@
 @section('content')
     <div id="show" class="Show_">
         <div class="Show_form member-list">
-            <h3> 會 員 管 理 </h3>
-            <a class="btn control-option" href="{{ route('members.adminCreate') }}">新增會員</a>
+            <h3 style="margin-bottom:35px"> 會 員 管 理 </h3>
+            {{-- <a class="btn control-option" href="{{ route('members.adminCreate') }}">新增會員</a> --}}
             <table>
                 <thead>
                     <tr>
