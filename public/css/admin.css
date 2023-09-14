@@ -817,8 +817,22 @@ main .admin_block .Show_form.setting-page form .btn {
   font-size: 1.5rem;
   margin: 20px;
 }
-.Show_.reply .Show_form.member-permissions form {
-  margin-top: 30px;
+.Show_.reply .Show_form.member-permissions .subContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.Show_.reply .Show_form.member-permissions .subContent .clientBlock {
+  display: flex;
+  width: 20vw;
+}
+.Show_.reply .Show_form.member-permissions .subContent .clientBlock p {
+  margin-left: 20px;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: rgb(82, 87, 126);
 }
 .Show_.reply .Show_form.member-permissions form .checkSelect .selectAll {
   margin: 10px;

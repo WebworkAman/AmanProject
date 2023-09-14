@@ -872,10 +872,29 @@ main{
 
             }
         }
+        .subContent{
+            display: flex;
+            justify-content: space-between;
+            // border: 1px solid sienna;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            .clientBlock{
+
+                display: flex;
+                width: 20vw;
+                p{
+                    margin-left: 20px;
+                    font-size: 1.2em;
+                    font-weight: normal;
+                    color: rgb(82 87 126);
+                }
+
+            }
+        }
+
 
         form{
-            margin-top: 30px;
-
 
             .checkSelect{
 

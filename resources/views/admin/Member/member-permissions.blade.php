@@ -8,22 +8,34 @@
                 <h3> 權 限 管 理 </h3>
                 <a class="btn" href="{{ route('memberList') }}">返回會員</a>
             </div>
-            <form method="get" action="{{ route('members.adminSetPermissions', $member) }}">
+            <div class="subContent">
+                <div class="clientBlock">
 
-                <div class="series_filter">
-                    <label for="series_filter">選擇系列：</label>
-                    <select name="series_filter" id="series_filter">
-                        <option value="" disabled>所有系列</option>
-                        @foreach ($seriesList as $seriesItem)
-                            <option value="{{ $seriesItem->id }}" @if ($selectedSeries == $seriesItem->id) selected @endif>
-                                {{ $seriesItem->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                    <button class="filter-btn" type="submit">篩選</button>
+                    <p>客戶姓名：{{ $member->name }}</p>
+
+                    <p>公司編號：{{ $member->company_ERP_id }}</p>
                 </div>
+                <form method="get" action="{{ route('members.adminSetPermissions', $member) }}">
 
-            </form>
+                    <div class="series_filter">
+                        <label for="series_filter">選擇系列：</label>
+                        <select name="series_filter" id="series_filter">
+                            <option value="" disabled>所有系列</option>
+                            @foreach ($seriesList as $seriesItem)
+                                <option value="{{ $seriesItem->id }}" @if ($selectedSeries == $seriesItem->id) selected @endif>
+                                    {{ $seriesItem->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                        <button class="filter-btn" type="submit">篩選</button>
+                    </div>
+
+                </form>
+            </div>
+
+
+
+
             <form action="{{ route('member.permissions.update', $member->id) }}" method="POST">
                 @csrf
                 <table>
