@@ -58,10 +58,10 @@ nav {
   margin: 0 auto;
   width: 90%;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 nav .nav-left img {
-  width: 8rem;
+  width: 9rem;
 }
 nav .nav-right button {
   cursor: pointer;
@@ -136,10 +136,6 @@ nav .nav-right #hamburger-menu.show {
 }
 
 @media (max-width: 1280px) {
-  nav {
-    margin-top: 20px;
-    padding: 10px;
-  }
   nav .nav-left img {
     width: 7rem;
   }

@@ -58,10 +58,10 @@ nav {
   margin: 0 auto;
   width: 90%;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 nav .nav-left img {
-  width: 8rem;
+  width: 9rem;
 }
 nav .nav-right button {
   cursor: pointer;
@@ -136,10 +136,6 @@ nav .nav-right #hamburger-menu.show {
 }
 
 @media (max-width: 1280px) {
-  nav {
-    margin-top: 20px;
-    padding: 10px;
-  }
   nav .nav-left img {
     width: 7rem;
   }
@@ -147,7 +143,6 @@ nav .nav-right #hamburger-menu.show {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
 }
 nav .left img {
   width: 9rem;
@@ -600,7 +595,7 @@ main .admin_block .Show_form.setting-page form label {
 }
 main .admin_block .Show_form.setting-page form input {
   font-size: 1.1em;
-  width: 30vw;
+  width: 48vw;
   height: 20px;
   padding: 10px;
   margin-left: 30px;

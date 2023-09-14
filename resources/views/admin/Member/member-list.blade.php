@@ -8,6 +8,8 @@
             <table>
                 <thead>
                     <tr>
+                        <th>公司編號</th>
+                        <th>職位</th>
                         <th>會員姓名</th>
                         <th>會員信箱</th>
                         <th>問題權限</th>
@@ -17,6 +19,19 @@
                 <tbody>
                     @foreach ($members as $member)
                         <tr>
+                            <td>
+                                <p>{{ $member->company_ERP_id }}</p>
+                            </td>
+                            @php
+                                $identityMap = [
+                                    1 => '採購',
+                                    2 => '廠長',
+                                    3 => '一般會員',
+                                ];
+                            @endphp
+                            <td>
+                                <p>{{ $identityMap[$member->identity_perm] ?? '未知身份' }}</p>
+                            </td>
                             <td>
                                 <p>{{ $member->name }}</p>
                             </td>
