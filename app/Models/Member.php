@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\MemberPermission;
 
 class Member extends Model
 {
     protected $table = 'members';
-    // protected $fillable = ['name','email','password']; 
+    // protected $fillable = ['name','email','password'];
     // protected $fillable = [
     //     'name', 'email', 'password', 'identity', 'phone',
     //     'company_name', 'company_address', 'tax_id', 'company_phone', 'company_fax',
@@ -33,7 +34,7 @@ class Member extends Model
         'installation_company_address', 'installation_vat_number', 'installation_company_phone',
         'installation_company_fax',
         // Contact person fields
-        'contact_person_position', 'contact_person_name', 'contact_person_phone', 
+        'contact_person_position', 'contact_person_name', 'contact_person_phone',
         'contact_person_mobile', 'contact_person_email', 'contact_software_data',
         // Purchase source fields
         'purchase_manufacturer', 'purchase_manufacturer_person', 'purchase_manufacturer_phone',
@@ -41,8 +42,16 @@ class Member extends Model
         'other_purchase_company_address', 'other_purchase_tax_id', 'other_purchase_company_phone',
         'other_purchase_name', 'other_purchase_phone', 'other_purchase_description',
     ];
-    
+
     use HasFactory;
+
+    protected static function booted()
+    {
+        static::deleting(function($member){
+               //刪除關聯會員權限
+               MemberPermission::where('member_id',$member->id)->delete();
+        });
+    }
 
     public function permissions()
    {

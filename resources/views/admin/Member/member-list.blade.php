@@ -36,7 +36,11 @@
                                 <p>{{ $member->name }}</p>
                             </td>
                             <td>{{ $member->email }}</td>
-                            <td><a href="{{ route('members.adminSetPermissions', $member->id) }}">設定權限</a></td>
+                            @if ($member->stat_info === 'y')
+                                <td><a href="{{ route('members.adminSetPermissions', $member->id) }}">設定權限</a></td>
+                            @else
+                                <td>已離職</td>
+                            @endif
                             <td>
                                 <form method="POST" action="{{ route('members.destroy', $member->id) }}">
                                     @csrf
