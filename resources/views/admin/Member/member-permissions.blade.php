@@ -32,7 +32,7 @@
                             <th> <input type="checkbox" id="select-all"></th>
                             <th>系列</th>
                             <th>編號</th>
-                            <th>產品</th>
+                            <th style="width:30%;">產品</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -55,7 +55,7 @@
                                     <p>{{ $product->id }}</p>
                                 </td>
                                 <td>
-                                    <p>{{ $product->title }}</p>
+                                    {{ $product->title }}
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -102,7 +102,7 @@
                         <button type="submit">更新權限</button>
                     </form> --}}
 
-            @stack('scripts')
+            {{-- @stack('scripts') --}}
         </div>
 
     </div>

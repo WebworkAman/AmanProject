@@ -170,10 +170,11 @@ nav button {
 }
 .Show_form .textblock {
   color: #a25f7d;
-  /* border: 1px solid; */
   width: 14vw;
   min-width: 350px;
   margin: 25px;
+  font-size: 0.9em;
+  font-weight: 500;
   line-height: 1.5;
 }
 .Show_form h3 {
@@ -222,9 +223,6 @@ nav button {
 }
 .Show_form th p, .Show_form td p {
   width: 8vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .Show_form th a, .Show_form td a {
   color: rgb(10, 30, 208);
@@ -441,9 +439,6 @@ main .admin_block .Show_ .Show_form th, main .admin_block .Show_ .Show_form td {
 }
 main .admin_block .Show_ .Show_form th p, main .admin_block .Show_ .Show_form td p {
   width: 8vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 main .admin_block .Show_ .Show_form th a, main .admin_block .Show_ .Show_form td a {
   color: rgb(10, 30, 208);

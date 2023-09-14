@@ -7,11 +7,11 @@
             <a class="btn control-option adminBtn" href="{{ route('admin.create') }}">新增</a>
             <a class="btn control-option adminBtn" href="{{ route('admin.Status') }}">修改</a>
             <div class="textblock">
-                <p>售後為最高單位權限，可使用全功能</p>
-
-                <p>技術單位權限，無法使用收信設定</p>
-                <p>客服單位權限，無法使用收信和管理者設定</p>
-                <p>請留意，若更改單位為無，則無法登入後台</p>
+                <p>單位權限說明如下</p>
+                <p>售後 : 最高單位權限，可使用全部功能</p>
+                <p>技術 : 無法使用收信設定，其它皆可使用</p>
+                <p>客服：無法使用收信和使用者設定</p>
+                <p>無：則無法登入後台，煩請留意</p>
             </div>
 
             <table>

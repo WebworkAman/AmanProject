@@ -30,11 +30,12 @@ nav{
     overflow: auto;
     .textblock{
         color: #a25f7d;
-    /* border: 1px solid; */
-    width: 14vw;
-    min-width: 350px;
-    margin: 25px;
-    line-height: 1.5;
+        width: 14vw;
+        min-width: 350px;
+        margin: 25px;
+        font-size: .9em;
+        font-weight: 500;
+        line-height: 1.5;
     }
     h3{
         text-align: center;
@@ -88,9 +89,9 @@ nav{
         width: 10vw;
         p{
             width: 8vw;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // white-space: nowrap;
 
         }
         a{
@@ -341,9 +342,9 @@ main{
                     width: 10vw;
                     p{
                         width: 8vw;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
+                        // overflow: hidden;
+                        // text-overflow: ellipsis;
+                        // white-space: nowrap;
 
                     }
                     a{
