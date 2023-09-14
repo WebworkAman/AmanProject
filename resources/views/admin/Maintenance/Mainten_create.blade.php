@@ -4,7 +4,7 @@
     <div class="Show_">
         <div class="Show_form question-list">
             <div class="Maintenance_table">
-                <h1>新增維修履歷</h1>
+                <h3>新增維修履歷</h3>
 
                 <form action="{{ route('Maintenance.store') }}" method="POST">
                     @csrf
@@ -54,13 +54,13 @@
                     <!-- 維護及故障維修描述狀況 -->
                     <div class="form-group">
                         <label for="description">維護及故障維修描述狀況</label>
-                        <textarea name="description" class="form-control" required></textarea>
+                        <textarea name="description" class="form-control" rows="5" required></textarea>
                     </div>
 
                     <!-- 維修內容/更換零件 -->
                     <div class="form-group">
                         <label for="maintenance_content">維修內容/更換零件</label>
-                        <textarea name="maintenance_content" class="form-control" required></textarea>
+                        <textarea name="maintenance_content" class="form-control" rows="5" required></textarea>
                     </div>
 
                     <!-- 數量 -->
@@ -74,9 +74,13 @@
                         <label for="maintenance_personnel">維修人員</label>
                         <input type="text" name="maintenance_personnel" class="form-control" required>
                     </div>
+                    <div class="btn-block">
+                        <button type="submit" class="btn-primary">新增</button>
 
-                    <button type="submit" class="btn-primary">提交</button>
+                    </div>
+
                 </form>
+
             </div>
         </div>
     </div>

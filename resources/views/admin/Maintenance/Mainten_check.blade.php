@@ -4,7 +4,7 @@
     <div class="Show_">
         <div class="Show_form">
             <h3>設備維修履歷</h3>
-            <a class="btn" href="{{ route('Maintenance.List') }}">返回管理列表</a>
+            <a class="btn" href="{{ route('Maintenance.List') }}">返回列表</a>
 
 
 

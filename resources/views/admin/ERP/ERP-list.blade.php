@@ -4,7 +4,7 @@
     <div class="Show_">
         <div class="Show_form">
             <h3>ERP資料</h3>
-            <a class="btn" href="{{ route('questions.index') }}">返回管理者列表</a>
+            <a class="btn" href="{{ route('questions.index') }}">返回列表</a>
             <table>
                 <thead>
                     <tr>
