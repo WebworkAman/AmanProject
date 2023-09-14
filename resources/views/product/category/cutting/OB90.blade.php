@@ -3,13 +3,16 @@
 @section('content')
     <main>
 
-        <h1> 產 品 問 題 </h1>
+        @include('components.question-title')
+        <div class="productQuestionTitle">
+            <h2>圓刀裁剪機 OB-90</h2>
+        </div>
         <div class="QA_content">
             <!-- <div class="left-content">
-                    <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OB-90-600-3.png">
-                    <h2>圓刀裁剪機 OB-90</h2>
-                    <h3>手的延伸，超值</h3>
-                </div> -->
+                            <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OB-90-600-3.png">
+                            <h2>圓刀裁剪機 OB-90</h2>
+                            <h3>手的延伸，超值</h3>
+                        </div> -->
             <div class="right-content">
 
                 <div class="filter">

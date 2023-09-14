@@ -3,13 +3,16 @@
 @section('content')
     <main>
 
-        <h1> 產 品 問 題 </h1>
+        @include('components.faq-title')
+        <div class="productQuestionTitle">
+            <h2>智能全能拉布機 KPro</h2>
+        </div>
         <div class="QA_content">
-            <!-- <div class="left-content">
-                    <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/KPro-600.png">
-                    <h2>智能全能拉布機 KPro</h2>
-                    <h3>Pro，如其名</h3>
-                </div> -->
+            {{-- <div class="left-content">
+                <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/KPro-600.png">
+                <h2>智能全能拉布機 KPro</h2>
+                <h3>Pro，如其名</h3>
+            </div> --}}
             <div class="right-content">
 
                 <div class="filter">

@@ -4,13 +4,16 @@
     <main>
 
         @include('components.faq-title')
+        <div class="productQuestionTitle">
+            <h2>帶狀裁剪機 OB-700A/900A/1200A</h2>
+        </div>
         @include('components.faq-search')
         <div class="QA_content">
-            <!-- <div class="left-content">
+            {{-- <div class="left-content">
                 <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OB-700A-600-2.png">
                 <h2>帶狀裁剪機 OB-700A/900A/1200A</h2>
                 <h3>手的延伸，超值</h3>
-            </div> -->
+            </div> --}}
             <div class="right-content">
 
                 <div class="faq">

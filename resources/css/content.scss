@@ -137,16 +137,18 @@
 
 
 main {
-    margin-top: 50px;
+    margin-top: 30px;
     display: block;
     min-height: 600px;
+
 
     .productQuestionTitle{
         text-align: center;
 
         h2{
             margin-top: 15px;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            letter-spacing: 1px;
             color: rgb(118, 114, 109);
         }
     }
@@ -2010,9 +2012,10 @@ main {
             h2{
                 position: relative;
                 top: 50%;
-                left: 20%;
+                left: 40%;
                 color: gray;
                 font-style: italic;
+                font-size: 1.2em;
             }
 
         }

@@ -3,6 +3,10 @@
 @section('content')
     <main>
         @include('components.faq-title')
+        <div class="productQuestionTitle">
+            <h2>AI驗布機 EagleAi/Plus/Pro</h2>
+
+        </div>
         @include('components.faq-search')
 
         {{-- <form class="search" action="{{ route('faqs.search') }}" method="GET">
@@ -21,10 +25,10 @@
         </form> --}}
         <div class="QA_content">
             <!-- <div class="left-content">
-                    <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1646990118.png">
-                    <h2>人工智慧驗布機 OSHIMA EagleAi/Plus/Pro</h2>
-                    <h3>縮短AI訓練 與眾不同</h3>
-                </div> -->
+                                        <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/1646990118.png">
+
+                                        <h3>縮短AI訓練 與眾不同</h3>
+                                    </div> -->
             <div class="right-content">
 
                 <div class="faq">

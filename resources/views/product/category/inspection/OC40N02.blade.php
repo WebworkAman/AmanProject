@@ -4,6 +4,10 @@
     <main>
 
         @include('components.question-title')
+        <div class="productQuestionTitle">
+            <h2>AI驗布機 EagleAi/Plus/Pro</h2>
+
+        </div>
 
         <div class="QA_content">
             {{-- <div class="left-content">

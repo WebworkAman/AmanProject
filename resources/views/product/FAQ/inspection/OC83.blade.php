@@ -4,13 +4,16 @@
     <main>
 
         @include('components.faq-title')
+        <div class="productQuestionTitle">
+            <h2>自動對邊驗布機 OC-83</h2>
+        </div>
         @include('components.faq-search')
         <div class="QA_content">
             <!-- <div class="left-content">
-                <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OC-83-600-6.png">
-                <h2>自動對邊驗布機 OC-83</h2>
-                <h3>新一代的選擇</h3>
-            </div> -->
+                    <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OC-83-600-6.png">
+                    <h2>自動對邊驗布機 OC-83</h2>
+                    <h3>新一代的選擇</h3>
+                </div> -->
             <div class="right-content">
 
                 <div class="faq">

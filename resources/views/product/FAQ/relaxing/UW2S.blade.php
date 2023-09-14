@@ -4,13 +4,16 @@
     <main>
 
         @include('components.faq-title')
+        <div class="productQuestionTitle">
+            <h2>蒸氣鬆布機 UW-2S/2LS/2MS</h2>
+        </div>
         @include('components.faq-search')
         <div class="QA_content">
             <!-- <div class="left-content">
-                <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/UW-2S-600.png">
-                <h2>蒸氣鬆布機 UW-2S/2LS/2MS</h2>
-                <h3>想快，選它</h3>
-            </div> -->
+                    <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/UW-2S-600.png">
+                    <h2>蒸氣鬆布機 UW-2S/2LS/2MS</h2>
+                    <h3>想快，選它</h3>
+                </div> -->
             <div class="right-content">
 
                 <div class="faq">
