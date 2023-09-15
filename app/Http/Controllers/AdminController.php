@@ -220,42 +220,62 @@ class AdminController extends Controller
 
     public function faqStore(Request $request)
     {
-        // 验证表单输入和文件上传
         $validatedData = $request->validate([
             'question' => 'required|max:255',
             'answer' => 'required',
-            'photo' => 'nullable|image|max:2048', // 最大2MB (2048KB)
-            'video' => 'nullable|mimetypes:video/mp4,video/avi,video/quicktime|max:20480', // 最大20MB (20480KB)
-        ], [
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+            'video' => 'nullable|mimetypes:video/mp4,video/avi,video/quicktime|max:20480',
+        ],[
             'photo.max' => '附加照片超过2MB的限制',
             'video.max' => '附加影片超过20MB的限制',
         ]);
 
-        // 创建 FAQ 记录
-        $faq = new FAQ;
-        $faq->question = $request->input('question');
-        $faq->answer = $request->input('answer');
-        $faq->product_id = (int) $request->input('product_id');
+        $productIds = $request->input('product_id');
+        $hasError = false;
+
+        foreach($productIds as $productId){
+
+            $faq = new FAQ;
+            $faq -> product_id = $productId;
+            $faq -> question = $request->input('question');
+            $faq -> answer = $request-> input('answer');
+
+            if($request->hasFile('photo')){
+                $photoPath = $request->file('photo')->store('public/photos');
+                $faq->photo = $photoPath;
+            }
+
+            if ($request->hasFile('video')) {
+                $videoFile = $request->file('video');
+                if($video->getSize() > 20480){
+                    $hasError = true;
+                    $videoError = '附加影片超過限制大小';
+                }
+                $videoPath = $videoFile->store('public/videos');
+                $faq->video = $videoPath;
+            }
 
 
-        // 处理上传的图片
-        if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('public/photos');
-            $faq->photo = str_replace('public/', '', $photoPath); // 存储路径
+
+            $faq->save();
+
         }
 
-        // 处理上传的视频
-        if ($request->hasFile('video')) {
-            $videoPath = $request->file('video')->store('public/videos');
-            $faq->video = str_replace('public/', '', $videoPath); // 存储路径
+        if ($hasError) {
+            // 如果发生错误，将错误消息返回给视图
+            return redirect()->route('faqList', $productId)
+                ->with('error', $videoError);
         }
 
-        $faq->save();
+            return redirect()->route('faqList', $productId) // 修改這行
+            ->with('success', '常見問題建立成功.');
 
-        return redirect()->route('faqList', $faq->product_id)
-            ->with('success', '常見問題創建成功.');
+
+
+
+        // return redirect()->route('faqs.index', $faq->id)
+        //     ->with('success', '常見問題建立成功.');
     }
-
 
     public function faqEdit(FAQ $faq)
     {
