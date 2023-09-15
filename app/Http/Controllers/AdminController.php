@@ -386,7 +386,7 @@ class AdminController extends Controller
         $productIds = $request->input('products',[]);
 
         // 刪除舊的關聯
-        $member->permissions()->detach();
+        // $member->permissions()->detach();
         // $memberPermissions = new MemberPermissions;
 
 
