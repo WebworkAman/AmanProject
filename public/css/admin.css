@@ -132,7 +132,7 @@ nav .nav-right #hamburger-menu .menu-line {
 }
 nav .nav-right #hamburger-menu.show {
   opacity: 1; /* 透明度為 1 時顯示 */
-  top: 100;
+  top: 80;
 }
 
 @media (max-width: 1280px) {
@@ -874,7 +874,7 @@ main .admin_block .Show_form.setting-page form .btn {
 .Show_.reply .Show_form.member-permissions .subContent .clientBlock {
   display: flex;
   width: 20vw;
-  min-width: 350px;
+  min-width: 400px;
   line-height: 1.5;
 }
 .Show_.reply .Show_form.member-permissions .subContent .clientBlock p {

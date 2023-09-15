@@ -56,7 +56,7 @@
                             <tr>
                                 <td>
                                     <input class="checkbox" type="checkbox" name="products[]" value="{{ $product->id }}"
-                                        @if (in_array($product->id, array_column($memberPermissions, 'id'))) checked @endif>
+                                        id="product-{{ $product->id }}" @if (in_array($product->id, array_column($memberPermissions, 'id'))) checked @endif>
                                 </td>
                                 <td>
 
@@ -73,9 +73,28 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                        @endforeach
 
-                        </tr>
+
+                            </tr>
+
+                            <!-- 使用用户id和产品id组合生成本地存储键 -->
+                            @php
+                                $storageKey = "checkbox_{$member->id}_{$product->id}";
+                            @endphp
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const checkbox = document.querySelector(`input[name="products[]"][value="{{ $product->id }}"]`);
+
+                                    if (localStorage.getItem('{{ $storageKey }}') === 'true') {
+                                        checkbox.checked = true;
+                                    }
+
+                                    checkbox.addEventListener('change', function() {
+                                        localStorage.setItem('{{ $storageKey }}', checkbox.checked);
+                                    });
+                                });
+                            </script>
+                        @endforeach
 
                     </tbody>
                 </table>
@@ -121,6 +140,20 @@
 
 
     <script>
+        // 获取全选复选框和所有产品复选框
+        const selectAllCheckbox = document.getElementById('select-all');
+        const productCheckboxes = document.querySelectorAll('input[name="products[]"]');
+
+        // 添加全选复选框的事件监听器
+        selectAllCheckbox.addEventListener('change', function() {
+            const isChecked = selectAllCheckbox.checked;
+            // 设置所有产品复选框与全选复选框的状态一致
+            productCheckboxes.forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+        });
+    </script>
+    {{-- <script>
         $(document).ready(function() {
             // 監聽 "All" 選項的變更事件
             $('#select-all').change(function() {
@@ -131,8 +164,8 @@
 
             });
         })
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             // 选择所有复选框
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -152,8 +185,8 @@
                 });
             });
         });
-    </script>
-    <script>
+    </script> --}}
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             const selectAllCheckbox = document.getElementById('select-all');
             const checkboxes = document.querySelectorAll('.checkbox');
@@ -165,5 +198,5 @@
                 });
             });
         });
-    </script>
+    </script> --}}
 @endsection
