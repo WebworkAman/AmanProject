@@ -864,6 +864,7 @@ class MemberSessionController extends Controller
     public function companyMachineAddPost(Request $request){
 
         $member = MemberAuth::member(); // 使用 MemberAuth::member() 獲取已驗證會員訊息。
+        $memberName = $member->name;
         $companyId = $member -> company_ERP_id;
         $companyTaxId = $member->company_tax_id;
 
@@ -1003,7 +1004,7 @@ $validator = Validator::make($request->all(), $rules, $messages);
         $emailAddresses = explode(',', Setting::find(1)->email_address);
 
         $message = '親愛的歐西瑪客服人員您好：';
-        $message.= '本公司的客戶'.$request->installation_company_name.'已註冊一台'.$request->machine_model.'-'.$request->machine_serial.'於CRM系統上，請您立即開通授予客戶相關產品的提問權限，非常感謝您！';
+        $message.= '本公司的客戶'. $companyId . ':' . $memberName .'已註冊一台'.$request->machine_model.'-'.$request->machine_serial.'於CRM系統上，請您立即開通授予客戶相關產品的提問權限，非常感謝您！';
         $routeToRemember = route('members.adminSetPermissions', ['member' => $member->id]);
         $link = '<a href="' . $routeToRemember . '?remember_route=true" class="f-fallback button" target="_blank">按此前往</a>';
 
