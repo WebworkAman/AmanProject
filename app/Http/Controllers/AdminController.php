@@ -246,12 +246,7 @@ class AdminController extends Controller
             }
 
             if ($request->hasFile('video')) {
-                $videoFile = $request->file('video');
-                if($video->getSize() > 20480){
-                    $hasError = true;
-                    $videoError = '附加影片超過限制大小';
-                }
-                $videoPath = $videoFile->store('public/videos');
+                $videoPath = $request->file('video')->store('public/videos');
                 $faq->video = $videoPath;
             }
 
