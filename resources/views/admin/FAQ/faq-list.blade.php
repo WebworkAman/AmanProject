@@ -106,8 +106,8 @@
 
                     // 在彈窗中顯示影片
                     var videoPopup = $(this).next('.videoPopup');
-                    //  videoPopup.find('video source').attr('src', videoUrl);
-                    videoPopup.find('video source').attr('src', '/public' + videoUrl.trim('/'));
+                    videoPopup.find('video source').attr('src', videoUrl);
+                    // videoPopup.find('video source').attr('src', '/public' + videoUrl.trim('/'));
                     videoPopup.find('video')[0].load();
 
                     // 顯示彈窗

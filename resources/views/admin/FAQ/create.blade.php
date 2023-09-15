@@ -12,7 +12,7 @@
 
                 <div class="create-faq">
                     <form method="POST" action="{{ route('faqs.store') }}" enctype="multipart/form-data">
-                        @csrf
+                        {{ @csrf_field() }}
                         <div class="form-group select">
                             <label for="product_id">請選擇產品(複選)</label>
                             <select name="product_id[]" id="product_id" class="form-control" multiple required>
@@ -45,6 +45,11 @@
                             <input class="attachfile" type="file" name="video"
                                 accept="video/mp4, video/mov, video/avi">
                             <p class="text-danger" id="video-error" style="color: red;"></p>
+                            @if (session('error'))
+                                <div class="alert alert-danger">
+                                    {{ session('error') }}
+                                </div>
+                            @endif
                         </div>
 
                         <div class="form-group">
@@ -77,7 +82,7 @@
         photoInput.addEventListener('change', () => {
             if (photoInput.files[0].size > maxPhotoSize) {
                 photoInput.value = ''; // Clear the selected file
-                photoError.textContent = '-照片檔案大小超過2MB的限制';
+                photoError.textContent = '照片檔案大小超過2MB的限制';
             } else {
                 photoError.textContent = '';
             }
@@ -86,7 +91,7 @@
         videoInput.addEventListener('change', () => {
             if (videoInput.files[0].size > maxVideoSize) {
                 videoInput.value = ''; // Clear the selected file
-                videoError.textContent = '-影片檔案大小超過20MB的限制';
+                videoError.textContent = '影片檔案大小超過20MB的限制';
             } else {
                 videoError.textContent = '';
             }
