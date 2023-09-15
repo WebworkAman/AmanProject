@@ -8,16 +8,22 @@
             <div class="nav">
                 <h3>公 司 會 員 列 表 </h3>
 
-                @if ($member->identity_perm == 1 || $member->identity_perm == 2)
-                    <a class="btn control-option" href="{{ route('members.updateStatusView') }}">資料修改</a>
-                @else
-                @endif
+                <div class="sub_nav">
+                    <div class="sub_text">
+                        <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
+                        <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
+                    </div>
+                    <div class="sub_btn">
 
-                <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
-                </br>
-                </br>
-                <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
-                </br>
+                        @if ($member->identity_perm == 1 || $member->identity_perm == 2)
+                            <a class="btn control-option" href="{{ route('members.updateStatusView') }}">資料修改</a>
+                        @else
+                        @endif
+                    </div>
+
+
+
+                </div>
             </div>
 
             <table class="MemberList">

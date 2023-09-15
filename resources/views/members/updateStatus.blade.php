@@ -15,13 +15,26 @@
                         <div class="nav">
                             <h3> 修 改 會 員 資 料</h3>
 
-                            <a class="btn" href="{{ route('companyMemberList') }}">返回列表</a>
+                            <div class="sub_nav">
+                                <div class="sub_text">
+                                    <label
+                                        for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
 
-                            <label for=""><span>公司名稱：</span>{{ $crmMainCustInfo->company_name ?? '' }}</label>
-                            </br>
-                            </br>
-                            <label for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
-                            </br>
+
+                                    <label
+                                        for=""><span>統一編號：</span>{{ $crmMainCustInfo->company_tax_id ?? '' }}</label>
+
+
+                                </div>
+                                <div class="sub_btn">
+
+                                    <a class="btn" href="{{ route('companyMemberList') }}">返回列表</a>
+                                </div>
+
+
+
+                            </div>
+
 
                         </div>
 
@@ -62,13 +75,16 @@
                                                     <td>
                                                         <select name="identity_perm" onchange="checkPosition(this)">
                                                             <option value="1"
-                                                                {{ $member->identity_perm == 1 ? 'selected' : '' }}>採購
+                                                                {{ $member->identity_perm == 1 ? 'selected' : '' }}>
+                                                                採購
                                                             </option>
                                                             <option value="2"
-                                                                {{ $member->identity_perm == 2 ? 'selected' : '' }}>廠長
+                                                                {{ $member->identity_perm == 2 ? 'selected' : '' }}>
+                                                                廠長
                                                             </option>
                                                             <option value="3"
-                                                                {{ $member->identity_perm == 3 ? 'selected' : '' }}>一般會員
+                                                                {{ $member->identity_perm == 3 ? 'selected' : '' }}>
+                                                                一般會員
                                                             </option>
                                                         </select>
                                                     </td>
@@ -78,7 +94,8 @@
                                                                 {{ $member->stat_info == 'y' ? 'selected' : '' }}>在職
                                                             </option>
                                                             <option value="n"
-                                                                {{ $member->stat_info == 'n' ? 'selected' : '' }}>離職
+                                                                {{ $member->stat_info == 'n' ? 'selected' : '' }}>
+                                                                離職
                                                             </option>
                                                         </select>
                                                     </td>

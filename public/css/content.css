@@ -167,11 +167,20 @@ footer .social_block p {
 }
 
 .nav {
-  max-width: 1280px;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  width: 80vw;
+  width: 90%;
   margin: 0 auto;
+}
+.nav .sub_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav label {
+  color: rgba(73, 76, 78, 0.8705882353);
+  font-size: 1.2em;
+  margin-left: 10px;
 }
 
 .search {
@@ -454,14 +463,15 @@ main .Show_form h2 {
 }
 main .Show_form h3 {
   text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 50px;
+  font-size: 2rem;
+  margin-bottom: 35px;
 }
 main .Show_form h5 {
   text-align: center;
   margin: 30px auto 10px;
   letter-spacing: 1.2px;
   color: #555;
+  font-size: 1.2em;
 }
 main .Show_form .btn {
   float: right;
@@ -496,7 +506,7 @@ main .Show_form table {
   font-weight: 300;
   border-collapse: collapse;
   width: 90%;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 main .Show_form th, main .Show_form td {
   text-align: left;
@@ -526,9 +536,18 @@ main .Show_form th button, main .Show_form td button {
   cursor: pointer;
   font-weight: 300;
   letter-spacing: 0.5px;
+  font-size: 1em;
 }
 main .Show_form th button:hover, main .Show_form td button:hover {
   color: orange;
+}
+main .Show_form th select, main .Show_form td select {
+  font-size: 1em;
+  width: 100px;
+  text-align: center;
+  font-weight: 300;
+  border-radius: 10px;
+  padding: 1px;
 }
 main .Show_form th {
   background-color: #f2f2f2;

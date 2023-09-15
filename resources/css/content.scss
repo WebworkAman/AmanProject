@@ -6,10 +6,23 @@
     display: none;
 }
 .nav{
-    max-width: 1280px;
     min-width: fit-content;
-    width: 80vw;
+    width: 90%;
     margin: 0 auto;
+
+    .sub_nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    label{
+        color: rgba(73, 76, 78, 0.8705882353);
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+
+
 }
 .search{
 
@@ -338,14 +351,15 @@ main {
         }
         h3{
             text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 50px;
+            font-size: 2rem;
+            margin-bottom: 35px;
         }
         h5{
             text-align: center;
             margin: 30px auto 10px;
             letter-spacing: 1.2px;
             color: #555;
+            font-size: 1.2em;
         }
         .btn{
             float: right;
@@ -386,7 +400,7 @@ main {
             border-collapse: collapse;
             width: 90%;
             // max-width: 1280px;
-            margin: 20px auto;
+            margin: 0 auto;
         }
         th, td {
 
@@ -417,9 +431,18 @@ main {
                 cursor: pointer;
                 font-weight: 300;
                 letter-spacing: .5px;
+                font-size: 1em;
             }
             button:hover{
                 color: orange;
+            }
+            select{
+                font-size: 1em;
+                width: 100px;
+                text-align: center;
+                font-weight: 300;
+                border-radius: 10px;
+                padding: 1px;
             }
 
 
