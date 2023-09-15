@@ -873,7 +873,7 @@ main .admin_block .Show_form.setting-page form .btn {
 }
 .Show_.reply .Show_form.member-permissions .subContent .clientBlock {
   display: flex;
-  width: 20vw;
+  width: 45vw;
   min-width: 400px;
   line-height: 1.5;
 }
