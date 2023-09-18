@@ -10,10 +10,10 @@
 
             <div id="companyDataEdit" class="companyDataEdit Machines-list">
 
-                <a class="btn control-option" href="{{ route('companyMachineData', $crmMachine) }}">返回</a>
+                <a class="btn control-option" href="{{ route('companyMachineData', $crmMachine) }}" style="margin: 0;">返回</a>
 
                 <div class="CompanyData-nav">
-                    <h2>機器基本資料</h2>
+                    <h2>更新機器基本資料</h2>
                 </div>
 
                 <div id="machineData" style="display: block;margin-top:40px;">
@@ -85,11 +85,12 @@
 
 
 
-
-                                <li><span>統一編號 ：</span>
-                                    <input type="text" name="installation_vat_number" id="installation_vat_number"
-                                        value="{{ $crmMachine->installation_vat_number }}">
-                                </li>
+                                <ol>
+                                    <li><span>統一編號 ：</span>
+                                        <input type="text" name="installation_vat_number" id="installation_vat_number"
+                                            value="{{ $crmMachine->installation_vat_number }}">
+                                    </li>
+                                </ol>
 
 
                                 @php
@@ -239,8 +240,10 @@
                                     @endforeach
                                 @endif --}}
 
+                                <li><span id="installation_company_phone">公司電話 ：</span></li>
+
+
                                 @if (is_array($companyPhones) && count($companyPhones) > 0)
-                                    <li><span id="installation_company_phone">公司電話 ：</span></li>
                                     <ol>
                                         @foreach ($companyPhones as $index => $phone)
                                             <li><span>國碼</span>
@@ -297,13 +300,13 @@
 
                         @if ($crmMachine->purchase_manufacturer == 4)
                             <div class="formgroup">
-                                <span for="purchase_manufacturer">購入來源 </span>
+                                <label for="purchase_manufacturer">購入來源 </label>
                                 <input type="text" name="installation_company_fax[fax_number]"
                                     id="installation_fax_number" value="{{ $crmMachine->other_purchase_source }}">
                             </div>
 
-                            <div class="formgroup subBlock">
-                                <span>公司名稱</span>
+                            <div class="formgroup">
+                                <label>公司名稱</label>
                                 <input type="text" name="other_purchase_company_name" id="other_purchase_company_name"
                                     value="{{ $crmMachine->other_purchase_company_name }}">
                             </div>
@@ -313,41 +316,51 @@
                                 $otherPurchaseCompanyAddress = json_decode($crmMachine->other_purchase_company_address ?? '');
                             @endphp
 
-                            <div class="formgroup subBlock">
-                                <span id="other_purchase_company_address">公司地址</span>
-                            </div>
+
                             <div class="formgroup phone_type">
+                                <label id="other_purchase_company_address">公司地址</label>
                                 @if ($otherPurchaseCompanyAddress)
                                     <ul>
                                         <li>
                                             <span>國家</span>
-                                            <p>{{ $otherPurchaseCompanyAddress->country }}</p>
+                                            <input type="text" name="other_purchase_company_address[country]"
+                                                id="other_purchase_country"
+                                                value="{{ $otherPurchaseCompanyAddress->country }}">
                                         </li>
                                         <li>
                                             <span>郵遞區號</span>
-                                            <p>{{ $otherPurchaseCompanyAddress->postal_code }}</p>
+                                            <input type="text" name="other_purchase_company_address[postal_code]"
+                                                id="other_purchase_postal_code"
+                                                value="{{ $otherPurchaseCompanyAddress->postal_code }}">
                                         </li>
                                         <li>
                                             <span>區域</span>
-                                            <p>{{ $otherPurchaseCompanyAddress->region }}</p>
+                                            <input type="text" name="other_purchase_company_address[region]"
+                                                id="other_purchase_region"
+                                                value="{{ $otherPurchaseCompanyAddress->region }}">
                                         </li>
-                                    </ul>
-                                    <ul>
+
                                         <li>
                                             <span>城市</span>
-                                            <p>{{ $otherPurchaseCompanyAddress->city }}</p>
+                                            <input type="text" name="other_purchase_company_address[city]"
+                                                id="other_purchase_city"
+                                                value="{{ $otherPurchaseCompanyAddress->city }}">
                                         </li>
                                         <li>
                                             <span>街/路名</span>
-                                            <p>{{ $otherPurchaseCompanyAddress->street }}</p>
+
+                                            <input type="text" name="other_purchase_company_address[street]"
+                                                id="other_purchase_street"
+                                                value="{{ $otherPurchaseCompanyAddress->street }}">
                                         </li>
                                     </ul>
                                 @endif
                             </div>
 
                             <div class="formgroup">
-                                <span>統一編號 </span>
-                                <p>{{ $crmMachine->other_purchase_tax_id }}</p>
+                                <label>統一編號 </label>
+                                <input type="text" name="other_purchase_tax_id" id="other_purchase_tax_id"
+                                    value="{{ $crmMachine->other_purchase_tax_id }}">
                             </div>
 
                             @php
@@ -355,39 +368,48 @@
                                 $otherPurchaseCompanyPhone = json_decode($crmMachine->other_purchase_company_phone ?? '');
                                 
                             @endphp
-                            <div class="formgroup">
-                                <span id="other_purchase_company_phone">公司電話</span>
-                            </div>
+
                             <div class="formgroup phone_type">
+                                <label id="other_purchase_company_phone">公司電話</label>
                                 @if ($otherPurchaseCompanyPhone)
                                     <ul>
                                         <li>
                                             <span>國碼</span>
-                                            <p>{{ $otherPurchaseCompanyPhone->country_code }}</p>
+                                            <input type="text" name="other_purchase_company_phone[country_code]"
+                                                id="other_purchase_phone_country_code"
+                                                value="{{ $otherPurchaseCompanyPhone->country_code }}">
                                         </li>
                                         <li>
                                             <span>區碼</span>
-                                            <p>{{ $otherPurchaseCompanyPhone->area_code }}</p>
+
+                                            <input type="text" name="other_purchase_company_phone[area_code]"
+                                                id="other_purchase_phone_area_code"
+                                                value="{{ $otherPurchaseCompanyPhone->area_code }}">
                                         </li>
                                         <li>
                                             <span>電話號碼</span>
-                                            <p>{{ $otherPurchaseCompanyPhone->phone_number }}</p>
+                                            <input type="text" name="other_purchase_company_phone[phone_number]"
+                                                id="other_purchase_phone_number"
+                                                value="{{ $otherPurchaseCompanyPhone->phone_number }}">
                                         </li>
                                     </ul>
                                 @endif
                             </div>
-                            <div class="formgroup">
-                                <span>聯絡人</span>
-                            </div>
+
+
+
                             <div class="formgroup phone_type">
+                                <label>聯絡人</label>
                                 <ul>
                                     <li>
                                         <span>姓名</span>
-                                        <p>{{ $crmMachine->other_purchase_name }}</p>
+                                        <input type="text" name="other_purchase_name" id="other_purchase_name"
+                                            value="{{ $crmMachine->other_purchase_name }}">
                                     </li>
                                     <li>
                                         <span>手機</span>
-                                        <p>{{ $crmMachine->other_purchase_phone }}</p>
+                                        <input type="text" name="other_purchase_phone" id="other_purchase_phone"
+                                            value="{{ $crmMachine->other_purchase_phone }}">
                                     </li>
                                 </ul>
                             </div>
@@ -395,7 +417,8 @@
                             <!-- 其他說明 -->
                             <div class="formgroup">
                                 <label for="other_purchase_description">其他說明</label>
-                                <p>{{ $crmMachine->other_purchase_description }}</p>
+
+                                <textarea name="other_purchase_description" id="other_purchase_description" cols="30" rows="10">{{ $crmMachine->other_purchase_description }}</textarea>
                             </div>
                         @else
                             <div class="formgroup">
@@ -463,8 +486,8 @@
                                         <li><span>區域</span><input type="text"
                                                 name="other_purchase_company_address[region]" id="other_purchase_region">
                                         </li>
-                                    </ul>
-                                    <ul>
+
+
                                         <li><span>城市</span><input type="text"
                                                 name="other_purchase_company_address[city]" id="other_purchase_city"></li>
                                         <li><span>街/路名</span><input type="text"

@@ -242,7 +242,7 @@
                             <p>{{ $crmMachine->other_purchase_source }}</p>
                         </div>
 
-                        <div class="formgroup subBlock">
+                        <div class="formgroup">
                             <span>公司名稱</span>
                             <p>{{ $crmMachine->other_purchase_company_name }}</p>
                         </div>
@@ -252,10 +252,10 @@
                             $otherPurchaseCompanyAddress = json_decode($crmMachine->other_purchase_company_address ?? '');
                         @endphp
 
-                        <div class="formgroup subBlock">
+                        <div class="formgroup">
                             <span id="other_purchase_company_address">公司地址</span>
                         </div>
-                        <div class="formgroup phone_type subBlock">
+                        <div class="formgroup phone_type">
                             @if ($otherPurchaseCompanyAddress)
                                 <ul>
                                     <li>
@@ -284,7 +284,7 @@
                             @endif
                         </div>
 
-                        <div class="formgroup subBlock">
+                        <div class="formgroup">
                             <span>統一編號 </span>
                             <p>{{ $crmMachine->other_purchase_tax_id }}</p>
                         </div>
@@ -294,10 +294,10 @@
                             $otherPurchaseCompanyPhone = json_decode($crmMachine->other_purchase_company_phone ?? '');
                             
                         @endphp
-                        <div class="formgroup subBlock">
+                        <div class="formgroup">
                             <span id="other_purchase_company_phone">公司電話</span>
                         </div>
-                        <div class="formgroup phone_type subBlock">
+                        <div class="formgroup phone_type">
                             @if ($otherPurchaseCompanyPhone)
                                 <ul>
                                     <li>
@@ -315,10 +315,10 @@
                                 </ul>
                             @endif
                         </div>
-                        <div class="formgroup subBlock">
+                        <div class="formgroup">
                             <span>聯絡人</span>
                         </div>
-                        <div class="formgroup phone_type subBlock">
+                        <div class="formgroup phone_type">
                             <ul>
                                 <li>
                                     <span>姓名</span>
@@ -364,7 +364,7 @@
                 </div>
 
             </div>
-            <button id="openFormBtn">新增聯絡人</button>
+            <button id="openFormBtn" style="margin:0;">新增聯絡人</button>
             <h5>機器聯絡人列表</h5>
             <table>
                 <thead>

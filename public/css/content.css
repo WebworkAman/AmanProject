@@ -715,6 +715,7 @@ main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   text-align: center;
   width: 13vw;
   height: 30px;
+  min-width: 250px;
   font-size: 1.2rem;
   color: black;
   background-color: white;
@@ -881,7 +882,6 @@ main .companyDataEdit.Machines-list .formgroup input {
   width: 13vw;
   height: 30px;
   font-size: 1.2rem;
-  padding-left: 15px;
   background-color: white;
   border: 1px solid black;
 }

@@ -14,7 +14,7 @@
                     @csrf
 
                     <div class="CompanyData-nav">
-                        <h2>機器基本資料建檔 (採購註冊)</h2>
+                        <h2>機器基本資料建檔</h2>
                     </div>
 
                     <div id="machineData" style="display: block; margin-top:40px;">
