@@ -35,7 +35,8 @@
                         <label for="company_address">公司地址 ：</label>
                         <ul>
                             <li><span>國家 :</span>
-                                {{ json_decode($crmMainCustInfo->company_address)->country }}
+                                <p>{{ json_decode($crmMainCustInfo->company_address)->country }}</p>
+
                             </li>
                             <li><span>郵遞區號 : </span>
                                 {{ json_decode($crmMainCustInfo->company_address)->postal_code ?? '' }}
@@ -72,23 +73,23 @@
                             @foreach ($companyPhones as $phone)
                                 @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']))
                                     <ul>
-                                        <li><span>國碼</span>{{ $phone['country_code_1'] ?? '' }}</li>
-                                        <li><span>區碼</span>{{ $phone['area_code_1'] ?? '' }}</li>
-                                        <li><span>電話號碼</span>{{ $phone['phone_number_1'] ?? '' }}</li>
+                                        <li><span>國碼：</span>{{ $phone['country_code_1'] ?? '' }}</li>
+                                        <li><span>區碼：</span>{{ $phone['area_code_1'] ?? '' }}</li>
+                                        <li><span>電話號碼：</span>{{ $phone['phone_number_1'] ?? '' }}</li>
                                     </ul>
                                 @endif
                                 @if (!empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']))
                                     <ul>
-                                        <li><span>國碼</span>{{ $phone['country_code_2'] ?? '' }}</li>
-                                        <li><span>區碼</span>{{ $phone['area_code_2'] ?? '' }}</li>
-                                        <li><span>電話號碼</span>{{ $phone['phone_number_2'] ?? '' }}</li>
+                                        <li><span>國碼：</span>{{ $phone['country_code_2'] ?? '' }}</li>
+                                        <li><span>區碼：</span>{{ $phone['area_code_2'] ?? '' }}</li>
+                                        <li><span>電話號碼：</span>{{ $phone['phone_number_2'] ?? '' }}</li>
                                     </ul>
                                 @endif
                                 @if (!empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
                                     <ul>
-                                        <li><span>國碼</span>{{ $phone['country_code_3'] ?? '' }}</li>
-                                        <li><span>區碼</span>{{ $phone['area_code_3'] ?? '' }}</li>
-                                        <li><span>電話號碼</span>{{ $phone['phone_number_3'] ?? '' }}</li>
+                                        <li><span>國碼：</span>{{ $phone['country_code_3'] ?? '' }}</li>
+                                        <li><span>區碼：</span>{{ $phone['area_code_3'] ?? '' }}</li>
+                                        <li><span>電話號碼：</span>{{ $phone['phone_number_3'] ?? '' }}</li>
                                     </ul>
                                 @endif
                             @endforeach
@@ -107,9 +108,9 @@
                     <label for="company_fax">公司傳真 ：</label>
                     @if ($companyFax)
                         <ul>
-                            <li><span>國碼</span>{{ $companyFax->country_code }}</li>
-                            <li><span>區碼</span>{{ $companyFax->area_code }}</li>
-                            <li><span>電話號碼</span>{{ $companyFax->fax_number }}</li>
+                            <li><span>國碼：</span>{{ $companyFax->country_code }}</li>
+                            <li><span>區碼：</span>{{ $companyFax->area_code }}</li>
+                            <li><span>電話號碼：</span>{{ $companyFax->fax_number }}</li>
                         </ul>
                     @else
                         <p>無公司傳真資料</p>

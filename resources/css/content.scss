@@ -594,11 +594,11 @@ main {
         h2{
             font-size: 2rem;
             margin-top: 30px;
-            margin-bottom: 30px;
+            // margin-bottom: 30px;
 
         }
         .formBlock{
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
      .formgroup{
@@ -629,12 +629,12 @@ main {
             span{
                 display: block;
                 width: fit-content;
-                margin-right: 20px;
+                margin-right: 7px;
             }
 
             input {
                 border:0;
-               text-align: center;
+               text-align: left;
                 width: 13vw;
                 height: 30px;
                 min-width: 250px;
@@ -645,6 +645,7 @@ main {
                 border: 1px solid silver;
                 border-radius: 10px;
                 color: #202953;
+                padding-left: 15px;
 
 
 
@@ -700,7 +701,7 @@ main {
                     }
                     p{
                         line-height: 1;
-
+                        text-align: left;
                     }
                 }
             }
@@ -726,7 +727,7 @@ main {
         .formgroup.phone_type{
             display: block;
             label{
-               margin-bottom: 10px;
+            //    margin-bottom: 10px;
             }
             ul{
               display: flex;
@@ -736,7 +737,7 @@ main {
                 line-height: 1;
                   span{
 
-                      text-align: center;
+                      text-align: right;
                   }
                   input{
                       width: 8vw;
@@ -766,8 +767,10 @@ main {
 
     .companyDataEdit.Machines-list{
 
-        #installation_street{
+        #installation_street,#other_purchase_street{
             width: 26vw;
+            max-width: none;
+            min-width: 400px;
         }
         .formgroup.selectType{
             display: flex;
@@ -776,6 +779,7 @@ main {
             select{
                 width: 10vw;
                 border-radius: 10px;
+                min-width: 150px;
 
             }
             input{
@@ -813,7 +817,7 @@ main {
 
 
         .formgroup{
-            margin: 20px auto;
+            margin: 10px auto;
             display: flex;
             align-items: center;
             font-size: 1.2rem;
@@ -834,7 +838,7 @@ main {
             span{
                 display: block;
                 width: fit-content;
-                margin-right: 20px;
+                margin-right: 7px;
             }
 
             input {
@@ -865,21 +869,21 @@ main {
                     display: flex;
                     span{
                         display: block;
-                        width: 100px;
+                        width: fit-content;
                     }
                     input{
                         margin-left: 10px;
                     }
                     p{
-                        line-height: 2.2;
-                        margin-left: 10px;
+                        line-height: 1.5;
+                        // margin-left: 10px;
                     }
                 }
             }
 
             textarea{
 
-                width: 20vw;
+                width: 40vw;
                 margin-left: 50px;
                 border-radius: 10px;
                 padding: 10px;
@@ -894,9 +898,7 @@ main {
         .formgroup.phone_type{
               display: flex;
 
-              label{
-                 margin-bottom: 10px;
-              }
+
               ul{
                 display: flex;
                 flex-wrap: wrap;
@@ -905,7 +907,7 @@ main {
                 li{
                     width: fit-content;
                     span{
-                        line-height: 2.2;
+                        line-height: 1.5;
                         text-align: center;
                     }
                     input{
@@ -929,7 +931,7 @@ main {
                     li{
                         span{
                             width: fit-content;
-                            line-height: 2.2;
+                            line-height: 1.5;
                             text-align: center;
                             color: #333;
                         }
@@ -943,7 +945,7 @@ main {
 
                     span{
                         width: fit-content;
-                        line-height: 2.2;
+                        line-height: 1.5;
                         color: #333;
                     }
                     ol{
@@ -980,7 +982,7 @@ main {
 
     border: none;
     #companyDataForm{
-        margin-top: 100px;
+        margin-top: 50px;
         .formgroup{
             border: 1px solid silver;
             padding: 15px;
@@ -992,13 +994,22 @@ main {
                 color: #8d4726;
             }
             span{
-                color:#494c4ede ;
+                color:#494c4ede;
+                text-align: right;
+                width: fit-content;
 
             }
 
 
             ul{
                 display: flex;
+                li{
+                    p{
+                        text-align: left;
+                    }
+
+
+                }
             }
 
         }
@@ -1276,17 +1287,15 @@ main {
         }
         .formgroup.phone_type{
               display: block;
-              label{
-                 margin-bottom: 10px;
-              }
+
               ul{
                 display: flex;
 
 
                 li{
                     span{
-                        line-height: 2.2;
-                        text-align: center;
+                        line-height: 1.2;
+                        text-align: right;
                     }
                     input{
                         width: 7vw;

@@ -676,10 +676,9 @@ main .companyData, main .companyDataEdit {
 main .companyData h2, main .companyDataEdit h2 {
   font-size: 2rem;
   margin-top: 30px;
-  margin-bottom: 30px;
 }
 main .companyData .formBlock, main .companyDataEdit .formBlock {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 main .companyData .formgroup, main .companyDataEdit .formgroup {
   margin: 10px auto;
@@ -708,11 +707,11 @@ main .companyData .formgroup span, main .companyDataEdit .formgroup span {
   display: block;
   width: -moz-fit-content;
   width: fit-content;
-  margin-right: 20px;
+  margin-right: 7px;
 }
 main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   border: 0;
-  text-align: center;
+  text-align: left;
   width: 13vw;
   height: 30px;
   min-width: 250px;
@@ -722,6 +721,7 @@ main .companyData .formgroup input, main .companyDataEdit .formgroup input {
   border: 1px solid silver;
   border-radius: 10px;
   color: #202953;
+  padding-left: 15px;
 }
 main .companyData .formgroup #company_name, main .companyDataEdit .formgroup #company_name {
   width: 30vw;
@@ -771,6 +771,7 @@ main .companyData .formgroup ul li input, main .companyDataEdit .formgroup ul li
 }
 main .companyData .formgroup ul li p, main .companyDataEdit .formgroup ul li p {
   line-height: 1;
+  text-align: left;
 }
 main .companyData .formgroup textarea, main .companyDataEdit .formgroup textarea {
   width: 20vw;
@@ -786,9 +787,6 @@ main .companyData .formgroup:hover, main .companyDataEdit .formgroup:hover {
 main .companyData .formgroup.phone_type, main .companyDataEdit .formgroup.phone_type {
   display: block;
 }
-main .companyData .formgroup.phone_type label, main .companyDataEdit .formgroup.phone_type label {
-  margin-bottom: 10px;
-}
 main .companyData .formgroup.phone_type ul, main .companyDataEdit .formgroup.phone_type ul {
   display: flex;
 }
@@ -796,7 +794,7 @@ main .companyData .formgroup.phone_type ul li, main .companyDataEdit .formgroup.
   line-height: 1;
 }
 main .companyData .formgroup.phone_type ul li span, main .companyDataEdit .formgroup.phone_type ul li span {
-  text-align: center;
+  text-align: right;
 }
 main .companyData .formgroup.phone_type ul li input, main .companyDataEdit .formgroup.phone_type ul li input {
   width: 8vw;
@@ -814,8 +812,10 @@ main .companyData .formgroup.phone_type ul li #phone_number_1, main .companyData
 main .companyData .formgroup.phone_type ul #company_purchase_person_name, main .companyDataEdit .formgroup.phone_type ul #company_purchase_person_name {
   width: 22vw;
 }
-main .companyDataEdit.Machines-list #installation_street {
+main .companyDataEdit.Machines-list #installation_street, main .companyDataEdit.Machines-list #other_purchase_street {
   width: 26vw;
+  max-width: none;
+  min-width: 400px;
 }
 main .companyDataEdit.Machines-list .formgroup.selectType {
   display: flex;
@@ -825,6 +825,7 @@ main .companyDataEdit.Machines-list .formgroup.selectType {
 main .companyDataEdit.Machines-list .formgroup.selectType select {
   width: 10vw;
   border-radius: 10px;
+  min-width: 150px;
 }
 main .companyDataEdit.Machines-list .formgroup.selectType input {
   margin-left: 10px;
@@ -855,7 +856,7 @@ main .companyDataEdit.Machines-list .company-button {
   justify-content: center;
 }
 main .companyDataEdit.Machines-list .formgroup {
-  margin: 20px auto;
+  margin: 10px auto;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -875,7 +876,7 @@ main .companyDataEdit.Machines-list .formgroup span {
   display: block;
   width: -moz-fit-content;
   width: fit-content;
-  margin-right: 20px;
+  margin-right: 7px;
 }
 main .companyDataEdit.Machines-list .formgroup input {
   border: 0;
@@ -899,17 +900,17 @@ main .companyDataEdit.Machines-list .formgroup ul li {
 }
 main .companyDataEdit.Machines-list .formgroup ul li span {
   display: block;
-  width: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main .companyDataEdit.Machines-list .formgroup ul li input {
   margin-left: 10px;
 }
 main .companyDataEdit.Machines-list .formgroup ul li p {
-  line-height: 2.2;
-  margin-left: 10px;
+  line-height: 1.5;
 }
 main .companyDataEdit.Machines-list .formgroup textarea {
-  width: 20vw;
+  width: 40vw;
   margin-left: 50px;
   border-radius: 10px;
   padding: 10px;
@@ -918,9 +919,6 @@ main .companyDataEdit.Machines-list .formgroup textarea {
 }
 main .companyDataEdit.Machines-list .formgroup.phone_type {
   display: flex;
-}
-main .companyDataEdit.Machines-list .formgroup.phone_type label {
-  margin-bottom: 10px;
 }
 main .companyDataEdit.Machines-list .formgroup.phone_type ul {
   display: flex;
@@ -931,7 +929,7 @@ main .companyDataEdit.Machines-list .formgroup.phone_type ul li {
   width: fit-content;
 }
 main .companyDataEdit.Machines-list .formgroup.phone_type ul li span {
-  line-height: 2.2;
+  line-height: 1.5;
   text-align: center;
 }
 main .companyDataEdit.Machines-list .formgroup.phone_type ul li input {
@@ -950,7 +948,7 @@ main .companyDataEdit.Machines-list .formgroup.installation_type ul ol {
 main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li span {
   width: -moz-fit-content;
   width: fit-content;
-  line-height: 2.2;
+  line-height: 1.5;
   text-align: center;
   color: #333;
 }
@@ -961,7 +959,7 @@ main .companyDataEdit.Machines-list .formgroup.installation_type ul ol li input 
 main .companyDataEdit.Machines-list .formgroup.installation_type ul li span {
   width: -moz-fit-content;
   width: fit-content;
-  line-height: 2.2;
+  line-height: 1.5;
   color: #333;
 }
 main .companyDataEdit.Machines-list .formgroup.installation_type ul li ol li input {
@@ -983,7 +981,7 @@ main #companyDataView {
   border: none;
 }
 main #companyDataView #companyDataForm {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 main #companyDataView #companyDataForm .formgroup {
   border: 1px solid silver;
@@ -996,9 +994,15 @@ main #companyDataView #companyDataForm .formgroup label {
 }
 main #companyDataView #companyDataForm .formgroup span {
   color: rgba(73, 76, 78, 0.8705882353);
+  text-align: right;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 main #companyDataView #companyDataForm .formgroup ul {
   display: flex;
+}
+main #companyDataView #companyDataForm .formgroup ul li p {
+  text-align: left;
 }
 main #companyDataView #companyDataForm .formgroup.phone_type {
   display: flex;
@@ -1213,15 +1217,12 @@ main .memberBasicDate .formgroup textarea {
 main .memberBasicDate .formgroup.phone_type {
   display: block;
 }
-main .memberBasicDate .formgroup.phone_type label {
-  margin-bottom: 10px;
-}
 main .memberBasicDate .formgroup.phone_type ul {
   display: flex;
 }
 main .memberBasicDate .formgroup.phone_type ul li span {
-  line-height: 2.2;
-  text-align: center;
+  line-height: 1.2;
+  text-align: right;
 }
 main .memberBasicDate .formgroup.phone_type ul li input {
   width: 7vw;

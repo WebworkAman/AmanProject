@@ -59,21 +59,21 @@
 
                             <ol>
                                 <li><span id="installation_company_address">公司地址 ：</span></li>
-                                <li><span>國家</span>
+                                <li><span>國家：</span>
                                     <p>{{ $crmMachine->installation_company_country }}</p>
                                 </li>
-                                <li><span>郵遞區號</span>
+                                <li><span>郵遞區號：</span>
                                     <p>{{ $crmMachine->installation_company_postal_code }}</p>
                                 </li>
-                                <li><span>區域</span>
+                                <li><span>區域：</span>
                                     <p>{{ $crmMachine->installation_company_region }}</p>
                                 </li>
                             </ol>
                             <ol>
-                                <li><span>城市</span>
+                                <li><span>城市：</span>
                                     <p>{{ $crmMachine->installation_company_city }}</p>
                                 </li>
-                                <li><span>街/路名</span>
+                                <li><span>街/路名：</span>
                                     <p>{{ $crmMachine->installation_company_street }}</p>
                                 </li>
                             </ol>
@@ -98,13 +98,13 @@
                                 <ol>
                                     @foreach ($companyPhones as $phone)
                                         @if (!empty($phone['country_code_1']) || !empty($phone['area_code_1']) || !empty($phone['phone_number_1']))
-                                            <li><span>國碼</span>
+                                            <li><span>國碼：</span>
                                                 <p>{{ $phone['country_code_1'] ?? '' }}</p>
                                             </li>
-                                            <li><span>區碼</span>
+                                            <li><span>區碼：</span>
                                                 <p>{{ $phone['area_code_1'] ?? '' }}</p>
                                             </li>
-                                            <li><span>電話號碼</span>
+                                            <li><span>電話號碼：</span>
                                                 <p>{{ $phone['phone_number_1'] ?? '' }}</p>
                                             </li>
                                         @endif
@@ -112,26 +112,26 @@
                                 </ol>
                                 <ol>
                                     @if (!empty($phone['country_code_2']) || !empty($phone['area_code_2']) || !empty($phone['phone_number_2']))
-                                        <li><span>國碼</span>
+                                        <li><span>國碼：</span>
                                             <p>{{ $phone['country_code_2'] ?? '' }}</p>
                                         </li>
-                                        <li><span>區碼</span>
+                                        <li><span>區碼：</span>
                                             <p>{{ $phone['area_code_2'] ?? '' }}
                                         </li>
-                                        <li><span>電話號碼</span>
+                                        <li><span>電話號碼：</span>
                                             <p>{{ $phone['phone_number_2'] ?? '' }}</p>
                                         </li>
                                     @endif
                                 </ol>
                                 <ol>
                                     @if (!empty($phone['country_code_3']) || !empty($phone['area_code_3']) || !empty($phone['phone_number_3']))
-                                        <li><span>國碼</span>
+                                        <li><span>國碼：</span>
                                             <p>{{ $phone['country_code_3'] ?? '' }}</p>
                                         </li>
-                                        <li><span>區碼</span>
+                                        <li><span>區碼：</span>
                                             <p>{{ $phone['area_code_3'] ?? '' }}</p>
                                         </li>
-                                        <li><span>電話號碼</span>
+                                        <li><span>電話號碼：</span>
                                             <p>{{ $phone['phone_number_3'] ?? '' }}</p>
                                         </li>
                                     @endif
@@ -147,13 +147,13 @@
                             <li><span id="installation_company_fax">公司傳真 ：</span></li>
                             @if ($companyFax)
                                 <ol>
-                                    <li><span>國碼</span>
+                                    <li><span>國碼：</span>
                                         <p>{{ $companyFax->country_code }}</p>
                                     </li>
-                                    <li><span>區碼</span>
+                                    <li><span>區碼：</span>
                                         <p>{{ $companyFax->area_code }}</p>
                                     </li>
-                                    <li><span>電話號碼</span>
+                                    <li><span>電話號碼：</span>
                                         <p>{{ $companyFax->fax_number }}</p>
                                     </li>
                                 </ol>
@@ -263,24 +263,24 @@
                             @if ($otherPurchaseCompanyAddress)
                                 <ul>
                                     <li>
-                                        <span>國家</span>
+                                        <span>國家：</span>
                                         <p>{{ $otherPurchaseCompanyAddress->country }}</p>
                                     </li>
                                     <li>
-                                        <span>郵遞區號</span>
+                                        <span>郵遞區號：</span>
                                         <p>{{ $otherPurchaseCompanyAddress->postal_code }}</p>
                                     </li>
                                     <li>
-                                        <span>區域</span>
+                                        <span>區域：</span>
                                         <p>{{ $otherPurchaseCompanyAddress->region }}</p>
                                     </li>
 
                                     <li>
-                                        <span>城市</span>
+                                        <span>城市：</span>
                                         <p>{{ $otherPurchaseCompanyAddress->city }}</p>
                                     </li>
                                     <li>
-                                        <span>街/路名</span>
+                                        <span>街/路名：</span>
                                         <p>{{ $otherPurchaseCompanyAddress->street }}</p>
                                     </li>
                                 </ul>
@@ -304,15 +304,15 @@
                             @if ($otherPurchaseCompanyPhone)
                                 <ul>
                                     <li>
-                                        <span>國碼</span>
+                                        <span>國碼：</span>
                                         <p>{{ $otherPurchaseCompanyPhone->country_code }}</p>
                                     </li>
                                     <li>
-                                        <span>區碼</span>
+                                        <span>區碼：</span>
                                         <p>{{ $otherPurchaseCompanyPhone->area_code }}</p>
                                     </li>
                                     <li>
-                                        <span>電話號碼</span>
+                                        <span>電話號碼：</span>
                                         <p>{{ $otherPurchaseCompanyPhone->phone_number }}</p>
                                     </li>
                                 </ul>
@@ -325,11 +325,11 @@
 
                             <ul>
                                 <li>
-                                    <span>姓名</span>
+                                    <span>姓名：</span>
                                     <p>{{ $crmMachine->other_purchase_name }}</p>
                                 </li>
                                 <li>
-                                    <span>手機</span>
+                                    <span>手機：</span>
                                     <p>{{ $crmMachine->other_purchase_phone }}</p>
                                 </li>
                             </ul>

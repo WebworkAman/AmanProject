@@ -269,9 +269,7 @@
                                 @endif
 
 
-
-
-                                {{-- @php
+                                @php
                                     $companyFax = json_decode($crmMachine->installation_company_fax ?? '');
                                 @endphp
 
@@ -292,7 +290,7 @@
                                         </li>
                                     </ol>
                                 @endif
-                                </li> --}}
+                                </li>
                             </ul>
 
                         </div>
@@ -439,6 +437,7 @@
                                         </ul>
                                     @endif
                                 </div>
+
 
 
 
