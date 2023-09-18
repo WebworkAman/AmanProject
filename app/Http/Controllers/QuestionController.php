@@ -75,11 +75,30 @@ class QuestionController extends Controller
               //取得用戶信箱
               $memberEmail = $question->member->email;
 
-              //確認 $memberEmail 的值
-              //dd($memberEmail);
+              $message = '親愛的歐西瑪客戶您好：';
+              $message.= '本公司專員已在貴公司產品'. $question->machine_serial. '提出相關產品回覆於CRM系統上，回覆詳情請上CRM系統查看，非常感謝您！';
+              $routeToRemember = route('home');
+              $link = '<a href="' . $routeToRemember . '?remember_route=true" class="f-fallback button" target="_blank">按此前往</a>';
+
+
+              $mail_data = [
+                'recipient'=>$memberEmail,
+                'fromEmail'=>$memberEmail,
+                'fromName'=>$request->name,
+                'subject'=>'CRM系統回覆機器問題通知',
+                'routeToRemember'=>$routeToRemember,
+                'link'=> $link,
+                'body'=> $message,
+
+            ];
+            \Mail::send('emails.adminReply-notification',$mail_data,function($message)use($mail_data){
+                $message->to($mail_data['recipient'])
+                        ->from(config('mail.from.address'), config('mail.from.name'))
+                        ->subject($mail_data['subject']);
+            });
 
               //發送郵件通知
-              Mail::to($memberEmail)->send(new NewAnswerNotification($question));
+            //   Mail::to($memberEmail)->send(new NewAnswerNotification($question));
 
 
           }
