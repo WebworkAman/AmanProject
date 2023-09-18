@@ -402,8 +402,12 @@
                             <td>{{ $crmMachinesContact->contact_person_name ?? '' }}</td>
                             <td>{{ $crmMachinesContact->contact_person_mobile ?? '' }}</td>
                             <td>{{ $crmMachinesContact->contact_person_email ?? '' }}</td>
-                            <td>{{ json_decode($crmMachinesContact->contact_commu_software)->type }}:{{ json_decode($crmMachinesContact->contact_commu_software)->id }}
-                            </td>
+                            @if (empty(json_decode($crmMachinesContact->contact_commu_software)->type))
+                                <td></td>
+                            @else
+                                <td>{{ json_decode($crmMachinesContact->contact_commu_software)->type }}:{{ json_decode($crmMachinesContact->contact_commu_software)->id }}
+                                </td>
+                            @endif
                             <td>
                                 <a
                                     href="{{ route('editMachineContact', ['machine' => $crmMachine, 'id' => $crmMachinesContact->id]) }}">編輯</a>

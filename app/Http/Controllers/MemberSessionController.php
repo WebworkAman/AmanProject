@@ -803,19 +803,32 @@ class MemberSessionController extends Controller
 
 
         $selectedSoftwareType = $request->input('contact_software_type');
+        $ifNoInputSoftwareId = $request->input('contact_software_data.software_id');
 
         // 如果選擇的職位名為 “其他”，則獲取輸入的其他職位名
         if($selectedSoftwareType == '4'){
-            $otherSoftwareType = $request->input('other_contact_software_type');
+            if(empty($ifNoInputSoftwareId))
+            {
+                $otherSoftwareType = '';
+            }else{
+                $otherSoftwareType = $request->input('other_contact_software_type');
+
+            }
+
         }else{
             $otherSoftwareTypeMap = [
                 '1' => 'Whats App',
                 '2' => 'Line',
                 '3' => 'WeChat',
             ];
+            if(empty($ifNoInputSoftwareId))
+            {
+                $otherSoftwareType = '';
+            }else{
+                $selectedSoftwareTypeName = isset($otherSoftwareTypeMap[$selectedSoftwareType]) ? $otherSoftwareTypeMap[$selectedSoftwareType] : null;
+                $otherSoftwareType = $selectedSoftwareTypeName;
+            }
 
-            $selectedSoftwareTypeName = isset($otherSoftwareTypeMap[$selectedSoftwareType]) ? $otherSoftwareTypeMap[$selectedSoftwareType] : null;
-            $otherSoftwareType = $selectedSoftwareTypeName;
         }
 
         $request->validate([

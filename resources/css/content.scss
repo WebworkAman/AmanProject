@@ -168,11 +168,11 @@ main {
 
     #openFormBtn{
         margin: 10px auto;
-        border: 1px solid blue;
+        border: 1px solid #23547a;
         width: 10vw;
         border-radius: 10px;
         background: transparent;
-        color: blue;
+        color: #23547a;
         font-size: 1rem;
         float: right;
         font-weight: 300;
@@ -199,10 +199,11 @@ main {
                 padding: 20px;
                 border: 1px solid #888;
                 border-radius: 10px;
-                width: 80%;
+                width: 50%;
 
                 .formgroup{
-                    margin: 50px auto;
+                    clear: both;
+                    margin: 20px auto;
                     display: flex;
                     align-items: center;
                     font-size: 1.2rem;
@@ -365,9 +366,9 @@ main {
             float: right;
             display: block;
             text-decoration: none;
-            color: rgb(10, 30, 208);
+            color: #23547a;
             font-weight: 300;
-            border: 1px solid rgb(10, 30, 208);
+            border: 1px solid #23547a;
             border-radius: 10px;
             width: 150px;
             text-align: center;
@@ -416,7 +417,7 @@ main {
 
             }
             a{
-                color: rgb(10, 30, 208);
+                color: #23547a;
                 font-weight: 300;
                 text-decoration: none;
                 letter-spacing: .5px;
@@ -425,7 +426,7 @@ main {
                 color: orange;
             }
             button{
-                color: rgb(10, 30, 208);
+                color: #23547a;
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
@@ -792,9 +793,9 @@ main {
             float: right;
             display: block;
             text-decoration: none;
-            color: rgb(10, 30, 208);
+            color: #23547a;
             font-weight: 300;
-            border: 1px solid rgb(10, 30, 208);
+            border: 1px solid #23547a;
             border-radius: 10px;
             width: 150px;
             text-align: center;
