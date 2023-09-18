@@ -109,6 +109,8 @@ class QuestionController extends Controller
         $memberId = session()->get('memberId');
         $ERPId = Member::where('id',$memberId)->value('company_ERP_id');
 
+        $memberName = MemberAuth::member()->name;
+
         $question = new Question;
         $question -> product_id = $request->input('product_id');
         $question -> member_id =  MemberAuth::member()->id;
@@ -138,35 +140,62 @@ class QuestionController extends Controller
         $question->save();
 
         // 提交成功後的訊息
-        $message = '已成功提交！';
+        $Webmessage = '已成功提交！';
 
         //將訊息儲存到 Session 中
-        $request -> session()->flash('success',$message);
+        $request -> session()->flash('success',$Webmessage);
 
         //寄送通知郵件給收信者
         // $emailAddress = Setting::find(1)->email_address;
         $emailAddresses = explode(',', Setting::find(1)->email_address);
 
-        $questionData = [
-            'title' => $question->title,
-            'content' => $question->content,
-        ];
-
-        //使用通知類別發送郵件
-
-        $notification = new NewQuestionNotification($questionData);
-        // Notification::route('mail',$emailAddress)->notify($notification);
+        $message = '親愛的歐西瑪客服人員您好：';
+        $message.= '本公司的客戶'. $ERPId . ':' . $memberName .'已在一台'.$question->machine_model.'-'.$question->machine_serial.'於CRM系統發出提問，請您點此回覆客戶相關產品的提問，非常感謝您！';
+        $message.= '問題標題：'.$question->title;
+        $message.= '問題內容：'.$question->content;
+        $routeToRemember = route('questions.index');
+        $link = '<a href="' . $routeToRemember . '?remember_route=true" class="f-fallback button" target="_blank">按此前往</a>';
 
         foreach ($emailAddresses as $emailAddress) {
-            Notification::route('mail', $emailAddress)->notify($notification);
-        }
+
+        $mail_data = [
+            'recipient'=>$emailAddress,
+            'fromEmail'=>$emailAddress,
+            'fromName'=>$request->name,
+            'subject'=>'CRM系統客戶新增問題通知',
+            'routeToRemember'=>$routeToRemember,
+            'link'=> $link,
+            'title'=> $question -> title,
+            'body'=> $message,
+
+        ];
+
+        // $questionData = [
+        //     'title' => $question->title,
+        //     'content' => $question->content,
+        // ];
+
+        //使用通知類別發送郵件
+        \Mail::send('emails.question-notification',$mail_data,function($message)use($mail_data){
+            $message->to($mail_data['recipient'])
+                    ->from(config('mail.from.address'), config('mail.from.name'))
+                    ->subject($mail_data['subject']);
+        });
+         }
+
+        // $notification = new NewQuestionNotification($questionData);
+        // Notification::route('mail',$emailAddress)->notify($notification);
+
+        // foreach ($emailAddresses as $emailAddress) {
+        //     Notification::route('mail', $emailAddress)->notify($notification);
+        // }
 
 
         // $url = url()->previous(); // 取得當前頁面的 URL
         // return redirect($url); // 重新導向當前頁面
 
         // 重新導向回當前頁面並顯示成功訊息
-        return redirect()->back()->with('success', $message);
+        return redirect()->back()->with('success', $Webmessage);
     }
 
     public function notifications()

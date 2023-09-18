@@ -118,12 +118,12 @@ class MemberSessionController extends Controller
             'created_at'=> \Carbon\Carbon::now('ROC'),
         ]);
         $action_link = route('reset',['token'=>$token,'email'=>$request->email]);
-        $body = "我們收到了重置與關聯的 <b>Oshima</b> 帳號請求來自&nbsp;" .$request->email.
+        $body = "我們收到了重置關聯的 <b>OshimaCRM</b> 帳號請求來自&nbsp;" .$request->email.
         "&nbsp;您可以通過點擊下面的連結重置您的密碼";
 
         \Mail::send('email-forgot',['action_link'=>$action_link,'body'=>$body],function($message)use($request){
             $message->from('oshima.itdepartment@gmail.com','Oshima');
-            $message->to($request->email,'Your Name')->subject('重 置 密 碼');
+            $message->to($request->email,$request->name)->subject('重 置 密 碼');
         });
 
         return back()->with('success','我們已通過E-mail發送您的密碼重置連結，請至個人信箱收取。');

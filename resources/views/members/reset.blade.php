@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="password">新 密 碼</label>
-                        <input type="password" class="form-control" placeholder="Enter Password" name="password"
+                        <input type="password" class="form-control" placeholder="請輸入新密碼" name="password"
                             value="{{ old('password') }}">
                         <p class="text-danger">
                             @error('password')
@@ -56,8 +56,8 @@
                     </div>
                     <div class="form-group">
                         <label for="password">確 認 新 密 碼</label>
-                        <input type="password" class="form-control" placeholder="Enter Password"
-                            name="password_confirmation" value="{{ old('password_confirmation') }}">
+                        <input type="password" class="form-control" placeholder="再次輸入新密碼" name="password_confirmation"
+                            value="{{ old('password_confirmation') }}">
                         <p class="text-danger">
                             @error('password_confirmation')
                                 {{ $message }}
