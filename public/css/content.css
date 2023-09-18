@@ -1646,8 +1646,23 @@ main .chooseItem ul li p {
   width: fit-content;
   border-bottom: 1px solid rgb(15, 59, 101);
   border-radius: 0;
-  padding-top: 10px;
+  font-size: 1.1rem;
   letter-spacing: 1.4px;
+}
+.QA_content .right-content #showFAQPhotoBtn, .QA_content .right-content #showFAQVideoBtn {
+  background-color: #a84949;
+  float: right;
+  font-weight: normal;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  letter-spacing: 1.4px;
+}
+.QA_content .right-content #showFAQPhotoBtn:hover, .QA_content .right-content #showFAQVideoBtn:hover {
+  background-color: rgb(237, 188, 14);
 }
 .QA_content .right-content .showPhotoBtn:hover, .QA_content .right-content .showVideoBtn:hover, .QA_content .right-content .reply-button:hover {
   background-color: transparent;
@@ -1674,7 +1689,7 @@ main .chooseItem ul li p {
   font-size: 1.2em;
 }
 .QA_content .right-content .popup-content .textContent {
-  text-align: center;
+  text-align: left;
   font-size: 1.2em;
 }
 .QA_content .right-content .faq {

@@ -727,9 +727,9 @@ main {
         }
         .formgroup.phone_type{
             display: block;
-            label{
-            //    margin-bottom: 10px;
-            }
+            // label{
+            // //    margin-bottom: 10px;
+            // }
             ul{
               display: flex;
 
@@ -1841,8 +1841,23 @@ main {
             width: fit-content;
             border-bottom: 1px solid rgb(15, 59, 101);
             border-radius: 0;
-            padding-top: 10px;
+            font-size: 1.1rem;
             letter-spacing: 1.4px;
+        }
+        #showFAQPhotoBtn,#showFAQVideoBtn{
+            background-color: #a84949;
+            float: right;
+            font-weight: normal;
+            width: -moz-fit-content;
+            width: fit-content;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            letter-spacing: 1.4px;
+        }
+        #showFAQPhotoBtn:hover,#showFAQVideoBtn:hover{
+            background-color: rgb(237, 188, 14);
         }
 
         .showPhotoBtn:hover,.showVideoBtn:hover,.reply-button:hover{
@@ -1869,7 +1884,7 @@ main {
                 font-size: 1.2em;
             }
             .textContent{
-                text-align: center;
+                text-align: left;
                 font-size: 1.2em;
             }
 
