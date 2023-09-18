@@ -19,6 +19,11 @@ class AdminController extends Controller
     public const HOME_URL='/admin';
     private static $admin = null;
 
+    public static function isLoggedIn(){
+        // return !empty(self::admin());
+        return !is_null(self::admin());
+    }
+
     public static function admin(){
 
         // `self::$member`可能為 null，因此 `empty` 應該改成 `is_null`，這樣會更加清晰。
@@ -28,10 +33,7 @@ class AdminController extends Controller
         }
         return self::$admin;
     }
-    public static function isLoggedIn(){
-        return !empty(self::admin());
 
-    }
 
     public function index(){
 
