@@ -300,131 +300,178 @@
 
                         @if ($crmMachine->purchase_manufacturer == 4)
                             <div class="formgroup">
-                                <label for="purchase_manufacturer">購入來源 </label>
-                                <input type="text" name="installation_company_fax[fax_number]"
-                                    id="installation_fax_number" value="{{ $crmMachine->other_purchase_source }}">
+                                <label for="purchase_manufacturer">購入來源｜製造商</label>
+
+                                <select name="purchase_manufacturer" id="purchase_manufacturer">
+                                    <option value="1">
+                                        台灣歐西瑪股份有限公司
+                                    </option>
+                                    <option value="2">速飛得(中國)
+                                    </option>
+                                    <option value="3">廣州貴鵬
+                                    </option>
+                                    <option value="4">其他
+                                    </option>
+                                </select>
                             </div>
-
-                            <div class="formgroup">
-                                <label>公司名稱</label>
-                                <input type="text" name="other_purchase_company_name" id="other_purchase_company_name"
-                                    value="{{ $crmMachine->other_purchase_company_name }}">
+                            <div class="purchase_manufacturer_block" style="display:none;">
+                                <div class="formgroup">
+                                    <span>業務姓名 </span><input type="text" name="purchase_manufacturer_person"
+                                        id="purchase_manufacturer_person">
+                                </div>
+                                <div class="formgroup">
+                                    <span>手機號碼 </span><input type="text" name="purchase_manufacturer_phone"
+                                        id="purchase_manufacturer_phone">
+                                </div>
                             </div>
+                            <div class="other_purchase_source_block">
+                                {{-- <div class="formgroup">
+                                    <input type="text" name="other_purchase_source" id="other_purchase_source"
+                                        value="{{ $crmMachine->other_purchase_source }}">
 
 
-                            @php
-                                $otherPurchaseCompanyAddress = json_decode($crmMachine->other_purchase_company_address ?? '');
-                            @endphp
+                                </div> --}}
+                                <div class="formgroup selectType">
+                                    {{-- <label for="purchase_manufacturer">其他購入來源 </label> --}}
+
+                                    <select name="other_purchase_source" id="other_purchase_source">
+                                        <option value="1">製造商同業</option>
+                                        <option value="2">代理商</option>
+                                        <option value="3">貿易商</option>
+                                        <option value="4">成衣廠</option>
+                                        <option value="5">針車行</option>
+                                        <option value="6">其他</option>
+                                    </select>
+
+                                    <input type="text" name="other_other_purchase_source"
+                                        id="other_other_purchase_source" placeholder="請輸入其他購入來源" style="display: none;">
+
+                                </div>
+
+                                <div class="formgroup">
+                                    <label>公司名稱</label>
+                                    <input type="text" name="other_purchase_company_name"
+                                        id="other_purchase_company_name"
+                                        value="{{ $crmMachine->other_purchase_company_name }}">
+                                </div>
 
 
-                            <div class="formgroup phone_type">
-                                <label id="other_purchase_company_address">公司地址</label>
-                                @if ($otherPurchaseCompanyAddress)
+                                @php
+                                    $otherPurchaseCompanyAddress = json_decode($crmMachine->other_purchase_company_address ?? '');
+                                @endphp
+
+
+                                <div class="formgroup phone_type">
+                                    <label id="other_purchase_company_address">公司地址</label>
+                                    @if ($otherPurchaseCompanyAddress)
+                                        <ul>
+                                            <li>
+                                                <span>國家</span>
+                                                <input type="text" name="other_purchase_company_address[country]"
+                                                    id="other_purchase_country"
+                                                    value="{{ $otherPurchaseCompanyAddress->country }}">
+                                            </li>
+                                            <li>
+                                                <span>郵遞區號</span>
+                                                <input type="text" name="other_purchase_company_address[postal_code]"
+                                                    id="other_purchase_postal_code"
+                                                    value="{{ $otherPurchaseCompanyAddress->postal_code }}">
+                                            </li>
+                                            <li>
+                                                <span>區域</span>
+                                                <input type="text" name="other_purchase_company_address[region]"
+                                                    id="other_purchase_region"
+                                                    value="{{ $otherPurchaseCompanyAddress->region }}">
+                                            </li>
+
+                                            <li>
+                                                <span>城市</span>
+                                                <input type="text" name="other_purchase_company_address[city]"
+                                                    id="other_purchase_city"
+                                                    value="{{ $otherPurchaseCompanyAddress->city }}">
+                                            </li>
+                                            <li>
+                                                <span>街/路名</span>
+
+                                                <input type="text" name="other_purchase_company_address[street]"
+                                                    id="other_purchase_street"
+                                                    value="{{ $otherPurchaseCompanyAddress->street }}">
+                                            </li>
+                                        </ul>
+                                    @endif
+                                </div>
+
+                                <div class="formgroup">
+                                    <label>統一編號 </label>
+                                    <input type="text" name="other_purchase_tax_id" id="other_purchase_tax_id"
+                                        value="{{ $crmMachine->other_purchase_tax_id }}">
+                                </div>
+
+                                @php
+                                    
+                                    $otherPurchaseCompanyPhone = json_decode($crmMachine->other_purchase_company_phone ?? '');
+                                    
+                                @endphp
+
+                                <div class="formgroup phone_type">
+                                    <label id="other_purchase_company_phone">公司電話</label>
+                                    @if ($otherPurchaseCompanyPhone)
+                                        <ul>
+                                            <li>
+                                                <span>國碼</span>
+                                                <input type="text" name="other_purchase_company_phone[country_code]"
+                                                    id="other_purchase_phone_country_code"
+                                                    value="{{ $otherPurchaseCompanyPhone->country_code }}">
+                                            </li>
+                                            <li>
+                                                <span>區碼</span>
+
+                                                <input type="text" name="other_purchase_company_phone[area_code]"
+                                                    id="other_purchase_phone_area_code"
+                                                    value="{{ $otherPurchaseCompanyPhone->area_code }}">
+                                            </li>
+                                            <li>
+                                                <span>電話號碼</span>
+                                                <input type="text" name="other_purchase_company_phone[phone_number]"
+                                                    id="other_purchase_phone_number"
+                                                    value="{{ $otherPurchaseCompanyPhone->phone_number }}">
+                                            </li>
+                                        </ul>
+                                    @endif
+                                </div>
+
+
+
+                                <div class="formgroup phone_type">
+                                    <label>聯絡人</label>
                                     <ul>
                                         <li>
-                                            <span>國家</span>
-                                            <input type="text" name="other_purchase_company_address[country]"
-                                                id="other_purchase_country"
-                                                value="{{ $otherPurchaseCompanyAddress->country }}">
+                                            <span>姓名</span>
+                                            <input type="text" name="other_purchase_name" id="other_purchase_name"
+                                                value="{{ $crmMachine->other_purchase_name }}">
                                         </li>
                                         <li>
-                                            <span>郵遞區號</span>
-                                            <input type="text" name="other_purchase_company_address[postal_code]"
-                                                id="other_purchase_postal_code"
-                                                value="{{ $otherPurchaseCompanyAddress->postal_code }}">
-                                        </li>
-                                        <li>
-                                            <span>區域</span>
-                                            <input type="text" name="other_purchase_company_address[region]"
-                                                id="other_purchase_region"
-                                                value="{{ $otherPurchaseCompanyAddress->region }}">
-                                        </li>
-
-                                        <li>
-                                            <span>城市</span>
-                                            <input type="text" name="other_purchase_company_address[city]"
-                                                id="other_purchase_city"
-                                                value="{{ $otherPurchaseCompanyAddress->city }}">
-                                        </li>
-                                        <li>
-                                            <span>街/路名</span>
-
-                                            <input type="text" name="other_purchase_company_address[street]"
-                                                id="other_purchase_street"
-                                                value="{{ $otherPurchaseCompanyAddress->street }}">
+                                            <span>手機</span>
+                                            <input type="text" name="other_purchase_phone" id="other_purchase_phone"
+                                                value="{{ $crmMachine->other_purchase_phone }}">
                                         </li>
                                     </ul>
-                                @endif
-                            </div>
+                                </div>
 
-                            <div class="formgroup">
-                                <label>統一編號 </label>
-                                <input type="text" name="other_purchase_tax_id" id="other_purchase_tax_id"
-                                    value="{{ $crmMachine->other_purchase_tax_id }}">
-                            </div>
+                                <!-- 其他說明 -->
+                                <div class="formgroup">
+                                    <label for="other_purchase_description">其他說明</label>
 
-                            @php
-                                
-                                $otherPurchaseCompanyPhone = json_decode($crmMachine->other_purchase_company_phone ?? '');
-                                
-                            @endphp
+                                    <textarea name="other_purchase_description" id="other_purchase_description" cols="30" rows="10">{{ $crmMachine->other_purchase_description }}</textarea>
+                                </div>
 
-                            <div class="formgroup phone_type">
-                                <label id="other_purchase_company_phone">公司電話</label>
-                                @if ($otherPurchaseCompanyPhone)
-                                    <ul>
-                                        <li>
-                                            <span>國碼</span>
-                                            <input type="text" name="other_purchase_company_phone[country_code]"
-                                                id="other_purchase_phone_country_code"
-                                                value="{{ $otherPurchaseCompanyPhone->country_code }}">
-                                        </li>
-                                        <li>
-                                            <span>區碼</span>
-
-                                            <input type="text" name="other_purchase_company_phone[area_code]"
-                                                id="other_purchase_phone_area_code"
-                                                value="{{ $otherPurchaseCompanyPhone->area_code }}">
-                                        </li>
-                                        <li>
-                                            <span>電話號碼</span>
-                                            <input type="text" name="other_purchase_company_phone[phone_number]"
-                                                id="other_purchase_phone_number"
-                                                value="{{ $otherPurchaseCompanyPhone->phone_number }}">
-                                        </li>
-                                    </ul>
-                                @endif
-                            </div>
-
-
-
-                            <div class="formgroup phone_type">
-                                <label>聯絡人</label>
-                                <ul>
-                                    <li>
-                                        <span>姓名</span>
-                                        <input type="text" name="other_purchase_name" id="other_purchase_name"
-                                            value="{{ $crmMachine->other_purchase_name }}">
-                                    </li>
-                                    <li>
-                                        <span>手機</span>
-                                        <input type="text" name="other_purchase_phone" id="other_purchase_phone"
-                                            value="{{ $crmMachine->other_purchase_phone }}">
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- 其他說明 -->
-                            <div class="formgroup">
-                                <label for="other_purchase_description">其他說明</label>
-
-                                <textarea name="other_purchase_description" id="other_purchase_description" cols="30" rows="10">{{ $crmMachine->other_purchase_description }}</textarea>
                             </div>
                         @else
                             <div class="formgroup">
                                 <label for="purchase_manufacturer">購入來源｜製造商</label>
 
-                                <select name="purchase_manufacturer" id="purchase_manufacturer">
+                                <select name="purchase_manufacturer" id="purchase_manufacturer"
+                                    class="purchase_manufacturer">
                                     <option value="1">
                                         台灣歐西瑪股份有限公司
                                     </option>
@@ -644,6 +691,24 @@
         $(document).ready(function() {
             // 監聽選擇聯絡人的 select 元素
             $("#purchase_manufacturer").change(function() {
+                //獲取選擇的值
+                var selectedValue = $(this).val();
+
+                //如果選擇的值為 "4" (其他)
+                if (selectedValue == "4") {
+                    //顯示輸入框
+                    $(".other_purchase_source_block").show();
+                    $(".purchase_manufacturer_block").hide();
+                } else {
+                    //隱藏輸入匡
+                    $(".other_purchase_source_block").hide();
+                    $(".purchase_manufacturer_block").show();
+                }
+            })
+        })
+        $(document).ready(function() {
+            // 監聽選擇聯絡人的 select 元素
+            $(".purchase_manufacturer").change(function() {
                 //獲取選擇的值
                 var selectedValue = $(this).val();
 

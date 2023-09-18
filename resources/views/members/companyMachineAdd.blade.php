@@ -8,7 +8,7 @@
 
             <!-- <h3>新 增 機 器 資 料 </h3> -->
             <div id="companyDataEdit" class="companyDataEdit Machines-list">
-                <a class="btn control-option" href="{{ route('companyMachineList') }}" style="width:112px;">返回</a>
+                <a class="btn control-option" href="{{ route('companyMachineList') }}" style="width:112px; margin:0;">返回</a>
                 <form method="post" action="{{ route('companyMachineAddPost') }}">
                     @method('post')
                     @csrf
@@ -17,7 +17,7 @@
                         <h2>機器基本資料建檔</h2>
                     </div>
 
-                    <div id="machineData" style="display: block; margin-top:40px;">
+                    <div id="machineData">
                         <div class="formgroup">
                             <label for="machine_purchase_date">1. 購買日期*</label>
                             <input type="date" name="machine_purchase_date" id="machine_purchase_date">

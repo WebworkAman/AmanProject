@@ -16,18 +16,22 @@
 
                 </div>
                 <div class="company-button">
-                    <a class="btn control-option" href="{{ route('companyMachineUpdateView', $crmMachine) }}">更新</a>
-                    <form method="POST" action="{{ route('deleteCompanyMachine', ['machine' => $crmMachine]) }}">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="control-option delete-button">刪除</button>
-                    </form>
+
+                    @if ($member->identity_perm == 3)
+                    @else
+                        <a class="btn control-option" href="{{ route('companyMachineUpdateView', $crmMachine) }}">更新</a>
+                        <form method="POST" action="{{ route('deleteCompanyMachine', ['machine' => $crmMachine]) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="control-option delete-button">刪除</button>
+                        </form>
+                    @endif
 
                     <a class="btn control-option" href="{{ route('companyMachineList') }}">返回</a>
                 </div>
-                <div id="machineData" style="display: block; margin-top:40px;">
+                <div id="machineData" style="display: block;">
 
-                    <div class="formgroup">
+                    <div class="formgroup" style="margin: 0;">
                         <label for="machine_purchase_date">購買日期</label>
                         {{ $crmMachine->machine_purchase_date }}
                     </div>
@@ -238,12 +242,12 @@
 
                     @if ($crmMachine->purchase_manufacturer == 4)
                         <div class="formgroup">
-                            <span for="purchase_manufacturer">購入來源 </span>
+                            <label for="purchase_manufacturer">購入來源 </label>
                             <p>{{ $crmMachine->other_purchase_source }}</p>
                         </div>
 
                         <div class="formgroup">
-                            <span>公司名稱</span>
+                            <label>公司名稱</label>
                             <p>{{ $crmMachine->other_purchase_company_name }}</p>
                         </div>
 
@@ -252,10 +256,10 @@
                             $otherPurchaseCompanyAddress = json_decode($crmMachine->other_purchase_company_address ?? '');
                         @endphp
 
-                        <div class="formgroup">
-                            <span id="other_purchase_company_address">公司地址</span>
-                        </div>
+
                         <div class="formgroup phone_type">
+                            <label id="other_purchase_company_address">公司地址</label>
+
                             @if ($otherPurchaseCompanyAddress)
                                 <ul>
                                     <li>
@@ -270,8 +274,7 @@
                                         <span>區域</span>
                                         <p>{{ $otherPurchaseCompanyAddress->region }}</p>
                                     </li>
-                                </ul>
-                                <ul>
+
                                     <li>
                                         <span>城市</span>
                                         <p>{{ $otherPurchaseCompanyAddress->city }}</p>
@@ -285,7 +288,7 @@
                         </div>
 
                         <div class="formgroup">
-                            <span>統一編號 </span>
+                            <label>統一編號 </label>
                             <p>{{ $crmMachine->other_purchase_tax_id }}</p>
                         </div>
 
@@ -294,10 +297,10 @@
                             $otherPurchaseCompanyPhone = json_decode($crmMachine->other_purchase_company_phone ?? '');
                             
                         @endphp
-                        <div class="formgroup">
-                            <span id="other_purchase_company_phone">公司電話</span>
-                        </div>
+
                         <div class="formgroup phone_type">
+                            <label id="other_purchase_company_phone">公司電話</label>
+
                             @if ($otherPurchaseCompanyPhone)
                                 <ul>
                                     <li>
@@ -315,10 +318,11 @@
                                 </ul>
                             @endif
                         </div>
-                        <div class="formgroup">
-                            <span>聯絡人</span>
-                        </div>
+
+
                         <div class="formgroup phone_type">
+                            <label>聯絡人</label>
+
                             <ul>
                                 <li>
                                     <span>姓名</span>
@@ -351,11 +355,11 @@
                         </div>
                         <div class="purchase_manufacturer_block">
                             <div class="formgroup">
-                                <span>業務姓名 </span>
+                                <label>業務姓名 </label>
                                 <p>{{ $crmMachine->purchase_manufacturer_person }}</p>
                             </div>
                             <div class="formgroup">
-                                <span>手機號碼 </span>
+                                <label>手機號碼 </label>
                                 <p>{{ $crmMachine->purchase_manufacturer_phone }}</p>
                             </div>
                         </div>
@@ -364,7 +368,7 @@
                 </div>
 
             </div>
-            <button id="openFormBtn" style="margin:0;">新增聯絡人</button>
+            <button id="openFormBtn" style="margin:0; margin-right:20px;">新增聯絡人</button>
             <h5>機器聯絡人列表</h5>
             <table>
                 <thead>
