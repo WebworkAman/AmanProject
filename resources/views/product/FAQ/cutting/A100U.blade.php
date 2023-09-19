@@ -17,7 +17,7 @@
             <div class="right-content">
 
                 <div class="faq">
-                    <button><a href="{{ route('A-100U') }}">我 要 提 問</a></button>
+                    <button><a href="{{ route('A-100U') }}">我要提問</a></button>
                     @include('components.faq-message')
 
                 </div>

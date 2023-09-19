@@ -218,8 +218,9 @@ footer .social_block p {
   width: 100px;
   height: 30px;
   border-radius: 10px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 1.5px;
+  font-size: 1em;
 }
 .search button:hover {
   background-color: orange;
@@ -515,12 +516,6 @@ main .Show_form th, main .Show_form td {
   padding: 8px;
   border-bottom: 1px solid #ddd;
   width: 10vw;
-}
-main .Show_form th p, main .Show_form td p {
-  width: 8vw;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 main .Show_form th a, main .Show_form td a {
   color: #23547a;
@@ -1627,7 +1622,7 @@ main .chooseItem ul li p {
   border-radius: 10px;
   font-weight: 300;
   letter-spacing: 1.5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .QA_content .right-content button a {
   text-decoration: none;
@@ -1638,14 +1633,12 @@ main .chooseItem ul li p {
   background-color: rgb(236, 133, 8);
 }
 .QA_content .right-content .showPhotoBtn, .QA_content .right-content .showVideoBtn, .QA_content .right-content .reply-button {
-  background-color: transparent;
-  color: rgb(15, 59, 101);
+  background-color: rgb(15, 59, 101);
+  color: white;
   float: none;
   font-weight: normal;
-  width: -moz-fit-content;
-  width: fit-content;
-  border-bottom: 1px solid rgb(15, 59, 101);
-  border-radius: 0;
+  width: 7vw;
+  border-radius: 5px;
   font-size: 1.1rem;
   letter-spacing: 1.4px;
 }
@@ -1665,9 +1658,7 @@ main .chooseItem ul li p {
   background-color: rgb(237, 188, 14);
 }
 .QA_content .right-content .showPhotoBtn:hover, .QA_content .right-content .showVideoBtn:hover, .QA_content .right-content .reply-button:hover {
-  background-color: transparent;
-  color: #2c7863;
-  border-bottom: 1px solid #2c7863;
+  background-color: rgb(236, 197, 43);
 }
 .QA_content .right-content .popclose {
   position: absolute;

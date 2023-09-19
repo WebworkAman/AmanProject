@@ -50,16 +50,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 2) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',2)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/inspection/OC1', compact('questions','machines','products')) ;
@@ -95,16 +95,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 3) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',3)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/inspection/OC5B', compact('questions','machines','products')) ;
@@ -140,16 +140,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 4) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',4)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/inspection/OC83', compact('questions','machines','products')) ;
@@ -188,16 +188,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 5) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',5)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/relaxing/UW2', compact('questions','machines','products')) ;
@@ -235,16 +235,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 6) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',6)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/relaxing/UW2S', compact('questions','machines','products')) ;
@@ -282,16 +282,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 7) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',7)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/relaxing/OC100', compact('questions','machines','products')) ;
@@ -330,16 +330,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 8) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',8)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/relaxing/OSP2000II', compact('questions','machines','products')) ;
@@ -378,16 +378,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 9) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',9)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/relaxing/OSP2008', compact('questions','machines','products')) ;
@@ -427,16 +427,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 10) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',10)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/spreading/M190G', compact('questions','machines','products')) ;
@@ -473,16 +473,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 11) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',11)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
             return view('product/category/spreading/J3', compact('questions','machines','products')) ;
@@ -519,16 +519,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 12) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',12)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
             return view('product/category/spreading/KPro', compact('questions','machines','products')) ;
@@ -565,16 +565,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 13) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',13)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/spreading/KProLite', compact('questions','machines','products')) ;
@@ -616,16 +616,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 14) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',14)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/spreading/T5', compact('questions','machines','products')) ;
@@ -662,16 +662,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 44) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',44)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/spreading/K5', compact('questions','machines','products')) ;
@@ -710,16 +710,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 15) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',15)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/OneCut', compact('questions','machines','products'));
@@ -756,16 +756,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 16) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',16)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/M6S', compact('questions','machines','products'));
@@ -803,16 +803,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 18) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',18)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/TAC', compact('questions','machines','products'));
@@ -849,16 +849,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 19) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',19)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/OC510', compact('questions','machines','products'));
@@ -895,16 +895,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 20) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',20)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/OB90', compact('questions','machines','products'));
@@ -941,16 +941,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 21) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',21)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/A100U', compact('questions','machines','products'));
@@ -987,16 +987,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 22) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',22)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/LU933', compact('questions','machines','products'));
@@ -1033,16 +1033,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 23) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',23)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/cutting/OB700A', compact('questions','machines','products'));
@@ -1081,16 +1081,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 24) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',24)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/ironing/OP800SDS', compact('questions','machines','products'));
@@ -1127,16 +1127,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 25) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',25)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/ironing/OP87', compact('questions','machines','products'));
@@ -1173,16 +1173,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 26) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',26)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/ironing/OP302', compact('questions','machines','products'));
@@ -1264,16 +1264,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 27) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',27)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/heatTransfer/OP10A5', compact('questions','machines','products'));
@@ -1310,16 +1310,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 28) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',28)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/heatTransfer/OP380A', compact('questions','machines','products'));
@@ -1356,16 +1356,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 29) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',29)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/heatTransfer/OP15A', compact('questions','machines','products'));
@@ -1444,16 +1444,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 30) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',30)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/fusingPress/OP450GS', compact('questions','machines','products'));
@@ -1490,16 +1490,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 31) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',31)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/fusingPress/OP1200NL', compact('questions','machines','products'));
@@ -1536,16 +1536,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 32) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',32)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/fusingPress/OP1400', compact('questions','machines','products'));
@@ -1612,16 +1612,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 46) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',46)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/fusingPress/OP900A', compact('questions','machines','products'));
@@ -1670,16 +1670,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 33) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',33)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/seamless/MB9018B', compact('questions','machines','products'));
@@ -1716,16 +1716,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 34) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',34)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/seamless/OP114', compact('questions','machines','products'));
@@ -1762,16 +1762,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 35) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',35)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/seamless/OP114S', compact('questions','machines','products'));
@@ -1894,16 +1894,16 @@ class ViewController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 45) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',45)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
         return view('product/category/needleWeighing/clothing/ON688CD5', compact('questions','machines','products'));

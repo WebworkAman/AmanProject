@@ -17,7 +17,7 @@
             <div class="right-content">
 
                 <div class="faq">
-                    <button><a href="{{ asset('M6S') }}">我 要 提 問</a></button>
+                    <button><a href="{{ asset('M6S') }}">我要提問</a></button>
 
                     @include('components.faq-message')
                 </div>

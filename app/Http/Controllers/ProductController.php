@@ -44,16 +44,16 @@ class ProductController extends Controller
             $questions = Question::with('answers')
                  ->where('member_id', $memberId)
                  ->where('product_id', 1) // 假設產品 I D 為 1
-                 ->get();
+                 ->paginate(5);
         }elseif($filter === 'company'){
             //公司問題
             $questions = Question::with('answers')
                   ->where('company_ERP_id', $ERPId)
                   ->where('product_id',1)
-                  ->get();
+                  ->paginate(5);
         }else {
             // 默認情況下顯示所有問題
-            $questions = $query->get();
+            $questions = $query->paginate(5);
         }
 
 

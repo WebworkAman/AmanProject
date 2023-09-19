@@ -60,7 +60,7 @@
 </div>
 {{-- <div class="baseline"></div> --}}
 <div class="filter btnblock">
-    <button class="showPostBtn">我要提問</button>
+    <button class="showPostBtn">提問</button>
 </div>
 
 <div class="Show_form">
@@ -70,9 +70,9 @@
                 <th>客戶姓名</th>
                 <th>產品</th>
                 <th>標題</th>
-                <th>內容</th>
-                <th>照片</th>
-                <th>影片</th>
+                <th style="width: 30%;">內容</th>
+                <th style="text-align: center;width: 10%;">照片</th>
+                <th style="text-align: center;width: 10%;">影片</th>
                 <th></th>
 
             </tr>
@@ -92,9 +92,9 @@
                         <p>{{ $question->title }}</p>
                     </td>
                     <td>
-                        <p id='truncated-text'>{{ $question->content }}</p>
+                        <p>{{ $question->content }}</p>
                     </td>
-                    <td>
+                    <td style="text-align: center">
                         @if ($question->photo)
                             <button class="showPhotoBtn" data-photo-url="{{ Storage::url($question->photo) }}">
                                 檢視照片
@@ -108,7 +108,7 @@
                             <p>無</p>
                         @endif
                     </td>
-                    <td>
+                    <td style="text-align: center">
                         @if ($question->video)
                             <button class="showVideoBtn" data-video-url="{{ Storage::url($question->video) }}">
                                 檢視影片
@@ -153,6 +153,8 @@
 
         </tbody>
     </table>
+
+    {{ $questions->render('components.pagination') }}
 </div>
 @if (session('success'))
     <div class="alert alert-success popup">
