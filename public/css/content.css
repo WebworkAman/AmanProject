@@ -1439,13 +1439,19 @@ main .chooseItem ul li p {
 }
 .QA_content .filter {
   margin: 10px auto;
-  width: 80%;
+  width: 50%;
+  min-width: 850px;
+  font-size: 1.1em;
+}
+.QA_content .filter input {
+  font-size: 1.1em;
 }
 .QA_content .filter select {
   padding: 5px 15px;
   border: 1px #ccc solid;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 1em;
 }
 .QA_content .filter .showPostBtn {
   float: none;
@@ -1455,8 +1461,10 @@ main .chooseItem ul li p {
   margin-left: 10px;
 }
 .QA_content .filter.btnblock {
-  margin-top: 20px;
-  text-align: center;
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: end;
 }
 .QA_content .popup {
   position: fixed;

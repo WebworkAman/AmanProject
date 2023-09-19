@@ -9,10 +9,10 @@
         </div>
         <div class="QA_content">
             <!-- <div class="left-content">
-                                <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/UW-2-600-3.png">
-                                <h2>無蒸氣鬆布機 UW-2/2L/2M</h2>
-                                <h3>要慢，就等</h3>
-                            </div> -->
+                                        <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/UW-2-600-3.png">
+                                        <h2>無蒸氣鬆布機 UW-2/2L/2M</h2>
+                                        <h3>要慢，就等</h3>
+                                    </div> -->
             <div class="right-content QA-content">
 
                 <div class="filter">
@@ -21,11 +21,16 @@
                         <input type="date" name="start_date" id="start_date">
                         <label for="end_date">結束日期：</label>
                         <input type="date" name="end_date" id="end_date">
+                        <label for="filter">問題篩選：</label>
+                        <select name="filter" id="filter">
+                            <option value="personal">個人問題</option>
+                            <option value="company">公司問題</option>
+                        </select>
                         <button type="submit">搜尋</button>
                     </form>
                 </div>
                 {{-- <div class="baseline"></div> --}}
-                <div class="filter">
+                {{-- <div class="filter">
                     <form method="get" action="{{ route('UW2view') }}">
                         <label for="filter">問題篩選：</label>
                         <select name="filter" id="filter">
@@ -34,7 +39,7 @@
                         </select>
                         <button type="submit">篩選</button>
                     </form>
-                </div>
+                </div> --}}
                 {{-- <div class="baseline"></div> --}}
                 <div class="filter btnblock">
                     <button class="showPostBtn">我要提問</button>

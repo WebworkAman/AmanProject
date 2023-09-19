@@ -44,20 +44,21 @@
         <input type="date" name="start_date" id="start_date">
         <label for="end_date">結束日期：</label>
         <input type="date" name="end_date" id="end_date">
-        <button type="submit">搜尋</button>
-    </form>
-</div>
-{{-- <div class="baseline"></div> --}}
-<div class="filter">
-    <form method="get" action="{{ route('view') }}">
         <label for="filter">問題篩選：</label>
         <select name="filter" id="filter">
             <option value="personal">個人問題</option>
             <option value="company">公司問題</option>
         </select>
-        <button type="submit">篩選</button>
+        <button type="submit">搜尋</button>
     </form>
 </div>
+{{-- <div class="baseline"></div> --}}
+{{-- <div class="filter" id="filter">
+    <form method="get" action="{{ route('view') }}">
+
+        <button type="submit">篩選</button>
+    </form>
+</div> --}}
 {{-- <div class="baseline"></div> --}}
 <div class="filter btnblock">
     <button class="showPostBtn">提問</button>
