@@ -1610,7 +1610,7 @@ main {
     .filter{
         margin: 10px auto;
         width: 50%;
-        min-width: 850px;
+        min-width: 900px;
         font-size: 1.1em;
         input{
             font-size: 1.1em;
@@ -1636,6 +1636,7 @@ main {
         margin-top: 10px;
         margin-bottom: 30px;
         text-align: end;
+        clear: both;
     }
 
     .popup{
