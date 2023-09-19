@@ -6,11 +6,11 @@
         @include('components.question-title')
         <div class="QA_content">
             <!-- <div class="left-content">
-                    <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-114S-600-2.png">
-                    <h2>摺邊封膠包邊多功能機 OP-114S</h2>
-                    <h3>用於曲線加工</h3>
-                </div> -->
-            <div class="right-content">
+                                <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/OP-114S-600-2.png">
+                                <h2>摺邊封膠包邊多功能機 OP-114S</h2>
+                                <h3>用於曲線加工</h3>
+                            </div> -->
+            <div class="right-content QA-content">
 
                 <div class="filter">
                     <form method="get" action="{{ route('OP114SView') }}">
@@ -44,9 +44,9 @@
                                 <th>客戶姓名</th>
                                 <th>產品</th>
                                 <th>標題</th>
-                                <th>內容</th>
-                                <th>照片</th>
-                                <th>影片</th>
+                                <th style="width: 30%;">內容</th>
+                                <th style="text-align: center;width: 10%;">照片</th>
+                                <th style="text-align: center;width: 10%;">影片</th>
                                 <th></th>
 
                             </tr>
@@ -68,7 +68,7 @@
                                     <td>
                                         <p id='truncated-text'>{{ $question->content }}</p>
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         @if ($question->photo)
                                             <button class="showPhotoBtn"
                                                 data-photo-url="{{ Storage::url($question->photo) }}">
@@ -83,7 +83,7 @@
                                             <p>無</p>
                                         @endif
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         @if ($question->video)
                                             <button class="showVideoBtn"
                                                 data-video-url="{{ Storage::url($question->video) }}">

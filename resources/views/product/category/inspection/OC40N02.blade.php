@@ -17,7 +17,7 @@
             </div> --}}
 
 
-            <div class="right-content">
+            <div class="right-content QA-content">
 
                 @include('layouts.question-message')
 

@@ -13,7 +13,7 @@
                         <h2>自動切滾條機 LU-933</h2>
                         <h3>手的延伸，超值</h3>
             </div> --}}
-            <div class="right-content">
+            <div class="right-content QA-content">
 
                 <div class="filter">
                     <form method="get" action="{{ route('Lu933View') }}">
@@ -47,9 +47,9 @@
                                 <th>客戶姓名</th>
                                 <th>產品</th>
                                 <th>標題</th>
-                                <th>內容</th>
-                                <th>照片</th>
-                                <th>影片</th>
+                                <th style="width: 30%;">內容</th>
+                                <th style="text-align: center;width: 10%;">照片</th>
+                                <th style="text-align: center;width: 10%;">影片</th>
                                 <th></th>
 
                             </tr>
@@ -71,7 +71,7 @@
                                     <td>
                                         <p id='truncated-text'>{{ $question->content }}</p>
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         @if ($question->photo)
                                             <button class="showPhotoBtn"
                                                 data-photo-url="{{ Storage::url($question->photo) }}">
@@ -86,7 +86,7 @@
                                             <p>無</p>
                                         @endif
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         @if ($question->video)
                                             <button class="showVideoBtn"
                                                 data-video-url="{{ Storage::url($question->video) }}">

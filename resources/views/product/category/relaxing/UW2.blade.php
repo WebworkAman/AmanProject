@@ -9,11 +9,11 @@
         </div>
         <div class="QA_content">
             <!-- <div class="left-content">
-                        <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/UW-2-600-3.png">
-                        <h2>無蒸氣鬆布機 UW-2/2L/2M</h2>
-                        <h3>要慢，就等</h3>
-                    </div> -->
-            <div class="right-content">
+                                <img src="https://www.oshima.com.tw/archive/image/product1/images/layoutlist/UW-2-600-3.png">
+                                <h2>無蒸氣鬆布機 UW-2/2L/2M</h2>
+                                <h3>要慢，就等</h3>
+                            </div> -->
+            <div class="right-content QA-content">
 
                 <div class="filter">
                     <form method="get" action="{{ route('UW2view') }}">
@@ -47,9 +47,9 @@
                                 <th>客戶姓名</th>
                                 <th>產品</th>
                                 <th>標題</th>
-                                <th>內容</th>
-                                <th>照片</th>
-                                <th>影片</th>
+                                <th style="width: 30%;">內容</th>
+                                <th style="text-align: center;width: 10%;">照片</th>
+                                <th style="text-align: center;width: 10%;">影片</th>
                                 <th></th>
 
                             </tr>
