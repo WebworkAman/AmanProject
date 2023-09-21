@@ -52,6 +52,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $members->render('components.pagination') }}
             @stack('scripts')
         </div>
     </div>

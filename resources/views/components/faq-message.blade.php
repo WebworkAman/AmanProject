@@ -71,6 +71,7 @@
                 </li>
             </ul>
         @endforeach
+        {{-- {{ $faqs->render('components.pagination') }} --}}
     @endif
 
 </div>

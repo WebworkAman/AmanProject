@@ -186,7 +186,7 @@ footer .social_block p {
 
 .search {
   text-align: center;
-  margin: 30px;
+  margin: 30px auto 10px;
   /* 隱藏原本的下拉箭頭 */
   /* 自訂下拉箭頭 */
   /* 自訂下拉選單樣式 */
@@ -1433,7 +1433,6 @@ main .chooseItem ul li p {
 }
 
 .QA_content {
-  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
@@ -1747,6 +1746,7 @@ main .chooseItem ul li p {
 }
 .QA_content .right-content .faq .listblock ul li .faq-title .textBlock {
   display: flex;
+  font-size: 1.3rem;
 }
 .QA_content .right-content .faq .listblock ul li .faq-title .itemBlock img {
   width: 2vw;
@@ -1827,6 +1827,38 @@ main .chooseItem ul li p {
 .QA_content .right-content .faq .listblock ul li .faq-toggle {
   width: 60px;
   font-size: 1.2rem;
+}
+.QA_content .right-content .faq .listblock .pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+.QA_content .right-content .faq .listblock .pagination li {
+  display: inline-block;
+  margin: 0 5px;
+}
+.QA_content .right-content .faq .listblock .pagination li a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+.QA_content .right-content .faq .listblock .pagination li a:hover {
+  background-color: #e0e0e0;
+}
+.QA_content .right-content .faq .listblock .pagination li.active a {
+  background-color: #007bff;
+  color: #fff;
+}
+.QA_content .right-content .faq .listblock .pagination li.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 .QA_content .right-content .faq h2 {
   position: relative;

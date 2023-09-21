@@ -41,7 +41,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <th> <input type="checkbox" id="select-all"></th>
+                            {{-- <th> <input type="checkbox" id="select-all"></th> --}}
+                            <th></th>
                             <th>系列</th>
                             <th>編號</th>
                             <th style="width:30%;">產品</th>
