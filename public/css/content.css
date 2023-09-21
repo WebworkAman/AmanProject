@@ -1292,6 +1292,7 @@ main .forbidUl li .forbid-icon {
 main .forbidUl li p {
   letter-spacing: 1.2;
   color: red;
+  font-size: 1.5rem;
 }
 main .forbidUl li .forbid-link {
   width: 15vw;

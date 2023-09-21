@@ -385,30 +385,38 @@ class AdminController extends Controller
     public function updateMemberPermissions(Request $request, $memberId){
 
         $member = Member::find($memberId);
-        $productIds = $request->input('products', []);
+        $productIds = $request->input('products',[]);
 
-        // 獲取用戶當前擁有的產品權限
-        $currentPermissions = $member->permissions->pluck('id')->toArray();
+        // 刪除舊的關聯
+        $member->permissions()->detach();
+        // $memberPermissions = new MemberPermissions;
 
-        // 找出需要刪除的產品權限
-        $permissionsToRemove = array_diff($currentPermissions, $productIds);
 
-        // 刪除不再擁有的產品權限
-        if (!empty($permissionsToRemove)) {
-            $member->permissions()->detach($permissionsToRemove);
-        }
-
-        // 逐一建立新的關聯
+            // 逐一建立新的關聯
         foreach ($productIds as $productId) {
-            $member->permissions()->syncWithoutDetaching($productId);
-        }
+            $member->permissions()->attach($productId);
+           }
 
-        // 提交成功後的訊息
-        $message = '權限更新成功！';
 
-        //將訊息儲存到 Session 中
-        $request->session()->flash('success', $message);
+        // //逐一更新權限
+        // foreach($productIds as $productId){
+        //     $memberPermissions -> member_id = $member;
+        //     $memberPermissions -> product_id = $productId;
+        //     $memberPermissions ->save();
+        // }
 
+                // 提交成功後的訊息
+                $message = '權限更新成功！';
+
+                //將訊息儲存到 Session 中
+                $request -> session()->flash('success',$message);
+
+                // $url = url()->previous(); // 取得當前頁面的 URL
+                // return redirect($url); // 重新導向當前頁面
+
+
+        // return redirect()->back()->with('success', '權限更新成功');
+        // 重新導向回當前頁面並顯示成功訊息
         return redirect()->route('memberList')
             ->with('success', $message);
     }

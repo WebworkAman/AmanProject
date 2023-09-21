@@ -400,6 +400,25 @@ class FAQController extends Controller
         }
 
     }
+        public function OC510(){
+        $memberId = session()->get('memberId');
+        $id = 17;
+        //檢查權限
+        $hasPermission = MemberPermission::where('member_id',$memberId)
+                      ->where('product_id',$id)->exists();
+
+        $faqs = FAQ::where('product_id', 17)->get();
+
+
+        if($hasPermission == $id){
+             return view('product.FAQ.cutting.OC510', compact('faqs')) ;
+
+        }else{
+             // 没有权限，显示提示信息
+             return view('layouts.forbid');
+        }
+
+    }
     public function TAC(){
         $memberId = session()->get('memberId');
         $id = 18;
@@ -419,25 +438,7 @@ class FAQController extends Controller
         }
 
     }
-    public function OC510(){
-        $memberId = session()->get('memberId');
-        $id = 19;
-        //檢查權限
-        $hasPermission = MemberPermission::where('member_id',$memberId)
-                      ->where('product_id',$id)->exists();
 
-        $faqs = FAQ::where('product_id', 19)->get();
-
-
-        if($hasPermission == $id){
-             return view('product.FAQ.cutting.OC510', compact('faqs')) ;
-
-        }else{
-             // 没有权限，显示提示信息
-             return view('layouts.forbid');
-        }
-
-    }
     public function OB90(){
         $memberId = session()->get('memberId');
         $id = 20;

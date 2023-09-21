@@ -3,11 +3,11 @@
     "/js/home.js": "/js/home.js",
     "/js/page1.js": "/js/page1.js",
     "/js/search.js": "/js/search.js",
-    "/css/app.css": "/css/app.css",
     "/css/register.css": "/css/register.css",
     "/css/log.css": "/css/log.css",
     "/css/content.css": "/css/content.css",
     "/css/home.css": "/css/home.css",
+    "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/css/FAQ.css": "/css/FAQ.css"
 }
